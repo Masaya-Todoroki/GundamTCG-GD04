@@ -281,7 +281,8 @@
 </head>
 <body>
   <header>
-    <h1>GD04 Alt Art Pairings</h1>
+    <h1>GD04 - Alt Art Pairings</h1>
+      <h2>These are just based off findings that I've seen at locals and online - Masaya</h2>
   </header>
 
   <div class="container">
@@ -397,6 +398,7 @@
         // 0 = type
         // 1 = card name
         // 2 onward = pair names
+        const type = (cols[0] || "").trim();
         const name = normalizeName(cols[1] || "");
 
         if (!name) {
@@ -408,10 +410,11 @@
           .map(value => normalizeName(value || ""))
           .filter(value => value !== "");
 
-        result.push({
-          name,
-          pairNames
-        });
+          result.push({
+              type,
+              name,
+              pairNames
+          });
       }
 
       return result;
@@ -433,7 +436,8 @@
 
       const cardsWithIds = rawCards.map((card, index) => ({
         id: orderedIds[index] || `MISSING-ID-${index + 1}`,
-        name: card.name,
+          name: card.name,
+        type: card.type,
         pairNames: card.pairNames
       }));
 
@@ -443,7 +447,8 @@
 
       cards = cardsWithIds.map(card => ({
         id: card.id,
-        name: card.name,
+          name: card.name,
+        type: card.type,
         pairs: card.pairNames
           .map(pairName => {
             const matchedId = nameToId[normalizeName(pairName)];
@@ -465,7 +470,7 @@
         <img src="${getImage(card.id)}" alt="${card.name}" loading="lazy">
         <div class="card-text">
           <div>${card.name}</div>
-          <div class="card-id">${card.id}</div>
+          <div class="card-id">${card.type}</div>
         </div>
       `;
       cardEl.addEventListener("click", () => onClick(card));
