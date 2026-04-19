@@ -207,6 +207,13 @@
   <script>
     const CSV_URL = "data/GD04Pairings.csv";
 
+    const orderedIds = [
+      "GD04-001", "GD04-002", "GD04-003", "GD04-006", "GD04-009", "GD04-017", "GD04-018", "GD04-020",
+      "GD04-022", "GD04-033", "GD04-034", "GD04-036", "GD04-042", "GD04-049", "GD04-050", "GD04-053",
+      "GD04-065", "GD04-066", "GD04-067", "GD04-068", "GD04-071", "GD04-081", "GD04-085", "GD04-089",
+      "GD04-093", "GD04-095", "GD04-097", "GD04-102", "GD04-105", "GD04-110", "GD04-114", "GD04-117"
+    ];
+
     let cards = [];
     let cardMap = {};
 
@@ -257,8 +264,7 @@
     function parseCSV(text) {
       const lines = text
         .split(/\r?\n/)
-        .map(line => line.trim())
-        .filter(line => line !== "");
+        .filter(line => line.trim() !== "");
 
       if (lines.length < 2) {
         return [];
@@ -269,10 +275,13 @@
       for (let i = 1; i < lines.length; i++) {
         const cols = parseCSVLine(lines[i]);
 
-        const id = cols[0]?.trim();
+        // Column layout:
+        // 0 = type
+        // 1 = card name
+        // 2 onward = pair names
         const name = cols[1]?.trim();
 
-        if (!id || !name) {
+        if (!name) {
           continue;
         }
 
@@ -282,7 +291,6 @@
           .filter(value => value !== "");
 
         result.push({
-          id,
           name,
           pairNames
         });
@@ -301,11 +309,21 @@
       const text = await response.text();
       const rawCards = parseCSV(text);
 
+      if (rawCards.length !== orderedIds.length) {
+        console.warn(`CSV row count (${rawCards.length}) does not match ID count (${orderedIds.length}).`);
+      }
+
+      const cardsWithIds = rawCards.map((card, index) => ({
+        id: orderedIds[index] || `MISSING-ID-${index + 1}`,
+        name: card.name,
+        pairNames: card.pairNames
+      }));
+
       const nameToId = Object.fromEntries(
-        rawCards.map(card => [card.name, card.id])
+        cardsWithIds.map(card => [card.name, card.id])
       );
 
-      cards = rawCards.map(card => ({
+      cards = cardsWithIds.map(card => ({
         id: card.id,
         name: card.name,
         pairs: card.pairNames
@@ -409,7 +427,7 @@
         console.error(error);
         statusBox.innerHTML = `
           <strong>Could not load the CSV file.</strong>
-          <div class="small-note">Make sure GD04Pairings.csv is in the same folder as index.html.</div>
+          <div class="small-note">Make sure data/GD04Pairings.csv exists and the card name is in column 2.</div>
           <div class="small-note">Error: ${error.message}</div>
         `;
       }
