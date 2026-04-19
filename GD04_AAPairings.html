@@ -58,8 +58,8 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 20px;
     }
 
     .card {
@@ -87,11 +87,10 @@
     .card-text {
       padding: 10px;
       text-align: center;
-      font-size: 0.9rem;
     }
 
     .card-id {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       color: #bbb;
       margin-top: 4px;
     }
@@ -120,27 +119,25 @@
 
     .selected-card {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
       gap: 20px;
-      background: #181818;
-      border: 2px solid #666;
+      flex-wrap: wrap;
+      background: #1a1a1a;
+      border: 1px solid #333;
       border-radius: 12px;
       padding: 16px;
       margin-bottom: 24px;
     }
 
     .selected-card img {
-      width: 100%;
-      max-width: 400px;
+      width: 240px;
+      max-width: 100%;
       border-radius: 10px;
       background: #222;
     }
 
     .selected-info {
-      width: 100%;
-      max-width: 500px;
+      flex: 1;
+      min-width: 240px;
     }
 
     .selected-info p {
@@ -168,84 +165,6 @@
       color: #aaa;
       font-size: 0.9rem;
       margin-top: 8px;
-    }
-
-    .pair-row {
-      display: flex;
-      gap: 12px;
-      overflow-x: auto;
-      padding-bottom: 10px;
-    }
-
-    .pair-row::-webkit-scrollbar {
-      height: 8px;
-    }
-
-    .pair-row::-webkit-scrollbar-thumb {
-      background: #444;
-      border-radius: 4px;
-    }
-
-    .pair-row .card {
-      min-width: 120px;
-      max-width: 140px;
-      flex-shrink: 0;
-    }
-
-    .pair-row .card-text {
-      font-size: 0.8rem;
-      padding: 8px;
-    }
-
-    .pair-row .card-id {
-      font-size: 0.7rem;
-    }
-
-    @media (min-width: 900px) {
-      .grid {
-        grid-template-columns: repeat(6, 1fr);
-      }
-    }
-
-    @media (min-width: 1300px) {
-      .grid {
-        grid-template-columns: repeat(8, 1fr);
-      }
-    }
-
-    @media (max-width: 700px) {
-      .container {
-        padding: 12px;
-      }
-
-      .grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 10px;
-      }
-
-      .card-text {
-        padding: 8px;
-        font-size: 0.75rem;
-      }
-
-      .card-id {
-        font-size: 0.65rem;
-      }
-
-      .search-box {
-        min-width: 0;
-        width: 100%;
-        padding: 10px;
-        font-size: 0.95rem;
-      }
-
-      .selected-card {
-        padding: 12px;
-      }
-
-      .selected-card img {
-        max-width: 100%;
-      }
     }
   </style>
 </head>
@@ -280,13 +199,20 @@
       <div id="selected-card" class="selected-card"></div>
 
       <h2 style="margin-bottom: 16px;">Assigned Pairs</h2>
-      <div id="pair-grid" class="pair-row"></div>
+      <div id="pair-grid" class="grid"></div>
       <div id="empty-message" class="message hidden">No pairs assigned to this card.</div>
     </section>
   </div>
 
   <script>
     const CSV_URL = "data/GD04Pairings.csv";
+
+    const orderedIds = [
+      "GD04-001", "GD04-002", "GD04-003", "GD04-006", "GD04-009", "GD04-017", "GD04-018", "GD04-020",
+      "GD04-022", "GD04-033", "GD04-034", "GD04-036", "GD04-042", "GD04-049", "GD04-050", "GD04-053",
+      "GD04-065", "GD04-066", "GD04-067", "GD04-068", "GD04-071", "GD04-081", "GD04-085", "GD04-089",
+      "GD04-093", "GD04-095", "GD04-097", "GD04-102", "GD04-105", "GD04-110", "GD04-114", "GD04-117"
+    ];
 
     let cards = [];
     let cardMap = {};
@@ -305,6 +231,14 @@
 
     function getImage(cardId) {
       return `images/${cardId}.png`;
+    }
+
+    function normalizeName(value) {
+      return value
+        .trim()
+        .replace(/\s+/g, " ")
+        .replace(/[“”]/g, '"')
+        .replace(/[‘’]/g, "'");
     }
 
     function parseCSVLine(line) {
@@ -349,27 +283,23 @@
       for (let i = 1; i < lines.length; i++) {
         const cols = parseCSVLine(lines[i]);
 
-        // Expected layout:
-        // 0 = ID
-        // 1 = Type
-        // 2 = Name
-        // 3 onward = paired card IDs
-        const id = cols[0]?.trim();
-        const name = cols[2]?.trim();
+        // 0 = type
+        // 1 = card name
+        // 2 onward = pair names
+        const name = normalizeName(cols[1] || "");
 
-        if (!id || !name) {
+        if (!name) {
           continue;
         }
 
-        const pairIds = cols
-          .slice(3)
-          .map(value => (value || "").trim())
+        const pairNames = cols
+          .slice(2)
+          .map(value => normalizeName(value || ""))
           .filter(value => value !== "");
 
         result.push({
-          id,
           name,
-          pairIds
+          pairNames
         });
       }
 
@@ -386,10 +316,32 @@
       const text = await response.text();
       const rawCards = parseCSV(text);
 
-      cards = rawCards.map(card => ({
+      if (rawCards.length !== orderedIds.length) {
+        console.warn(`CSV row count (${rawCards.length}) does not match ID count (${orderedIds.length}).`);
+      }
+
+      const cardsWithIds = rawCards.map((card, index) => ({
+        id: orderedIds[index] || `MISSING-ID-${index + 1}`,
+        name: card.name,
+        pairNames: card.pairNames
+      }));
+
+      const nameToId = Object.fromEntries(
+        cardsWithIds.map(card => [normalizeName(card.name), card.id])
+      );
+
+      cards = cardsWithIds.map(card => ({
         id: card.id,
         name: card.name,
-        pairs: card.pairIds
+        pairs: card.pairNames
+          .map(pairName => {
+            const matchedId = nameToId[normalizeName(pairName)];
+            if (!matchedId) {
+              console.log("No match for pair:", pairName);
+            }
+            return matchedId;
+          })
+          .filter(Boolean)
       }));
 
       cardMap = Object.fromEntries(cards.map(card => [card.id, card]));
@@ -488,8 +440,7 @@
         console.error(error);
         statusBox.innerHTML = `
           <strong>Could not load the CSV file.</strong>
-          <div class="small-note">Make sure data/GD04Pairings.csv exists.</div>
-          <div class="small-note">Expected format: ID, Type, Name, Pair1, Pair2...</div>
+          <div class="small-note">Make sure data/GD04Pairings.csv exists and the card name is in column 2.</div>
           <div class="small-note">Error: ${error.message}</div>
         `;
       }
