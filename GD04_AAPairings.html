@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GD04 Alt Arts</title>
+  <title>GD04 Alt Art Pairings</title>
   <style>
     * {
       box-sizing: border-box;
@@ -23,10 +23,37 @@
       text-align: center;
     }
 
+    h1, h2, p {
+      margin: 0;
+    }
+
     .container {
       max-width: 1300px;
       margin: 0 auto;
       padding: 20px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .top-controls {
+      margin-bottom: 20px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .search-box {
+      flex: 1;
+      min-width: 220px;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #333;
+      background: #1d1d1d;
+      color: #f4f4f4;
+      font-size: 1rem;
     }
 
     .grid {
@@ -40,6 +67,13 @@
       border: 1px solid #333;
       border-radius: 12px;
       overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: #666;
     }
 
     .card img {
@@ -53,42 +87,335 @@
     .card-text {
       padding: 10px;
       text-align: center;
-      font-size: 0.95rem;
+    }
+
+    .card-id {
+      font-size: 0.85rem;
+      color: #bbb;
+      margin-top: 4px;
+    }
+
+    .top-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      background: #f4f4f4;
+      color: #111;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .selected-card {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 24px;
+    }
+
+    .selected-card img {
+      width: 240px;
+      max-width: 100%;
+      border-radius: 10px;
+      background: #222;
+    }
+
+    .selected-info {
+      flex: 1;
+      min-width: 240px;
+    }
+
+    .selected-info p {
+      margin-top: 10px;
+      color: #ddd;
+    }
+
+    .status-box {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+
+    .message {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .small-note {
+      color: #aaa;
+      font-size: 0.9rem;
+      margin-top: 8px;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>GD04 Alt Arts</h1>
+    <h1>GD04 Alt Art Pairings</h1>
   </header>
 
   <div class="container">
-    <div id="card-grid" class="grid"></div>
+    <div id="status-box" class="status-box">Loading card data...</div>
+
+    <section id="gallery-view" class="hidden">
+      <div class="top-controls">
+        <input
+          type="text"
+          id="search-input"
+          class="search-box"
+          placeholder="Search by name or ID"
+        />
+      </div>
+
+      <div id="card-grid" class="grid"></div>
+      <div id="gallery-empty" class="message hidden">No cards match your search.</div>
+    </section>
+
+    <section id="detail-view" class="hidden">
+      <div class="top-bar">
+        <button id="back-button">← Back</button>
+        <h2 id="detail-title"></h2>
+      </div>
+
+      <div id="selected-card" class="selected-card"></div>
+
+      <h2 style="margin-bottom: 16px;">Assigned Pairs</h2>
+      <div id="pair-grid" class="grid"></div>
+      <div id="empty-message" class="message hidden">No pairs assigned to this card.</div>
+    </section>
   </div>
 
   <script>
-    const cardIds = [
-      "GD04-001", "GD04-002", "GD04-003", "GD04-006", "GD04-009", "GD04-017", "GD04-018", "GD04-020",
-      "GD04-022", "GD04-033", "GD04-034", "GD04-036", "GD04-042", "GD04-049", "GD04-050", "GD04-053",
-      "GD04-065", "GD04-066", "GD04-067", "GD04-068", "GD04-071", "GD04-081", "GD04-085", "GD04-089",
-      "GD04-093", "GD04-095", "GD04-097", "GD04-102", "GD04-105", "GD04-110", "GD04-114", "GD04-117"
-    ];
+    const CSV_URL = "GD04Pairings.csv";
+
+    let cards = [];
+    let cardMap = {};
+
+    const statusBox = document.getElementById("status-box");
+    const galleryView = document.getElementById("gallery-view");
+    const detailView = document.getElementById("detail-view");
+    const cardGrid = document.getElementById("card-grid");
+    const pairGrid = document.getElementById("pair-grid");
+    const detailTitle = document.getElementById("detail-title");
+    const selectedCard = document.getElementById("selected-card");
+    const backButton = document.getElementById("back-button");
+    const emptyMessage = document.getElementById("empty-message");
+    const searchInput = document.getElementById("search-input");
+    const galleryEmpty = document.getElementById("gallery-empty");
 
     function getImage(cardId) {
       return `images/${cardId}.png`;
     }
 
-    const cardGrid = document.getElementById("card-grid");
+    function parseCSVLine(line) {
+      const values = [];
+      let current = "";
+      let inQuotes = false;
 
-    cardIds.forEach(cardId => {
+      for (let i = 0; i < line.length; i++) {
+        const char = line[i];
+        const nextChar = line[i + 1];
+
+        if (char === '"') {
+          if (inQuotes && nextChar === '"') {
+            current += '"';
+            i++;
+          } else {
+            inQuotes = !inQuotes;
+          }
+        } else if (char === "," && !inQuotes) {
+          values.push(current);
+          current = "";
+        } else {
+          current += char;
+        }
+      }
+
+      values.push(current);
+      return values.map(value => value.trim());
+    }
+
+    function parseCSV(text) {
+      const lines = text
+        .split(/\r?\n/)
+        .map(line => line.trim())
+        .filter(line => line !== "");
+
+      if (lines.length < 2) {
+        return [];
+      }
+
+      const result = [];
+
+      for (let i = 1; i < lines.length; i++) {
+        const cols = parseCSVLine(lines[i]);
+
+        const id = cols[0]?.trim();
+        const name = cols[1]?.trim();
+
+        if (!id || !name) {
+          continue;
+        }
+
+        const pairNames = cols
+          .slice(2)
+          .map(value => value.trim())
+          .filter(value => value !== "");
+
+        result.push({
+          id,
+          name,
+          pairNames
+        });
+      }
+
+      return result;
+    }
+
+    async function loadData() {
+      const response = await fetch(CSV_URL);
+
+      if (!response.ok) {
+        throw new Error(`Could not load ${CSV_URL}`);
+      }
+
+      const text = await response.text();
+      const rawCards = parseCSV(text);
+
+      const nameToId = Object.fromEntries(
+        rawCards.map(card => [card.name, card.id])
+      );
+
+      cards = rawCards.map(card => ({
+        id: card.id,
+        name: card.name,
+        pairs: card.pairNames
+          .map(pairName => nameToId[pairName])
+          .filter(Boolean)
+      }));
+
+      cardMap = Object.fromEntries(cards.map(card => [card.id, card]));
+    }
+
+    function createCardElement(card, onClick) {
       const cardEl = document.createElement("div");
       cardEl.className = "card";
       cardEl.innerHTML = `
-        <img src="${getImage(cardId)}" alt="${cardId}" loading="lazy">
-        <div class="card-text">${cardId}</div>
+        <img src="${getImage(card.id)}" alt="${card.name}" loading="lazy">
+        <div class="card-text">
+          <div>${card.name}</div>
+          <div class="card-id">${card.id}</div>
+        </div>
       `;
-      cardGrid.appendChild(cardEl);
-    });
+      cardEl.addEventListener("click", () => onClick(card));
+      return cardEl;
+    }
+
+    function renderGallery(filteredCards = cards) {
+      cardGrid.innerHTML = "";
+
+      if (filteredCards.length === 0) {
+        galleryEmpty.classList.remove("hidden");
+        return;
+      }
+
+      galleryEmpty.classList.add("hidden");
+
+      filteredCards.forEach(card => {
+        cardGrid.appendChild(createCardElement(card, openDetailView));
+      });
+    }
+
+    function openDetailView(card) {
+      galleryView.classList.add("hidden");
+      detailView.classList.remove("hidden");
+
+      detailTitle.textContent = card.name;
+      selectedCard.innerHTML = `
+        <img src="${getImage(card.id)}" alt="${card.name}">
+        <div class="selected-info">
+          <h2>${card.name}</h2>
+          <p><strong>ID:</strong> ${card.id}</p>
+          <p><strong>Number of pairs:</strong> ${card.pairs.length}</p>
+        </div>
+      `;
+
+      pairGrid.innerHTML = "";
+
+      const pairedCards = card.pairs
+        .map(pairId => cardMap[pairId])
+        .filter(Boolean);
+
+      if (pairedCards.length === 0) {
+        emptyMessage.classList.remove("hidden");
+      } else {
+        emptyMessage.classList.add("hidden");
+        pairedCards.forEach(pairCard => {
+          pairGrid.appendChild(createCardElement(pairCard, openDetailView));
+        });
+      }
+    }
+
+    function goBack() {
+      detailView.classList.add("hidden");
+      galleryView.classList.remove("hidden");
+    }
+
+    function handleSearch() {
+      const term = searchInput.value.trim().toLowerCase();
+
+      if (!term) {
+        renderGallery(cards);
+        return;
+      }
+
+      const filteredCards = cards.filter(card =>
+        card.name.toLowerCase().includes(term) ||
+        card.id.toLowerCase().includes(term)
+      );
+
+      renderGallery(filteredCards);
+    }
+
+    backButton.addEventListener("click", goBack);
+    searchInput.addEventListener("input", handleSearch);
+
+    async function init() {
+      try {
+        await loadData();
+        statusBox.classList.add("hidden");
+        galleryView.classList.remove("hidden");
+        renderGallery();
+      } catch (error) {
+        console.error(error);
+        statusBox.innerHTML = `
+          <strong>Could not load the CSV file.</strong>
+          <div class="small-note">Make sure GD04Pairings.csv is in the same folder as index.html.</div>
+          <div class="small-note">Error: ${error.message}</div>
+        `;
+      }
+    }
+
+    init();
   </script>
 </body>
 </html>
