@@ -19,6 +19,7 @@
     header {
       background: #1b1b1b;
       border-bottom: 1px solid #333;
+      border-bottom: 1px solid #333;
       padding: 20px;
       text-align: center;
     }
@@ -90,11 +91,23 @@
       font-size: 0.9rem;
     }
 
-    .card-id {
-      font-size: 0.8rem;
-      color: #bbb;
-      margin-top: 4px;
-    }
+      .card-image {
+          position: relative;
+      }
+
+      .type-badge {
+          position: absolute;
+          bottom: 6px;
+          left: 6px;
+          right: 6px;
+          background: rgba(0, 0, 0, 0.75);
+          color: #fff;
+          font-size: 0.7rem;
+          padding: 4px 6px;
+          border-radius: 6px;
+          text-align: center;
+          backdrop-filter: blur(2px);
+      }
 
     .top-bar {
       display: flex;
@@ -282,7 +295,7 @@
 <body>
   <header>
     <h1>GD04 - Alt Art Pairings</h1>
-      <h2>These are just based off findings that I've seen at locals and online - Masaya</h2>
+      <p>These are just based off findings that I've seen at locals and online xD - Masa</p>
   </header>
 
   <div class="container">
@@ -463,19 +476,21 @@
       cardMap = Object.fromEntries(cards.map(card => [card.id, card]));
     }
 
-    function createCardElement(card, onClick) {
-      const cardEl = document.createElement("div");
-      cardEl.className = "card";
-      cardEl.innerHTML = `
-        <img src="${getImage(card.id)}" alt="${card.name}" loading="lazy">
-        <div class="card-text">
-          <div>${card.name}</div>
-          <div class="card-id">${card.type}</div>
-        </div>
+      function createCardElement(card, onClick) {
+          const cardEl = document.createElement("div");
+          cardEl.className = "card";
+          cardEl.innerHTML = `
+            <div class="card-image">
+            <img src="${getImage(card.id)}" alt="${card.name}" loading="lazy">
+            <div class="type-badge">${card.type}</div>
+            </div>
+            <div class="card-text">
+            <div>${card.name}</div>
+            </div>
       `;
-      cardEl.addEventListener("click", () => onClick(card));
-      return cardEl;
-    }
+          cardEl.addEventListener("click", () => onClick(card));
+          return cardEl;
+      }
 
     function renderGallery(filteredCards = cards) {
       cardGrid.innerHTML = "";
