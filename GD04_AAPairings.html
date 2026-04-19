@@ -99,7 +99,13 @@
         }
 
         .card-name {
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+
             line-height: 1.25;
+            min-height: calc(1.2em * 4);
         }
 
         .type-box {
