@@ -1,603 +1,581 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GD04 Alt Art Pairings</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GD04 Alt Art Pairings</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: #f4f4f4;
-    }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: #f4f4f4;
+        }
 
-    header {
-      background: #1b1b1b;
-      border-bottom: 1px solid #333;
-      border-bottom: 1px solid #333;
-      padding: 20px;
-      text-align: center;
-    }
+        header {
+            background: #1b1b1b;
+            border-bottom: 1px solid #333;
+            padding: 20px;
+            text-align: center;
+        }
 
-    h1, h2, p {
-      margin: 0;
-    }
+        h1, h2, p {
+            margin: 0;
+        }
 
-    .container {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 20px;
-    }
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-    .hidden {
-      display: none;
-    }
+        .hidden {
+            display: none;
+        }
 
-    .top-controls {
-      margin-bottom: 20px;
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
+        .top-controls {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
 
-    .search-box {
-      flex: 1;
-      min-width: 220px;
-      padding: 12px;
-      border-radius: 10px;
-      border: 1px solid #333;
-      background: #1d1d1d;
-      color: #f4f4f4;
-      font-size: 1rem;
-    }
+        .search-box {
+            flex: 1;
+            min-width: 220px;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            background: #1d1d1d;
+            color: #f4f4f4;
+            font-size: 1rem;
+        }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-    }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            align-items: stretch;
+        }
 
-    .card {
-      background: #1a1a1a;
-      border: 1px solid #333;
-      border-radius: 12px;
-      overflow: hidden;
-      cursor: pointer;
-      transition: transform 0.2s ease, border-color 0.2s ease;
+        .card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
 
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
+            .card:hover {
+                transform: translateY(-4px);
+                border-color: #666;
+            }
 
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: #666;
-    }
+            .card img {
+                display: block;
+                width: 100%;
+                aspect-ratio: 3 / 4;
+                object-fit: cover;
+                background: #222;
+            }
 
-    .card img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 3 / 4;
-      object-fit: cover;
-      background: #222;
-    }
+        .card-text {
+            padding: 10px;
+            text-align: center;
+            font-size: 0.9rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            min-height: 0;
+        }
 
-    .card-text {
-      padding: 10px;
-      text-align: center;
-      font-size: 0.9rem;
-    }
+        .card-name {
+            line-height: 1.25;
+        }
 
-      .card-image {
-          position: relative;
-      }
+        .type-box {
+            margin-top: auto;
+            background: #222;
+            border: 1px solid #444;
+            border-radius: 6px;
+            padding: 4px 6px;
+            font-size: 0.75rem;
+            color: #ddd;
+            text-align: center;
+        }
 
-      .type-badge {
-          position: absolute;
-          bottom: 6px;
-          left: 6px;
-          right: 6px;
-          background: rgba(0, 0, 0, 0.75);
-          color: #fff;
-          font-size: 0.7rem;
-          padding: 4px 6px;
-          border-radius: 6px;
-          text-align: center;
-          backdrop-filter: blur(2px);
-      }
+        .top-bar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
 
-      .type-box {
-          margin-top: auto;
-          background: #222;
-          border: 1px solid #444;
-          border-radius: 6px;
-          padding: 4px 6px;
-          font-size: 0.75rem;
-          color: #ddd;
-          text-align: center;
-      }
+        button {
+            background: #f4f4f4;
+            color: #111;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
 
-    .top-bar {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-    }
+            button:hover {
+                opacity: 0.9;
+            }
 
-    button {
-      background: #f4f4f4;
-      color: #111;
-      border: none;
-      border-radius: 8px;
-      padding: 10px 16px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+        .selected-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 16px;
+        }
 
-    button:hover {
-      opacity: 0.9;
-    }
+            .selected-card img {
+                width: 180px;
+                max-width: 40%;
+                border-radius: 10px;
+                background: #222;
+                flex-shrink: 0;
+            }
 
-    .selected-card {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      background: #1a1a1a;
-      border: 1px solid #333;
-      border-radius: 12px;
-      padding: 12px;
-      margin-bottom: 16px;
-    }
+        .selected-info {
+            flex: 1;
+            min-width: 0;
+        }
 
-    .selected-card img {
-      width: 180px;
-      max-width: 40%;
-      border-radius: 10px;
-      background: #222;
-      flex-shrink: 0;
-    }
+            .selected-info h2 {
+                font-size: 1.1rem;
+            }
 
-    .selected-info {
-      flex: 1;
-      min-width: 0;
-    }
+            .selected-info p {
+                margin-top: 6px;
+                color: #ddd;
+                font-size: 0.9rem;
+            }
 
-    .selected-info h2 {
-      font-size: 1.1rem;
-    }
+        .status-box {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 20px;
+        }
 
-    .selected-info p {
-      margin-top: 6px;
-      color: #ddd;
-      font-size: 0.9rem;
-    }
+        .message {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
 
-    .status-box {
-      background: #1a1a1a;
-      border: 1px solid #333;
-      border-radius: 12px;
-      padding: 16px;
-      margin-bottom: 20px;
-    }
+        .small-note {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-top: 8px;
+        }
 
-    .message {
-      background: #1a1a1a;
-      border: 1px solid #333;
-      border-radius: 12px;
-      padding: 20px;
-      text-align: center;
-    }
+        .pair-row {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            scroll-behavior: smooth;
+        }
 
-    .small-note {
-      color: #aaa;
-      font-size: 0.9rem;
-      margin-top: 8px;
-    }
+            .pair-row::-webkit-scrollbar {
+                height: 8px;
+            }
 
-    .pair-row {
-      display: flex;
-      gap: 12px;
-      overflow-x: auto;
-      padding-bottom: 10px;
-      scroll-behavior: smooth;
-    }
+            .pair-row::-webkit-scrollbar-thumb {
+                background: #444;
+                border-radius: 4px;
+            }
 
-    .pair-row::-webkit-scrollbar {
-      height: 8px;
-    }
+            .pair-row .card {
+                min-width: 120px;
+                max-width: 140px;
+                flex-shrink: 0;
+            }
 
-    .pair-row::-webkit-scrollbar-thumb {
-      background: #444;
-      border-radius: 4px;
-    }
+            .pair-row .card-text {
+                padding: 8px;
+                font-size: 0.8rem;
+            }
 
-    .pair-row .card {
-      min-width: 120px;
-      max-width: 140px;
-      flex-shrink: 0;
-    }
+        @media (min-width: 900px) {
+            .grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
+        }
 
-    .pair-row .card-text {
-      padding: 8px;
-      font-size: 0.8rem;
-    }
+        @media (min-width: 1300px) {
+            .grid {
+                grid-template-columns: repeat(8, 1fr);
+            }
+        }
 
-    .pair-row .card-id {
-      font-size: 0.7rem;
-    }
+        @media (max-width: 700px) {
+            .container {
+                padding: 12px;
+            }
 
-    @media (min-width: 900px) {
-      .grid {
-        grid-template-columns: repeat(6, 1fr);
-      }
-    }
+            .grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 10px;
+            }
 
-    @media (min-width: 1300px) {
-      .grid {
-        grid-template-columns: repeat(8, 1fr);
-      }
-    }
+            .card-text {
+                padding: 8px;
+                font-size: 0.72rem;
+            }
 
-    @media (max-width: 700px) {
-      .container {
-        padding: 12px;
-      }
+            .type-box {
+                font-size: 0.62rem;
+                padding: 4px 5px;
+            }
 
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 10px;
-        align-items: stretch;
-      }
+            .search-box {
+                min-width: 0;
+                width: 100%;
+                padding: 10px;
+                font-size: 0.95rem;
+            }
 
-      .card-text {
-        padding: 10px;
-        text-align: center;
-        font-size: 0.9rem;
+            .selected-card {
+                flex-direction: row;
+                align-items: center;
+                padding: 10px;
+                gap: 12px;
+            }
 
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-      }
+                .selected-card img {
+                    width: 140px;
+                    max-width: 40%;
+                }
 
-      .card-id {
-        font-size: 0.62rem;
-      }
+            .selected-info h2 {
+                font-size: 1rem;
+            }
 
-      .search-box {
-        min-width: 0;
-        width: 100%;
-        padding: 10px;
-        font-size: 0.95rem;
-      }
+            .selected-info p {
+                font-size: 0.85rem;
+            }
 
-      .selected-card {
-        flex-direction: row;
-        align-items: center;
-        padding: 10px;
-        gap: 12px;
-      }
+            .pair-row .card {
+                min-width: 110px;
+                max-width: 120px;
+            }
 
-      .selected-card img {
-        width: 140px;
-        max-width: 40%;
-      }
+            .pair-row .card-text {
+                font-size: 0.72rem;
+            }
 
-      .selected-info h2 {
-        font-size: 1rem;
-      }
-
-      .selected-info p {
-        font-size: 0.85rem;
-      }
-
-      .pair-row .card {
-        min-width: 110px;
-        max-width: 120px;
-      }
-
-      .pair-row .card-text {
-        font-size: 0.72rem;
-      }
-
-      .pair-row .card-id {
-        font-size: 0.62rem;
-      }
-    }
-  </style>
+            .pair-row .type-box {
+                font-size: 0.62rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>GD04 - Alt Art Pairings</h1>
-      <p>These are just based off findings that I've seen at locals and online xD - Masa</p>
-  </header>
+    <header>
+        <h1>GD04 - Alt Art Pairings</h1>
+        <p>These are just based off findings that I've seen at locals and online xD - Masa</p>
+    </header>
 
-  <div class="container">
-    <div id="status-box" class="status-box">Loading card data...</div>
+    <div class="container">
+        <div id="status-box" class="status-box">Loading card data...</div>
 
-    <section id="gallery-view" class="hidden">
-      <div class="top-controls">
-        <input
-          type="text"
-          id="search-input"
-          class="search-box"
-          placeholder="Search by name or ID"
-        />
-      </div>
+        <section id="gallery-view" class="hidden">
+            <div class="top-controls">
+                <input type="text"
+                       id="search-input"
+                       class="search-box"
+                       placeholder="Search by name or ID" />
+            </div>
 
-      <div id="card-grid" class="grid"></div>
-      <div id="gallery-empty" class="message hidden">No cards match your search.</div>
-    </section>
+            <div id="card-grid" class="grid"></div>
+            <div id="gallery-empty" class="message hidden">No cards match your search.</div>
+        </section>
 
-    <section id="detail-view" class="hidden">
-      <div class="top-bar">
-        <button id="back-button">← Back</button>
-        <h2 id="detail-title"></h2>
-      </div>
+        <section id="detail-view" class="hidden">
+            <div class="top-bar">
+                <button id="back-button">← Back</button>
+                <h2 id="detail-title"></h2>
+            </div>
 
-      <div id="selected-card" class="selected-card"></div>
+            <div id="selected-card" class="selected-card"></div>
 
-      <h2 style="margin-bottom: 16px;">Assigned Pairs</h2>
-      <div id="pair-grid" class="pair-row"></div>
-      <div id="empty-message" class="message hidden">No pairs assigned to this card.</div>
-    </section>
-  </div>
+            <h2 style="margin-bottom: 16px;">Assigned Pairs</h2>
+            <div id="pair-grid" class="pair-row"></div>
+            <div id="empty-message" class="message hidden">No pairs assigned to this card.</div>
+        </section>
+    </div>
 
-  <script>
-    const CSV_URL = "data/GD04Pairings.csv";
+    <script>
+        const CSV_URL = "data/GD04Pairings.csv";
 
-    const orderedIds = [
-      "GD04-001", "GD04-002", "GD04-003", "GD04-006", "GD04-009", "GD04-017", "GD04-018", "GD04-020",
-      "GD04-022", "GD04-033", "GD04-034", "GD04-036", "GD04-042", "GD04-049", "GD04-050", "GD04-053",
-      "GD04-065", "GD04-066", "GD04-067", "GD04-068", "GD04-071", "GD04-081", "GD04-085", "GD04-089",
-      "GD04-093", "GD04-095", "GD04-097", "GD04-102", "GD04-105", "GD04-110", "GD04-114", "GD04-117"
-    ];
+        const orderedIds = [
+            "GD04-001", "GD04-002", "GD04-003", "GD04-006", "GD04-009", "GD04-017", "GD04-018", "GD04-020",
+            "GD04-022", "GD04-033", "GD04-034", "GD04-036", "GD04-042", "GD04-049", "GD04-050", "GD04-053",
+            "GD04-065", "GD04-066", "GD04-067", "GD04-068", "GD04-071", "GD04-081", "GD04-085", "GD04-089",
+            "GD04-093", "GD04-095", "GD04-097", "GD04-102", "GD04-105", "GD04-110", "GD04-114", "GD04-117"
+        ];
 
-    let cards = [];
-    let cardMap = {};
+        let cards = [];
+        let cardMap = {};
 
-    const statusBox = document.getElementById("status-box");
-    const galleryView = document.getElementById("gallery-view");
-    const detailView = document.getElementById("detail-view");
-    const cardGrid = document.getElementById("card-grid");
-    const pairGrid = document.getElementById("pair-grid");
-    const detailTitle = document.getElementById("detail-title");
-    const selectedCard = document.getElementById("selected-card");
-    const backButton = document.getElementById("back-button");
-    const emptyMessage = document.getElementById("empty-message");
-    const searchInput = document.getElementById("search-input");
-    const galleryEmpty = document.getElementById("gallery-empty");
+        const statusBox = document.getElementById("status-box");
+        const galleryView = document.getElementById("gallery-view");
+        const detailView = document.getElementById("detail-view");
+        const cardGrid = document.getElementById("card-grid");
+        const pairGrid = document.getElementById("pair-grid");
+        const detailTitle = document.getElementById("detail-title");
+        const selectedCard = document.getElementById("selected-card");
+        const backButton = document.getElementById("back-button");
+        const emptyMessage = document.getElementById("empty-message");
+        const searchInput = document.getElementById("search-input");
+        const galleryEmpty = document.getElementById("gallery-empty");
 
-    function getImage(cardId) {
-      return `images/${cardId}.png`;
-    }
-
-    function normalizeName(value) {
-      return value
-        .trim()
-        .replace(/\s+/g, " ")
-        .replace(/[“”]/g, '"')
-        .replace(/[‘’]/g, "'");
-    }
-
-    function parseCSVLine(line) {
-      const values = [];
-      let current = "";
-      let inQuotes = false;
-
-      for (let i = 0; i < line.length; i++) {
-        const char = line[i];
-        const nextChar = line[i + 1];
-
-        if (char === '"') {
-          if (inQuotes && nextChar === '"') {
-            current += '"';
-            i++;
-          } else {
-            inQuotes = !inQuotes;
-          }
-        } else if (char === "," && !inQuotes) {
-          values.push(current);
-          current = "";
-        } else {
-          current += char;
-        }
-      }
-
-      values.push(current);
-      return values.map(value => value.trim());
-    }
-
-    function parseCSV(text) {
-      const lines = text
-        .split(/\r?\n/)
-        .filter(line => line.trim() !== "");
-
-      if (lines.length < 2) {
-        return [];
-      }
-
-      const result = [];
-
-      for (let i = 1; i < lines.length; i++) {
-        const cols = parseCSVLine(lines[i]);
-
-        // 0 = type
-        // 1 = card name
-        // 2 onward = pair names
-        const type = (cols[0] || "").trim();
-        const name = normalizeName(cols[1] || "");
-
-        if (!name) {
-          continue;
+        function getImage(cardId) {
+            return `images/${cardId}.png`;
         }
 
-        const pairNames = cols
-          .slice(2)
-          .map(value => normalizeName(value || ""))
-          .filter(value => value !== "");
+        function normalizeName(value) {
+            return value
+                .trim()
+                .replace(/\s+/g, " ")
+                .replace(/[“”]/g, '"')
+                .replace(/[‘’]/g, "'");
+        }
 
-          result.push({
-              type,
-              name,
-              pairNames
-          });
-      }
+        function parseCSVLine(line) {
+            const values = [];
+            let current = "";
+            let inQuotes = false;
 
-      return result;
-    }
+            for (let i = 0; i < line.length; i++) {
+                const char = line[i];
+                const nextChar = line[i + 1];
 
-    async function loadData() {
-      const response = await fetch(CSV_URL);
-
-      if (!response.ok) {
-        throw new Error(`Could not load ${CSV_URL}`);
-      }
-
-      const text = await response.text();
-      const rawCards = parseCSV(text);
-
-      if (rawCards.length !== orderedIds.length) {
-        console.warn(`CSV row count (${rawCards.length}) does not match ID count (${orderedIds.length}).`);
-      }
-
-      const cardsWithIds = rawCards.map((card, index) => ({
-        id: orderedIds[index] || `MISSING-ID-${index + 1}`,
-          name: card.name,
-        type: card.type,
-        pairNames: card.pairNames
-      }));
-
-      const nameToId = Object.fromEntries(
-        cardsWithIds.map(card => [normalizeName(card.name), card.id])
-      );
-
-      cards = cardsWithIds.map(card => ({
-        id: card.id,
-          name: card.name,
-        type: card.type,
-        pairs: card.pairNames
-          .map(pairName => {
-            const matchedId = nameToId[normalizeName(pairName)];
-            if (!matchedId) {
-              console.log("No match for pair:", pairName);
+                if (char === '"') {
+                    if (inQuotes && nextChar === '"') {
+                        current += '"';
+                        i++;
+                    } else {
+                        inQuotes = !inQuotes;
+                    }
+                } else if (char === "," && !inQuotes) {
+                    values.push(current);
+                    current = "";
+                } else {
+                    current += char;
+                }
             }
-            return matchedId;
-          })
-          .filter(Boolean)
-      }));
 
-      cardMap = Object.fromEntries(cards.map(card => [card.id, card]));
-    }
+            values.push(current);
+            return values.map(value => value.trim());
+        }
 
-      function createCardElement(card, onClick) {
-          const cardEl = document.createElement("div");
-          cardEl.className = "card";
-          cardEl.innerHTML = `
+        function parseCSV(text) {
+            const lines = text
+                .split(/\r?\n/)
+                .filter(line => line.trim() !== "");
+
+            if (lines.length < 2) {
+                return [];
+            }
+
+            const result = [];
+
+            for (let i = 1; i < lines.length; i++) {
+                const cols = parseCSVLine(lines[i]);
+
+                // 0 = type
+                // 1 = card name
+                // 2 onward = pair names
+                const type = (cols[0] || "").trim();
+                const name = normalizeName(cols[1] || "");
+
+                if (!name) {
+                    continue;
+                }
+
+                const pairNames = cols
+                    .slice(2)
+                    .map(value => normalizeName(value || ""))
+                    .filter(value => value !== "");
+
+                result.push({
+                    type,
+                    name,
+                    pairNames
+                });
+            }
+
+            return result;
+        }
+
+        async function loadData() {
+            const response = await fetch(CSV_URL);
+
+            if (!response.ok) {
+                throw new Error(`Could not load ${CSV_URL}`);
+            }
+
+            const text = await response.text();
+            const rawCards = parseCSV(text);
+
+            if (rawCards.length !== orderedIds.length) {
+                console.warn(`CSV row count (${rawCards.length}) does not match ID count (${orderedIds.length}).`);
+            }
+
+            const cardsWithIds = rawCards.map((card, index) => ({
+                id: orderedIds[index] || `MISSING-ID-${index + 1}`,
+                name: card.name,
+                type: card.type,
+                pairNames: card.pairNames
+            }));
+
+            const nameToId = Object.fromEntries(
+                cardsWithIds.map(card => [normalizeName(card.name), card.id])
+            );
+
+            cards = cardsWithIds.map(card => ({
+                id: card.id,
+                name: card.name,
+                type: card.type,
+                pairs: card.pairNames
+                    .map(pairName => {
+                        const matchedId = nameToId[normalizeName(pairName)];
+                        if (!matchedId) {
+                            console.log("No match for pair:", pairName);
+                        }
+                        return matchedId;
+                    })
+                    .filter(Boolean)
+            }));
+
+            cardMap = Object.fromEntries(cards.map(card => [card.id, card]));
+        }
+
+        function createCardElement(card, onClick) {
+            const cardEl = document.createElement("div");
+            cardEl.className = "card";
+            cardEl.innerHTML = `
             <img src="${getImage(card.id)}" alt="${card.name}" loading="lazy">
             <div class="card-text">
-            <div>${card.name}</div>
-            <div class="type-box">${card.type}</div>
+              <div class="card-name">${card.name}</div>
+              <div class="type-box">${card.type}</div>
             </div>
+          `;
+            cardEl.addEventListener("click", () => onClick(card));
+            return cardEl;
+        }
+
+        function renderGallery(filteredCards = cards) {
+            cardGrid.innerHTML = "";
+
+            if (filteredCards.length === 0) {
+                galleryEmpty.classList.remove("hidden");
+                return;
+            }
+
+            galleryEmpty.classList.add("hidden");
+
+            filteredCards.forEach(card => {
+                cardGrid.appendChild(createCardElement(card, openDetailView));
+            });
+        }
+
+        function openDetailView(card) {
+            galleryView.classList.add("hidden");
+            detailView.classList.remove("hidden");
+
+            detailTitle.textContent = card.name;
+            selectedCard.innerHTML = `
+            <img src="${getImage(card.id)}" alt="${card.name}">
+            <div class="selected-info">
+              <h2>${card.name}</h2>
+              <p><strong>ID:</strong> ${card.id}</p>
+              <p><strong>Type:</strong> ${card.type}</p>
+              <p><strong>Number of pairs:</strong> ${card.pairs.length}</p>
+            </div>
+          `;
+
+            pairGrid.innerHTML = "";
+
+            const pairedCards = card.pairs
+                .map(pairId => cardMap[pairId])
+                .filter(Boolean);
+
+            if (pairedCards.length === 0) {
+                emptyMessage.classList.remove("hidden");
+            } else {
+                emptyMessage.classList.add("hidden");
+                pairedCards.forEach(pairCard => {
+                    pairGrid.appendChild(createCardElement(pairCard, openDetailView));
+                });
+            }
+        }
+
+        function goBack() {
+            detailView.classList.add("hidden");
+            galleryView.classList.remove("hidden");
+        }
+
+        function handleSearch() {
+            const term = searchInput.value.trim().toLowerCase();
+
+            if (!term) {
+                renderGallery(cards);
+                return;
+            }
+
+            const filteredCards = cards.filter(card =>
+                card.name.toLowerCase().includes(term) ||
+                card.id.toLowerCase().includes(term)
+            );
+
+            renderGallery(filteredCards);
+        }
+
+        backButton.addEventListener("click", goBack);
+        searchInput.addEventListener("input", handleSearch);
+
+        async function init() {
+            try {
+                await loadData();
+                statusBox.classList.add("hidden");
+                galleryView.classList.remove("hidden");
+                renderGallery();
+            } catch (error) {
+                console.error(error);
+                statusBox.innerHTML = `
+              <strong>Could not load the CSV file.</strong>
+              <div class="small-note">Make sure data/GD04Pairings.csv exists and the card name is in column 2.</div>
+              <div class="small-note">Error: ${error.message}</div>
             `;
-          cardEl.addEventListener("click", () => onClick(card));
-          return cardEl;
-      }
+            }
+        }
 
-    function renderGallery(filteredCards = cards) {
-      cardGrid.innerHTML = "";
-
-      if (filteredCards.length === 0) {
-        galleryEmpty.classList.remove("hidden");
-        return;
-      }
-
-      galleryEmpty.classList.add("hidden");
-
-      filteredCards.forEach(card => {
-        cardGrid.appendChild(createCardElement(card, openDetailView));
-      });
-    }
-
-    function openDetailView(card) {
-      galleryView.classList.add("hidden");
-      detailView.classList.remove("hidden");
-
-      detailTitle.textContent = card.name;
-      selectedCard.innerHTML = `
-        <img src="${getImage(card.id)}" alt="${card.name}">
-        <div class="selected-info">
-          <h2>${card.name}</h2>
-          <p><strong>ID:</strong> ${card.id}</p>
-          <p><strong>Number of pairs:</strong> ${card.pairs.length}</p>
-        </div>
-      `;
-
-      pairGrid.innerHTML = "";
-
-      const pairedCards = card.pairs
-        .map(pairId => cardMap[pairId])
-        .filter(Boolean);
-
-      if (pairedCards.length === 0) {
-        emptyMessage.classList.remove("hidden");
-      } else {
-        emptyMessage.classList.add("hidden");
-        pairedCards.forEach(pairCard => {
-          pairGrid.appendChild(createCardElement(pairCard, openDetailView));
-        });
-      }
-    }
-
-    function goBack() {
-      detailView.classList.add("hidden");
-      galleryView.classList.remove("hidden");
-    }
-
-    function handleSearch() {
-      const term = searchInput.value.trim().toLowerCase();
-
-      if (!term) {
-        renderGallery(cards);
-        return;
-      }
-
-      const filteredCards = cards.filter(card =>
-        card.name.toLowerCase().includes(term) ||
-        card.id.toLowerCase().includes(term)
-      );
-
-      renderGallery(filteredCards);
-    }
-
-    backButton.addEventListener("click", goBack);
-    searchInput.addEventListener("input", handleSearch);
-
-    async function init() {
-      try {
-        await loadData();
-        statusBox.classList.add("hidden");
-        galleryView.classList.remove("hidden");
-        renderGallery();
-      } catch (error) {
-        console.error(error);
-        statusBox.innerHTML = `
-          <strong>Could not load the CSV file.</strong>
-          <div class="small-note">Make sure data/GD04Pairings.csv exists and the card name is in column 2.</div>
-          <div class="small-note">Error: ${error.message}</div>
-        `;
-      }
-    }
-
-    init();
-  </script>
+        init();
+    </script>
 </body>
 </html>
