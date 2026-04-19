@@ -109,6 +109,17 @@
           backdrop-filter: blur(2px);
       }
 
+      .type-box {
+          margin-top: 6px;
+          background: #222;
+          border: 1px solid #444;
+          border-radius: 6px;
+          padding: 4px 6px;
+          font-size: 0.75rem;
+          color: #ddd;
+          text-align: center;
+      }
+
     .top-bar {
       display: flex;
       align-items: center;
@@ -480,14 +491,12 @@
           const cardEl = document.createElement("div");
           cardEl.className = "card";
           cardEl.innerHTML = `
-            <div class="card-image">
             <img src="${getImage(card.id)}" alt="${card.name}" loading="lazy">
-            <div class="type-badge">${card.type}</div>
-            </div>
             <div class="card-text">
             <div>${card.name}</div>
+            <div class="type-box">${card.type}</div>
             </div>
-      `;
+            `;
           cardEl.addEventListener("click", () => onClick(card));
           return cardEl;
       }
