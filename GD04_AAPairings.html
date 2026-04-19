@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GD04 Alt Arts</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #f4f4f4;
+    }
+
+    header {
+      background: #1b1b1b;
+      border-bottom: 1px solid #333;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      background: #222;
+    }
+
+    .card-text {
+      padding: 10px;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>GD04 Alt Arts</h1>
+  </header>
+
+  <div class="container">
+    <div id="card-grid" class="grid"></div>
+  </div>
+
+  <script>
+    const cardIds = [
+      "GD04-001", "GD04-002", "GD04-003", "GD04-006", "GD04-009", "GD04-017", "GD04-018", "GD04-020",
+      "GD04-022", "GD04-033", "GD04-034", "GD04-036", "GD04-042", "GD04-049", "GD04-050", "GD04-053",
+      "GD04-065", "GD04-066", "GD04-067", "GD04-068", "GD04-071", "GD04-081", "GD04-085", "GD04-089",
+      "GD04-093", "GD04-095", "GD04-097", "GD04-102", "GD04-105", "GD04-110", "GD04-114", "GD04-117"
+    ];
+
+    function getImage(cardId) {
+      return `images/${cardId}.png`;
+    }
+
+    const cardGrid = document.getElementById("card-grid");
+
+    cardIds.forEach(cardId => {
+      const cardEl = document.createElement("div");
+      cardEl.className = "card";
+      cardEl.innerHTML = `
+        <img src="${getImage(cardId)}" alt="${cardId}" loading="lazy">
+        <div class="card-text">${cardId}</div>
+      `;
+      cardGrid.appendChild(cardEl);
+    });
+  </script>
+</body>
+</html>
