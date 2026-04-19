@@ -233,6 +233,14 @@
       return `images/${cardId}.png`;
     }
 
+    function normalizeName(value) {
+      return value
+        .trim()
+        .replace(/\s+/g, " ")
+        .replace(/[“”]/g, '"')
+        .replace(/[‘’]/g, "'");
+    }
+
     function parseCSVLine(line) {
       const values = [];
       let current = "";
@@ -275,11 +283,10 @@
       for (let i = 1; i < lines.length; i++) {
         const cols = parseCSVLine(lines[i]);
 
-        // Column layout:
         // 0 = type
         // 1 = card name
         // 2 onward = pair names
-        const name = cols[1]?.trim();
+        const name = normalizeName(cols[1] || "");
 
         if (!name) {
           continue;
@@ -287,7 +294,7 @@
 
         const pairNames = cols
           .slice(2)
-          .map(value => value.trim())
+          .map(value => normalizeName(value || ""))
           .filter(value => value !== "");
 
         result.push({
@@ -320,14 +327,20 @@
       }));
 
       const nameToId = Object.fromEntries(
-        cardsWithIds.map(card => [card.name, card.id])
+        cardsWithIds.map(card => [normalizeName(card.name), card.id])
       );
 
       cards = cardsWithIds.map(card => ({
         id: card.id,
         name: card.name,
         pairs: card.pairNames
-          .map(pairName => nameToId[pairName])
+          .map(pairName => {
+            const matchedId = nameToId[normalizeName(pairName)];
+            if (!matchedId) {
+              console.log("No match for pair:", pairName);
+            }
+            return matchedId;
+          })
           .filter(Boolean)
       }));
 
