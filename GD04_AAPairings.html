@@ -533,7 +533,12 @@
 
             const pairedCards = card.pairs
                 .map(pairId => cardMap[pairId])
-                .filter(Boolean);
+                .filter(Boolean)
+                .sort((a, b) => {
+                    const numA = parseInt(a.id.split("-")[1]);
+                    const numB = parseInt(b.id.split("-")[1]);
+                    return numA - numB;
+                })
 
             if (pairedCards.length === 0) {
                 emptyMessage.classList.remove("hidden");
