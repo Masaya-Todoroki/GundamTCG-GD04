@@ -364,7 +364,7 @@
         const galleryEmpty = document.getElementById("gallery-empty");
 
         function getImage(cardId) {
-            return `images/${cardId}.png`;
+            return `images/GD04/${cardId}.png`;
         }
 
         function normalizeName(value) {
@@ -465,7 +465,6 @@
 
             const nameToId = Object.fromEntries(
                 cardsWithIds.map(card => [normalizeName(card.name), card.id])
-            );
 
             cards = cardsWithIds.map(card => ({
                 id: card.id,
