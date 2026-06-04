@@ -359,8 +359,17 @@
             return `${IMAGE_FOLDER}/${cardId}.png`;
         }
 
+        function extractCardId(value) {
+            const match = String(value || "").match(/GD\d{2}-\d{3}/i);
+            return match ? match[0].toUpperCase() : "";
+        }
+
+        function removeCardId(value) {
+            return String(value || "").replace(/GD\d{2}-\d{3}/i, "").trim();
+        }
+
         function normalizeName(value) {
-            return value
+            return String(value || "")
                 .trim()
                 .replace(/\s+/g, " ")
                 .replace(/[“”]/g, '"')
@@ -409,29 +418,29 @@
             for (let i = 1; i < lines.length; i++) {
                 const cols = parseCSVLine(lines[i]);
 
-                // Expected CSV:
-                // 0 = ID
-                // 1 = Type
-                // 2 = Card Name
-                // 3 onward = Pair Names
-                const id = (cols[0] || "").trim();
-                const type = (cols[1] || "").trim();
-                const name = normalizeName(cols[2] || "");
+                // Current CSV format:
+                // 0 = Type
+                // 1 = Card name with ID at front, e.g. "GD04-001 Gundam"
+                // 2 onward = Pair names with IDs at front
+                const type = (cols[0] || "").trim();
+                const id = extractCardId(cols[1]);
+                const name = normalizeName(removeCardId(cols[1] || ""));
 
                 if (!id || !name) {
+                    console.log("Skipped row because ID or name was missing:", cols);
                     continue;
                 }
 
-                const pairNames = cols
-                    .slice(3)
-                    .map(value => normalizeName(value || ""))
+                const pairIds = cols
+                    .slice(2)
+                    .map(value => extractCardId(value))
                     .filter(value => value !== "");
 
                 result.push({
                     id,
                     type,
                     name,
-                    pairNames
+                    pairIds
                 });
             }
 
@@ -446,27 +455,11 @@
             }
 
             const text = await response.text();
-            const rawCards = parseCSV(text);
-
-            const nameToId = Object.fromEntries(
-                rawCards.map(card => [normalizeName(card.name), card.id])
-            );
-
-            cards = rawCards.map(card => ({
+            cards = parseCSV(text).map(card => ({
                 id: card.id,
                 name: card.name,
                 type: card.type,
-                pairs: card.pairNames
-                    .map(pairName => {
-                        const matchedId = nameToId[normalizeName(pairName)];
-
-                        if (!matchedId) {
-                            console.log("No match for pair:", pairName);
-                        }
-
-                        return matchedId;
-                    })
-                    .filter(Boolean)
+                pairs: card.pairIds
             }));
 
             cardMap = Object.fromEntries(cards.map(card => [card.id, card]));
@@ -574,7 +567,7 @@
                 statusBox.innerHTML = `
                         <strong>Could not load the CSV file.</strong>
                         <div class="small-note">Make sure data/GD04Pairings.csv exists.</div>
-                        <div class="small-note">Expected CSV format: ID, Type, Name, Pair1, Pair2...</div>
+                        <div class="small-note">Expected CSV format: Type, GD04-001 Card Name, GD04-002 Pair Name...</div>
                         <div class="small-note">Error: ${error.message}</div>
                     `;
             }
