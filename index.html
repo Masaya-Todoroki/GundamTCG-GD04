@@ -14,20 +14,34 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
         .container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 40px;
+            gap: 35px;
+            padding: 50px;
+            border-radius: 24px;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
         }
 
         h1 {
             font-size: 2.5rem;
             margin: 0;
+        }
+
+        .subtitle {
+            margin: -20px 0 0;
+            opacity: 0.75;
+            font-size: 1rem;
         }
 
         .button-row {
@@ -41,21 +55,42 @@
             text-decoration: none;
             padding: 15px 30px;
             border-radius: 50px;
-            background: #4a6cff;
+            background: linear-gradient(180deg, #5f82ff, #4a6cff);
             color: white;
             font-size: 1rem;
             font-weight: bold;
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: all 0.25s ease;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.2);
         }
 
-        .btn:hover {
-            background: #6f8cff;
-            transform: translateY(-3px);
-        }
+            .btn:hover {
+                transform: translateY(-4px) scale(1.03);
+                box-shadow: 0 10px 25px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.2);
+            }
 
-        .btn:active {
-            transform: translateY(0);
+            .btn:active {
+                transform: translateY(0) scale(1);
+            }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 35px 25px;
+                width: 100%;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .button-row {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                box-sizing: border-box;
+            }
         }
     </style>
 </head>
@@ -64,6 +99,10 @@
 
     <div class="container">
         <h1>Masa's GCG Hub</h1>
+
+        <p class="subtitle">
+            Gundam Card Game resources, pairings, and collection tools.
+        </p>
 
         <div class="button-row">
             <a href="https://masayatodoroki.com/gd04reveals" class="btn">GD04 Full List</a>
