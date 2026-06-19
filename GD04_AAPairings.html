@@ -470,12 +470,12 @@
             cardEl.className = "card";
 
             cardEl.innerHTML = `
-                    <img src="${getImage(card.id)}" alt="${card.name}" loading="lazy">
-                    <div class="card-text">
-                        <div class="card-name">${card.name}</div>
-                        <div class="type-box">${card.type}</div>
-                    </div>
-                `;
+                        <img src="${getImage(card.id)}" alt="${card.name}" loading="lazy">
+                        <div class="card-text">
+                            <div class="card-name">${card.name}</div>
+                            <div class="type-box">${card.type}</div>
+                        </div>
+                    `;
 
             cardEl.addEventListener("click", () => onClick(card));
             return cardEl;
@@ -503,14 +503,14 @@
             detailTitle.textContent = card.name;
 
             selectedCard.innerHTML = `
-                    <img src="${getImage(card.id)}" alt="${card.name}">
-                    <div class="selected-info">
-                        <h2>${card.name}</h2>
-                        <p><strong>ID:</strong> ${card.id}</p>
-                        <p><strong>Type:</strong> ${card.type}</p>
-                        <p><strong>Number of pairs:</strong> ${card.pairs.length}</p>
-                    </div>
-                `;
+                        <img src="${getImage(card.id)}" alt="${card.name}">
+                        <div class="selected-info">
+                            <h2>${card.name}</h2>
+                            <p><strong>ID:</strong> ${card.id}</p>
+                            <p><strong>Type:</strong> ${card.type}</p>
+                            <p><strong>Number of pairs:</strong> ${card.pairs.length}</p>
+                        </div>
+                    `;
 
             pairGrid.innerHTML = "";
 
@@ -565,15 +565,18 @@
                 console.error(error);
 
                 statusBox.innerHTML = `
-                        <strong>Could not load the CSV file.</strong>
-                        <div class="small-note">Make sure data/GD04Pairings.csv exists.</div>
-                        <div class="small-note">Expected CSV format: Type, GD04-001 Card Name, GD04-002 Pair Name...</div>
-                        <div class="small-note">Error: ${error.message}</div>
-                    `;
+                            <strong>Could not load the CSV file.</strong>
+                            <div class="small-note">Make sure data/GD04Pairings.csv exists.</div>
+                            <div class="small-note">Expected CSV format: Type, GD04-001 Card Name, GD04-002 Pair Name...</div>
+                            <div class="small-note">Error: ${error.message}</div>
+                        `;
             }
         }
 
         init();
     </script>
+    <!-- Cloudflare Web Analytics -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "21db3789c68b42d09f9d4f6ec60400cf"}'></script>
+    <!-- End Cloudflare Web Analytics -->
 </body>
 </html>
