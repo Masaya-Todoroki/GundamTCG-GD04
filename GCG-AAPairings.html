@@ -230,11 +230,11 @@
         }
 
         .pair-row {
-            display: flex;
-            gap: 12px;
-            overflow-x: auto;
-            padding-bottom: 10px;
-            scroll-behavior: smooth;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            overflow-x: visible;
+            padding-bottom: 0;
         }
 
         .pair-row::-webkit-scrollbar {
