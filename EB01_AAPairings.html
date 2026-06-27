@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta property="og:title" content="Masaya GCG Hub - AA Pairings">
+    <meta property="og:description" content="WIP List of AA Pairings">
+    <meta property="og:type" content="website">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EB01 Alt Art Pairings</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: #f4f4f4;
+        }
+
+        header {
+            background: #1b1b1b;
+            border-bottom: 1px solid #333;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1, h2, p {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .top-controls {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 220px;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            background: #1d1d1d;
+            color: #f4f4f4;
+            font-size: 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            align-items: stretch;
+        }
+
+        .card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+            .card:hover {
+                transform: translateY(-4px);
+                border-color: #666;
+            }
+
+            .card img {
+                display: block;
+                width: 100%;
+                aspect-ratio: 3 / 4;
+                object-fit: cover;
+                background: #222;
+            }
+
+        .card-text {
+            padding: 10px;
+            text-align: center;
+            font-size: 0.9rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            min-height: 0;
+        }
+
+        .card-name {
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.25;
+            min-height: calc(1.2em * 4);
+        }
+
+        .type-box {
+            margin-top: auto;
+            background: #222;
+            border: 1px solid #444;
+            border-radius: 6px;
+            padding: 4px 6px;
+            font-size: 0.75rem;
+            color: #ddd;
+            text-align: center;
+        }
+
+        .top-bar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            background: #f4f4f4;
+            color: #111;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+            button:hover {
+                opacity: 0.9;
+            }
+
+        .selected-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 16px;
+        }
+
+            .selected-card img {
+                width: 180px;
+                max-width: 40%;
+                border-radius: 10px;
+                background: #222;
+                flex-shrink: 0;
+            }
+
+        .selected-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+            .selected-info h2 {
+                font-size: 1.1rem;
+            }
+
+            .selected-info p {
+                margin-top: 6px;
+                color: #ddd;
+                font-size: 0.9rem;
+            }
+
+        .status-box {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .small-note {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-top: 8px;
+        }
+
+        .pair-row {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            scroll-behavior: smooth;
+        }
+
+            .pair-row::-webkit-scrollbar {
+                height: 8px;
+            }
+
+            .pair-row::-webkit-scrollbar-thumb {
+                background: #444;
+                border-radius: 4px;
+            }
+
+            .pair-row .card {
+                min-width: 120px;
+                max-width: 140px;
+                flex-shrink: 0;
+            }
+
+            .pair-row .card-text {
+                padding: 8px;
+                font-size: 0.8rem;
+            }
+
+        @media (min-width: 900px) {
+            .grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
+        }
+
+        @media (min-width: 1300px) {
+            .grid {
+                grid-template-columns: repeat(8, 1fr);
+            }
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                padding: 12px;
+            }
+
+            .grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 10px;
+            }
+
+            .card-text {
+                padding: 8px;
+                font-size: 0.72rem;
+            }
+
+            .type-box {
+                font-size: 0.62rem;
+                padding: 4px 5px;
+            }
+
+            .search-box {
+                min-width: 0;
+                width: 100%;
+                padding: 10px;
+                font-size: 0.95rem;
+            }
+
+            .selected-card {
+                flex-direction: row;
+                align-items: center;
+                padding: 10px;
+                gap: 12px;
+            }
+
+                .selected-card img {
+                    width: 140px;
+                    max-width: 40%;
+                }
+
+            .selected-info h2 {
+                font-size: 1rem;
+            }
+
+            .selected-info p {
+                font-size: 0.85rem;
+            }
+
+            .pair-row .card {
+                min-width: 110px;
+                max-width: 120px;
+            }
+
+            .pair-row .card-text {
+                font-size: 0.72rem;
+            }
+
+            .pair-row .type-box {
+                font-size: 0.62rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>EB01 - Alt Art Pairings</h1>
+        <p>These are just based off findings that I've seen at locals and online xD - Masa</p>
+    </header>
+
+    <div class="container">
+        <div id="status-box" class="status-box">Loading card data...</div>
+
+        <section id="gallery-view" class="hidden">
+            <div class="top-controls">
+                <input type="text" id="search-input" class="search-box" placeholder="Search by name or ID" />
+            </div>
+
+            <div id="card-grid" class="grid"></div>
+            <div id="gallery-empty" class="message hidden">No cards match your search.</div>
+        </section>
+
+        <section id="detail-view" class="hidden">
+            <div class="top-bar">
+                <button id="back-button">← Back</button>
+                <h2 id="detail-title"></h2>
+            </div>
+
+            <div id="selected-card" class="selected-card"></div>
+
+            <h2 style="margin-bottom: 16px;">Assigned Pairs</h2>
+            <div id="pair-grid" class="pair-row"></div>
+            <div id="empty-message" class="message hidden">No pairs assigned to this card.</div>
+        </section>
+    </div>
+
+    <script>
+        const CSV_URL = "data/EB01Pairings.csv";
+        const IMAGE_FOLDER = "images/EB01";
+
+        let cards = [];
+        let cardMap = {};
+
+        const statusBox = document.getElementById("status-box");
+        const galleryView = document.getElementById("gallery-view");
+        const detailView = document.getElementById("detail-view");
+        const cardGrid = document.getElementById("card-grid");
+        const pairGrid = document.getElementById("pair-grid");
+        const detailTitle = document.getElementById("detail-title");
+        const selectedCard = document.getElementById("selected-card");
+        const backButton = document.getElementById("back-button");
+        const emptyMessage = document.getElementById("empty-message");
+        const searchInput = document.getElementById("search-input");
+        const galleryEmpty = document.getElementById("gallery-empty");
+
+        function getImage(cardId) {
+            return `${IMAGE_FOLDER}/${cardId}.png`;
+        }
+
+        function extractCardId(value) {
+            const match = String(value || "").match(/EB\d{2}-\d{3}/i);
+            return match ? match[0].toUpperCase() : "";
+        }
+
+        function removeCardId(value) {
+            return String(value || "").replace(/EB\d{2}-\d{3}/i, "").trim();
+        }
+
+        function normalizeName(value) {
+            return String(value || "")
+                .trim()
+                .replace(/\s+/g, " ")
+                .replace(/[“”]/g, '"')
+                .replace(/[‘’]/g, "'");
+        }
+
+        function parseCSVLine(line) {
+            const values = [];
+            let current = "";
+            let inQuotes = false;
+
+            for (let i = 0; i < line.length; i++) {
+                const char = line[i];
+                const nextChar = line[i + 1];
+
+                if (char === '"') {
+                    if (inQuotes && nextChar === '"') {
+                        current += '"';
+                        i++;
+                    } else {
+                        inQuotes = !inQuotes;
+                    }
+                } else if (char === "," && !inQuotes) {
+                    values.push(current);
+                    current = "";
+                } else {
+                    current += char;
+                }
+            }
+
+            values.push(current);
+            return values.map(value => value.trim());
+        }
+
+        function parseCSV(text) {
+            const lines = text
+                .split(/\r?\n/)
+                .filter(line => line.trim() !== "");
+
+            if (lines.length < 2) {
+                return [];
+            }
+
+            const result = [];
+
+            for (let i = 1; i < lines.length; i++) {
+                const cols = parseCSVLine(lines[i]);
+
+                // Current CSV format:
+                // 0 = Type
+                // 1 = Card name with ID at front, e.g. "EB01-001 Gundam"
+                // 2 onward = Pair names with IDs at front
+                const type = (cols[0] || "").trim();
+                const id = extractCardId(cols[1]);
+                const name = normalizeName(removeCardId(cols[1] || ""));
+
+                if (!id || !name) {
+                    console.log("Skipped row because ID or name was missing:", cols);
+                    continue;
+                }
+
+                const pairIds = cols
+                    .slice(2)
+                    .map(value => extractCardId(value))
+                    .filter(value => value !== "");
+
+                result.push({
+                    id,
+                    type,
+                    name,
+                    pairIds
+                });
+            }
+
+            return result;
+        }
+
+        async function loadData() {
+            const response = await fetch(CSV_URL);
+
+            if (!response.ok) {
+                throw new Error(`Could not load ${CSV_URL}`);
+            }
+
+            const text = await response.text();
+            cards = parseCSV(text).map(card => ({
+                id: card.id,
+                name: card.name,
+                type: card.type,
+                pairs: card.pairIds
+            }));
+
+            cardMap = Object.fromEntries(cards.map(card => [card.id, card]));
+        }
+
+        function createCardElement(card, onClick) {
+            const cardEl = document.createElement("div");
+            cardEl.className = "card";
+
+            cardEl.innerHTML = `
+                        <img src="${getImage(card.id)}" alt="${card.name}" loading="lazy">
+                        <div class="card-text">
+                            <div class="card-name">${card.name}</div>
+                            <div class="type-box">${card.type}</div>
+                        </div>
+                    `;
+
+            cardEl.addEventListener("click", () => onClick(card));
+            return cardEl;
+        }
+
+        function renderGallery(filteredCards = cards) {
+            cardGrid.innerHTML = "";
+
+            if (filteredCards.length === 0) {
+                galleryEmpty.classList.remove("hidden");
+                return;
+            }
+
+            galleryEmpty.classList.add("hidden");
+
+            filteredCards.forEach(card => {
+                cardGrid.appendChild(createCardElement(card, openDetailView));
+            });
+        }
+
+        function openDetailView(card) {
+            galleryView.classList.add("hidden");
+            detailView.classList.remove("hidden");
+
+            detailTitle.textContent = card.name;
+
+            selectedCard.innerHTML = `
+                        <img src="${getImage(card.id)}" alt="${card.name}">
+                        <div class="selected-info">
+                            <h2>${card.name}</h2>
+                            <p><strong>ID:</strong> ${card.id}</p>
+                            <p><strong>Type:</strong> ${card.type}</p>
+                            <p><strong>Number of pairs:</strong> ${card.pairs.length}</p>
+                        </div>
+                    `;
+
+            pairGrid.innerHTML = "";
+
+            const pairedCards = card.pairs
+                .map(pairId => cardMap[pairId])
+                .filter(Boolean)
+                .sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
+
+            if (pairedCards.length === 0) {
+                emptyMessage.classList.remove("hidden");
+            } else {
+                emptyMessage.classList.add("hidden");
+
+                pairedCards.forEach(pairCard => {
+                    pairGrid.appendChild(createCardElement(pairCard, openDetailView));
+                });
+            }
+        }
+
+        function goBack() {
+            detailView.classList.add("hidden");
+            galleryView.classList.remove("hidden");
+        }
+
+        function handleSearch() {
+            const term = searchInput.value.trim().toLowerCase();
+
+            if (!term) {
+                renderGallery(cards);
+                return;
+            }
+
+            const filteredCards = cards.filter(card =>
+                card.name.toLowerCase().includes(term) ||
+                card.id.toLowerCase().includes(term) ||
+                card.type.toLowerCase().includes(term)
+            );
+
+            renderGallery(filteredCards);
+        }
+
+        backButton.addEventListener("click", goBack);
+        searchInput.addEventListener("input", handleSearch);
+
+        async function init() {
+            try {
+                await loadData();
+                statusBox.classList.add("hidden");
+                galleryView.classList.remove("hidden");
+                renderGallery();
+            } catch (error) {
+                console.error(error);
+
+                statusBox.innerHTML = `
+                            <strong>Could not load the CSV file.</strong>
+                            <div class="small-note">Make sure data/EB01Pairings.csv exists.</div>
+                            <div class="small-note">Expected CSV format: Type, EB01-001 Card Name, EB01-002 Pair Name...</div>
+                            <div class="small-note">Error: ${error.message}</div>
+                        `;
+            }
+        }
+
+        init();
+    </script>
+    <!-- Cloudflare Web Analytics -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "21db3789c68b42d09f9d4f6ec60400cf"}'></script>
+    <!-- End Cloudflare Web Analytics -->
+</body>
+</html>
