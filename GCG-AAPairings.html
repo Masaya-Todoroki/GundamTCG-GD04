@@ -519,6 +519,18 @@
         function renderSetButtons() {
             setButtons.innerHTML = "";
 
+            // Home button
+            const homeButton = document.createElement("button");
+            homeButton.className = "set-button";
+            homeButton.textContent = "Home";
+
+            homeButton.addEventListener("click", () => {
+                window.location.href = "https://masayatodoroki.com";
+            });
+
+            setButtons.appendChild(homeButton);
+
+            // Set buttons
             SETS.forEach(set => {
                 const button = document.createElement("button");
                 button.className = "set-button";
