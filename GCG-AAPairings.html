@@ -541,25 +541,21 @@
                     .split(/\r?\n/)
                     .filter(line => line.trim() !== "");
 
+                const headers = parseCSVLine(lines[0]);
+
                 for (let i = 1; i < lines.length; i++) {
                     const cols = parseCSVLine(lines[i]);
 
-                    // CSV format:
-                    // 0 = Card, e.g. "GD04-003 Victory Gundam"
-                    // 1 = Fetch URL
-                    // 2 = Collectr URL
                     const id = extractCardId(cols[0]);
-                    const fetchUrl = (cols[1] || "").trim();
-                    const collectrUrl = (cols[2] || "").trim();
 
-                    if (!id) {
-                        continue;
+                    if (!id) continue;
+
+                    pricingLinks[id] = {};
+
+                    for (let j = 1; j < headers.length; j++) {
+                        const key = headers[j].trim().toLowerCase();
+                        pricingLinks[id][key] = (cols[j] || "").trim();
                     }
-
-                    pricingLinks[id] = {
-                        fetch: fetchUrl,
-                        collectr: collectrUrl
-                    };
                 }
             } catch (error) {
                 console.log("Could not load pricing links. Links will be hidden.", error);
@@ -575,13 +571,17 @@
 
             let html = "";
 
-            if (links.fetch) {
-                html += `<p><strong>Fetch:</strong> <a href="${links.fetch}" target="_blank" rel="noopener noreferrer">Open Site</a></p>`;
-            }
+            Object.entries(links).forEach(([site, url]) => {
+                if (url) {
+                    const name = site.charAt(0).toUpperCase() + site.slice(1);
 
-            if (links.collectr) {
-                html += `<p><strong>Collectr:</strong> <a href="${links.collectr}" target="_blank" rel="noopener noreferrer">Open Site</a></p>`;
-            }
+                    html += `
+                <p><strong>${name}:</strong>
+                <a href="${url}" target="_blank" rel="noopener noreferrer">
+                    Open Site
+                </a></p>`;
+                }
+            });
 
             return html;
         }
