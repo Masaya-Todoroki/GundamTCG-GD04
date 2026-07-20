@@ -1,191 +1,212 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EX Base / Resource Promos</title>
-<style>
-*{box-sizing:border-box}
-body{margin:0;background:#101010;color:#fff;font-family:Arial,sans-serif}
-header{background:#1b1b1b;border-bottom:1px solid #333;padding:20px;text-align:center}
-h1{margin:0}
-p{color:#ccc}
-nav{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:18px}
-.nav-btn{padding:10px 18px;border-radius:999px;background:#292929;color:#fff;
-border:1px solid #444;text-decoration:none;font-weight:bold}
-.nav-btn:hover{background:#3b3b3b}
-main{padding:30px 3%}
-.section-title{text-align:center;margin:40px 0 20px;font-size:2rem}
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
-gap:16px;
-max-width:1600px;
-margin:auto;
-}
-.card{
-background:#1b1b1b;
-border:1px solid #333;
-border-radius:12px;
-overflow:hidden;
-transition:.15s;
-}
-.card:hover{transform:translateY(-3px);border-color:#666}
-.card img{
-display:block;
-width:100%;
-height:auto;
-cursor:pointer;
-}
-.viewer{
-position:fixed;
-inset:0;
-display:none;
-justify-content:center;
-align-items:center;
-background:rgba(0,0,0,.92);
-padding:20px;
-z-index:1000;
-}
-.viewer.open{display:flex}
-.viewer img{
-max-width:92vw;
-max-height:92vh;
-border-radius:10px;
-}
-.close{
-position:fixed;
-top:15px;
-right:25px;
-font-size:48px;
-color:white;
-cursor:pointer;
-user-select:none;
-}
-@media(max-width:600px){
-.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX Promo Gallery</title>
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial,sans-serif;
+            background: #101010;
+            color: #fff
+        }
+
+        header {
+            background: #1b1b1b;
+            border-bottom: 1px solid #333;
+            padding: 20px;
+            text-align: center
+        }
+
+        h1 {
+            margin: 0
+        }
+
+        p {
+            color: #ccc
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 18px
+        }
+
+        .btn {
+            padding: 10px 18px;
+            border-radius: 999px;
+            border: 1px solid #444;
+            background: #292929;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer
+        }
+
+            .btn:hover {
+                background: #3a3a3a
+            }
+
+            .btn.active {
+                background: #f4f4f4;
+                color: #111
+            }
+
+        main {
+            padding: 30px 3%
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 0
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(170px,1fr));
+            gap: 16px;
+            max-width: 1600px;
+            margin: auto
+        }
+
+        .card {
+            background: #1b1b1b;
+            border: 1px solid #333;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: .15s
+        }
+
+            .card:hover {
+                transform: translateY(-3px);
+                border-color: #666
+            }
+
+            .card img {
+                display: block;
+                width: 100%;
+                height: auto;
+                cursor: pointer
+            }
+
+        .viewer {
+            position: fixed;
+            inset: 0;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0,0,0,.92);
+            z-index: 999
+        }
+
+            .viewer.open {
+                display: flex
+            }
+
+            .viewer img {
+                max-width: 92vw;
+                max-height: 92vh
+            }
+
+        .close {
+            position: fixed;
+            top: 15px;
+            right: 25px;
+            font-size: 48px;
+            color: #fff;
+            cursor: pointer
+        }
+
+        @media(max-width:600px) {
+            .grid {
+                grid-template-columns: repeat(2,minmax(0,1fr));
+                gap: 10px
+            }
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>EX Base / Resource Promos</h1>
+        <p>Promotional EX Bases, EX Resources and Resource cards.</p>
+        <nav>
+            <a class="btn" href="https://masayatodoroki.com">Home</a>
+            <button class="btn active tab" data-index="0">EX Base</button>
+            <button class="btn tab" data-index="1">EX Resource</button>
+            <button class="btn tab" data-index="2">Resources</button>
+        </nav>
+    </header>
 
-<header>
-<h1>EX Base / Resource Promos</h1>
-<p>Promotional EX Bases, EX Resources and Resource cards.</p>
+    <main id="content"></main>
 
-<nav>
-<a class="nav-btn" href="https://masayatodoroki.com">Home</a>
-</nav>
-</header>
+    <div class="viewer" id="viewer">
+        <div class="close">&times;</div>
+        <img id="viewerImg">
+    </div>
 
-<main id="content"></main>
+    <script>
+        const promoSets = [
+            { title: "EX Base Promos", folder: "EXBP", prefix: "EXBP", amount: 27 },
+            { title: "EX Resource Promos", folder: "EXRP", prefix: "EXRP", amount: 0 },
+            { title: "Resource Promos", folder: "RP", prefix: "RP", amount: 0 }
+        ];
 
-<div id="viewer" class="viewer">
-<div class="close">&times;</div>
-<img id="viewerImg">
-</div>
+        const root = "images";
+        let current = 0;
+        const content = document.getElementById("content");
 
-<script>
+        function render() {
+            const set = promoSets[current];
+            let html = `<h2>${set.title}</h2><div class="grid">`;
+            for (let i = 1; i <= set.amount; i++) {
+                const num = String(i).padStart(3, "0");
+                const id = `${set.prefix}-${num}`;
+                html += `<div class="card"><img src="${root}/${set.folder}/${id}.png" alt="${id}" width="500" height="700"></div>`;
+            }
+            html += "</div>";
+            content.innerHTML = html;
+            attachViewer();
+            document.querySelectorAll(".tab").forEach((b, i) => b.classList.toggle("active", i === current));
+        }
 
-const promoSets = [
-{
-title:"EX Base Promos",
-folder:"EXBP",
-prefix:"EXBP",
-amount:27
-},
-{
-title:"EX Resource Promos",
-folder:"EXRP",
-prefix:"EXRP",
-amount:0
-},
-{
-title:"Resource Promos",
-folder:"RP",
-prefix:"RP",
-amount:0
-}
-];
+        document.querySelectorAll(".tab").forEach(btn => {
+            btn.onclick = () => {
+                current = parseInt(btn.dataset.index);
+                render();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            };
+        });
 
-//====================================================
+        const viewer = document.getElementById("viewer");
+        const viewerImg = document.getElementById("viewerImg");
 
-const root="images";
+        function attachViewer() {
+            document.querySelectorAll(".card img").forEach(img => {
+                img.onclick = () => {
+                    viewerImg.src = img.src;
+                    viewer.classList.add("open");
+                    document.body.style.overflow = "hidden";
+                };
+            });
+        }
+        function closeViewer() {
+            viewer.classList.remove("open");
+            viewerImg.src = "";
+            document.body.style.overflow = "";
+        }
+        document.querySelector(".close").onclick = closeViewer;
+        viewer.onclick = e => { if (e.target === viewer) closeViewer(); };
+        document.addEventListener("keydown", e => { if (e.key === "Escape") closeViewer(); });
 
-const content=document.getElementById("content");
-
-function createSection(set){
-
-let html=`
-<h2 class="section-title">${set.title}</h2>
-<div class="grid">
-`;
-
-for(let i=1;i<=set.amount;i++){
-
-let number=String(i).padStart(3,"0");
-let id=`${set.prefix}-${number}`;
-let path=`${root}/${set.folder}/${id}.png`;
-
-html+=`
-<div class="card">
-<img
-src="${path}"
-alt="${id}"
-loading="lazy"
-width="500"
-height="700">
-</div>
-`;
-}
-
-html+="</div>";
-
-return html;
-}
-
-promoSets.forEach(set=>{
-content.innerHTML+=createSection(set);
-});
-
-//====================================================
-// Lightbox
-//====================================================
-
-const viewer=document.getElementById("viewer");
-const viewerImg=document.getElementById("viewerImg");
-
-document.querySelectorAll(".card img").forEach(img=>{
-
-img.addEventListener("click",()=>{
-
-viewerImg.src=img.src;
-viewer.classList.add("open");
-document.body.style.overflow="hidden";
-
-});
-
-});
-
-function closeViewer(){
-
-viewer.classList.remove("open");
-viewerImg.src="";
-document.body.style.overflow="";
-
-}
-
-document.querySelector(".close").onclick=closeViewer;
-
-viewer.onclick=e=>{
-if(e.target===viewer) closeViewer();
-};
-
-document.addEventListener("keydown",e=>{
-if(e.key==="Escape") closeViewer();
-});
-
-</script>
-
+        render();
+    </script>
 </body>
 </html>
