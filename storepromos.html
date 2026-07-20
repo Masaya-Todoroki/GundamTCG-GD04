@@ -13,17 +13,27 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
             min-height: 100vh;
+            padding-bottom: 105px;
             font-family: Arial, Helvetica, sans-serif;
             background-color: #101010;
             color: #ffffff;
         }
 
-        /* ==============================
+        button,
+        a {
+            font-family: inherit;
+        }
+
+        /* =========================================
            HEADER
-        ============================== */
+        ========================================= */
 
         .page-header {
             padding: 18px 20px 24px;
@@ -39,14 +49,14 @@
             }
 
         .page-description {
-            margin: 4px 0 18px;
+            margin: 5px 0 18px;
             font-size: clamp(15px, 2vw, 19px);
             font-weight: 600;
         }
 
-        /* ==============================
-           NAVIGATION BUTTONS
-        ============================== */
+        /* =========================================
+           TOP NAVIGATION
+        ========================================= */
 
         .season-buttons {
             display: flex;
@@ -57,13 +67,12 @@
         }
 
         .nav-button {
-            min-width: 86px;
+            min-width: 82px;
             padding: 11px 20px;
             border: 1px solid #444444;
             border-radius: 999px;
             background-color: #292929;
             color: #ffffff;
-            font-family: inherit;
             font-size: 16px;
             font-weight: 700;
             text-decoration: none;
@@ -83,34 +92,31 @@
                 color: #111111;
             }
 
-        /* ==============================
+        /* =========================================
            MAIN CONTENT
-        ============================== */
+        ========================================= */
 
         main {
             width: 100%;
-            padding: 24px 3%;
+            padding: 26px 3%;
         }
 
         .season-title {
+            margin: 0 0 8px;
+            text-align: center;
+            font-size: clamp(25px, 3vw, 35px);
+        }
+
+        .category-title {
             margin: 0 0 24px;
             text-align: center;
-            font-size: clamp(24px, 3vw, 34px);
+            color: #cfcfcf;
+            font-size: clamp(18px, 2vw, 24px);
         }
 
-        .promo-section {
-            margin-bottom: 46px;
-        }
-
-            .promo-section h2 {
-                margin: 0 0 18px;
-                text-align: center;
-                font-size: clamp(20px, 2.5vw, 28px);
-            }
-
-        /* ==============================
+        /* =========================================
            CARD GRID
-        ============================== */
+        ========================================= */
 
         .promo-grid {
             display: grid;
@@ -134,34 +140,84 @@
                 border-color: #666666;
             }
 
-            .promo-card img {
-                display: block;
-                width: 100%;
-                height: auto;
+        .card-image-button {
+            display: block;
+            width: 100%;
+            padding: 0;
+            border: 0;
+            background: none;
+            cursor: pointer;
+        }
+
+        .promo-card img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        /* =========================================
+           FIXED BOTTOM TOGGLE
+        ========================================= */
+
+        .bottom-toggle-wrapper {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 900;
+            display: flex;
+            justify-content: center;
+            padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+            pointer-events: none;
+        }
+
+        .bottom-toggle {
+            display: flex;
+            width: min(390px, calc(100vw - 24px));
+            overflow: hidden;
+            border: 1px solid #4a4a4a;
+            border-radius: 999px;
+            background-color: rgba(35, 35, 35, 0.92);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            pointer-events: auto;
+        }
+
+        .type-button {
+            flex: 1;
+            padding: 14px 18px;
+            border: 0;
+            background: transparent;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.15s ease, color 0.15s ease;
+        }
+
+            .type-button:hover {
+                background-color: rgba(255, 255, 255, 0.08);
             }
 
-            /* ==============================
+            .type-button.active {
+                background-color: #f4f4f4;
+                color: #111111;
+            }
+
+        /* =========================================
            IMAGE VIEWER
-        ============================== */
-
-            .promo-card button {
-                display: block;
-                width: 100%;
-                padding: 0;
-                border: 0;
-                background: none;
-                cursor: pointer;
-            }
+        ========================================= */
 
         .image-viewer {
             position: fixed;
             inset: 0;
-            z-index: 1000;
+            z-index: 1200;
             display: none;
             align-items: center;
             justify-content: center;
             padding: 24px;
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: rgba(0, 0, 0, 0.92);
         }
 
             .image-viewer.open {
@@ -177,21 +233,26 @@
 
         .viewer-close {
             position: fixed;
-            top: 15px;
+            top: 14px;
             right: 20px;
+            padding: 0;
             border: 0;
             background: none;
             color: #ffffff;
-            font-size: 44px;
+            font-size: 46px;
             line-height: 1;
             cursor: pointer;
         }
 
-        /* ==============================
+        /* =========================================
            MOBILE
-        ============================== */
+        ========================================= */
 
         @media (max-width: 600px) {
+            body {
+                padding-bottom: 95px;
+            }
+
             .page-header {
                 padding: 16px 12px 20px;
             }
@@ -205,13 +266,13 @@
             }
 
             .nav-button {
-                min-width: 72px;
+                min-width: 68px;
                 padding: 9px 14px;
                 font-size: 14px;
             }
 
             main {
-                padding: 20px 12px;
+                padding: 20px 10px;
             }
 
             .promo-grid {
@@ -221,6 +282,22 @@
 
             .promo-card {
                 border-radius: 8px;
+            }
+
+            .type-button {
+                padding: 13px 10px;
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 370px) {
+            .nav-button {
+                padding: 8px 11px;
+                font-size: 13px;
+            }
+
+            .promo-grid {
+                gap: 8px;
             }
         }
     </style>
@@ -243,13 +320,33 @@
                 Home
             </a>
 
-            <!-- Season buttons are generated automatically -->
+            <!-- Season buttons are generated here -->
         </nav>
     </header>
 
     <main id="content">
-        <!-- Card content is generated automatically -->
+        <!-- Cards are generated here -->
     </main>
+
+    <div class="bottom-toggle-wrapper">
+        <div class="bottom-toggle"
+             role="group"
+             aria-label="Promo card type">
+            <button id="participationButton"
+                    class="type-button active"
+                    type="button"
+                    data-type="participation">
+                Participation
+            </button>
+
+            <button id="winnerButton"
+                    class="type-button"
+                    type="button"
+                    data-type="winner">
+                Winner
+            </button>
+        </div>
+    </div>
 
     <div id="imageViewer"
          class="image-viewer"
@@ -276,14 +373,14 @@
         const seasons = [
             "2025-season-1",
             "2025-season-2",
-            "2026-season-1",
-            "2026-season-2",
-            "2026-season-3"
+            "2025-season-3",
+            "2025-season-4",
+            "2026-season-1"
         ];
 
         /*
         ============================================
-        PAGE SETTINGS
+        SETTINGS
         ============================================
         */
 
@@ -291,11 +388,33 @@
 
         const imageRoot = "images/store-promos";
 
+        let selectedSeason =
+            seasons[seasons.length - 1];
+
+        let selectedType =
+            "participation";
+
+        /*
+        ============================================
+        ELEMENTS
+        ============================================
+        */
+
         const seasonButtons =
             document.getElementById("seasonButtons");
 
         const content =
             document.getElementById("content");
+
+        const participationButton =
+            document.getElementById(
+                "participationButton"
+            );
+
+        const winnerButton =
+            document.getElementById(
+                "winnerButton"
+            );
 
         const imageViewer =
             document.getElementById("imageViewer");
@@ -308,7 +427,7 @@
 
         /*
         ============================================
-        FORMAT SEASON NAMES
+        SEASON NAMES
         ============================================
         */
 
@@ -336,7 +455,7 @@
 
         /*
         ============================================
-        CREATE A SINGLE CARD
+        CREATE CARD
         ============================================
         */
 
@@ -345,7 +464,8 @@
             number,
             isWinner
         ) {
-            const suffix = isWinner ? "w" : "";
+            const suffix =
+                isWinner ? "w" : "";
 
             const fileName =
                 `${number}${suffix}.png`;
@@ -382,11 +502,11 @@
         ============================================
         */
 
-        function createCardGrid(
-            folder,
-            isWinner
-        ) {
+        function createCardGrid() {
             let cards = "";
+
+            const isWinner =
+                selectedType === "winner";
 
             for (
                 let i = 1;
@@ -397,7 +517,7 @@
                     String(i).padStart(3, "0");
 
                 cards += createCard(
-                    folder,
+                    selectedSeason,
                     number,
                     isWinner
                 );
@@ -408,67 +528,41 @@
 
         /*
         ============================================
-        DISPLAY SELECTED SEASON
+        RENDER PAGE
         ============================================
         */
 
-        function showSeason(folder) {
+        function renderCards() {
             const details =
-                getSeasonDetails(folder);
+                getSeasonDetails(selectedSeason);
 
-            document
-                .querySelectorAll(
-                    ".season-button"
-                )
-                .forEach(button => {
-                    const isActive =
-                        button.dataset.folder === folder;
-
-                    button.classList.toggle(
-                        "active",
-                        isActive
-                    );
-
-                    button.setAttribute(
-                        "aria-current",
-                        isActive ? "page" : "false"
-                    );
-                });
+            const categoryName =
+                selectedType === "winner"
+                    ? "Winner Promos"
+                    : "Participation Promos";
 
             content.innerHTML = `
                     <h2 class="season-title">
                         ${details.fullName}
                     </h2>
 
-                    <section class="promo-section">
-                        <h2>Participation Promos</h2>
+                    <h3 class="category-title">
+                        ${categoryName}
+                    </h3>
 
-                        <div class="promo-grid">
-                            ${createCardGrid(
-                folder,
-                false
-            )}
-                        </div>
-                    </section>
-
-                    <section class="promo-section">
-                        <h2>Winner Promos</h2>
-
-                        <div class="promo-grid">
-                            ${createCardGrid(
-                folder,
-                true
-            )}
-                        </div>
-                    </section>
+                    <div class="promo-grid">
+                        ${createCardGrid()}
+                    </div>
                 `;
 
+            updateSeasonButtons();
+            updateTypeButtons();
             attachImageViewerButtons();
         }
 
         /*
         ============================================
-        CREATE SEASON BUTTONS
+        SEASON BUTTONS
         ============================================
         */
 
@@ -493,7 +587,15 @@
 
                 button.addEventListener(
                     "click",
-                    () => showSeason(folder)
+                    () => {
+                        selectedSeason = folder;
+                        renderCards();
+
+                        window.scrollTo({
+                            top: 0,
+                            behavior: "smooth"
+                        });
+                    }
                 );
 
                 seasonButtons.appendChild(
@@ -501,6 +603,78 @@
                 );
             });
         }
+
+        function updateSeasonButtons() {
+            document
+                .querySelectorAll(
+                    ".season-button"
+                )
+                .forEach(button => {
+                    const isActive =
+                        button.dataset.folder ===
+                        selectedSeason;
+
+                    button.classList.toggle(
+                        "active",
+                        isActive
+                    );
+
+                    button.setAttribute(
+                        "aria-current",
+                        isActive ? "page" : "false"
+                    );
+                });
+        }
+
+        /*
+        ============================================
+        PARTICIPATION / WINNER TOGGLE
+        ============================================
+        */
+
+        function setSelectedType(type) {
+            selectedType = type;
+            renderCards();
+        }
+
+        function updateTypeButtons() {
+            const participationActive =
+                selectedType === "participation";
+
+            participationButton.classList.toggle(
+                "active",
+                participationActive
+            );
+
+            winnerButton.classList.toggle(
+                "active",
+                !participationActive
+            );
+
+            participationButton.setAttribute(
+                "aria-pressed",
+                participationActive
+            );
+
+            winnerButton.setAttribute(
+                "aria-pressed",
+                !participationActive
+            );
+        }
+
+        participationButton.addEventListener(
+            "click",
+            () => {
+                setSelectedType("participation");
+            }
+        );
+
+        winnerButton.addEventListener(
+            "click",
+            () => {
+                setSelectedType("winner");
+            }
+        );
 
         /*
         ============================================
@@ -553,6 +727,7 @@
             );
 
             viewerImage.src = "";
+            viewerImage.alt = "";
 
             document.body.style.overflow = "";
         }
@@ -595,11 +770,7 @@
 
         if (seasons.length > 0) {
             createSeasonButtons();
-
-            // Automatically show the newest season
-            showSeason(
-                seasons[seasons.length - 1]
-            );
+            renderCards();
         } else {
             content.innerHTML = `
                     <p style="text-align:center;">
