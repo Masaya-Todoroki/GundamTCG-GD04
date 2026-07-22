@@ -378,9 +378,14 @@
     </div>
 
     <script>
+        // Supabase connection.
+        // Paste the complete Publishable key below. Do not use the service_role key.
+        const SUPABASE_URL = "https://vixudhbgvihtdynhcfey.supabase.co";
+        const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_zBf__8-D1Tu01z6i8Tg96g_Rx4BL33r";
+
         // Add future sets here.
         // code = what appears in the URL, e.g. ?set=GD04
-        // csvUrl = where the CSV is saved
+        // csvUrl = card metadata only: Type and Card name/ID
         // imageFolder = where the images are saved
         const SETS = [
             {
@@ -495,10 +500,10 @@
             for (let i = 1; i < lines.length; i++) {
                 const cols = parseCSVLine(lines[i]);
 
-                // CSV format:
+                // Only the first two CSV columns are used:
                 // 0 = Type
                 // 1 = Card name with ID at front, e.g. "GD04-001 Gundam"
-                // 2 onward = Pair names with IDs at front
+                // Any older pairing columns after this are deliberately ignored.
                 const type = (cols[0] || "").trim();
                 const id = extractCardId(cols[1]);
                 const name = normalizeName(removeCardId(cols[1] || ""));
@@ -508,16 +513,10 @@
                     continue;
                 }
 
-                const pairIds = cols
-                    .slice(2)
-                    .map(value => extractCardId(value))
-                    .filter(value => value !== "");
-
                 result.push({
                     id,
                     type,
-                    name,
-                    pairIds
+                    name
                 });
             }
 
@@ -582,14 +581,73 @@
                     const name = site.charAt(0).toUpperCase() + site.slice(1);
 
                     html += `
-                <p><strong>${name}:</strong>
-                <a href="${url}" target="_blank" rel="noopener noreferrer">
-                    Open Site
-                </a></p>`;
+                    <p><strong>${name}:</strong>
+                    <a href="${url}" target="_blank" rel="noopener noreferrer">
+                        Open Site
+                    </a></p>`;
                 }
             });
 
             return html;
+        }
+
+        function hasSupabaseConfig() {
+            return (
+                SUPABASE_URL &&
+                SUPABASE_PUBLISHABLE_KEY &&
+                !SUPABASE_PUBLISHABLE_KEY.includes("PASTE_YOUR")
+            );
+        }
+
+        async function loadSupabasePairings(setCode) {
+            if (!hasSupabaseConfig()) {
+                throw new Error("Masa forgot something!!!");
+            }
+
+            // Only request rows where either side begins with the selected set code.
+            const encodedSet = encodeURIComponent(`${setCode}-%`);
+            const query = `or=(card_1.like.${encodedSet},card_2.like.${encodedSet})&select=card_1,card_2`;
+            const url = `${SUPABASE_URL}/rest/v1/pairings?${query}`;
+
+            const response = await fetch(url, {
+                headers: {
+                    apikey: SUPABASE_PUBLISHABLE_KEY,
+                    Authorization: `Bearer ${SUPABASE_PUBLISHABLE_KEY}`
+                }
+            });
+
+            if (!response.ok) {
+                const details = await response.text();
+                throw new Error(`Error Code: ${response.status}: ${details}`);
+            }
+
+            const rows = await response.json();
+            const pairMap = {};
+
+            function addPair(fromId, toId) {
+                if (!fromId || !toId || fromId === toId) return;
+                if (!pairMap[fromId]) pairMap[fromId] = new Set();
+                pairMap[fromId].add(toId);
+            }
+
+            rows.forEach(row => {
+                const card1 = String(row.card_1 || "").trim().toUpperCase();
+                const card2 = String(row.card_2 || "").trim().toUpperCase();
+
+                // A single database row works in both directions on the website.
+                addPair(card1, card2);
+                addPair(card2, card1);
+            });
+
+            return pairMap;
+        }
+
+        function applySupabasePairings(pairMap) {
+            cards.forEach(card => {
+                card.pairs = pairMap[card.id]
+                    ? Array.from(pairMap[card.id])
+                    : [];
+            });
         }
 
         function getSetFromUrl() {
@@ -669,15 +727,34 @@
                     id: card.id,
                     name: card.name,
                     type: card.type,
-                    pairs: card.pairIds
+                    pairs: []
                 }));
 
                 cardMap = Object.fromEntries(cards.map(card => [card.id, card]));
                 await loadPricingLinks(selectedSet.csvUrl);
 
-                statusBox.classList.add("hidden");
+                const supabasePairMap = await loadSupabasePairings(selectedSet.code);
+                applySupabasePairings(supabasePairMap);
+
+                const databasePairCount = Object.values(supabasePairMap)
+                    .reduce((total, pairSet) => total + pairSet.size, 0) / 2;
+
+                const supabaseMessage = `Masa's pairing database loaded!`;
+                console.log(supabaseMessage);
+
+                // Rebuild after Supabase data has been applied.
+                cardMap = Object.fromEntries(cards.map(card => [card.id, card]));
+
+                statusBox.textContent = supabaseMessage;
+                statusBox.classList.remove("hidden");
                 galleryView.classList.remove("hidden");
                 renderGallery();
+
+                // Keep the connection result visible briefly, then hide it.
+                window.clearTimeout(window.supabaseStatusTimeout);
+                window.supabaseStatusTimeout = window.setTimeout(() => {
+                    statusBox.classList.add("hidden");
+                }, 3500);
                 renderSetButtons();
 
                 if (shouldUpdateUrl) {
@@ -687,11 +764,9 @@
                 console.error(error);
 
                 statusBox.innerHTML = `
-                        <strong>Could not load the CSV file for ${selectedSet.label}.</strong>
-                        <div class="small-note">Make sure ${selectedSet.csvUrl} exists.</div>
-                        <div class="small-note">Expected CSV format: Type, ${selectedSet.code}-001 Card Name, ${selectedSet.code}-002 Pair Name...</div>
-                        <div class="small-note">Error: ${error.message}</div>
-                    `;
+                            <strong>Could not load ${selectedSet.label}.</strong>
+                            <div class="small-note">Error: ${error.message}</div>
+                        `;
             }
         }
 
@@ -700,12 +775,12 @@
             cardEl.className = "card";
 
             cardEl.innerHTML = `
-                    <img src="${getImage(card.id)}" alt="${card.name}" loading="lazy">
-                    <div class="card-text">
-                        <div class="card-name">${card.name}</div>
-                        <div class="type-box">${card.type}</div>
-                    </div>
-                `;
+                        <img src="${getImage(card.id)}" alt="${card.name}" loading="lazy">
+                        <div class="card-text">
+                            <div class="card-name">${card.name}</div>
+                            <div class="type-box">${card.type}</div>
+                        </div>
+                    `;
 
             cardEl.addEventListener("click", () => onClick(card));
             return cardEl;
@@ -735,15 +810,15 @@
             const pricingHTML = getPricingHTML(card.id);
 
             selectedCard.innerHTML = `
-                    <img src="${getImage(card.id)}" alt="${card.name}">
-                    <div class="selected-info">
-                        <h2>${card.name}</h2>
-                        <p><strong>ID:</strong> ${card.id}</p>
-                        <p><strong>Type:</strong> ${card.type}</p>
-                        <p><strong>Number of pairs:</strong> ${card.pairs.length}</p>
-                        ${pricingHTML}
-                    </div>
-                `;
+                        <img src="${getImage(card.id)}" alt="${card.name}">
+                        <div class="selected-info">
+                            <h2>${card.name}</h2>
+                            <p><strong>ID:</strong> ${card.id}</p>
+                            <p><strong>Type:</strong> ${card.type}</p>
+                            <p><strong>Number of pairs:</strong> ${card.pairs.length}</p>
+                            ${pricingHTML}
+                        </div>
+                    `;
 
             pairGrid.innerHTML = "";
 
