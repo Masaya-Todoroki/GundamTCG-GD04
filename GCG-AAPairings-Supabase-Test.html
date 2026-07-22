@@ -739,7 +739,7 @@
                 const databasePairCount = Object.values(supabasePairMap)
                     .reduce((total, pairSet) => total + pairSet.size, 0) / 2;
 
-                const supabaseMessage = `Masa's database connected!': ${databasePairCount} pairing row${databasePairCount === 1 ? "" : "s"} loaded.`;
+                const supabaseMessage = `Masa's pairing database loaded!`;
                 console.log(supabaseMessage);
 
                 // Rebuild after Supabase data has been applied.
