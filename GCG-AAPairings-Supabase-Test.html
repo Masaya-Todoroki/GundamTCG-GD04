@@ -381,16 +381,11 @@
         // Supabase connection.
         // Paste the complete Publishable key below. Do not use the service_role key.
         const SUPABASE_URL = "https://vixudhbgvihtdynhcfey.supabase.co";
-        const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_zBf__8-D1Tu01z6i8Tg96g_Rx4BL33r";
-
-        // During migration, "merge" keeps the existing CSV pairings and adds
-        // anything found in Supabase. Change this to "supabase" once all
-        // pairings have been uploaded and Supabase should become the only source.
-        const PAIRING_SOURCE_MODE = "merge"; // "merge" or "supabase"
+        const SUPABASE_PUBLISHABLE_KEY = "PASTE_YOUR_COMPLETE_PUBLISHABLE_KEY_HERE";
 
         // Add future sets here.
         // code = what appears in the URL, e.g. ?set=GD04
-        // csvUrl = where the CSV is saved
+        // csvUrl = card metadata only: Type and Card name/ID
         // imageFolder = where the images are saved
         const SETS = [
             {
@@ -505,10 +500,10 @@
             for (let i = 1; i < lines.length; i++) {
                 const cols = parseCSVLine(lines[i]);
 
-                // CSV format:
+                // Only the first two CSV columns are used:
                 // 0 = Type
                 // 1 = Card name with ID at front, e.g. "GD04-001 Gundam"
-                // 2 onward = Pair names with IDs at front
+                // Any older pairing columns after this are deliberately ignored.
                 const type = (cols[0] || "").trim();
                 const id = extractCardId(cols[1]);
                 const name = normalizeName(removeCardId(cols[1] || ""));
@@ -518,16 +513,10 @@
                     continue;
                 }
 
-                const pairIds = cols
-                    .slice(2)
-                    .map(value => extractCardId(value))
-                    .filter(value => value !== "");
-
                 result.push({
                     id,
                     type,
-                    name,
-                    pairIds
+                    name
                 });
             }
 
@@ -655,19 +644,9 @@
 
         function applySupabasePairings(pairMap) {
             cards.forEach(card => {
-                const databasePairs = pairMap[card.id]
+                card.pairs = pairMap[card.id]
                     ? Array.from(pairMap[card.id])
                     : [];
-
-                if (PAIRING_SOURCE_MODE === "supabase") {
-                    card.pairs = databasePairs;
-                } else {
-                    // Migration mode: preserve CSV data and add Supabase rows.
-                    card.pairs = Array.from(new Set([
-                        ...card.pairs,
-                        ...databasePairs
-                    ]));
-                }
             });
         }
 
@@ -748,27 +727,20 @@
                     id: card.id,
                     name: card.name,
                     type: card.type,
-                    pairs: card.pairIds
+                    pairs: []
                 }));
 
                 cardMap = Object.fromEntries(cards.map(card => [card.id, card]));
                 await loadPricingLinks(selectedSet.csvUrl);
 
-                let supabaseMessage = "";
+                const supabasePairMap = await loadSupabasePairings(selectedSet.code);
+                applySupabasePairings(supabasePairMap);
 
-                try {
-                    const supabasePairMap = await loadSupabasePairings(selectedSet.code);
-                    applySupabasePairings(supabasePairMap);
+                const databasePairCount = Object.values(supabasePairMap)
+                    .reduce((total, pairSet) => total + pairSet.size, 0) / 2;
 
-                    const databasePairCount = Object.values(supabasePairMap)
-                        .reduce((total, pairSet) => total + pairSet.size, 0) / 2;
-
-                    supabaseMessage = `Supabase connected: ${databasePairCount} pairing row${databasePairCount === 1 ? "" : "s"} loaded.`;
-                    console.log(supabaseMessage);
-                } catch (supabaseError) {
-                    supabaseMessage = `Supabase unavailable, using CSV pairings. ${supabaseError.message}`;
-                    console.warn(supabaseMessage);
-                }
+                const supabaseMessage = `Supabase connected: ${databasePairCount} pairing row${databasePairCount === 1 ? "" : "s"} loaded.`;
+                console.log(supabaseMessage);
 
                 // Rebuild after Supabase data has been applied.
                 cardMap = Object.fromEntries(cards.map(card => [card.id, card]));
@@ -792,9 +764,10 @@
                 console.error(error);
 
                 statusBox.innerHTML = `
-                            <strong>Could not load the CSV file for ${selectedSet.label}.</strong>
-                            <div class="small-note">Make sure ${selectedSet.csvUrl} exists.</div>
-                            <div class="small-note">Expected CSV format: Type, ${selectedSet.code}-001 Card Name, ${selectedSet.code}-002 Pair Name...</div>
+                            <strong>Could not load ${selectedSet.label}.</strong>
+                            <div class="small-note">The CSV is still required for card names and types: ${selectedSet.csvUrl}</div>
+                            <div class="small-note">Only its first two columns are used: Type, ${selectedSet.code}-001 Card Name.</div>
+                            <div class="small-note">All pairing data now comes exclusively from Supabase.</div>
                             <div class="small-note">Error: ${error.message}</div>
                         `;
             }
