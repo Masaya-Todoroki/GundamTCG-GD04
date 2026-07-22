@@ -438,8 +438,7 @@
 
         // Supports GD04-001, EB01-001, ST01-001, or similar future set codes.
         function extractCardId(value) {
-            const match = String(value || "").match(/[A-Z]{2}\d{2}-\d{3}/i);
-            return match ? match[0].toUpperCase() : "";
+            return String(value || "").substring(0, 8).toUpperCase();
         }
 
         function removeCardId(value) {
