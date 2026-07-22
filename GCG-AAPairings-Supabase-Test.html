@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta property="og:title" content="Masaya GCG Hub - AA Pairings">
+    <meta property="og:description" content="WIP List of AA Pairings">
+    <meta property="og:url" content="https://masayatodoroki.com/aa-pairings">
+    <meta property="og:type" content="website">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alt Art Pairings</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: #f4f4f4;
+        }
+
+        header {
+            background: #1b1b1b;
+            border-bottom: 1px solid #333;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1, h2, p {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .set-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 16px;
+        }
+
+        .set-button {
+            background: #2a2a2a;
+            color: #f4f4f4;
+            border: 1px solid #444;
+            border-radius: 999px;
+            padding: 10px 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+            .set-button:hover {
+                border-color: #777;
+            }
+
+            .set-button.active {
+                background: #f4f4f4;
+                color: #111;
+                border-color: #f4f4f4;
+            }
+
+        .top-controls {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 220px;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            background: #1d1d1d;
+            color: #f4f4f4;
+            font-size: 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            align-items: stretch;
+        }
+
+        .card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+            .card:hover {
+                transform: translateY(-4px);
+                border-color: #666;
+            }
+
+            .card img {
+                display: block;
+                width: 100%;
+                aspect-ratio: 3 / 4;
+                object-fit: cover;
+                background: #222;
+            }
+
+        .card-text {
+            padding: 10px;
+            text-align: center;
+            font-size: 0.9rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            min-height: 0;
+        }
+
+        .card-name {
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.25;
+            min-height: calc(1.2em * 4);
+        }
+
+        .type-box {
+            margin-top: auto;
+            background: #222;
+            border: 1px solid #444;
+            border-radius: 6px;
+            padding: 4px 6px;
+            font-size: 0.75rem;
+            color: #ddd;
+            text-align: center;
+        }
+
+        .top-bar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            background: #f4f4f4;
+            color: #111;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+            button:hover {
+                opacity: 0.9;
+            }
+
+        .selected-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 16px;
+        }
+
+            .selected-card img {
+                width: 180px;
+                max-width: 40%;
+                border-radius: 10px;
+                background: #222;
+                flex-shrink: 0;
+            }
+
+        .selected-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+            .selected-info h2 {
+                font-size: 1.1rem;
+            }
+
+            .selected-info p {
+                margin-top: 6px;
+                color: #ddd;
+                font-size: 0.9rem;
+            }
+
+            .selected-info a {
+                color: #8fb3ff;
+                font-weight: bold;
+                text-decoration: none;
+            }
+
+                .selected-info a:hover {
+                    text-decoration: underline;
+                }
+
+        .status-box {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .small-note {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-top: 8px;
+        }
+
+        .pair-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            column-gap: 8px;
+            row-gap: 12px;
+            overflow-x: visible;
+            padding-bottom: 0;
+        }
+
+            .pair-row::-webkit-scrollbar {
+                height: 8px;
+            }
+
+            .pair-row::-webkit-scrollbar-thumb {
+                background: #444;
+                border-radius: 4px;
+            }
+
+            .pair-row .card {
+                min-width: 120px;
+                max-width: 140px;
+                flex-shrink: 0;
+            }
+
+            .pair-row .card-text {
+                padding: 8px;
+                font-size: 0.8rem;
+            }
+
+        @media (min-width: 900px) {
+            .grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
+        }
+
+        @media (min-width: 1300px) {
+            .grid {
+                grid-template-columns: repeat(8, 1fr);
+            }
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                padding: 12px;
+            }
+
+            .grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 10px;
+            }
+
+            .card-text {
+                padding: 8px;
+                font-size: 0.72rem;
+            }
+
+            .type-box {
+                font-size: 0.62rem;
+                padding: 4px 5px;
+            }
+
+            .search-box {
+                min-width: 0;
+                width: 100%;
+                padding: 10px;
+                font-size: 0.95rem;
+            }
+
+            .selected-card {
+                flex-direction: row;
+                align-items: center;
+                padding: 10px;
+                gap: 12px;
+            }
+
+                .selected-card img {
+                    width: 140px;
+                    max-width: 40%;
+                }
+
+            .selected-info h2 {
+                font-size: 1rem;
+            }
+
+            .selected-info p {
+                font-size: 0.85rem;
+            }
+
+            .pair-row .card {
+                min-width: 110px;
+                max-width: 120px;
+            }
+
+            .pair-row .card-text {
+                font-size: 0.72rem;
+            }
+
+            .pair-row .type-box {
+                font-size: 0.62rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 id="page-title">Alt Art Pairings</h1>
+        <p>These are just based off findings that I've seen at locals and online xD - Masa</p>
+        <div id="set-buttons" class="set-buttons"></div>
+    </header>
+
+    <div class="container">
+        <div id="status-box" class="status-box">Loading card data...</div>
+
+        <section id="gallery-view" class="hidden">
+            <div class="top-controls">
+                <input type="text" id="search-input" class="search-box" placeholder="Search by name, ID, or type" />
+            </div>
+
+            <div id="card-grid" class="grid"></div>
+            <div id="gallery-empty" class="message hidden">No cards match your search.</div>
+        </section>
+
+        <section id="detail-view" class="hidden">
+            <div class="top-bar">
+                <button id="back-button">← Back</button>
+                <h2 id="detail-title"></h2>
+            </div>
+
+            <div id="selected-card" class="selected-card"></div>
+
+            <h2 style="margin-bottom: 16px;">Assigned Pairs</h2>
+            <div id="pair-grid" class="pair-row"></div>
+            <div id="empty-message" class="message hidden">No pairs assigned to this card.</div>
+        </section>
+    </div>
+
+    <script>
+        // Supabase connection.
+        // Paste the complete Publishable key below. Do not use the service_role key.
+        const SUPABASE_URL = "https://vixudhbgvihtdynhcfey.supabase.co";
+        const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_zBf__8-D1Tu01z6i8Tg96g_Rx4BL33r";
+
+        // During migration, "merge" keeps the existing CSV pairings and adds
+        // anything found in Supabase. Change this to "supabase" once all
+        // pairings have been uploaded and Supabase should become the only source.
+        const PAIRING_SOURCE_MODE = "merge"; // "merge" or "supabase"
+
+        // Add future sets here.
+        // code = what appears in the URL, e.g. ?set=GD04
+        // csvUrl = where the CSV is saved
+        // imageFolder = where the images are saved
+        const SETS = [
+            {
+                code: "GD03",
+                label: "GD03",
+                title: "GD03 - Alt Art Pairings",
+                csvUrl: "data/GD03Pairings.csv",
+                imageFolder: "images/GD03"
+            },
+            {
+                code: "GD04",
+                label: "GD04",
+                title: "GD04 - Alt Art Pairings",
+                csvUrl: "data/GD04Pairings.csv",
+                imageFolder: "images/GD04"
+            },
+            {
+                code: "GD05",
+                label: "GD05",
+                title: "GD05 - Alt Art Pairings",
+                csvUrl: "data/GD05Pairings.csv",
+                imageFolder: "images/GD05"
+            },
+            {
+                code: "EB01",
+                label: "EB01",
+                title: "EB01 - Alt Art Pairings",
+                csvUrl: "data/EB01Pairings.csv",
+                imageFolder: "images/EB01"
+            }
+        ];
+
+        let currentSet = null;
+        let cards = [];
+        let cardMap = {};
+        let pricingLinks = {};
+
+        const pageTitle = document.getElementById("page-title");
+        const setButtons = document.getElementById("set-buttons");
+        const statusBox = document.getElementById("status-box");
+        const galleryView = document.getElementById("gallery-view");
+        const detailView = document.getElementById("detail-view");
+        const cardGrid = document.getElementById("card-grid");
+        const pairGrid = document.getElementById("pair-grid");
+        const detailTitle = document.getElementById("detail-title");
+        const selectedCard = document.getElementById("selected-card");
+        const backButton = document.getElementById("back-button");
+        const emptyMessage = document.getElementById("empty-message");
+        const searchInput = document.getElementById("search-input");
+        const galleryEmpty = document.getElementById("gallery-empty");
+
+        function getImage(cardId) {
+            return `${currentSet.imageFolder}/${cardId}.png`;
+        }
+
+        // Supports GD04-001, EB01-001, ST01-001, or similar future set codes.
+        function extractCardId(value) {
+            return String(value || "").substring(0, 8).toUpperCase();
+        }
+
+        function removeCardId(value) {
+            return String(value || "").replace(/[A-Z]{2}\d{2}-\d{3}/i, "").trim();
+        }
+
+        function normalizeName(value) {
+            return String(value || "")
+                .trim()
+                .replace(/\s+/g, " ")
+                .replace(/[“”]/g, '"')
+                .replace(/[‘’]/g, "'");
+        }
+
+        function parseCSVLine(line) {
+            const values = [];
+            let current = "";
+            let inQuotes = false;
+
+            for (let i = 0; i < line.length; i++) {
+                const char = line[i];
+                const nextChar = line[i + 1];
+
+                if (char === '"') {
+                    if (inQuotes && nextChar === '"') {
+                        current += '"';
+                        i++;
+                    } else {
+                        inQuotes = !inQuotes;
+                    }
+                } else if (char === "," && !inQuotes) {
+                    values.push(current);
+                    current = "";
+                } else {
+                    current += char;
+                }
+            }
+
+            values.push(current);
+            return values.map(value => value.trim());
+        }
+
+        function parseCSV(text) {
+            const lines = text
+                .split(/\r?\n/)
+                .filter(line => line.trim() !== "");
+
+            if (lines.length < 2) {
+                return [];
+            }
+
+            const result = [];
+
+            for (let i = 1; i < lines.length; i++) {
+                const cols = parseCSVLine(lines[i]);
+
+                // CSV format:
+                // 0 = Type
+                // 1 = Card name with ID at front, e.g. "GD04-001 Gundam"
+                // 2 onward = Pair names with IDs at front
+                const type = (cols[0] || "").trim();
+                const id = extractCardId(cols[1]);
+                const name = normalizeName(removeCardId(cols[1] || ""));
+
+                if (!id || !name) {
+                    console.log("Skipped row because ID or name was missing:", cols);
+                    continue;
+                }
+
+                const pairIds = cols
+                    .slice(2)
+                    .map(value => extractCardId(value))
+                    .filter(value => value !== "");
+
+                result.push({
+                    id,
+                    type,
+                    name,
+                    pairIds
+                });
+            }
+
+            return result;
+        }
+
+        function getFolderFromUrl(url) {
+            const lastSlashIndex = String(url || "").lastIndexOf("/");
+            return lastSlashIndex === -1 ? "" : String(url).slice(0, lastSlashIndex + 1);
+        }
+
+        async function loadPricingLinks(csvUrl) {
+            pricingLinks = {};
+
+            const pricingUrl = `${getFolderFromUrl(csvUrl)}AAPricing.csv`;
+
+            try {
+                const response = await fetch(pricingUrl);
+
+                if (!response.ok) {
+                    console.log(`No pricing CSV found at ${pricingUrl}. Links will be hidden.`);
+                    return;
+                }
+
+                const text = await response.text();
+                const lines = text
+                    .split(/\r?\n/)
+                    .filter(line => line.trim() !== "");
+
+                const headers = parseCSVLine(lines[0]);
+
+                for (let i = 1; i < lines.length; i++) {
+                    const cols = parseCSVLine(lines[i]);
+
+                    const id = extractCardId(cols[0]);
+
+                    if (!id) continue;
+
+                    pricingLinks[id] = {};
+
+                    for (let j = 1; j < headers.length; j++) {
+                        const key = headers[j].trim().toLowerCase();
+                        pricingLinks[id][key] = (cols[j] || "").trim();
+                    }
+                }
+            } catch (error) {
+                console.log("Could not load pricing links. Links will be hidden.", error);
+            }
+        }
+
+        function getPricingHTML(cardId) {
+            const links = pricingLinks[cardId];
+
+            if (!links) {
+                return "";
+            }
+
+            let html = "";
+
+            Object.entries(links).forEach(([site, url]) => {
+                if (url) {
+                    const name = site.charAt(0).toUpperCase() + site.slice(1);
+
+                    html += `
+                    <p><strong>${name}:</strong>
+                    <a href="${url}" target="_blank" rel="noopener noreferrer">
+                        Open Site
+                    </a></p>`;
+                }
+            });
+
+            return html;
+        }
+
+        function hasSupabaseConfig() {
+            return (
+                SUPABASE_URL &&
+                SUPABASE_PUBLISHABLE_KEY &&
+                !SUPABASE_PUBLISHABLE_KEY.includes("PASTE_YOUR")
+            );
+        }
+
+        async function loadSupabasePairings(setCode) {
+            if (!hasSupabaseConfig()) {
+                throw new Error("Supabase Publishable key has not been added yet.");
+            }
+
+            // Only request rows where either side begins with the selected set code.
+            const encodedSet = encodeURIComponent(`${setCode}-%`);
+            const query = `or=(card_1.like.${encodedSet},card_2.like.${encodedSet})&select=card_1,card_2`;
+            const url = `${SUPABASE_URL}/rest/v1/pairings?${query}`;
+
+            const response = await fetch(url, {
+                headers: {
+                    apikey: SUPABASE_PUBLISHABLE_KEY,
+                    Authorization: `Bearer ${SUPABASE_PUBLISHABLE_KEY}`
+                }
+            });
+
+            if (!response.ok) {
+                const details = await response.text();
+                throw new Error(`Supabase returned ${response.status}: ${details}`);
+            }
+
+            const rows = await response.json();
+            const pairMap = {};
+
+            function addPair(fromId, toId) {
+                if (!fromId || !toId || fromId === toId) return;
+                if (!pairMap[fromId]) pairMap[fromId] = new Set();
+                pairMap[fromId].add(toId);
+            }
+
+            rows.forEach(row => {
+                const card1 = String(row.card_1 || "").trim().toUpperCase();
+                const card2 = String(row.card_2 || "").trim().toUpperCase();
+
+                // A single database row works in both directions on the website.
+                addPair(card1, card2);
+                addPair(card2, card1);
+            });
+
+            return pairMap;
+        }
+
+        function applySupabasePairings(pairMap) {
+            cards.forEach(card => {
+                const databasePairs = pairMap[card.id]
+                    ? Array.from(pairMap[card.id])
+                    : [];
+
+                if (PAIRING_SOURCE_MODE === "supabase") {
+                    card.pairs = databasePairs;
+                } else {
+                    // Migration mode: preserve CSV data and add Supabase rows.
+                    card.pairs = Array.from(new Set([
+                        ...card.pairs,
+                        ...databasePairs
+                    ]));
+                }
+            });
+        }
+
+        function getSetFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            return (params.get("set") || "").toUpperCase();
+        }
+
+        function updateUrlSet(setCode) {
+            const url = new URL(window.location.href);
+            url.searchParams.set("set", setCode);
+            window.history.pushState({}, "", url);
+        }
+
+        function renderSetButtons() {
+            setButtons.innerHTML = "";
+
+            // Home button
+            const homeButton = document.createElement("button");
+            homeButton.className = "set-button";
+            homeButton.textContent = "Home";
+
+            homeButton.addEventListener("click", () => {
+                window.location.href = "https://masayatodoroki.com";
+            });
+
+            setButtons.appendChild(homeButton);
+
+            // Set buttons
+            SETS.forEach(set => {
+                const button = document.createElement("button");
+                button.className = "set-button";
+                button.textContent = set.label;
+
+                if (currentSet && set.code === currentSet.code) {
+                    button.classList.add("active");
+                }
+
+                button.addEventListener("click", () => {
+                    loadSet(set.code, true);
+                });
+
+                setButtons.appendChild(button);
+            });
+        }
+
+        async function loadSet(setCode, shouldUpdateUrl = false) {
+            const selectedSet = SETS.find(set => set.code.toUpperCase() === String(setCode).toUpperCase()) || SETS[0];
+            currentSet = selectedSet;
+
+            pageTitle.textContent = selectedSet.title;
+            document.title = selectedSet.title;
+            searchInput.value = "";
+
+            statusBox.classList.remove("hidden");
+            statusBox.textContent = `Loading ${selectedSet.label} card data...`;
+            galleryView.classList.add("hidden");
+            detailView.classList.add("hidden");
+            galleryEmpty.classList.add("hidden");
+            emptyMessage.classList.add("hidden");
+            cardGrid.innerHTML = "";
+            pairGrid.innerHTML = "";
+            selectedCard.innerHTML = "";
+            detailTitle.textContent = "";
+            pricingLinks = {};
+
+            renderSetButtons();
+
+            try {
+                const response = await fetch(selectedSet.csvUrl);
+
+                if (!response.ok) {
+                    throw new Error(`Could not load ${selectedSet.csvUrl}`);
+                }
+
+                const text = await response.text();
+                cards = parseCSV(text).map(card => ({
+                    id: card.id,
+                    name: card.name,
+                    type: card.type,
+                    pairs: card.pairIds
+                }));
+
+                cardMap = Object.fromEntries(cards.map(card => [card.id, card]));
+                await loadPricingLinks(selectedSet.csvUrl);
+
+                let supabaseMessage = "";
+
+                try {
+                    const supabasePairMap = await loadSupabasePairings(selectedSet.code);
+                    applySupabasePairings(supabasePairMap);
+
+                    const databasePairCount = Object.values(supabasePairMap)
+                        .reduce((total, pairSet) => total + pairSet.size, 0) / 2;
+
+                    supabaseMessage = `Supabase connected: ${databasePairCount} pairing row${databasePairCount === 1 ? "" : "s"} loaded.`;
+                    console.log(supabaseMessage);
+                } catch (supabaseError) {
+                    supabaseMessage = `Supabase unavailable, using CSV pairings. ${supabaseError.message}`;
+                    console.warn(supabaseMessage);
+                }
+
+                // Rebuild after Supabase data has been applied.
+                cardMap = Object.fromEntries(cards.map(card => [card.id, card]));
+
+                statusBox.textContent = supabaseMessage;
+                statusBox.classList.remove("hidden");
+                galleryView.classList.remove("hidden");
+                renderGallery();
+
+                // Keep the connection result visible briefly, then hide it.
+                window.clearTimeout(window.supabaseStatusTimeout);
+                window.supabaseStatusTimeout = window.setTimeout(() => {
+                    statusBox.classList.add("hidden");
+                }, 3500);
+                renderSetButtons();
+
+                if (shouldUpdateUrl) {
+                    updateUrlSet(selectedSet.code);
+                }
+            } catch (error) {
+                console.error(error);
+
+                statusBox.innerHTML = `
+                            <strong>Could not load the CSV file for ${selectedSet.label}.</strong>
+                            <div class="small-note">Make sure ${selectedSet.csvUrl} exists.</div>
+                            <div class="small-note">Expected CSV format: Type, ${selectedSet.code}-001 Card Name, ${selectedSet.code}-002 Pair Name...</div>
+                            <div class="small-note">Error: ${error.message}</div>
+                        `;
+            }
+        }
+
+        function createCardElement(card, onClick) {
+            const cardEl = document.createElement("div");
+            cardEl.className = "card";
+
+            cardEl.innerHTML = `
+                        <img src="${getImage(card.id)}" alt="${card.name}" loading="lazy">
+                        <div class="card-text">
+                            <div class="card-name">${card.name}</div>
+                            <div class="type-box">${card.type}</div>
+                        </div>
+                    `;
+
+            cardEl.addEventListener("click", () => onClick(card));
+            return cardEl;
+        }
+
+        function renderGallery(filteredCards = cards) {
+            cardGrid.innerHTML = "";
+
+            if (filteredCards.length === 0) {
+                galleryEmpty.classList.remove("hidden");
+                return;
+            }
+
+            galleryEmpty.classList.add("hidden");
+
+            filteredCards.forEach(card => {
+                cardGrid.appendChild(createCardElement(card, openDetailView));
+            });
+        }
+
+        function openDetailView(card) {
+            galleryView.classList.add("hidden");
+            detailView.classList.remove("hidden");
+
+            detailTitle.textContent = card.name;
+
+            const pricingHTML = getPricingHTML(card.id);
+
+            selectedCard.innerHTML = `
+                        <img src="${getImage(card.id)}" alt="${card.name}">
+                        <div class="selected-info">
+                            <h2>${card.name}</h2>
+                            <p><strong>ID:</strong> ${card.id}</p>
+                            <p><strong>Type:</strong> ${card.type}</p>
+                            <p><strong>Number of pairs:</strong> ${card.pairs.length}</p>
+                            ${pricingHTML}
+                        </div>
+                    `;
+
+            pairGrid.innerHTML = "";
+
+            const pairedCards = card.pairs
+                .map(pairId => cardMap[pairId])
+                .filter(Boolean)
+                .sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
+
+            if (pairedCards.length === 0) {
+                emptyMessage.classList.remove("hidden");
+            } else {
+                emptyMessage.classList.add("hidden");
+
+                pairedCards.forEach(pairCard => {
+                    pairGrid.appendChild(createCardElement(pairCard, openDetailView));
+                });
+            }
+        }
+
+        function goBack() {
+            detailView.classList.add("hidden");
+            galleryView.classList.remove("hidden");
+        }
+
+        function handleSearch() {
+            const term = searchInput.value.trim().toLowerCase();
+
+            if (!term) {
+                renderGallery(cards);
+                return;
+            }
+
+            const filteredCards = cards.filter(card =>
+                card.name.toLowerCase().includes(term) ||
+                card.id.toLowerCase().includes(term) ||
+                card.type.toLowerCase().includes(term)
+            );
+
+            renderGallery(filteredCards);
+        }
+
+        backButton.addEventListener("click", goBack);
+        searchInput.addEventListener("input", handleSearch);
+
+        window.addEventListener("popstate", () => {
+            loadSet(getSetFromUrl(), false);
+        });
+
+        function init() {
+            const urlSet = getSetFromUrl();
+            const startingSet = SETS.find(set => set.code.toUpperCase() === urlSet) || SETS[0];
+            loadSet(startingSet.code, false);
+        }
+
+        init();
+    </script>
+
+    <!-- Cloudflare Web Analytics -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "21db3789c68b42d09f9d4f6ec60400cf"}'></script>
+    <!-- End Cloudflare Web Analytics -->
+</body>
+</html>
