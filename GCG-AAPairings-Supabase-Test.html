@@ -601,7 +601,7 @@
 
         async function loadSupabasePairings(setCode) {
             if (!hasSupabaseConfig()) {
-                throw new Error("Supabase Publishable key has not been added yet.");
+                throw new Error("Masa forgot something!!!");
             }
 
             // Only request rows where either side begins with the selected set code.
@@ -618,7 +618,7 @@
 
             if (!response.ok) {
                 const details = await response.text();
-                throw new Error(`Supabase returned ${response.status}: ${details}`);
+                throw new Error(`Error Code: ${response.status}: ${details}`);
             }
 
             const rows = await response.json();
@@ -739,7 +739,7 @@
                 const databasePairCount = Object.values(supabasePairMap)
                     .reduce((total, pairSet) => total + pairSet.size, 0) / 2;
 
-                const supabaseMessage = `Supabase connected: ${databasePairCount} pairing row${databasePairCount === 1 ? "" : "s"} loaded.`;
+                const supabaseMessage = `Masa's database connected!': ${databasePairCount} pairing row${databasePairCount === 1 ? "" : "s"} loaded.`;
                 console.log(supabaseMessage);
 
                 // Rebuild after Supabase data has been applied.
@@ -765,9 +765,6 @@
 
                 statusBox.innerHTML = `
                             <strong>Could not load ${selectedSet.label}.</strong>
-                            <div class="small-note">The CSV is still required for card names and types: ${selectedSet.csvUrl}</div>
-                            <div class="small-note">Only its first two columns are used: Type, ${selectedSet.code}-001 Card Name.</div>
-                            <div class="small-note">All pairing data now comes exclusively from Supabase.</div>
                             <div class="small-note">Error: ${error.message}</div>
                         `;
             }
