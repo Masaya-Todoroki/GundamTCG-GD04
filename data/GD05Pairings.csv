@@ -1,33 +1,33 @@
-﻿Type,Card,Pair #1
-Unit,GD05-001 V2 Gundam
-Unit,GD05-002 Strike Freedom Gundam
-Unit,GD05-004 Akatsuki (Oowashi)
-Unit,GD05-006 Hashmal
-Unit,GD05-017 Nu Gundam
-Unit,GD05-018 Gundam Calibarn
-Unit,GD05-020 Nu Gundam,GD05-066 Shining Gundam
-Unit,GD05-021 Gundam AGE-2 Double Bullet
+﻿Type,Card,Pair #1,Pair #2,Pair #3
+Unit,GD05-001 V2 Gundam,GD05-035 Dragon Gundam
+Unit,GD05-002 Strike Freedom Gundam,GD05-098 Heero Yuy,GD05-102 Wings of Light
+Unit,GD05-004 Akatsuki (Oowashi),GD05-035 Dragon Gundam,GD05-098 Heero Yuy
+Unit,GD05-006 Hashmal,GD05-055 Destiny Gundam,GD05-081 Kira Yamato,GD05-085 Amuro Ray
+Unit,GD05-017 Nu Gundam,GD05-067 Wing Gundam Zero (EW),GD05-089 Master Asia
+Unit,GD05-018 Gundam Calibarn,GD05-050 Gundam Exia Repair,GD05-068 Shining Gundam (Super Mode)
+Unit,GD05-020 Nu Gundam,GD05-066 Shining Gundam,GD05-119 A Wind Against Fires
+Unit,GD05-021 Gundam AGE-2 Double Bullet,GD05-037 Destroy Gundam,GD05-081 Kira Yamato
 Unit,GD05-033 Master Gundam,GD05-051 Gundam Barbatos Lupus Rex
-Unit,GD05-034 Gaia Gundam
-Unit,GD05-035 Dragon Gundam,GD05-052 Sazabi
-Unit,GD05-037 Destroy Gundam
-Unit,GD05-049 Sazabi
-Unit,GD05-050 Gundam Exia Repair
-Unit,GD05-051 Gundam Barbatos Lupus Rex,GD05-033 Master Gundam
-Unit,GD05-052 Sazabi,GD05-035 Dragon Gundam
-Unit,GD05-055 Destiny Gundam,GD05-067 Wing Gundam Zero (EW)
+Unit,GD05-034 Gaia Gundam,GD05-052 Sazabi
+Unit,GD05-035 Dragon Gundam,GD05-001 V2 Gundam,GD05-004 Akatsuki (Oowashi),GD05-052 Sazabi
+Unit,GD05-037 Destroy Gundam,GD05-021 Gundam AGE-2 Double Bullet,GD05-051 Gundam Barbatos Lupus Rex,GD05-085 Amuro Ray
+Unit,GD05-049 Sazabi,GD05-093 Char Aznable
+Unit,GD05-050 Gundam Exia Repair,GD05-018 Gundam Calibarn
+Unit,GD05-051 Gundam Barbatos Lupus Rex,GD05-033 Master Gundam,GD05-037 Destroy Gundam
+Unit,GD05-052 Sazabi,GD05-034 Gaia Gundam,GD05-035 Dragon Gundam
+Unit,GD05-055 Destiny Gundam,GD05-006 Hashmal,GD05-067 Wing Gundam Zero (EW),GD05-097 Domon Kasshu
 Unit,GD05-066 Shining Gundam,GD05-020 Nu Gundam
-Unit,GD05-067 Wing Gundam Zero (EW),GD05-055 Destiny Gundam
-Unit,GD05-068 Shining Gundam (Super Mode)
-Unit,GD05-070 Tallgeese Ⅲ
-Pilot,GD05-081 Kira Yamato
-Pilot,GD05-085 Amuro Ray
-Pilot,GD05-089 Master Asia
-Pilot,GD05-090 Stellar Loussier
-Pilot,GD05-093 Char Aznable
-Pilot,GD05-097 Domon Kasshu
-Pilot,GD05-098 Heero Yuy
-Command,GD05-102 Wings of Light
-Command,GD05-106 Mutual Attraction
-Command,GD05-114 Widespread Annihilation
-Command,GD05-119 A Wind Against Fires
+Unit,GD05-067 Wing Gundam Zero (EW),GD05-017 Nu Gundam,GD05-055 Destiny Gundam
+Unit,GD05-068 Shining Gundam (Super Mode),GD05-018 Gundam Calibarn
+Unit,GD05-070 Tallgeese Ⅲ,GD05-089 Master Asia
+Pilot,GD05-081 Kira Yamato,GD05-006 Hashmal,GD05-021 Gundam AGE-2 Double Bullet,GD05-093 Char Aznable
+Pilot,GD05-085 Amuro Ray,GD05-006 Hashmal,GD05-037 Destroy Gundam
+Pilot,GD05-089 Master Asia,GD05-017 Nu Gundam,GD05-070 Tallgeese Ⅲ
+Pilot,GD05-090 Stellar Loussier,GD05-093 Char Aznable,GD05-102 Wings of Light
+Pilot,GD05-093 Char Aznable,GD05-049 Sazabi,GD05-081 Kira Yamato,GD05-090 Stellar Loussier
+Pilot,GD05-097 Domon Kasshu,GD05-055 Destiny Gundam
+Pilot,GD05-098 Heero Yuy,GD05-002 Strike Freedom Gundam,GD05-004 Akatsuki (Oowashi)
+Command,GD05-102 Wings of Light,GD05-002 Strike Freedom Gundam,GD05-090 Stellar Loussier
+Command,GD05-106 Mutual Attraction,GD05-114 Widespread Annihilation
+Command,GD05-114 Widespread Annihilation,GD05-106 Mutual Attraction
+Command,GD05-119 A Wind Against Fires,GD05-020 Nu Gundam
