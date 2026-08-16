@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Allows normal mobile pinch zoom -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GD06 Reveal List</title>
+
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background: #111;
+            min-height: 100%;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* =========================
+           Toolbar
+           ========================= */
+
+        .toolbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+
+            padding: 10px;
+
+            background: rgba(20, 20, 30, 0.9);
+            backdrop-filter: blur(10px);
+
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+            z-index: 100;
+
+            transition: opacity 0.25s ease;
+        }
+
+        /* Hidden toolbar */
+
+        .toolbar.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* =========================
+           Toolbar Buttons
+           ========================= */
+
+        .btn {
+            text-decoration: none;
+
+            padding: 9px 18px;
+            border-radius: 50px;
+
+            background: linear-gradient(180deg, #5f82ff, #4a6cff);
+
+            color: white;
+
+            font-size: 0.9rem;
+            font-weight: bold;
+
+            transition: all 0.2s ease;
+
+            box-shadow:
+                0 4px 12px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px) scale(1.03);
+
+            box-shadow:
+                0 7px 18px rgba(0, 0, 0, 0.35),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .btn:active {
+            transform: translateY(0) scale(1);
+        }
+
+        /* Current set */
+
+        .btn.current {
+            background: white;
+            color: #4a6cff;
+        }
+
+        /* Home button */
+
+        .btn.home {
+            margin-right: 15px;
+        }
+
+        /* =========================
+           Reveal Image
+           ========================= */
+
+        .reveal-image {
+            display: block;
+
+            width: 100%;
+            height: auto;
+
+            margin: 0;
+            padding: 0;
+
+            cursor: pointer;
+        }
+
+        /* =========================
+           Mobile
+           ========================= */
+
+        @media (max-width: 600px) {
+
+            .toolbar {
+                gap: 6px;
+                padding: 8px;
+            }
+
+            .btn {
+                padding: 8px 12px;
+                font-size: 0.8rem;
+            }
+
+            .btn.home {
+                margin-right: 5px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================
+         Toolbar
+         ========================= -->
+
+    <div class="toolbar" id="toolbar">
+
+        <a href="https://masayatodoroki.com/"
+           class="btn home">
+            Home
+        </a>
+
+        <!-- Existing reveal pages -->
+
+        <a href="https://masayatodoroki.com/gd04reveals"
+           class="btn">
+            GD04
+        </a>
+
+        <a href="https://masayatodoroki.com/gd05reveals"
+           class="btn">
+            GD05
+        </a>
+
+        <!-- Test page / current set -->
+
+        <a href="https://masayatodoroki.com/test"
+           class="btn current">
+            GD06
+        </a>
+
+    </div>
+
+
+    <!-- =========================
+         Reveal Image
+         ========================= -->
+
+    <img
+        src="https://masayatodoroki.com/images/GD06/GD06Reveal.jpg"
+        id="revealImage"
+        class="reveal-image"
+        alt="GD06 Reveal List"
+    >
+
+
+    <!-- =========================
+         JavaScript
+         ========================= -->
+
+    <script>
+
+        const toolbar =
+            document.getElementById("toolbar");
+
+        const revealImage =
+            document.getElementById("revealImage");
+
+
+        /*
+         * Clicking the reveal image
+         * toggles the toolbar.
+         */
+
+        revealImage.addEventListener("click", function () {
+
+            toolbar.classList.toggle("hidden");
+
+        });
+
+    </script>
+
+
+    <!-- Cloudflare Web Analytics -->
+
+    <script
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon='{"token": "21db3789c68b42d09f9d4f6ec60400cf"}'>
+    </script>
+
+    <!-- End Cloudflare Web Analytics -->
+
+</body>
+</html>
