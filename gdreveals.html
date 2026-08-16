@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
-    <!-- Allows normal mobile pinch zoom -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width,
+                   initial-scale=1.0,
+                   maximum-scale=20.0,
+                   user-scalable=yes">
 
-    <title>GD06 Reveal List</title>
+    <title>GCG Reveal List</title>
 
     <style>
+
         html,
         body {
             margin: 0;
@@ -21,6 +26,7 @@
             font-family: Arial, Helvetica, sans-serif;
         }
 
+
         /* =========================
            Toolbar
            ========================= */
@@ -30,79 +36,69 @@
             top: 0;
             left: 0;
             right: 0;
-
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 10px;
-
             padding: 10px;
-
             background: rgba(20, 20, 30, 0.9);
             backdrop-filter: blur(10px);
-
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-
             z-index: 100;
-
             transition: opacity 0.25s ease;
         }
 
-        /* Hidden toolbar */
 
-        .toolbar.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
+            /* Hide toolbar */
+
+            .toolbar.hidden {
+                opacity: 0;
+                pointer-events: none;
+            }
+
 
         /* =========================
-           Toolbar Buttons
+           Buttons
            ========================= */
 
         .btn {
             text-decoration: none;
-
             padding: 9px 18px;
             border-radius: 50px;
-
-            background: linear-gradient(180deg, #5f82ff, #4a6cff);
-
+            background: linear-gradient( 180deg, #5f82ff, #4a6cff );
             color: white;
-
             font-size: 0.9rem;
             font-weight: bold;
-
             transition: all 0.2s ease;
-
-            box-shadow:
-                0 4px 12px rgba(0, 0, 0, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
         }
 
-        .btn:hover {
-            transform: translateY(-2px) scale(1.03);
 
-            box-shadow:
-                0 7px 18px rgba(0, 0, 0, 0.35),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2);
-        }
+            .btn:hover {
+                transform: translateY(-2px) scale(1.03);
+                box-shadow: 0 7px 18px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            }
 
-        .btn:active {
-            transform: translateY(0) scale(1);
-        }
 
-        /* Current set */
+            .btn:active {
+                transform: translateY(0) scale(1);
+            }
 
-        .btn.current {
-            background: white;
-            color: #4a6cff;
-        }
 
-        /* Home button */
+            /* Current set */
 
-        .btn.home {
-            margin-right: 15px;
-        }
+            .btn.current {
+                background: white;
+                color: #4a6cff;
+            }
+
+
+            /* Home button */
+
+            .btn.home {
+                margin-right: 15px;
+            }
+
 
         /* =========================
            Reveal Image
@@ -110,15 +106,13 @@
 
         .reveal-image {
             display: block;
-
             width: 100%;
             height: auto;
-
             margin: 0;
             padding: 0;
-
             cursor: pointer;
         }
+
 
         /* =========================
            Mobile
@@ -136,15 +130,16 @@
                 font-size: 0.8rem;
             }
 
-            .btn.home {
-                margin-right: 5px;
-            }
+                .btn.home {
+                    margin-right: 5px;
+                }
         }
     </style>
 </head>
 
 
 <body>
+
 
     <!-- =========================
          Toolbar
@@ -157,22 +152,21 @@
             Home
         </a>
 
-        <!-- Existing reveal pages -->
-
-        <a href="https://masayatodoroki.com/gd04reveals"
-           class="btn">
+        <a href="?set=GD04"
+           class="btn set-button"
+           data-set="GD04">
             GD04
         </a>
 
-        <a href="https://masayatodoroki.com/gd05reveals"
-           class="btn">
+        <a href="?set=GD05"
+           class="btn set-button"
+           data-set="GD05">
             GD05
         </a>
 
-        <!-- Test page / current set -->
-
-        <a href="https://masayatodoroki.com/test"
-           class="btn current">
+        <a href="?set=GD06"
+           class="btn set-button"
+           data-set="GD06">
             GD06
         </a>
 
@@ -183,12 +177,9 @@
          Reveal Image
          ========================= -->
 
-    <img
-        src="https://masayatodoroki.com/images/GD06/GD06Reveal.jpg"
-        id="revealImage"
-        class="reveal-image"
-        alt="GD06 Reveal List"
-    >
+    <img id="revealImage"
+         class="reveal-image"
+         alt="GCG Reveal List">
 
 
     <!-- =========================
@@ -197,36 +188,98 @@
 
     <script>
 
+        /*
+         * Read the set from the URL.
+         *
+         * Example:
+         *
+         * reveal.html?set=GD06
+         */
+
+        const params =
+            new URLSearchParams(window.location.search);
+
+        const set =
+            params.get("set") || "GD06";
+
+
+        /*
+         * Get page elements.
+         */
+
         const toolbar =
             document.getElementById("toolbar");
 
         const revealImage =
             document.getElementById("revealImage");
 
+        const setButtons =
+            document.querySelectorAll(".set-button");
+
 
         /*
-         * Clicking the reveal image
-         * toggles the toolbar.
+         * Load the correct reveal image.
+         *
+         * GD06 becomes:
+         *
+         * /images/GD06/GD06Reveal.jpg
          */
 
-        revealImage.addEventListener("click", function () {
+        revealImage.src =
+            `/images/${set}/${set}Reveal.jpg`;
 
-            toolbar.classList.toggle("hidden");
+        revealImage.alt =
+            `${set} Reveal List`;
+
+
+        /*
+         * Update browser tab title.
+         */
+
+        document.title =
+            `${set} Reveal List`;
+
+
+        /*
+         * Highlight the currently
+         * selected set.
+         */
+
+        setButtons.forEach(function (button) {
+
+            if (button.dataset.set === set) {
+                button.classList.add("current");
+            }
 
         });
+
+
+        /*
+         * Tap/click image to hide
+         * or show the toolbar.
+         */
+
+        revealImage.addEventListener(
+            "click",
+            function () {
+
+                toolbar.classList.toggle("hidden");
+
+            }
+        );
 
     </script>
 
 
     <!-- Cloudflare Web Analytics -->
 
-    <script
-        defer
-        src="https://static.cloudflareinsights.com/beacon.min.js"
-        data-cf-beacon='{"token": "21db3789c68b42d09f9d4f6ec60400cf"}'>
+    <script defer
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon='{"token": "21db3789c68b42d09f9d4f6ec60400cf"}'>
     </script>
 
     <!-- End Cloudflare Web Analytics -->
+
 
 </body>
 </html>
