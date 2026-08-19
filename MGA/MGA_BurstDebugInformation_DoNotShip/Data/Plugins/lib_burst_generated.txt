@@ -12,6 +12,7 @@ Library: F:\Unity Projects\MGA\Temp\BurstOutput\Data\Plugins\lib_burst_generated
 --float-mode=Fast
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=F:\Unity Projects\MGA\Temp\Burst
+--debug=Full
 --generate-static-linkage-methods
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.5.8f1/Editor/Data/PlaybackEngines/WebGLSupport
 --decode-folder=F:\Unity Projects\MGA\Library\Burst
@@ -31,6 +32,7 @@ Library: F:\Unity Projects\MGA\Temp\BurstOutput\Data\Plugins\lib_burst_generated
 --target-framework=NetFramework
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=F:\Unity Projects\MGA\Temp\Burst
+--debug=Full
 --generate-static-linkage-methods
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.5.8f1/Editor/Data/PlaybackEngines/WebGLSupport
 --decode-folder=F:\Unity Projects\MGA\Library\Burst
@@ -116,6 +118,7 @@ Library: F:\Unity Projects\MGA\Temp\BurstOutput\Data\Plugins\lib_burst_generated
 --target-framework=NetFramework
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=F:\Unity Projects\MGA\Temp\Burst
+--debug=Full
 --generate-static-linkage-methods
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.5.8f1/Editor/Data/PlaybackEngines/WebGLSupport
 --decode-folder=F:\Unity Projects\MGA\Library\Burst
