@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>GCG Pair Creator v1.1</title>
+<title>GCG Pair Creator v1.2</title>
 <style>
 * { box-sizing: border-box; }
 :root {
@@ -128,8 +128,10 @@ button, select, input { font: inherit; }
     min-height:0;
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(170px, 1fr));
+    grid-auto-rows:max-content;
     gap:16px;
     align-content:start;
+    align-items:start;
     padding-right:4px;
     overflow-y:auto;
     overflow-x:hidden;
@@ -143,8 +145,9 @@ button, select, input { font: inherit; }
 .card-button {
     position:relative;
     display:block;
+    align-self:start;
     width:100%;
-    height:auto;
+    height:max-content;
     padding:0;
     margin:0;
     border:0;
@@ -157,7 +160,8 @@ button, select, input { font: inherit; }
     display:block;
     width:100%;
     height:auto;
-    object-fit:contain;
+    max-width:100%;
+    object-fit:initial;
     user-select:none;
     -webkit-user-drag:none;
 }
@@ -305,7 +309,7 @@ button, select, input { font: inherit; }
 </style>
 </head>
 <body>
-<div class="version-badge">GCG Pair Creator · v1.1</div>
+<div class="version-badge">GCG Pair Creator · v1.2</div>
 <section id="password-screen">
   <div class="login-panel">
     <h1>Pair Creator</h1>
