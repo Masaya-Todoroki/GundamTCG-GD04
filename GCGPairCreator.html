@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>GCG Pair Creator v1.2</title>
+<title>GCG Pair Creator v1.4</title>
 <style>
 * { box-sizing: border-box; }
 :root {
@@ -309,7 +309,7 @@ button, select, input { font: inherit; }
 </style>
 </head>
 <body>
-<div class="version-badge">GCG Pair Creator · v1.2</div>
+<div id="version-badge" class="version-badge">GCG Pair Creator · v1.4</div>
 <section id="password-screen">
   <div class="login-panel">
     <h1>Pair Creator</h1>
@@ -371,6 +371,7 @@ let selectedCard2 = null;
 let existingPairs = new Set();
 let isUploading = false;
 
+const versionBadge = document.getElementById("version-badge");
 const passwordScreen = document.getElementById("password-screen");
 const passwordInput = document.getElementById("password-input");
 const passwordButton = document.getElementById("password-button");
@@ -412,6 +413,7 @@ async function validatePassword() {
     }
     passwordMessage.textContent = "";
     passwordScreen.classList.add("hidden");
+    versionBadge.classList.add("hidden");
     app.classList.remove("hidden");
     await initializeApp();
   } catch (error) {
@@ -639,28 +641,51 @@ let suppressCardClickUntil = 0;
 
 cardGrid.addEventListener("pointerdown", event => {
   if (event.pointerType !== "mouse" || event.button !== 0) return;
+
+  // Start as a possible drag, but DO NOT capture the pointer yet.
+  // Capturing here would redirect the click away from the card button.
   dragActive = true;
   dragMoved = false;
   dragStartY = event.clientY;
   dragStartScrollTop = cardGrid.scrollTop;
-  cardGrid.setPointerCapture(event.pointerId);
 });
+
 cardGrid.addEventListener("pointermove", event => {
   if (!dragActive || event.pointerType !== "mouse") return;
+
   const deltaY = event.clientY - dragStartY;
-  if (Math.abs(deltaY) > 4) {
+
+  if (!dragMoved && Math.abs(deltaY) > 4) {
     dragMoved = true;
     cardGrid.classList.add("dragging");
-    event.preventDefault();
+
+    // Only capture once we know this is actually a drag.
+    try {
+      cardGrid.setPointerCapture(event.pointerId);
+    } catch (_) {}
   }
-  if (dragMoved) cardGrid.scrollTop = dragStartScrollTop - deltaY;
+
+  if (dragMoved) {
+    event.preventDefault();
+    cardGrid.scrollTop = dragStartScrollTop - deltaY;
+  }
 });
+
 function finishDrag(event) {
   if (!dragActive) return;
+
   dragActive = false;
   cardGrid.classList.remove("dragging");
-  if (dragMoved) suppressCardClickUntil = Date.now() + 200;
-  try { cardGrid.releasePointerCapture(event.pointerId); } catch (_) {}
+
+  if (dragMoved) {
+    suppressCardClickUntil = Date.now() + 200;
+  }
+
+  try {
+    if (cardGrid.hasPointerCapture(event.pointerId)) {
+      cardGrid.releasePointerCapture(event.pointerId);
+    }
+  } catch (_) {}
 }
 cardGrid.addEventListener("pointerup", finishDrag);
 cardGrid.addEventListener("pointercancel", finishDrag);
