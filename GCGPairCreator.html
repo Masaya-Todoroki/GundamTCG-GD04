@@ -112,18 +112,30 @@ button, select, input { font: inherit; }
 .card-grid {
     flex:1 1 auto; min-height:0;
     display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); align-content:start;
+    grid-auto-rows:auto;
     gap:8px; padding-right:4px;
     overflow-y:auto; overflow-x:hidden;
     cursor:grab; user-select:none;
     scrollbar-gutter:stable; overscroll-behavior:contain; -webkit-overflow-scrolling:touch;
 }
 .card-grid.dragging { cursor:grabbing; }
+.card-grid > * {
+    min-width:0;
+    min-height:0;
+}
 .card-button {
-    position:relative; width:100%; aspect-ratio:var(--card-ratio);
-    padding:0; border:0; border-radius:6px; overflow:hidden;
+    position:relative;
+    display:block;
+    width:100%;
+    height:auto;
+    aspect-ratio:var(--card-ratio);
+    padding:0; margin:0;
+    border:0; border-radius:6px; overflow:hidden;
     background:transparent; cursor:pointer;
 }
 .card-button img {
+    position:absolute;
+    inset:0;
     width:100%; height:100%; display:block; object-fit:contain;
     user-select:none; -webkit-user-drag:none;
 }
@@ -205,6 +217,65 @@ button, select, input { font: inherit; }
     .create-button { height:44px; font-size:1.05rem; }
     .card-grid { gap:5px; }
 }
+
+
+/* Upload status modal */
+.modal-overlay {
+    position:fixed;
+    inset:0;
+    z-index:1000;
+    display:grid;
+    place-items:center;
+    padding:24px;
+    background:rgba(0,0,0,.34);
+    backdrop-filter:blur(2px);
+}
+.modal-panel {
+    width:min(410px,100%);
+    padding:28px;
+    border:1px solid rgba(70,70,70,.35);
+    border-radius:16px;
+    background:rgba(255,255,255,.97);
+    box-shadow:0 16px 45px rgba(0,0,0,.24);
+    text-align:center;
+}
+.modal-panel h2 {
+    margin:0 0 12px;
+    font-size:1.55rem;
+}
+.modal-message {
+    min-height:2.6em;
+    display:grid;
+    place-items:center;
+    margin-bottom:18px;
+    color:#555;
+    line-height:1.4;
+}
+.modal-spinner {
+    width:34px;
+    height:34px;
+    margin:2px auto 16px;
+    border:4px solid rgba(0,0,0,.14);
+    border-top-color:#444;
+    border-radius:50%;
+    animation:modal-spin .8s linear infinite;
+}
+@keyframes modal-spin {
+    to { transform:rotate(360deg); }
+}
+.modal-ok {
+    min-width:120px;
+    height:44px;
+    padding:0 22px;
+    border:1px solid #777;
+    border-radius:9px;
+    background:#fff;
+    color:#333;
+    cursor:pointer;
+}
+.modal-ok:hover { background:#f3f3f3; }
+.modal-ok:disabled { opacity:.45; cursor:not-allowed; }
+
 </style>
 </head>
 <body>
@@ -236,6 +307,16 @@ button, select, input { font: inherit; }
     </section>
   </div>
 </main>
+
+
+<div id="upload-modal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="upload-modal-title">
+  <div class="modal-panel">
+    <h2 id="upload-modal-title">Pair Upload</h2>
+    <div id="upload-spinner" class="modal-spinner hidden"></div>
+    <div id="upload-modal-message" class="modal-message"></div>
+    <button id="upload-modal-ok" class="modal-ok">Okay</button>
+  </div>
+</div>
 
 <script>
 const SUPABASE_URL = "https://vixudhbgvihtdynhcfey.supabase.co";
@@ -271,6 +352,10 @@ const selected2 = document.getElementById("selected-2");
 const createPairButton = document.getElementById("create-pair");
 const status = document.getElementById("status");
 const emptyState = document.getElementById("empty-state");
+const uploadModal = document.getElementById("upload-modal");
+const uploadModalMessage = document.getElementById("upload-modal-message");
+const uploadModalOk = document.getElementById("upload-modal-ok");
+const uploadSpinner = document.getElementById("upload-spinner");
 
 async function validatePassword() {
   const password = passwordInput.value;
@@ -381,15 +466,48 @@ async function loadPairings() {
   });
 }
 
+function showUploadModal(message, uploading = false) {
+  uploadModalMessage.textContent = message;
+  uploadSpinner.classList.toggle("hidden", !uploading);
+  uploadModalOk.disabled = uploading;
+  uploadModal.classList.remove("hidden");
+}
+
+function finishUploadModal(message) {
+  uploadModalMessage.textContent = message;
+  uploadSpinner.classList.add("hidden");
+  uploadModalOk.disabled = false;
+  uploadModalOk.focus();
+}
+
+function closeUploadModal() {
+  if (isUploading) return;
+  uploadModal.classList.add("hidden");
+}
+
 async function createPair() {
   if (isUploading) return;
-  if (!selectedCard1 || !selectedCard2) { setStatus("Select two cards first."); return; }
-  const key = normalizePair(selectedCard1.id, selectedCard2.id);
-  if (existingPairs.has(key)) { setStatus("This pairing already exists."); return; }
+
+  if (!selectedCard1 || !selectedCard2) {
+    showUploadModal("Select two cards first.");
+    return;
+  }
+
+  const card1 = selectedCard1.id;
+  const card2 = selectedCard2.id;
+  const key = normalizePair(card1, card2);
+
+  if (existingPairs.has(key)) {
+    showUploadModal("Pair already exists.");
+    return;
+  }
+
   isUploading = true;
   createPairButton.disabled = true;
-  setStatus(`Uploading ${selectedCard1.id} + ${selectedCard2.id}...`);
-  const ordered = [selectedCard1.id, selectedCard2.id].sort((a,b)=>a.localeCompare(b));
+  showUploadModal(`Uploading ${card1} + ${card2}...`, true);
+
+  const ordered = [card1, card2].sort((a,b)=>a.localeCompare(b));
+
   try {
     const response = await fetch(`${SUPABASE_URL}/rest/v1/pairings`, {
       method:"POST",
@@ -401,13 +519,17 @@ async function createPair() {
       },
       body:JSON.stringify([{card_1:ordered[0], card_2:ordered[1]}])
     });
-    if (!response.ok) throw new Error(`Upload failed: ${response.status}`);
+
+    if (!response.ok) {
+      throw new Error(`Upload failed: ${response.status}`);
+    }
+
     existingPairs.add(key);
-    setStatus("Pair uploaded!");
     clearSelection();
+    finishUploadModal("Pair uploaded!");
   } catch (error) {
     console.error(error);
-    setStatus("Upload failed.");
+    finishUploadModal("Upload failed. Please try again.");
   } finally {
     isUploading = false;
     createPairButton.disabled = false;
@@ -514,6 +636,12 @@ cardGrid.addEventListener("pointercancel", finishDrag);
 
 setSelect.addEventListener("change", () => loadSet(setSelect.value));
 createPairButton.addEventListener("click", createPair);
+uploadModalOk.addEventListener("click", closeUploadModal);
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape" && !uploadModal.classList.contains("hidden") && !isUploading) {
+    closeUploadModal();
+  }
+});
 </script>
 </body>
 </html>
