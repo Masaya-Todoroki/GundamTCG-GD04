@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>GCG Pair Creator</title>
+<title>GCG Pair Creator v1.1</title>
 <style>
 * { box-sizing: border-box; }
 :root {
@@ -13,7 +13,6 @@
     --control-bg: rgba(255,255,255,.94);
     --text: #333;
     --card-ratio: 63 / 88;
-    --gallery-card-width: 145px;
 }
 html, body { width:100%; height:100%; margin:0; overflow:hidden; }
 body {
@@ -26,6 +25,20 @@ body {
     background-attachment: fixed;
 }
 button, select, input { font: inherit; }
+.version-badge {
+    position: fixed;
+    top: max(8px, env(safe-area-inset-top));
+    right: max(10px, env(safe-area-inset-right));
+    z-index: 3000;
+    padding: 5px 9px;
+    border: 1px solid rgba(80,80,80,.35);
+    border-radius: 7px;
+    background: rgba(255,255,255,.88);
+    color: #555;
+    font-size: 12px;
+    line-height: 1;
+    pointer-events: none;
+}
 .hidden { display:none !important; }
 
 #password-screen {
@@ -111,38 +124,42 @@ button, select, input { font: inherit; }
 .top-row { flex:0 0 auto; min-height:24px; margin-bottom:6px; }
 .status { min-height:1.2em; color:#555; font-size:.9rem; }
 .card-grid {
-    flex:1 1 auto; min-height:0;
+    flex:1 1 auto;
+    min-height:0;
     display:grid;
-    grid-template-columns:repeat(auto-fill, var(--gallery-card-width));
-    grid-auto-rows:auto;
-    justify-content:start;
+    grid-template-columns:repeat(auto-fit, minmax(170px, 1fr));
+    gap:16px;
     align-content:start;
-    align-items:start;
-    gap:10px; padding-right:4px;
-    overflow-y:auto; overflow-x:hidden;
-    cursor:grab; user-select:none;
-    scrollbar-gutter:stable; overscroll-behavior:contain; -webkit-overflow-scrolling:touch;
+    padding-right:4px;
+    overflow-y:auto;
+    overflow-x:hidden;
+    cursor:grab;
+    user-select:none;
+    scrollbar-gutter:stable;
+    overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;
 }
 .card-grid.dragging { cursor:grabbing; }
-.card-grid > * {
-    min-width:0;
-    min-height:0;
-}
 .card-button {
     position:relative;
     display:block;
-    width:var(--gallery-card-width);
+    width:100%;
     height:auto;
-    aspect-ratio:var(--card-ratio);
-    padding:0; margin:0;
-    border:0; border-radius:6px; overflow:hidden;
-    background:transparent; cursor:pointer;
+    padding:0;
+    margin:0;
+    border:0;
+    border-radius:12px;
+    overflow:hidden;
+    background:transparent;
+    cursor:pointer;
 }
 .card-button img {
-    position:absolute;
-    inset:0;
-    width:100%; height:100%; display:block; object-fit:contain;
-    user-select:none; -webkit-user-drag:none;
+    display:block;
+    width:100%;
+    height:auto;
+    object-fit:contain;
+    user-select:none;
+    -webkit-user-drag:none;
 }
 .card-button:hover { transform:translateY(-2px); }
 .card-button.selected-1::after,
@@ -220,6 +237,13 @@ button, select, input { font: inherit; }
     .card-grid { gap:10px; }
 }
 
+@media (max-width:600px) {
+    .card-grid {
+        grid-template-columns:repeat(2, minmax(0,1fr));
+        gap:10px;
+    }
+}
+
 
 /* Upload status modal */
 .modal-overlay {
@@ -281,6 +305,7 @@ button, select, input { font: inherit; }
 </style>
 </head>
 <body>
+<div class="version-badge">GCG Pair Creator · v1.1</div>
 <section id="password-screen">
   <div class="login-panel">
     <h1>Pair Creator</h1>
