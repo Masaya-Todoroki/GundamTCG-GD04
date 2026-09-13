@@ -8,7 +8,10 @@
 *{box-sizing:border-box}
 body{
     margin:0;
+    width:100%;
+    height:100vh;
     min-height:100vh;
+    overflow:hidden;
     font-family:Arial,Helvetica,sans-serif;
     color:#333;
     background:
@@ -50,21 +53,40 @@ button,select,input{font:inherit}
 #password-message{min-height:1.2em;margin-top:12px;font-size:.9rem;text-align:center;color:#a33}
 
 /* Main */
-#app{min-height:100vh;padding:18px}
+#app{
+    height:100vh;
+    min-height:0;
+    padding:18px;
+    overflow:hidden;
+}
 .app-layout{
     display:grid;
     grid-template-columns:250px minmax(0,1fr);
     gap:24px;
     max-width:1600px;
     margin:0 auto;
+    height:100%;
+    min-height:0;
 }
-.sidebar{display:flex;flex-direction:column;gap:18px;min-width:0}
+.sidebar{
+    display:grid;
+    grid-template-rows:auto minmax(0,1fr) minmax(0,1fr) auto;
+    gap:18px;
+    min-width:0;
+    height:100%;
+    min-height:0;
+}
 .set-select{
     width:100%;padding:10px 14px;border-radius:8px;border:1px solid #888;
     background:rgba(255,255,255,.94);color:#444;font-size:1.2rem;
 }
 .selected-card{
-    aspect-ratio:3/4;width:100%;
+    height:100%;
+    width:auto;
+    max-width:100%;
+    min-height:0;
+    aspect-ratio:3/4;
+    justify-self:center;
     background:rgba(255,255,255,.9);
     border:1px solid rgba(120,120,120,.4);
     border-radius:11px;overflow:hidden;
@@ -80,22 +102,48 @@ button,select,input{font:inherit}
 .placeholder-symbol{font-size:5rem;line-height:1;transform:rotate(-10deg);display:block}
 .placeholder-text{margin-top:10px;font-size:1.3rem;line-height:1.15}
 .create-button{
-    margin-top:auto;width:100%;padding:9px 14px;border-radius:8px;
+    width:100%;padding:9px 14px;border-radius:8px;
     border:1px solid #777;background:rgba(255,255,255,.94);
     font-size:1.6rem;color:#333;cursor:pointer;
 }
 .main-panel{
-    min-width:0;background:rgba(235,235,235,.45);
+    min-width:0;
+    min-height:0;
+    height:100%;
+    background:rgba(235,235,235,.45);
     border:1px solid rgba(110,110,110,.28);
-    border-radius:6px;padding:12px;align-self:start;
+    border-radius:6px;
+    padding:12px;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
 }
-.top-row{display:flex;align-items:center;gap:12px;margin-bottom:12px}
-.status{flex:1;min-height:1.2em;color:#555;font-size:.9rem}
-.search{
-    width:min(320px,100%);padding:9px 11px;border:1px solid #999;
-    border-radius:7px;background:rgba(255,255,255,.94);
+.top-row{
+    flex:0 0 auto;
+    min-height:22px;
+    margin-bottom:8px;
 }
-.card-grid{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:9px}
+.status{min-height:1.2em;color:#555;font-size:.9rem}
+.card-grid{
+    flex:1 1 auto;
+    min-height:0;
+    overflow-y:auto;
+    overflow-x:hidden;
+    align-content:start;
+    display:grid;
+    grid-template-columns:repeat(8,minmax(0,1fr));
+    gap:9px;
+    padding-right:4px;
+    cursor:grab;
+    scrollbar-gutter:stable;
+    overscroll-behavior:contain;
+    user-select:none;
+}
+.card-grid.dragging{cursor:grabbing}
+.card-grid img{
+    user-select:none;
+    -webkit-user-drag:none;
+}
 .card-button{
     border:0;padding:0;background:transparent;cursor:pointer;
     border-radius:7px;overflow:hidden;position:relative;aspect-ratio:3/4;
@@ -114,17 +162,39 @@ button,select,input{font:inherit}
 }
 @media(max-width:850px){
     #app{padding:12px}
-    .app-layout{display:block}
+    .app-layout{
+        display:grid;
+        grid-template-rows:auto minmax(0,1fr);
+        height:100%;
+        min-height:0;
+    }
     .sidebar{
-        display:grid;grid-template-columns:1fr 1fr;
-        gap:12px;margin-bottom:14px;
+        height:auto;
+        min-height:0;
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        grid-template-rows:auto minmax(0,170px) auto;
+        gap:12px;
+        margin-bottom:14px;
     }
     .set-select{grid-column:1/-1;font-size:1.15rem}
+    .selected-card{
+        width:auto;
+        height:100%;
+        max-width:100%;
+        justify-self:center;
+    }
     .create-button{grid-column:1/-1;font-size:1.45rem;margin-top:0}
-    .main-panel{padding:10px;background:rgba(160,180,180,.35)}
-    .top-row{display:block}
-    .search{width:100%;margin-bottom:8px}
-    .card-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+    .main-panel{
+        height:100%;
+        min-height:0;
+        padding:10px;
+        background:rgba(160,180,180,.35);
+    }
+    .card-grid{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+        gap:8px;
+    }
 }
 </style>
 </head>
@@ -166,7 +236,6 @@ button,select,input{font:inherit}
 
         <section class="main-panel">
             <div class="top-row">
-                <input id="search" class="search" type="text" placeholder="Search card ID, name, or type">
                 <div id="status" class="status"></div>
             </div>
 
@@ -211,7 +280,6 @@ const cardGrid = document.getElementById("card-grid");
 const selected1 = document.getElementById("selected-1");
 const selected2 = document.getElementById("selected-2");
 const createPairButton = document.getElementById("create-pair");
-const search = document.getElementById("search");
 const status = document.getElementById("status");
 const emptyState = document.getElementById("empty-state");
 
@@ -443,20 +511,10 @@ function renderSelectedCards(){
 
 function renderCards(){
     cardGrid.innerHTML="";
-    const term=search.value.trim().toLowerCase();
 
-    const filtered=cards.filter(card=>{
-        if(!term) return true;
-        return (
-            card.id.toLowerCase().includes(term) ||
-            card.name.toLowerCase().includes(term) ||
-            card.type.toLowerCase().includes(term)
-        );
-    });
+    emptyState.classList.toggle("hidden",cards.length>0);
 
-    emptyState.classList.toggle("hidden",filtered.length>0);
-
-    filtered.forEach(card=>{
+    cards.forEach(card=>{
         const button=document.createElement("button");
         button.className="card-button";
 
@@ -464,7 +522,10 @@ function renderCards(){
         if(selectedCard2 && selectedCard2.id===card.id) button.classList.add("selected-2");
 
         button.innerHTML=`<img src="${getImageUrl(card)}" alt="${card.id}" loading="lazy">`;
-        button.addEventListener("click",()=>selectCard(card));
+        button.addEventListener("click",()=>{
+            if(Date.now() < suppressCardClickUntil) return;
+            selectCard(card);
+        });
         cardGrid.appendChild(button);
     });
 }
@@ -515,9 +576,62 @@ async function initializeApp(){
     await loadSet(setSelect.value);
 }
 
+
+// Mouse click-and-drag scrolling for the card gallery.
+// Touch devices keep their normal native scrolling.
+let dragActive = false;
+let dragMoved = false;
+let dragStartY = 0;
+let dragStartScrollTop = 0;
+let suppressCardClickUntil = 0;
+
+cardGrid.addEventListener("pointerdown", event => {
+    if(event.pointerType !== "mouse" || event.button !== 0) return;
+
+    dragActive = true;
+    dragMoved = false;
+    dragStartY = event.clientY;
+    dragStartScrollTop = cardGrid.scrollTop;
+
+    cardGrid.setPointerCapture(event.pointerId);
+});
+
+cardGrid.addEventListener("pointermove", event => {
+    if(!dragActive || event.pointerType !== "mouse") return;
+
+    const deltaY = event.clientY - dragStartY;
+
+    if(Math.abs(deltaY) > 4){
+        dragMoved = true;
+        cardGrid.classList.add("dragging");
+        event.preventDefault();
+    }
+
+    if(dragMoved){
+        cardGrid.scrollTop = dragStartScrollTop - deltaY;
+    }
+});
+
+function finishDrag(event){
+    if(!dragActive) return;
+
+    dragActive = false;
+    cardGrid.classList.remove("dragging");
+
+    if(dragMoved){
+        suppressCardClickUntil = Date.now() + 200;
+    }
+
+    try{
+        cardGrid.releasePointerCapture(event.pointerId);
+    }catch(_){}
+}
+
+cardGrid.addEventListener("pointerup", finishDrag);
+cardGrid.addEventListener("pointercancel", finishDrag);
+
 setSelect.addEventListener("change",()=>loadSet(setSelect.value));
 createPairButton.addEventListener("click",createPair);
-search.addEventListener("input",renderCards);
 </script>
 </body>
 </html>
