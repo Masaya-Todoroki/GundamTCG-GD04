@@ -3,18 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>GCG Pair Creator v1.4</title>
+<title>GCG Pair Creator v1.5</title>
 <style>
 * { box-sizing: border-box; }
+
 :root {
-    --gap: 16px;
+    --gap: 14px;
     --panel: rgba(235,235,235,.42);
     --panel-border: rgba(90,90,90,.25);
     --control-bg: rgba(255,255,255,.94);
     --text: #333;
-    --card-ratio: 63 / 88;
+    --danger: #b63232;
 }
-html, body { width:100%; height:100%; margin:0; overflow:hidden; }
+
+html, body {
+    width:100%;
+    height:100%;
+    margin:0;
+    overflow:hidden;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: var(--text);
@@ -24,7 +32,10 @@ body {
       #72e5e7;
     background-attachment: fixed;
 }
+
 button, select, input { font: inherit; }
+.hidden { display:none !important; }
+
 .version-badge {
     position: fixed;
     top: max(8px, env(safe-area-inset-top));
@@ -39,8 +50,8 @@ button, select, input { font: inherit; }
     line-height: 1;
     pointer-events: none;
 }
-.hidden { display:none !important; }
 
+/* Password */
 #password-screen {
     width:100%;
     height:100vh;
@@ -49,6 +60,7 @@ button, select, input { font: inherit; }
     place-items:center;
     padding:24px;
 }
+
 .login-panel {
     width:min(430px,100%);
     padding:28px;
@@ -57,21 +69,70 @@ button, select, input { font: inherit; }
     background:rgba(255,255,255,.94);
     box-shadow:0 16px 45px rgba(0,0,0,.18);
 }
-.login-panel h1 { margin:0 0 10px; text-align:center; font-size:1.8rem; }
-.login-panel p { margin:0 0 20px; text-align:center; color:#666; }
-.password-row { display:flex; gap:10px; }
-#password-input {
-    flex:1; min-width:0; padding:12px 14px;
-    border:1px solid #aaa; border-radius:9px; background:#fff;
-}
-.primary-button {
-    padding:11px 18px; border:1px solid #777; border-radius:9px;
-    background:#fff; color:#333; cursor:pointer;
-}
-.primary-button:hover { background:#f3f3f3; }
-.primary-button:disabled { opacity:.45; cursor:not-allowed; }
-#password-message { min-height:1.2em; margin-top:12px; text-align:center; color:#a33; font-size:.9rem; }
 
+.login-panel h1 {
+    margin:0 0 10px;
+    text-align:center;
+    font-size:1.8rem;
+}
+
+.login-panel p {
+    margin:0 0 20px;
+    text-align:center;
+    color:#666;
+}
+
+.password-row {
+    display:flex;
+    gap:10px;
+}
+
+#password-input {
+    flex:1;
+    min-width:0;
+    padding:12px 14px;
+    border:1px solid #aaa;
+    border-radius:9px;
+    background:#fff;
+}
+
+.primary-button,
+.control-button,
+.action-button,
+.back-button {
+    border:1px solid #777;
+    border-radius:9px;
+    background:#fff;
+    color:#333;
+    cursor:pointer;
+}
+
+.primary-button {
+    padding:11px 18px;
+}
+
+.primary-button:hover,
+.control-button:hover,
+.action-button:hover,
+.back-button:hover {
+    background:#f3f3f3;
+}
+
+.primary-button:disabled,
+.action-button:disabled {
+    opacity:.45;
+    cursor:not-allowed;
+}
+
+#password-message {
+    min-height:1.2em;
+    margin-top:12px;
+    text-align:center;
+    color:#a33;
+    font-size:.9rem;
+}
+
+/* App */
 #app {
     width:100%;
     height:100vh;
@@ -79,51 +140,141 @@ button, select, input { font: inherit; }
     padding:14px;
     overflow:hidden;
 }
+
 .app-layout {
-    width:100%; height:100%; min-height:0;
+    width:100%;
+    height:100%;
+    min-height:0;
     display:grid;
     grid-template-columns:270px minmax(0,1fr);
     gap:var(--gap);
 }
+
 .sidebar {
-    min-width:0; min-height:0; height:100%;
+    min-width:0;
+    min-height:0;
+    height:100%;
     display:grid;
-    grid-template-rows:auto minmax(0,1fr) minmax(0,1fr) auto;
-    gap:var(--gap);
+    grid-template-rows:auto auto auto minmax(0,1fr) minmax(0,1fr) auto;
+    gap:10px;
 }
+
+.control-button {
+    width:100%;
+    min-height:44px;
+    padding:8px 12px;
+}
+
+#mode-toggle.delete-active {
+    border-color:#9d5555;
+    background:#fff2f2;
+    color:#812b2b;
+}
+
 .set-select {
-    width:100%; height:48px; padding:0 14px;
-    border:1px solid #777; border-radius:8px;
-    background:var(--control-bg); color:#444; font-size:1.15rem;
+    width:100%;
+    height:48px;
+    padding:0 14px;
+    border:1px solid #777;
+    border-radius:8px;
+    background:var(--control-bg);
+    color:#444;
+    font-size:1.15rem;
 }
+
 .selected-card {
-    width:auto; height:100%; max-width:100%; min-height:0;
-    aspect-ratio:var(--card-ratio); justify-self:center;
-    display:grid; place-items:center; overflow:hidden;
-    border:1px solid rgba(120,120,120,.4); border-radius:11px;
-    background:rgba(255,255,255,.93); box-shadow:0 2px 4px rgba(0,0,0,.08);
+    width:auto;
+    height:100%;
+    max-width:100%;
+    min-height:0;
+    aspect-ratio:63 / 88;
+    justify-self:center;
+    display:grid;
+    place-items:center;
+    overflow:hidden;
+    border:1px solid rgba(120,120,120,.4);
+    border-radius:11px;
+    background:rgba(255,255,255,.93);
+    box-shadow:0 2px 4px rgba(0,0,0,.08);
 }
+
 .selected-card img {
-    width:100%; height:100%; display:block; object-fit:contain;
-    user-select:none; -webkit-user-drag:none;
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:contain;
+    user-select:none;
+    -webkit-user-drag:none;
 }
+
 .create-button {
-    width:100%; height:52px; padding:0 14px;
-    border:1px solid #777; border-radius:8px;
-    background:var(--control-bg); color:#333; font-size:1.45rem; cursor:pointer;
+    width:100%;
+    height:52px;
+    padding:0 14px;
+    border:1px solid #777;
+    border-radius:8px;
+    background:var(--control-bg);
+    color:#333;
+    font-size:1.35rem;
+    cursor:pointer;
 }
+
 .create-button:hover { background:#fff; }
 .create-button:disabled { opacity:.5; cursor:not-allowed; }
 
-.main-panel {
-    min-width:0; min-height:0; height:100%;
-    display:flex; flex-direction:column;
-    padding:10px; overflow:hidden;
-    border:1px solid var(--panel-border); border-radius:6px; background:var(--panel);
+.sidebar.delete-mode {
+    grid-template-rows:auto auto auto 1fr;
 }
-.top-row { flex:0 0 auto; min-height:24px; margin-bottom:6px; }
-.status { min-height:1.2em; color:#555; font-size:.9rem; }
-.card-grid {
+
+.sidebar.delete-mode .add-only {
+    display:none !important;
+}
+
+.mode-note {
+    display:none;
+    align-self:start;
+    padding:14px;
+    border:1px solid rgba(90,90,90,.25);
+    border-radius:10px;
+    background:rgba(255,255,255,.65);
+    line-height:1.4;
+    color:#555;
+}
+
+.sidebar.delete-mode .mode-note {
+    display:block;
+}
+
+/* Main panel */
+.main-panel {
+    min-width:0;
+    min-height:0;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    padding:10px;
+    overflow:hidden;
+    border:1px solid var(--panel-border);
+    border-radius:6px;
+    background:var(--panel);
+}
+
+.top-row {
+    flex:0 0 auto;
+    min-height:24px;
+    margin-bottom:6px;
+}
+
+.status {
+    min-height:1.2em;
+    color:#555;
+    font-size:.9rem;
+}
+
+/* Gallery sizing copied from the successful reference approach:
+   browser owns card height; images use natural portrait ratio. */
+.card-grid,
+.pair-grid {
     flex:1 1 auto;
     min-height:0;
     display:grid;
@@ -135,13 +286,15 @@ button, select, input { font: inherit; }
     padding-right:4px;
     overflow-y:auto;
     overflow-x:hidden;
-    cursor:grab;
     user-select:none;
     scrollbar-gutter:stable;
     overscroll-behavior:contain;
     -webkit-overflow-scrolling:touch;
 }
+
+.card-grid { cursor:grab; }
 .card-grid.dragging { cursor:grabbing; }
+
 .card-button {
     position:relative;
     display:block;
@@ -156,100 +309,154 @@ button, select, input { font: inherit; }
     background:transparent;
     cursor:pointer;
 }
+
 .card-button img {
     display:block;
     width:100%;
     height:auto;
     max-width:100%;
-    object-fit:initial;
     user-select:none;
     -webkit-user-drag:none;
 }
-.card-button:hover { transform:translateY(-2px); }
+
+.card-button:hover {
+    transform:translateY(-2px);
+}
+
 .card-button.selected-1::after,
 .card-button.selected-2::after {
-    content:""; position:absolute; inset:0; border:4px solid; pointer-events:none;
+    content:"";
+    position:absolute;
+    inset:0;
+    border:4px solid;
+    pointer-events:none;
 }
+
 .card-button.selected-1::after { border-color:#3678ff; }
 .card-button.selected-2::after { border-color:#ff8b36; }
-.empty-state { padding:30px; text-align:center; color:#666; }
 
-@media (max-width:1350px) and (min-aspect-ratio:1/1) {
-    .app-layout { grid-template-columns:230px minmax(0,1fr); }
-}
-@media (max-width:1050px) and (min-aspect-ratio:1/1) {
-    .app-layout { grid-template-columns:200px minmax(0,1fr); }
+.empty-state {
+    padding:30px;
+    text-align:center;
+    color:#666;
 }
 
-/* Portrait / tall screens: controls move above gallery */
-@media (max-aspect-ratio:4/5) {
-    #app {
-        padding:max(10px,env(safe-area-inset-top)) max(10px,env(safe-area-inset-right)) max(10px,env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-left));
-    }
-    .app-layout {
-        display:grid;
-        grid-template-columns:1fr;
-        grid-template-rows:auto minmax(0,1fr);
-        gap:10px;
-    }
-    .sidebar {
-        height:auto; min-height:0;
-        display:grid;
-        grid-template-columns:1fr 1fr;
-        grid-template-rows:auto auto auto;
-        gap:10px;
-    }
-    .set-select { grid-column:1/-1; height:46px; font-size:1rem; }
-    .selected-card {
-        width:auto;
-        height:clamp(110px,18dvh,165px);
-        max-width:100%;
-        justify-self:center;
-    }
-    .create-button { grid-column:1/-1; height:48px; font-size:1.2rem; }
-    .main-panel { width:100%; height:100%; min-height:0; padding:8px; }
-    .top-row { min-height:20px; margin-bottom:5px; }
-    .status { font-size:.82rem; }
-    .card-grid { gap:10px; padding-right:2px; }
+/* Delete pair detail */
+.delete-view {
+    min-height:0;
+    height:100%;
+    display:flex;
+    flex-direction:column;
 }
 
-/* Landscape phones / short screens */
-@media (min-aspect-ratio:4/5) and (max-height:700px) {
-    #app { padding:8px; }
-    .app-layout { grid-template-columns:minmax(155px,22vw) minmax(0,1fr); gap:10px; }
-    .sidebar { gap:8px; }
-    .set-select { height:40px; font-size:.95rem; }
-    .selected-card {
-        max-height:calc((100dvh - 8px - 8px - 40px - 44px - 24px) / 2);
-        width:auto; height:100%;
-    }
-    .create-button { height:44px; font-size:1rem; }
-    .main-panel { padding:7px; }
-    .top-row { min-height:18px; margin-bottom:4px; }
-    .status { font-size:.78rem; }
-    .card-grid { gap:10px; }
+.delete-view-header {
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex:0 0 auto;
+    margin-bottom:10px;
 }
 
-@media (min-width:700px) and (max-aspect-ratio:4/5) {
-    .selected-card { height:clamp(145px,19dvh,210px); }
-}
-@media (max-width:420px) and (max-aspect-ratio:4/5) {
-    #app { padding:8px; }
-    .sidebar { gap:8px; }
-    .selected-card { height:clamp(100px,17dvh,140px); }
-    .create-button { height:44px; font-size:1.05rem; }
-    .card-grid { gap:10px; }
+.back-button {
+    min-height:40px;
+    padding:8px 14px;
 }
 
-@media (max-width:600px) {
-    .card-grid {
-        grid-template-columns:repeat(2, minmax(0,1fr));
-        gap:10px;
-    }
+.delete-title {
+    min-width:0;
+    font-size:1.05rem;
+    font-weight:bold;
+    color:#444;
 }
 
+.delete-scroll {
+    min-height:0;
+    flex:1 1 auto;
+    overflow-y:auto;
+    overflow-x:hidden;
+    padding:2px 4px 8px 2px;
+    scrollbar-gutter:stable;
+    -webkit-overflow-scrolling:touch;
+}
 
-/* Upload status modal */
+.selected-delete-card {
+    width:min(250px, 42vw);
+    margin:0 auto 14px;
+}
+
+.selected-delete-card img {
+    display:block;
+    width:100%;
+    height:auto;
+    border-radius:12px;
+}
+
+.delete-subtitle {
+    margin:4px 0 12px;
+    text-align:center;
+    color:#555;
+    font-weight:bold;
+}
+
+.pair-grid {
+    overflow:visible;
+    flex:none;
+}
+
+.delete-confirm-wrap {
+    min-height:0;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+}
+
+.confirm-pair {
+    flex:1 1 auto;
+    min-height:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:clamp(12px,4vw,40px);
+    overflow:auto;
+    padding:12px;
+}
+
+.confirm-card {
+    width:min(280px, 38%);
+    min-width:0;
+}
+
+.confirm-card img {
+    width:100%;
+    height:auto;
+    display:block;
+    border-radius:12px;
+}
+
+.confirm-plus {
+    font-size:clamp(1.8rem,5vw,3.5rem);
+    color:#555;
+    flex:0 0 auto;
+}
+
+.delete-button {
+    flex:0 0 auto;
+    width:min(520px,100%);
+    min-height:54px;
+    margin:10px auto 0;
+    border:1px solid #8e3535;
+    border-radius:9px;
+    background:#fff3f3;
+    color:#8e2f2f;
+    font-size:1.2rem;
+    cursor:pointer;
+}
+
+.delete-button:hover {
+    background:#ffe6e6;
+}
+
+/* Status modal */
 .modal-overlay {
     position:fixed;
     inset:0;
@@ -260,6 +467,7 @@ button, select, input { font: inherit; }
     background:rgba(0,0,0,.34);
     backdrop-filter:blur(2px);
 }
+
 .modal-panel {
     width:min(410px,100%);
     padding:28px;
@@ -269,10 +477,12 @@ button, select, input { font: inherit; }
     box-shadow:0 16px 45px rgba(0,0,0,.24);
     text-align:center;
 }
+
 .modal-panel h2 {
     margin:0 0 12px;
     font-size:1.55rem;
 }
+
 .modal-message {
     min-height:2.6em;
     display:grid;
@@ -281,6 +491,7 @@ button, select, input { font: inherit; }
     color:#555;
     line-height:1.4;
 }
+
 .modal-spinner {
     width:34px;
     height:34px;
@@ -290,9 +501,11 @@ button, select, input { font: inherit; }
     border-radius:50%;
     animation:modal-spin .8s linear infinite;
 }
+
 @keyframes modal-spin {
     to { transform:rotate(360deg); }
 }
+
 .modal-ok {
     min-width:120px;
     height:44px;
@@ -303,50 +516,210 @@ button, select, input { font: inherit; }
     color:#333;
     cursor:pointer;
 }
+
 .modal-ok:hover { background:#f3f3f3; }
 .modal-ok:disabled { opacity:.45; cursor:not-allowed; }
 
+/* Responsive */
+@media (max-width:1350px) and (min-aspect-ratio:1/1) {
+    .app-layout { grid-template-columns:230px minmax(0,1fr); }
+}
+
+@media (max-width:1050px) and (min-aspect-ratio:1/1) {
+    .app-layout { grid-template-columns:200px minmax(0,1fr); }
+}
+
+@media (max-aspect-ratio:4/5) {
+    #app {
+        padding:
+          max(10px,env(safe-area-inset-top))
+          max(10px,env(safe-area-inset-right))
+          max(10px,env(safe-area-inset-bottom))
+          max(10px,env(safe-area-inset-left));
+    }
+
+    .app-layout {
+        grid-template-columns:1fr;
+        grid-template-rows:auto minmax(0,1fr);
+        gap:10px;
+    }
+
+    .sidebar {
+        height:auto;
+        min-height:0;
+        grid-template-columns:1fr 1fr;
+        grid-template-rows:auto auto auto auto auto;
+        gap:8px;
+    }
+
+    #home-button,
+    #mode-toggle {
+        min-height:42px;
+    }
+
+    .set-select {
+        grid-column:1/-1;
+        height:46px;
+        font-size:1rem;
+    }
+
+    .selected-card {
+        width:auto;
+        height:clamp(100px,16dvh,150px);
+        max-width:100%;
+        justify-self:center;
+    }
+
+    .create-button {
+        grid-column:1/-1;
+        height:46px;
+        font-size:1.1rem;
+    }
+
+    .sidebar.delete-mode {
+        grid-template-columns:1fr 1fr;
+        grid-template-rows:auto auto auto;
+    }
+
+    .sidebar.delete-mode .set-select {
+        grid-column:1/-1;
+    }
+
+    .sidebar.delete-mode .mode-note {
+        display:none;
+    }
+
+    .main-panel {
+        width:100%;
+        height:100%;
+        min-height:0;
+        padding:8px;
+    }
+
+    .top-row {
+        min-height:20px;
+        margin-bottom:5px;
+    }
+
+    .status { font-size:.82rem; }
+}
+
+@media (min-aspect-ratio:4/5) and (max-height:700px) {
+    #app { padding:8px; }
+    .app-layout {
+        grid-template-columns:minmax(160px,22vw) minmax(0,1fr);
+        gap:10px;
+    }
+    .sidebar { gap:7px; }
+    .control-button { min-height:36px; padding:5px 8px; font-size:.9rem; }
+    .set-select { height:38px; font-size:.9rem; }
+    .selected-card {
+        max-height:calc((100dvh - 8px - 8px - 36px - 36px - 38px - 42px - 35px) / 2);
+        width:auto;
+        height:100%;
+    }
+    .create-button { height:42px; font-size:1rem; }
+    .mode-note { padding:8px; font-size:.8rem; }
+    .main-panel { padding:7px; }
+    .top-row { min-height:18px; margin-bottom:4px; }
+    .status { font-size:.78rem; }
+}
+
+@media (max-width:600px) {
+    .card-grid,
+    .pair-grid {
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:10px;
+    }
+
+    .confirm-pair {
+        gap:10px;
+    }
+
+    .confirm-card {
+        width:44%;
+    }
+}
 </style>
 </head>
+
 <body>
-<div id="version-badge" class="version-badge">GCG Pair Creator · v1.4</div>
+<div id="version-badge" class="version-badge">GCG Pair Creator · v1.5</div>
+
 <section id="password-screen">
-  <div class="login-panel">
-    <h1>Pair Creator</h1>
-    <p>Enter the shared password to continue.</p>
-    <div class="password-row">
-      <input id="password-input" type="password" autocomplete="current-password" placeholder="Password">
-      <button id="password-button" class="primary-button">Enter</button>
+    <div class="login-panel">
+        <h1>Pair Creator</h1>
+        <p>Enter the shared password to continue.</p>
+        <div class="password-row">
+            <input id="password-input" type="password" autocomplete="current-password" placeholder="Password">
+            <button id="password-button" class="primary-button">Enter</button>
+        </div>
+        <div id="password-message"></div>
     </div>
-    <div id="password-message"></div>
-  </div>
 </section>
 
 <main id="app" class="hidden">
-  <div class="app-layout">
-    <aside class="sidebar">
-      <select id="set-select" class="set-select"></select>
-      <div id="selected-1" class="selected-card"></div>
-      <div id="selected-2" class="selected-card"></div>
-      <button id="create-pair" class="create-button">Create Pair</button>
-    </aside>
+    <div class="app-layout">
+        <aside id="sidebar" class="sidebar">
+            <button id="home-button" class="control-button">Home</button>
+            <button id="mode-toggle" class="control-button">Switch to Delete Pairs</button>
+            <select id="set-select" class="set-select"></select>
 
-    <section class="main-panel">
-      <div class="top-row"><div id="status" class="status"></div></div>
-      <div id="card-grid" class="card-grid"></div>
-      <div id="empty-state" class="empty-state hidden">No cards found for this set.</div>
-    </section>
-  </div>
+            <div id="selected-1" class="selected-card add-only"></div>
+            <div id="selected-2" class="selected-card add-only"></div>
+            <button id="create-pair" class="create-button add-only">Create Pair</button>
+
+            <div class="mode-note">
+                Delete mode: choose a card, choose one of its paired cards, then confirm deletion.
+            </div>
+        </aside>
+
+        <section class="main-panel">
+            <div id="gallery-view" class="delete-view">
+                <div class="top-row"><div id="status" class="status"></div></div>
+                <div id="card-grid" class="card-grid"></div>
+                <div id="empty-state" class="empty-state hidden">No cards found for this set.</div>
+            </div>
+
+            <div id="delete-pairs-view" class="delete-view hidden">
+                <div class="delete-view-header">
+                    <button id="delete-pairs-back" class="back-button">← Back</button>
+                    <div id="delete-pairs-title" class="delete-title"></div>
+                </div>
+
+                <div class="delete-scroll">
+                    <div id="delete-selected-card" class="selected-delete-card"></div>
+                    <div class="delete-subtitle">Paired Cards</div>
+                    <div id="pair-grid" class="pair-grid"></div>
+                    <div id="no-pairs-message" class="empty-state hidden">This card has no saved pairs.</div>
+                </div>
+            </div>
+
+            <div id="delete-confirm-view" class="delete-confirm-wrap hidden">
+                <div class="delete-view-header">
+                    <button id="delete-confirm-back" class="back-button">← Back</button>
+                    <div class="delete-title">Delete Pair?</div>
+                </div>
+
+                <div class="confirm-pair">
+                    <div id="confirm-card-1" class="confirm-card"></div>
+                    <div class="confirm-plus">+</div>
+                    <div id="confirm-card-2" class="confirm-card"></div>
+                </div>
+
+                <button id="delete-pair-button" class="delete-button">Delete This Pair</button>
+            </div>
+        </section>
+    </div>
 </main>
 
-
-<div id="upload-modal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="upload-modal-title">
-  <div class="modal-panel">
-    <h2 id="upload-modal-title">Pair Upload</h2>
-    <div id="upload-spinner" class="modal-spinner hidden"></div>
-    <div id="upload-modal-message" class="modal-message"></div>
-    <button id="upload-modal-ok" class="modal-ok">Okay</button>
-  </div>
+<div id="status-modal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="status-modal-title">
+    <div class="modal-panel">
+        <h2 id="status-modal-title">Pair Status</h2>
+        <div id="status-spinner" class="modal-spinner hidden"></div>
+        <div id="status-modal-message" class="modal-message"></div>
+        <button id="status-modal-ok" class="modal-ok">Okay</button>
+    </div>
 </div>
 
 <script>
@@ -356,283 +729,730 @@ const PASSWORD_CHECK_PATH = "/functions/v1/check-pair-password";
 const CARD_BACK_URL = "images/basic/Card_White.png";
 
 const SETS = [
-  { code:"GD01", csvUrl:"data/GD01Pairings.csv", imageFolder:"images/GD01" },
-  { code:"GD02", csvUrl:"data/GD02Pairings.csv", imageFolder:"images/GD02" },
-  { code:"GD03", csvUrl:"data/GD03Pairings.csv", imageFolder:"images/GD03" },
-  { code:"GD04", csvUrl:"data/GD04Pairings.csv", imageFolder:"images/GD04" },
-  { code:"GD05", csvUrl:"data/GD05Pairings.csv", imageFolder:"images/GD05" },
-  { code:"EB01", csvUrl:"data/EB01Pairings.csv", imageFolder:"images/EB01" }
+    { code:"GD01", csvUrl:"data/GD01Pairings.csv", imageFolder:"images/GD01" },
+    { code:"GD02", csvUrl:"data/GD02Pairings.csv", imageFolder:"images/GD02" },
+    { code:"GD03", csvUrl:"data/GD03Pairings.csv", imageFolder:"images/GD03" },
+    { code:"GD04", csvUrl:"data/GD04Pairings.csv", imageFolder:"images/GD04" },
+    { code:"GD05", csvUrl:"data/GD05Pairings.csv", imageFolder:"images/GD05" },
+    { code:"EB01", csvUrl:"data/EB01Pairings.csv", imageFolder:"images/EB01" }
 ];
 
 let currentSet = SETS[0];
 let cards = [];
+let cardMap = {};
+
 let selectedCard1 = null;
 let selectedCard2 = null;
-let existingPairs = new Set();
-let isUploading = false;
 
+let existingPairs = new Set();
+let pairRows = [];
+
+let currentMode = "add";
+let deletePrimaryCard = null;
+let deleteSecondaryCard = null;
+
+let databaseBusy = false;
+let modalCloseAction = null;
+
+/* Elements */
 const versionBadge = document.getElementById("version-badge");
 const passwordScreen = document.getElementById("password-screen");
 const passwordInput = document.getElementById("password-input");
 const passwordButton = document.getElementById("password-button");
 const passwordMessage = document.getElementById("password-message");
+
 const app = document.getElementById("app");
+const sidebar = document.getElementById("sidebar");
+const homeButton = document.getElementById("home-button");
+const modeToggle = document.getElementById("mode-toggle");
 const setSelect = document.getElementById("set-select");
+
+const galleryView = document.getElementById("gallery-view");
+const status = document.getElementById("status");
 const cardGrid = document.getElementById("card-grid");
+const emptyState = document.getElementById("empty-state");
+
 const selected1 = document.getElementById("selected-1");
 const selected2 = document.getElementById("selected-2");
 const createPairButton = document.getElementById("create-pair");
-const status = document.getElementById("status");
-const emptyState = document.getElementById("empty-state");
-const uploadModal = document.getElementById("upload-modal");
-const uploadModalMessage = document.getElementById("upload-modal-message");
-const uploadModalOk = document.getElementById("upload-modal-ok");
-const uploadSpinner = document.getElementById("upload-spinner");
 
+const deletePairsView = document.getElementById("delete-pairs-view");
+const deletePairsBack = document.getElementById("delete-pairs-back");
+const deletePairsTitle = document.getElementById("delete-pairs-title");
+const deleteSelectedCard = document.getElementById("delete-selected-card");
+const pairGrid = document.getElementById("pair-grid");
+const noPairsMessage = document.getElementById("no-pairs-message");
+
+const deleteConfirmView = document.getElementById("delete-confirm-view");
+const deleteConfirmBack = document.getElementById("delete-confirm-back");
+const confirmCard1 = document.getElementById("confirm-card-1");
+const confirmCard2 = document.getElementById("confirm-card-2");
+const deletePairButton = document.getElementById("delete-pair-button");
+
+const statusModal = document.getElementById("status-modal");
+const statusModalTitle = document.getElementById("status-modal-title");
+const statusModalMessage = document.getElementById("status-modal-message");
+const statusModalOk = document.getElementById("status-modal-ok");
+const statusSpinner = document.getElementById("status-spinner");
+
+/* Password */
 async function validatePassword() {
-  const password = passwordInput.value;
-  if (!password) { passwordMessage.textContent = "Enter a password."; return; }
-  passwordButton.disabled = true;
-  passwordMessage.textContent = "Checking...";
-  try {
-    const response = await fetch(SUPABASE_URL + PASSWORD_CHECK_PATH, {
-      method:"POST",
-      headers:{
-        "Content-Type":"application/json",
-        "apikey":SUPABASE_PUBLISHABLE_KEY,
-        "Authorization":`Bearer ${SUPABASE_PUBLISHABLE_KEY}`
-      },
-      body:JSON.stringify({password})
-    });
-    if (!response.ok) throw new Error(`Password check failed: ${response.status}`);
-    const result = await response.json();
-    if (!result.valid) {
-      passwordMessage.textContent = "Incorrect password.";
-      passwordButton.disabled = false;
-      return;
+    const password = passwordInput.value;
+
+    if (!password) {
+        passwordMessage.textContent = "Enter a password.";
+        return;
     }
-    passwordMessage.textContent = "";
-    passwordScreen.classList.add("hidden");
-    versionBadge.classList.add("hidden");
-    app.classList.remove("hidden");
-    await initializeApp();
-  } catch (error) {
-    console.error(error);
-    passwordMessage.textContent = "Could not verify password.";
-    passwordButton.disabled = false;
-  }
+
+    passwordButton.disabled = true;
+    passwordMessage.textContent = "Checking...";
+
+    try {
+        const response = await fetch(SUPABASE_URL + PASSWORD_CHECK_PATH, {
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json",
+                "apikey":SUPABASE_PUBLISHABLE_KEY,
+                "Authorization":`Bearer ${SUPABASE_PUBLISHABLE_KEY}`
+            },
+            body:JSON.stringify({ password })
+        });
+
+        if (!response.ok) {
+            throw new Error(`Password check failed: ${response.status}`);
+        }
+
+        const result = await response.json();
+
+        if (!result.valid) {
+            passwordMessage.textContent = "Incorrect password.";
+            passwordButton.disabled = false;
+            return;
+        }
+
+        passwordMessage.textContent = "";
+        passwordScreen.classList.add("hidden");
+        versionBadge.classList.add("hidden");
+        app.classList.remove("hidden");
+
+        await initializeApp();
+    }
+    catch (error) {
+        console.error(error);
+        passwordMessage.textContent = "Could not verify password.";
+        passwordButton.disabled = false;
+    }
 }
+
 passwordButton.addEventListener("click", validatePassword);
-passwordInput.addEventListener("keydown", e => { if (e.key === "Enter") validatePassword(); });
+passwordInput.addEventListener("keydown", event => {
+    if (event.key === "Enter") validatePassword();
+});
 
+/* CSV */
 function parseCSVLine(line) {
-  const values = [];
-  let current = "";
-  let inQuotes = false;
-  for (let i=0;i<line.length;i++) {
-    const char = line[i];
-    const next = line[i+1];
-    if (char === '"') {
-      if (inQuotes && next === '"') { current += '"'; i++; }
-      else inQuotes = !inQuotes;
-    } else if (char === "," && !inQuotes) {
-      values.push(current); current = "";
-    } else current += char;
-  }
-  values.push(current);
-  return values.map(v => v.trim());
+    const values = [];
+    let current = "";
+    let inQuotes = false;
+
+    for (let i = 0; i < line.length; i++) {
+        const char = line[i];
+        const next = line[i + 1];
+
+        if (char === '"') {
+            if (inQuotes && next === '"') {
+                current += '"';
+                i++;
+            } else {
+                inQuotes = !inQuotes;
+            }
+        } else if (char === "," && !inQuotes) {
+            values.push(current);
+            current = "";
+        } else {
+            current += char;
+        }
+    }
+
+    values.push(current);
+    return values.map(value => value.trim());
 }
+
 function extractCardId(value) {
-  const match = String(value || "").match(/[A-Z]{2}\d{2}-\d{3}/i);
-  return match ? match[0].toUpperCase() : "";
+    const match = String(value || "").match(/[A-Z]{2}\d{2}-\d{3}/i);
+    return match ? match[0].toUpperCase() : "";
 }
+
 function removeCardId(value) {
-  return String(value || "").replace(/[A-Z]{2}\d{2}-\d{3}/i, "").trim();
+    return String(value || "").replace(/[A-Z]{2}\d{2}-\d{3}/i, "").trim();
 }
+
 function parseCSV(text) {
-  const lines = text.split(/\r?\n/).filter(line => line.trim() !== "");
-  if (lines.length < 2) return [];
-  const result = [];
-  for (let i=1;i<lines.length;i++) {
-    const cols = parseCSVLine(lines[i]);
-    const type = (cols[0] || "").trim();
-    const id = extractCardId(cols[1]);
-    const name = removeCardId(cols[1]);
-    if (!id) continue;
-    result.push({id,type,name});
-  }
-  return result;
+    const lines = text.split(/\r?\n/).filter(line => line.trim() !== "");
+    if (lines.length < 2) return [];
+
+    const result = [];
+
+    for (let i = 1; i < lines.length; i++) {
+        const cols = parseCSVLine(lines[i]);
+        const type = (cols[0] || "").trim();
+        const id = extractCardId(cols[1]);
+        const name = removeCardId(cols[1]);
+
+        if (!id) continue;
+        result.push({ id, type, name });
+    }
+
+    return result;
 }
 
+/* General helpers */
 function normalizePair(card1, card2) {
-  return [card1, card2].sort((a,b) => a.localeCompare(b)).join("|");
+    return [card1, card2]
+        .map(value => String(value).trim().toUpperCase())
+        .sort((a,b) => a.localeCompare(b))
+        .join("|");
 }
+
 function getImageUrl(card) {
-  return currentSet.imageFolder + "/" + card.id + ".png";
-}
-function clearSelection() {
-  selectedCard1 = null;
-  selectedCard2 = null;
-  renderSelectedCards();
-  renderCards();
-}
-function selectCard(card) {
-  if (selectedCard1 && selectedCard1.id === card.id) selectedCard1 = null;
-  else if (selectedCard2 && selectedCard2.id === card.id) selectedCard2 = null;
-  else if (!selectedCard1) selectedCard1 = card;
-  else if (!selectedCard2) selectedCard2 = card;
-  renderSelectedCards();
-  renderCards();
+    return getImageUrlById(card.id);
 }
 
+function getImageUrlById(cardId) {
+    const id = String(cardId || "").toUpperCase();
+    const setCode = id.substring(0,4);
+    const set = SETS.find(item => item.code === setCode) || currentSet;
+    return `${set.imageFolder}/${id}.png`;
+}
+
+function getCardById(cardId) {
+    const id = String(cardId || "").toUpperCase();
+
+    if (cardMap[id]) {
+        return cardMap[id];
+    }
+
+    return {
+        id,
+        name:id,
+        type:""
+    };
+}
+
+function setStatus(message) {
+    status.textContent = message;
+}
+
+function showView(view) {
+    galleryView.classList.add("hidden");
+    deletePairsView.classList.add("hidden");
+    deleteConfirmView.classList.add("hidden");
+    view.classList.remove("hidden");
+}
+
+/* Pair database */
 async function loadPairings() {
-  const url = `${SUPABASE_URL}/rest/v1/pairings?select=card_1,card_2`;
-  const response = await fetch(url, {headers:{
-    "apikey":SUPABASE_PUBLISHABLE_KEY,
-    "Authorization":`Bearer ${SUPABASE_PUBLISHABLE_KEY}`
-  }});
-  if (!response.ok) throw new Error("Could not load pairings.");
-  const rows = await response.json();
-  existingPairs.clear();
-  rows.forEach(row => {
-    if (row.card_1 && row.card_2) existingPairs.add(normalizePair(row.card_1,row.card_2));
-  });
-}
+    const url = `${SUPABASE_URL}/rest/v1/pairings?select=card_1,card_2`;
 
-function showUploadModal(message, uploading = false) {
-  uploadModalMessage.textContent = message;
-  uploadSpinner.classList.toggle("hidden", !uploading);
-  uploadModalOk.disabled = uploading;
-  uploadModal.classList.remove("hidden");
-}
-
-function finishUploadModal(message) {
-  uploadModalMessage.textContent = message;
-  uploadSpinner.classList.add("hidden");
-  uploadModalOk.disabled = false;
-  uploadModalOk.focus();
-}
-
-function closeUploadModal() {
-  if (isUploading) return;
-  uploadModal.classList.add("hidden");
-}
-
-async function createPair() {
-  if (isUploading) return;
-
-  if (!selectedCard1 || !selectedCard2) {
-    showUploadModal("Select two cards first.");
-    return;
-  }
-
-  const card1 = selectedCard1.id;
-  const card2 = selectedCard2.id;
-  const key = normalizePair(card1, card2);
-
-  if (existingPairs.has(key)) {
-    showUploadModal("Pair already exists.");
-    return;
-  }
-
-  isUploading = true;
-  createPairButton.disabled = true;
-  showUploadModal(`Uploading ${card1} + ${card2}...`, true);
-
-  const ordered = [card1, card2].sort((a,b)=>a.localeCompare(b));
-
-  try {
-    const response = await fetch(`${SUPABASE_URL}/rest/v1/pairings`, {
-      method:"POST",
-      headers:{
-        "Content-Type":"application/json",
-        "apikey":SUPABASE_PUBLISHABLE_KEY,
-        "Authorization":`Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
-        "Prefer":"return=minimal"
-      },
-      body:JSON.stringify([{card_1:ordered[0], card_2:ordered[1]}])
+    const response = await fetch(url, {
+        headers:{
+            "apikey":SUPABASE_PUBLISHABLE_KEY,
+            "Authorization":`Bearer ${SUPABASE_PUBLISHABLE_KEY}`
+        }
     });
 
     if (!response.ok) {
-      throw new Error(`Upload failed: ${response.status}`);
+        throw new Error("Could not load pairings.");
     }
 
-    existingPairs.add(key);
-    clearSelection();
-    finishUploadModal("Pair uploaded!");
-  } catch (error) {
-    console.error(error);
-    finishUploadModal("Upload failed. Please try again.");
-  } finally {
-    isUploading = false;
-    createPairButton.disabled = false;
-  }
+    const rows = await response.json();
+
+    existingPairs.clear();
+    pairRows = [];
+
+    rows.forEach(row => {
+        const card1 = String(row.card_1 || "").trim().toUpperCase();
+        const card2 = String(row.card_2 || "").trim().toUpperCase();
+
+        if (!card1 || !card2) return;
+
+        existingPairs.add(normalizePair(card1, card2));
+        pairRows.push({ card_1:card1, card_2:card2 });
+    });
 }
 
-function setStatus(message) { status.textContent = message; }
+function getPairedIds(cardId) {
+    const id = String(cardId || "").trim().toUpperCase();
+    const results = new Set();
+
+    pairRows.forEach(row => {
+        if (row.card_1 === id && row.card_2 !== id) {
+            results.add(row.card_2);
+        }
+        if (row.card_2 === id && row.card_1 !== id) {
+            results.add(row.card_1);
+        }
+    });
+
+    return Array.from(results)
+        .sort((a,b) => a.localeCompare(b, undefined, {numeric:true}));
+}
+
+/* Shared status modal */
+function showStatusModal(message, busy = false, title = "Pair Status", onClose = null) {
+    statusModalTitle.textContent = title;
+    statusModalMessage.textContent = message;
+    statusSpinner.classList.toggle("hidden", !busy);
+    statusModalOk.disabled = busy;
+    modalCloseAction = onClose;
+    statusModal.classList.remove("hidden");
+}
+
+function finishStatusModal(message, title = "Pair Status", onClose = null) {
+    statusModalTitle.textContent = title;
+    statusModalMessage.textContent = message;
+    statusSpinner.classList.add("hidden");
+    statusModalOk.disabled = false;
+    modalCloseAction = onClose;
+    statusModalOk.focus();
+}
+
+async function closeStatusModal() {
+    if (databaseBusy) return;
+
+    statusModal.classList.add("hidden");
+
+    const action = modalCloseAction;
+    modalCloseAction = null;
+
+    if (action) {
+        await action();
+    }
+}
+
+/* Add mode */
+function clearSelection() {
+    selectedCard1 = null;
+    selectedCard2 = null;
+    renderSelectedCards();
+
+    if (currentMode === "add") {
+        renderGalleryCards();
+    }
+}
+
+function selectAddCard(card) {
+    if (selectedCard1 && selectedCard1.id === card.id) {
+        selectedCard1 = null;
+    }
+    else if (selectedCard2 && selectedCard2.id === card.id) {
+        selectedCard2 = null;
+    }
+    else if (!selectedCard1) {
+        selectedCard1 = card;
+    }
+    else if (!selectedCard2) {
+        selectedCard2 = card;
+    }
+
+    renderSelectedCards();
+    renderGalleryCards();
+}
+
 function renderSelectedCard(container, card) {
-  const src = card ? getImageUrl(card) : CARD_BACK_URL;
-  const alt = card ? card.id : "Card back";
-  container.innerHTML = `<img src="${src}" alt="${alt}" draggable="false">`;
+    const src = card ? getImageUrl(card) : CARD_BACK_URL;
+    const alt = card ? card.id : "Card back";
+
+    container.innerHTML =
+        `<img src="${src}" alt="${alt}" draggable="false">`;
 }
+
 function renderSelectedCards() {
-  renderSelectedCard(selected1, selectedCard1);
-  renderSelectedCard(selected2, selectedCard2);
+    renderSelectedCard(selected1, selectedCard1);
+    renderSelectedCard(selected2, selectedCard2);
 }
-function renderCards() {
-  cardGrid.innerHTML = "";
-  emptyState.classList.toggle("hidden", cards.length > 0);
-  cards.forEach(card => {
+
+async function createPair() {
+    if (databaseBusy) return;
+
+    if (!selectedCard1 || !selectedCard2) {
+        showStatusModal("Select two cards first.", false, "Pair Upload");
+        return;
+    }
+
+    const card1 = selectedCard1.id;
+    const card2 = selectedCard2.id;
+    const key = normalizePair(card1, card2);
+
+    if (existingPairs.has(key)) {
+        showStatusModal("Pair already exists.", false, "Pair Upload");
+        return;
+    }
+
+    databaseBusy = true;
+    createPairButton.disabled = true;
+
+    showStatusModal(
+        `Uploading ${card1} + ${card2}...`,
+        true,
+        "Pair Upload"
+    );
+
+    const ordered = [card1, card2].sort((a,b) => a.localeCompare(b));
+
+    try {
+        const response = await fetch(`${SUPABASE_URL}/rest/v1/pairings`, {
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json",
+                "apikey":SUPABASE_PUBLISHABLE_KEY,
+                "Authorization":`Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
+                "Prefer":"return=minimal"
+            },
+            body:JSON.stringify([{
+                card_1:ordered[0],
+                card_2:ordered[1]
+            }])
+        });
+
+        if (!response.ok) {
+            throw new Error(`Upload failed: ${response.status}`);
+        }
+
+        existingPairs.add(key);
+        pairRows.push({
+            card_1:ordered[0],
+            card_2:ordered[1]
+        });
+
+        clearSelection();
+        finishStatusModal("Pair uploaded!", "Pair Upload");
+    }
+    catch (error) {
+        console.error(error);
+        finishStatusModal("Upload failed. Please try again.", "Pair Upload");
+    }
+    finally {
+        databaseBusy = false;
+        createPairButton.disabled = false;
+    }
+}
+
+/* Main gallery */
+function createGalleryCard(card, clickHandler) {
     const button = document.createElement("button");
     button.className = "card-button";
-    if (selectedCard1 && selectedCard1.id === card.id) button.classList.add("selected-1");
-    if (selectedCard2 && selectedCard2.id === card.id) button.classList.add("selected-2");
-    button.innerHTML = `<img src="${getImageUrl(card)}" alt="${card.id}" loading="lazy" draggable="false">`;
+
+    if (currentMode === "add") {
+        if (selectedCard1 && selectedCard1.id === card.id) {
+            button.classList.add("selected-1");
+        }
+        if (selectedCard2 && selectedCard2.id === card.id) {
+            button.classList.add("selected-2");
+        }
+    }
+
+    button.innerHTML =
+        `<img src="${getImageUrl(card)}" alt="${card.id}" loading="lazy" draggable="false">`;
+
     button.addEventListener("click", () => {
-      if (Date.now() < suppressCardClickUntil) return;
-      selectCard(card);
+        if (Date.now() < suppressCardClickUntil) return;
+        clickHandler(card);
     });
-    cardGrid.appendChild(button);
-  });
+
+    return button;
 }
 
+function renderGalleryCards() {
+    cardGrid.innerHTML = "";
+
+    emptyState.classList.toggle("hidden", cards.length > 0);
+
+    cards.forEach(card => {
+        const clickHandler =
+            currentMode === "add"
+                ? selectAddCard
+                : openDeletePairs;
+
+        cardGrid.appendChild(
+            createGalleryCard(card, clickHandler)
+        );
+    });
+}
+
+/* Delete mode */
+function openDeletePairs(card) {
+    deletePrimaryCard = card;
+    deleteSecondaryCard = null;
+
+    deletePairsTitle.textContent =
+        `${card.id} — choose the paired card to delete`;
+
+    deleteSelectedCard.innerHTML =
+        `<img src="${getImageUrl(card)}" alt="${card.id}">`;
+
+    renderPairedCards(card);
+    showView(deletePairsView);
+}
+
+function renderPairedCards(card) {
+    pairGrid.innerHTML = "";
+
+    const pairedIds = getPairedIds(card.id);
+
+    noPairsMessage.classList.toggle(
+        "hidden",
+        pairedIds.length > 0
+    );
+
+    pairedIds.forEach(pairId => {
+        const pairCard = getCardById(pairId);
+
+        const button = document.createElement("button");
+        button.className = "card-button";
+        button.innerHTML =
+            `<img src="${getImageUrlById(pairId)}" alt="${pairId}" loading="lazy" draggable="false">`;
+
+        button.addEventListener("click", () => {
+            openDeleteConfirm(card, pairCard);
+        });
+
+        pairGrid.appendChild(button);
+    });
+}
+
+function openDeleteConfirm(card1, card2) {
+    deletePrimaryCard = card1;
+    deleteSecondaryCard = card2;
+
+    confirmCard1.innerHTML =
+        `<img src="${getImageUrlById(card1.id)}" alt="${card1.id}">`;
+
+    confirmCard2.innerHTML =
+        `<img src="${getImageUrlById(card2.id)}" alt="${card2.id}">`;
+
+    deletePairButton.textContent =
+        `Delete ${card1.id} + ${card2.id}`;
+
+    showView(deleteConfirmView);
+}
+
+async function deleteExactPair(card1, card2) {
+    const url =
+        `${SUPABASE_URL}/rest/v1/pairings` +
+        `?card_1=eq.${encodeURIComponent(card1)}` +
+        `&card_2=eq.${encodeURIComponent(card2)}`;
+
+    const response = await fetch(url, {
+        method:"DELETE",
+        headers:{
+            "apikey":SUPABASE_PUBLISHABLE_KEY,
+            "Authorization":`Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
+            "Prefer":"return=representation"
+        }
+    });
+
+    if (!response.ok) {
+        const details = await response.text();
+        throw new Error(`Delete failed: ${response.status} ${details}`);
+    }
+
+    try {
+        const deletedRows = await response.json();
+        return Array.isArray(deletedRows)
+            ? deletedRows.length
+            : 0;
+    }
+    catch (_) {
+        return 0;
+    }
+}
+
+async function deleteSelectedPair() {
+    if (
+        databaseBusy ||
+        !deletePrimaryCard ||
+        !deleteSecondaryCard
+    ) {
+        return;
+    }
+
+    const card1 = deletePrimaryCard.id.toUpperCase();
+    const card2 = deleteSecondaryCard.id.toUpperCase();
+
+    databaseBusy = true;
+    deletePairButton.disabled = true;
+
+    showStatusModal(
+        `Deleting ${card1} + ${card2}...`,
+        true,
+        "Delete Pair"
+    );
+
+    try {
+        const ordered =
+            [card1, card2].sort((a,b) => a.localeCompare(b));
+
+        let deletedCount =
+            await deleteExactPair(ordered[0], ordered[1]);
+
+        // Fallback for any older row stored in the opposite order.
+        if (deletedCount === 0) {
+            deletedCount =
+                await deleteExactPair(ordered[1], ordered[0]);
+        }
+
+        if (deletedCount === 0) {
+            throw new Error(
+                "No matching row was deleted. Supabase may need a DELETE policy for the pairings table."
+            );
+        }
+
+        finishStatusModal(
+            "Pair deleted!",
+            "Delete Pair",
+            async () => {
+                setStatus("Refreshing pair database...");
+
+                try {
+                    await loadPairings();
+
+                    if (
+                        currentMode === "delete" &&
+                        deletePrimaryCard
+                    ) {
+                        openDeletePairs(deletePrimaryCard);
+                        setStatus(`${cards.length} cards loaded.`);
+                    }
+                }
+                catch (error) {
+                    console.error(error);
+                    showView(galleryView);
+                    setStatus("Could not refresh pair database.");
+                }
+            }
+        );
+    }
+    catch (error) {
+        console.error(error);
+
+        finishStatusModal(
+            "Delete failed. Check the Supabase DELETE policy and try again.",
+            "Delete Pair"
+        );
+    }
+    finally {
+        databaseBusy = false;
+        deletePairButton.disabled = false;
+    }
+}
+
+/* Mode */
+function setMode(mode) {
+    currentMode = mode === "delete" ? "delete" : "add";
+
+    clearSelection();
+
+    deletePrimaryCard = null;
+    deleteSecondaryCard = null;
+
+    showView(galleryView);
+
+    const deleteMode = currentMode === "delete";
+
+    sidebar.classList.toggle("delete-mode", deleteMode);
+    modeToggle.classList.toggle("delete-active", deleteMode);
+
+    modeToggle.textContent =
+        deleteMode
+            ? "Switch to Add Pairs"
+            : "Switch to Delete Pairs";
+
+    setStatus(
+        deleteMode
+            ? `${cards.length} cards loaded. Select a card to view its pairs.`
+            : `${cards.length} cards loaded.`
+    );
+
+    renderGalleryCards();
+}
+
+/* Set loading */
 async function loadSet(code) {
-  const set = SETS.find(item => item.code === code);
-  if (!set) return;
-  currentSet = set;
-  selectedCard1 = null;
-  selectedCard2 = null;
-  renderSelectedCards();
-  setStatus(`Loading ${set.code}...`);
-  const response = await fetch(set.csvUrl);
-  if (!response.ok) {
-    cards = [];
-    renderCards();
-    setStatus(`Could not load ${set.csvUrl}`);
-    return;
-  }
-  const csv = await response.text();
-  cards = parseCSV(csv);
-  cardGrid.scrollTop = 0;
-  renderCards();
-  setStatus(`${cards.length} cards loaded.`);
+    const set = SETS.find(item => item.code === code);
+    if (!set) return;
+
+    currentSet = set;
+
+    selectedCard1 = null;
+    selectedCard2 = null;
+    deletePrimaryCard = null;
+    deleteSecondaryCard = null;
+
+    renderSelectedCards();
+    showView(galleryView);
+
+    setStatus(`Loading ${set.code}...`);
+
+    try {
+        const response = await fetch(set.csvUrl);
+
+        if (!response.ok) {
+            throw new Error(`Could not load ${set.csvUrl}`);
+        }
+
+        const csv = await response.text();
+        cards = parseCSV(csv);
+
+        cardMap = {};
+        cards.forEach(card => {
+            cardMap[card.id] = card;
+        });
+
+        cardGrid.scrollTop = 0;
+        renderGalleryCards();
+
+        setStatus(
+            currentMode === "delete"
+                ? `${cards.length} cards loaded. Select a card to view its pairs.`
+                : `${cards.length} cards loaded.`
+        );
+    }
+    catch (error) {
+        console.error(error);
+        cards = [];
+        cardMap = {};
+        renderGalleryCards();
+        setStatus(error.message);
+    }
 }
 
 async function initializeApp() {
-  setSelect.innerHTML = "";
-  SETS.forEach(set => {
-    const option = document.createElement("option");
-    option.value = set.code;
-    option.textContent = set.code;
-    setSelect.appendChild(option);
-  });
-  renderSelectedCards();
-  setStatus("Loading pair database...");
-  try { await loadPairings(); }
-  catch (error) { console.error(error); setStatus("Could not load existing pairings."); }
-  await loadSet(setSelect.value);
+    setSelect.innerHTML = "";
+
+    SETS.forEach(set => {
+        const option = document.createElement("option");
+        option.value = set.code;
+        option.textContent = set.code;
+        setSelect.appendChild(option);
+    });
+
+    renderSelectedCards();
+
+    setStatus("Loading pair database...");
+
+    try {
+        await loadPairings();
+    }
+    catch (error) {
+        console.error(error);
+        setStatus("Could not load existing pairings.");
+    }
+
+    await loadSet(setSelect.value);
 }
 
+/* Desktop mouse drag scrolling */
 let dragActive = false;
 let dragMoved = false;
 let dragStartY = 0;
@@ -640,63 +1460,132 @@ let dragStartScrollTop = 0;
 let suppressCardClickUntil = 0;
 
 cardGrid.addEventListener("pointerdown", event => {
-  if (event.pointerType !== "mouse" || event.button !== 0) return;
+    if (
+        event.pointerType !== "mouse" ||
+        event.button !== 0
+    ) {
+        return;
+    }
 
-  // Start as a possible drag, but DO NOT capture the pointer yet.
-  // Capturing here would redirect the click away from the card button.
-  dragActive = true;
-  dragMoved = false;
-  dragStartY = event.clientY;
-  dragStartScrollTop = cardGrid.scrollTop;
+    dragActive = true;
+    dragMoved = false;
+    dragStartY = event.clientY;
+    dragStartScrollTop = cardGrid.scrollTop;
 });
 
 cardGrid.addEventListener("pointermove", event => {
-  if (!dragActive || event.pointerType !== "mouse") return;
+    if (
+        !dragActive ||
+        event.pointerType !== "mouse"
+    ) {
+        return;
+    }
 
-  const deltaY = event.clientY - dragStartY;
+    const deltaY = event.clientY - dragStartY;
 
-  if (!dragMoved && Math.abs(deltaY) > 4) {
-    dragMoved = true;
-    cardGrid.classList.add("dragging");
+    if (
+        !dragMoved &&
+        Math.abs(deltaY) > 4
+    ) {
+        dragMoved = true;
+        cardGrid.classList.add("dragging");
 
-    // Only capture once we know this is actually a drag.
-    try {
-      cardGrid.setPointerCapture(event.pointerId);
-    } catch (_) {}
-  }
+        try {
+            cardGrid.setPointerCapture(
+                event.pointerId
+            );
+        }
+        catch (_) {}
+    }
 
-  if (dragMoved) {
-    event.preventDefault();
-    cardGrid.scrollTop = dragStartScrollTop - deltaY;
-  }
+    if (dragMoved) {
+        event.preventDefault();
+        cardGrid.scrollTop =
+            dragStartScrollTop - deltaY;
+    }
 });
 
 function finishDrag(event) {
-  if (!dragActive) return;
+    if (!dragActive) return;
 
-  dragActive = false;
-  cardGrid.classList.remove("dragging");
+    dragActive = false;
+    cardGrid.classList.remove("dragging");
 
-  if (dragMoved) {
-    suppressCardClickUntil = Date.now() + 200;
-  }
-
-  try {
-    if (cardGrid.hasPointerCapture(event.pointerId)) {
-      cardGrid.releasePointerCapture(event.pointerId);
+    if (dragMoved) {
+        suppressCardClickUntil =
+            Date.now() + 200;
     }
-  } catch (_) {}
+
+    try {
+        if (
+            cardGrid.hasPointerCapture(
+                event.pointerId
+            )
+        ) {
+            cardGrid.releasePointerCapture(
+                event.pointerId
+            );
+        }
+    }
+    catch (_) {}
 }
+
 cardGrid.addEventListener("pointerup", finishDrag);
 cardGrid.addEventListener("pointercancel", finishDrag);
 
-setSelect.addEventListener("change", () => loadSet(setSelect.value));
-createPairButton.addEventListener("click", createPair);
-uploadModalOk.addEventListener("click", closeUploadModal);
+/* Events */
+homeButton.addEventListener("click", () => {
+    window.location.href = "https://masayatodoroki.com";
+});
+
+modeToggle.addEventListener("click", () => {
+    setMode(
+        currentMode === "add"
+            ? "delete"
+            : "add"
+    );
+});
+
+setSelect.addEventListener("change", () => {
+    loadSet(setSelect.value);
+});
+
+createPairButton.addEventListener(
+    "click",
+    createPair
+);
+
+deletePairsBack.addEventListener("click", () => {
+    showView(galleryView);
+});
+
+deleteConfirmBack.addEventListener("click", () => {
+    if (deletePrimaryCard) {
+        openDeletePairs(deletePrimaryCard);
+    }
+    else {
+        showView(galleryView);
+    }
+});
+
+deletePairButton.addEventListener(
+    "click",
+    deleteSelectedPair
+);
+
+statusModalOk.addEventListener(
+    "click",
+    closeStatusModal
+);
+
 document.addEventListener("keydown", event => {
-  if (event.key === "Escape" && !uploadModal.classList.contains("hidden") && !isUploading) {
-    closeUploadModal();
-  }
+    if (
+        event.key === "Escape" &&
+        !statusModal.classList.contains("hidden") &&
+        !databaseBusy
+    ) {
+        closeStatusModal();
+    }
 });
 </script>
 </body>
