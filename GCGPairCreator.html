@@ -2,265 +2,254 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>GCG Pair Creator</title>
 <style>
-*{box-sizing:border-box}
-body{
-    margin:0;
+* { box-sizing: border-box; }
+:root {
+    --gap: 16px;
+    --panel: rgba(235,235,235,.42);
+    --panel-border: rgba(90,90,90,.25);
+    --control-bg: rgba(255,255,255,.94);
+    --text: #333;
+    --card-ratio: 63 / 88;
+}
+html, body { width:100%; height:100%; margin:0; overflow:hidden; }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background:
+      linear-gradient(115deg, rgba(255,255,255,.58) 0 9%, transparent 9% 26%, rgba(255,255,255,.48) 26% 32%, transparent 32% 61%, rgba(255,255,255,.42) 61% 69%, transparent 69%),
+      linear-gradient(65deg, transparent 0 18%, rgba(0,210,210,.16) 18% 38%, transparent 38% 62%, rgba(0,180,210,.15) 62% 76%, transparent 76%),
+      #72e5e7;
+    background-attachment: fixed;
+}
+button, select, input { font: inherit; }
+.hidden { display:none !important; }
+
+#password-screen {
     width:100%;
     height:100vh;
-    min-height:100vh;
-    overflow:hidden;
-    font-family:Arial,Helvetica,sans-serif;
-    color:#333;
-    background:
-        linear-gradient(115deg,rgba(255,255,255,.58) 0 9%,transparent 9% 26%,rgba(255,255,255,.48) 26% 32%,transparent 32% 61%,rgba(255,255,255,.42) 61% 69%,transparent 69%),
-        linear-gradient(65deg,transparent 0 18%,rgba(0,210,210,.16) 18% 38%,transparent 38% 62%,rgba(0,180,210,.15) 62% 76%,transparent 76%),
-        #72e5e7;
-    background-attachment:fixed;
-}
-button,select,input{font:inherit}
-.hidden{display:none!important}
-
-/* Password */
-#password-screen{
-    min-height:100vh;
+    height:100dvh;
     display:grid;
     place-items:center;
     padding:24px;
 }
-.login-panel{
+.login-panel {
     width:min(430px,100%);
-    background:rgba(255,255,255,.92);
-    border:1px solid rgba(70,70,70,.38);
-    border-radius:16px;
     padding:28px;
+    border:1px solid rgba(70,70,70,.35);
+    border-radius:16px;
+    background:rgba(255,255,255,.94);
     box-shadow:0 16px 45px rgba(0,0,0,.18);
 }
-.login-panel h1{margin:0 0 10px;text-align:center;font-size:1.8rem}
-.login-panel p{margin:0 0 20px;text-align:center;color:#666}
-.password-row{display:flex;gap:10px}
-#password-input{
-    flex:1;min-width:0;padding:12px 14px;border:1px solid #aaa;
-    border-radius:9px;background:#fff;
+.login-panel h1 { margin:0 0 10px; text-align:center; font-size:1.8rem; }
+.login-panel p { margin:0 0 20px; text-align:center; color:#666; }
+.password-row { display:flex; gap:10px; }
+#password-input {
+    flex:1; min-width:0; padding:12px 14px;
+    border:1px solid #aaa; border-radius:9px; background:#fff;
 }
-.primary-button{
-    border:1px solid #777;border-radius:9px;padding:11px 18px;
-    cursor:pointer;background:#fff;color:#333;
+.primary-button {
+    padding:11px 18px; border:1px solid #777; border-radius:9px;
+    background:#fff; color:#333; cursor:pointer;
 }
-.primary-button:disabled{opacity:.45;cursor:not-allowed}
-#password-message{min-height:1.2em;margin-top:12px;font-size:.9rem;text-align:center;color:#a33}
+.primary-button:hover { background:#f3f3f3; }
+.primary-button:disabled { opacity:.45; cursor:not-allowed; }
+#password-message { min-height:1.2em; margin-top:12px; text-align:center; color:#a33; font-size:.9rem; }
 
-/* Main */
-#app{
+#app {
+    width:100%;
     height:100vh;
-    min-height:0;
-    padding:18px;
+    height:100dvh;
+    padding:14px;
     overflow:hidden;
 }
-.app-layout{
+.app-layout {
+    width:100%; height:100%; min-height:0;
     display:grid;
-    grid-template-columns:250px minmax(0,1fr);
-    gap:24px;
-    max-width:1600px;
-    margin:0 auto;
-    height:100%;
-    min-height:0;
+    grid-template-columns:270px minmax(0,1fr);
+    gap:var(--gap);
 }
-.sidebar{
+.sidebar {
+    min-width:0; min-height:0; height:100%;
     display:grid;
     grid-template-rows:auto minmax(0,1fr) minmax(0,1fr) auto;
-    gap:18px;
-    min-width:0;
-    height:100%;
-    min-height:0;
+    gap:var(--gap);
 }
-.set-select{
-    width:100%;padding:10px 14px;border-radius:8px;border:1px solid #888;
-    background:rgba(255,255,255,.94);color:#444;font-size:1.2rem;
+.set-select {
+    width:100%; height:48px; padding:0 14px;
+    border:1px solid #777; border-radius:8px;
+    background:var(--control-bg); color:#444; font-size:1.15rem;
 }
-.selected-card{
-    height:100%;
-    width:auto;
-    max-width:100%;
-    min-height:0;
-    aspect-ratio:3/4;
-    justify-self:center;
-    background:rgba(255,255,255,.9);
-    border:1px solid rgba(120,120,120,.4);
-    border-radius:11px;overflow:hidden;
-    display:grid;place-items:center;
-    box-shadow:0 2px 4px rgba(0,0,0,.08);
+.selected-card {
+    width:auto; height:100%; max-width:100%; min-height:0;
+    aspect-ratio:var(--card-ratio); justify-self:center;
+    display:grid; place-items:center; overflow:hidden;
+    border:1px solid rgba(120,120,120,.4); border-radius:11px;
+    background:rgba(255,255,255,.93); box-shadow:0 2px 4px rgba(0,0,0,.08);
 }
-.selected-card img{width:100%;height:100%;object-fit:cover;display:block}
-.selected-card.placeholder{
-    background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(245,245,245,.92));
-    color:#111;
+.selected-card img {
+    width:100%; height:100%; display:block; object-fit:contain;
+    user-select:none; -webkit-user-drag:none;
 }
-.placeholder-inner{text-align:center;font-weight:700;letter-spacing:.05em}
-.placeholder-symbol{font-size:5rem;line-height:1;transform:rotate(-10deg);display:block}
-.placeholder-text{margin-top:10px;font-size:1.3rem;line-height:1.15}
-.create-button{
-    width:100%;padding:9px 14px;border-radius:8px;
-    border:1px solid #777;background:rgba(255,255,255,.94);
-    font-size:1.6rem;color:#333;cursor:pointer;
+.create-button {
+    width:100%; height:52px; padding:0 14px;
+    border:1px solid #777; border-radius:8px;
+    background:var(--control-bg); color:#333; font-size:1.45rem; cursor:pointer;
 }
-.main-panel{
-    min-width:0;
-    min-height:0;
-    height:100%;
-    background:rgba(235,235,235,.45);
-    border:1px solid rgba(110,110,110,.28);
-    border-radius:6px;
-    padding:12px;
-    display:flex;
-    flex-direction:column;
-    overflow:hidden;
-}
-.top-row{
-    flex:0 0 auto;
-    min-height:22px;
-    margin-bottom:8px;
-}
-.status{min-height:1.2em;color:#555;font-size:.9rem}
-.card-grid{
-    flex:1 1 auto;
-    min-height:0;
-    overflow-y:auto;
-    overflow-x:hidden;
-    align-content:start;
-    display:grid;
-    grid-template-columns:repeat(8,minmax(0,1fr));
-    gap:9px;
-    padding-right:4px;
-    cursor:grab;
-    scrollbar-gutter:stable;
-    overscroll-behavior:contain;
-    user-select:none;
-}
-.card-grid.dragging{cursor:grabbing}
-.card-grid img{
-    user-select:none;
-    -webkit-user-drag:none;
-}
-.card-button{
-    border:0;padding:0;background:transparent;cursor:pointer;
-    border-radius:7px;overflow:hidden;position:relative;aspect-ratio:3/4;
-}
-.card-button img{width:100%;height:100%;display:block;object-fit:cover}
-.card-button:hover{transform:translateY(-2px)}
-.card-button.selected-1::after,.card-button.selected-2::after{
-    content:"";position:absolute;inset:0;border:4px solid;pointer-events:none;
-}
-.card-button.selected-1::after{border-color:#3678ff}
-.card-button.selected-2::after{border-color:#ff8b36}
-.empty-state{padding:30px;text-align:center;color:#666}
+.create-button:hover { background:#fff; }
+.create-button:disabled { opacity:.5; cursor:not-allowed; }
 
-@media(max-width:1200px){
-    .card-grid{grid-template-columns:repeat(6,minmax(0,1fr))}
+.main-panel {
+    min-width:0; min-height:0; height:100%;
+    display:flex; flex-direction:column;
+    padding:10px; overflow:hidden;
+    border:1px solid var(--panel-border); border-radius:6px; background:var(--panel);
 }
-@media(max-width:850px){
-    #app{padding:12px}
-    .app-layout{
-        display:grid;
-        grid-template-rows:auto minmax(0,1fr);
-        height:100%;
-        min-height:0;
+.top-row { flex:0 0 auto; min-height:24px; margin-bottom:6px; }
+.status { min-height:1.2em; color:#555; font-size:.9rem; }
+.card-grid {
+    flex:1 1 auto; min-height:0;
+    display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); align-content:start;
+    gap:8px; padding-right:4px;
+    overflow-y:auto; overflow-x:hidden;
+    cursor:grab; user-select:none;
+    scrollbar-gutter:stable; overscroll-behavior:contain; -webkit-overflow-scrolling:touch;
+}
+.card-grid.dragging { cursor:grabbing; }
+.card-button {
+    position:relative; width:100%; aspect-ratio:var(--card-ratio);
+    padding:0; border:0; border-radius:6px; overflow:hidden;
+    background:transparent; cursor:pointer;
+}
+.card-button img {
+    width:100%; height:100%; display:block; object-fit:contain;
+    user-select:none; -webkit-user-drag:none;
+}
+.card-button:hover { transform:translateY(-2px); }
+.card-button.selected-1::after,
+.card-button.selected-2::after {
+    content:""; position:absolute; inset:0; border:4px solid; pointer-events:none;
+}
+.card-button.selected-1::after { border-color:#3678ff; }
+.card-button.selected-2::after { border-color:#ff8b36; }
+.empty-state { padding:30px; text-align:center; color:#666; }
+
+@media (max-width:1350px) and (min-aspect-ratio:1/1) {
+    .app-layout { grid-template-columns:230px minmax(0,1fr); }
+    .card-grid { grid-template-columns:repeat(7,minmax(0,1fr)); }
+}
+@media (max-width:1050px) and (min-aspect-ratio:1/1) {
+    .app-layout { grid-template-columns:200px minmax(0,1fr); }
+    .card-grid { grid-template-columns:repeat(6,minmax(0,1fr)); }
+}
+
+/* Portrait / tall screens: controls move above gallery */
+@media (max-aspect-ratio:4/5) {
+    #app {
+        padding:max(10px,env(safe-area-inset-top)) max(10px,env(safe-area-inset-right)) max(10px,env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-left));
     }
-    .sidebar{
-        height:auto;
-        min-height:0;
+    .app-layout {
+        display:grid;
+        grid-template-columns:1fr;
+        grid-template-rows:auto minmax(0,1fr);
+        gap:10px;
+    }
+    .sidebar {
+        height:auto; min-height:0;
         display:grid;
         grid-template-columns:1fr 1fr;
-        grid-template-rows:auto minmax(0,170px) auto;
-        gap:12px;
-        margin-bottom:14px;
+        grid-template-rows:auto auto auto;
+        gap:10px;
     }
-    .set-select{grid-column:1/-1;font-size:1.15rem}
-    .selected-card{
+    .set-select { grid-column:1/-1; height:46px; font-size:1rem; }
+    .selected-card {
         width:auto;
-        height:100%;
+        height:clamp(110px,18dvh,165px);
         max-width:100%;
         justify-self:center;
     }
-    .create-button{grid-column:1/-1;font-size:1.45rem;margin-top:0}
-    .main-panel{
-        height:100%;
-        min-height:0;
-        padding:10px;
-        background:rgba(160,180,180,.35);
+    .create-button { grid-column:1/-1; height:48px; font-size:1.2rem; }
+    .main-panel { width:100%; height:100%; min-height:0; padding:8px; }
+    .top-row { min-height:20px; margin-bottom:5px; }
+    .status { font-size:.82rem; }
+    .card-grid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:7px; padding-right:2px; }
+}
+
+/* Landscape phones / short screens */
+@media (min-aspect-ratio:4/5) and (max-height:700px) {
+    #app { padding:8px; }
+    .app-layout { grid-template-columns:minmax(155px,22vw) minmax(0,1fr); gap:10px; }
+    .sidebar { gap:8px; }
+    .set-select { height:40px; font-size:.95rem; }
+    .selected-card {
+        max-height:calc((100dvh - 8px - 8px - 40px - 44px - 24px) / 2);
+        width:auto; height:100%;
     }
-    .card-grid{
-        grid-template-columns:repeat(3,minmax(0,1fr));
-        gap:8px;
-    }
+    .create-button { height:44px; font-size:1rem; }
+    .main-panel { padding:7px; }
+    .top-row { min-height:18px; margin-bottom:4px; }
+    .status { font-size:.78rem; }
+    .card-grid { grid-template-columns:repeat(6,minmax(0,1fr)); gap:5px; }
+}
+
+@media (min-width:700px) and (max-aspect-ratio:4/5) {
+    .selected-card { height:clamp(145px,19dvh,210px); }
+    .card-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+}
+@media (max-width:420px) and (max-aspect-ratio:4/5) {
+    #app { padding:8px; }
+    .sidebar { gap:8px; }
+    .selected-card { height:clamp(100px,17dvh,140px); }
+    .create-button { height:44px; font-size:1.05rem; }
+    .card-grid { gap:5px; }
 }
 </style>
 </head>
 <body>
-
 <section id="password-screen">
-    <div class="login-panel">
-        <h1>Pair Creator</h1>
-        <p>Enter the shared password to continue.</p>
-        <div class="password-row">
-            <input id="password-input" type="password" autocomplete="current-password" placeholder="Password">
-            <button id="password-button" class="primary-button">Enter</button>
-        </div>
-        <div id="password-message"></div>
+  <div class="login-panel">
+    <h1>Pair Creator</h1>
+    <p>Enter the shared password to continue.</p>
+    <div class="password-row">
+      <input id="password-input" type="password" autocomplete="current-password" placeholder="Password">
+      <button id="password-button" class="primary-button">Enter</button>
     </div>
+    <div id="password-message"></div>
+  </div>
 </section>
 
 <main id="app" class="hidden">
-    <div class="app-layout">
-        <aside class="sidebar">
-            <select id="set-select" class="set-select"></select>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <select id="set-select" class="set-select"></select>
+      <div id="selected-1" class="selected-card"></div>
+      <div id="selected-2" class="selected-card"></div>
+      <button id="create-pair" class="create-button">Create Pair</button>
+    </aside>
 
-            <div id="selected-1" class="selected-card placeholder">
-                <div class="placeholder-inner">
-                    <span class="placeholder-symbol">◇</span>
-                    <div class="placeholder-text">GUNDAM<br>CARD GAME</div>
-                </div>
-            </div>
-
-            <div id="selected-2" class="selected-card placeholder">
-                <div class="placeholder-inner">
-                    <span class="placeholder-symbol">◇</span>
-                    <div class="placeholder-text">GUNDAM<br>CARD GAME</div>
-                </div>
-            </div>
-
-            <button id="create-pair" class="create-button">Create Pair</button>
-        </aside>
-
-        <section class="main-panel">
-            <div class="top-row">
-                <div id="status" class="status"></div>
-            </div>
-
-            <div id="card-grid" class="card-grid"></div>
-            <div id="empty-state" class="empty-state hidden">No cards found for this set.</div>
-        </section>
-    </div>
+    <section class="main-panel">
+      <div class="top-row"><div id="status" class="status"></div></div>
+      <div id="card-grid" class="card-grid"></div>
+      <div id="empty-state" class="empty-state hidden">No cards found for this set.</div>
+    </section>
+  </div>
 </main>
 
 <script>
 const SUPABASE_URL = "https://vixudhbgvihtdynhcfey.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_zBf__8-D1Tu01z6i8Tg96g_Rx4BL33r";
-
-// Placeholder endpoint to create later in Supabase.
-// Expected POST body: { password: "..." }
-// Expected success response: { valid: true }
 const PASSWORD_CHECK_PATH = "/functions/v1/check-pair-password";
+const CARD_BACK_URL = "images/basic/Card_White.png";
 
 const SETS = [
-    { code:"GD01", csvUrl:"data/GD01Pairings.csv", imageFolder:"images/GD01" },
-    { code:"GD02", csvUrl:"data/GD02Pairings.csv", imageFolder:"images/GD02" },
-    { code:"GD03", csvUrl:"data/GD03Pairings.csv", imageFolder:"images/GD03" },
-    { code:"GD04", csvUrl:"data/GD04Pairings.csv", imageFolder:"images/GD04" },
-    { code:"GD05", csvUrl:"data/GD05Pairings.csv", imageFolder:"images/GD05" },
-    { code:"EB01", csvUrl:"data/EB01Pairings.csv", imageFolder:"images/EB01" }
+  { code:"GD01", csvUrl:"data/GD01Pairings.csv", imageFolder:"images/GD01" },
+  { code:"GD02", csvUrl:"data/GD02Pairings.csv", imageFolder:"images/GD02" },
+  { code:"GD03", csvUrl:"data/GD03Pairings.csv", imageFolder:"images/GD03" },
+  { code:"GD04", csvUrl:"data/GD04Pairings.csv", imageFolder:"images/GD04" },
+  { code:"GD05", csvUrl:"data/GD05Pairings.csv", imageFolder:"images/GD05" },
+  { code:"EB01", csvUrl:"data/EB01Pairings.csv", imageFolder:"images/EB01" }
 ];
 
 let currentSet = SETS[0];
@@ -283,302 +272,212 @@ const createPairButton = document.getElementById("create-pair");
 const status = document.getElementById("status");
 const emptyState = document.getElementById("empty-state");
 
-async function validatePassword(){
-    const password = passwordInput.value;
-    if(!password){
-        passwordMessage.textContent = "Enter a password.";
-        return;
+async function validatePassword() {
+  const password = passwordInput.value;
+  if (!password) { passwordMessage.textContent = "Enter a password."; return; }
+  passwordButton.disabled = true;
+  passwordMessage.textContent = "Checking...";
+  try {
+    const response = await fetch(SUPABASE_URL + PASSWORD_CHECK_PATH, {
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json",
+        "apikey":SUPABASE_PUBLISHABLE_KEY,
+        "Authorization":`Bearer ${SUPABASE_PUBLISHABLE_KEY}`
+      },
+      body:JSON.stringify({password})
+    });
+    if (!response.ok) throw new Error(`Password check failed: ${response.status}`);
+    const result = await response.json();
+    if (!result.valid) {
+      passwordMessage.textContent = "Incorrect password.";
+      passwordButton.disabled = false;
+      return;
     }
+    passwordMessage.textContent = "";
+    passwordScreen.classList.add("hidden");
+    app.classList.remove("hidden");
+    await initializeApp();
+  } catch (error) {
+    console.error(error);
+    passwordMessage.textContent = "Could not verify password.";
+    passwordButton.disabled = false;
+  }
+}
+passwordButton.addEventListener("click", validatePassword);
+passwordInput.addEventListener("keydown", e => { if (e.key === "Enter") validatePassword(); });
 
-    passwordButton.disabled = true;
-    passwordMessage.textContent = "Checking...";
-
-    try{
-        const response = await fetch(SUPABASE_URL + PASSWORD_CHECK_PATH,{
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json",
-                "apikey":SUPABASE_PUBLISHABLE_KEY,
-                "Authorization":`Bearer ${SUPABASE_PUBLISHABLE_KEY}`
-            },
-            body:JSON.stringify({password})
-        });
-
-        if(!response.ok) throw new Error(`Password check failed: ${response.status}`);
-
-        const result = await response.json();
-
-        if(!result.valid){
-            passwordMessage.textContent = "Incorrect password.";
-            passwordButton.disabled = false;
-            return;
-        }
-
-        passwordMessage.textContent = "";
-        passwordScreen.classList.add("hidden");
-        app.classList.remove("hidden");
-        await initializeApp();
-    }catch(error){
-        console.error(error);
-        passwordMessage.textContent = "Could not verify password.";
-        passwordButton.disabled = false;
-    }
+function parseCSVLine(line) {
+  const values = [];
+  let current = "";
+  let inQuotes = false;
+  for (let i=0;i<line.length;i++) {
+    const char = line[i];
+    const next = line[i+1];
+    if (char === '"') {
+      if (inQuotes && next === '"') { current += '"'; i++; }
+      else inQuotes = !inQuotes;
+    } else if (char === "," && !inQuotes) {
+      values.push(current); current = "";
+    } else current += char;
+  }
+  values.push(current);
+  return values.map(v => v.trim());
+}
+function extractCardId(value) {
+  const match = String(value || "").match(/[A-Z]{2}\d{2}-\d{3}/i);
+  return match ? match[0].toUpperCase() : "";
+}
+function removeCardId(value) {
+  return String(value || "").replace(/[A-Z]{2}\d{2}-\d{3}/i, "").trim();
+}
+function parseCSV(text) {
+  const lines = text.split(/\r?\n/).filter(line => line.trim() !== "");
+  if (lines.length < 2) return [];
+  const result = [];
+  for (let i=1;i<lines.length;i++) {
+    const cols = parseCSVLine(lines[i]);
+    const type = (cols[0] || "").trim();
+    const id = extractCardId(cols[1]);
+    const name = removeCardId(cols[1]);
+    if (!id) continue;
+    result.push({id,type,name});
+  }
+  return result;
 }
 
-passwordButton.addEventListener("click",validatePassword);
-passwordInput.addEventListener("keydown",event=>{
-    if(event.key==="Enter") validatePassword();
-});
-
-function parseCSVLine(line){
-    const values=[];
-    let current="";
-    let inQuotes=false;
-
-    for(let i=0;i<line.length;i++){
-        const char=line[i];
-        const next=line[i+1];
-
-        if(char === '"'){
-            if(inQuotes && next === '"'){
-                current += '"';
-                i++;
-            }else{
-                inQuotes = !inQuotes;
-            }
-        }else if(char === "," && !inQuotes){
-            values.push(current);
-            current="";
-        }else{
-            current += char;
-        }
-    }
-
-    values.push(current);
-    return values.map(value=>value.trim());
+function normalizePair(card1, card2) {
+  return [card1, card2].sort((a,b) => a.localeCompare(b)).join("|");
+}
+function getImageUrl(card) {
+  return currentSet.imageFolder + "/" + card.id + ".png";
+}
+function clearSelection() {
+  selectedCard1 = null;
+  selectedCard2 = null;
+  renderSelectedCards();
+  renderCards();
+}
+function selectCard(card) {
+  if (selectedCard1 && selectedCard1.id === card.id) selectedCard1 = null;
+  else if (selectedCard2 && selectedCard2.id === card.id) selectedCard2 = null;
+  else if (!selectedCard1) selectedCard1 = card;
+  else if (!selectedCard2) selectedCard2 = card;
+  renderSelectedCards();
+  renderCards();
 }
 
-function extractCardId(value){
-    const match = String(value||"").match(/[A-Z]{2}\d{2}-\d{3}/i);
-    return match ? match[0].toUpperCase() : "";
+async function loadPairings() {
+  const url = `${SUPABASE_URL}/rest/v1/pairings?select=card_1,card_2`;
+  const response = await fetch(url, {headers:{
+    "apikey":SUPABASE_PUBLISHABLE_KEY,
+    "Authorization":`Bearer ${SUPABASE_PUBLISHABLE_KEY}`
+  }});
+  if (!response.ok) throw new Error("Could not load pairings.");
+  const rows = await response.json();
+  existingPairs.clear();
+  rows.forEach(row => {
+    if (row.card_1 && row.card_2) existingPairs.add(normalizePair(row.card_1,row.card_2));
+  });
 }
 
-function removeCardId(value){
-    return String(value||"").replace(/[A-Z]{2}\d{2}-\d{3}/i,"").trim();
+async function createPair() {
+  if (isUploading) return;
+  if (!selectedCard1 || !selectedCard2) { setStatus("Select two cards first."); return; }
+  const key = normalizePair(selectedCard1.id, selectedCard2.id);
+  if (existingPairs.has(key)) { setStatus("This pairing already exists."); return; }
+  isUploading = true;
+  createPairButton.disabled = true;
+  setStatus(`Uploading ${selectedCard1.id} + ${selectedCard2.id}...`);
+  const ordered = [selectedCard1.id, selectedCard2.id].sort((a,b)=>a.localeCompare(b));
+  try {
+    const response = await fetch(`${SUPABASE_URL}/rest/v1/pairings`, {
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json",
+        "apikey":SUPABASE_PUBLISHABLE_KEY,
+        "Authorization":`Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
+        "Prefer":"return=minimal"
+      },
+      body:JSON.stringify([{card_1:ordered[0], card_2:ordered[1]}])
+    });
+    if (!response.ok) throw new Error(`Upload failed: ${response.status}`);
+    existingPairs.add(key);
+    setStatus("Pair uploaded!");
+    clearSelection();
+  } catch (error) {
+    console.error(error);
+    setStatus("Upload failed.");
+  } finally {
+    isUploading = false;
+    createPairButton.disabled = false;
+  }
 }
 
-function parseCSV(text){
-    const lines = text.split(/\r?\n/).filter(line=>line.trim()!=="");
-    if(lines.length<2) return [];
-
-    const result=[];
-
-    for(let i=1;i<lines.length;i++){
-        const cols=parseCSVLine(lines[i]);
-        const type=(cols[0]||"").trim();
-        const id=extractCardId(cols[1]);
-        const name=removeCardId(cols[1]);
-
-        if(!id) continue;
-
-        result.push({id,type,name});
-    }
-
-    return result;
+function setStatus(message) { status.textContent = message; }
+function renderSelectedCard(container, card) {
+  const src = card ? getImageUrl(card) : CARD_BACK_URL;
+  const alt = card ? card.id : "Card back";
+  container.innerHTML = `<img src="${src}" alt="${alt}" draggable="false">`;
+}
+function renderSelectedCards() {
+  renderSelectedCard(selected1, selectedCard1);
+  renderSelectedCard(selected2, selectedCard2);
+}
+function renderCards() {
+  cardGrid.innerHTML = "";
+  emptyState.classList.toggle("hidden", cards.length > 0);
+  cards.forEach(card => {
+    const button = document.createElement("button");
+    button.className = "card-button";
+    if (selectedCard1 && selectedCard1.id === card.id) button.classList.add("selected-1");
+    if (selectedCard2 && selectedCard2.id === card.id) button.classList.add("selected-2");
+    button.innerHTML = `<img src="${getImageUrl(card)}" alt="${card.id}" loading="lazy" draggable="false">`;
+    button.addEventListener("click", () => {
+      if (Date.now() < suppressCardClickUntil) return;
+      selectCard(card);
+    });
+    cardGrid.appendChild(button);
+  });
 }
 
-function normalizePair(card1,card2){
-    return [card1,card2].sort((a,b)=>a.localeCompare(b)).join("|");
-}
-
-function getImageUrl(card){
-    return `${currentSet.imageFolder}/${card.id}.png`;
-}
-
-function clearSelection(){
-    selectedCard1=null;
-    selectedCard2=null;
-    renderSelectedCards();
+async function loadSet(code) {
+  const set = SETS.find(item => item.code === code);
+  if (!set) return;
+  currentSet = set;
+  selectedCard1 = null;
+  selectedCard2 = null;
+  renderSelectedCards();
+  setStatus(`Loading ${set.code}...`);
+  const response = await fetch(set.csvUrl);
+  if (!response.ok) {
+    cards = [];
     renderCards();
+    setStatus(`Could not load ${set.csvUrl}`);
+    return;
+  }
+  const csv = await response.text();
+  cards = parseCSV(csv);
+  cardGrid.scrollTop = 0;
+  renderCards();
+  setStatus(`${cards.length} cards loaded.`);
 }
 
-function selectCard(card){
-    if(selectedCard1 && selectedCard1.id===card.id){
-        selectedCard1=null;
-    }else if(selectedCard2 && selectedCard2.id===card.id){
-        selectedCard2=null;
-    }else if(!selectedCard1){
-        selectedCard1=card;
-    }else if(!selectedCard2){
-        selectedCard2=card;
-    }
-
-    renderSelectedCards();
-    renderCards();
+async function initializeApp() {
+  setSelect.innerHTML = "";
+  SETS.forEach(set => {
+    const option = document.createElement("option");
+    option.value = set.code;
+    option.textContent = set.code;
+    setSelect.appendChild(option);
+  });
+  renderSelectedCards();
+  setStatus("Loading pair database...");
+  try { await loadPairings(); }
+  catch (error) { console.error(error); setStatus("Could not load existing pairings."); }
+  await loadSet(setSelect.value);
 }
 
-async function loadPairings(){
-    const url=`${SUPABASE_URL}/rest/v1/pairings?select=card_1,card_2`;
-    const response=await fetch(url,{
-        headers:{
-            "apikey":SUPABASE_PUBLISHABLE_KEY,
-            "Authorization":`Bearer ${SUPABASE_PUBLISHABLE_KEY}`
-        }
-    });
-
-    if(!response.ok) throw new Error("Could not load pairings.");
-
-    const rows=await response.json();
-    existingPairs.clear();
-
-    rows.forEach(row=>{
-        if(row.card_1 && row.card_2){
-            existingPairs.add(normalizePair(row.card_1,row.card_2));
-        }
-    });
-}
-
-async function createPair(){
-    if(isUploading) return;
-
-    if(!selectedCard1 || !selectedCard2){
-        setStatus("Select two cards first.");
-        return;
-    }
-
-    const key=normalizePair(selectedCard1.id,selectedCard2.id);
-
-    if(existingPairs.has(key)){
-        setStatus("This pairing already exists.");
-        return;
-    }
-
-    isUploading=true;
-    createPairButton.disabled=true;
-    setStatus(`Uploading ${selectedCard1.id} + ${selectedCard2.id}...`);
-
-    const ordered=[selectedCard1.id,selectedCard2.id].sort((a,b)=>a.localeCompare(b));
-
-    try{
-        const response=await fetch(`${SUPABASE_URL}/rest/v1/pairings`,{
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json",
-                "apikey":SUPABASE_PUBLISHABLE_KEY,
-                "Authorization":`Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
-                "Prefer":"return=minimal"
-            },
-            body:JSON.stringify([{card_1:ordered[0],card_2:ordered[1]}])
-        });
-
-        if(!response.ok) throw new Error(`Upload failed: ${response.status}`);
-
-        existingPairs.add(key);
-        setStatus("Pair uploaded!");
-        clearSelection();
-    }catch(error){
-        console.error(error);
-        setStatus("Upload failed.");
-    }finally{
-        isUploading=false;
-        createPairButton.disabled=false;
-    }
-}
-
-function setStatus(message){
-    status.textContent=message;
-}
-
-function renderSelectedCard(container,card){
-    if(!card){
-        container.className="selected-card placeholder";
-        container.innerHTML=`
-            <div class="placeholder-inner">
-                <span class="placeholder-symbol">◇</span>
-                <div class="placeholder-text">GUNDAM<br>CARD GAME</div>
-            </div>`;
-        return;
-    }
-
-    container.className="selected-card";
-    container.innerHTML=`<img src="${getImageUrl(card)}" alt="${card.id}">`;
-}
-
-function renderSelectedCards(){
-    renderSelectedCard(selected1,selectedCard1);
-    renderSelectedCard(selected2,selectedCard2);
-}
-
-function renderCards(){
-    cardGrid.innerHTML="";
-
-    emptyState.classList.toggle("hidden",cards.length>0);
-
-    cards.forEach(card=>{
-        const button=document.createElement("button");
-        button.className="card-button";
-
-        if(selectedCard1 && selectedCard1.id===card.id) button.classList.add("selected-1");
-        if(selectedCard2 && selectedCard2.id===card.id) button.classList.add("selected-2");
-
-        button.innerHTML=`<img src="${getImageUrl(card)}" alt="${card.id}" loading="lazy">`;
-        button.addEventListener("click",()=>{
-            if(Date.now() < suppressCardClickUntil) return;
-            selectCard(card);
-        });
-        cardGrid.appendChild(button);
-    });
-}
-
-async function loadSet(code){
-    const set=SETS.find(item=>item.code===code);
-    if(!set) return;
-
-    currentSet=set;
-    selectedCard1=null;
-    selectedCard2=null;
-    renderSelectedCards();
-    setStatus(`Loading ${set.code}...`);
-
-    const response=await fetch(set.csvUrl);
-
-    if(!response.ok){
-        cards=[];
-        renderCards();
-        setStatus(`Could not load ${set.csvUrl}`);
-        return;
-    }
-
-    cards=parseCSV(await response.text());
-    renderCards();
-    setStatus(`${cards.length} cards loaded.`);
-}
-
-async function initializeApp(){
-    setSelect.innerHTML="";
-
-    SETS.forEach(set=>{
-        const option=document.createElement("option");
-        option.value=set.code;
-        option.textContent=set.code;
-        setSelect.appendChild(option);
-    });
-
-    setStatus("Loading pair database...");
-
-    try{
-        await loadPairings();
-    }catch(error){
-        console.error(error);
-        setStatus("Could not load existing pairings.");
-    }
-
-    await loadSet(setSelect.value);
-}
-
-
-// Mouse click-and-drag scrolling for the card gallery.
-// Touch devices keep their normal native scrolling.
 let dragActive = false;
 let dragMoved = false;
 let dragStartY = 0;
@@ -586,52 +485,35 @@ let dragStartScrollTop = 0;
 let suppressCardClickUntil = 0;
 
 cardGrid.addEventListener("pointerdown", event => {
-    if(event.pointerType !== "mouse" || event.button !== 0) return;
-
-    dragActive = true;
-    dragMoved = false;
-    dragStartY = event.clientY;
-    dragStartScrollTop = cardGrid.scrollTop;
-
-    cardGrid.setPointerCapture(event.pointerId);
+  if (event.pointerType !== "mouse" || event.button !== 0) return;
+  dragActive = true;
+  dragMoved = false;
+  dragStartY = event.clientY;
+  dragStartScrollTop = cardGrid.scrollTop;
+  cardGrid.setPointerCapture(event.pointerId);
 });
-
 cardGrid.addEventListener("pointermove", event => {
-    if(!dragActive || event.pointerType !== "mouse") return;
-
-    const deltaY = event.clientY - dragStartY;
-
-    if(Math.abs(deltaY) > 4){
-        dragMoved = true;
-        cardGrid.classList.add("dragging");
-        event.preventDefault();
-    }
-
-    if(dragMoved){
-        cardGrid.scrollTop = dragStartScrollTop - deltaY;
-    }
+  if (!dragActive || event.pointerType !== "mouse") return;
+  const deltaY = event.clientY - dragStartY;
+  if (Math.abs(deltaY) > 4) {
+    dragMoved = true;
+    cardGrid.classList.add("dragging");
+    event.preventDefault();
+  }
+  if (dragMoved) cardGrid.scrollTop = dragStartScrollTop - deltaY;
 });
-
-function finishDrag(event){
-    if(!dragActive) return;
-
-    dragActive = false;
-    cardGrid.classList.remove("dragging");
-
-    if(dragMoved){
-        suppressCardClickUntil = Date.now() + 200;
-    }
-
-    try{
-        cardGrid.releasePointerCapture(event.pointerId);
-    }catch(_){}
+function finishDrag(event) {
+  if (!dragActive) return;
+  dragActive = false;
+  cardGrid.classList.remove("dragging");
+  if (dragMoved) suppressCardClickUntil = Date.now() + 200;
+  try { cardGrid.releasePointerCapture(event.pointerId); } catch (_) {}
 }
-
 cardGrid.addEventListener("pointerup", finishDrag);
 cardGrid.addEventListener("pointercancel", finishDrag);
 
-setSelect.addEventListener("change",()=>loadSet(setSelect.value));
-createPairButton.addEventListener("click",createPair);
+setSelect.addEventListener("change", () => loadSet(setSelect.value));
+createPairButton.addEventListener("click", createPair);
 </script>
 </body>
 </html>
