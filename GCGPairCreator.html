@@ -13,6 +13,7 @@
     --control-bg: rgba(255,255,255,.94);
     --text: #333;
     --card-ratio: 63 / 88;
+    --gallery-card-width: 145px;
 }
 html, body { width:100%; height:100%; margin:0; overflow:hidden; }
 body {
@@ -111,9 +112,13 @@ button, select, input { font: inherit; }
 .status { min-height:1.2em; color:#555; font-size:.9rem; }
 .card-grid {
     flex:1 1 auto; min-height:0;
-    display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); align-content:start;
+    display:grid;
+    grid-template-columns:repeat(auto-fill, var(--gallery-card-width));
     grid-auto-rows:auto;
-    gap:8px; padding-right:4px;
+    justify-content:start;
+    align-content:start;
+    align-items:start;
+    gap:10px; padding-right:4px;
     overflow-y:auto; overflow-x:hidden;
     cursor:grab; user-select:none;
     scrollbar-gutter:stable; overscroll-behavior:contain; -webkit-overflow-scrolling:touch;
@@ -126,7 +131,7 @@ button, select, input { font: inherit; }
 .card-button {
     position:relative;
     display:block;
-    width:100%;
+    width:var(--gallery-card-width);
     height:auto;
     aspect-ratio:var(--card-ratio);
     padding:0; margin:0;
@@ -150,11 +155,9 @@ button, select, input { font: inherit; }
 
 @media (max-width:1350px) and (min-aspect-ratio:1/1) {
     .app-layout { grid-template-columns:230px minmax(0,1fr); }
-    .card-grid { grid-template-columns:repeat(7,minmax(0,1fr)); }
 }
 @media (max-width:1050px) and (min-aspect-ratio:1/1) {
     .app-layout { grid-template-columns:200px minmax(0,1fr); }
-    .card-grid { grid-template-columns:repeat(6,minmax(0,1fr)); }
 }
 
 /* Portrait / tall screens: controls move above gallery */
@@ -186,7 +189,7 @@ button, select, input { font: inherit; }
     .main-panel { width:100%; height:100%; min-height:0; padding:8px; }
     .top-row { min-height:20px; margin-bottom:5px; }
     .status { font-size:.82rem; }
-    .card-grid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:7px; padding-right:2px; }
+    .card-grid { gap:10px; padding-right:2px; }
 }
 
 /* Landscape phones / short screens */
@@ -203,19 +206,18 @@ button, select, input { font: inherit; }
     .main-panel { padding:7px; }
     .top-row { min-height:18px; margin-bottom:4px; }
     .status { font-size:.78rem; }
-    .card-grid { grid-template-columns:repeat(6,minmax(0,1fr)); gap:5px; }
+    .card-grid { gap:10px; }
 }
 
 @media (min-width:700px) and (max-aspect-ratio:4/5) {
     .selected-card { height:clamp(145px,19dvh,210px); }
-    .card-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
 }
 @media (max-width:420px) and (max-aspect-ratio:4/5) {
     #app { padding:8px; }
     .sidebar { gap:8px; }
     .selected-card { height:clamp(100px,17dvh,140px); }
     .create-button { height:44px; font-size:1.05rem; }
-    .card-grid { gap:5px; }
+    .card-grid { gap:10px; }
 }
 
 
