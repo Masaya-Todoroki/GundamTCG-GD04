@@ -86,6 +86,43 @@
             cursor: default;
         }
 
+
+        /* Top-level hub tabs */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin: -15px 0 30px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .tab-btn {
+            border: 0;
+            background: transparent;
+            color: rgba(255,255,255,0.65);
+            font: inherit;
+            font-weight: bold;
+            padding: 10px 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .tab-btn:hover {
+            color: white;
+            background: rgba(255,255,255,0.07);
+        }
+
+        .tab-btn.active {
+            color: white;
+            background: linear-gradient(180deg, #5f82ff, #4a6cff);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+        }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
         @media (max-width: 600px) {
             .container {
                 padding: 35px 25px;
@@ -97,6 +134,15 @@
 
             .button-row {
                 flex-direction: column;
+            }
+
+            .tabs {
+                gap: 3px;
+            }
+
+            .tab-btn {
+                padding: 9px 10px;
+                font-size: 0.88rem;
             }
 
             .btn {
@@ -113,8 +159,16 @@
         <h1>Masa's GCG Hub</h1>
 
         <p class="subtitle">
-            Gundam Card Game reveals & pairings tools.
+            Gundam Card Game tools & links.
         </p>
+
+        <nav class="tabs" aria-label="GCG Hub sections">
+            <button class="tab-btn active" data-tab="cards">Cards</button>
+            <button class="tab-btn" data-tab="deck-builders">Deck Builders</button>
+            <button class="tab-btn" data-tab="simulators">Simulators</button>
+        </nav>
+
+        <div id="cards" class="tab-content active">
         <div class="set-section">
             <h2 class="set-title">Promos</h2>
             <div class="button-row">
@@ -164,7 +218,46 @@
                 <a href="https://masayatodoroki.com/GCG-AAPairings.html?set=EB01" class="btn">AA Pairings</a>
             </div>
         </div>
+        </div>
+
+        <!-- Add more deck builders by copying one of the set-section blocks below. -->
+        <div id="deck-builders" class="tab-content">
+            <div class="set-section">
+                <div class="button-row">
+                    <a href="https://exburst.dev/gundam/" class="btn" target="_blank" rel="noopener noreferrer">ExBurst</a>
+                    <a href="https://tcggather.com/decks/build/new?tcg=gundam" class="btn" target="_blank" rel="noopener noreferrer">TCG Gather</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add more simulators by copying one of the set-section blocks below. -->
+        <div id="simulators" class="tab-content">
+            <div class="set-section">
+                <div class="button-row">
+                    <a href="https://exburst.dev/gundam/" class="btn" target="_blank" rel="noopener noreferrer">Mobile Suit Arena</a>
+                    <a href="https://newtypearena.com" class="btn" target="_blank" rel="noopener noreferrer">New Type Arena</a>
+                    <a href="https://www.wingtable.net/gcg" class="btn" target="_blank" rel="noopener noreferrer">Wing Table</a>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script>
+        // Tab switching. To add a tab: add a button with data-tab="your-id"
+        // and a matching <div id="your-id" class="tab-content">...</div>.
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+
+                button.classList.add('active');
+                document.getElementById(button.dataset.tab).classList.add('active');
+            });
+        });
+    </script>
     <!-- Cloudflare Web Analytics -->
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "21db3789c68b42d09f9d4f6ec60400cf"}'></script>
     <!-- End Cloudflare Web Analytics -->
