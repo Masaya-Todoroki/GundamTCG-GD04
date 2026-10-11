@@ -1793,6 +1793,287 @@ body:has(#modal.open) { overflow: hidden; }
   #deckList .deckitem .actions { gap:1px; }
   #deckList .deckitem .actions button { font-size:10px; }
 }
+
+/* Desktop: use the full available sidebar height for the deck list.
+   The previous 50vh limit left an unused block beneath the scrollbar. */
+@media (min-width:851px) {
+  .shell:not(.deck-mode) #browserDeckSidebar {
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+  }
+  .shell:not(.deck-mode) #browserDeckSidebar #deckList {
+    flex:1 1 auto;
+    min-height:0;
+    max-height:none;
+    overflow-y:auto;
+    overflow-x:hidden;
+  }
+}
+
+/* Desktop deck preview stays visible while the main browser scrolls.
+   Keep the reserved 340px grid column so content never sits underneath it. */
+@media (min-width:851px) {
+  .shell:not(.deck-mode) #browserDeckSidebar {
+    position:sticky;
+    top:0;
+    align-self:start;
+    width:100%;
+    height:100dvh;
+    z-index:40;
+    border-left:1px solid #293244;
+  }
+  .shell:not(.deck-mode) #browserDeckSidebar #deckList {
+    gap:8px;
+  }
+}
+
+/* v1.0.3: card artwork replaces the redundant View button. */
+#deckList .deckitem img[data-inspect-id] { cursor:pointer; }
+#deckList .deckitem img[data-inspect-id]:focus-visible { outline:2px solid #70a8ff; outline-offset:2px; }
+@media (max-width:850px) {
+  #deckList { grid-template-columns:repeat(4,minmax(0,1fr)); gap:7px; }
+  #deckList .deckitem .label { padding:5px 3px; font-size:10px; }
+  #deckList .deckitem .label small { font-size:9px; }
+  #deckList .deckitem .actions { gap:1px; margin-top:3px; }
+  #deckList .deckitem .actions button { padding:5px 0; font-size:10px; }
+  #deckList .deckitem .actions span { font-size:9px; }
+}
+@media (max-width:390px) {
+  #deckList { grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
+  #deckList .deckitem .actions button { font-size:11px; }
+}
+
+/* v1.0.3: clean sidebar card grid. Uses the same image ratio as .card img. */
+#browserDeckSidebar #deckList .deckitem .deck-art {
+  display:block;
+  width:100%;
+  min-width:0;
+  aspect-ratio:600 / 838;
+  height:auto;
+  overflow:hidden;
+}
+#browserDeckSidebar #deckList .deckitem .deck-art img {
+  display:block;
+  position:static;
+  width:100%;
+  height:auto;
+  aspect-ratio:600 / 838;
+  object-fit:fill;
+  max-width:none;
+  max-height:none;
+  border-radius:0;
+}
+@media (min-width:851px) {
+  .shell:not(.deck-mode) #browserDeckSidebar #deckList {
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(90px,1fr));
+    justify-content:start;
+    grid-auto-rows:max-content;
+    align-content:start;
+    align-items:start;
+    gap:10px;
+    padding-right:4px;
+  }
+  #browserDeckSidebar #deckList > .empty {grid-column:1/-1;}
+  #browserDeckSidebar #deckList .deckitem {
+    display:block;
+    min-width:0;
+    width:100%;
+    height:auto;
+    padding:0;
+    border:1px solid #33435b;
+    border-radius:7px;
+    background:#171f2e;
+    overflow:hidden;
+  }
+  #browserDeckSidebar #deckList .deckitem .label {
+    display:block;
+    min-width:0;
+    padding:6px 5px;
+    font-size:10px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  #browserDeckSidebar #deckList .deckitem .label small {font-size:9px;}
+  #browserDeckSidebar #deckList .deckitem .actions {
+    display:grid;
+    grid-template-columns:1fr 1fr minmax(24px,1.2fr) 1fr 1fr;
+    gap:2px;
+    align-items:center;
+    margin-top:4px;
+  }
+  #browserDeckSidebar #deckList .deckitem .actions button {
+    min-width:0;
+    width:100%;
+    padding:5px 0;
+    font-size:10px;
+    border-radius:3px;
+  }
+  #browserDeckSidebar #deckList .deckitem .actions span {
+    min-width:0;
+    font-size:9px;
+    text-align:center;
+    white-space:nowrap;
+  }
+}
+
+.sidebar .summary { display:flex; flex-wrap:wrap; gap:8px; }
+/* Deck preview groups: headings span the full grid width on desktop and mobile. */
+#browserDeckSidebar #deckList .deck-section-heading {
+  grid-column:1 / -1;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+  padding:12px 2px 6px;
+  margin-top:3px;
+  border-bottom:1px solid #33435b;
+  color:#e9eef7;
+  font-weight:700;
+  font-size:13px;
+}
+#browserDeckSidebar #deckList .deck-section-heading:first-child { margin-top:0; padding-top:3px; }
+#browserDeckSidebar #deckList .deck-section-count { color:#9fb0cb; font-size:11px; font-weight:500; white-space:nowrap; }
+
+/* v1.0.5: full-screen drawer, always-accessible grip, explicit controls. */
+.shell:not(.deck-mode) #browserDeckSidebar { max-height:100dvh; }
+.shell:not(.deck-mode) #mobileDeckHandle {
+  position:sticky;
+  top:0;
+  z-index:12;
+  margin:-55px -16px 7px;
+  width:calc(100% + 32px);
+  height:48px;
+  flex-shrink:0;
+}
+.deck-drawer-controls { position:absolute; right:12px; top:6px; display:flex; gap:7px; }
+.deck-drawer-controls button {
+  width:36px; height:35px; display:grid; place-items:center;
+  background:#263a57; border:1px solid #506889; border-radius:7px;
+  color:#e9eef7; font-size:19px; line-height:1; cursor:pointer;
+}
+.deck-drawer-controls button:hover { background:#36537a; }
+.deck-drawer-controls button:focus-visible { outline:2px solid #a8caff; }
+
+/* v1.0.4: one draggable bottom deck drawer across desktop and mobile. */
+.shell:not(.deck-mode) {
+  display:block;
+  padding-bottom:64px;
+}
+.shell:not(.deck-mode) #browserDeckSidebar {
+  display:block;
+  position:fixed;
+  top:auto;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:var(--mobile-deck-height,54px);
+  min-height:54px;
+  max-height:100dvh;
+  padding:55px 16px 16px;
+  border:1px solid #3b4c65;
+  border-bottom:0;
+  border-radius:16px 16px 0 0;
+  background:#121a28;
+  box-shadow:0 -10px 30px rgba(0,0,0,.48);
+  z-index:900;
+  overflow-y:auto;
+  overflow-x:hidden;
+  overscroll-behavior:contain;
+  transition:height .26s cubic-bezier(.2,.75,.2,1);
+  align-self:auto;
+}
+.shell:not(.deck-mode) #browserDeckSidebar.mobile-deck-dragging {
+  transition:none;
+  user-select:none;
+}
+.shell:not(.deck-mode) #browserDeckSidebar.mobile-deck-collapsed {
+  height:54px!important;
+  overflow:hidden;
+}
+#mobileDeckHandle {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:48px;
+  padding:0 16px;
+  border:0;
+  border-bottom:1px solid #29384d;
+  background:#1b2940;
+  color:#e9eef7;
+  cursor:ns-resize;
+  touch-action:none;
+  user-select:none;
+  -webkit-user-select:none;
+}
+.shell:not(.deck-mode) #browserDeckSidebar #deckList {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(110px,130px));
+  justify-content:start;
+  grid-auto-rows:max-content;
+  align-content:start;
+  align-items:start;
+  gap:10px;
+  max-height:none;
+  overflow:visible;
+  padding-right:4px;
+}
+@media (max-width:850px) {
+  .shell:not(.deck-mode) #browserDeckSidebar #deckList {
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:7px;
+  }
+}
+@media (max-width:390px) {
+  .shell:not(.deck-mode) #browserDeckSidebar #deckList {
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:8px;
+  }
+}
+
+/* v1.0.5 drawer handle placement fix: fixed header, independent scroll body. */
+.shell:not(.deck-mode) #browserDeckSidebar {
+  display:flex;
+  flex-direction:column;
+  padding:0 !important;
+  overflow:hidden !important;
+}
+.shell:not(.deck-mode) #mobileDeckHandle {
+  position:relative !important;
+  top:auto !important;
+  left:auto !important;
+  right:auto !important;
+  width:100% !important;
+  height:54px !important;
+  min-height:54px;
+  margin:0 !important;
+  padding:0 112px 0 16px;
+  flex:none;
+  border-radius:15px 15px 0 0;
+  z-index:12;
+  cursor:ns-resize;
+}
+.shell:not(.deck-mode) #browserDeckSidebar .deck-drawer-scroll {
+  flex:1 1 auto;
+  min-height:0;
+  padding:14px 16px 18px;
+  overflow-y:auto;
+  overflow-x:hidden;
+  overscroll-behavior:contain;
+}
+.shell:not(.deck-mode) #browserDeckSidebar.mobile-deck-collapsed .deck-drawer-scroll {
+  display:none;
+}
+.shell:not(.deck-mode) #browserDeckSidebar #deckList { overflow:visible; max-height:none; }
+.deck-drawer-controls { top:9px; }
 </style>
  </head>
  <body>
@@ -1805,7 +2086,7 @@ body:has(#modal.open) { overflow: hidden; }
      </span>
     </h1>
     <small>
-     Masa's GCG Deck Builder v1.0.1
+     Masa's GCG Deck Builder v1.0.5
     </small>
    </div>
    <div class="header-actions">
@@ -1911,10 +2192,12 @@ body:has(#modal.open) { overflow: hidden; }
     </div>
    </section>
    <aside class="sidebar" id="browserDeckSidebar">
-    <div class="mobile-deck-handle" id="mobileDeckHandle" aria-label="Drag or flick to expand or collapse deck preview" role="button" tabindex="0" aria-expanded="false">
+    <div class="mobile-deck-handle" id="mobileDeckHandle" aria-label="Drag or flick to expand or collapse deck preview" role="group" aria-label="Deck drawer controls" tabindex="0" aria-expanded="false">
      <span class="mobile-deck-grip" aria-hidden="true"></span>
      <span>My Deck <span id="mobileDeckCount"></span></span>
+     <div class="deck-drawer-controls"><button type="button" id="deckDrawerMinimise" aria-label="Minimise deck drawer" title="Minimise">−</button><button type="button" id="deckDrawerMaximise" aria-label="Maximise deck drawer" title="Maximise">□</button></div>
     </div>
+    <div class="deck-drawer-scroll">
     <div class="row between">
      <h2>
       My Deck
@@ -1927,14 +2210,16 @@ body:has(#modal.open) { overflow: hidden; }
      <span class="pill" id="unique">
       0 unique
      </span>
-     <span class="pill" id="unitCount">
-      0 Units
-     </span>
+     <span class="pill" id="unitCount">0 Units</span>
+     <span class="pill" id="pilotCount">0 Pilots</span>
+     <span class="pill" id="commandCount">0 Commands</span>
+     <span class="pill" id="baseCount">0 Bases</span>
     </div>
     <div id="deckList">
      <p class="empty">
       Choose a card from the gallery to start building.
      </p>
+    </div>
     </div>
    </aside>
   </div>
@@ -2127,8 +2412,8 @@ function updateLoadStatus(total) { const shown = Math.min(visibleCount, total); 
 function loadMoreCards() { if (document.getElementById('deckViewer')?.hidden === false)
     return; const total = filtered().length; if (visibleCount >= total)
     return; visibleCount = Math.min(visibleCount + PAGE, total); render(); }
-function renderDeck() { autosaveDraft(); let entries = Object.entries(deck).filter(([id, n]) => n > 0 && byId.has(id) && !isToken(byId.get(id))); let total = entries.reduce((n, [id, q]) => n + q, 0); $('total').textContent = `${total} cards`; $('unique').textContent = `${entries.length} unique`; $('unitCount').textContent = `${entries.reduce((n, [id, q]) => n + (byId.get(id).type === 'Unit' ? q : 0), 0)} Units`; $('tabCount').textContent = `(${total})`; $('viewerTotal').textContent = `${total} / 50 cards`; $('viewerName').textContent = $('deckName').value || 'My Gundam Deck'; renderDeckGrid(entries); document.querySelectorAll('#cards .gallery-quick').forEach(controls => { const id = controls.closest('article.card')?.dataset.id; if (!id)
-    return; const n = deck[id] || 0; controls.querySelector('.gallery-count').textContent = n + '/4'; controls.querySelector('[data-quick=clear]').disabled = n === 0; controls.querySelector('[data-quick=minus]').disabled = n === 0; controls.querySelector('[data-quick=plus]').disabled = n >= 4; controls.querySelector('[data-quick=all]').disabled = n >= 4; }); $('deckList').innerHTML = entries.length ? entries.map(([id, n]) => { let c = byId.get(id); return `<div class="deckitem"><img loading="lazy" src="${img(c)}"><div class="label">${esc(c.name || id)}<br><small>${esc(id)}</small><div class="actions"><button data-action="clear" data-id="${esc(id)}" title="Remove all copies" aria-label="Remove all copies">🗑</button><button data-action="minus" data-id="${esc(id)}" title="Remove one">−</button><span>${n}/4</span><button data-action="plus" data-id="${esc(id)}" title="Add one" ${n >= 4 ? 'disabled' : ''}>+</button><button data-action="all" data-id="${esc(id)}" title="Add up to 4 copies" ${n >= 4 ? 'disabled' : ''}>4</button><button data-action="view" data-id="${esc(id)}">View</button></div></div></div>`; }).join('') : '<p class="empty">Choose a card from the gallery to start building.</p>'; }
+function renderDeck() { autosaveDraft(); let entries = Object.entries(deck).filter(([id, n]) => n > 0 && byId.has(id) && !isToken(byId.get(id))); let total = entries.reduce((n, [id, q]) => n + q, 0); $('total').textContent = `${total} cards`; $('unique').textContent = `${entries.length} unique`; for (const [type, target, label] of [['Unit','unitCount','Units'],['Pilot','pilotCount','Pilots'],['Command','commandCount','Commands'],['Base','baseCount','Bases']]) { const count = entries.reduce((n, [id, q]) => n + (byId.get(id).type === type ? q : 0), 0); $(target).textContent = `${count} ${label}`; } $('tabCount').textContent = `(${total})`; $('viewerTotal').textContent = `${total} / 50 cards`; $('viewerName').textContent = $('deckName').value || 'My Gundam Deck'; renderDeckGrid(entries); document.querySelectorAll('#cards .gallery-quick').forEach(controls => { const id = controls.closest('article.card')?.dataset.id; if (!id)
+    return; const n = deck[id] || 0; controls.querySelector('.gallery-count').textContent = n + '/4'; controls.querySelector('[data-quick=clear]').disabled = n === 0; controls.querySelector('[data-quick=minus]').disabled = n === 0; controls.querySelector('[data-quick=plus]').disabled = n >= 4; controls.querySelector('[data-quick=all]').disabled = n >= 4; }); $('deckList').innerHTML = entries.length ? ['Unit', 'Pilot', 'Command', 'Base'].map(type => { const group = entries.filter(([id]) => byId.get(id)?.type === type); const quantity = group.reduce((sum, [, n]) => sum + n, 0); return `<div class="deck-section-heading"><span>${type === 'Base' ? 'Bases' : type + 's'}</span><span class="deck-section-count">${quantity} cards</span></div>` + group.map(([id, n]) => { let c = byId.get(id); return `<div class="deckitem"><div class="deck-art"><img loading="lazy" src="${img(c)}" data-inspect-id="${esc(id)}" role="button" tabindex="0" aria-label="Inspect ${esc(c.name || id)}"></div><div class="label">${esc(c.name || id)}<br><small>${esc(id)}</small><div class="actions"><button data-action="clear" data-id="${esc(id)}" title="Remove all copies" aria-label="Remove all copies">🗑</button><button data-action="minus" data-id="${esc(id)}" title="Remove one">−</button><span>${n}/4</span><button data-action="plus" data-id="${esc(id)}" title="Add one" ${n >= 4 ? 'disabled' : ''}>+</button><button data-action="all" data-id="${esc(id)}" title="Add up to 4 copies" ${n >= 4 ? 'disabled' : ''}>4</button></div></div></div>`; }).join(''); }).join('') : '<p class="empty">Choose a card from the gallery to start building.</p>'; }
 function renderDeckGrid(entries) {
     const types = ['Unit', 'Pilot', 'Command', 'Base'];
     const groups = types.map(type => [type, entries.filter(([id]) => byId.get(id)?.type === type)]);
@@ -2303,11 +2588,19 @@ $('cards').addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key ==
     if (el)
         show(el.dataset.id);
 } });
-$('deckList').onclick = e => { let b = e.target.closest('button[data-action]'); if (!b)
-    return; let id = b.dataset.id; if (b.dataset.action === 'view')
-    show(id);
-else
-    change(id, b.dataset.action === 'clear' ? -(deck[id] || 0) : b.dataset.action === 'all' ? 4 : b.dataset.action === 'plus' ? 1 : -1); };
+$('deckList').onclick = e => {
+    const art = e.target.closest('img[data-inspect-id]');
+    if (art) { show(art.dataset.inspectId); return; }
+    const b = e.target.closest('button[data-action]');
+    if (!b) return;
+    const id = b.dataset.id;
+    change(id, b.dataset.action === 'clear' ? -(deck[id] || 0) : b.dataset.action === 'all' ? 4 : b.dataset.action === 'plus' ? 1 : -1);
+};
+$('deckList').addEventListener('keydown', e => {
+    if ((e.key === 'Enter' || e.key === ' ') && e.target.matches('img[data-inspect-id]')) {
+        e.preventDefault(); show(e.target.dataset.inspectId);
+    }
+});
 // Update quantities in-place so clicking related-card controls never recreates the tiles.
 function refreshInspectorQuantities() {
     if (!$('modal').classList.contains('open')) return;
@@ -2880,7 +3173,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && deckImageM
     const sidebar = document.getElementById('browserDeckSidebar');
     const handle = document.getElementById('mobileDeckHandle');
     const count = document.getElementById('mobileDeckCount');
-    const narrow = window.matchMedia('(max-width: 850px)');
+    const narrow = window.matchMedia('(max-width: 850px)'); // mobile-only inspector sizing
     const minHeight = 54;
     const flickVelocity = 0.45; // px per ms
     let dragging = false;
@@ -2888,7 +3181,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && deckImageM
     let pointerStartY = 0;
     let heightStart = minHeight;
     let samples = [];
-    const maxHeight = () => Math.max(minHeight, window.innerHeight - 60);
+    const maxHeight = () => Math.max(minHeight, window.visualViewport?.height || window.innerHeight);
     const clamp = h => Math.max(minHeight, Math.min(maxHeight(), h));
 
     function setHeight(height, animate = true) {
@@ -2908,7 +3201,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && deckImageM
         samples = samples.filter(sample => now - sample.time <= 120);
     }
     handle.addEventListener('pointerdown', event => {
-        if (!narrow.matches || event.button !== 0) return;
+        if (event.button !== 0 || event.target.closest('button')) return;
         dragging = true;
         moved = false;
         pointerStartY = event.clientY;
@@ -2948,10 +3241,12 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && deckImageM
     handle.addEventListener('pointerup', event => endDrag(event));
     handle.addEventListener('pointercancel', event => endDrag(event, true));
     handle.addEventListener('keydown', event => {
-        if (!narrow.matches || !['Enter', ' '].includes(event.key)) return;
+        if (!['Enter', ' '].includes(event.key)) return;
         event.preventDefault();
         setHeight(currentHeight() > minHeight + 1 ? minHeight : maxHeight());
     });
+    document.getElementById('deckDrawerMinimise').addEventListener('click', () => setHeight(minHeight));
+    document.getElementById('deckDrawerMaximise').addEventListener('click', () => setHeight(maxHeight()));
     const total = document.getElementById('total');
     if (total && count) {
         const syncCount = () => { count.textContent = '· ' + total.textContent; };
@@ -2964,7 +3259,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && deckImageM
     };
     new ResizeObserver(syncInspectorSpace).observe(sidebar);
     window.addEventListener('resize', () => {
-        if (narrow.matches && currentHeight() > minHeight + 1) setHeight(maxHeight());
+        setHeight(currentHeight());
         syncInspectorSpace();
     });
     narrow.addEventListener('change', syncInspectorSpace);
