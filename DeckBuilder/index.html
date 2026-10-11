@@ -1408,7 +1408,7 @@ input[type=search] {
      </span>
     </h1>
     <small>
-     Masa's GCG Deck Builder v0.9.6
+     Masa's GCG Deck Builder v0.9.8
     </small>
    </div>
    <div class="header-actions">
@@ -1540,6 +1540,16 @@ input[type=search] {
      </p>
     </div>
    </aside>
+  </div>
+  <div aria-labelledby="startupDeckTitle" aria-modal="true" class="modal" id="startupDeckModal" role="dialog" style="z-index:1100">
+   <div class="deck-text-dialog confirm-dialog">
+    <div class="deck-text-top"><h2 id="startupDeckTitle">Welcome back!</h2></div>
+    <p class="deck-text-help" id="startupDeckMessage">You have saved decks in this browser. Would you like to load one?</p>
+    <div class="saved-deck-actions">
+     <button class="btn primary" id="startupLoadDeck" type="button">Load a Saved Deck</button>
+     <button class="btn" id="startupContinueDeck" type="button">Continue Current Deck</button>
+    </div>
+   </div>
   </div>
   <div aria-labelledby="savedDecksTitle" aria-modal="true" class="modal" id="savedDecksModal" role="dialog">
    <div class="deck-text-dialog">
@@ -1726,7 +1736,7 @@ function updateLoadStatus(total) { const shown = Math.min(visibleCount, total); 
 function loadMoreCards() { if (document.getElementById('deckViewer')?.hidden === false)
     return; const total = filtered().length; if (visibleCount >= total)
     return; visibleCount = Math.min(visibleCount + PAGE, total); render(); }
-function renderDeck() { let entries = Object.entries(deck).filter(([id, n]) => n > 0 && byId.has(id) && !isToken(byId.get(id))); let total = entries.reduce((n, [id, q]) => n + q, 0); $('total').textContent = `${total} cards`; $('unique').textContent = `${entries.length} unique`; $('unitCount').textContent = `${entries.reduce((n, [id, q]) => n + (byId.get(id).type === 'Unit' ? q : 0), 0)} Units`; $('tabCount').textContent = `(${total})`; $('viewerTotal').textContent = `${total} / 50 cards`; $('viewerName').textContent = $('deckName').value || 'My Gundam Deck'; renderDeckGrid(entries); document.querySelectorAll('#cards .gallery-quick').forEach(controls => { const id = controls.closest('article.card')?.dataset.id; if (!id)
+function renderDeck() { autosaveDraft(); let entries = Object.entries(deck).filter(([id, n]) => n > 0 && byId.has(id) && !isToken(byId.get(id))); let total = entries.reduce((n, [id, q]) => n + q, 0); $('total').textContent = `${total} cards`; $('unique').textContent = `${entries.length} unique`; $('unitCount').textContent = `${entries.reduce((n, [id, q]) => n + (byId.get(id).type === 'Unit' ? q : 0), 0)} Units`; $('tabCount').textContent = `(${total})`; $('viewerTotal').textContent = `${total} / 50 cards`; $('viewerName').textContent = $('deckName').value || 'My Gundam Deck'; renderDeckGrid(entries); document.querySelectorAll('#cards .gallery-quick').forEach(controls => { const id = controls.closest('article.card')?.dataset.id; if (!id)
     return; const n = deck[id] || 0; controls.querySelector('.gallery-count').textContent = n + '/4'; controls.querySelector('[data-quick=clear]').disabled = n === 0; controls.querySelector('[data-quick=minus]').disabled = n === 0; controls.querySelector('[data-quick=plus]').disabled = n >= 4; }); $('deckList').innerHTML = entries.length ? entries.map(([id, n]) => { let c = byId.get(id); return `<div class="deckitem"><img loading="lazy" src="${img(c)}"><div class="label">${esc(c.name || id)}<br><small>${esc(id)}</small><div class="actions"><button data-action="minus" data-id="${esc(id)}">−</button><span>${n}</span><button data-action="plus" data-id="${esc(id)}">+</button><button data-action="view" data-id="${esc(id)}">View</button></div></div></div>`; }).join('') : '<p class="empty">Choose a card from the gallery to start building.</p>'; }
 function renderDeckGrid(entries) {
     const types = ['Unit', 'Pilot', 'Command', 'Base'];
@@ -1740,7 +1750,7 @@ function setView(view) { let deckMode = view === 'deck'; $('appShell').classList
     renderDeck(); }
 $('browseTab').onclick = () => setView('browse');
 $('deckTab').onclick = () => setView('deck');
-$('deckName').addEventListener('input', () => { $('viewerName').textContent = $('deckName').value || 'My Gundam Deck'; });
+$('deckName').addEventListener('input', () => { $('viewerName').textContent = $('deckName').value || 'My Gundam Deck'; autosaveDraft(); });
 function handleDeckAction(e) { let b = e.target.closest('[data-action][data-id]'); if (!b)
     return; let id = b.dataset.id; if (b.dataset.action === 'view')
     show(id);
@@ -1903,6 +1913,28 @@ for (const id of ['search', 'set', 'type', 'sort'])
 const cardLoadObserver = new IntersectionObserver(entries => { if (entries.some(e => e.isIntersecting))
     loadMoreCards(); }, { rootMargin: '650px 0px' });
 cardLoadObserver.observe($('loadSentinel'));
+const DRAFT_KEY = 'gundamDeckAutosaveDraftV1';
+function autosaveDraft() {
+    try {
+        localStorage.setItem(DRAFT_KEY, JSON.stringify({
+            name: $('deckName').value,
+            cards: { ...deck },
+            activeSavedDeckId,
+            updated: Date.now()
+        }));
+    } catch (error) { console.warn('Unable to autosave deck draft', error); }
+}
+function restoreDraft() {
+    try {
+        const draft = JSON.parse(localStorage.getItem(DRAFT_KEY) || 'null');
+        if (!draft || !draft.cards || typeof draft.cards !== 'object' || Array.isArray(draft.cards)) return false;
+        deck = Object.fromEntries(Object.entries(draft.cards).filter(([id, n]) =>
+            byId.has(id) && !isToken(byId.get(id)) && Number.isInteger(n) && n >= 1 && n <= 4));
+        $('deckName').value = typeof draft.name === 'string' ? draft.name : 'My Gundam Deck';
+        activeSavedDeckId = typeof draft.activeSavedDeckId === 'string' ? draft.activeSavedDeckId : null;
+        return true;
+    } catch (error) { console.warn('Unable to restore deck draft', error); return false; }
+}
 const SAVED_DECKS_KEY = 'gundamDeckSavedCollectionV1';
 let activeSavedDeckId = null;
 function getSavedDecks() { try {
@@ -1924,6 +1956,7 @@ function saveDeckAsNew() { try {
     items.push(d);
     putSavedDecks(items);
     activeSavedDeckId = d.id;
+    autosaveDraft();
     renderSavedDecks();
     savedDeckMessage(`Saved "${d.name}" as a new deck.`);
 }
@@ -1943,11 +1976,27 @@ function saveDeckChanges() { if (!activeSavedDeckId) {
     items[i] = deckSnapshot(activeSavedDeckId);
     putSavedDecks(items);
     renderSavedDecks();
+    autosaveDraft();
     savedDeckMessage('Changes saved.');
 }
 catch (e) {
     savedDeckMessage('Unable to save: ' + e.message);
 } }
+function offerSavedDecksOnStartup() {
+    const items = getSavedDecks();
+    if (!items.length) return;
+    const hasDraft = Object.values(deck).some(n => n > 0);
+    $('startupDeckMessage').textContent = hasDraft
+        ? `You have ${items.length} saved deck${items.length === 1 ? '' : 's'}. Your unfinished deck has been restored. Would you like to load a saved deck instead?`
+        : `You have ${items.length} saved deck${items.length === 1 ? '' : 's'} in this browser. Would you like to load one?`;
+    $('startupContinueDeck').textContent = hasDraft ? 'Continue Current Deck' : 'Start a New Deck';
+    $('startupDeckModal').classList.add('open');
+}
+$('startupContinueDeck').onclick = () => $('startupDeckModal').classList.remove('open');
+$('startupLoadDeck').onclick = () => {
+    $('startupDeckModal').classList.remove('open');
+    showSavedDecks();
+};
 $('save').onclick = showSavedDecks;
 $('closeSavedDecks').onclick = () => $('savedDecksModal').classList.remove('open');
 $('saveCurrentDeck').onclick = saveDeckChanges;
@@ -1988,8 +2037,10 @@ $('savedDeckList').onclick = e => { const button = e.target.closest('[data-saved
             return;
         items.splice(i, 1);
         putSavedDecks(items);
-        if (activeSavedDeckId === id)
+        if (activeSavedDeckId === id) {
             activeSavedDeckId = null;
+            autosaveDraft();
+        }
         renderSavedDecks();
         savedDeckMessage('Saved deck deleted.');
         break;
@@ -2090,8 +2141,10 @@ async function start() {
                 activeSavedDeckId = savedDecks.find(d => d.legacyImported)?.id || null;
             }
         }
+        restoreDraft();
         render();
         renderDeck();
+        offerSavedDecksOnStartup();
     }
     catch (e) {
         $('cards').innerHTML = '<p class="empty">Could not load card data. Check the Data folder and browser console, then reload.</p>';
@@ -2258,7 +2311,7 @@ async function generateDeckImage(onProgress = () => {}) {
     });
     ctx.fillStyle = '#9fb0ca';
     ctx.font = '15px Arial';
-    ctx.fillText('masayatodoroki/DeckBuilder', side, height - 28);
+    ctx.fillText('masayatodoroki/deckbuilder', side, height - 28);
     onProgress(entries.length, entries.length, true);
     return { blob: await new Promise((resolve, reject) => canvas.toBlob(b => b ? resolve(b) : reject(new Error('PNG generation failed')), 'image/png')), missing };
 }
