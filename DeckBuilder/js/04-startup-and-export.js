@@ -134,7 +134,17 @@ function drawDeckHistogram(ctx, entries, x, y, label, key) {
     ctx.textAlign = 'left';
 }
 async function generateDeckImage(onProgress = () => {}) {
-    const entries = Object.entries(deck).filter(([id, n]) => n > 0 && byId.has(id) && !isToken(byId.get(id))).sort(([a], [b]) => a.localeCompare(b));
+    const typeOrder = { Unit: 0, Pilot: 1, Command: 2, Base: 3 };
+    const numericValue = value => value === null || value === undefined || value === '' ? Infinity : (Number.isFinite(Number(value)) ? Number(value) : Infinity);
+    const entries = Object.entries(deck)
+        .filter(([id, n]) => n > 0 && byId.has(id) && !isToken(byId.get(id)))
+        .sort(([a], [b]) => {
+            const cardA = byId.get(a), cardB = byId.get(b);
+            return (typeOrder[cardA.type] ?? 99) - (typeOrder[cardB.type] ?? 99)
+                || numericValue(cardA.level) - numericValue(cardB.level)
+                || numericValue(cardA.cost) - numericValue(cardB.cost)
+                || a.localeCompare(b, undefined, { numeric: true });
+        });
     if (!entries.length)
         throw new Error('Add some cards to your deck first.');
     const columns = 5, cardW = 178, cardH = 249, gap = 14, side = 28, top = 270, bottom = 72;
