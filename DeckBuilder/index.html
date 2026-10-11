@@ -1406,6 +1406,34 @@ body:has(#modal.open) { overflow: hidden; }
 #savedDecksModal.startup-mode .saved-deck-actions,
 #savedDecksModal.startup-mode #savedDeckStatus { display: none; }
 #savedDecksModal.startup-mode { z-index: 1100; }
+
+/* v0.9.15: use horizontal inspector space on desktop, compact mobile layout. */
+#modal > .dialog { width:min(1120px,100%); }
+#detail .inspection-layout { display:grid; grid-template-columns:minmax(240px,340px) minmax(0,1fr); align-items:start; gap:22px; clear:both; }
+#detail .inspection-hero { position:sticky; top:0; min-width:0; }
+#detail .inspection-card { width:auto; max-width:100%; max-height:min(68dvh,650px); }
+#detail .inspection-related { min-width:0; }
+#detail .inspection-related .inspection-section:first-child { margin-top:0; }
+#detail .match-grid { grid-template-columns:repeat(auto-fit,minmax(min(100%,245px),1fr)); }
+#detail .token-gallery { grid-template-columns:repeat(auto-fill,minmax(105px,140px)); }
+@media (max-width:850px) {
+  #modal > .dialog { width:100%; }
+  #detail .inspection-layout { grid-template-columns:1fr; gap:12px; }
+  #detail .inspection-hero { position:static; }
+  #detail .inspection-card { max-height:min(39dvh,320px); }
+  #detail .inspection-related .inspection-section { margin-top:14px; }
+  #detail .match-grid { grid-template-columns:1fr; }
+  #detail .match-tile { grid-template-columns:66px minmax(0,1fr); grid-template-rows:auto; gap:7px 10px; }
+  #detail .match-art { width:66px; grid-column:1; grid-row:1 / span 2; }
+  #detail .match-info { grid-column:2; grid-row:1; }
+  #detail .match-actions { grid-column:2; grid-row:2; gap:4px; }
+  #detail .match-actions .btn { min-width:27px; padding:5px 6px; }
+  #detail .match-actions .match-count { min-width:30px; padding:5px 2px; }
+  #detail .token-gallery { grid-template-columns:1fr; gap:8px; }
+  #detail .token-preview { display:flex; align-items:center; gap:12px; width:100%; }
+  #detail .token-preview img { width:66px; flex:none; }
+  #detail .token-preview span { margin:0; font-size:13px; }
+}
 </style>
  </head>
  <body>
@@ -1418,7 +1446,7 @@ body:has(#modal.open) { overflow: hidden; }
      </span>
     </h1>
     <small>
-     Masa's GCG Deck Builder v0.9.14
+     Masa's GCG Deck Builder v0.9.15
     </small>
    </div>
    <div class="header-actions">
@@ -1865,7 +1893,7 @@ function show(id) {
             + renderMatchSection(`Compatible Pair ${subject}`, pairMatches)
             || '<section class="inspection-section"><p class="empty">No compatible cards found.</p></section>')
         : '';
-    $('detail').innerHTML = `<div class="inspection-hero"><img class="inspection-card" src="${img(c)}" alt="${esc(c.name || id)}"><div class="inspection-controls">${addButton}</div></div>${tokenSection}${compatibility}`;
+    $('detail').innerHTML = `<div class="inspection-layout"><div class="inspection-hero"><img class="inspection-card" src="${img(c)}" alt="${esc(c.name || id)}"><div class="inspection-controls">${addButton}</div></div><div class="inspection-related">${compatibility}${tokenSection}</div></div>`;
     $('modal').classList.add('open');
     if (sameInspector && dialog) dialog.scrollTop = previousScroll;
     if (!isToken(c)) {
