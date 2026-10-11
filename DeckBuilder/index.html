@@ -1377,6 +1377,12 @@ input[type=search] {
 .deck-image-progress-track { height:14px; border-radius:999px; overflow:hidden; background:#283950; border:1px solid #465b78; }
 .deck-image-progress-fill { height:100%; width:0%; background:#4f91e9; border-radius:999px; transition:width .15s ease; }
 
+/* Prevent scrolling the page behind an open card inspector. */
+html:has(#modal.open),
+body:has(#modal.open) { overflow: hidden; }
+#modal.open { overscroll-behavior: contain; }
+#modal.open > .dialog { overscroll-behavior: contain; }
+
 /* Header navigation back to the main website */
 .header-actions { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
 .home-link { display:inline-flex; align-items:center; justify-content:center; text-decoration:none; font-weight:650; white-space:nowrap; }
@@ -1412,7 +1418,7 @@ input[type=search] {
      </span>
     </h1>
     <small>
-     Masa's GCG Deck Builder v0.9.11
+     Masa's GCG Deck Builder v0.9.12
     </small>
    </div>
    <div class="header-actions">
