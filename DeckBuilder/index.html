@@ -191,10 +191,9 @@ input[type=search] {
   border-radius:10px;
   overflow:hidden;
   cursor:pointer;
-  transition:transform .12s,border-color .12s
+  transition:border-color .12s
 }
 .card:hover {
-  transform:translateY(-2px);
   border-color:#638bd0
 }
 .card img {
@@ -1717,6 +1716,83 @@ body:has(#modal.open) { overflow: hidden; }
   grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(26px,1.2fr) minmax(0,1fr) minmax(0,1fr);
 }
 #detail .inspector-mini-card .gallery-quick.match-actions button { height:25px; }
+
+/* v1.0.1: compact portrait cards in the mobile deck drawer. */
+@media (max-width:850px) {
+  .shell:not(.deck-mode) .sidebar {
+    padding:55px 12px 16px;
+    transition:height .26s cubic-bezier(.2,.75,.2,1);
+  }
+  .shell:not(.deck-mode) .sidebar.mobile-deck-dragging { transition:none; }
+  .mobile-deck-handle { user-select:none; -webkit-user-select:none; touch-action:none; }
+  .mobile-deck-handle:focus-visible { outline:2px solid #a8caff; outline-offset:-3px; }
+  #deckList {
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:10px;
+    max-height:none;
+    overflow:visible;
+    align-items:start;
+  }
+  #deckList > .empty { grid-column:1/-1; }
+  #deckList .deckitem {
+    display:block;
+    min-width:0;
+    padding:0;
+    border:1px solid #33435b;
+    border-radius:9px;
+    background:#171f2e;
+    overflow:hidden;
+  }
+  #deckList .deckitem > img {
+    display:block;
+    width:100%;
+    height:auto;
+    aspect-ratio:600/838;
+    object-fit:contain;
+    border-radius:0;
+    cursor:pointer;
+  }
+  #deckList .deckitem .label {
+    display:block;
+    min-width:0;
+    padding:7px 5px 6px;
+    font-size:11px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  #deckList .deckitem .label small { font-size:10px; }
+  #deckList .deckitem .actions {
+    display:grid;
+    grid-template-columns:repeat(5,minmax(0,1fr));
+    gap:2px;
+    margin-top:5px;
+    align-items:center;
+  }
+  #deckList .deckitem .actions button {
+    min-width:0;
+    width:100%;
+    padding:5px 0;
+    font-size:11px;
+    border-radius:4px;
+  }
+  #deckList .deckitem .actions span {
+    min-width:0;
+    font-size:10px;
+    white-space:nowrap;
+    text-align:center;
+  }
+  #deckList .deckitem .actions button[data-action="view"] {
+    grid-column:1/-1;
+    margin-top:2px;
+  }
+}
+@media (max-width:360px) {
+  #deckList { gap:6px; }
+  #deckList .deckitem .actions { gap:1px; }
+  #deckList .deckitem .actions button { font-size:10px; }
+}
 </style>
  </head>
  <body>
@@ -1729,7 +1805,7 @@ body:has(#modal.open) { overflow: hidden; }
      </span>
     </h1>
     <small>
-     Masa's GCG Deck Builder v1.0.0
+     Masa's GCG Deck Builder v1.0.1
     </small>
    </div>
    <div class="header-actions">
@@ -1835,7 +1911,7 @@ body:has(#modal.open) { overflow: hidden; }
     </div>
    </section>
    <aside class="sidebar" id="browserDeckSidebar">
-    <div class="mobile-deck-handle" id="mobileDeckHandle" aria-label="Drag to resize deck preview">
+    <div class="mobile-deck-handle" id="mobileDeckHandle" aria-label="Drag or flick to expand or collapse deck preview" role="button" tabindex="0" aria-expanded="false">
      <span class="mobile-deck-grip" aria-hidden="true"></span>
      <span>My Deck <span id="mobileDeckCount"></span></span>
     </div>
@@ -2797,8 +2873,8 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && deckImageM
 
 
 // =============================================================
-// MOBILE CARD BROWSER — DRAGGABLE DECK PREVIEW
-// Desktop sidebar and Deck Viewer are unchanged.
+// MOBILE DECK DRAWER — handle-only drag/flick and snap positions.
+// Scrolling within the card list never moves the drawer.
 // =============================================================
 (() => {
     const sidebar = document.getElementById('browserDeckSidebar');
@@ -2806,73 +2882,93 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && deckImageM
     const count = document.getElementById('mobileDeckCount');
     const narrow = window.matchMedia('(max-width: 850px)');
     const minHeight = 54;
-    let expandedHeight = Math.round(window.innerHeight * 0.44);
+    const flickVelocity = 0.45; // px per ms
     let dragging = false;
-    let pointerStartY = 0;
-    let heightStart = 0;
     let moved = false;
+    let pointerStartY = 0;
+    let heightStart = minHeight;
+    let samples = [];
+    const maxHeight = () => Math.max(minHeight, window.innerHeight - 60);
+    const clamp = h => Math.max(minHeight, Math.min(maxHeight(), h));
 
-    function isCollapsed() {
-        return sidebar.classList.contains('mobile-deck-collapsed');
+    function setHeight(height, animate = true) {
+        const next = clamp(height);
+        sidebar.classList.toggle('mobile-deck-collapsed', next <= minHeight + 1);
+        sidebar.classList.toggle('mobile-deck-dragging', !animate);
+        sidebar.style.setProperty('--mobile-deck-height', next + 'px');
+        handle.setAttribute('aria-expanded', String(next > minHeight + 1));
     }
-    function setCollapsed(collapsed) {
-        sidebar.classList.toggle('mobile-deck-collapsed', collapsed);
-        if (!collapsed) {
-            sidebar.style.setProperty('--mobile-deck-height', expandedHeight + 'px');
-        }
+    function currentHeight() {
+        return sidebar.classList.contains('mobile-deck-collapsed')
+            ? minHeight : sidebar.getBoundingClientRect().height;
     }
-    function maxHeight() {
-        return Math.max(minHeight, window.innerHeight - 60);
+    function record(y) {
+        const now = performance.now();
+        samples.push({ y, time: now });
+        samples = samples.filter(sample => now - sample.time <= 120);
     }
-    handle.addEventListener('pointerdown', (event) => {
-        if (!narrow.matches || event.target.closest('button')) return;
+    handle.addEventListener('pointerdown', event => {
+        if (!narrow.matches || event.button !== 0) return;
         dragging = true;
         moved = false;
         pointerStartY = event.clientY;
-        heightStart = isCollapsed() ? minHeight : sidebar.getBoundingClientRect().height;
+        heightStart = currentHeight();
+        samples = [];
+        record(event.clientY);
         sidebar.classList.add('mobile-deck-dragging');
         handle.setPointerCapture(event.pointerId);
         event.preventDefault();
     });
-    handle.addEventListener('pointermove', (event) => {
+    handle.addEventListener('pointermove', event => {
         if (!dragging) return;
+        record(event.clientY);
         const delta = pointerStartY - event.clientY;
-        if (Math.abs(delta) > 4) moved = true;
-        const next = Math.max(minHeight, Math.min(maxHeight(), heightStart + delta));
-        if (next > minHeight + 12) {
-            sidebar.classList.remove('mobile-deck-collapsed');
-            expandedHeight = next;
-            sidebar.style.setProperty('--mobile-deck-height', next + 'px');
-        } else {
-            sidebar.classList.add('mobile-deck-collapsed');
-        }
+        if (Math.abs(delta) > 5) moved = true;
+        if (moved) setHeight(heightStart + delta, false);
     });
-    function endDrag() {
+    function endDrag(event, cancelled = false) {
         if (!dragging) return;
+        if (!cancelled) record(event.clientY);
         dragging = false;
         sidebar.classList.remove('mobile-deck-dragging');
-        if (moved && !isCollapsed() && expandedHeight < 90) setCollapsed(true);
+        if (!moved || cancelled) {
+            setHeight(cancelled ? currentHeight() : currentHeight() > minHeight + 1 ? minHeight : maxHeight());
+            return;
+        }
+        const first = samples[0], last = samples[samples.length - 1];
+        const elapsed = Math.max(1, last.time - first.time);
+        const velocity = (first.y - last.y) / elapsed;
+        if (Math.abs(velocity) >= flickVelocity) {
+            setHeight(velocity > 0 ? maxHeight() : minHeight);
+        } else {
+            const midpoint = (minHeight + maxHeight()) / 2;
+            setHeight(currentHeight() >= midpoint ? maxHeight() : minHeight);
+        }
     }
-    handle.addEventListener('pointerup', endDrag);
-    handle.addEventListener('pointercancel', endDrag);
-    // Keep the current card total visible when the drawer is collapsed.
+    handle.addEventListener('pointerup', event => endDrag(event));
+    handle.addEventListener('pointercancel', event => endDrag(event, true));
+    handle.addEventListener('keydown', event => {
+        if (!narrow.matches || !['Enter', ' '].includes(event.key)) return;
+        event.preventDefault();
+        setHeight(currentHeight() > minHeight + 1 ? minHeight : maxHeight());
+    });
     const total = document.getElementById('total');
     if (total && count) {
         const syncCount = () => { count.textContent = '· ' + total.textContent; };
         new MutationObserver(syncCount).observe(total, { childList: true, characterData: true, subtree: true });
         syncCount();
     }
-    // Match the inspector's available space to the drawer's actual visible height.
-    // ResizeObserver also catches drag, collapse/expand, and viewport changes.
     const syncInspectorSpace = () => {
         document.documentElement.style.setProperty('--inspector-drawer-height',
             narrow.matches ? sidebar.getBoundingClientRect().height + 'px' : '0px');
     };
     new ResizeObserver(syncInspectorSpace).observe(sidebar);
-    window.addEventListener('resize', syncInspectorSpace);
+    window.addEventListener('resize', () => {
+        if (narrow.matches && currentHeight() > minHeight + 1) setHeight(maxHeight());
+        syncInspectorSpace();
+    });
     narrow.addEventListener('change', syncInspectorSpace);
-    // Start tucked away so the card gallery remains easy to browse on phones.
-    setCollapsed(true);
+    setHeight(minHeight);
     syncInspectorSpace();
 })();
 
