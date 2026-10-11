@@ -1,0 +1,457 @@
+{
+  "set": "ST11",
+  "cards": [
+    {
+      "id": "ST11-001",
+      "name": "Char's Z'Gok",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 4,
+      "cost": 3,
+      "ap": 3,
+      "hp": 3,
+      "traits": [
+        "Zeon",
+        "Marine"
+      ],
+      "link_conditions": [
+        "Char Aznable"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "During Pair",
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST11-002",
+      "name": "Acguy",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 3,
+      "cost": 2,
+      "ap": 3,
+      "hp": 1,
+      "traits": [
+        "Zeon",
+        "Marine"
+      ],
+      "link_conditions": [
+        "Zeon"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST11-003",
+      "name": "Zock",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 3,
+      "cost": 2,
+      "ap": 3,
+      "hp": 3,
+      "traits": [
+        "Zeon",
+        "Marine"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Blocker"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST11-004",
+      "name": "ZnO",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 3,
+      "cost": 3,
+      "ap": 3,
+      "hp": 2,
+      "traits": [
+        "ZAFT",
+        "Marine"
+      ],
+      "link_conditions": [
+        "Marco Morassim"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST11-005",
+      "name": "Ash",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 5,
+      "cost": 4,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "ZAFT",
+        "Marine"
+      ],
+      "link_conditions": [
+        "ZAFT"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Repair 2"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST11-006",
+      "name": "Shamblo",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 6,
+      "cost": 5,
+      "ap": 4,
+      "hp": 5,
+      "traits": [
+        "Zeon",
+        "Marine"
+      ],
+      "link_conditions": [
+        "Loni Garvey"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST11-007",
+      "name": "Gundam Leopard",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 3,
+      "cost": 2,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "Vulture",
+        "Marine"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST11-008",
+      "name": "Daughseat",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 2,
+      "cost": 1,
+      "ap": 2,
+      "hp": 2,
+      "traits": [
+        "Vulture",
+        "Marine"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST11-009",
+      "name": "Kapool",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 1,
+      "cost": 1,
+      "ap": 1,
+      "hp": 1,
+      "traits": [
+        "Militia",
+        "Marine"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Destroyed"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST11-010",
+      "name": "Abyss Gundam",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 4,
+      "cost": 3,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "Earth Alliance",
+        "Phantom Pain",
+        "Marine"
+      ],
+      "link_conditions": [
+        "Auel Neider"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Blocker"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST11-011",
+      "name": "Char Aznable",
+      "type": "Pilot",
+      "color": "Blue",
+      "level": 4,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "Zeon",
+        "Newtype"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "When Paired"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST11-012",
+      "name": "Loni Garvey",
+      "type": "Pilot",
+      "color": "Purple",
+      "level": 4,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "Zeon",
+        "Newtype"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "When Paired"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST11-013",
+      "name": "Poorly Planned Offensive",
+      "type": "Command",
+      "color": "Blue",
+      "level": 4,
+      "cost": 2,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "-"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Main",
+        "Action"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST11-014",
+      "name": "The Orca of Red Sea",
+      "type": "Command",
+      "color": "Blue",
+      "level": 3,
+      "cost": 1,
+      "ap": 1,
+      "hp": 1,
+      "traits": [
+        "ZAFT",
+        "Coordinator"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Action"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST11-015",
+      "name": "A Twinkle from the Abyss",
+      "type": "Command",
+      "color": "Purple",
+      "level": 5,
+      "cost": 2,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "-"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Main"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST11-016",
+      "name": "Mad Angler",
+      "type": "Base",
+      "color": "Blue",
+      "level": 3,
+      "cost": 1,
+      "ap": null,
+      "hp": 5,
+      "traits": [
+        "Zeon",
+        "Warship",
+        "Marine"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "T-028",
+      "name": "GOOhN",
+      "type": "Token",
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": 1,
+      "hp": 1,
+      "traits": [
+        "ZAFT",
+        "Marine"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    }
+  ]
+}

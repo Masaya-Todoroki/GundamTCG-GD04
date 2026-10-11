@@ -1,0 +1,460 @@
+{
+  "set": "ST13",
+  "cards": [
+    {
+      "id": "ST13-001",
+      "name": "Qubeley",
+      "type": "Unit",
+      "color": "Green",
+      "level": 7,
+      "cost": 5,
+      "ap": 5,
+      "hp": 5,
+      "traits": [
+        "Neo Zeon"
+      ],
+      "link_conditions": [
+        "Haman Karn"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Once per Turn",
+        "Activate",
+        "Main"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST13-002",
+      "name": "Elmeth",
+      "type": "Unit",
+      "color": "Green",
+      "level": 4,
+      "cost": 3,
+      "ap": 3,
+      "hp": 3,
+      "traits": [
+        "Zeon"
+      ],
+      "link_conditions": [
+        "Lalah Sune"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST13-003",
+      "name": "Bertigo",
+      "type": "Unit",
+      "color": "Green",
+      "level": 4,
+      "cost": 2,
+      "ap": 3,
+      "hp": 4,
+      "traits": [
+        "SRA"
+      ],
+      "link_conditions": [
+        "Carris Nautilus"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST13-004",
+      "name": "GX-Bit",
+      "type": "Unit",
+      "color": "Green",
+      "level": 2,
+      "cost": 2,
+      "ap": 3,
+      "hp": 1,
+      "traits": [
+        "Old UNE",
+        "Vulture",
+        "Long-Range Weapon"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST13-005",
+      "name": "GFreD",
+      "type": "Unit",
+      "color": "Green",
+      "level": 3,
+      "cost": 2,
+      "ap": 3,
+      "hp": 2,
+      "traits": [
+        "Zeon"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST13-006",
+      "name": "Gundam Aerial",
+      "type": "Unit",
+      "color": "Red",
+      "level": 6,
+      "cost": 5,
+      "ap": 5,
+      "hp": 4,
+      "traits": [
+        "Academy"
+      ],
+      "link_conditions": [
+        "Suletta Mercury"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "During Pair",
+        "Attack",
+        "Activate",
+        "Action",
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST13-007",
+      "name": "Gyunei's Jagd Doga",
+      "type": "Unit",
+      "color": "Red",
+      "level": 4,
+      "cost": 3,
+      "ap": 3,
+      "hp": 4,
+      "traits": [
+        "Neo Zeon"
+      ],
+      "link_conditions": [
+        "Neo Zeon"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Support 1",
+        "Activate",
+        "Main"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST13-008",
+      "name": "Gundam Throne Zwei",
+      "type": "Unit",
+      "color": "Red",
+      "level": 3,
+      "cost": 2,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "CB",
+        "Trinity"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST13-009",
+      "name": "Gundam Pharact",
+      "type": "Unit",
+      "color": "Red",
+      "level": 3,
+      "cost": 2,
+      "ap": 3,
+      "hp": 3,
+      "traits": [
+        "Academy"
+      ],
+      "link_conditions": [
+        "Academy"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Attack"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST13-010",
+      "name": "Red Gundam (0079)",
+      "type": "Unit",
+      "color": "Red",
+      "level": 5,
+      "cost": 4,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "Zeon"
+      ],
+      "link_conditions": [
+        "Newtype"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Breach 3",
+        "Activate",
+        "Main",
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST13-011",
+      "name": "Haman Karn",
+      "type": "Pilot",
+      "color": "Green",
+      "level": 6,
+      "cost": 1,
+      "ap": 2,
+      "hp": 2,
+      "traits": [
+        "Neo Zeon",
+        "Newtype"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "When Paired"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST13-012",
+      "name": "Suletta Mercury",
+      "type": "Pilot",
+      "color": "Red",
+      "level": 4,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "Academy"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST13-013",
+      "name": "I'm a Newtype",
+      "type": "Command",
+      "color": "Green",
+      "level": 4,
+      "cost": 1,
+      "ap": 1,
+      "hp": 1,
+      "traits": [
+        "SRA",
+        "Newtype"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Main"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST13-014",
+      "name": "Final Duty",
+      "type": "Command",
+      "color": "Red",
+      "level": 6,
+      "cost": 2,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "-"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Main"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST13-015",
+      "name": "Operation to Intercept Solomon",
+      "type": "Command",
+      "color": "Red",
+      "level": 4,
+      "cost": 2,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "-"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Main",
+        "Action"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST13-016",
+      "name": "Sodon",
+      "type": "Base",
+      "color": "Green",
+      "level": 2,
+      "cost": 1,
+      "ap": null,
+      "hp": 5,
+      "traits": [
+        "Zeon",
+        "Warship"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "T-029",
+      "name": "Bit / Funnel",
+      "type": "Token",
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": 2,
+      "hp": 2,
+      "traits": [
+        "Long-Range Weapon"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    }
+  ]
+}

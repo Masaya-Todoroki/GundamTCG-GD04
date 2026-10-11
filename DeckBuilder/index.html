@@ -1371,7 +1371,7 @@ input[type=search] {
      </span>
     </h1>
     <small>
-     Masa's GCG Deck Builder v0.3.1
+     Masa's GCG Deck Builder v0.9
     </small>
    </div>
    <span class="pill" id="countHeader">
@@ -1792,7 +1792,20 @@ function show(id) {
     const count = deck[id] || 0;
     const addButton = isToken(c) ? '' : `<button class="btn remove-all" id="removeSelected" title="Remove all copies" aria-label="Remove all copies" ${count === 0 ? 'disabled' : ''}>🗑</button><button class="btn" id="minusSelected" title="Remove one" ${count === 0 ? 'disabled' : ''}>−</button><span class="inspection-count">${count}/4</span><button class="btn primary" id="addSelected" title="Add one" ${count >= 4 ? 'disabled' : ''}>+</button>`;
     const tokenSection = generated.length ? `<section class="inspection-section"><h2>Tokens created</h2><div class="token-gallery">${generated.map(t => `<button class="token-preview" data-open="${esc(t.id)}" title="Inspect ${esc(t.name || t.id)}"><img loading="lazy" src="${img(t)}" alt="${esc(t.name || t.id)}"><span>${esc(t.name || t.id)}</span></button>`).join('')}</div></section>` : '';
-    const compatibility = (c.type === 'Unit' || isPilot(c)) ? `<section class="inspection-section"><h2>${c.type === 'Unit' ? 'Compatible Pilots' : 'Compatible Units'}</h2>${m.length ? `<div class="match-grid">${m.slice(0, 60).map(x => `<div class="match-tile"><button class="match-art" data-open="${esc(x.c.id)}" title="Inspect ${esc(x.c.name || x.c.id)}"><img loading="lazy" src="${img(x.c)}" alt="${esc(x.c.name || x.c.id)}"></button><div class="match-info"><b title="${esc(x.c.name || x.c.id)}">${esc(x.c.name || x.c.id)}</b><small>${esc(x.c.id)} · ${x.link ? 'Link' : ''}${x.link && x.pair ? ' + ' : ''}${x.pair ? 'Pair' : ''}</small><button class="btn match-view" data-open="${esc(x.c.id)}">View</button></div><div class="match-actions"><button class="btn" data-match-clear="${esc(x.c.id)}" title="Remove all copies" ${!(deck[x.c.id] || 0) ? 'disabled' : ''}>🗑</button><button class="btn" data-match-minus="${esc(x.c.id)}" title="Remove one" ${!(deck[x.c.id] || 0) ? 'disabled' : ''}>−</button><span class="match-count">${deck[x.c.id] || 0}/4</span><button class="btn primary" data-match-plus="${esc(x.c.id)}" title="Add one" ${(deck[x.c.id] || 0) >= 4 ? 'disabled' : ''}>+</button></div></div>`).join('')}</div>` : '<p class="empty">No compatible cards found.</p>'}</section>` : '';
+    // Keep Link and Pair results in separate groups. Cards satisfying both
+    // conditions appear only in the Link group, with their dual status shown.
+    const renderMatchTile = x => `<div class="match-tile"><button class="match-art" data-open="${esc(x.c.id)}" title="Inspect ${esc(x.c.name || x.c.id)}"><img loading="lazy" src="${img(x.c)}" alt="${esc(x.c.name || x.c.id)}"></button><div class="match-info"><b title="${esc(x.c.name || x.c.id)}">${esc(x.c.name || x.c.id)}</b><small>${esc(x.c.id)} · ${x.link ? 'Link' : ''}${x.link && x.pair ? ' + ' : ''}${x.pair ? 'Pair' : ''}</small><button class="btn match-view" data-open="${esc(x.c.id)}">View</button></div><div class="match-actions"><button class="btn" data-match-clear="${esc(x.c.id)}" title="Remove all copies" ${!(deck[x.c.id] || 0) ? 'disabled' : ''}>🗑</button><button class="btn" data-match-minus="${esc(x.c.id)}" title="Remove one" ${!(deck[x.c.id] || 0) ? 'disabled' : ''}>−</button><span class="match-count">${deck[x.c.id] || 0}/4</span><button class="btn primary" data-match-plus="${esc(x.c.id)}" title="Add one" ${(deck[x.c.id] || 0) >= 4 ? 'disabled' : ''}>+</button></div></div>`;
+    const renderMatchSection = (heading, items) => items.length
+        ? `<section class="inspection-section"><h2>${heading} <span class="match-section-count">(${items.length})</span></h2><div class="match-grid">${items.map(renderMatchTile).join('')}</div></section>`
+        : '';
+    const subject = c.type === 'Unit' ? 'Pilots' : 'Units';
+    const linkMatches = m.filter(x => x.link);
+    const pairMatches = m.filter(x => x.pair && !x.link);
+    const compatibility = (c.type === 'Unit' || isPilot(c))
+        ? (renderMatchSection(`Link ${subject}`, linkMatches)
+            + renderMatchSection(`Compatible Pair ${subject}`, pairMatches)
+            || '<section class="inspection-section"><p class="empty">No compatible cards found.</p></section>')
+        : '';
     $('detail').innerHTML = `<div class="inspection-hero"><img class="inspection-card" src="${img(c)}" alt="${esc(c.name || id)}"><div class="inspection-controls">${addButton}</div></div>${tokenSection}${compatibility}`;
     $('modal').classList.add('open');
     if (!isToken(c)) {
@@ -1966,9 +1979,16 @@ const CARD_SETS = [
     'ST08',
     'ST09',
     'ST10',
+    'ST11',
+    'ST12',
+    'ST13',
+    'ST14',
     'GD01',
     'GD02',
-    // 'GD03', // Uncomment once Data/GD03.json and its images are ready.
+    'GD03',
+    'GD04',
+    'GD05',
+    'EB01',
 ];
 
 async function start() {

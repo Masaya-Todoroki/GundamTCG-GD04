@@ -1,0 +1,439 @@
+{
+  "set": "ST14",
+  "cards": [
+    {
+      "id": "ST14-001",
+      "name": "The-O",
+      "type": "Unit",
+      "color": "White",
+      "level": 9,
+      "cost": 8,
+      "ap": 6,
+      "hp": 7,
+      "traits": [
+        "Titans",
+        "Jupitris"
+      ],
+      "link_conditions": [
+        "Paptimus Scirocco"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Suppression"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST14-002",
+      "name": "Gundam NT-1 Full Armor",
+      "type": "Unit",
+      "color": "White",
+      "level": 5,
+      "cost": 4,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "Earth Federation"
+      ],
+      "link_conditions": [
+        "Christina Mackenzie",
+        "Newtype"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Blocker"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST14-003",
+      "name": "Palace Athene",
+      "type": "Unit",
+      "color": "White",
+      "level": 4,
+      "cost": 3,
+      "ap": 3,
+      "hp": 4,
+      "traits": [
+        "Titans",
+        "Jupitris"
+      ],
+      "link_conditions": [
+        "Jupitris"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST14-004",
+      "name": "Geara Doga (Heavy Armed Type)",
+      "type": "Unit",
+      "color": "White",
+      "level": 1,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "Neo Zeon"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Blocker"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST14-005",
+      "name": "G-Falcon DX",
+      "type": "Unit",
+      "color": "White",
+      "level": 7,
+      "cost": 6,
+      "ap": 5,
+      "hp": 5,
+      "traits": [
+        "Vulture"
+      ],
+      "link_conditions": [
+        "Vulture",
+        "Newtype"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST14-006",
+      "name": "Full Armor Unicorn Gundam (Destroy Mode)",
+      "type": "Unit",
+      "color": "Green",
+      "level": 8,
+      "cost": 6,
+      "ap": 3,
+      "hp": 6,
+      "traits": [
+        "Civilian"
+      ],
+      "link_conditions": [
+        "Banagher Links"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy",
+        "During Pair",
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST14-007",
+      "name": "Full Armor Unicorn Gundam (Unicorn Mode)",
+      "type": "Unit",
+      "color": "Green",
+      "level": 5,
+      "cost": 3,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "Civilian"
+      ],
+      "link_conditions": [
+        "Banagher Links"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Breach 3"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST14-008",
+      "name": "Gundam Heavyarms Custom (EW)",
+      "type": "Unit",
+      "color": "Green",
+      "level": 6,
+      "cost": 4,
+      "ap": 6,
+      "hp": 4,
+      "traits": [
+        "G Team"
+      ],
+      "link_conditions": [
+        "G Team",
+        "Operation Meteor"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST14-009",
+      "name": "Duel Gundam (Assault Shroud)",
+      "type": "Unit",
+      "color": "Green",
+      "level": 3,
+      "cost": 3,
+      "ap": 3,
+      "hp": 2,
+      "traits": [
+        "ZAFT"
+      ],
+      "link_conditions": [
+        "Yzak Jule"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Destroyed"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST14-010",
+      "name": "Perfect Strike Gundam",
+      "type": "Unit",
+      "color": "Green",
+      "level": 4,
+      "cost": 2,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "Triple Ship Alliance"
+      ],
+      "link_conditions": [
+        "Mu La Flaga"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST14-011",
+      "name": "Paptimus Scirocco",
+      "type": "Pilot",
+      "color": "White",
+      "level": 4,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "Titans",
+        "Jupitris",
+        "Newtype"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Attack"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST14-012",
+      "name": "Banagher Links",
+      "type": "Pilot",
+      "color": "Green",
+      "level": 4,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "Civilian",
+        "Newtype"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "When Paired"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST14-013",
+      "name": "Natural Talent",
+      "type": "Command",
+      "color": "White",
+      "level": 4,
+      "cost": 2,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "-"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Main",
+        "Action"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST14-014",
+      "name": "Blazing Mobile Suit Rider",
+      "type": "Command",
+      "color": "White",
+      "level": 5,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "Vulture",
+        "Newtype"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Main",
+        "Action"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST14-015",
+      "name": "Battlefield Emotions",
+      "type": "Command",
+      "color": "Green",
+      "level": 4,
+      "cost": 4,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "-"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Main"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST14-016",
+      "name": "Gryphios 2",
+      "type": "Base",
+      "color": "White",
+      "level": 3,
+      "cost": 1,
+      "ap": null,
+      "hp": 5,
+      "traits": [
+        "Titans",
+        "Stronghold"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Deploy",
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    }
+  ]
+}
