@@ -1408,7 +1408,7 @@ input[type=search] {
      </span>
     </h1>
     <small>
-     Masa's GCG Deck Builder v0.9.8
+     Masa's GCG Deck Builder v0.9.9
     </small>
    </div>
    <div class="header-actions">
@@ -1545,8 +1545,8 @@ input[type=search] {
    <div class="deck-text-dialog confirm-dialog">
     <div class="deck-text-top"><h2 id="startupDeckTitle">Welcome back!</h2></div>
     <p class="deck-text-help" id="startupDeckMessage">You have saved decks in this browser. Would you like to load one?</p>
+    <div class="saved-deck-list" id="startupDeckList"></div>
     <div class="saved-deck-actions">
-     <button class="btn primary" id="startupLoadDeck" type="button">Load a Saved Deck</button>
      <button class="btn" id="startupContinueDeck" type="button">Continue Current Deck</button>
     </div>
    </div>
@@ -1990,28 +1990,41 @@ function offerSavedDecksOnStartup() {
         ? `You have ${items.length} saved deck${items.length === 1 ? '' : 's'}. Your unfinished deck has been restored. Would you like to load a saved deck instead?`
         : `You have ${items.length} saved deck${items.length === 1 ? '' : 's'} in this browser. Would you like to load one?`;
     $('startupContinueDeck').textContent = hasDraft ? 'Continue Current Deck' : 'Start a New Deck';
+    $('startupDeckList').innerHTML = items.sort((a,b) => (b.updated || 0) - (a.updated || 0)).map(d => {
+        const count = Object.values(d.cards || {}).reduce((sum,n) => sum + (Number(n) || 0), 0);
+        return `<div class="saved-deck-row" data-startup-save-id="${esc(d.id)}"><div><strong>${esc(d.name || 'Untitled Deck')}</strong><small>${count} cards · ${new Date(d.updated || Date.now()).toLocaleDateString()}</small></div><div class="saved-deck-row-actions"><button class="btn primary" type="button" data-startup-load>Load</button></div></div>`;
+    }).join('');
     $('startupDeckModal').classList.add('open');
 }
 $('startupContinueDeck').onclick = () => $('startupDeckModal').classList.remove('open');
-$('startupLoadDeck').onclick = () => {
+$('startupDeckList').onclick = e => {
+    const button = e.target.closest('[data-startup-load]');
+    if (!button) return;
+    const id = button.closest('[data-startup-save-id]')?.dataset.startupSaveId;
+    const saved = getSavedDecks().find(d => d.id === id);
+    if (!saved) return;
+    loadSavedDeck(saved);
     $('startupDeckModal').classList.remove('open');
-    showSavedDecks();
 };
 $('save').onclick = showSavedDecks;
 $('closeSavedDecks').onclick = () => $('savedDecksModal').classList.remove('open');
 $('saveCurrentDeck').onclick = saveDeckChanges;
 $('saveAsDeck').onclick = saveDeckAsNew;
+function loadSavedDeck(d) {
+    deck = { ...d.cards };
+    $('deckName').value = d.name || 'Untitled Deck';
+    activeSavedDeckId = d.id;
+    render();
+    renderDeck();
+    renderSavedDecks();
+    autosaveDraft();
+    savedDeckMessage(`Loaded "${d.name}".`);
+}
 $('savedDeckList').onclick = e => { const button = e.target.closest('[data-saved-action]'); if (!button)
     return; const id = button.closest('[data-save-id]')?.dataset.saveId; const items = getSavedDecks(), i = items.findIndex(d => d.id === id); if (i < 0)
     return; const d = items[i]; switch (button.dataset.savedAction) {
     case 'load':
-        deck = { ...d.cards };
-        $('deckName').value = d.name || 'Untitled Deck';
-        activeSavedDeckId = d.id;
-        render();
-        renderDeck();
-        renderSavedDecks();
-        savedDeckMessage(`Loaded "${d.name}".`);
+        loadSavedDeck(d);
         break;
     case 'rename': {
         const name = prompt('New deck name:', d.name);
