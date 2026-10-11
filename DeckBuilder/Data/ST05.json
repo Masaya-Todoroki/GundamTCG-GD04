@@ -1,0 +1,384 @@
+{
+  "set": "ST05",
+  "cards": [
+    {
+      "id": "ST05-001",
+      "name": "Gundam Barbatos 4th Form",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 6,
+      "cost": 4,
+      "ap": 4,
+      "hp": 5,
+      "traits": [
+        "Tekkadan",
+        "Gundam Frame"
+      ],
+      "link_conditions": [
+        "Mikazuki Augus"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Suppression"
+      ],
+      "creates_tokens": [],
+      "needs_review": false
+    },
+    {
+      "id": "ST05-002",
+      "name": "Gundam Barbatos 2nd Form",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 4,
+      "cost": 2,
+      "ap": 2,
+      "hp": 4,
+      "traits": [
+        "Tekkadan",
+        "Gundam Frame"
+      ],
+      "link_conditions": [
+        "Mikazuki Augus"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false
+    },
+    {
+      "id": "ST05-003",
+      "name": "CGS Mobile Worker",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 1,
+      "cost": 1,
+      "ap": 0,
+      "hp": 2,
+      "traits": [
+        "Tekkadan"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false
+    },
+    {
+      "id": "ST05-004",
+      "name": "Graze Custom",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 2,
+      "cost": 1,
+      "ap": 2,
+      "hp": 2,
+      "traits": [
+        "Tekkadan"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false
+    },
+    {
+      "id": "ST05-005",
+      "name": "Gundam Gusion Rebake",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 4,
+      "cost": 3,
+      "ap": 3,
+      "hp": 4,
+      "traits": [
+        "Tekkadan",
+        "Gundam Frame"
+      ],
+      "link_conditions": [
+        "Akihiro Altland"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Destroyed"
+      ],
+      "creates_tokens": [],
+      "needs_review": false
+    },
+    {
+      "id": "ST05-006",
+      "name": "Hyakuren",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 3,
+      "cost": 2,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "Teiwaz"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false
+    },
+    {
+      "id": "ST05-007",
+      "name": "McGillis Schwalbe Graze",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 4,
+      "cost": 3,
+      "ap": 4,
+      "hp": 2,
+      "traits": [
+        "Gjallarhorn"
+      ],
+      "link_conditions": [
+        "McGillis Fareed"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Blocker"
+      ],
+      "creates_tokens": [],
+      "needs_review": false
+    },
+    {
+      "id": "ST05-008",
+      "name": "Graze Commander Type",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 3,
+      "cost": 2,
+      "ap": 3,
+      "hp": 2,
+      "traits": [
+        "Gjallarhorn"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Blocker"
+      ],
+      "creates_tokens": [],
+      "needs_review": false
+    },
+    {
+      "id": "ST05-009",
+      "name": "Graze",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 2,
+      "cost": 1,
+      "ap": 2,
+      "hp": 2,
+      "traits": [
+        "Gjallarhorn"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false
+    },
+    {
+      "id": "ST05-010",
+      "name": "Mikazuki Augus",
+      "type": "Pilot",
+      "color": "Purple",
+      "level": 4,
+      "cost": 1,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": {
+        "names": [
+          "Mikazuki Augus"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "Tekkadan",
+          "Alaya-Vijnana"
+        ]
+      },
+      "keywords": [
+        "Burst"
+      ],
+      "creates_tokens": [],
+      "needs_review": false
+    },
+    {
+      "id": "ST05-011",
+      "name": "Akihiro Altland",
+      "type": "Pilot",
+      "color": "Purple",
+      "level": 3,
+      "cost": 1,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": {
+        "names": [
+          "Akihiro Altland"
+        ],
+        "ap": 1,
+        "hp": 1,
+        "traits": [
+          "Tekkadan",
+          "Alaya-Vijnana"
+        ]
+      },
+      "keywords": [
+        "Burst"
+      ],
+      "creates_tokens": [],
+      "needs_review": false
+    },
+    {
+      "id": "ST05-012",
+      "name": "McGillis Fareed",
+      "type": "Pilot",
+      "color": "Purple",
+      "level": 4,
+      "cost": 1,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": {
+        "names": [
+          "McGillis Fareed"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "Gjallarhorn"
+        ]
+      },
+      "keywords": [
+        "Burst"
+      ],
+      "creates_tokens": [],
+      "needs_review": false
+    },
+    {
+      "id": "ST05-013",
+      "name": "With Iron and Blood",
+      "type": "Command",
+      "color": "Purple",
+      "level": 2,
+      "cost": 1,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false
+    },
+    {
+      "id": "ST05-014",
+      "name": "Fatal Strike",
+      "type": "Command",
+      "color": "Purple",
+      "level": 4,
+      "cost": 2,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst"
+      ],
+      "creates_tokens": [],
+      "needs_review": false
+    },
+    {
+      "id": "ST05-015",
+      "name": "Isaribi",
+      "type": "Base",
+      "color": "Purple",
+      "level": 3,
+      "cost": 1,
+      "ap": 0,
+      "hp": 5,
+      "traits": [
+        "Tekkadan",
+        "Warship"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst"
+      ],
+      "creates_tokens": [],
+      "needs_review": false
+    }
+  ]
+}
