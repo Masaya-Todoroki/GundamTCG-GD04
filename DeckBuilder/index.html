@@ -2941,8 +2941,8 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && deckImageM
         if (Math.abs(velocity) >= flickVelocity) {
             setHeight(velocity > 0 ? maxHeight() : minHeight);
         } else {
-            const midpoint = (minHeight + maxHeight()) / 2;
-            setHeight(currentHeight() >= midpoint ? maxHeight() : minHeight);
+            // Slow drags stay at the released height instead of snapping.
+            setHeight(currentHeight());
         }
     }
     handle.addEventListener('pointerup', event => endDrag(event));
