@@ -1511,7 +1511,7 @@ body:has(#modal.open) { overflow: hidden; }
   #detail .token-preview img { width:100%; flex:none; }
   #detail .token-preview span { margin:4px 0 0; font-size:10px; }
 }
-/* v0.9.23: compact versions of the existing compatible-card and token tiles. */
+/* v0.9.25: compact versions of the existing compatible-card and token tiles. */
 #detail .match-grid {
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(0,220px));
@@ -1560,7 +1560,7 @@ body:has(#modal.open) { overflow: hidden; }
   #detail .token-preview span { font-size:10px; margin:4px 0 0; }
 }
 
-/* v0.9.23 — inspector related cards reuse the portrait browser card design. */
+/* v0.9.25 — inspector related cards reuse the portrait browser card design. */
 #detail .match-grid, #detail .token-gallery {
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(0,132px));
@@ -1676,7 +1676,7 @@ body:has(#modal.open) { overflow: hidden; }
      </span>
     </h1>
     <small>
-     Masa's GCG Deck Builder v0.9.23
+     Masa's GCG Deck Builder v0.9.25
     </small>
    </div>
    <div class="header-actions">
@@ -2117,7 +2117,7 @@ function show(id) {
     const addButton = isToken(c) ? '' : `<button class="btn remove-all" id="removeSelected" title="Remove all copies" aria-label="Remove all copies" ${count === 0 ? 'disabled' : ''}>🗑</button><button class="btn" id="minusSelected" title="Remove one" ${count === 0 ? 'disabled' : ''}>−</button><span class="inspection-count">${count}/4</span><button class="btn primary" id="addSelected" title="Add one" ${count >= 4 ? 'disabled' : ''}>+</button>`;
     const tokenSection = generated.length ? `<section class="inspection-section"><h2>Tokens created <span class="match-section-count">(${generated.length})</span></h2><div class="token-gallery">${generated.map(t => `<article class="card inspector-mini-card token-preview"><button class="mini-art-button" data-open="${esc(t.id)}" title="Inspect ${esc(t.name || t.id)}"><img loading="lazy" src="${img(t)}" alt="${esc(t.name || t.id)}"></button><div class="info"><div class="name">${esc(t.name || t.id)}</div><div class="sub">${esc(t.id)}</div></div></article>`).join('')}</div></section>` : '';
     // Same portrait artwork, quantity row and name/ID hierarchy as the main browser.
-    const renderMatchTile = (x, label = null) => `<article class="card inspector-mini-card match-tile"><button class="mini-art-button" data-open="${esc(x.c.id)}" title="Inspect ${esc(x.c.name || x.c.id)}"><img loading="lazy" src="${img(x.c)}" alt="${esc(x.c.name || x.c.id)}"></button><div class="gallery-quick match-actions"><button data-match-clear="${esc(x.c.id)}" title="Remove all copies" ${!(deck[x.c.id] || 0) ? 'disabled' : ''}>🗑</button><button data-match-minus="${esc(x.c.id)}" title="Remove one" ${!(deck[x.c.id] || 0) ? 'disabled' : ''}>−</button><span class="gallery-count match-count">${deck[x.c.id] || 0}/4</span><button class="gallery-add" data-match-plus="${esc(x.c.id)}" title="Add one" ${(deck[x.c.id] || 0) >= 4 ? 'disabled' : ''}>+</button></div><div class="info"><div class="name" title="${esc(x.c.name || x.c.id)}">${esc(x.c.name || x.c.id)}</div><div class="sub">${esc(x.c.id)}${label ? ' · ' + esc(label) : ' · ' + (x.link ? 'Link' : '') + (x.link && x.pair ? ' + ' : '') + (x.pair ? 'Pair' : '')}</div></div></article>`;
+    const renderMatchTile = (x, label = null) => `<article class="card inspector-mini-card match-tile"><button class="mini-art-button" data-open="${esc(x.c.id)}" title="Inspect ${esc(x.c.name || x.c.id)}"><img loading="lazy" src="${img(x.c)}" alt="${esc(x.c.name || x.c.id)}"></button><div class="gallery-quick match-actions"><button data-match-clear="${esc(x.c.id)}" title="Remove all copies" ${!(deck[x.c.id] || 0) ? 'disabled' : ''}>🗑</button><button data-match-minus="${esc(x.c.id)}" title="Remove one" ${!(deck[x.c.id] || 0) ? 'disabled' : ''}>−</button><span class="gallery-count match-count">${deck[x.c.id] || 0}/4</span><button class="gallery-add" data-match-plus="${esc(x.c.id)}" title="Add one" ${(deck[x.c.id] || 0) >= 4 ? 'disabled' : ''}>+</button></div><div class="info"><div class="name" title="${esc(x.c.name || x.c.id)}">${esc(x.c.name || x.c.id)}</div><div class="sub">${esc(x.c.id)} · ${esc(x.c.type || 'Unknown')}</div></div></article>`;
     const renderMatchSection = (heading, items) => items.length
         ? `<section class="inspection-section"><h2>${heading} <span class="match-section-count">(${items.length})</span></h2><div class="match-grid">${items.map(renderMatchTile).join('')}</div></section>`
         : '';
