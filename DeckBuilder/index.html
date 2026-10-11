@@ -1403,7 +1403,7 @@ input[type=search] {
      </span>
     </h1>
     <small>
-     Masa's GCG Deck Builder v0.9.2
+     Masa's GCG Deck Builder v0.9.3
     </small>
    </div>
    <div class="header-actions">
@@ -1663,6 +1663,7 @@ input[type=search] {
   <script>
    
 let cards = [], byId = new Map(), deck = {}, page = 0, selected = null, visibleCount = 48;
+let inspectorMatches = null; // Frozen ordering for the currently inspected card.
 const PAGE = 48, $ = id => document.getElementById(id), esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const img = c => { let folder = c.id.split('-')[0]; if (/^T-\d+$/i.test(c.id)) {
     let n = Number(c.id.split('-')[1]);
@@ -1826,8 +1827,12 @@ function show(id) {
     const c = byId.get(id);
     if (!c)
         return;
+    const sameInspector = selected === id && $('modal').classList.contains('open');
+    const dialog = $('modal').querySelector('.dialog');
+    const previousScroll = sameInspector && dialog ? dialog.scrollTop : 0;
+    if (!sameInspector || !inspectorMatches) inspectorMatches = matches(c);
     selected = id;
-    const m = matches(c);
+    const m = inspectorMatches;
     const generated = arr(c.creates_tokens).map(t => byId.get(typeof t === 'string' ? t : t?.id)).filter(x => x && isToken(x));
     const count = deck[id] || 0;
     const addButton = isToken(c) ? '' : `<button class="btn remove-all" id="removeSelected" title="Remove all copies" aria-label="Remove all copies" ${count === 0 ? 'disabled' : ''}>🗑</button><button class="btn" id="minusSelected" title="Remove one" ${count === 0 ? 'disabled' : ''}>−</button><span class="inspection-count">${count}/4</span><button class="btn primary" id="addSelected" title="Add one" ${count >= 4 ? 'disabled' : ''}>+</button>`;
@@ -1848,6 +1853,7 @@ function show(id) {
         : '';
     $('detail').innerHTML = `<div class="inspection-hero"><img class="inspection-card" src="${img(c)}" alt="${esc(c.name || id)}"><div class="inspection-controls">${addButton}</div></div>${tokenSection}${compatibility}`;
     $('modal').classList.add('open');
+    if (sameInspector && dialog) dialog.scrollTop = previousScroll;
     if (!isToken(c)) {
         $('addSelected').onclick = () => { change(id, 1); show(id); };
         $('minusSelected').onclick = () => { change(id, -1); show(id); };
