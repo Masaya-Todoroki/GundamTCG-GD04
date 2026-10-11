@@ -1706,6 +1706,7 @@ body:has(#modal.open) { overflow: hidden; }
    
 let cards = [], byId = new Map(), deck = {}, page = 0, selected = null, visibleCount = 48;
 let inspectorMatches = null; // Frozen ordering for the currently inspected card.
+let tokensByCard = new Map(); // Populated from Data/tokens.json (token ID -> spawning card IDs).
 const PAGE = 48, $ = id => document.getElementById(id), esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const img = c => {
     const folder = /^T-\d+$/i.test(c.id) ? 'Tokens' : c.id.split('-')[0];
@@ -1756,7 +1757,7 @@ function updateColorFilters() {
         b.title = selected ? 'Click to deselect' : selectedColors.size >= 2 ? 'Deselect a colour first' : 'Click to filter by ' + b.dataset.color;
     }
 }
-function filtered() { let q = $('search').value.trim().toLowerCase(), s = $('set').value, cols = selectedColors, t = $('type').value; let a = cards.filter(c => !isToken(c) && (!s || c.id.startsWith(s + '-')) && (!cols.size || cols.has(c.color)) && (!t || c.type === t) && (!q || (q === 'token' && arr(c.creates_tokens).length > 0) || [c.id, c.name, ...arr(c.traits), ...pilotNames(c), ...pilotTraits(c), ...arr(c.keywords)].join(' ').toLowerCase().includes(q))); let sort = $('sort').value; if (sort === 'name')
+function filtered() { let q = $('search').value.trim().toLowerCase(), s = $('set').value, cols = selectedColors, t = $('type').value; let a = cards.filter(c => !isToken(c) && (!s || c.id.startsWith(s + '-')) && (!cols.size || cols.has(c.color)) && (!t || c.type === t) && (!q || (q === 'token' && (tokensByCard.get(c.id)?.length || 0) > 0) || [c.id, c.name, ...arr(c.traits), ...pilotNames(c), ...pilotTraits(c), ...arr(c.keywords)].join(' ').toLowerCase().includes(q))); let sort = $('sort').value; if (sort === 'name')
     a.sort((a, b) => (a.name || '').localeCompare(b.name || '')); if (sort === 'level')
     a.sort((a, b) => (Number(b.level) || 0) - (Number(a.level) || 0)); return a; }
 function render() { let a = filtered(); visibleCount = Math.min(Math.max(PAGE, visibleCount), Math.max(PAGE, a.length)); $('results').textContent = `${a.length} matching cards`; $('cards').innerHTML = a.slice(0, visibleCount).map(c => `<article class="card" data-id="${esc(c.id)}"><img class="gallery-card-art" loading="lazy" src="${img(c)}" alt="${esc(c.name || c.id)}" title="Inspect card" tabindex="0" role="button" aria-label="Inspect ${esc(c.name || c.id)}"><div class="gallery-quick"><button data-quick="clear" data-id="${esc(c.id)}" title="Remove all copies" aria-label="Remove all copies" ${(deck[c.id] || 0) === 0 ? 'disabled' : ''}>🗑</button><button data-quick="minus" data-id="${esc(c.id)}" title="Remove one" ${(deck[c.id] || 0) === 0 ? 'disabled' : ''}>−</button><span class="gallery-count">${deck[c.id] || 0}/4</span><button class="gallery-add" data-quick="plus" data-id="${esc(c.id)}" title="Add one" ${(deck[c.id] || 0) >= 4 ? 'disabled' : ''}>+</button></div><div class="info"><div class="name">${esc(c.name || c.id)}</div><div class="sub">${esc(c.id)} · ${esc(c.type || 'Unknown')}</div></div></article>`).join('') || '<p class="empty">No cards match these filters.</p>'; updateLoadStatus(a.length); }
@@ -1875,7 +1876,7 @@ function show(id) {
     if (!sameInspector || !inspectorMatches) inspectorMatches = matches(c);
     selected = id;
     const m = inspectorMatches;
-    const generated = arr(c.creates_tokens).map(t => byId.get(typeof t === 'string' ? t : t?.id)).filter(x => x && isToken(x));
+    const generated = arr(tokensByCard.get(c.id)).map(id => byId.get(id) || { id, name: id, type: 'Token' });
     const count = deck[id] || 0;
     const addButton = isToken(c) ? '' : `<button class="btn remove-all" id="removeSelected" title="Remove all copies" aria-label="Remove all copies" ${count === 0 ? 'disabled' : ''}>🗑</button><button class="btn" id="minusSelected" title="Remove one" ${count === 0 ? 'disabled' : ''}>−</button><span class="inspection-count">${count}/4</span><button class="btn primary" id="addSelected" title="Add one" ${count >= 4 ? 'disabled' : ''}>+</button>`;
     const tokenSection = generated.length ? `<section class="inspection-section"><h2>Tokens created</h2><div class="token-gallery">${generated.map(t => `<button class="token-preview" data-open="${esc(t.id)}" title="Inspect ${esc(t.name || t.id)}"><img loading="lazy" src="${img(t)}" alt="${esc(t.name || t.id)}"><span>${esc(t.name || t.id)}</span></button>`).join('')}</div></section>` : '';
@@ -2172,6 +2173,28 @@ async function start() {
         }));
         cards = data.flat().filter(card => card && card.id);
         byId = new Map(cards.map(c => [c.id, c]));
+        // Separate token relationships: { "T-001": ["ST01-015", ...], ... }
+        // Tokens without their own card data can still be inspected via their artwork.
+        const tokenResponse = await fetch('Data/tokens.json', { cache: 'no-cache' });
+        if (!tokenResponse.ok) {
+            throw new Error(`Could not load Data/tokens.json (HTTP ${tokenResponse.status})`);
+        }
+        const tokenMappings = await tokenResponse.json();
+        if (!tokenMappings || Array.isArray(tokenMappings) || typeof tokenMappings !== 'object') {
+            throw new Error('Data/tokens.json must be an object mapping token IDs to arrays of card IDs.');
+        }
+        tokensByCard = new Map();
+        for (const [tokenId, creatorIds] of Object.entries(tokenMappings)) {
+            if (!/^T-\d+$/i.test(tokenId) || !Array.isArray(creatorIds)) {
+                throw new Error(`Invalid token mapping for ${tokenId} in Data/tokens.json`);
+            }
+            if (!byId.has(tokenId)) byId.set(tokenId, { id: tokenId, name: tokenId, type: 'Token' });
+            for (const cardId of creatorIds) {
+                if (typeof cardId !== 'string') continue;
+                if (!tokensByCard.has(cardId)) tokensByCard.set(cardId, []);
+                if (!tokensByCard.get(cardId).includes(tokenId)) tokensByCard.get(cardId).push(tokenId);
+            }
+        }
         opt('set', cards.filter(c => !isToken(c)).map(c => c.id.split('-')[0]));
         setupColorFilters();
         opt('type', cards.filter(c => !isToken(c)).map(c => c.type));
