@@ -2204,9 +2204,9 @@ function show(id) {
     $('detail').querySelectorAll('details[data-colour-section]').forEach(d => d.addEventListener('toggle', () => { if (d.open) openColourGroups.add(d.dataset.colourSection); else openColourGroups.delete(d.dataset.colourSection); }));
     if (sameInspector && dialog) dialog.scrollTop = previousScroll;
     if (!isToken(c)) {
-        $('addSelected').onclick = () => { change(id, 1); show(id); }; $('addAllSelected').onclick = () => { change(id, 4); show(id); };
-        $('minusSelected').onclick = () => { change(id, -1); show(id); };
-        $('removeSelected').onclick = () => { change(id, -(deck[id] || 0)); show(id); };
+        $('addSelected').onclick = () => { change(id, 1); refreshInspectorQuantities(); }; $('addAllSelected').onclick = () => { change(id, 4); refreshInspectorQuantities(); };
+        $('minusSelected').onclick = () => { change(id, -1); refreshInspectorQuantities(); };
+        $('removeSelected').onclick = () => { change(id, -(deck[id] || 0)); refreshInspectorQuantities(); };
     }
 }
 $('cards').onclick = e => { const quick = e.target.closest('button[data-quick]'); if (quick) {
@@ -2232,12 +2232,34 @@ $('deckList').onclick = e => { let b = e.target.closest('button[data-action]'); 
     show(id);
 else
     change(id, b.dataset.action === 'clear' ? -(deck[id] || 0) : b.dataset.action === 'all' ? 4 : b.dataset.action === 'plus' ? 1 : -1); };
+// Update quantities in-place so clicking related-card controls never recreates the tiles.
+function refreshInspectorQuantities() {
+    if (!$('modal').classList.contains('open')) return;
+    $('detail').querySelectorAll('.inspector-mini-card.match-tile').forEach(tile => {
+        const id = tile.querySelector('[data-match-plus]')?.dataset.matchPlus;
+        if (!id) return;
+        const n = deck[id] || 0;
+        const count = tile.querySelector('.match-count');
+        if (count) count.textContent = `${n}/4`;
+        for (const action of ['clear', 'minus', 'plus', 'all']) {
+            const button = tile.querySelector(`[data-match-${action}]`);
+            if (button) button.disabled = action === 'clear' || action === 'minus' ? n === 0 : n >= 4;
+        }
+    });
+    const n = deck[selected] || 0;
+    const count = $('detail').querySelector('.inspection-count');
+    if (count) count.textContent = `${n}/4`;
+    for (const [buttonId, disabled] of [['removeSelected', n === 0], ['minusSelected', n === 0], ['addSelected', n >= 4], ['addAllSelected', n >= 4]]) {
+        const button = $(buttonId);
+        if (button) button.disabled = disabled;
+    }
+}
 $('detail').onclick = e => { let b = e.target.closest('[data-open],[data-match-clear],[data-match-minus],[data-match-plus],[data-match-all]'); if (!b)
     return; if (b.dataset.open) {
     show(b.dataset.open);
     return;
 } const id = b.dataset.matchClear || b.dataset.matchMinus || b.dataset.matchPlus || b.dataset.matchAll; if (!id)
-    return; const delta = b.dataset.matchClear !== undefined ? -(deck[id] || 0) : b.dataset.matchMinus !== undefined ? -1 : b.dataset.matchAll !== undefined ? 4 : 1; change(id, delta); show(selected); };
+    return; const delta = b.dataset.matchClear !== undefined ? -(deck[id] || 0) : b.dataset.matchMinus !== undefined ? -1 : b.dataset.matchAll !== undefined ? 4 : 1; change(id, delta); refreshInspectorQuantities(); };
 $('close').onclick = () => { $('modal').classList.remove('open'); };
 $('modal').onclick = e => { if (e.target === $('modal'))
     $('modal').classList.remove('open'); };
