@@ -72,9 +72,28 @@ function updateColorFilters() {
 // ============================================================================
 // SEARCH, SORT & CARD FILTERING
 // ============================================================================
-function filtered() { let q = $('search').value.trim().toLowerCase(), s = $('set').value, cols = selectedColors, t = $('type').value; let a = cards.filter(c => !isToken(c) && (!s || c.id.startsWith(s + '-')) && (!cols.size || cols.has(c.color)) && (!t || c.type === t) && (!q || (q === 'token' && (tokensByCard.get(c.id)?.length || 0) > 0) || [c.id, c.name, ...arr(c.traits), ...pilotNames(c), ...pilotTraits(c), ...arr(c.keywords)].join(' ').toLowerCase().includes(q))); let sort = $('sort').value; if (sort === 'name')
-    a.sort((a, b) => (a.name || '').localeCompare(b.name || '')); if (sort === 'level')
-    a.sort((a, b) => (Number(b.level) || 0) - (Number(a.level) || 0)); return a; }
+function filtered() {
+    const q = $('search').value.trim().toLowerCase();
+    const s = $('set').value, cols = selectedColors, t = $('type').value;
+    const eligible = c => !isToken(c) && (!s || c.id.startsWith(s + '-')) && (!cols.size || cols.has(c.color)) && (!t || c.type === t);
+    const directMatch = c => !q || (q === 'token' && (tokensByCard.get(c.id)?.length || 0) > 0) ||
+        [c.id, c.name, ...arr(c.traits), ...pilotNames(c), ...pilotTraits(c), ...arr(c.keywords)].join(' ').toLowerCase().includes(q);
+    const direct = cards.filter(c => eligible(c) && directMatch(c));
+    const sort = $('sort').value;
+    const sortCards = list => {
+        if (sort === 'name') list.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
+        else if (sort === 'level') list.sort((a, b) => (Number(b.level) || 0) - (Number(a.level) || 0));
+        return list;
+    };
+    if (!q) return sortCards(direct);
+    // Include Units linked/paired with directly matching Pilots, after all direct search results.
+    // Use the same compatibility rules as the card inspector.
+    const matchingPilots = cards.filter(c => isPilot(c) && directMatch(c));
+    const directIds = new Set(direct.map(c => c.id));
+    const linkedUnits = matchingPilots.length ? cards.filter(c => c.type === 'Unit' && eligible(c) && !directIds.has(c.id) &&
+        matchingPilots.some(p => { const result = match(c, p); return result.link || result.pair; })) : [];
+    return [...sortCards(direct), ...sortCards(linkedUnits)];
+}
 
 // #endregion
 

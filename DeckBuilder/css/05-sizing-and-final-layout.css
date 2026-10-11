@@ -467,3 +467,24 @@
 .find-deck-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
 .find-deck-actions .btn{width:auto}
 @media(max-width:560px){.find-deck-actions{width:100%}.find-deck-actions .btn{flex:1;width:auto}}
+
+/* Tournament selection and in-event navigation */
+#findDeckModal .find-deck-navigation {flex-shrink:0;display:flex;flex-direction:column;align-items:flex-start;gap:5px;margin:12px 0 4px}
+#findDeckModal .find-deck-navigation[hidden],#findDeckModal .find-deck-filters[hidden]{display:none}
+.find-deck-navigation strong{color:#e9eef7;font-size:17px}
+.find-deck-navigation small{color:#aebcd1}
+.find-deck-event{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;text-align:left;background:#101a2a;border:1px solid #3a4860;border-radius:10px;padding:16px;color:#e9eef7;cursor:pointer;font:inherit}
+.find-deck-event:hover,.find-deck-event:focus-visible{border-color:#6a89b3;background:#17263a}
+.find-deck-event-copy{min-width:0;display:flex;flex-direction:column;gap:6px}
+.find-deck-event-copy strong{font-weight:700}
+.find-deck-event-copy small,.find-deck-event-end small{color:#aebcd1;font-size:12px}
+.find-deck-event-end{display:flex;align-items:center;gap:14px;flex-shrink:0}
+.find-deck-event-end>span{font-size:24px;color:#aebcd1}
+.find-deck-empty{padding:40px 12px;text-align:center;color:#e9eef7}
+.find-deck-empty p{color:#aebcd1}
+.find-deck-empty .btn{margin-top:8px}
+
+/* Event type selector only appears on the tournament selection screen. */
+#findDeckModal .find-deck-event-filter[hidden]{display:none}
+.find-deck-event-filter{display:flex;flex-direction:column;gap:8px;max-width:370px;color:#aebcd1}
+.find-deck-event-filter select{width:100%;min-height:48px;background:#101a2a;color:#e9eef7;border:1px solid #3a4860;border-radius:10px;padding:10px 14px;font:inherit}
