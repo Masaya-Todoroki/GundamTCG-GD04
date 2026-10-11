@@ -1279,6 +1279,86 @@ input[type=search] {
   }
 }
 
+
+/* =============================================================
+   MOBILE CARD BROWSER — RESIZABLE DECK DRAWER
+   On narrow screens, drag the handle to choose the preview height.
+   ============================================================= */
+.mobile-deck-handle {
+  display: none;
+}
+@media (max-width: 850px) {
+  .shell:not(.deck-mode) {
+    display: block;
+    padding-bottom: 64px;
+  }
+  .shell:not(.deck-mode) .sidebar {
+    display: block;
+    position: fixed;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: var(--mobile-deck-height, 44vh);
+    max-height: calc(100dvh - 60px);
+    min-height: 54px;
+    padding: 52px 16px 18px;
+    border: 1px solid #3b4c65;
+    border-bottom: 0;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, .48);
+    z-index: 900;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    transition: height .2s ease;
+  }
+  .shell:not(.deck-mode) .sidebar.mobile-deck-dragging {
+    transition: none;
+    user-select: none;
+  }
+  .shell:not(.deck-mode) .sidebar.mobile-deck-collapsed {
+    height: 54px !important;
+    overflow: hidden;
+  }
+  .mobile-deck-handle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 48px;
+    padding: 0 16px;
+    border: 0;
+    border-bottom: 1px solid #29384d;
+    background: #1b2940;
+    color: #e9eef7;
+    cursor: ns-resize;
+    touch-action: none;
+    font-weight: 650;
+    font-size: 13px;
+  }
+  .mobile-deck-grip {
+    width: 38px;
+    height: 5px;
+    border-radius: 99px;
+    background: #91a5c5;
+  }
+  .mobile-deck-toggle {
+    margin-left: auto;
+    border: 1px solid #4a5c79;
+    background: #253650;
+    color: #fff;
+    border-radius: 8px;
+    padding: 5px 12px;
+    cursor: pointer;
+    font-size: 12px;
+  }
+}
+
   </style>
  </head>
  <body>
@@ -1291,7 +1371,7 @@ input[type=search] {
      </span>
     </h1>
     <small>
-     Masa's GCG Deck Builder - v0.3
+     Prototype · ST01–ST04 + GD01
     </small>
    </div>
    <span class="pill" id="countHeader">
@@ -1395,7 +1475,12 @@ input[type=search] {
      </aside>
     </div>
    </section>
-   <aside class="sidebar">
+   <aside class="sidebar" id="browserDeckSidebar">
+    <div class="mobile-deck-handle" id="mobileDeckHandle" aria-label="Drag to resize deck preview">
+     <span class="mobile-deck-grip" aria-hidden="true"></span>
+     <span>My Deck <span id="mobileDeckCount"></span></span>
+     <button class="mobile-deck-toggle" id="mobileDeckToggle" type="button" aria-expanded="true" aria-controls="deckList">Hide</button>
+    </div>
     <div class="row between">
      <h2>
       My Deck
@@ -2141,6 +2226,85 @@ $('copyDeckImage').onclick = async () => {
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && deckImageModal.classList.contains('open'))
     deckImageModal.classList.remove('open'); });
 
+
+
+// =============================================================
+// MOBILE CARD BROWSER — DRAGGABLE / COLLAPSIBLE DECK PREVIEW
+// Desktop sidebar and Deck Viewer are unchanged.
+// =============================================================
+(() => {
+    const sidebar = document.getElementById('browserDeckSidebar');
+    const handle = document.getElementById('mobileDeckHandle');
+    const toggle = document.getElementById('mobileDeckToggle');
+    const count = document.getElementById('mobileDeckCount');
+    const narrow = window.matchMedia('(max-width: 850px)');
+    const minHeight = 54;
+    let expandedHeight = Math.round(window.innerHeight * 0.44);
+    let dragging = false;
+    let pointerStartY = 0;
+    let heightStart = 0;
+    let moved = false;
+
+    function isCollapsed() {
+        return sidebar.classList.contains('mobile-deck-collapsed');
+    }
+    function setCollapsed(collapsed) {
+        sidebar.classList.toggle('mobile-deck-collapsed', collapsed);
+        toggle.textContent = collapsed ? 'Show' : 'Hide';
+        toggle.setAttribute('aria-expanded', String(!collapsed));
+        if (!collapsed) {
+            sidebar.style.setProperty('--mobile-deck-height', expandedHeight + 'px');
+        }
+    }
+    function maxHeight() {
+        return Math.max(minHeight, window.innerHeight - 60);
+    }
+    handle.addEventListener('pointerdown', (event) => {
+        if (!narrow.matches || event.target.closest('button')) return;
+        dragging = true;
+        moved = false;
+        pointerStartY = event.clientY;
+        heightStart = isCollapsed() ? minHeight : sidebar.getBoundingClientRect().height;
+        sidebar.classList.add('mobile-deck-dragging');
+        handle.setPointerCapture(event.pointerId);
+        event.preventDefault();
+    });
+    handle.addEventListener('pointermove', (event) => {
+        if (!dragging) return;
+        const delta = pointerStartY - event.clientY;
+        if (Math.abs(delta) > 4) moved = true;
+        const next = Math.max(minHeight, Math.min(maxHeight(), heightStart + delta));
+        if (next > minHeight + 12) {
+            sidebar.classList.remove('mobile-deck-collapsed');
+            expandedHeight = next;
+            sidebar.style.setProperty('--mobile-deck-height', next + 'px');
+            toggle.textContent = 'Hide';
+            toggle.setAttribute('aria-expanded', 'true');
+        } else {
+            sidebar.classList.add('mobile-deck-collapsed');
+            toggle.textContent = 'Show';
+            toggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+    function endDrag() {
+        if (!dragging) return;
+        dragging = false;
+        sidebar.classList.remove('mobile-deck-dragging');
+        if (moved && !isCollapsed() && expandedHeight < 90) setCollapsed(true);
+    }
+    handle.addEventListener('pointerup', endDrag);
+    handle.addEventListener('pointercancel', endDrag);
+    toggle.addEventListener('click', () => setCollapsed(!isCollapsed()));
+    // Keep the current card total visible when the drawer is collapsed.
+    const total = document.getElementById('total');
+    if (total && count) {
+        const syncCount = () => { count.textContent = '· ' + total.textContent; };
+        new MutationObserver(syncCount).observe(total, { childList: true, characterData: true, subtree: true });
+        syncCount();
+    }
+    // Start tucked away so the card gallery remains easy to browse on phones.
+    setCollapsed(true);
+})();
 
   </script>
  </body>
