@@ -1,0 +1,572 @@
+
+/*
+  CSS GUIDE (VS Code: collapse regions using the gutter arrows)
+  ------------------------------------------------------------
+  Global / Navigation      : page, buttons, header and tabs
+  Card Browser             : filters, gallery, quantities and scaling
+  Deck Manager             : grids, saved decks, import/export and images
+  Deck Viewer              : bottom drawer, resizing, handle and cards
+  Card Inspector           : modal, compatible cards, tokens and scrolling
+  Responsive / Overrides   : device-specific and final layout adjustments
+
+  NOTE: Later rules can intentionally override earlier rules. This cleanup
+  removes only superseded declarations with matching selectors and context;
+  it does not reorder styles or change JavaScript.
+*/
+/* #region Shared Card Prefab — appearance used in every panel */
+.card-cell {
+  background: #171f2e;
+  border: 1px solid #2b374a;
+  border-radius: 10px;
+  overflow: hidden;
+  min-width: 0;
+}
+.card-cell-art {
+  display: block;
+  width: 100%;
+  aspect-ratio: 600 / 838;
+  object-fit: cover;
+}
+/* Variant layout/sizing stays in the Browser, Manager and Inspector regions. */
+/* #endregion Shared Card Prefab */
+
+/* #region Global Defaults & Page Layout */
+
+:root {
+  font-family:Inter,system-ui,Arial,sans-serif;
+  color:#e9eef7;
+  background:#0d111b
+;}
+* {
+  box-sizing:border-box
+;}
+body {
+  margin:0
+;}
+button,input,select {
+  font:inherit
+;}
+button {
+  cursor:pointer
+;}
+header {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  padding:15px 22px;
+  border-bottom:1px solid #2a3344;
+  background:#131a27;
+  flex-wrap:wrap
+;}
+h1 {
+  font-size:21px;
+  margin:0
+;}
+h2 {
+  font-size:16px;
+  margin:0 0 12px
+;}
+small,.muted {
+  color:#94a3b8
+;}
+.pill {
+  padding:5px 10px;
+  border:1px solid #38445b;
+  border-radius:99px;
+  font-size:12px
+;}
+.shell {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 340px;
+  min-height:calc(100vh - 70px)
+;}
+main {
+  padding:22px;
+  min-width:0
+;}
+.sidebar {
+  border-left:1px solid #293244;
+  background:#121a28;
+  padding:20px;
+  position:sticky;
+  top:0;
+  height:calc(100vh - 70px);
+  overflow:auto
+;}
+.toolbar {
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap;
+  margin-bottom:14px
+;}
+input,select {
+  background:#1b2638;
+  color:#fff;
+  border:1px solid #3a4860;
+  border-radius:9px;
+  padding:10px;
+  min-width:0
+;}
+input[type=search] {
+  flex:1;
+  min-width:190px
+;}
+/* #endregion Global Defaults & Page Layout */
+
+/* #region Card Browser — Colour Filters */
+/* Prominent centred colour bar above the browser and deck viewer */
+.colour-banner {
+  padding:15px 20px 18px;
+  background:#121d2d;
+  border-bottom:1px solid #29384d;
+  text-align:center
+;}
+.colour-banner-label {
+  font-size:12px;
+  letter-spacing:.09em;
+  font-weight:750;
+  color:#b4c3d9;
+  margin-bottom:11px
+;}
+.colour-banner-label span {
+  font-weight:500;
+  letter-spacing:normal;
+  color:#8fa2bc;
+  margin-left:12px
+;}
+.color-filters {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap
+;}
+.color-filter {
+  --shade:#45608a;
+  --shade-dim:#26364b;
+  --shade-edge:#496382;
+  min-width:110px;
+  padding:11px 20px;
+  border:2px solid var(--shade-edge);
+  border-radius:11px;
+  background:var(--shade-dim);
+  color:#eaf0fa;
+  font-size:15px;
+  font-weight:750;
+  cursor:pointer;
+  transition:background .15s,border-color .15s,box-shadow .15s,opacity .15s
+;}
+.color-filter:hover:not(:disabled) {
+  border-color:var(--shade);
+  filter:brightness(1.25)
+;}
+.color-filter[aria-pressed="true"] {
+  background:var(--shade);
+  border-color:#d1e3ff;
+  box-shadow:0 0 0 1px var(--shade),0 0 13px color-mix(in srgb,var(--shade) 35%,transparent)
+;}
+.color-filter:disabled {
+  opacity:.4;
+  cursor:not-allowed
+;}
+.color-filter:focus-visible {
+  outline:3px solid #a8caff;
+  outline-offset:3px
+;}
+@media(max-width:600px) {
+  .color-filters {
+    gap:7px
+  ;}
+  .color-filter {
+    min-width:76px;
+    padding:9px 10px;
+    font-size:13px
+  ;}
+  .colour-banner {
+    padding:12px 8px
+  ;}
+}
+/* #endregion Card Browser — Colour Filters */
+
+/* #region Shared Buttons & Card Tiles */
+.btn {
+  border:1px solid #43516b;
+  background:#23334b;
+  color:#eaf0fa;
+  padding:9px 12px;
+  border-radius:9px
+;}
+.btn:hover {
+  background:#344d6d
+;}
+.primary {
+  background:#2766d1;
+  border-color:#3979df
+;}
+.primary:hover {
+  background:#337ce9
+;}
+.danger {
+  color:#f9a9a9
+;}
+.cards {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(124px,1fr));
+  gap:14px
+;}
+.card {
+  background:#171f2e;
+  border:1px solid #2b374a;
+  border-radius:10px;
+  overflow:hidden;
+  cursor:pointer;
+  transition:border-color .12s
+;}
+.card:hover {
+  border-color:#638bd0
+;}
+.card img {
+  width:100%;
+  aspect-ratio:600/838;
+  object-fit:cover;
+  display:block;
+  background:#293244
+;}
+.card .info {
+  padding:8px
+;}
+.card .name {
+  font-size:12px;
+  font-weight:700;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis
+;}
+.card .sub {
+  font-size:11px;
+  color:#a6b4c8;
+  margin-top:4px
+;}
+.row {
+  display:flex;
+  align-items:center;
+  gap:9px
+;}
+.between {
+  justify-content:space-between
+;}
+.deckitem {
+  display:flex;
+  gap:10px;
+  padding:9px 0;
+  border-bottom:1px solid #2a3447
+;}
+.deckitem img {
+  width:46px;
+  border-radius:4px
+;}
+.deckitem .label {
+  font-size:12px;
+  font-weight:650;
+  flex:1
+;}
+.deckitem button {
+  border:1px solid #46546b;
+  border-radius:6px;
+  background:#263449;
+  color:white;
+  padding:3px 8px
+;}
+.deckitem .actions {
+  display:flex;
+  align-items:center;
+  gap:6px
+;}
+.summary {
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:12px 0
+;}
+.panel {
+  background:#1b2638;
+  border:1px solid #33425b;
+  border-radius:12px;
+  padding:14px
+;}
+.empty {
+  color:#94a3b8;
+  font-size:13px;
+  line-height:1.6
+;}
+/* #endregion Shared Buttons & Card Tiles */
+
+/* #region Inspector — Dialog Foundations */
+.modal {
+  position:fixed;
+  inset:0;
+  background:#05080ccc;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  z-index:5
+;}
+.modal.open {
+  display:flex
+;}
+.dialog {
+  width:min(720px,100%);
+  overflow:auto;
+  background:#172132;
+  border:1px solid #44546c;
+  border-radius:15px;
+  padding:18px
+;}
+.detail {
+  display:grid;
+  grid-template-columns:210px 1fr;
+  gap:22px
+;}
+.detail>img {
+  width:100%;
+  border-radius:9px
+;}
+.chips {
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+  margin:9px 0
+;}
+.chip {
+  border-radius:30px;
+  background:#2c3c54;
+  padding:5px 9px;
+  font-size:11px
+;}
+.match {
+  display:flex;
+  gap:9px;
+  align-items:center;
+  background:#202d40;
+  padding:7px;
+  border-radius:8px;
+  margin:6px 0
+;}
+.match img {
+  width:37px;
+  border-radius:3px
+;}
+.match .txt {
+  flex:1;
+  font-size:12px
+;}
+.match small {
+  display:block
+;}
+.pagination {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding:20px
+;}
+.notice {
+  font-size:12px;
+  color:#aebcd1;
+  margin:8px 0 16px
+;}
+/* #endregion Inspector — Dialog Foundations */
+
+/* #region Shared Utilities & Responsive Foundations */
+.close {
+  float:right
+;}
+.tag {
+  color:#b6d1ff;
+  font-size:12px
+;}
+#deckName {
+  width:100%;
+  margin:10px 0
+;}
+#deckList {
+  max-height:50vh;
+  overflow:auto
+;}
+@media(max-width:850px) {
+  .shell {
+    grid-template-columns:1fr
+  ;}
+  .sidebar {
+    position:static;
+    height:auto;
+    border-left:0;
+    border-top:1px solid #293244
+  ;}
+  .detail {
+    grid-template-columns:130px 1fr
+  ;}
+  main {
+    padding:14px
+  ;}
+}
+@media(max-width:420px) {
+  .detail {
+    grid-template-columns:1fr
+  ;}
+  .detail>img {
+    max-width:175px
+  ;}
+}
+/* #endregion Shared Utilities & Responsive Foundations */
+
+/* #region Inspector — Related Cards & Tokens */
+.token-gallery {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(105px,1fr));
+  gap:12px;
+  margin:10px 0 20px
+;}
+.token-preview {
+  background:#202d40;
+  border:1px solid #40506a;
+  border-radius:9px;
+  color:#e9eef7;
+  padding:8px;
+  text-align:left;
+  cursor:pointer
+;}
+.token-preview:hover {
+  border-color:#70a8ff
+;}
+.token-preview img {
+  display:block;
+  width:100%;
+  border-radius:5px
+;}
+.token-preview span {
+  display:block;
+  font-size:11px;
+  margin-top:7px
+;}
+/* Card artwork contains its own printed information: keep the inspection UI minimal. */
+.inspection-hero {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  clear:both;
+  }
+.inspection-card {
+  display:block;
+  height:auto;
+  border-radius:9px
+;}
+.inspection-controls {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px
+;}
+.inspection-controls .btn {
+  min-width:44px
+;}
+.inspection-count {
+  flex:1;
+  text-align:center;
+  font-weight:700;
+  font-size:17px;
+  padding:9px 6px;
+  border:1px solid #43516b;
+  border-radius:9px;
+  background:#202d40
+;}
+.inspection-controls button:disabled {
+  opacity:.4;
+  cursor:not-allowed
+;}
+.inspection-controls .remove-all {
+  color:#ffb7b7
+;}
+.inspection-section {
+  }
+.inspection-section h2 {
+  font-size:17px;
+  margin:0 0 12px
+;}
+.match-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px
+;}
+.match-tile {
+  min-width:0;
+  background:#202d40;
+  border:1px solid #33435b;
+  border-radius:10px;
+  padding:9px
+;}
+.match-art {
+  padding:0;
+  border:0;
+  background:transparent;
+  cursor:pointer;
+  flex:0 0 65px
+;}
+.match-art img {
+  display:block;
+  aspect-ratio:600/838;
+  object-fit:cover;
+  border-radius:4px
+;}
+.match-info {
+  min-width:0;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  font-size:12px
+;}
+.match-info b {
+  overflow-wrap:anywhere;
+  line-height:1.3
+;}
+.match-info small {
+  font-size:11px;
+  color:#a6b4c8
+;}
+.match-actions {
+  margin-top:auto;
+  padding-top:5px;
+  }
+.match-count {
+  font-size:12px;
+  font-weight:700;
+  white-space:nowrap;
+  min-width:30px;
+  text-align:center
+;}
+.match-actions .btn:disabled {
+  opacity:.4;
+  cursor:not-allowed
+;}
+.match-actions .btn {
+  font-size:12px;
+  padding:6px 9px
+;}
+@media(max-width:760px) {
+  .match-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr))
+  ;}
+}
+@media(max-width:500px) {
+  .match-grid {
+    grid-template-columns:1fr
+  ;}
+  .inspection-card {
+    width:min(290px,100%)
+  ;}
+}
+/* #endregion Inspector — Related Cards & Tokens */
+

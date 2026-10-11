@@ -1,0 +1,450 @@
+/* #region Deck Viewer — Mobile Drawer Foundations */
+/* =============================================================
+   MOBILE CARD BROWSER — RESIZABLE DECK DRAWER
+   On narrow screens, drag the handle to choose the preview height.
+   ============================================================= */
+.mobile-deck-handle {
+  display: none;
+}
+@media (max-width: 850px) {
+  .shell:not(.deck-mode) {
+    display: block;
+    padding-bottom: 64px;
+  }
+  .shell:not(.deck-mode) .sidebar {
+    display: block;
+    position: fixed;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: var(--mobile-deck-height, 44vh);
+    max-height: calc(100dvh - 60px);
+    min-height: 54px;
+    padding: 52px 16px 18px;
+    border: 1px solid #3b4c65;
+    border-bottom: 0;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, .48);
+    z-index: 900;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    transition: height .2s ease;
+  }
+  .shell:not(.deck-mode) .sidebar.mobile-deck-dragging {
+    transition: none;
+    user-select: none;
+  }
+  .shell:not(.deck-mode) .sidebar.mobile-deck-collapsed {
+    height: 54px !important;
+    overflow: hidden;
+  }
+  .mobile-deck-handle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 48px;
+    padding: 0 16px;
+    border: 0;
+    border-bottom: 1px solid #29384d;
+    background: #1b2940;
+    color: #e9eef7;
+    cursor: ns-resize;
+    touch-action: none;
+    font-weight: 650;
+    font-size: 13px;
+  }
+  .mobile-deck-grip {
+    width: 38px;
+    height: 5px;
+    border-radius: 99px;
+    background: #91a5c5;
+  }
+}
+
+
+/* #endregion Deck Viewer — Mobile Drawer Foundations */
+
+/* #region Deck Manager — Image Export Progress */
+/* Deck image export: show progress instead of an empty/broken preview. */
+.deck-image-preview { position:relative; }
+.deck-image-loading {
+     align-items:stretch;
+}
+.deck-image-loading[hidden] {  }
+.deck-image-loading strong { font-size:16px; }
+.deck-image-progress-track {
+   background:#25354b; border:1px solid #415675;
+  border-radius:999px; overflow:hidden;
+}
+.deck-image-progress-fill {
+    background:#4f91e9; border-radius:999px;
+  transition:width .18s ease;
+}
+.deck-image-loading small {  }
+#deckImagePreview:not([src]) { display:none; }
+
+
+/* Deck image export progress */
+.deck-image-loading { width:min(420px,95%); display:flex; flex-direction:column; gap:13px; text-align:center; color:#e9eef7; }
+.deck-image-loading[hidden] { display:none!important; }
+.deck-image-loading small { color:#aebed5; }
+.deck-image-progress-track { height:14px; border-radius:999px; overflow:hidden; background:#283950; border:1px solid #465b78; }
+.deck-image-progress-fill { height:100%; width:0%; background:#4f91e9; border-radius:999px; transition:width .15s ease; }
+
+/* #endregion Deck Manager — Image Export Progress */
+
+/* #region Inspector — Scroll Lock */
+/* Prevent scrolling the page behind an open card inspector. */
+html:has(#modal.open),
+body:has(#modal.open) { overflow: hidden; }
+#modal.open { overscroll-behavior: contain; }
+#modal.open > .dialog { overscroll-behavior: contain; }
+
+/* #endregion Inspector — Scroll Lock */
+
+/* #region Header — Home Link */
+/* Header navigation back to the main website */
+.header-actions { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+.home-link { display:inline-flex; align-items:center; justify-content:center; text-decoration:none; font-weight:650; white-space:nowrap; }
+.home-link:focus-visible { outline:2px solid #a8caff; outline-offset:3px; }
+/* #endregion Header — Home Link */
+
+/* #region Inspector — Mobile Drawer Clearance */
+  /* Mobile inspector occupies only the space above the resizable deck drawer. */
+  @media (max-width: 850px) {
+    #modal.open {
+      z-index: 1001;
+      bottom: var(--inspector-drawer-height, 54px);
+      padding: 8px;
+    }
+    #modal.open > .dialog {
+      max-height: 100%;
+      min-height: 0;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+  }
+
+/* #endregion Inspector — Mobile Drawer Clearance */
+
+/* #region Saved Decks — Startup Dialog */
+  /* On startup, show saved decks immediately without save/edit controls. */
+#savedDecksModal.startup-mode .saved-deck-actions,
+#savedDecksModal.startup-mode #savedDeckStatus { display: none; }
+#savedDecksModal.startup-mode { z-index: 1100; }
+
+/* #endregion Saved Decks — Startup Dialog */
+
+/* #region Inspector — Desktop Layout & Mobile Rules */
+/* v0.9.15: use horizontal inspector space on desktop, compact mobile layout. */
+#modal > .dialog { width:min(1120px,100%); }
+#detail .inspection-layout { display:grid; grid-template-columns:minmax(240px,340px) minmax(0,1fr); align-items:start; gap:22px; clear:both; }
+#detail .inspection-hero { position:sticky; top:0; min-width:0; }
+#detail .inspection-card { width:auto; max-width:100%; max-height:min(68dvh,650px); }
+#detail .inspection-related { min-width:0; }
+#detail .inspection-related .inspection-section:first-child { margin-top:0; }
+#detail .match-grid {  }
+#detail .token-gallery {  }
+@media (max-width:850px) {
+  #modal > .dialog { width:100%; }
+  #detail .inspection-layout { grid-template-columns:1fr; gap:12px; }
+  #detail .inspection-hero { position:static; }
+  #detail .inspection-card { max-height:min(39dvh,320px); }
+  #detail .inspection-related .inspection-section { margin-top:14px; }
+  #detail .match-grid { grid-template-columns:1fr; }
+  #detail .match-tile { grid-template-columns:66px minmax(0,1fr); grid-template-rows:auto; gap:7px 10px; }
+  #detail .match-art { width:66px; grid-column:1; grid-row:1 / span 2; }
+  #detail .match-info { grid-column:2; grid-row:1; }
+  #detail .match-actions { grid-column:2; grid-row:2; gap:4px; }
+  #detail .match-actions .btn { min-width:27px; padding:5px 6px; }
+  #detail .match-actions .match-count { min-width:30px; padding:5px 2px; }
+  #detail .token-gallery { grid-template-columns:1fr; gap:8px; }
+  #detail .token-preview { display:flex; align-items:center; gap:12px; width:100%; }
+  #detail .token-preview img { width:66px; flex:none; }
+  #detail .token-preview span { margin:0; font-size:13px; }
+}
+/* #endregion Inspector — Desktop Layout & Mobile Rules */
+
+/* #region Inspector — Token Previews */
+/* v0.9.19: compact token previews, proportional to compatible cards. */
+#detail .token-gallery {
+  margin:10px 0 12px;
+}
+#detail .token-preview {
+  padding:6px;
+  border:1px solid #40516d;
+  border-radius:9px;
+  background:#202d40;
+  color:#e9eef7;
+  cursor:pointer;
+  text-align:center;
+}
+#detail .token-preview:hover { border-color:#79aaff; background:#293a53; }
+#detail .token-preview img {
+  display:block;
+  border-radius:5px;
+}
+#detail .token-preview span {
+  display:block;
+  width:100%;
+  margin:6px 0 1px;
+  font-weight:700;
+  color:#c8d8ee;
+}
+@media (max-width:850px) {
+  #detail .token-gallery { grid-template-columns:repeat(auto-fill,minmax(95px,115px)); gap:8px; }
+  #detail .token-preview { display:flex; flex-direction:column; align-items:center; padding:5px; }
+  #detail .token-preview img { width:100%; flex:none; }
+  #detail .token-preview span { margin:5px 0 0; font-size:11px; }
+}
+/* #endregion Inspector — Token Previews */
+
+/* #region Inspector — Compact Thumbnails */
+/* v0.9.21: compact inspector results and token thumbnails. */
+#detail .match-grid {
+}
+#detail .token-gallery {
+  align-items:start;
+}
+#detail .token-preview {
+  padding:5px;
+}
+#detail .token-preview img {
+  aspect-ratio:600/838;
+  object-fit:contain;
+}
+#detail .token-preview span {
+  margin:4px 0 0;
+}
+@media (max-width:850px) {
+  #detail .match-grid { grid-template-columns:repeat(auto-fill,minmax(min(100%,245px),280px)); }
+  #detail .token-gallery { grid-template-columns:repeat(auto-fill,82px); gap:8px; }
+  #detail .token-preview { display:flex; flex-direction:column; align-items:center; width:82px; padding:5px; }
+  #detail .token-preview img { width:100%; flex:none; }
+  #detail .token-preview span { margin:4px 0 0; font-size:10px; }
+}
+/* #endregion Inspector — Compact Thumbnails */
+
+/* #region Inspector — Compact Related Tiles */
+/* v0.9.25: compact versions of the existing compatible-card and token tiles. */
+#detail .match-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(0,220px));
+  gap:9px;
+  justify-content:start;
+  align-items:start;
+}
+#detail .match-tile {
+  width:100%;
+  max-width:220px;
+  grid-template-columns:54px minmax(0,1fr);
+  gap:6px 7px;
+  padding:7px;
+  align-content:start;
+}
+#detail .match-art { width:54px; }
+#detail .match-art img { width:54px; height:auto; }
+#detail .match-info { font-size:11px; gap:3px; }
+#detail .match-info small { font-size:10px; }
+#detail .match-view { padding:4px 7px; font-size:11px; margin-top:2px; }
+#detail .match-actions { gap:3px; }
+#detail .match-actions .btn { min-width:23px; padding:4px 5px; font-size:11px; }
+#detail .match-actions .match-count { min-width:25px; padding:4px 2px; font-size:11px; }
+#detail .token-gallery {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,66px);
+  gap:8px;
+  justify-content:start;
+}
+#detail .token-preview {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  width:66px;
+  padding:4px;
+}
+#detail .token-preview img { width:100%; height:auto; }
+#detail .token-preview span { font-size:10px; margin:4px 0 0; }
+@media (max-width:850px) {
+  #detail .match-grid { grid-template-columns:repeat(auto-fill,minmax(0,220px)); }
+  #detail .match-tile { grid-template-columns:54px minmax(0,1fr); }
+  #detail .match-art, #detail .match-art img { width:54px; }
+  #detail .token-gallery { grid-template-columns:repeat(auto-fill,66px); }
+  #detail .token-preview { width:66px; flex-direction:column; padding:4px; }
+  #detail .token-preview img { width:100%; }
+  #detail .token-preview span { font-size:10px; margin:4px 0 0; }
+}
+
+/* #endregion Inspector — Compact Related Tiles */
+
+/* #region Inspector — Portrait Card Layout */
+/* v0.9.25 — inspector related cards reuse the portrait browser card design. */
+#detail .match-grid, #detail .token-gallery {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(0,132px));
+  gap:10px;
+  justify-content:start;
+  align-items:start;
+}
+#detail .inspector-mini-card.match-tile,
+#detail .inspector-mini-card.token-preview {
+  display:block;
+  width:132px;
+  max-width:100%;
+  min-width:0;
+  padding:0;
+  margin:0;
+  border:1px solid #2b374a;
+  border-radius:10px;
+  background:#171f2e;
+  overflow:hidden;
+  text-align:left;
+  cursor:default;
+}
+#detail .inspector-mini-card .mini-art-button {
+  display:block;
+  width:100%;
+  padding:0;
+  margin:0;
+  border:0;
+  background:transparent;
+  cursor:pointer;
+}
+#detail .inspector-mini-card .mini-art-button img {
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:600 / 838;
+  object-fit:cover;
+  border-radius:0;
+}
+#detail .inspector-mini-card .gallery-quick.match-actions {
+  display:grid;
+  grid-template-rows:auto;
+  width:100%;
+  margin:0;
+  padding:6px 4px 2px;
+  align-items:center;
+}
+#detail .inspector-mini-card .gallery-quick.match-actions button {
+  width:24px;
+  min-width:0;
+  padding:0;
+  border:1px solid #40516d;
+  border-radius:5px;
+  background:#25354c;
+  color:#eaf0fa;
+  font-size:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+#detail .inspector-mini-card .gallery-quick.match-actions button.gallery-add {
+  background:#2766d1;
+  border-color:#3979df;
+}
+#detail .inspector-mini-card .gallery-quick.match-actions button:disabled { opacity:.3; }
+#detail .inspector-mini-card .gallery-quick .match-count {
+  min-width:0;
+  padding:0;
+  border:0;
+  background:transparent;
+  text-align:center;
+  font-size:11px;
+  font-weight:700;
+}
+#detail .inspector-mini-card .info { display:block; padding:8px; }
+#detail .inspector-mini-card .info .name {
+  display:block;
+  font-size:12px;
+  font-weight:700;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+#detail .inspector-mini-card .info .sub {
+  display:block;
+  font-size:11px;
+  color:#a6b4c8;
+  margin-top:4px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+@media (max-width:500px) {
+  #detail .match-grid, #detail .token-gallery {
+    grid-template-columns:repeat(auto-fill,minmax(0,120px));
+    gap:8px;
+  }
+  #detail .inspector-mini-card.match-tile,
+  #detail .inspector-mini-card.token-preview { width:120px; }
+}
+/* #endregion Inspector — Portrait Card Layout */
+
+/* #region Inspector — Colour Groups */
+/* v1.0.0 — group inspector links by the selected browser colours. */
+#detail .inspection-colour-group { margin:0 0 15px; }
+#detail .inspection-colour-group h3 { margin:0 0 9px; font-size:13px; color:#cbd9ef; }
+#detail .inspection-other-colours { border-top:1px solid #34435a; padding-top:10px; margin-top:12px; }
+#detail .inspection-other-colours summary { cursor:pointer; color:#aebfda; font-size:13px; font-weight:700; padding:4px 0 10px; }
+#detail .inspection-other-colours summary:hover { color:#e9eef7; }
+#detail .inspection-other-colours summary:focus-visible { outline:2px solid #8db8ff; outline-offset:3px; }
+
+/* #endregion Inspector — Colour Groups */
+
+/* #region Shared Card Quantity Controls — Overrides */
+/* v1.0.0: balanced five-slot card controls, with count centered. */
+.gallery-quick,
+#detail .inspector-mini-card .gallery-quick.match-actions {
+  grid-template-columns:24px 24px minmax(0,1fr) 24px 24px;
+}
+.gallery-quick button[title="Add up to 4 copies"] { font-size:11px; font-weight:750; }
+.sidebar .deckitem .actions { flex-wrap:wrap; gap:5px; margin-top:6px; }
+.sidebar .deckitem .actions span { min-width:30px; text-align:center; font-size:12px; }
+.sidebar .deckitem .actions button:disabled { opacity:.35; cursor:default; }
+.sidebar .deckitem .actions button[title="Add up to 4 copies"] { background:#2766d1; border-color:#3979df; }
+/* v1.0.0: fit all five controls inside every card without clipping. */
+#cards .gallery-quick,
+#detail .inspector-mini-card .gallery-quick.match-actions {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(30px,1.2fr) minmax(0,1fr) minmax(0,1fr);
+  gap:3px;
+  padding:7px 5px 4px;
+  width:100%;
+  box-sizing:border-box;
+  min-width:0;
+}
+#cards .gallery-quick button,
+#detail .inspector-mini-card .gallery-quick.match-actions button {
+  width:100%;
+  min-width:0;
+  height:29px;
+  padding:0;
+  font-size:12px;
+  border-radius:5px;
+}
+#cards .gallery-quick .gallery-count,
+#detail .inspector-mini-card .gallery-quick .match-count {
+  min-width:0;
+  width:100%;
+  text-align:center;
+  font-size:11px;
+  white-space:nowrap;
+  overflow:visible;
+}
+#detail .inspector-mini-card .gallery-quick.match-actions {
+  gap:2px;
+  padding:5px 3px 3px;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(26px,1.2fr) minmax(0,1fr) minmax(0,1fr);
+}
+#detail .inspector-mini-card .gallery-quick.match-actions button { height:25px; }
+
+/* #endregion Shared Card Quantity Controls — Overrides */
+

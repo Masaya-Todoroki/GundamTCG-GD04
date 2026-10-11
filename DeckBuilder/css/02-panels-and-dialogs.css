@@ -1,0 +1,749 @@
+/* #region Navigation & Deck Manager — Initial Layout */
+.view-switch {
+  display:flex;
+  padding:13px 22px;
+  border-bottom:1px solid #293244;
+  background:#101827
+;}
+.view-switch .btn {
+  }
+.shell.deck-mode {
+  display:block
+;}
+.shell.deck-mode #browserMain,.shell.deck-mode .sidebar {
+  display:none
+;}
+.deck-view {
+  padding:22px;
+  margin:auto
+;}
+.deck-view[hidden] {
+  display:none!important;}
+.deck-view h2 {
+  font-size:22px;
+  margin:0 0 5px
+;}
+.deck-group {
+  margin:26px 0
+;}
+.deck-group-head {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:12px
+;}
+.deck-group-head h3 {
+  font-size:17px;
+  margin:0
+;}
+.deck-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(135px,1fr));
+  gap:15px
+;}
+.deck-grid-item {
+  position:relative;
+  background:#171f2e;
+  border:1px solid #2b374a;
+  border-radius:10px;
+  padding:7px;
+  min-width:0
+;}
+.deck-grid-art {
+  padding:0;
+  border:0;
+  background:transparent;
+  display:block;
+  width:100%;
+  cursor:pointer
+;}
+.deck-grid-art img {
+  display:block;
+  width:100%;
+  aspect-ratio:600/838;
+  object-fit:cover;
+  border-radius:6px
+;}
+.deck-qty {
+  position:absolute;
+  top:12px;
+  right:12px;
+  background:#0a1324e8;
+  border:1px solid #6b89bd;
+  border-radius:7px;
+  padding:4px 8px;
+  font-weight:750;
+  font-size:15px
+;}
+.deck-grid-actions {
+  justify-content:center;
+  }
+.deck-grid-actions button {
+  padding:5px 12px
+;}
+.deck-grid-actions span {
+  }
+.deck-text-label {
+  font-size:12px;
+  color:#aebcd1;
+  margin-top:5px
+;}
+#deckText {
+  width:100%;
+  resize:vertical;
+  background:#1b2638;
+  color:#fff;
+  border:1px solid #3a4860;
+  border-radius:9px;
+  padding:10px;
+  font:12px/1.6 ui-monospace,monospace
+;}
+#importStatus {
+  }
+@media(max-width:600px) {
+  .view-switch {
+    padding:10px
+  ;}
+  .view-switch .btn {
+    min-width:0;
+    flex:1
+  ;}
+  .deck-grid {
+    grid-template-columns:repeat(auto-fill,minmax(110px,1fr))
+  ;}
+}
+/* #endregion Navigation & Deck Manager — Initial Layout */
+
+/* #region Inspector — Compatible Card Layout */
+/* Compatible cards: View is separate; all quantity controls stay in one row below the artwork. */
+.match-tile {
+  display:grid;
+  grid-template-rows:auto auto;
+  align-items:start;
+  }
+.match-art {
+  grid-column:1;
+  grid-row:1;
+  flex:none;
+  }
+.match-art img {
+  width:100%;
+  height:auto
+;}
+.match-info {
+  grid-column:2;
+  grid-row:1;
+  align-items:flex-start
+;}
+.match-view {
+  }
+.match-actions {
+  grid-column:1/-1;
+  grid-row:2;
+  display:flex;
+  flex-wrap:nowrap;
+  gap:5px;
+  align-items:center;
+  justify-content:stretch;
+  margin:0;
+  padding:0
+;}
+.match-actions .btn {
+  min-width:31px;
+  flex:0 0 auto;
+  padding:7px 8px
+;}
+.match-actions .match-count {
+  flex:1;
+  min-width:38px;
+  border:1px solid #43516b;
+  background:#172132;
+  border-radius:7px;
+  padding:7px 3px;
+  font-size:12px
+;}
+@media(max-width:760px) {
+  .match-tile {
+    grid-template-columns:90px minmax(0,1fr)
+  ;}
+  .match-art {
+    width:90px
+  ;}
+}
+/* #endregion Inspector — Compatible Card Layout */
+
+/* #region Inspector — Responsive Sizing */
+/* Fit the inspected card and first compatible row within typical desktop viewports. */
+.dialog {
+  max-height:calc(100dvh - 24px);
+  padding:14px 18px;
+  scrollbar-gutter:stable
+;}
+.modal {
+  padding:12px
+;}
+.inspection-hero {
+  gap:8px;
+  padding-top:0
+;}
+.inspection-card {
+  width:auto;
+  max-width:100%;
+  max-height:min(53dvh,520px);
+  object-fit:contain
+;}
+.inspection-controls {
+  width:min(320px,100%)
+;}
+.inspection-section {
+  margin-top:14px
+;}
+.inspection-section h2 {
+  margin-bottom:8px
+;}
+.match-tile {
+  padding:7px;
+  gap:6px 8px
+;}
+.match-art {
+  width:72px
+;}
+.match-tile {
+  grid-template-columns:72px minmax(0,1fr)
+;}
+.match-view {
+  margin-top:3px
+;}
+@media(max-height:750px) and (min-width:761px) {
+  .inspection-card {
+    max-height:45dvh
+  ;}
+  .inspection-section {
+    margin-top:10px
+  ;}
+  .match-art {
+    width:58px
+  ;}
+  .match-tile {
+    grid-template-columns:58px minmax(0,1fr)
+  ;}
+}
+@media(max-width:760px) {
+  .inspection-card {
+    max-height:48dvh
+  ;}
+  .match-tile {
+    grid-template-columns:72px minmax(0,1fr)
+  ;}
+  .match-art {
+    width:72px
+  ;}
+}
+@media(max-width:500px) {
+  .inspection-card {
+    max-height:45dvh
+  ;}
+}
+/* #endregion Inspector — Responsive Sizing */
+
+/* #region Card Browser — Quantity Controls */
+/* Quick deck controls on each card in the browser gallery */
+.gallery-quick {
+  display:grid;
+  grid-template-columns:24px 24px minmax(0,1fr) 24px 24px;
+  align-items:center;
+  gap:3px;
+  padding:6px 4px 2px;
+  min-width:0;
+  box-sizing:border-box;
+  width:100%
+;}
+.gallery-quick button {
+  min-width:0;
+  width:24px;
+  height:25px;
+  padding:0;
+  border:1px solid #40516d;
+  border-radius:5px;
+  background:#25354c;
+  color:#eaf0fa;
+  font-size:13px;
+  line-height:1;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center
+;}
+.gallery-quick button.gallery-add {
+  background:#2766d1;
+  border-color:#3979df
+;}
+.gallery-quick button:disabled {
+  opacity:.3;
+  cursor:default
+;}
+.gallery-quick .gallery-count {
+  min-width:0;
+  text-align:center;
+  font-size:11px;
+  font-weight:700;
+  white-space:nowrap;
+  font-variant-numeric:tabular-nums
+;}
+.gallery-quick button:not(:disabled):hover {
+  filter:brightness(1.25)
+;}
+/* #endregion Card Browser — Quantity Controls */
+
+/* #region Navigation — Tab Buttons */
+/* Main navigation is the primary centered menu; colour filters follow underneath. */
+.view-switch {
+  justify-content:center;
+  align-items:center;
+  gap:14px;
+  padding:18px 20px;
+  background:#101827
+;}
+.view-switch .btn {
+  min-width:180px;
+  font-size:16px;
+  font-weight:700;
+  padding:12px 24px
+;}
+.colour-banner {
+  padding:14px 20px 17px
+;}
+@media(max-width:600px) {
+  .view-switch {
+    gap:9px;
+    padding:12px 10px
+  ;}
+  .view-switch .btn {
+    min-width:0;
+    flex:1;
+    padding:11px 9px;
+    font-size:14px
+  ;}
+  .colour-banner {
+    padding:12px 8px
+  ;}
+}
+.load-sentinel {
+  height:1px
+;}
+.load-status {
+  text-align:center;
+  color:#a6b4c8;
+  font-size:12px;
+  padding:15px 0 25px
+;}
+/* #endregion Navigation — Tab Buttons */
+
+/* #region Deck Manager — Tools & Import Export */
+/* Keep the browser sidebar a lightweight deck preview; manage sharing in Deck Viewer. */
+.sidebar .row h2 {
+  margin:0
+;}
+.deck-tools {
+  background:#182438;
+  border:1px solid #394b65;
+  border-radius:13px;
+  padding:17px;
+  margin:18px 0 24px;
+  display:grid;
+  grid-template-columns:minmax(220px,0.85fr) minmax(300px,1.5fr);
+  gap:12px 22px
+;}
+.deck-tools-heading {
+  grid-column:1/-1
+;}
+.deck-tools-heading h3 {
+  font-size:16px;
+  margin:0 0 4px
+;}
+.deck-tools-heading small {
+  font-size:12px
+;}
+.deck-tools-fields,.deck-tools-import {
+  display:flex;
+  flex-direction:column;
+  gap:9px;
+  min-width:0
+;}
+.deck-tools-fields label,.deck-tools-import label {
+  font-size:12px;
+  font-weight:650;
+  color:#c6d5ea
+;}
+.deck-tools #deckName {
+  margin:0
+;}
+.deck-tools #deckText {
+  width:100%;
+  resize:vertical;
+  background:#111a2a;
+  color:#e9eef7;
+  border:1px solid #3a4860;
+  border-radius:9px;
+  padding:11px;
+  font:13px/1.6 ui-monospace,Consolas,monospace;
+  min-height:115px
+;}
+.deck-tools-actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px
+;}
+.deck-tools-actions .btn {
+  flex:1;
+  white-space:nowrap
+;}
+#importStatus {
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+  line-height:1.5
+;}
+@media(max-width:740px) {
+  .deck-tools {
+    grid-template-columns:1fr
+  ;}
+}
+/* #endregion Deck Manager — Tools & Import Export */
+
+/* #region Import Export Dialog */
+/* Compact deck sharing dialog */
+#deckTextModal[hidden] {
+  display:none!important;}
+#deckTextModal {
+  position:fixed;
+  inset:0;
+  z-index:1100;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,.76);
+  padding:18px;
+  overflow-y:auto
+;}
+.deck-text-dialog {
+  width:min(560px,100%);
+  max-height:calc(100vh - 36px);
+  overflow:auto;
+  background:#172233;
+  border:1px solid #3a4c68;
+  border-radius:16px;
+  padding:22px;
+  box-shadow:0 24px 75px #0009;
+  color:#e9eef7
+;}
+.deck-text-top {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  margin-bottom:12px
+;}
+.deck-text-top h2 {
+  font-size:21px;
+  margin:0
+;}
+.deck-text-help {
+  font-size:13px;
+  color:#aebcd1;
+  margin:0 0 13px
+;}
+#deckTextModal #deckText {
+  box-sizing:border-box;
+  display:block;
+  width:100%;
+  min-height:185px;
+  resize:vertical;
+  background:#101a2a;
+  color:#e9eef7;
+  border:1px solid #3a4860;
+  border-radius:9px;
+  padding:12px;
+  font:14px/1.6 ui-monospace,Consolas,monospace
+;}
+.deck-text-actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:13px
+;}
+#deckTextModal #importStatus {
+  display:block;
+  min-height:18px;
+  margin-top:12px;
+  color:#b9cce5;
+  white-space:pre-wrap
+;}
+@media(max-width:540px) {
+  .deck-text-dialog {
+    padding:15px
+  ;}
+  .deck-text-actions .btn {
+    flex:1 1 auto
+  ;}
+}
+/* #endregion Import Export Dialog */
+
+/* #region Deck Manager — Workspace & Controls */
+/* Deck viewer: cards are the focus; compact tools sit to the right. */
+.colour-banner[hidden] {
+  display:none!important;}
+.deck-view {
+  max-width:none;
+  margin:0;
+  padding:18px 20px
+;}
+.deck-workspace {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 248px;
+  gap:22px;
+  align-items:start
+;}
+.deck-display {
+  min-width:0
+;}
+.deck-display .viewer-heading {
+  margin:0 0 12px
+;}
+.deck-display .viewer-heading h2 {
+  font-size:21px;
+  margin:0 0 2px
+;}
+.deck-display .deck-group {
+  margin:17px 0 24px
+;}
+.deck-display .deck-grid {
+  }
+.deck-manage {
+  position:sticky;
+  top:14px;
+  background:#1b2638;
+  border:1px solid #33425b;
+  border-radius:12px;
+  padding:15px;
+  display:flex;
+  flex-direction:column;
+  gap:11px;
+  min-width:0
+;}
+.deck-manage h3 {
+  font-size:16px;
+  margin:0 0 4px
+;}
+.deck-manage label {
+  font-size:12px;
+  font-weight:650;
+  color:#b6c6dc
+;}
+.deck-manage #deckName {
+  margin:0;
+  width:100%
+;}
+.deck-manage .btn {
+  width:100%;
+  text-align:center;
+  white-space:normal
+;}
+@media(max-width:800px) {
+  .deck-workspace {
+    grid-template-columns:minmax(0,1fr)
+  ;}
+  .deck-manage {
+    position:static;
+    grid-row:1;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:9px
+  ;}
+  .deck-manage h3,.deck-manage label,.deck-manage #deckName {
+    grid-column:1/-1
+  ;}
+  .deck-manage .btn:last-child {
+    grid-column:1/-1
+  ;}
+  .deck-view {
+    padding:12px
+  ;}
+}
+/* #endregion Deck Manager — Workspace & Controls */
+
+/* #region Deck Manager — Card Quantity Controls */
+/* Keep deck viewer quantity controls inside each compact card tile. */
+.deck-display .deck-grid {
+  grid-template-columns:repeat(auto-fill,minmax(145px,1fr));
+  gap:11px
+;}
+.deck-grid-item {
+  overflow:hidden
+;}
+.deck-grid-actions {
+  display:grid;
+  grid-template-columns:30px minmax(0,1fr) 30px;
+  align-items:center;
+  gap:4px;
+  width:100%;
+  margin-top:7px
+;}
+.deck-grid-actions button {
+  width:30px;
+  min-width:0;
+  padding:5px 0;
+  text-align:center;
+  font-size:13px
+;}
+.deck-grid-actions span {
+  min-width:0;
+  text-align:center;
+  font-size:13px;
+  white-space:nowrap
+;}
+@media(max-width:600px) {
+  .deck-display .deck-grid {
+    grid-template-columns:repeat(auto-fill,minmax(130px,1fr))
+  ;}
+}
+/* #endregion Deck Manager — Card Quantity Controls */
+
+/* #region Deck Manager — Image Export Dialog */
+.deck-image-dialog {
+  width:min(1100px,94vw);
+  height:min(900px,92vh);
+  max-height:92vh;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  min-height:0;
+  background:#182335;
+  border:1px solid #42516a;
+  border-radius:18px;
+  padding:18px 22px;
+  box-shadow:0 20px 70px #0009
+;}
+.deck-image-preview {
+  background:#0a0d14;
+  flex:1;
+  min-height:0;
+  min-width:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  border-radius:9px;
+  margin:12px 0;
+  padding:8px
+;}
+.deck-image-preview img {
+  display:block;
+  max-width:100%;
+  max-height:100%;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  margin:auto
+;}
+.deck-image-actions {
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+  flex-wrap:wrap
+;}
+#deckImageStatus {
+  color:#b4c3da;
+  font-size:13px
+;}
+/* #endregion Deck Manager — Image Export Dialog */
+
+/* #region Card Browser — Gallery Interaction */
+/* Browser gallery: only the card artwork opens inspection. No tile movement on clicks. */
+#cards article.card {
+  cursor:default;
+  transition:none!important;
+  transform:none!important;}
+#cards article.card:hover {
+  transform:none!important;
+  border-color:#2b374a
+;}
+#cards article.card img.gallery-card-art {
+  cursor:pointer
+;}
+#cards article.card img.gallery-card-art:hover {
+  filter:brightness(1.07)
+;}
+#cards .gallery-quick button {
+  transition:none!important;
+  transform:none!important;
+  animation:none!important;}
+#cards .gallery-quick button:active {
+  transform:none!important;
+  animation:none!important;}
+/* #endregion Card Browser — Gallery Interaction */
+
+/* #region Saved Decks — List & Confirmation */
+.saved-deck-actions {
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap;
+  margin:14px 0
+;}
+.saved-deck-list {
+  display:grid;
+  gap:9px;
+  margin-top:15px;
+  max-height:48vh;
+  overflow:auto
+;}
+.saved-deck-row {
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  align-items:center;
+  background:#233148;
+  border:1px solid #42516a;
+  border-radius:9px;
+  padding:12px
+;}
+.saved-deck-row strong {
+  display:block
+;}
+.saved-deck-row small {
+  display:block;
+  margin-top:4px
+;}
+.saved-deck-row-actions {
+  display:flex;
+  gap:5px;
+  flex-wrap:wrap
+;}
+.saved-deck-row-actions .btn {
+  padding:7px 10px;
+  font-size:12px
+;}
+.confirm-dialog {
+  max-width:480px
+;}
+.confirm-dialog p {
+  color:#b8c6da
+;}
+.saved-deck-current {
+  color:#83b6ff;
+  font-size:12px
+;}
+#savedDeckStatus {
+  display:block;
+  color:#b7c8df;
+  min-height:18px
+;}
+@media(max-width:600px) {
+  .saved-deck-row {
+    align-items:flex-start;
+    flex-direction:column
+  ;}
+}
+
+
+/* #endregion Saved Decks — List & Confirmation */
+

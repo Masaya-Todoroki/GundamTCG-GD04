@@ -1,0 +1,374 @@
+/* #region Deck Viewer — Mobile Card Layout */
+/* v1.0.1: compact portrait cards in the mobile deck drawer. */
+@media (max-width:850px) {
+  .shell:not(.deck-mode) .sidebar {
+    padding:55px 12px 16px;
+    transition:height .26s cubic-bezier(.2,.75,.2,1);
+  }
+  .shell:not(.deck-mode) .sidebar.mobile-deck-dragging { transition:none; }
+  .mobile-deck-handle { user-select:none; -webkit-user-select:none; touch-action:none; }
+  .mobile-deck-handle:focus-visible { outline:2px solid #a8caff; outline-offset:-3px; }
+  #deckList {
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:10px;
+    max-height:none;
+    overflow:visible;
+    align-items:start;
+  }
+  #deckList > .empty { grid-column:1/-1; }
+  #deckList .deckitem {
+    display:block;
+    min-width:0;
+    padding:0;
+    border:1px solid #33435b;
+    border-radius:9px;
+    background:#171f2e;
+    overflow:hidden;
+  }
+  #deckList .deckitem > img {
+    display:block;
+    width:100%;
+    height:auto;
+    aspect-ratio:600/838;
+    object-fit:contain;
+    border-radius:0;
+    cursor:pointer;
+  }
+  #deckList .deckitem .label {
+    display:block;
+    min-width:0;
+    padding:7px 5px 6px;
+    font-size:11px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  #deckList .deckitem .label small { font-size:10px; }
+  #deckList .deckitem .actions {
+    display:grid;
+    grid-template-columns:repeat(5,minmax(0,1fr));
+    gap:2px;
+    margin-top:5px;
+    align-items:center;
+  }
+  #deckList .deckitem .actions button {
+    min-width:0;
+    width:100%;
+    padding:5px 0;
+    font-size:11px;
+    border-radius:4px;
+  }
+  #deckList .deckitem .actions span {
+    min-width:0;
+    font-size:10px;
+    white-space:nowrap;
+    text-align:center;
+  }
+  #deckList .deckitem .actions button[data-action="view"] {
+    grid-column:1/-1;
+    margin-top:2px;
+  }
+}
+@media (max-width:360px) {
+  #deckList { gap:6px; }
+  #deckList .deckitem .actions { gap:1px; }
+  #deckList .deckitem .actions button { font-size:10px; }
+}
+
+/* #endregion Deck Viewer — Mobile Card Layout */
+
+/* #region Deck Viewer — Desktop Sidebar Behaviour */
+/* Desktop: use the full available sidebar height for the deck list.
+   The previous 50vh limit left an unused block beneath the scrollbar. */
+@media (min-width:851px) {
+  .shell:not(.deck-mode) #browserDeckSidebar {
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+  }
+  .shell:not(.deck-mode) #browserDeckSidebar #deckList {
+    flex:1 1 auto;
+    min-height:0;
+    max-height:none;
+    overflow-y:auto;
+    overflow-x:hidden;
+  }
+}
+
+/* Desktop deck preview stays visible while the main browser scrolls.
+   Keep the reserved 340px grid column so content never sits underneath it. */
+@media (min-width:851px) {
+  .shell:not(.deck-mode) #browserDeckSidebar {
+    position:sticky;
+    top:0;
+    align-self:start;
+    width:100%;
+    height:100dvh;
+    z-index:40;
+    border-left:1px solid #293244;
+  }
+  .shell:not(.deck-mode) #browserDeckSidebar #deckList {
+    gap:8px;
+  }
+}
+
+/* #endregion Deck Viewer — Desktop Sidebar Behaviour */
+
+/* #region Deck Viewer — Artwork Interaction */
+/* v1.0.3: card artwork replaces the redundant View button. */
+#deckList .deckitem img[data-inspect-id] { cursor:pointer; }
+#deckList .deckitem img[data-inspect-id]:focus-visible { outline:2px solid #70a8ff; outline-offset:2px; }
+@media (max-width:850px) {
+  #deckList { grid-template-columns:repeat(4,minmax(0,1fr)); gap:7px; }
+  #deckList .deckitem .label { padding:5px 3px; font-size:10px; }
+  #deckList .deckitem .label small { font-size:9px; }
+  #deckList .deckitem .actions { gap:1px; margin-top:3px; }
+  #deckList .deckitem .actions button { padding:5px 0; font-size:10px; }
+  #deckList .deckitem .actions span { font-size:9px; }
+}
+@media (max-width:390px) {
+  #deckList { grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
+  #deckList .deckitem .actions button { font-size:11px; }
+}
+
+/* #endregion Deck Viewer — Artwork Interaction */
+
+/* #region Deck Viewer — Card Grid */
+/* v1.0.3: clean sidebar card grid. Uses the same image ratio as .card img. */
+#browserDeckSidebar #deckList .deckitem .deck-art {
+  display:block;
+  width:100%;
+  min-width:0;
+  aspect-ratio:600 / 838;
+  height:auto;
+  overflow:hidden;
+}
+#browserDeckSidebar #deckList .deckitem .deck-art img {
+  display:block;
+  position:static;
+  width:100%;
+  height:auto;
+  aspect-ratio:600 / 838;
+  object-fit:fill;
+  max-width:none;
+  max-height:none;
+  border-radius:0;
+}
+@media (min-width:851px) {
+  .shell:not(.deck-mode) #browserDeckSidebar #deckList {
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(90px,1fr));
+    justify-content:start;
+    grid-auto-rows:max-content;
+    align-content:start;
+    align-items:start;
+    gap:10px;
+    padding-right:4px;
+  }
+  #browserDeckSidebar #deckList > .empty {grid-column:1/-1;}
+  #browserDeckSidebar #deckList .deckitem {
+    display:block;
+    min-width:0;
+    width:100%;
+    height:auto;
+    padding:0;
+    border:1px solid #33435b;
+    border-radius:7px;
+    background:#171f2e;
+    overflow:hidden;
+  }
+  #browserDeckSidebar #deckList .deckitem .label {
+    display:block;
+    min-width:0;
+    padding:6px 5px;
+    font-size:10px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  #browserDeckSidebar #deckList .deckitem .label small {font-size:9px;}
+  #browserDeckSidebar #deckList .deckitem .actions {
+    display:grid;
+    grid-template-columns:1fr 1fr minmax(24px,1.2fr) 1fr 1fr;
+    gap:2px;
+    align-items:center;
+    margin-top:4px;
+  }
+  #browserDeckSidebar #deckList .deckitem .actions button {
+    min-width:0;
+    width:100%;
+    padding:5px 0;
+    font-size:10px;
+    border-radius:3px;
+  }
+  #browserDeckSidebar #deckList .deckitem .actions span {
+    min-width:0;
+    font-size:9px;
+    text-align:center;
+    white-space:nowrap;
+  }
+}
+
+.sidebar .summary { display:flex; flex-wrap:wrap; gap:8px; }
+/* #endregion Deck Viewer — Card Grid */
+
+/* #region Deck Viewer — Group Headings */
+/* Deck preview groups: headings span the full grid width on desktop and mobile. */
+#browserDeckSidebar #deckList .deck-section-heading {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+  padding:12px 2px 6px;
+  margin-top:3px;
+  border-bottom:1px solid #33435b;
+  color:#e9eef7;
+  font-weight:700;
+  font-size:13px;
+}
+#browserDeckSidebar #deckList .deck-section-heading:first-child { margin-top:0; padding-top:3px; }
+#browserDeckSidebar #deckList .deck-section-count { color:#9fb0cb; font-size:11px; font-weight:500; white-space:nowrap; }
+
+/* #endregion Deck Viewer — Group Headings */
+
+/* #region Deck Viewer — Drawer Handle */
+/* v1.0.5: full-screen drawer, always-accessible grip, explicit controls. */
+.shell:not(.deck-mode) #browserDeckSidebar {  }
+.shell:not(.deck-mode) #mobileDeckHandle {
+  position:sticky;
+  top:0;
+  margin:-55px -16px 7px;
+  width:calc(100% + 32px);
+  height:48px;
+  flex-shrink:0;
+}
+.deck-drawer-controls { position:absolute; right:12px;  display:flex; gap:7px; }
+.deck-drawer-controls button {
+  width:36px; height:35px; display:grid; place-items:center;
+  background:#263a57; border:1px solid #506889; border-radius:7px;
+  color:#e9eef7; font-size:19px; line-height:1; cursor:pointer;
+}
+.deck-drawer-controls button:hover { background:#36537a; }
+.deck-drawer-controls button:focus-visible { outline:2px solid #a8caff; }
+
+/* #endregion Deck Viewer — Drawer Handle */
+
+/* #region Deck Viewer — Draggable Drawer */
+/* v1.0.4: one draggable bottom deck drawer across desktop and mobile. */
+.shell:not(.deck-mode) {
+  display:block;
+  padding-bottom:64px;
+}
+.shell:not(.deck-mode) #browserDeckSidebar {
+  position:fixed;
+  top:auto;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:var(--mobile-deck-height,54px);
+  min-height:54px;
+  max-height:100dvh;
+  padding:55px 16px 16px;
+  border:1px solid #3b4c65;
+  border-bottom:0;
+  border-radius:16px 16px 0 0;
+  background:#121a28;
+  box-shadow:0 -10px 30px rgba(0,0,0,.48);
+  z-index:900;
+  overflow-y:auto;
+  overflow-x:hidden;
+  overscroll-behavior:contain;
+  transition:height .26s cubic-bezier(.2,.75,.2,1);
+  align-self:auto;
+}
+.shell:not(.deck-mode) #browserDeckSidebar.mobile-deck-dragging {
+  transition:none;
+  user-select:none;
+}
+.shell:not(.deck-mode) #browserDeckSidebar.mobile-deck-collapsed {
+  height:54px!important;
+  overflow:hidden;
+}
+#mobileDeckHandle {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:48px;
+  padding:0 16px;
+  border:0;
+  border-bottom:1px solid #29384d;
+  background:#1b2940;
+  color:#e9eef7;
+  cursor:ns-resize;
+  touch-action:none;
+  user-select:none;
+  -webkit-user-select:none;
+}
+.shell:not(.deck-mode) #browserDeckSidebar #deckList {
+  grid-auto-rows:max-content;
+  align-content:start;
+  gap:10px;
+  overflow:visible;
+  padding-right:4px;
+}
+@media (max-width:850px) {
+  .shell:not(.deck-mode) #browserDeckSidebar #deckList {
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:7px;
+  }
+}
+@media (max-width:390px) {
+  .shell:not(.deck-mode) #browserDeckSidebar #deckList {
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:8px;
+  }
+}
+
+/* #endregion Deck Viewer — Draggable Drawer */
+
+/* #region Deck Viewer — Fixed Handle & Scroll Body */
+/* v1.0.5 drawer handle placement fix: fixed header, independent scroll body. */
+.shell:not(.deck-mode) #browserDeckSidebar {
+  display:flex;
+  flex-direction:column;
+  padding:0 !important;
+  overflow:hidden !important;
+}
+.shell:not(.deck-mode) #mobileDeckHandle {
+  position:relative !important;
+  top:auto !important;
+  left:auto !important;
+  right:auto !important;
+  width:100% !important;
+  height:54px !important;
+  min-height:54px;
+  margin:0 !important;
+  padding:0 112px 0 16px;
+  flex:none;
+  border-radius:15px 15px 0 0;
+  z-index:12;
+  cursor:ns-resize;
+}
+.shell:not(.deck-mode) #browserDeckSidebar .deck-drawer-scroll {
+  flex:1 1 auto;
+  min-height:0;
+  padding:14px 16px 18px;
+  overflow-y:auto;
+  overflow-x:hidden;
+  overscroll-behavior:contain;
+}
+.shell:not(.deck-mode) #browserDeckSidebar.mobile-deck-collapsed .deck-drawer-scroll {
+  display:none;
+}
+.shell:not(.deck-mode) #browserDeckSidebar #deckList { overflow:visible; max-height:none; }
+.deck-drawer-controls { top:9px; }
+
+/* #endregion Deck Viewer — Fixed Handle & Scroll Body */
+
