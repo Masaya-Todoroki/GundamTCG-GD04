@@ -1396,7 +1396,11 @@ input[type=search] {
     }
   }
 
-  </style>
+  /* On startup, show saved decks immediately without save/edit controls. */
+#savedDecksModal.startup-mode .saved-deck-actions,
+#savedDecksModal.startup-mode #savedDeckStatus { display: none; }
+#savedDecksModal.startup-mode { z-index: 1100; }
+</style>
  </head>
  <body>
   <header>
@@ -1408,7 +1412,7 @@ input[type=search] {
      </span>
     </h1>
     <small>
-     Masa's GCG Deck Builder v0.9.9
+     Masa's GCG Deck Builder v0.9.11
     </small>
    </div>
    <div class="header-actions">
@@ -1540,16 +1544,6 @@ input[type=search] {
      </p>
     </div>
    </aside>
-  </div>
-  <div aria-labelledby="startupDeckTitle" aria-modal="true" class="modal" id="startupDeckModal" role="dialog" style="z-index:1100">
-   <div class="deck-text-dialog confirm-dialog">
-    <div class="deck-text-top"><h2 id="startupDeckTitle">Welcome back!</h2></div>
-    <p class="deck-text-help" id="startupDeckMessage">You have saved decks in this browser. Would you like to load one?</p>
-    <div class="saved-deck-list" id="startupDeckList"></div>
-    <div class="saved-deck-actions">
-     <button class="btn" id="startupContinueDeck" type="button">Continue Current Deck</button>
-    </div>
-   </div>
   </div>
   <div aria-labelledby="savedDecksTitle" aria-modal="true" class="modal" id="savedDecksModal" role="dialog">
    <div class="deck-text-dialog">
@@ -1947,12 +1941,33 @@ catch {
 function putSavedDecks(items) { localStorage.setItem(SAVED_DECKS_KEY, JSON.stringify(items)); }
 function newDeckId() { return crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(36) + '-' + Math.random().toString(36).slice(2); }
 function deckSnapshot(id) { return { id, name: ($('deckName').value || 'Untitled Deck').trim(), cards: { ...deck }, updated: Date.now() }; }
+// Compare card quantities regardless of insertion order or deck name.
+function sameDeckCards(a, b) {
+    const entriesA = Object.entries(a || {}).filter(([, n]) => Number(n) > 0);
+    const entriesB = Object.entries(b || {}).filter(([, n]) => Number(n) > 0);
+    return entriesA.length === entriesB.length && entriesA.every(([id, n]) => Number(b?.[id]) === Number(n));
+}
+// Keep names unique: Name, Name (1), Name (2), etc.
+function uniqueDeckName(requested, items, excludeId = null) {
+    const existing = new Set(items.filter(d => d.id !== excludeId).map(d => String(d.name || '').toLowerCase()));
+    const base = (requested || 'Untitled Deck').trim();
+    if (!existing.has(base.toLowerCase())) return base;
+    let n = 1;
+    while (existing.has(`${base} (${n})`.toLowerCase())) n++;
+    return `${base} (${n})`;
+}
 function savedDeckMessage(message) { $('savedDeckStatus').textContent = message; }
-function showSavedDecks() { renderSavedDecks(); $('savedDecksModal').classList.add('open'); }
+function showSavedDecks() { if (!$('savedDecksModal').classList.contains('startup-mode')) exitStartupDeckSelection(); renderSavedDecks(); $('savedDecksModal').classList.add('open'); }
 function renderSavedDecks() { const items = getSavedDecks().sort((a, b) => (b.updated || 0) - (a.updated || 0)); $('savedDeckList').innerHTML = items.length ? items.map(d => { const count = Object.values(d.cards || {}).reduce((sum, n) => sum + (Number(n) || 0), 0); return `<div class="saved-deck-row" data-save-id="${esc(d.id)}"><div><strong>${esc(d.name || 'Untitled Deck')} ${d.id === activeSavedDeckId ? '<span class="saved-deck-current">(Current)</span>' : ''}</strong><small>${count} cards · ${new Date(d.updated || Date.now()).toLocaleDateString()}</small></div><div class="saved-deck-row-actions"><button class="btn primary" data-saved-action="load">Load</button><button class="btn" data-saved-action="rename">Rename</button><button class="btn danger" data-saved-action="delete">Delete</button></div></div>`; }).join('') : '<p class="empty">No saved decks yet. Use Save As New Deck to create your first save.</p>'; }
 function saveDeckAsNew() { try {
     const items = getSavedDecks();
     const d = deckSnapshot(newDeckId());
+    const duplicate = items.find(saved => sameDeckCards(saved.cards, d.cards));
+    if (duplicate) {
+        savedDeckMessage(`This exact card list is already saved as "${duplicate.name}". No duplicate was created.`);
+        return;
+    }
+    d.name = uniqueDeckName(d.name, items);
     items.push(d);
     putSavedDecks(items);
     activeSavedDeckId = d.id;
@@ -1973,7 +1988,15 @@ function saveDeckChanges() { if (!activeSavedDeckId) {
         saveDeckAsNew();
         return;
     }
-    items[i] = deckSnapshot(activeSavedDeckId);
+    const updated = deckSnapshot(activeSavedDeckId);
+    const duplicate = items.find(saved => saved.id !== activeSavedDeckId && sameDeckCards(saved.cards, updated.cards));
+    if (duplicate) {
+        savedDeckMessage(`This exact card list is already saved as "${duplicate.name}". Changes were not saved.`);
+        return;
+    }
+    updated.name = uniqueDeckName(updated.name, items, activeSavedDeckId);
+    items[i] = updated;
+    $('deckName').value = updated.name;
     putSavedDecks(items);
     renderSavedDecks();
     autosaveDraft();
@@ -1983,31 +2006,21 @@ catch (e) {
     savedDeckMessage('Unable to save: ' + e.message);
 } }
 function offerSavedDecksOnStartup() {
-    const items = getSavedDecks();
-    if (!items.length) return;
-    const hasDraft = Object.values(deck).some(n => n > 0);
-    $('startupDeckMessage').textContent = hasDraft
-        ? `You have ${items.length} saved deck${items.length === 1 ? '' : 's'}. Your unfinished deck has been restored. Would you like to load a saved deck instead?`
-        : `You have ${items.length} saved deck${items.length === 1 ? '' : 's'} in this browser. Would you like to load one?`;
-    $('startupContinueDeck').textContent = hasDraft ? 'Continue Current Deck' : 'Start a New Deck';
-    $('startupDeckList').innerHTML = items.sort((a,b) => (b.updated || 0) - (a.updated || 0)).map(d => {
-        const count = Object.values(d.cards || {}).reduce((sum,n) => sum + (Number(n) || 0), 0);
-        return `<div class="saved-deck-row" data-startup-save-id="${esc(d.id)}"><div><strong>${esc(d.name || 'Untitled Deck')}</strong><small>${count} cards · ${new Date(d.updated || Date.now()).toLocaleDateString()}</small></div><div class="saved-deck-row-actions"><button class="btn primary" type="button" data-startup-load>Load</button></div></div>`;
-    }).join('');
-    $('startupDeckModal').classList.add('open');
+    if (!getSavedDecks().length) return;
+    const modal = $('savedDecksModal');
+    modal.classList.add('startup-mode');
+    $('savedDecksTitle').textContent = 'Your Saved Decks';
+    $('closeSavedDecks').textContent = '✕ Continue Current Deck';
+    showSavedDecks();
 }
-$('startupContinueDeck').onclick = () => $('startupDeckModal').classList.remove('open');
-$('startupDeckList').onclick = e => {
-    const button = e.target.closest('[data-startup-load]');
-    if (!button) return;
-    const id = button.closest('[data-startup-save-id]')?.dataset.startupSaveId;
-    const saved = getSavedDecks().find(d => d.id === id);
-    if (!saved) return;
-    loadSavedDeck(saved);
-    $('startupDeckModal').classList.remove('open');
-};
+function exitStartupDeckSelection() {
+    const modal = $('savedDecksModal');
+    modal.classList.remove('startup-mode');
+    $('savedDecksTitle').textContent = 'Save / Load Decks';
+    $('closeSavedDecks').textContent = '✕ Close';
+}
 $('save').onclick = showSavedDecks;
-$('closeSavedDecks').onclick = () => $('savedDecksModal').classList.remove('open');
+$('closeSavedDecks').onclick = () => { $('savedDecksModal').classList.remove('open'); exitStartupDeckSelection(); };
 $('saveCurrentDeck').onclick = saveDeckChanges;
 $('saveAsDeck').onclick = saveDeckAsNew;
 function loadSavedDeck(d) {
@@ -2025,6 +2038,7 @@ $('savedDeckList').onclick = e => { const button = e.target.closest('[data-saved
     return; const d = items[i]; switch (button.dataset.savedAction) {
     case 'load':
         loadSavedDeck(d);
+        if ($('savedDecksModal').classList.contains('startup-mode')) { $('savedDecksModal').classList.remove('open'); exitStartupDeckSelection(); }
         break;
     case 'rename': {
         const name = prompt('New deck name:', d.name);
@@ -2034,7 +2048,7 @@ $('savedDeckList').onclick = e => { const button = e.target.closest('[data-saved
             savedDeckMessage('Please enter a deck name.');
             return;
         }
-        d.name = name.trim();
+        d.name = uniqueDeckName(name.trim(), items, id);
         d.updated = Date.now();
         putSavedDecks(items);
         if (activeSavedDeckId === id) {
@@ -2060,7 +2074,7 @@ $('savedDeckList').onclick = e => { const button = e.target.closest('[data-saved
     }
 } };
 $('savedDecksModal').addEventListener('click', e => { if (e.target === $('savedDecksModal'))
-    $('savedDecksModal').classList.remove('open'); });
+    $('savedDecksModal').classList.remove('open'); exitStartupDeckSelection(); });
 $('clear').onclick = () => $('clearConfirmModal').classList.add('open');
 function closeClearDialog() { $('clearConfirmModal').classList.remove('open'); }
 $('closeClearConfirm').onclick = closeClearDialog;
