@@ -2074,6 +2074,375 @@ body:has(#modal.open) { overflow: hidden; }
 }
 .shell:not(.deck-mode) #browserDeckSidebar #deckList { overflow:visible; max-height:none; }
 .deck-drawer-controls { top:9px; }
+
+/* v1.0.6 — independent, saved card-size controls */
+.card-scale-control {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 12px;
+  color:#b9c9e1;
+  font-size:12px;
+}
+.card-scale-control label { white-space:nowrap; font-weight:600; }
+.card-scale-control input[type=range] {
+  flex:0 1 180px;
+  min-width:65px;
+  accent-color:#3979df;
+  cursor:pointer;
+}
+.card-scale-control output {
+  min-width:42px;
+  text-align:right;
+  font-variant-numeric:tabular-nums;
+}
+#cards.cards {
+  grid-template-columns:repeat(auto-fill,minmax(0,var(--browser-card-size,185px)));
+  justify-content:start;
+}
+.shell:not(.deck-mode) #browserDeckSidebar #deckList {
+  grid-template-columns:repeat(auto-fill,minmax(0,var(--drawer-card-size,160px)));
+  justify-content:start;
+}
+@media(max-width:600px) {
+  .card-scale-control { gap:7px; }
+  .card-scale-control input[type=range] { flex:1 1 90px; }
+  #cards.cards {
+    grid-template-columns:repeat(auto-fill,minmax(0,min(var(--browser-card-size,185px),calc((100vw - 42px)/2))));
+  }
+  .shell:not(.deck-mode) #browserDeckSidebar #deckList {
+    grid-template-columns:repeat(auto-fill,minmax(0,min(var(--drawer-card-size,160px),calc((100vw - 42px)/2))));
+  }
+}
+
+/* v1.0.7: the ENTIRE tile scales with its width, not just the artwork.
+   Container units make controls, labels, spacing and text proportional. */
+#cards > article.card,
+#browserDeckSidebar #deckList .deckitem {
+  container-type:inline-size;
+}
+#cards > article.card .gallery-quick {
+  grid-template-columns:repeat(2,minmax(0,1fr)) minmax(0,1.25fr) repeat(2,minmax(0,1fr));
+  gap:2.1cqw;
+  padding:4.8cqw 3.4cqw 2.8cqw;
+}
+#cards > article.card .gallery-quick button {
+  height:20cqw;
+  font-size:8.3cqw;
+  border-radius:3.4cqw;
+}
+#cards > article.card .gallery-quick .gallery-count {
+  font-size:7.6cqw;
+  min-width:0;
+}
+#cards > article.card .info { padding:5.5cqw; }
+#cards > article.card .name { font-size:8.3cqw; }
+#cards > article.card .sub { font-size:7.6cqw; margin-top:2.8cqw; }
+#browserDeckSidebar #deckList .deckitem .label {
+  padding:4.6cqw 3.8cqw;
+  font-size:7.7cqw;
+}
+#browserDeckSidebar #deckList .deckitem .label small { font-size:6.9cqw; }
+#browserDeckSidebar #deckList .deckitem .actions {
+  grid-template-columns:repeat(2,minmax(0,1fr)) minmax(0,1.2fr) repeat(2,minmax(0,1fr));
+  gap:1.6cqw;
+  margin-top:3cqw;
+}
+#browserDeckSidebar #deckList .deckitem .actions button {
+  padding:3.7cqw 0;
+  font-size:7.7cqw;
+  border-radius:2.3cqw;
+}
+#browserDeckSidebar #deckList .deckitem .actions span {
+  font-size:7cqw;
+  min-width:0;
+}
+
+/* v1.0.8: compact, polished size controls */
+.card-scale-control {
+  display:flex;
+  align-items:center;
+  width:max-content;
+  max-width:100%;
+  gap:11px;
+  padding:8px 12px;
+  margin:10px 0 14px;
+  border:1px solid #35445b;
+  border-radius:12px;
+  background:#192538;
+  box-shadow:0 1px 0 rgba(255,255,255,.025) inset;
+  color:#c8d5e9;
+}
+.card-scale-control label {
+  color:#dce7f7;
+  font-size:12px;
+  font-weight:650;
+  letter-spacing:.01em;
+}
+.card-scale-control .scale-card-icon {
+  flex:none;
+  display:block;
+  border:1.5px solid #93a8c5;
+  border-radius:2px;
+  aspect-ratio:600 / 838;
+  background:linear-gradient(145deg,#456b9e 0%,#243750 75%);
+  box-shadow:inset 0 -3px 0 rgba(0,0,0,.18);
+}
+.card-scale-control .scale-card-small { width:11px; }
+.card-scale-control .scale-card-large { width:19px; }
+.card-scale-control input[type=range] {
+  appearance:none;
+  -webkit-appearance:none;
+  flex:0 1 155px;
+  width:155px;
+  min-width:65px;
+  height:6px;
+  padding:0;
+  border:0;
+  border-radius:99px;
+  outline:none;
+  background:linear-gradient(to right,#438cf0 0%,#438cf0 var(--scale-progress,35%),#34445c var(--scale-progress,35%),#34445c 100%);
+  cursor:pointer;
+  touch-action:pan-y;
+}
+.card-scale-control input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance:none;
+  width:17px;
+  height:17px;
+  border:3px solid #cde2ff;
+  border-radius:50%;
+  background:#438cf0;
+  box-shadow:0 1px 5px rgba(0,0,0,.45);
+}
+.card-scale-control input[type=range]::-moz-range-thumb {
+  width:12px;
+  height:12px;
+  border:3px solid #cde2ff;
+  border-radius:50%;
+  background:#438cf0;
+  box-shadow:0 1px 5px rgba(0,0,0,.45);
+}
+.card-scale-control input[type=range]:focus-visible { outline:2px solid #a8caff; outline-offset:5px; }
+.card-scale-control output {
+  min-width:48px;
+  padding:5px 7px;
+  border:1px solid #3b4d67;
+  border-radius:7px;
+  background:#111b2b;
+  color:#e4efff;
+  font-size:11px;
+  font-weight:700;
+  font-variant-numeric:tabular-nums;
+  text-align:center;
+}
+@media(max-width:480px) {
+  .card-scale-control { gap:8px; padding:8px 9px; }
+  .card-scale-control label { font-size:11px; }
+  .card-scale-control input[type=range] { width:95px; flex:1 1 95px; }
+  .card-scale-control .scale-card-large { width:16px; }
+}
+
+/* v1.0.9: center rows of cards, including incomplete rows, and remove numeric scale readouts. */
+#cards.cards,
+.shell:not(.deck-mode) #browserDeckSidebar #deckList {
+  justify-content:center;
+}
+#browserDeckSidebar #deckList .deck-section-heading {
+  grid-column:1 / -1;
+}
+
+/* v1.0.17 — columns rather than pixel widths. Last rules override legacy sizing. */
+#cards.cards {
+  display:grid;
+  grid-template-columns:repeat(var(--browser-columns,6),minmax(0,1fr));
+  justify-content:center;
+  align-items:start;
+}
+.shell:not(.deck-mode) #browserDeckSidebar #deckList {
+  display:grid;
+  grid-template-columns:repeat(var(--drawer-columns,7),minmax(0,1fr));
+  justify-content:center;
+  align-items:start;
+}
+#browserDeckSidebar #deckList .deck-section-heading,
+#browserDeckSidebar #deckList > .empty { grid-column:1/-1; }
+/* No minimum tile width: the requested number of cards always fits. */
+#cards.cards > *,
+#browserDeckSidebar #deckList .deckitem { min-width:0; max-width:none; }
+@media(max-width:600px) {
+  #cards.cards { grid-template-columns:repeat(var(--browser-columns,3),minmax(0,1fr)); }
+  .shell:not(.deck-mode) #browserDeckSidebar #deckList {
+    grid-template-columns:repeat(var(--drawer-columns,3),minmax(0,1fr));
+  }
+}
+
+/* v1.0.17: keep the inspector entirely above the collapsed deck drawer
+   on desktop as well as mobile. The dialog scrolls internally. */
+#modal.open {
+  z-index:1001;
+  bottom:var(--inspector-drawer-height,54px);
+  min-height:0;
+  box-sizing:border-box;
+  padding:10px;
+}
+#modal.open > .dialog {
+  max-height:100%;
+  min-height:0;
+  overflow-y:auto;
+  box-sizing:border-box;
+}
+
+/* v1.0.17: Desktop inspector — only the related-card column scrolls.
+   Preserve the original top-right Close button and left hero layout. */
+@media (min-width:851px) {
+  #modal.open > .dialog {
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+    padding-top:62px;
+  }
+  #modal.open > .dialog > #close {
+    position:absolute;
+    top:12px;
+    right:16px;
+    z-index:2;
+  }
+  #modal.open > .dialog > #detail {
+    flex:1 1 auto;
+    min-height:0;
+  }
+  #modal.open #detail .inspection-layout {
+    height:100%;
+    min-height:0;
+    align-items:start;
+  }
+  #modal.open #detail .inspection-hero {
+    position:static;
+    min-height:0;
+  }
+  #modal.open #detail .inspection-related {
+    height:100%;
+    min-height:0;
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    padding-right:5px;
+  }
+}
+
+/* Inspector desktop: lock the dialog's viewport height so the entire
+   right-hand region (including its heading) is the scroll container. */
+@media (min-width:851px) {
+  #modal.open > .dialog {
+    height:100%;
+    max-height:100%;
+    min-height:0;
+    box-sizing:border-box;
+  }
+  #modal.open > .dialog > #detail {
+    height:100%;
+    min-height:0;
+    overflow:hidden;
+  }
+  #modal.open #detail .inspection-layout {
+    height:100%;
+    min-height:0;
+    overflow:hidden;
+  }
+  #modal.open #detail .inspection-related {
+    height:100%;
+    min-height:0;
+    overflow-y:auto;
+    overflow-x:hidden;
+    overscroll-behavior-y:contain;
+    scrollbar-gutter:stable;
+  }
+}
+
+/* Clickable card-size step icons — finger-friendly on mobile. */
+.card-scale-control .scale-step {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 34px;
+  width:34px;
+  height:34px;
+  padding:0;
+  border:1px solid #3b4d68;
+  border-radius:8px;
+  background:#23324a;
+  color:#dce7f7;
+  cursor:pointer;
+  touch-action:manipulation;
+}
+.card-scale-control .scale-step:hover { background:#304767; border-color:#5a7fb4; }
+.card-scale-control .scale-step:active { background:#285fa8; }
+.card-scale-control .scale-step:focus-visible { outline:2px solid #90b9ff; outline-offset:2px; }
+.card-scale-control .scale-step .scale-card-icon { pointer-events:none; }
+
+/* v1.0.17: matching icons and clean navigation */
+.ui-action-icon { width:17px; height:17px; flex:none; vertical-align:-3px; margin-right:5px; }
+.view-switch .btn, .deck-manage .btn { display:inline-flex; align-items:center; justify-content:center; gap:3px; }
+.view-switch .btn .ui-action-icon, .deck-manage .btn .ui-action-icon { margin-right:5px; }
+#tabCount[hidden] { display:none!important; }
+
+/* v1.0.17 — Fit the whole Deck Manager grid into the available viewport.
+   All groups share a column width; keep natural portrait proportions. */
+@media (min-width:801px) {
+  #deckViewer .deck-display .deck-grid {
+    grid-template-columns:repeat(var(--deck-fit-columns,8),minmax(0,1fr));
+    gap:var(--deck-fit-gap,7px);
+  }
+  #deckViewer .deck-display .deck-group { margin:7px 0 10px; }
+  #deckViewer .deck-display .deck-group-head { margin-bottom:5px; gap:7px; }
+  #deckViewer .deck-display .deck-group-head h3 { font-size:14px; }
+  #deckViewer .deck-display .deck-group-head .pill { font-size:11px; padding:2px 7px; }
+  #deckViewer .deck-display .viewer-heading { margin-bottom:7px; }
+  #deckViewer .deck-grid-item { padding:3px; border-radius:6px; container-type:inline-size; }
+  #deckViewer .deck-grid-art img { width:100%; height:auto; aspect-ratio:600/838; object-fit:contain; }
+  #deckViewer .deck-qty { top:4px; right:4px; font-size:clamp(9px,9cqw,14px); padding:2px 4px; }
+  #deckViewer .deck-grid-actions { grid-template-columns:1fr 1fr 1fr; gap:2px; margin-top:3px; }
+  #deckViewer .deck-grid-actions button { width:100%; font-size:clamp(9px,8cqw,13px); padding:2px 0; }
+  #deckViewer .deck-grid-actions span { font-size:clamp(9px,8cqw,13px); }
+}
+
+/* v1.0.17: square, two-by-two Deck Manager overview */
+@media (min-width: 1001px) {
+  #deckViewer #deckGridGroups {
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    grid-template-areas:"units pilots" "commands bases";
+    gap:14px 18px;
+    align-items:start;
+  }
+  #deckViewer #deckGridGroups > .deck-group {
+    min-width:0;
+    margin:0;
+    padding:10px;
+    background:#141d2b;
+    border:1px solid #29374d;
+    border-radius:10px;
+  }
+  #deckViewer #deckGridGroups > .deck-group[data-deck-type="Unit"] {grid-area:units}
+  #deckViewer #deckGridGroups > .deck-group[data-deck-type="Pilot"] {grid-area:pilots}
+  #deckViewer #deckGridGroups > .deck-group[data-deck-type="Command"] {grid-area:commands}
+  #deckViewer #deckGridGroups > .deck-group[data-deck-type="Base"] {grid-area:bases}
+  #deckViewer #deckGridGroups > .deck-group[data-deck-type="Other"] {grid-column:1/-1}
+  #deckViewer .deck-display .deck-grid {
+    grid-template-columns:repeat(var(--deck-square-columns,4),minmax(0,1fr));
+    gap:6px;
+  }
+  #deckViewer .deck-grid-item { max-width:160px; width:100%; justify-self:center; }
+}
+@media (min-width:701px) and (max-width:1000px) {
+  #deckViewer #deckGridGroups {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+  }
+  #deckViewer #deckGridGroups > .deck-group { min-width:0; margin:0; }
+  #deckViewer .deck-display .deck-grid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:6px; }
+}
 </style>
  </head>
  <body>
@@ -2086,7 +2455,7 @@ body:has(#modal.open) { overflow: hidden; }
      </span>
     </h1>
     <small>
-     Masa's GCG Deck Builder v1.0.5
+     Masa's GCG Deck Builder v1.0.17
     </small>
    </div>
    <div class="header-actions">
@@ -2096,11 +2465,11 @@ body:has(#modal.open) { overflow: hidden; }
   </header>
   <nav class="view-switch">
    <button class="btn primary" id="browseTab" type="button">
-    Card Browser
+    <svg class="ui-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg> Card Browser
    </button>
    <button class="btn" id="deckTab" type="button">
-    Deck Viewer
-    <span id="tabCount">
+    <svg class="ui-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10H3z"/></svg> Deck Manager
+    <span id="tabCount" hidden>
      (0)
     </span>
    </button>
@@ -2145,6 +2514,12 @@ body:has(#modal.open) { overflow: hidden; }
       </option>
      </select>
     </div>
+    <div class="card-scale-control browser-card-scale">
+     <label for="browserCardSize">Cards per row</label>
+     <button type="button" class="scale-step scale-smaller" data-slider="browserCardSize" data-step="-1" aria-label="Show smaller cards"><span class="scale-card-icon scale-card-small" aria-hidden="true"></span></button>
+     <input id="browserCardSize" type="range" min="2" max="12" step="1" value="8" aria-label="Browser cards per row">
+     <button type="button" class="scale-step scale-larger" data-slider="browserCardSize" data-step="1" aria-label="Show larger cards"><span class="scale-card-icon scale-card-large" aria-hidden="true"></span></button>
+    </div>
     <div class="cards" id="cards">
     </div>
     <div aria-hidden="true" class="load-sentinel" id="loadSentinel">
@@ -2170,23 +2545,23 @@ body:has(#modal.open) { overflow: hidden; }
      </div>
      <aside aria-label="Deck settings" class="deck-manage">
       <h3>
-       Deck Settings
+       Deck Management
       </h3>
       <label for="deckName">
        Deck name
       </label>
       <input id="deckName" placeholder="Deck name" value="My Gundam Deck"/>
       <button class="btn primary" id="save">
-       Save / Load Decks
+       <svg class="ui-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg> Save / Load Decks
       </button>
       <button class="btn" id="openDeckText" type="button">
-       Import / Export Deck List
+       <svg class="ui-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v12m-4-4 4 4 4-4M17 21V9m-4 4 4-4 4 4"/></svg> Import / Export
       </button>
       <button class="btn primary" id="createDeckImage" type="button">
-       Create Image
+       <svg class="ui-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg> Create Image
       </button>
       <button class="btn danger" id="clear">
-       Clear deck
+       <svg class="ui-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2m3 0-1 15H6L5 6M10 11v6m4-6v6"/></svg> Clear deck
       </button>
      </aside>
     </div>
@@ -2194,18 +2569,11 @@ body:has(#modal.open) { overflow: hidden; }
    <aside class="sidebar" id="browserDeckSidebar">
     <div class="mobile-deck-handle" id="mobileDeckHandle" aria-label="Drag or flick to expand or collapse deck preview" role="group" aria-label="Deck drawer controls" tabindex="0" aria-expanded="false">
      <span class="mobile-deck-grip" aria-hidden="true"></span>
-     <span>My Deck <span id="mobileDeckCount"></span></span>
+     <span>Deck Viewer <span id="mobileDeckCount"></span></span>
      <div class="deck-drawer-controls"><button type="button" id="deckDrawerMinimise" aria-label="Minimise deck drawer" title="Minimise">−</button><button type="button" id="deckDrawerMaximise" aria-label="Maximise deck drawer" title="Maximise">□</button></div>
     </div>
     <div class="deck-drawer-scroll">
-    <div class="row between">
-     <h2>
-      My Deck
-     </h2>
-     <span class="pill" id="total">
-      0 cards
-     </span>
-    </div>
+    <span class="pill" id="total" hidden>0 cards</span>
     <div class="summary">
      <span class="pill" id="unique">
       0 unique
@@ -2214,6 +2582,12 @@ body:has(#modal.open) { overflow: hidden; }
      <span class="pill" id="pilotCount">0 Pilots</span>
      <span class="pill" id="commandCount">0 Commands</span>
      <span class="pill" id="baseCount">0 Bases</span>
+    </div>
+    <div class="card-scale-control drawer-card-scale">
+     <label for="drawerCardSize">Cards per row</label>
+     <button type="button" class="scale-step scale-smaller" data-slider="drawerCardSize" data-step="-1" aria-label="Show smaller cards"><span class="scale-card-icon scale-card-small" aria-hidden="true"></span></button>
+     <input id="drawerCardSize" type="range" min="2" max="12" step="1" value="7" aria-label="Deck drawer cards per row">
+     <button type="button" class="scale-step scale-larger" data-slider="drawerCardSize" data-step="1" aria-label="Show larger cards"><span class="scale-card-icon scale-card-large" aria-hidden="true"></span></button>
     </div>
     <div id="deckList">
      <p class="empty">
@@ -2277,7 +2651,7 @@ body:has(#modal.open) { overflow: hidden; }
    <div class="deck-text-dialog">
     <div class="deck-text-top">
      <h2 id="deckTextTitle">
-      Import / Export Deck List
+      Import / Export
      </h2>
      <button class="btn" id="closeDeckText" type="button">
       ✕ Close
@@ -2420,10 +2794,33 @@ function renderDeckGrid(entries) {
     const other = entries.filter(([id]) => !types.includes(byId.get(id)?.type));
     if (other.length)
         groups.push(['Other', other]);
-    $('deckGridGroups').innerHTML = groups.filter(([, items]) => items.length).map(([type, items]) => `<section class="deck-group"><div class="deck-group-head"><h3>${esc(type)}${type === 'Base' ? 's' : 's'}</h3><span class="pill">${items.reduce((a, [, n]) => a + n, 0)} cards</span></div><div class="deck-grid">${items.sort(([a], [b]) => a.localeCompare(b)).map(([id, n]) => { let c = byId.get(id); return `<div class="deck-grid-item"><button class="deck-grid-art" data-action="view" data-id="${esc(id)}" title="Inspect ${esc(c.name || id)}"><img loading="lazy" src="${img(c)}" alt="${esc(c.name || id)}"></button><span class="deck-qty">×${n}</span><div class="deck-grid-actions"><button class="btn" data-action="minus" data-id="${esc(id)}" aria-label="Remove one ${esc(c.name || id)}">−</button><span>${n}/4</span><button class="btn" data-action="plus" data-id="${esc(id)}" aria-label="Add one ${esc(c.name || id)}" ${n >= 4 ? 'disabled' : ''}>+</button></div></div>`; }).join('')}</div></section>`).join('') || '<p class="empty">Your deck is empty. Switch to Card Browser to add cards.</p>';
+    $('deckGridGroups').innerHTML = groups.filter(([, items]) => items.length).map(([type, items]) => `<section class="deck-group" data-deck-type="${esc(type)}"><div class="deck-group-head"><h3>${esc(type)}${type === 'Base' ? 's' : 's'}</h3><span class="pill">${items.reduce((a, [, n]) => a + n, 0)} cards</span></div><div class="deck-grid">${items.sort(([a], [b]) => a.localeCompare(b)).map(([id, n]) => { let c = byId.get(id); return `<div class="deck-grid-item"><button class="deck-grid-art" data-action="view" data-id="${esc(id)}" title="Inspect ${esc(c.name || id)}"><img loading="lazy" src="${img(c)}" alt="${esc(c.name || id)}"></button><span class="deck-qty">×${n}</span><div class="deck-grid-actions"><button class="btn" data-action="minus" data-id="${esc(id)}" aria-label="Remove one ${esc(c.name || id)}">−</button><span>${n}/4</span><button class="btn" data-action="plus" data-id="${esc(id)}" aria-label="Add one ${esc(c.name || id)}" ${n >= 4 ? 'disabled' : ''}>+</button></div></div>`; }).join('')}</div></section>`).join('') || '<p class="empty">Your deck is empty. Switch to Card Browser to add cards.</p>';
+    requestAnimationFrame(fitDeckManagerCards);
 }
+
+// Fit all unique deck cards in the available Deck Manager viewport on desktop.
+// Falls back to page scrolling if the viewport is too small to fit legibly.
+function fitDeckManagerCards() {
+  const viewer = document.getElementById('deckViewer');
+  if (!viewer || viewer.hidden || window.innerWidth <= 1000) return;
+  const display = viewer.querySelector('.deck-display');
+  if (!display) return;
+  const available = Math.max(250, window.innerHeight - display.getBoundingClientRect().top - 10);
+  // Use a shared column count to keep the four quadrants visually consistent.
+  // Prefer readable artwork, but use additional columns when it helps the
+  // two rows of categories fit in the available screen height.
+  let chosen = 4;
+  for (let columns = 3; columns <= 8; columns++) {
+    viewer.style.setProperty('--deck-square-columns', columns);
+    if (display.scrollHeight <= available) { chosen = columns; break; }
+    chosen = columns;
+  }
+  viewer.style.setProperty('--deck-square-columns', chosen);
+}
+window.addEventListener('resize', () => requestAnimationFrame(fitDeckManagerCards));
+
 function setView(view) { let deckMode = view === 'deck'; $('appShell').classList.toggle('deck-mode', deckMode); $('deckViewer').hidden = !deckMode; $('colourBanner').hidden = deckMode; $('browseTab').classList.toggle('primary', !deckMode); $('deckTab').classList.toggle('primary', deckMode); if (deckMode)
-    renderDeck(); }
+    { renderDeck(); requestAnimationFrame(fitDeckManagerCards); } }
 $('browseTab').onclick = () => setView('browse');
 $('deckTab').onclick = () => setView('deck');
 $('deckName').addEventListener('input', () => { $('viewerName').textContent = $('deckName').value || 'My Gundam Deck'; autosaveDraft(); });
@@ -2590,7 +2987,7 @@ $('cards').addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key ==
 } });
 $('deckList').onclick = e => {
     const art = e.target.closest('img[data-inspect-id]');
-    if (art) { show(art.dataset.inspectId); return; }
+    if (art) { document.getElementById('browserDeckSidebar').dispatchEvent(new Event('deck:collapse')); show(art.dataset.inspectId); return; }
     const b = e.target.closest('button[data-action]');
     if (!b) return;
     const id = b.dataset.id;
@@ -2598,7 +2995,7 @@ $('deckList').onclick = e => {
 };
 $('deckList').addEventListener('keydown', e => {
     if ((e.key === 'Enter' || e.key === ' ') && e.target.matches('img[data-inspect-id]')) {
-        e.preventDefault(); show(e.target.dataset.inspectId);
+        e.preventDefault(); document.getElementById('browserDeckSidebar').dispatchEvent(new Event('deck:collapse')); show(e.target.dataset.inspectId);
     }
 });
 // Update quantities in-place so clicking related-card controls never recreates the tiles.
@@ -3245,6 +3642,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && deckImageM
         event.preventDefault();
         setHeight(currentHeight() > minHeight + 1 ? minHeight : maxHeight());
     });
+    sidebar.addEventListener('deck:collapse', () => setHeight(minHeight));
     document.getElementById('deckDrawerMinimise').addEventListener('click', () => setHeight(minHeight));
     document.getElementById('deckDrawerMaximise').addEventListener('click', () => setHeight(maxHeight()));
     const total = document.getElementById('total');
@@ -3255,7 +3653,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && deckImageM
     }
     const syncInspectorSpace = () => {
         document.documentElement.style.setProperty('--inspector-drawer-height',
-            narrow.matches ? sidebar.getBoundingClientRect().height + 'px' : '0px');
+            sidebar.getBoundingClientRect().height + 'px');
     };
     new ResizeObserver(syncInspectorSpace).observe(sidebar);
     window.addEventListener('resize', () => {
@@ -3265,6 +3663,45 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && deckImageM
     narrow.addEventListener('change', syncInspectorSpace);
     setHeight(minHeight);
     syncInspectorSpace();
+})();
+
+// v1.0.17: number of columns, independent for gallery and drawer.
+(() => {
+  const mobile = window.matchMedia('(max-width: 600px)');
+  const configs = [
+    {id:'browserCardSize', property:'--browser-columns', key:'gcg_browser_columns', desktop:6, phone:3, min:2, max:12},
+    {id:'drawerCardSize', property:'--drawer-columns', key:'gcg_drawer_columns', desktop:7, phone:3, min:2, max:12}
+  ];
+  for (const config of configs) {
+    const slider = document.getElementById(config.id);
+    if (!slider) continue;
+    const storageKey = config.key + (mobile.matches ? '_mobile' : '_desktop');
+    let initial = mobile.matches ? config.phone : config.desktop;
+    try {
+      const stored = localStorage.getItem(storageKey);
+      if (stored !== null) {
+        const number = Number(stored);
+        if (Number.isInteger(number) && number >= config.min && number <= config.max) initial = number;
+      }
+    } catch (_) {}
+    const update = value => {
+      const sliderPosition = Math.max(config.min,Math.min(config.max,Math.round(Number(value) || config.min)));
+      const columns = config.min + config.max - sliderPosition;
+      document.documentElement.style.setProperty(config.property,String(columns));
+      slider.value = String(config.min + config.max - columns);
+      slider.style.setProperty('--scale-progress', ((Number(slider.value)-config.min)/(config.max-config.min)*100)+'%');
+      slider.setAttribute('aria-valuetext', columns + ' cards per row');
+      try { localStorage.setItem(storageKey,String(columns)); } catch (_) {}
+    };
+    slider.addEventListener('input', () => update(slider.value));
+    document.querySelectorAll('.scale-step[data-slider="'+config.id+'"]').forEach(button => {
+      button.addEventListener('click', () => {
+        const next = Math.max(config.min, Math.min(config.max, Number(slider.value) + Number(button.dataset.step)));
+        update(next);
+      });
+    });
+    update(config.min + config.max - initial);
+  }
 })();
 
   </script>
