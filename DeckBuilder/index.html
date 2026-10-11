@@ -1391,6 +1391,21 @@ input[type=search] {
 .header-actions { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
 .home-link { display:inline-flex; align-items:center; justify-content:center; text-decoration:none; font-weight:650; white-space:nowrap; }
 .home-link:focus-visible { outline:2px solid #a8caff; outline-offset:3px; }
+  /* Mobile inspector occupies only the space above the resizable deck drawer. */
+  @media (max-width: 850px) {
+    #modal.open {
+      z-index: 1001;
+      bottom: var(--inspector-drawer-height, 54px);
+      padding: 8px;
+    }
+    #modal.open > .dialog {
+      max-height: 100%;
+      min-height: 0;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+  }
+
   </style>
  </head>
  <body>
@@ -1403,7 +1418,7 @@ input[type=search] {
      </span>
     </h1>
     <small>
-     Masa's GCG Deck Builder v0.9.3
+     Masa's GCG Deck Builder v0.9.5
     </small>
    </div>
    <div class="header-actions">
@@ -2399,8 +2414,18 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && deckImageM
         new MutationObserver(syncCount).observe(total, { childList: true, characterData: true, subtree: true });
         syncCount();
     }
+    // Match the inspector's available space to the drawer's actual visible height.
+    // ResizeObserver also catches drag, collapse/expand, and viewport changes.
+    const syncInspectorSpace = () => {
+        document.documentElement.style.setProperty('--inspector-drawer-height',
+            narrow.matches ? sidebar.getBoundingClientRect().height + 'px' : '0px');
+    };
+    new ResizeObserver(syncInspectorSpace).observe(sidebar);
+    window.addEventListener('resize', syncInspectorSpace);
+    narrow.addEventListener('change', syncInspectorSpace);
     // Start tucked away so the card gallery remains easy to browse on phones.
     setCollapsed(true);
+    syncInspectorSpace();
 })();
 
   </script>
