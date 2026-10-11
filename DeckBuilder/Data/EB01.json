@@ -582,7 +582,7 @@
         "Breach 5",
         "During Pair"
       ],
-      "creates_tokens": [],
+        "creates_tokens": [ "T-025" ],
       "needs_review": false,
       "link_trait_conditions": []
     },

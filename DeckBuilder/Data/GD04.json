@@ -461,7 +461,7 @@
         "When Paired",
         "Destroyed"
       ],
-        "creates_tokens": [ "T-022", "T-23" ],
+        "creates_tokens": [ "T-022", "T-023" ],
       "needs_review": false,
       "link_trait_conditions": []
     },

@@ -53,7 +53,7 @@
       "keywords": [
         "Deploy"
       ],
-        "creates_tokens": [ "T-29" ],
+        "creates_tokens": [ "T-029" ],
       "needs_review": false,
       "link_trait_conditions": []
     },
@@ -350,7 +350,7 @@
       "keywords": [
         "Main"
       ],
-        "creates_tokens": [ "T-29" ],
+        "creates_tokens": [ "T-029" ],
       "needs_review": false,
       "link_trait_conditions": []
     },
