@@ -26,8 +26,7 @@
         "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST04-002",
@@ -53,8 +52,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST04-003",
@@ -78,8 +76,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST04-004",
@@ -103,8 +100,7 @@
         "Blocker"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST04-005",
@@ -126,8 +122,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST04-006",
@@ -153,8 +148,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST04-007",
@@ -180,8 +174,7 @@
         "Breach 3"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST04-008",
@@ -203,8 +196,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST04-009",
@@ -231,8 +223,7 @@
         "Destroyed"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST04-010",
@@ -255,12 +246,6 @@
       "pilot": {
         "names": [
           "Kira Yamato"
-        ],
-        "ap": 2,
-        "hp": 1,
-        "traits": [
-          "Earth Alliance",
-          "Coordinator"
         ]
       },
       "keywords": [
@@ -268,8 +253,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST04-011",
@@ -292,12 +276,6 @@
       "pilot": {
         "names": [
           "Athrun Zala"
-        ],
-        "ap": 1,
-        "hp": 2,
-        "traits": [
-          "ZAFT",
-          "Coordinator"
         ]
       },
       "keywords": [
@@ -305,8 +283,7 @@
         "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST04-012",
@@ -317,9 +294,7 @@
       "cost": 2,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -332,8 +307,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST04-013",
@@ -352,14 +326,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Mu La Flaga"
+        ]
+      },
       "keywords": [
         "Main",
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": true,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST04-014",
@@ -379,15 +356,18 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Miguel Ayman"
+        ]
+      },
       "keywords": [
         "First Strike",
         "Main",
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": true,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST04-015",
@@ -417,8 +397,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST04-016",
@@ -446,8 +425,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     }
   ]
 }

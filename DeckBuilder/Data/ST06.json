@@ -27,8 +27,7 @@
         "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST06-002",
@@ -55,8 +54,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST06-003",
@@ -84,8 +82,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST06-004",
@@ -107,8 +104,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST06-005",
@@ -135,8 +131,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST06-006",
@@ -160,8 +155,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST06-007",
@@ -187,8 +181,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST06-008",
@@ -212,8 +205,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST06-009",
@@ -236,12 +228,6 @@
       "pilot": {
         "names": [
           "Amate Yuzuriha (Machu)"
-        ],
-        "ap": 2,
-        "hp": 1,
-        "traits": [
-          "Clan",
-          "Newtype"
         ]
       },
       "keywords": [
@@ -249,8 +235,7 @@
         "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST06-010",
@@ -273,12 +258,6 @@
       "pilot": {
         "names": [
           "Shuji Itō"
-        ],
-        "ap": 1,
-        "hp": 2,
-        "traits": [
-          "Clan",
-          "Newtype"
         ]
       },
       "keywords": [
@@ -287,8 +266,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST06-011",
@@ -309,12 +287,7 @@
       },
       "pilot": {
         "names": [
-          "Gaia (GG)"
-        ],
-        "ap": 1,
-        "hp": 0,
-        "traits": [
-          "Clan"
+          "Gaia (GQ)"
         ]
       },
       "keywords": [
@@ -322,8 +295,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST06-012",
@@ -334,9 +306,7 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -347,8 +317,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST06-013",
@@ -369,20 +338,14 @@
       },
       "pilot": {
         "names": [
-          "Ortega (GG)"
-        ],
-        "ap": 1,
-        "hp": 0,
-        "traits": [
-          "Clan"
+          "Ortega (GQ)"
         ]
       },
       "keywords": [
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST06-014",
@@ -410,8 +373,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST06-015",
@@ -439,8 +401,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     }
   ]
 }

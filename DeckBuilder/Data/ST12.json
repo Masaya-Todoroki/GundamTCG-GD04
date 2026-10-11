@@ -26,8 +26,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST12-002",
@@ -55,8 +54,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST12-003",
@@ -82,8 +80,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST12-004",
@@ -110,8 +107,7 @@
         "Breach 3"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST12-005",
@@ -139,8 +135,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST12-006",
@@ -171,8 +166,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST12-007",
@@ -199,8 +193,7 @@
         "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST12-008",
@@ -224,8 +217,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST12-009",
@@ -251,8 +243,7 @@
         "Destroyed"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST12-010",
@@ -274,8 +265,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST12-011",
@@ -298,11 +288,6 @@
         "names": [
           "Milliardo Peacecraft",
           "Zechs Merquise"
-        ],
-        "ap": 3,
-        "hp": 1,
-        "traits": [
-          "White Fang"
         ]
       },
       "keywords": [
@@ -312,8 +297,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST12-012",
@@ -337,12 +321,6 @@
         "names": [
           "Ple-Twelve",
           "Marida Cruz"
-        ],
-        "ap": 1,
-        "hp": 2,
-        "traits": [
-          "Earth Federation",
-          "Cyber-Newtype"
         ]
       },
       "keywords": [
@@ -350,8 +328,7 @@
         "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST12-013",
@@ -362,9 +339,7 @@
       "cost": 2,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -376,8 +351,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST12-014",
@@ -399,19 +373,13 @@
       "pilot": {
         "names": [
           "M'Quve"
-        ],
-        "ap": 1,
-        "hp": 0,
-        "traits": [
-          "Zeon"
         ]
       },
       "keywords": [
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST12-015",
@@ -422,9 +390,7 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -435,8 +401,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST12-016",
@@ -464,8 +429,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     }
   ]
 }

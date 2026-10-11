@@ -27,8 +27,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST09-002",
@@ -55,8 +54,7 @@
         "Destroyed"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST09-003",
@@ -84,8 +82,7 @@
         "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST09-004",
@@ -112,8 +109,7 @@
         "Suppression"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST09-005",
@@ -136,8 +132,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST09-006",
@@ -165,8 +160,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST09-007",
@@ -193,8 +187,7 @@
         "Blocker"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST09-008",
@@ -218,13 +211,6 @@
       "pilot": {
         "names": [
           "Shinn Asuka"
-        ],
-        "ap": 3,
-        "hp": 0,
-        "traits": [
-          "ZAFT",
-          "Minerva Squad",
-          "Coordinator"
         ]
       },
       "keywords": [
@@ -232,8 +218,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST09-009",
@@ -244,9 +229,7 @@
       "cost": 3,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -258,8 +241,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST09-010",
@@ -286,8 +268,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     }
   ]
 }

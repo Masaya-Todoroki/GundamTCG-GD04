@@ -26,8 +26,7 @@
         "During Pair"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST03-002",
@@ -55,8 +54,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST03-003",
@@ -80,8 +78,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST03-004",
@@ -107,8 +104,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST03-005",
@@ -130,8 +126,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST03-006",
@@ -157,8 +152,7 @@
         "Destroyed"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST03-007",
@@ -180,8 +174,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST03-008",
@@ -205,8 +198,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST03-009",
@@ -232,8 +224,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST03-010",
@@ -256,12 +247,6 @@
       "pilot": {
         "names": [
           "Full Frontal"
-        ],
-        "ap": 2,
-        "hp": 2,
-        "traits": [
-          "Neo Zeon",
-          "Cyber-Newtype"
         ]
       },
       "keywords": [
@@ -269,8 +254,7 @@
         "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST03-011",
@@ -293,12 +277,6 @@
       "pilot": {
         "names": [
           "Char Aznable"
-        ],
-        "ap": 1,
-        "hp": 1,
-        "traits": [
-          "Zeon",
-          "Newtype"
         ]
       },
       "keywords": [
@@ -307,8 +285,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST03-012",
@@ -327,14 +304,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Angelo Sauper"
+        ]
+      },
       "keywords": [
         "Main",
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": true,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST03-013",
@@ -345,9 +325,7 @@
       "cost": 2,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -360,8 +338,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST03-014",
@@ -380,13 +357,16 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Ramba Ral"
+        ]
+      },
       "keywords": [
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": true,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST03-015",
@@ -412,8 +392,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST03-016",
@@ -439,8 +418,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     }
   ]
 }

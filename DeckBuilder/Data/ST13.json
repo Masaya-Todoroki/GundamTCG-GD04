@@ -27,8 +27,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST13-002",
@@ -54,8 +53,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST13-003",
@@ -79,8 +77,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST13-004",
@@ -106,8 +103,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST13-005",
@@ -131,8 +127,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST13-006",
@@ -162,8 +157,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST13-007",
@@ -191,8 +185,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST13-008",
@@ -215,8 +208,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST13-009",
@@ -242,8 +234,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST13-010",
@@ -272,8 +263,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST13-011",
@@ -296,12 +286,6 @@
       "pilot": {
         "names": [
           "Haman Karn"
-        ],
-        "ap": 2,
-        "hp": 2,
-        "traits": [
-          "Neo Zeon",
-          "Newtype"
         ]
       },
       "keywords": [
@@ -309,8 +293,7 @@
         "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST13-012",
@@ -332,11 +315,6 @@
       "pilot": {
         "names": [
           "Suletta Mercury"
-        ],
-        "ap": 2,
-        "hp": 1,
-        "traits": [
-          "Academy"
         ]
       },
       "keywords": [
@@ -344,8 +322,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST13-013",
@@ -365,13 +342,16 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Carris Nautilus"
+        ]
+      },
       "keywords": [
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": true,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST13-014",
@@ -382,9 +362,7 @@
       "cost": 2,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -395,8 +373,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST13-015",
@@ -407,9 +384,7 @@
       "cost": 2,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -422,8 +397,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST13-016",
@@ -449,8 +423,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     }
   ]
 }

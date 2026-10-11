@@ -27,8 +27,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-002",
@@ -57,8 +56,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-003",
@@ -84,8 +82,7 @@
         "Repair 2"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-004",
@@ -112,8 +109,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-005",
@@ -139,8 +135,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-006",
@@ -167,8 +162,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-007",
@@ -192,8 +186,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-008",
@@ -219,8 +212,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-009",
@@ -246,8 +238,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-010",
@@ -271,8 +262,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-011",
@@ -296,8 +286,7 @@
         "Blocker"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-012",
@@ -321,8 +310,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-013",
@@ -346,8 +334,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-014",
@@ -369,8 +356,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-015",
@@ -394,8 +380,7 @@
         "Destroyed"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-016",
@@ -419,8 +404,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-017",
@@ -444,8 +428,7 @@
         "Destroyed"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-018",
@@ -469,8 +452,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-019",
@@ -497,8 +479,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-020",
@@ -527,8 +508,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-021",
@@ -555,8 +535,7 @@
         "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-022",
@@ -583,8 +562,7 @@
         "During Pair"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-023",
@@ -610,8 +588,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-024",
@@ -639,8 +616,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-025",
@@ -667,8 +643,7 @@
         "During Pair"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-026",
@@ -692,8 +667,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-027",
@@ -720,8 +694,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-028",
@@ -748,8 +721,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-029",
@@ -776,8 +748,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-030",
@@ -801,8 +772,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-031",
@@ -824,8 +794,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-032",
@@ -847,8 +816,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-033",
@@ -874,8 +842,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-034",
@@ -901,8 +868,7 @@
         "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-035",
@@ -928,8 +894,7 @@
         "Breach 1"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-036",
@@ -951,8 +916,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-037",
@@ -978,8 +942,7 @@
         "Blocker"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-038",
@@ -1003,8 +966,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-039",
@@ -1028,8 +990,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-040",
@@ -1056,8 +1017,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-041",
@@ -1084,8 +1044,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-042",
@@ -1112,8 +1071,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-043",
@@ -1140,8 +1098,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-044",
@@ -1168,8 +1125,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-045",
@@ -1197,8 +1153,7 @@
         "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-046",
@@ -1225,8 +1180,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-047",
@@ -1253,8 +1207,7 @@
         "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-048",
@@ -1280,8 +1233,7 @@
         "Blocker"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-049",
@@ -1306,8 +1258,7 @@
         "Suppression"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-050",
@@ -1331,8 +1282,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-051",
@@ -1354,8 +1304,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-052",
@@ -1381,8 +1330,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-053",
@@ -1404,8 +1352,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-054",
@@ -1429,8 +1376,7 @@
         "Blocker"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-055",
@@ -1452,8 +1398,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-056",
@@ -1475,8 +1420,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-057",
@@ -1500,8 +1444,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-058",
@@ -1525,8 +1468,7 @@
         "Blocker"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-059",
@@ -1554,8 +1496,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-060",
@@ -1581,8 +1522,7 @@
         "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-061",
@@ -1605,12 +1545,6 @@
       "pilot": {
         "names": [
           "Ellis Claude"
-        ],
-        "ap": 1,
-        "hp": 1,
-        "traits": [
-          "G Generation",
-          "Support"
         ]
       },
       "keywords": [
@@ -1618,8 +1552,7 @@
         "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-062",
@@ -1642,12 +1575,6 @@
       "pilot": {
         "names": [
           "Jona Basta"
-        ],
-        "ap": 1,
-        "hp": 2,
-        "traits": [
-          "G Generation",
-          "Durability"
         ]
       },
       "keywords": [
@@ -1656,8 +1583,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-063",
@@ -1680,12 +1606,6 @@
       "pilot": {
         "names": [
           "Io Fleming"
-        ],
-        "ap": 2,
-        "hp": 1,
-        "traits": [
-          "G Generation",
-          "Durability"
         ]
       },
       "keywords": [
@@ -1693,8 +1613,7 @@
         "Burst"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-064",
@@ -1717,12 +1636,6 @@
       "pilot": {
         "names": [
           "Rondo Gina Sahaku"
-        ],
-        "ap": 2,
-        "hp": 1,
-        "traits": [
-          "G Generation",
-          "Attack"
         ]
       },
       "keywords": [
@@ -1731,8 +1644,7 @@
         "Burst"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-065",
@@ -1755,12 +1667,6 @@
       "pilot": {
         "names": [
           "Meir Siva"
-        ],
-        "ap": 1,
-        "hp": 2,
-        "traits": [
-          "G Generation",
-          "Attack"
         ]
       },
       "keywords": [
@@ -1769,8 +1675,7 @@
         "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-066",
@@ -1793,12 +1698,6 @@
       "pilot": {
         "names": [
           "Reiji"
-        ],
-        "ap": 2,
-        "hp": 1,
-        "traits": [
-          "G Generation",
-          "Support"
         ]
       },
       "keywords": [
@@ -1807,8 +1706,7 @@
         "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-067",
@@ -1831,12 +1729,6 @@
       "pilot": {
         "names": [
           "Asuna Elmarit"
-        ],
-        "ap": 1,
-        "hp": 2,
-        "traits": [
-          "G Generation",
-          "Support"
         ]
       },
       "keywords": [
@@ -1844,8 +1736,7 @@
         "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-068",
@@ -1868,12 +1759,6 @@
       "pilot": {
         "names": [
           "Chall Acustica"
-        ],
-        "ap": 1,
-        "hp": 2,
-        "traits": [
-          "G Generation",
-          "Attack"
         ]
       },
       "keywords": [
@@ -1882,8 +1767,7 @@
         "Destroyed"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-069",
@@ -1906,12 +1790,6 @@
       "pilot": {
         "names": [
           "Beside Pain"
-        ],
-        "ap": 1,
-        "hp": 1,
-        "traits": [
-          "G Generation",
-          "Durability"
         ]
       },
       "keywords": [
@@ -1920,8 +1798,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-070",
@@ -1944,12 +1821,6 @@
       "pilot": {
         "names": [
           "Daryl Lorenz"
-        ],
-        "ap": 2,
-        "hp": 1,
-        "traits": [
-          "G Generation",
-          "Support"
         ]
       },
       "keywords": [
@@ -1960,8 +1831,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-071",
@@ -1984,12 +1854,6 @@
       "pilot": {
         "names": [
           "Ittou Tsurugi"
-        ],
-        "ap": 2,
-        "hp": 1,
-        "traits": [
-          "G Generation",
-          "Attack"
         ]
       },
       "keywords": [
@@ -1997,8 +1861,7 @@
         "During Link"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-072",
@@ -2021,12 +1884,6 @@
       "pilot": {
         "names": [
           "Yuu Kajima"
-        ],
-        "ap": 1,
-        "hp": 2,
-        "traits": [
-          "G Generation",
-          "Attack"
         ]
       },
       "keywords": [
@@ -2035,8 +1892,7 @@
         "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-073",
@@ -2047,9 +1903,7 @@
       "cost": 2,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -2061,8 +1915,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-074",
@@ -2073,9 +1926,7 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -2088,8 +1939,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-075",
@@ -2100,9 +1950,7 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -2114,8 +1962,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-076",
@@ -2135,14 +1982,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Lowe Guele"
+        ]
+      },
       "keywords": [
         "Main",
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": true,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-077",
@@ -2153,9 +2003,7 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -2167,8 +2015,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-078",
@@ -2179,9 +2026,7 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -2192,8 +2037,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-079",
@@ -2204,9 +2048,7 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -2217,8 +2059,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-080",
@@ -2238,14 +2079,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Jean Luc Duvall"
+        ]
+      },
       "keywords": [
         "Main",
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": true,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-081",
@@ -2256,9 +2100,7 @@
       "cost": 2,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -2271,8 +2113,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-082",
@@ -2283,9 +2124,7 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -2297,8 +2136,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-083",
@@ -2309,9 +2147,7 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -2322,8 +2158,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-084",
@@ -2343,15 +2178,18 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Demeziere Sonnen"
+        ]
+      },
       "keywords": [
         "Blocker",
         "Main",
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": true,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-085",
@@ -2377,8 +2215,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-086",
@@ -2406,8 +2243,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-087",
@@ -2434,8 +2270,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-088",
@@ -2461,8 +2296,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-089",
@@ -2488,8 +2322,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "EB01-090",
@@ -2515,8 +2348,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     }
   ]
 }

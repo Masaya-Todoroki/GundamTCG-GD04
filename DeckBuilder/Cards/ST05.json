@@ -27,8 +27,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST05-002",
@@ -53,8 +52,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST05-003",
@@ -79,8 +77,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST05-004",
@@ -102,8 +99,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST05-005",
@@ -130,8 +126,7 @@
         "Destroyed"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST05-006",
@@ -153,8 +148,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST05-007",
@@ -181,8 +175,7 @@
         "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST05-008",
@@ -208,8 +201,7 @@
         "Blocker"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST05-009",
@@ -231,8 +223,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST05-010",
@@ -255,12 +246,6 @@
       "pilot": {
         "names": [
           "Mikazuki Augus"
-        ],
-        "ap": 2,
-        "hp": 1,
-        "traits": [
-          "Tekkadan",
-          "Alaya-Vijnana"
         ]
       },
       "keywords": [
@@ -268,8 +253,7 @@
         "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST05-011",
@@ -292,12 +276,6 @@
       "pilot": {
         "names": [
           "Akihiro Altland"
-        ],
-        "ap": 1,
-        "hp": 1,
-        "traits": [
-          "Tekkadan",
-          "Alaya-Vijnana"
         ]
       },
       "keywords": [
@@ -305,8 +283,7 @@
         "During Link"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST05-012",
@@ -328,11 +305,6 @@
       "pilot": {
         "names": [
           "McGillis Fareed"
-        ],
-        "ap": 2,
-        "hp": 1,
-        "traits": [
-          "Gjallarhorn"
         ]
       },
       "keywords": [
@@ -340,8 +312,7 @@
         "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST05-013",
@@ -352,9 +323,7 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -366,8 +335,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST05-014",
@@ -378,9 +346,7 @@
       "cost": 2,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -392,8 +358,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST05-015",
@@ -421,8 +386,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     }
   ]
 }

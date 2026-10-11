@@ -26,8 +26,7 @@
         "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST07-002",
@@ -52,8 +51,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST07-003",
@@ -78,8 +76,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST07-004",
@@ -106,8 +103,7 @@
         "Blocker"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST07-005",
@@ -134,8 +130,7 @@
         "During Link"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST07-006",
@@ -160,8 +155,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST07-007",
@@ -187,8 +181,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST07-008",
@@ -214,8 +207,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST07-009",
@@ -237,11 +229,6 @@
       "pilot": {
         "names": [
           "Setsuna F. Seiei"
-        ],
-        "ap": 2,
-        "hp": 1,
-        "traits": [
-          "CB"
         ]
       },
       "keywords": [
@@ -249,8 +236,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST07-010",
@@ -273,12 +259,6 @@
       "pilot": {
         "names": [
           "Tieria Erde"
-        ],
-        "ap": 1,
-        "hp": 1,
-        "traits": [
-          "CB",
-          "Innovade"
         ]
       },
       "keywords": [
@@ -286,8 +266,7 @@
         "Destroyed"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST07-011",
@@ -309,11 +288,6 @@
       "pilot": {
         "names": [
           "Lockon Stratos (Neil)"
-        ],
-        "ap": 1,
-        "hp": 2,
-        "traits": [
-          "CB"
         ]
       },
       "keywords": [
@@ -321,8 +295,7 @@
         "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST07-012",
@@ -345,20 +318,13 @@
       "pilot": {
         "names": [
           "Allelujah Haptism"
-        ],
-        "ap": 1,
-        "hp": 1,
-        "traits": [
-          "CB",
-          "Super Soldier"
         ]
       },
       "keywords": [
         "Burst"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST07-013",
@@ -369,9 +335,7 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -383,8 +347,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST07-014",
@@ -395,9 +358,7 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -408,8 +369,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST07-015",
@@ -435,8 +395,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     }
   ]
 }

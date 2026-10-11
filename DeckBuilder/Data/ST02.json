@@ -25,8 +25,7 @@
         "Breach 5"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST02-002",
@@ -52,8 +51,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST02-003",
@@ -79,8 +77,7 @@
         "During Pair"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST02-004",
@@ -104,8 +101,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST02-005",
@@ -127,8 +123,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST02-006",
@@ -156,8 +151,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST02-007",
@@ -181,8 +175,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST02-008",
@@ -206,8 +199,7 @@
         "Blocker"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST02-009",
@@ -231,8 +223,7 @@
         "Blocker"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST02-010",
@@ -254,11 +245,6 @@
       "pilot": {
         "names": [
           "Heero Yuy"
-        ],
-        "ap": 2,
-        "hp": 1,
-        "traits": [
-          "Operation Meteor"
         ]
       },
       "keywords": [
@@ -266,8 +252,7 @@
         "During Link"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST02-011",
@@ -289,11 +274,6 @@
       "pilot": {
         "names": [
           "Zechs Merquise"
-        ],
-        "ap": 2,
-        "hp": 1,
-        "traits": [
-          "OZ"
         ]
       },
       "keywords": [
@@ -301,8 +281,7 @@
         "During Link"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST02-012",
@@ -321,14 +300,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Trowa Barton"
+        ]
+      },
       "keywords": [
         "Breach 3",
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": true,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST02-013",
@@ -347,13 +329,16 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Quatre Raberba Winner"
+        ]
+      },
       "keywords": [
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": true,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST02-014",
@@ -364,9 +349,7 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -379,8 +362,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST02-015",
@@ -406,8 +388,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "ST02-016",
@@ -433,8 +414,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     }
   ]
 }

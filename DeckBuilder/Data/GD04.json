@@ -27,8 +27,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-002",
@@ -54,8 +53,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-003",
@@ -82,8 +80,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-004",
@@ -110,8 +107,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-005",
@@ -133,8 +129,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-006",
@@ -164,8 +159,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-007",
@@ -193,8 +187,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-008",
@@ -222,8 +215,7 @@
         "During Link"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-009",
@@ -251,8 +243,7 @@
         "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-010",
@@ -276,8 +267,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-011",
@@ -302,8 +292,7 @@
         "Destroyed"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-012",
@@ -329,8 +318,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-013",
@@ -357,8 +345,7 @@
         "Blocker"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-014",
@@ -381,8 +368,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-015",
@@ -409,8 +395,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-016",
@@ -434,8 +419,7 @@
         "Blocker"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-017",
@@ -462,8 +446,7 @@
         "Destroyed"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-018",
@@ -490,8 +473,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-019",
@@ -519,8 +501,7 @@
         "Destroyed"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-020",
@@ -547,8 +528,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-021",
@@ -575,8 +555,7 @@
         "Breach 3"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-022",
@@ -603,8 +582,7 @@
         "During Link"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-023",
@@ -632,8 +610,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-024",
@@ -659,8 +636,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-025",
@@ -685,8 +661,7 @@
         "Destroyed"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-026",
@@ -712,8 +687,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-027",
@@ -737,8 +711,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-028",
@@ -763,8 +736,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-029",
@@ -791,8 +763,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-030",
@@ -818,8 +789,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-031",
@@ -841,8 +811,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-032",
@@ -866,8 +835,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-033",
@@ -893,8 +861,7 @@
         "During Link"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-034",
@@ -923,8 +890,7 @@
         "During Link"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-035",
@@ -950,8 +916,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-036",
@@ -978,8 +943,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-037",
@@ -1008,8 +972,7 @@
         "Breach 3"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-038",
@@ -1036,8 +999,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-039",
@@ -1064,8 +1026,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-040",
@@ -1089,8 +1050,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-041",
@@ -1117,8 +1077,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-042",
@@ -1145,8 +1104,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-043",
@@ -1170,8 +1128,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-044",
@@ -1196,8 +1153,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-045",
@@ -1225,8 +1181,7 @@
         "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-046",
@@ -1253,8 +1208,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-047",
@@ -1279,8 +1233,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-048",
@@ -1304,8 +1257,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-049",
@@ -1333,8 +1285,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-050",
@@ -1363,8 +1314,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-051",
@@ -1390,8 +1340,7 @@
         "During Pair"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-052",
@@ -1418,8 +1367,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-053",
@@ -1447,8 +1395,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-054",
@@ -1473,8 +1420,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-055",
@@ -1499,8 +1445,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-056",
@@ -1528,8 +1473,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-057",
@@ -1556,8 +1500,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-058",
@@ -1582,8 +1525,7 @@
         "Destroyed"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-059",
@@ -1607,8 +1549,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-060",
@@ -1634,8 +1575,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-061",
@@ -1661,8 +1601,7 @@
         "Blocker"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-062",
@@ -1687,8 +1626,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-063",
@@ -1715,8 +1653,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-064",
@@ -1739,8 +1676,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-065",
@@ -1769,8 +1705,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-066",
@@ -1798,8 +1733,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-067",
@@ -1834,8 +1768,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-068",
@@ -1861,8 +1794,7 @@
         "Blocker"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-069",
@@ -1889,8 +1821,7 @@
         "During Link"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-070",
@@ -1916,8 +1847,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-071",
@@ -1945,8 +1875,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-072",
@@ -1972,8 +1901,7 @@
         "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-073",
@@ -2002,8 +1930,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-074",
@@ -2029,8 +1956,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-075",
@@ -2054,8 +1980,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-076",
@@ -2077,8 +2002,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-077",
@@ -2102,8 +2026,7 @@
         "Blocker"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-078",
@@ -2125,8 +2048,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-079",
@@ -2150,8 +2072,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-080",
@@ -2177,8 +2098,7 @@
         "Destroyed"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-081",
@@ -2201,12 +2121,6 @@
       "pilot": {
         "names": [
           "Üso Ewin"
-        ],
-        "ap": 2,
-        "hp": 1,
-        "traits": [
-          "League Militaire",
-          "Newtype"
         ]
       },
       "keywords": [
@@ -2214,8 +2128,7 @@
         "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-082",
@@ -2238,12 +2151,6 @@
       "pilot": {
         "names": [
           "Rosamia Badam"
-        ],
-        "ap": 2,
-        "hp": 0,
-        "traits": [
-          "Titans",
-          "Cyber-Newtype"
         ]
       },
       "keywords": [
@@ -2251,8 +2158,7 @@
         "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-083",
@@ -2274,19 +2180,13 @@
       "pilot": {
         "names": [
           "Marbet Fingerhat"
-        ],
-        "ap": 1,
-        "hp": 1,
-        "traits": [
-          "League Militaire"
         ]
       },
       "keywords": [
         "Burst"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-084",
@@ -2309,12 +2209,6 @@
       "pilot": {
         "names": [
           "Sleggar Law"
-        ],
-        "ap": 1,
-        "hp": 1,
-        "traits": [
-          "Earth Federation",
-          "White Base Team"
         ]
       },
       "keywords": [
@@ -2322,8 +2216,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-085",
@@ -2345,11 +2238,6 @@
       "pilot": {
         "names": [
           "Suletta Mercury"
-        ],
-        "ap": 2,
-        "hp": 2,
-        "traits": [
-          "Academy"
         ]
       },
       "keywords": [
@@ -2358,8 +2246,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-086",
@@ -2381,11 +2268,6 @@
       "pilot": {
         "names": [
           "Garma Zabi"
-        ],
-        "ap": 1,
-        "hp": 0,
-        "traits": [
-          "Zeon"
         ]
       },
       "keywords": [
@@ -2394,8 +2276,7 @@
         "Destroyed"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-087",
@@ -2417,11 +2298,6 @@
       "pilot": {
         "names": [
           "Elan Ceres (Enhanced Person Number 5)"
-        ],
-        "ap": 1,
-        "hp": 2,
-        "traits": [
-          "Academy"
         ]
       },
       "keywords": [
@@ -2430,8 +2306,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-088",
@@ -2453,19 +2328,13 @@
       "pilot": {
         "names": [
           "Tokwan"
-        ],
-        "ap": 2,
-        "hp": 0,
-        "traits": [
-          "Zeon"
         ]
       },
       "keywords": [
         "Burst"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-089",
@@ -2488,12 +2357,6 @@
       "pilot": {
         "names": [
           "Nena Trinity"
-        ],
-        "ap": 0,
-        "hp": 3,
-        "traits": [
-          "CB",
-          "Trinity"
         ]
       },
       "keywords": [
@@ -2503,8 +2366,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-090",
@@ -2527,12 +2389,6 @@
       "pilot": {
         "names": [
           "Hallelujah Haptism"
-        ],
-        "ap": 2,
-        "hp": 1,
-        "traits": [
-          "CB",
-          "Super Soldier"
         ]
       },
       "keywords": [
@@ -2541,8 +2397,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-091",
@@ -2565,12 +2420,6 @@
       "pilot": {
         "names": [
           "Deux Murasame"
-        ],
-        "ap": 2,
-        "hp": 1,
-        "traits": [
-          "Earth Federation",
-          "Cyber-Newtype"
         ]
       },
       "keywords": [
@@ -2578,8 +2427,7 @@
         "Destroyed"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-092",
@@ -2602,12 +2450,6 @@
       "pilot": {
         "names": [
           "Michael Trinity"
-        ],
-        "ap": 2,
-        "hp": 1,
-        "traits": [
-          "CB",
-          "Trinity"
         ]
       },
       "keywords": [
@@ -2615,8 +2457,7 @@
         "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-093",
@@ -2639,12 +2480,6 @@
       "pilot": {
         "names": [
           "Rey Za Burrel"
-        ],
-        "ap": 1,
-        "hp": 2,
-        "traits": [
-          "ZAFT",
-          "Minerva Squad"
         ]
       },
       "keywords": [
@@ -2652,8 +2487,7 @@
         "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-094",
@@ -2676,12 +2510,6 @@
       "pilot": {
         "names": [
           "Pala Sys"
-        ],
-        "ap": 1,
-        "hp": 1,
-        "traits": [
-          "Satyricon",
-          "Vulture"
         ]
       },
       "keywords": [
@@ -2690,8 +2518,7 @@
         "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-095",
@@ -2715,13 +2542,6 @@
       "pilot": {
         "names": [
           "Lunamaria Hawke"
-        ],
-        "ap": 1,
-        "hp": 1,
-        "traits": [
-          "ZAFT",
-          "Minerva Squad",
-          "Coordinator"
         ]
       },
       "keywords": [
@@ -2729,8 +2549,7 @@
         "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-096",
@@ -2752,11 +2571,6 @@
       "pilot": {
         "names": [
           "Ennil El"
-        ],
-        "ap": 1,
-        "hp": 2,
-        "traits": [
-          "Vulture"
         ]
       },
       "keywords": [
@@ -2764,8 +2578,7 @@
         "During Link"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-097",
@@ -2788,12 +2601,6 @@
       "pilot": {
         "names": [
           "Loran Cehack"
-        ],
-        "ap": 2,
-        "hp": 1,
-        "traits": [
-          "Militia",
-          "Moonrace"
         ]
       },
       "keywords": [
@@ -2801,8 +2608,7 @@
         "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-098",
@@ -2825,12 +2631,6 @@
       "pilot": {
         "names": [
           "Riddhe Marcenas"
-        ],
-        "ap": 1,
-        "hp": 2,
-        "traits": [
-          "Earth Federation",
-          "Newtype"
         ]
       },
       "keywords": [
@@ -2838,8 +2638,7 @@
         "During Link"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-099",
@@ -2862,12 +2661,6 @@
       "pilot": {
         "names": [
           "Ali al-Saachez"
-        ],
-        "ap": 2,
-        "hp": 1,
-        "traits": [
-          "Superpower Bloc",
-          "UN"
         ]
       },
       "keywords": [
@@ -2876,8 +2669,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-100",
@@ -2899,11 +2691,6 @@
       "pilot": {
         "names": [
           "Sochie Heim"
-        ],
-        "ap": 0,
-        "hp": 2,
-        "traits": [
-          "Militia"
         ]
       },
       "keywords": [
@@ -2911,8 +2698,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-101",
@@ -2923,9 +2709,7 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -2938,8 +2722,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-102",
@@ -2950,9 +2733,7 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -2964,8 +2745,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-103",
@@ -2976,9 +2756,7 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -2990,8 +2768,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-104",
@@ -3011,14 +2788,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Junko Jenko"
+        ]
+      },
       "keywords": [
         "Main",
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": true,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-105",
@@ -3029,9 +2809,7 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -3042,8 +2820,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-106",
@@ -3063,13 +2840,16 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Norea Du Noc"
+        ]
+      },
       "keywords": [
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": true,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-107",
@@ -3080,9 +2860,7 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -3094,8 +2872,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-108",
@@ -3115,14 +2892,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Sophie Pulone"
+        ]
+      },
       "keywords": [
         "Main",
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": true,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-109",
@@ -3133,9 +2913,7 @@
       "cost": 3,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -3147,8 +2925,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-110",
@@ -3159,9 +2936,7 @@
       "cost": 3,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -3173,8 +2948,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-111",
@@ -3194,14 +2968,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Johann Trinity"
+        ]
+      },
       "keywords": [
         "Main",
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": true,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-112",
@@ -3221,13 +2998,16 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Gates Capa"
+        ]
+      },
       "keywords": [
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": true,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-113",
@@ -3238,9 +3018,7 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -3252,8 +3030,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-114",
@@ -3264,9 +3041,7 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -3279,8 +3054,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-115",
@@ -3291,9 +3065,7 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -3305,8 +3077,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-116",
@@ -3327,13 +3098,16 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Heine Westenfluss"
+        ]
+      },
       "keywords": [
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": true,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-117",
@@ -3344,9 +3118,7 @@
       "cost": 2,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -3358,8 +3130,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-118",
@@ -3378,14 +3149,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Alejandro Corner"
+        ]
+      },
       "keywords": [
         "Main",
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": true,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-119",
@@ -3404,14 +3178,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Gael Chan"
+        ]
+      },
       "keywords": [
         "Main",
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": true,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-120",
@@ -3430,14 +3207,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Miashei Kune"
+        ]
+      },
       "keywords": [
         "Main",
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": true,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-121",
@@ -3463,8 +3243,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-122",
@@ -3493,8 +3272,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-123",
@@ -3520,8 +3298,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-124",
@@ -3547,8 +3324,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-125",
@@ -3577,8 +3353,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-126",
@@ -3604,8 +3379,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-127",
@@ -3631,8 +3405,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-128",
@@ -3659,8 +3432,7 @@
         "Destroyed"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-129",
@@ -3687,8 +3459,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD04-130",
@@ -3717,8 +3488,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     }
   ]
 }

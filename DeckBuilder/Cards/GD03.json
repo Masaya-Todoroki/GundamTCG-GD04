@@ -27,8 +27,7 @@
         "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-002",
@@ -57,8 +56,7 @@
         "During Pair"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-003",
@@ -86,8 +84,7 @@
         "Repair 1"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-004",
@@ -113,8 +110,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-005",
@@ -141,8 +137,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-006",
@@ -168,8 +163,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-007",
@@ -195,8 +189,7 @@
         "Destroyed"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-008",
@@ -224,8 +217,7 @@
         "During Pair"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-009",
@@ -252,8 +244,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-010",
@@ -279,8 +270,7 @@
         "Repair 3"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-011",
@@ -302,8 +292,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-012",
@@ -330,8 +319,7 @@
         "Repair 1"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-013",
@@ -356,8 +344,7 @@
         "Repair 1"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-014",
@@ -379,8 +366,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-015",
@@ -409,8 +395,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-016",
@@ -434,8 +419,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-017",
@@ -463,8 +447,7 @@
         "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-018",
@@ -492,8 +475,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-019",
@@ -521,8 +503,7 @@
         "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-020",
@@ -549,8 +530,7 @@
         "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-021",
@@ -576,8 +556,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-022",
@@ -605,8 +584,7 @@
         "During Link"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-023",
@@ -632,8 +610,7 @@
         "High-Maneuver"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-024",
@@ -660,8 +637,7 @@
         "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-025",
@@ -685,8 +661,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-026",
@@ -713,8 +688,7 @@
         "Breach 3"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-027",
@@ -739,8 +713,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-028",
@@ -766,8 +739,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-029",
@@ -793,8 +765,7 @@
         "Blocker"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-030",
@@ -820,8 +791,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-031",
@@ -846,8 +816,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-032",
@@ -869,8 +838,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-033",
@@ -897,8 +865,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-034",
@@ -927,8 +894,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-035",
@@ -957,8 +923,7 @@
         "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-036",
@@ -984,8 +949,7 @@
         "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-037",
@@ -1013,8 +977,7 @@
         "Destroyed"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-038",
@@ -1042,8 +1005,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-039",
@@ -1069,8 +1031,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-040",
@@ -1098,8 +1059,7 @@
         "During Link"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-041",
@@ -1125,8 +1085,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-042",
@@ -1150,8 +1109,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-043",
@@ -1177,8 +1135,7 @@
         "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-044",
@@ -1202,8 +1159,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-045",
@@ -1225,8 +1181,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-046",
@@ -1248,8 +1203,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-047",
@@ -1273,8 +1227,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-048",
@@ -1300,8 +1253,7 @@
         "Burst"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-049",
@@ -1328,8 +1280,7 @@
         "Suppression"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-050",
@@ -1357,8 +1308,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-051",
@@ -1385,8 +1335,7 @@
         "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-052",
@@ -1415,8 +1364,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-053",
@@ -1445,8 +1393,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-054",
@@ -1473,8 +1420,7 @@
         "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-055",
@@ -1501,8 +1447,7 @@
         "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-056",
@@ -1529,8 +1474,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-057",
@@ -1557,8 +1501,7 @@
         "Blocker"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-058",
@@ -1583,8 +1526,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-059",
@@ -1610,8 +1552,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-060",
@@ -1635,8 +1576,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-061",
@@ -1663,8 +1603,7 @@
         "Repair 3"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-062",
@@ -1689,8 +1628,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-063",
@@ -1713,8 +1651,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-064",
@@ -1739,8 +1676,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-065",
@@ -1764,8 +1700,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-066",
@@ -1790,8 +1725,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-067",
@@ -1819,8 +1753,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-068",
@@ -1847,8 +1780,7 @@
         "Blocker"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-069",
@@ -1875,8 +1807,7 @@
         "During Link"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-070",
@@ -1900,8 +1831,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-071",
@@ -1927,8 +1857,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-072",
@@ -1955,8 +1884,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-073",
@@ -1986,8 +1914,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-074",
@@ -2013,8 +1940,7 @@
         "During Pair"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-075",
@@ -2041,8 +1967,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-076",
@@ -2068,8 +1993,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-077",
@@ -2095,8 +2019,7 @@
         "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-078",
@@ -2123,8 +2046,7 @@
         "Destroyed"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-079",
@@ -2148,8 +2070,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-080",
@@ -2176,8 +2097,7 @@
         "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-081",
@@ -2201,8 +2121,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-082",
@@ -2224,8 +2143,7 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-083",
@@ -2249,8 +2167,7 @@
         "Blocker"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-084",
@@ -2274,13 +2191,6 @@
       "pilot": {
         "names": [
           "Paptimus Scirocco"
-        ],
-        "ap": 2,
-        "hp": 2,
-        "traits": [
-          "Titans",
-          "Jupitris",
-          "Newtype"
         ]
       },
       "keywords": [
@@ -2289,8 +2199,7 @@
         "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-085",
@@ -2312,19 +2221,13 @@
       "pilot": {
         "names": [
           "Christina Mackenzie"
-        ],
-        "ap": 1,
-        "hp": 1,
-        "traits": [
-          "Earth Federation"
         ]
       },
       "keywords": [
         "Burst"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-086",
@@ -2346,11 +2249,6 @@
       "pilot": {
         "names": [
           "Yazan Gable"
-        ],
-        "ap": 1,
-        "hp": 2,
-        "traits": [
-          "Titans"
         ]
       },
       "keywords": [
@@ -2358,8 +2256,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-087",
@@ -2383,13 +2280,6 @@
       "pilot": {
         "names": [
           "Sarah Zabiarov"
-        ],
-        "ap": 1,
-        "hp": 1,
-        "traits": [
-          "Titans",
-          "Jupitris",
-          "Newtype"
         ]
       },
       "keywords": [
@@ -2397,8 +2287,7 @@
         "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-088",
@@ -2421,12 +2310,6 @@
       "pilot": {
         "names": [
           "Asemu Asuno"
-        ],
-        "ap": 2,
-        "hp": 1,
-        "traits": [
-          "Earth Federation",
-          "Asuno Family"
         ]
       },
       "keywords": [
@@ -2435,8 +2318,7 @@
         "During Link"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-089",
@@ -2459,20 +2341,13 @@
       "pilot": {
         "names": [
           "Bernard Wiseman"
-        ],
-        "ap": 0,
-        "hp": 1,
-        "traits": [
-          "Zeon",
-          "Cyclops Team"
         ]
       },
       "keywords": [
         "Burst"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-090",
@@ -2495,12 +2370,6 @@
       "pilot": {
         "names": [
           "Mikhail Kaminsky"
-        ],
-        "ap": 2,
-        "hp": 1,
-        "traits": [
-          "Zeon",
-          "Cyclops Team"
         ]
       },
       "keywords": [
@@ -2509,8 +2378,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-091",
@@ -2532,11 +2400,6 @@
       "pilot": {
         "names": [
           "Rau Le Creuset"
-        ],
-        "ap": 2,
-        "hp": 1,
-        "traits": [
-          "ZAFT"
         ]
       },
       "keywords": [
@@ -2544,8 +2407,7 @@
         "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-092",
@@ -2568,12 +2430,6 @@
       "pilot": {
         "names": [
           "Nyaan"
-        ],
-        "ap": 1,
-        "hp": 2,
-        "traits": [
-          "Zeon",
-          "Newtype"
         ]
       },
       "keywords": [
@@ -2581,8 +2437,7 @@
         "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-093",
@@ -2605,20 +2460,13 @@
       "pilot": {
         "names": [
           "Carris Nautilus"
-        ],
-        "ap": 2,
-        "hp": 1,
-        "traits": [
-          "SRA",
-          "Newtype"
         ]
       },
       "keywords": [
         "Burst"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-094",
@@ -2641,12 +2489,6 @@
       "pilot": {
         "names": [
           "Zeheart Galette"
-        ],
-        "ap": 2,
-        "hp": 2,
-        "traits": [
-          "Vagan",
-          "X-Rounder"
         ]
       },
       "keywords": [
@@ -2654,8 +2496,7 @@
         "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-095",
@@ -2677,11 +2518,6 @@
       "pilot": {
         "names": [
           "Azee Gurumin"
-        ],
-        "ap": 1,
-        "hp": 2,
-        "traits": [
-          "Teiwaz"
         ]
       },
       "keywords": [
@@ -2689,8 +2525,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-096",
@@ -2713,12 +2548,6 @@
       "pilot": {
         "names": [
           "Jamil Neate"
-        ],
-        "ap": 2,
-        "hp": 1,
-        "traits": [
-          "Vulture",
-          "Newtype"
         ]
       },
       "keywords": [
@@ -2727,8 +2556,7 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-097",
@@ -2750,11 +2578,6 @@
       "pilot": {
         "names": [
           "Wistario Afam"
-        ],
-        "ap": 1,
-        "hp": 2,
-        "traits": [
-          "Civilian"
         ]
       },
       "keywords": [
@@ -2763,8 +2586,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-098",
@@ -2787,12 +2609,6 @@
       "pilot": {
         "names": [
           "Graham Aker"
-        ],
-        "ap": 2,
-        "hp": 1,
-        "traits": [
-          "Superpower Bloc",
-          "UN"
         ]
       },
       "keywords": [
@@ -2800,8 +2616,7 @@
         "During Link"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-099",
@@ -2823,11 +2638,6 @@
       "pilot": {
         "names": [
           "Emma Sheen"
-        ],
-        "ap": 1,
-        "hp": 1,
-        "traits": [
-          "AEUG"
         ]
       },
       "keywords": [
@@ -2836,8 +2646,7 @@
         "Destroyed"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-100",
@@ -2861,13 +2670,6 @@
       "pilot": {
         "names": [
           "Soma Peries"
-        ],
-        "ap": 1,
-        "hp": 1,
-        "traits": [
-          "Superpower Bloc",
-          "UN",
-          "Super Soldier"
         ]
       },
       "keywords": [
@@ -2875,8 +2677,7 @@
         "Destroyed"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-101",
@@ -2887,9 +2688,7 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -2900,8 +2699,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-102",
@@ -2912,9 +2710,7 @@
       "cost": 2,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -2926,8 +2722,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-103",
@@ -2938,9 +2733,7 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -2952,8 +2745,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-104",
@@ -2976,12 +2768,6 @@
       "pilot": {
         "names": [
           "Reccoa Londe"
-        ],
-        "ap": 1,
-        "hp": 0,
-        "traits": [
-          "Titans",
-          "Jupitris"
         ]
       },
       "keywords": [
@@ -2989,8 +2775,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-105",
@@ -3001,9 +2786,7 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -3015,8 +2798,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-106",
@@ -3027,9 +2809,7 @@
       "cost": 4,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -3040,8 +2820,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-107",
@@ -3064,20 +2843,13 @@
       "pilot": {
         "names": [
           "Hardie Steiner"
-        ],
-        "ap": 1,
-        "hp": 1,
-        "traits": [
-          "Zeon",
-          "Cyclops Team"
         ]
       },
       "keywords": [
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-108",
@@ -3100,20 +2872,13 @@
       "pilot": {
         "names": [
           "Gabriel Ramirez Garcia"
-        ],
-        "ap": 1,
-        "hp": 0,
-        "traits": [
-          "Zeon",
-          "Cyclops Team"
         ]
       },
       "keywords": [
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-109",
@@ -3124,9 +2889,7 @@
       "cost": 3,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -3139,8 +2902,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-110",
@@ -3151,9 +2913,7 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -3165,8 +2925,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-111",
@@ -3188,11 +2947,6 @@
       "pilot": {
         "names": [
           "Emeralda Zubin"
-        ],
-        "ap": 0,
-        "hp": 1,
-        "traits": [
-          "Mafty"
         ]
       },
       "keywords": [
@@ -3200,8 +2954,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-112",
@@ -3212,9 +2965,7 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -3227,8 +2978,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-113",
@@ -3239,9 +2989,7 @@
       "cost": 2,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -3253,8 +3001,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-114",
@@ -3265,9 +3012,7 @@
       "cost": 2,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -3279,8 +3024,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-115",
@@ -3304,21 +3048,13 @@
       "pilot": {
         "names": [
           "Yurin L'Ciel"
-        ],
-        "ap": 1,
-        "hp": 0,
-        "traits": [
-          "Civilian",
-          "Vagan",
-          "X-Rounder"
         ]
       },
       "keywords": [
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-116",
@@ -3329,9 +3065,7 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -3343,8 +3077,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-117",
@@ -3355,9 +3088,7 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -3368,8 +3099,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-118",
@@ -3380,9 +3110,7 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -3395,8 +3123,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-119",
@@ -3407,9 +3134,7 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [
-        "-"
-      ],
+      "traits": [],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -3420,8 +3145,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-120",
@@ -3444,20 +3168,13 @@
       "pilot": {
         "names": [
           "Patrick Colasour"
-        ],
-        "ap": 1,
-        "hp": 0,
-        "traits": [
-          "Superpower Bloc",
-          "UN"
         ]
       },
       "keywords": [
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-121",
@@ -3480,20 +3197,13 @@
       "pilot": {
         "names": [
           "Katz Kobayashi"
-        ],
-        "ap": 1,
-        "hp": 0,
-        "traits": [
-          "AEUG",
-          "Newtype"
         ]
       },
       "keywords": [
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-122",
@@ -3516,20 +3226,13 @@
       "pilot": {
         "names": [
           "Sergei Smirnov"
-        ],
-        "ap": 0,
-        "hp": 1,
-        "traits": [
-          "Superpower Bloc",
-          "UN"
         ]
       },
       "keywords": [
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-123",
@@ -3556,8 +3259,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-124",
@@ -3584,8 +3286,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-125",
@@ -3612,8 +3313,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-126",
@@ -3639,8 +3339,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-127",
@@ -3666,8 +3365,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-128",
@@ -3694,8 +3392,7 @@
         "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-129",
@@ -3721,8 +3418,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-130",
@@ -3748,8 +3444,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-131",
@@ -3775,8 +3470,7 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     },
     {
       "id": "GD03-132",
@@ -3803,8 +3497,7 @@
         "Destroyed"
       ],
       "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
+      "needs_review": false
     }
   ]
 }
