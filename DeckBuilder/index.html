@@ -1359,6 +1359,26 @@ input[type=search] {
   }
 }
 
+
+/* Deck image export: show progress instead of an empty/broken preview. */
+.deck-image-preview { position:relative; }
+.deck-image-loading {
+  width:min(380px,90%); text-align:center; color:#dce8fb;
+  display:flex; flex-direction:column; gap:13px; align-items:stretch;
+}
+.deck-image-loading[hidden] { display:none!important; }
+.deck-image-loading strong { font-size:16px; }
+.deck-image-progress-track {
+  height:12px; background:#25354b; border:1px solid #415675;
+  border-radius:999px; overflow:hidden;
+}
+.deck-image-progress-fill {
+  width:0%; height:100%; background:#4f91e9; border-radius:999px;
+  transition:width .18s ease;
+}
+.deck-image-loading small { color:#aebfd9; }
+#deckImagePreview:not([src]) { display:none; }
+
   </style>
  </head>
  <body>
@@ -1371,7 +1391,7 @@ input[type=search] {
      </span>
     </h1>
     <small>
-     Masa's GCG Deck Builder v0.9
+     Masa's GCG Deck Builder v0.9.1
     </small>
    </div>
    <span class="pill" id="countHeader">
@@ -2053,6 +2073,13 @@ start();
 let generatedDeckImageBlob = null;
 const deckImageModal = $('deckImageModal');
 const imageStatus = message => { $('deckImageStatus').textContent = message; };
+function setDeckImageProgress(completed, total, label = 'Loading card artwork…') {
+    const percent = total ? Math.round(completed / total * 90) : 0;
+    $('deckImageProgressLabel').textContent = label;
+    $('deckImageProgressDetail').textContent = total ? `${completed} / ${total} cards loaded` : 'Preparing…';
+    $('deckImageProgressFill').style.width = `${percent}%`;
+    $('deckImageProgressTrack').setAttribute('aria-valuenow', String(percent));
+}
 const rounded = (ctx, x, y, w, h, r) => { ctx.beginPath(); ctx.roundRect(x, y, w, h, r); };
 const loadCardImage = src => new Promise((resolve, reject) => { const im = new Image(); im.onload = () => resolve(im); im.onerror = () => reject(new Error('Could not load ' + src)); im.src = src; });
 function drawDeckHistogram(ctx, entries, x, y, label, key) {
@@ -2082,7 +2109,7 @@ function drawDeckHistogram(ctx, entries, x, y, label, key) {
     }
     ctx.textAlign = 'left';
 }
-async function generateDeckImage() {
+async function generateDeckImage(onProgress = () => {}) {
     const entries = Object.entries(deck).filter(([id, n]) => n > 0 && byId.has(id) && !isToken(byId.get(id))).sort(([a], [b]) => a.localeCompare(b));
     if (!entries.length)
         throw new Error('Add some cards to your deck first.');
@@ -2161,13 +2188,21 @@ async function generateDeckImage() {
         });
     }
     const missing = [];
-    const loaded = await Promise.all(entries.map(async ([id]) => { const c = byId.get(id); try {
-        return await loadCardImage(img(c));
-    }
-    catch (e) {
-        missing.push(id);
-        return null;
-    } }));
+    let completed = 0;
+    onProgress(completed, entries.length);
+    const loaded = await Promise.all(entries.map(async ([id]) => {
+        const c = byId.get(id);
+        let artwork = null;
+        try {
+            artwork = await loadCardImage(img(c));
+        } catch (e) {
+            missing.push(id);
+        } finally {
+            completed++;
+            onProgress(completed, entries.length);
+        }
+        return artwork;
+    }));
     entries.forEach(([id, n], i) => {
         const x = side + (i % columns) * (cardW + gap), y = top + Math.floor(i / columns) * (cardH + gap);
         ctx.fillStyle = '#24334a';
@@ -2193,25 +2228,41 @@ async function generateDeckImage() {
     });
     ctx.fillStyle = '#9fb0ca';
     ctx.font = '15px Arial';
-    ctx.fillText('masayatodoroki.com/GundamDeckBuilder', side, height - 28);
+    ctx.fillText('masayatodoroki.com/DeckBuilder', side, height - 28);
+    onProgress(entries.length, entries.length, true);
     return { blob: await new Promise((resolve, reject) => canvas.toBlob(b => b ? resolve(b) : reject(new Error('PNG generation failed')), 'image/png')), missing };
 }
 $('createDeckImage').onclick = async () => {
     generatedDeckImageBlob = null;
     $('deckImagePreview').removeAttribute('src');
+    $('deckImageLoading').hidden = false;
+    setDeckImageProgress(0, 0, 'Preparing deck image…');
     $('saveDeckImage').disabled = true;
     $('copyDeckImage').disabled = true;
     deckImageModal.classList.add('open');
     imageStatus('Generating image…');
+    // Allow the modal and loading bar to paint before beginning the work.
+    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
     try {
-        const result = await generateDeckImage();
+        const result = await generateDeckImage((completed, total, encoding) => {
+            if (encoding) {
+                $('deckImageProgressLabel').textContent = 'Creating PNG…';
+                $('deckImageProgressDetail').textContent = 'Finishing image export';
+                $('deckImageProgressFill').style.width = '95%';
+                $('deckImageProgressTrack').setAttribute('aria-valuenow', '95');
+            } else {
+                setDeckImageProgress(completed, total);
+            }
+        });
         generatedDeckImageBlob = result.blob;
         $('deckImagePreview').src = URL.createObjectURL(result.blob);
+        $('deckImageLoading').hidden = true;
         $('saveDeckImage').disabled = false;
         $('copyDeckImage').disabled = false;
         imageStatus(result.missing.length ? `Image ready, but artwork could not be loaded for: ${result.missing.join(', ')}` : 'Image ready — save it or copy it to your clipboard.');
     }
     catch (e) {
+        $('deckImageLoading').hidden = true;
         imageStatus(e.message);
         console.error(e);
     }
