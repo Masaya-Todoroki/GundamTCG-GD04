@@ -133,10 +133,10 @@ function drawDeckHistogram(ctx, entries, x, y, label, key) {
     }
     ctx.textAlign = 'left';
 }
-async function generateDeckImage(onProgress = () => {}) {
+async function generateDeckImage(onProgress = () => {}, sourceDeck = deck, sourceName = null) {
     const typeOrder = { Unit: 0, Pilot: 1, Command: 2, Base: 3 };
     const numericValue = value => value === null || value === undefined || value === '' ? Infinity : (Number.isFinite(Number(value)) ? Number(value) : Infinity);
-    const entries = Object.entries(deck)
+    const entries = Object.entries(sourceDeck)
         .filter(([id, n]) => n > 0 && byId.has(id) && !isToken(byId.get(id)))
         .sort(([a], [b]) => {
             const cardA = byId.get(a), cardB = byId.get(b);
@@ -159,7 +159,7 @@ async function generateDeckImage(onProgress = () => {}) {
     ctx.fillRect(0, 0, width, height);
     ctx.fillStyle = '#182235';
     ctx.fillRect(0, 0, width, 250);
-    const name = ($('deckName').value || 'My Gundam Deck').trim();
+    const name = (sourceName ?? $('deckName').value ?? 'My Gundam Deck').trim();
     ctx.fillStyle = '#fff';
     ctx.font = 'bold 38px Arial';
     ctx.fillText(name.slice(0, 48), side, 57);
@@ -301,6 +301,38 @@ $('createDeckImage').onclick = async () => {
         console.error(e);
     }
 };
+// Tournament previews use the same renderer without modifying the active deck.
+async function previewTournamentDeckImage(sourceDeck, sourceName) {
+    generatedDeckImageBlob = null;
+    $('deckImagePreview').removeAttribute('src');
+    $('deckImageLoading').hidden = false;
+    setDeckImageProgress(0, 0, 'Preparing deck image…');
+    $('saveDeckImage').disabled = true;
+    $('copyDeckImage').disabled = true;
+    deckImageModal.classList.add('open');
+    imageStatus('Generating image…');
+    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+    try {
+        const result = await generateDeckImage((completed, total, encoding) => {
+            if (encoding) {
+                $('deckImageProgressLabel').textContent = 'Creating PNG…';
+                $('deckImageProgressDetail').textContent = 'Finishing image export';
+                $('deckImageProgressFill').style.width = '95%';
+                $('deckImageProgressTrack').setAttribute('aria-valuenow', '95');
+            } else setDeckImageProgress(completed, total);
+        }, sourceDeck, sourceName);
+        generatedDeckImageBlob = result.blob;
+        $('deckImagePreview').src = URL.createObjectURL(result.blob);
+        $('deckImageLoading').hidden = true;
+        $('saveDeckImage').disabled = false;
+        $('copyDeckImage').disabled = false;
+        imageStatus(result.missing.length ? `Image ready; missing artwork: ${result.missing.join(', ')}` : 'Image ready — save or copy if you like.');
+    } catch (e) {
+        $('deckImageLoading').hidden = true;
+        imageStatus(e.message);
+        console.error(e);
+    }
+}
 $('closeDeckImage').onclick = () => { deckImageModal.classList.remove('open'); };
 deckImageModal.addEventListener('click', e => { if (e.target === deckImageModal)
     deckImageModal.classList.remove('open'); });

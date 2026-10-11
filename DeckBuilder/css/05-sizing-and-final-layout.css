@@ -409,3 +409,61 @@
   z-index: 1400 !important;
 }
 /* #endregion Styled Rename Deck Dialog — Modal Stacking Fix */
+
+/* Tournament deck finder */
+.find-deck-dialog{width:min(790px,100%);max-height:min(90dvh,900px)}
+.find-deck-filters{display:grid;grid-template-columns:minmax(0,1fr) 170px;gap:7px 12px;margin:12px 0}
+.find-deck-filters label{font-size:12px;color:#aebcd1}
+.find-deck-filters input,.find-deck-filters select{box-sizing:border-box;min-width:0;width:100%;padding:11px;background:#101a2a;color:#e9eef7;border:1px solid #3a4860;border-radius:9px}
+.find-deck-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:12px 0;color:#aebcd1}
+.find-deck-results{display:grid;gap:9px;max-height:54dvh;overflow-y:auto}
+.find-deck-result{border:1px solid #3a4860;border-radius:10px;padding:12px;display:flex;justify-content:space-between;align-items:center;gap:12px;background:#101a2a}
+.find-deck-result strong{display:block;color:#e9eef7;margin-bottom:4px}
+.find-deck-result small{display:block;color:#aebcd1;line-height:1.5}
+.find-deck-result .btn{flex-shrink:0}
+#findDeckMore{margin-top:12px;width:100%}
+@media(max-width:560px){.find-deck-filters{grid-template-columns:1fr}.find-deck-result{align-items:flex-start;flex-direction:column}.find-deck-result .btn{width:100%}}
+
+/* Tournament finder: card previews, colour filter, and in-page confirmation */
+.find-deck-filters{grid-template-columns:minmax(0,1fr);max-width:240px}
+.find-deck-result{gap:14px}
+.find-deck-art{display:flex;align-items:stretch;gap:5px;flex:0 0 auto;min-width:0}
+.find-deck-bars{display:flex;gap:3px;align-self:stretch}
+.find-deck-bars span{width:6px;border-radius:2px}
+.find-deck-cards{display:flex;align-items:center;gap:2px}
+.find-deck-cards img{width:45px;height:63px;object-fit:cover;border-radius:3px;background:#18253b}
+.find-deck-details{flex:1;min-width:0}
+#findDeckConfirmModal{z-index:10000}
+@media(max-width:560px){.find-deck-result{flex-direction:row;flex-wrap:wrap}.find-deck-details{flex-basis:calc(100% - 120px)}.find-deck-result .btn{width:100%}}
+
+/* Find Deck: lock the outer dialog; scroll only the decklist */
+#findDeckModal .find-deck-dialog {
+  box-sizing:border-box;
+  height:min(88dvh,900px);
+  max-height:calc(100dvh - 32px);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  min-height:0;
+}
+#findDeckModal .deck-text-top,
+#findDeckModal .find-deck-filters,
+#findDeckModal .find-deck-toolbar,
+#findDeckModal #findDeckMore { flex-shrink:0; }
+#findDeckModal .find-deck-toolbar { justify-content:flex-end; }
+#findDeckModal #findDeckStatus[hidden] { display:none; }
+#findDeckModal #findDeckStatus:not([hidden]) { margin-right:auto; }
+#findDeckModal .find-deck-results {
+  flex:1 1 auto;
+  min-height:0;
+  max-height:none;
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  align-content:start;
+  scrollbar-gutter:stable;
+}
+
+/* Preview and Load actions side by side */
+.find-deck-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.find-deck-actions .btn{width:auto}
+@media(max-width:560px){.find-deck-actions{width:100%}.find-deck-actions .btn{flex:1;width:auto}}

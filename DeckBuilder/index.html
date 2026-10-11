@@ -134,6 +134,9 @@
       <button class="btn" id="openDeckText" type="button">
        <svg class="ui-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v12m-4-4 4 4 4-4M17 21V9m-4 4 4-4 4 4"/></svg> Import / Export
       </button>
+      <button class="btn" id="findDeck" type="button">
+       <svg class="ui-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="m16 16 5 5"/></svg> Find Deck
+      </button>
       <button class="btn primary" id="createDeckImage" type="button">
        <svg class="ui-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg> Create Image
       </button>
@@ -287,6 +290,22 @@
     </small>
    </div>
   </div>
+  <div aria-labelledby="findDeckTitle" aria-modal="true" class="modal" hidden id="findDeckModal" role="dialog">
+   <div class="deck-text-dialog find-deck-dialog">
+    <div class="deck-text-top"><h2 id="findDeckTitle">Find Tournament Deck</h2><button class="btn" id="closeFindDeck" type="button">✕ Close</button></div>
+    <div class="find-deck-filters"><label for="findDeckColors">Deck colours</label><select id="findDeckColors"><option value="">All colours</option></select></div>
+    <div class="find-deck-toolbar"><small id="findDeckStatus" role="status" aria-live="polite" hidden></small><button class="btn" id="refreshFindDeck" type="button">Refresh</button></div>
+    <div class="find-deck-results" id="findDeckResults"><p class="empty">Finding decks…</p></div>
+    <button class="btn" id="findDeckMore" type="button" hidden>Show more</button>
+   </div>
+  </div>
+  <div aria-labelledby="findDeckConfirmTitle" aria-modal="true" class="modal" hidden id="findDeckConfirmModal" role="dialog">
+   <div class="deck-text-dialog confirm-dialog">
+    <div class="deck-text-top"><h2 id="findDeckConfirmTitle">Load tournament deck?</h2><button class="btn" id="closeFindDeckConfirm" type="button">✕ Close</button></div>
+    <p id="findDeckConfirmText">This will replace your current deck. Saved decks will not be changed.</p>
+    <div class="deck-text-actions"><button class="btn" id="cancelFindDeckLoad" type="button">Cancel</button><button class="btn primary" id="confirmFindDeckLoad" type="button">Load Deck</button></div>
+   </div>
+  </div>
   <div aria-labelledby="deckImageTitle" aria-modal="true" class="modal" id="deckImageModal" role="dialog">
    <div class="deck-image-dialog">
     <div class="deck-text-top">
@@ -334,6 +353,7 @@
   <script src="js/02-browser-and-decks.js"></script>
   <script src="js/03-inspector-and-storage.js"></script>
   <script src="js/04-startup-and-export.js"></script>
+  <script src="js/05-find-deck.js"></script>
    <!-- End of self-contained Deck Builder -->
  </body>
 </html>
