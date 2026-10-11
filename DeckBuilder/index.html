@@ -1434,6 +1434,50 @@ body:has(#modal.open) { overflow: hidden; }
   #detail .token-preview img { width:66px; flex:none; }
   #detail .token-preview span { margin:0; font-size:13px; }
 }
+/* v0.9.16 — Token previews are full card thumbnails, not tiny icons. */
+#detail .token-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(175px, 210px));
+  gap: 14px;
+  margin: 12px 0 8px;
+  align-items: start;
+}
+#detail .token-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  padding: 9px;
+  border: 1px solid #40516d;
+  border-radius: 11px;
+  background: #202d40;
+  text-align: center;
+  overflow: hidden;
+  transition: border-color .15s, background .15s;
+}
+#detail .token-preview:hover { border-color: #79aaff; background: #293a53; }
+#detail .token-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 600 / 838;
+  object-fit: contain;
+  border-radius: 6px;
+}
+#detail .token-preview span {
+  display: block;
+  width: 100%;
+  margin: 9px 0 1px;
+  color: #c8d8ee;
+  font-size: 13px;
+  font-weight: 700;
+}
+@media (max-width:850px) {
+  #detail .token-gallery { grid-template-columns: repeat(auto-fill, minmax(130px, 175px)); gap: 10px; }
+  #detail .token-preview { display: flex; flex-direction: column; align-items: stretch; width: 100%; }
+  #detail .token-preview img { width: 100%; flex: initial; }
+  #detail .token-preview span { margin: 7px 0 0; font-size: 12px; }
+}
 </style>
  </head>
  <body>
@@ -1446,7 +1490,7 @@ body:has(#modal.open) { overflow: hidden; }
      </span>
     </h1>
     <small>
-     Masa's GCG Deck Builder v0.9.15
+     Masa's GCG Deck Builder v0.9.16
     </small>
    </div>
    <div class="header-actions">
@@ -1706,7 +1750,8 @@ body:has(#modal.open) { overflow: hidden; }
    
 let cards = [], byId = new Map(), deck = {}, page = 0, selected = null, visibleCount = 48;
 let inspectorMatches = null; // Frozen ordering for the currently inspected card.
-let tokensByCard = new Map(); // Populated from Data/tokens.json (token ID -> spawning card IDs).
+let tokensByCard = new Map(); // Card ID -> token IDs.
+let creatorsByToken = new Map(); // Token ID -> card IDs, directly from Data/tokens.json.
 const PAGE = 48, $ = id => document.getElementById(id), esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const img = c => {
     const folder = /^T-\d+$/i.test(c.id) ? 'Tokens' : c.id.split('-')[0];
@@ -1877,24 +1922,30 @@ function show(id) {
     selected = id;
     const m = inspectorMatches;
     const generated = arr(tokensByCard.get(c.id)).map(id => byId.get(id) || { id, name: id, type: 'Token' });
+    const tokenCreators = isToken(c) ? arr(creatorsByToken.get(c.id)).map(creatorId => byId.get(creatorId)).filter(Boolean) : [];
     const count = deck[id] || 0;
     const addButton = isToken(c) ? '' : `<button class="btn remove-all" id="removeSelected" title="Remove all copies" aria-label="Remove all copies" ${count === 0 ? 'disabled' : ''}>🗑</button><button class="btn" id="minusSelected" title="Remove one" ${count === 0 ? 'disabled' : ''}>−</button><span class="inspection-count">${count}/4</span><button class="btn primary" id="addSelected" title="Add one" ${count >= 4 ? 'disabled' : ''}>+</button>`;
     const tokenSection = generated.length ? `<section class="inspection-section"><h2>Tokens created</h2><div class="token-gallery">${generated.map(t => `<button class="token-preview" data-open="${esc(t.id)}" title="Inspect ${esc(t.name || t.id)}"><img loading="lazy" src="${img(t)}" alt="${esc(t.name || t.id)}"><span>${esc(t.name || t.id)}</span></button>`).join('')}</div></section>` : '';
     // Keep Link and Pair results in separate groups. Cards satisfying both
     // conditions appear only in the Link group, with their dual status shown.
-    const renderMatchTile = x => `<div class="match-tile"><button class="match-art" data-open="${esc(x.c.id)}" title="Inspect ${esc(x.c.name || x.c.id)}"><img loading="lazy" src="${img(x.c)}" alt="${esc(x.c.name || x.c.id)}"></button><div class="match-info"><b title="${esc(x.c.name || x.c.id)}">${esc(x.c.name || x.c.id)}</b><small>${esc(x.c.id)} · ${x.link ? 'Link' : ''}${x.link && x.pair ? ' + ' : ''}${x.pair ? 'Pair' : ''}</small><button class="btn match-view" data-open="${esc(x.c.id)}">View</button></div><div class="match-actions"><button class="btn" data-match-clear="${esc(x.c.id)}" title="Remove all copies" ${!(deck[x.c.id] || 0) ? 'disabled' : ''}>🗑</button><button class="btn" data-match-minus="${esc(x.c.id)}" title="Remove one" ${!(deck[x.c.id] || 0) ? 'disabled' : ''}>−</button><span class="match-count">${deck[x.c.id] || 0}/4</span><button class="btn primary" data-match-plus="${esc(x.c.id)}" title="Add one" ${(deck[x.c.id] || 0) >= 4 ? 'disabled' : ''}>+</button></div></div>`;
+    const renderMatchTile = (x, label = null) => `<div class="match-tile"><button class="match-art" data-open="${esc(x.c.id)}" title="Inspect ${esc(x.c.name || x.c.id)}"><img loading="lazy" src="${img(x.c)}" alt="${esc(x.c.name || x.c.id)}"></button><div class="match-info"><b title="${esc(x.c.name || x.c.id)}">${esc(x.c.name || x.c.id)}</b><small>${esc(x.c.id)}${label ? ' · ' + esc(label) : ' · ' + (x.link ? 'Link' : '') + (x.link && x.pair ? ' + ' : '') + (x.pair ? 'Pair' : '')}</small><button class="btn match-view" data-open="${esc(x.c.id)}">View</button></div><div class="match-actions"><button class="btn" data-match-clear="${esc(x.c.id)}" title="Remove all copies" ${!(deck[x.c.id] || 0) ? 'disabled' : ''}>🗑</button><button class="btn" data-match-minus="${esc(x.c.id)}" title="Remove one" ${!(deck[x.c.id] || 0) ? 'disabled' : ''}>−</button><span class="match-count">${deck[x.c.id] || 0}/4</span><button class="btn primary" data-match-plus="${esc(x.c.id)}" title="Add one" ${(deck[x.c.id] || 0) >= 4 ? 'disabled' : ''}>+</button></div></div>`;
     const renderMatchSection = (heading, items) => items.length
         ? `<section class="inspection-section"><h2>${heading} <span class="match-section-count">(${items.length})</span></h2><div class="match-grid">${items.map(renderMatchTile).join('')}</div></section>`
         : '';
     const subject = c.type === 'Unit' ? 'Pilots' : 'Units';
     const linkMatches = m.filter(x => x.link);
     const pairMatches = m.filter(x => x.pair && !x.link);
+    const creatorSection = isToken(c)
+        ? (tokenCreators.length
+            ? `<section class="inspection-section"><h2>Created by <span class="match-section-count">(${tokenCreators.length})</span></h2><div class="match-grid">${tokenCreators.map(creator => renderMatchTile({ c: creator, link: false, pair: false }, 'Creates this token')).join('')}</div></section>`
+            : '<section class="inspection-section"><h2>Created by</h2><p class="empty">No generating cards listed in tokens.json.</p></section>')
+        : '';
     const compatibility = (c.type === 'Unit' || isPilot(c))
         ? (renderMatchSection(`Link ${subject}`, linkMatches)
             + renderMatchSection(`Compatible Pair ${subject}`, pairMatches)
             || '<section class="inspection-section"><p class="empty">No compatible cards found.</p></section>')
         : '';
-    $('detail').innerHTML = `<div class="inspection-layout"><div class="inspection-hero"><img class="inspection-card" src="${img(c)}" alt="${esc(c.name || id)}"><div class="inspection-controls">${addButton}</div></div><div class="inspection-related">${compatibility}${tokenSection}</div></div>`;
+    $('detail').innerHTML = `<div class="inspection-layout"><div class="inspection-hero"><img class="inspection-card" src="${img(c)}" alt="${esc(c.name || id)}"><div class="inspection-controls">${addButton}</div></div><div class="inspection-related">${compatibility}${tokenSection}${creatorSection}</div></div>`;
     $('modal').classList.add('open');
     if (sameInspector && dialog) dialog.scrollTop = previousScroll;
     if (!isToken(c)) {
@@ -2184,11 +2235,13 @@ async function start() {
             throw new Error('Data/tokens.json must be an object mapping token IDs to arrays of card IDs.');
         }
         tokensByCard = new Map();
+        creatorsByToken = new Map();
         for (const [tokenId, creatorIds] of Object.entries(tokenMappings)) {
             if (!/^T-\d+$/i.test(tokenId) || !Array.isArray(creatorIds)) {
                 throw new Error(`Invalid token mapping for ${tokenId} in Data/tokens.json`);
             }
             if (!byId.has(tokenId)) byId.set(tokenId, { id: tokenId, name: tokenId, type: 'Token' });
+            creatorsByToken.set(tokenId, [...new Set(creatorIds.filter(id => typeof id === 'string'))]);
             for (const cardId of creatorIds) {
                 if (typeof cardId !== 'string') continue;
                 if (!tokensByCard.has(cardId)) tokensByCard.set(cardId, []);
