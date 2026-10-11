@@ -1434,49 +1434,235 @@ body:has(#modal.open) { overflow: hidden; }
   #detail .token-preview img { width:66px; flex:none; }
   #detail .token-preview span { margin:0; font-size:13px; }
 }
-/* v0.9.16 — Token previews are full card thumbnails, not tiny icons. */
+/* v0.9.19: compact token previews, proportional to compatible cards. */
 #detail .token-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(175px, 210px));
-  gap: 14px;
-  margin: 12px 0 8px;
-  align-items: start;
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(105px,130px));
+  gap:10px;
+  margin:10px 0 12px;
+  justify-content:start;
 }
 #detail .token-preview {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  width: 100%;
-  padding: 9px;
-  border: 1px solid #40516d;
-  border-radius: 11px;
-  background: #202d40;
-  text-align: center;
-  overflow: hidden;
-  transition: border-color .15s, background .15s;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  width:100%;
+  padding:6px;
+  border:1px solid #40516d;
+  border-radius:9px;
+  background:#202d40;
+  color:#e9eef7;
+  cursor:pointer;
+  text-align:center;
 }
-#detail .token-preview:hover { border-color: #79aaff; background: #293a53; }
+#detail .token-preview:hover { border-color:#79aaff; background:#293a53; }
 #detail .token-preview img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 600 / 838;
-  object-fit: contain;
-  border-radius: 6px;
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:600/838;
+  object-fit:contain;
+  border-radius:5px;
 }
 #detail .token-preview span {
-  display: block;
-  width: 100%;
-  margin: 9px 0 1px;
-  color: #c8d8ee;
-  font-size: 13px;
-  font-weight: 700;
+  display:block;
+  width:100%;
+  margin:6px 0 1px;
+  font-size:11px;
+  font-weight:700;
+  color:#c8d8ee;
 }
 @media (max-width:850px) {
-  #detail .token-gallery { grid-template-columns: repeat(auto-fill, minmax(130px, 175px)); gap: 10px; }
-  #detail .token-preview { display: flex; flex-direction: column; align-items: stretch; width: 100%; }
-  #detail .token-preview img { width: 100%; flex: initial; }
-  #detail .token-preview span { margin: 7px 0 0; font-size: 12px; }
+  #detail .token-gallery { grid-template-columns:repeat(auto-fill,minmax(95px,115px)); gap:8px; }
+  #detail .token-preview { display:flex; flex-direction:column; align-items:center; padding:5px; }
+  #detail .token-preview img { width:100%; flex:none; }
+  #detail .token-preview span { margin:5px 0 0; font-size:11px; }
+}
+/* v0.9.21: compact inspector results and token thumbnails. */
+#detail .match-grid {
+  grid-template-columns:repeat(auto-fill,minmax(min(100%,245px),280px));
+  justify-content:start;
+  align-items:start;
+}
+#detail .token-gallery {
+  grid-template-columns:repeat(auto-fill,82px);
+  gap:10px;
+  justify-content:start;
+  align-items:start;
+}
+#detail .token-preview {
+  width:82px;
+  padding:5px;
+}
+#detail .token-preview img {
+  width:100%;
+  height:auto;
+  aspect-ratio:600/838;
+  object-fit:contain;
+}
+#detail .token-preview span {
+  font-size:10px;
+  margin:4px 0 0;
+}
+@media (max-width:850px) {
+  #detail .match-grid { grid-template-columns:repeat(auto-fill,minmax(min(100%,245px),280px)); }
+  #detail .token-gallery { grid-template-columns:repeat(auto-fill,82px); gap:8px; }
+  #detail .token-preview { display:flex; flex-direction:column; align-items:center; width:82px; padding:5px; }
+  #detail .token-preview img { width:100%; flex:none; }
+  #detail .token-preview span { margin:4px 0 0; font-size:10px; }
+}
+/* v0.9.23: compact versions of the existing compatible-card and token tiles. */
+#detail .match-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(0,220px));
+  gap:9px;
+  justify-content:start;
+  align-items:start;
+}
+#detail .match-tile {
+  width:100%;
+  max-width:220px;
+  grid-template-columns:54px minmax(0,1fr);
+  gap:6px 7px;
+  padding:7px;
+  align-content:start;
+}
+#detail .match-art { width:54px; }
+#detail .match-art img { width:54px; height:auto; }
+#detail .match-info { font-size:11px; gap:3px; }
+#detail .match-info small { font-size:10px; }
+#detail .match-view { padding:4px 7px; font-size:11px; margin-top:2px; }
+#detail .match-actions { gap:3px; }
+#detail .match-actions .btn { min-width:23px; padding:4px 5px; font-size:11px; }
+#detail .match-actions .match-count { min-width:25px; padding:4px 2px; font-size:11px; }
+#detail .token-gallery {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,66px);
+  gap:8px;
+  justify-content:start;
+}
+#detail .token-preview {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  width:66px;
+  padding:4px;
+}
+#detail .token-preview img { width:100%; height:auto; }
+#detail .token-preview span { font-size:10px; margin:4px 0 0; }
+@media (max-width:850px) {
+  #detail .match-grid { grid-template-columns:repeat(auto-fill,minmax(0,220px)); }
+  #detail .match-tile { grid-template-columns:54px minmax(0,1fr); }
+  #detail .match-art, #detail .match-art img { width:54px; }
+  #detail .token-gallery { grid-template-columns:repeat(auto-fill,66px); }
+  #detail .token-preview { width:66px; flex-direction:column; padding:4px; }
+  #detail .token-preview img { width:100%; }
+  #detail .token-preview span { font-size:10px; margin:4px 0 0; }
+}
+
+/* v0.9.23 — inspector related cards reuse the portrait browser card design. */
+#detail .match-grid, #detail .token-gallery {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(0,132px));
+  gap:10px;
+  justify-content:start;
+  align-items:start;
+}
+#detail .inspector-mini-card.match-tile,
+#detail .inspector-mini-card.token-preview {
+  display:block;
+  width:132px;
+  max-width:100%;
+  min-width:0;
+  padding:0;
+  margin:0;
+  border:1px solid #2b374a;
+  border-radius:10px;
+  background:#171f2e;
+  overflow:hidden;
+  text-align:left;
+  cursor:default;
+}
+#detail .inspector-mini-card .mini-art-button {
+  display:block;
+  width:100%;
+  padding:0;
+  margin:0;
+  border:0;
+  background:transparent;
+  cursor:pointer;
+}
+#detail .inspector-mini-card .mini-art-button img {
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:600 / 838;
+  object-fit:cover;
+  border-radius:0;
+}
+#detail .inspector-mini-card .gallery-quick.match-actions {
+  display:grid;
+  grid-template-columns:24px 24px minmax(0,1fr) 24px;
+  grid-template-rows:auto;
+  gap:3px;
+  width:100%;
+  margin:0;
+  padding:6px 4px 2px;
+  align-items:center;
+}
+#detail .inspector-mini-card .gallery-quick.match-actions button {
+  width:24px;
+  height:25px;
+  min-width:0;
+  padding:0;
+  border:1px solid #40516d;
+  border-radius:5px;
+  background:#25354c;
+  color:#eaf0fa;
+  font-size:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+#detail .inspector-mini-card .gallery-quick.match-actions button.gallery-add {
+  background:#2766d1;
+  border-color:#3979df;
+}
+#detail .inspector-mini-card .gallery-quick.match-actions button:disabled { opacity:.3; }
+#detail .inspector-mini-card .gallery-quick .match-count {
+  min-width:0;
+  padding:0;
+  border:0;
+  background:transparent;
+  text-align:center;
+  font-size:11px;
+  font-weight:700;
+}
+#detail .inspector-mini-card .info { display:block; padding:8px; }
+#detail .inspector-mini-card .info .name {
+  display:block;
+  font-size:12px;
+  font-weight:700;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+#detail .inspector-mini-card .info .sub {
+  display:block;
+  font-size:11px;
+  color:#a6b4c8;
+  margin-top:4px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+@media (max-width:500px) {
+  #detail .match-grid, #detail .token-gallery {
+    grid-template-columns:repeat(auto-fill,minmax(0,120px));
+    gap:8px;
+  }
+  #detail .inspector-mini-card.match-tile,
+  #detail .inspector-mini-card.token-preview { width:120px; }
 }
 </style>
  </head>
@@ -1490,7 +1676,7 @@ body:has(#modal.open) { overflow: hidden; }
      </span>
     </h1>
     <small>
-     Masa's GCG Deck Builder v0.9.16
+     Masa's GCG Deck Builder v0.9.23
     </small>
    </div>
    <div class="header-actions">
@@ -1759,7 +1945,8 @@ const img = c => {
 };
 const arr = x => Array.isArray(x) ? x : [];
 const pilotNames = c => arr(c.pilot?.names).length ? arr(c.pilot.names) : c.pilot?.name ? [c.pilot.name] : c.type === 'Pilot' ? [c.name] : [];
-const pilotTraits = c => arr(c.pilot?.traits).length ? arr(c.pilot.traits) : c.type === 'Pilot' ? arr(c.traits) : [];
+// Command/Pilot traits may be on the card itself (new JSON) or inside pilot (legacy JSON).
+const pilotTraits = c => isPilot(c) ? [...new Set([...arr(c.traits), ...arr(c.pilot?.traits)])] : [];
 const isPilot = c => !!c.pilot || c.type === 'Pilot';
 function opt(id, values) { for (const v of [...new Set(values.filter(Boolean))].sort()) {
     let o = document.createElement('option');
@@ -1897,7 +2084,10 @@ function match(c, p) {
     const namedLinks = arr(c.link_conditions);
     const traitLinks = arr(c.link_trait_conditions);
     // Some earlier JSON files put a printed '(Trait) Trait' link into link_conditions.
-    const link = namedLinks.some(x => { let value = String(x); return /\btrait\b/i.test(value) ? traits.has(cleanTrait(value)) : names.has(normalizeMatch(value)); })
+    // New set JSONs store BOTH Pilot names and Pilot traits in link_conditions.
+    // Match either kind, including plain traits such as "Orb" or "Zeon".
+    // Legacy link_trait_conditions is supported for older set files.
+    const link = namedLinks.some(x => names.has(normalizeMatch(x)) || traits.has(cleanTrait(x)))
         || traitLinks.some(x => traits.has(cleanTrait(x)));
     const pc = c.pair_conditions || {};
     let pair = arr(pc.pilot_names).some(x => names.has(normalizeMatch(x)))
@@ -1925,10 +2115,9 @@ function show(id) {
     const tokenCreators = isToken(c) ? arr(creatorsByToken.get(c.id)).map(creatorId => byId.get(creatorId)).filter(Boolean) : [];
     const count = deck[id] || 0;
     const addButton = isToken(c) ? '' : `<button class="btn remove-all" id="removeSelected" title="Remove all copies" aria-label="Remove all copies" ${count === 0 ? 'disabled' : ''}>🗑</button><button class="btn" id="minusSelected" title="Remove one" ${count === 0 ? 'disabled' : ''}>−</button><span class="inspection-count">${count}/4</span><button class="btn primary" id="addSelected" title="Add one" ${count >= 4 ? 'disabled' : ''}>+</button>`;
-    const tokenSection = generated.length ? `<section class="inspection-section"><h2>Tokens created</h2><div class="token-gallery">${generated.map(t => `<button class="token-preview" data-open="${esc(t.id)}" title="Inspect ${esc(t.name || t.id)}"><img loading="lazy" src="${img(t)}" alt="${esc(t.name || t.id)}"><span>${esc(t.name || t.id)}</span></button>`).join('')}</div></section>` : '';
-    // Keep Link and Pair results in separate groups. Cards satisfying both
-    // conditions appear only in the Link group, with their dual status shown.
-    const renderMatchTile = (x, label = null) => `<div class="match-tile"><button class="match-art" data-open="${esc(x.c.id)}" title="Inspect ${esc(x.c.name || x.c.id)}"><img loading="lazy" src="${img(x.c)}" alt="${esc(x.c.name || x.c.id)}"></button><div class="match-info"><b title="${esc(x.c.name || x.c.id)}">${esc(x.c.name || x.c.id)}</b><small>${esc(x.c.id)}${label ? ' · ' + esc(label) : ' · ' + (x.link ? 'Link' : '') + (x.link && x.pair ? ' + ' : '') + (x.pair ? 'Pair' : '')}</small><button class="btn match-view" data-open="${esc(x.c.id)}">View</button></div><div class="match-actions"><button class="btn" data-match-clear="${esc(x.c.id)}" title="Remove all copies" ${!(deck[x.c.id] || 0) ? 'disabled' : ''}>🗑</button><button class="btn" data-match-minus="${esc(x.c.id)}" title="Remove one" ${!(deck[x.c.id] || 0) ? 'disabled' : ''}>−</button><span class="match-count">${deck[x.c.id] || 0}/4</span><button class="btn primary" data-match-plus="${esc(x.c.id)}" title="Add one" ${(deck[x.c.id] || 0) >= 4 ? 'disabled' : ''}>+</button></div></div>`;
+    const tokenSection = generated.length ? `<section class="inspection-section"><h2>Tokens created <span class="match-section-count">(${generated.length})</span></h2><div class="token-gallery">${generated.map(t => `<article class="card inspector-mini-card token-preview"><button class="mini-art-button" data-open="${esc(t.id)}" title="Inspect ${esc(t.name || t.id)}"><img loading="lazy" src="${img(t)}" alt="${esc(t.name || t.id)}"></button><div class="info"><div class="name">${esc(t.name || t.id)}</div><div class="sub">${esc(t.id)}</div></div></article>`).join('')}</div></section>` : '';
+    // Same portrait artwork, quantity row and name/ID hierarchy as the main browser.
+    const renderMatchTile = (x, label = null) => `<article class="card inspector-mini-card match-tile"><button class="mini-art-button" data-open="${esc(x.c.id)}" title="Inspect ${esc(x.c.name || x.c.id)}"><img loading="lazy" src="${img(x.c)}" alt="${esc(x.c.name || x.c.id)}"></button><div class="gallery-quick match-actions"><button data-match-clear="${esc(x.c.id)}" title="Remove all copies" ${!(deck[x.c.id] || 0) ? 'disabled' : ''}>🗑</button><button data-match-minus="${esc(x.c.id)}" title="Remove one" ${!(deck[x.c.id] || 0) ? 'disabled' : ''}>−</button><span class="gallery-count match-count">${deck[x.c.id] || 0}/4</span><button class="gallery-add" data-match-plus="${esc(x.c.id)}" title="Add one" ${(deck[x.c.id] || 0) >= 4 ? 'disabled' : ''}>+</button></div><div class="info"><div class="name" title="${esc(x.c.name || x.c.id)}">${esc(x.c.name || x.c.id)}</div><div class="sub">${esc(x.c.id)}${label ? ' · ' + esc(label) : ' · ' + (x.link ? 'Link' : '') + (x.link && x.pair ? ' + ' : '') + (x.pair ? 'Pair' : '')}</div></div></article>`;
     const renderMatchSection = (heading, items) => items.length
         ? `<section class="inspection-section"><h2>${heading} <span class="match-section-count">(${items.length})</span></h2><div class="match-grid">${items.map(renderMatchTile).join('')}</div></section>`
         : '';
