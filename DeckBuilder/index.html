@@ -1379,6 +1379,18 @@ input[type=search] {
 .deck-image-loading small { color:#aebfd9; }
 #deckImagePreview:not([src]) { display:none; }
 
+
+/* Deck image export progress */
+.deck-image-loading { width:min(420px,95%); display:flex; flex-direction:column; gap:13px; text-align:center; color:#e9eef7; }
+.deck-image-loading[hidden] { display:none!important; }
+.deck-image-loading small { color:#aebed5; }
+.deck-image-progress-track { height:14px; border-radius:999px; overflow:hidden; background:#283950; border:1px solid #465b78; }
+.deck-image-progress-fill { height:100%; width:0%; background:#4f91e9; border-radius:999px; transition:width .15s ease; }
+
+/* Header navigation back to the main website */
+.header-actions { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+.home-link { display:inline-flex; align-items:center; justify-content:center; text-decoration:none; font-weight:650; white-space:nowrap; }
+.home-link:focus-visible { outline:2px solid #a8caff; outline-offset:3px; }
   </style>
  </head>
  <body>
@@ -1391,12 +1403,13 @@ input[type=search] {
      </span>
     </h1>
     <small>
-     Masa's GCG Deck Builder v0.9.1
+     Masa's GCG Deck Builder v0.9.2
     </small>
    </div>
-   <span class="pill" id="countHeader">
-    Loading cards…
-   </span>
+   <div class="header-actions">
+    <span class="pill" id="countHeader">Loading cards…</span>
+    <a class="btn home-link" href="https://masayatodoroki.com/" aria-label="Return to masayatodoroki.com">⌂ Home</a>
+   </div>
   </header>
   <nav class="view-switch">
    <button class="btn primary" id="browseTab" type="button">
@@ -1619,6 +1632,13 @@ input[type=search] {
      Generating image…
     </p>
     <div class="deck-image-preview">
+     <div id="deckImageLoading" class="deck-image-loading" role="status" aria-live="polite">
+      <strong id="deckImageProgressLabel">Preparing deck image…</strong>
+      <div id="deckImageProgressTrack" class="deck-image-progress-track" role="progressbar" aria-label="Deck image generation progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+       <div id="deckImageProgressFill" class="deck-image-progress-fill"></div>
+      </div>
+      <small id="deckImageProgressDetail">Preparing…</small>
+     </div>
      <img alt="Generated deck list image" id="deckImagePreview"/>
     </div>
     <div class="deck-image-actions">
@@ -2228,7 +2248,7 @@ async function generateDeckImage(onProgress = () => {}) {
     });
     ctx.fillStyle = '#9fb0ca';
     ctx.font = '15px Arial';
-    ctx.fillText('masayatodoroki.com/DeckBuilder', side, height - 28);
+    ctx.fillText('masayatodoroki/deckbuilder', side, height - 28);
     onProgress(entries.length, entries.length, true);
     return { blob: await new Promise((resolve, reject) => canvas.toBlob(b => b ? resolve(b) : reject(new Error('PNG generation failed')), 'image/png')), missing };
 }
