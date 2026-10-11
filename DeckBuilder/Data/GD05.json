@@ -164,7 +164,7 @@
         "Repair 1",
         "Once per Turn"
       ],
-        "creates_tokens": [ "T-027" ],
+      "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
     },
@@ -2204,7 +2204,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Kira Yamato"
+        ],
+        "ap": 2,
+        "hp": 2,
+        "traits": [
+          "Orb",
+          "Coordinator"
+        ]
+      },
       "keywords": [
         "Burst",
         "When Linked"
@@ -2231,7 +2241,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Andrew Waldfeld"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "Orb",
+          "Coordinator"
+        ]
+      },
       "keywords": [
         "Repair 2",
         "Burst",
@@ -2258,7 +2278,16 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Cagalli Yula Athha"
+        ],
+        "ap": 1,
+        "hp": 1,
+        "traits": [
+          "Orb"
+        ]
+      },
       "keywords": [
         "Burst",
         "When Paired"
@@ -2284,7 +2313,16 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Odelo Henrik"
+        ],
+        "ap": 2,
+        "hp": 0,
+        "traits": [
+          "League Militaire"
+        ]
+      },
       "keywords": [
         "Burst"
       ],
@@ -2311,7 +2349,18 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Amuro Ray"
+        ],
+        "ap": 2,
+        "hp": 2,
+        "traits": [
+          "Earth Federation",
+          "Londo Bell",
+          "Newtype"
+        ]
+      },
       "keywords": [
         "Burst"
       ],
@@ -2337,7 +2386,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Kayra Su"
+        ],
+        "ap": 1,
+        "hp": 1,
+        "traits": [
+          "Earth Federation",
+          "Londo Bell"
+        ]
+      },
       "keywords": [
         "Burst",
         "During Link"
@@ -2363,7 +2422,16 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Lauda Neill"
+        ],
+        "ap": 1,
+        "hp": 1,
+        "traits": [
+          "Academy"
+        ]
+      },
       "keywords": [
         "High-Maneuver",
         "Burst"
@@ -2389,7 +2457,16 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Prospera Mercury"
+        ],
+        "ap": 1,
+        "hp": 2,
+        "traits": [
+          "Quiet Zero"
+        ]
+      },
       "keywords": [
         "Burst"
       ],
@@ -2414,7 +2491,16 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Master Asia"
+        ],
+        "ap": 2,
+        "hp": 2,
+        "traits": [
+          "Gundam Fighter"
+        ]
+      },
       "keywords": [
         "Burst",
         "During Link",
@@ -2445,7 +2531,18 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Stellar Loussier"
+        ],
+        "ap": 2,
+        "hp": 0,
+        "traits": [
+          "Earth Alliance",
+          "Phantom Pain",
+          "Biological CPU"
+        ]
+      },
       "keywords": [
         "Burst",
         "Destroyed"
@@ -2473,7 +2570,18 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Sting Oakley"
+        ],
+        "ap": 1,
+        "hp": 1,
+        "traits": [
+          "Earth Alliance",
+          "Phantom Pain",
+          "Biological CPU"
+        ]
+      },
       "keywords": [
         "Burst"
       ],
@@ -2500,7 +2608,18 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Auel Neider"
+        ],
+        "ap": 1,
+        "hp": 1,
+        "traits": [
+          "Earth Alliance",
+          "Phantom Pain",
+          "Biological CPU"
+        ]
+      },
       "keywords": [
         "Burst",
         "During Link",
@@ -2528,7 +2647,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Char Aznable"
+        ],
+        "ap": 2,
+        "hp": 2,
+        "traits": [
+          "Neo Zeon",
+          "Newtype"
+        ]
+      },
       "keywords": [
         "Burst",
         "When Linked"
@@ -2555,7 +2684,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Quess Paraya"
+        ],
+        "ap": 1,
+        "hp": 1,
+        "traits": [
+          "Neo Zeon",
+          "Newtype"
+        ]
+      },
       "keywords": [
         "Burst",
         "Destroyed"
@@ -2582,7 +2721,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Gyunei Guss"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "Neo Zeon",
+          "Cyber-Newtype"
+        ]
+      },
       "keywords": [
         "Blocker",
         "Burst"
@@ -2609,7 +2758,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Chad Chadan"
+        ],
+        "ap": 0,
+        "hp": 2,
+        "traits": [
+          "Tekkadan",
+          "Alaya-Vijnana"
+        ]
+      },
       "keywords": [
         "Burst",
         "Attack"
@@ -2636,7 +2795,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Domon Kasshu"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "Gundam Fighter",
+          "Shuffle Alliance"
+        ]
+      },
       "keywords": [
         "Burst",
         "When Paired",
@@ -2664,7 +2833,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Heero Yuy"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "G Team",
+          "Operation Meteor"
+        ]
+      },
       "keywords": [
         "Burst"
       ],
@@ -2690,7 +2869,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Trowa Barton"
+        ],
+        "ap": 1,
+        "hp": 2,
+        "traits": [
+          "G Team",
+          "Operation Meteor"
+        ]
+      },
       "keywords": [
         "Burst"
       ],
@@ -2716,7 +2905,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Quatre Raberba Winner"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "G Team",
+          "Operation Meteor"
+        ]
+      },
       "keywords": [
         "Burst",
         "When Paired"
@@ -2742,7 +2941,16 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Gavane Goonny"
+        ],
+        "ap": 1,
+        "hp": 1,
+        "traits": [
+          "Militia"
+        ]
+      },
       "keywords": [
         "Burst",
         "Once per Turn"
@@ -2799,7 +3007,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
+      "needs_review": true,
       "link_trait_conditions": []
     },
     {
@@ -2827,7 +3035,7 @@
         "Destroyed"
       ],
       "creates_tokens": [],
-      "needs_review": false,
+      "needs_review": true,
       "link_trait_conditions": []
     },
     {
@@ -2930,7 +3138,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
+      "needs_review": true,
       "link_trait_conditions": []
     },
     {
@@ -2955,7 +3163,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
+      "needs_review": true,
       "link_trait_conditions": []
     },
     {
@@ -3036,7 +3244,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
+      "needs_review": true,
       "link_trait_conditions": []
     },
     {
@@ -3063,7 +3271,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
+      "needs_review": true,
       "link_trait_conditions": []
     },
     {
@@ -3140,7 +3348,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
+      "needs_review": true,
       "link_trait_conditions": []
     },
     {
@@ -3167,7 +3375,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
+      "needs_review": true,
       "link_trait_conditions": []
     },
     {
@@ -3217,7 +3425,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
+      "needs_review": true,
       "link_trait_conditions": []
     },
     {
@@ -3273,7 +3481,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
+      "needs_review": true,
       "link_trait_conditions": []
     },
     {
@@ -3300,7 +3508,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
+      "needs_review": true,
       "link_trait_conditions": []
     },
     {
@@ -3414,7 +3622,7 @@
         "Main",
         "Once per Turn"
       ],
-        "creates_tokens": [ "T-026" ],
+      "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
     },
@@ -3529,54 +3737,6 @@
         "Deploy",
         "Destroyed"
       ],
-      "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
-    },
-    {
-      "id": "T-026",
-      "name": "Gundnode",
-      "type": "Token",
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": 2,
-      "hp": 2,
-      "traits": [
-        "Quiet Zero"
-      ],
-      "link_conditions": [],
-      "pair_conditions": {
-        "pilot_names": [],
-        "pilot_traits": []
-      },
-      "pilot": null,
-      "keywords": [
-        "Breach 1"
-      ],
-      "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
-    },
-    {
-      "id": "T-027",
-      "name": "Pluma",
-      "type": "Token",
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": 2,
-      "hp": 1,
-      "traits": [
-        "Calamity War"
-      ],
-      "link_conditions": [],
-      "pair_conditions": {
-        "pilot_names": [],
-        "pilot_traits": []
-      },
-      "pilot": null,
-      "keywords": [],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []

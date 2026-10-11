@@ -22,9 +22,13 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Repair 2",
+        "During Pair"
+      ],
       "creates_tokens": [],
-      "needs_review": true
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST01-002",
@@ -47,9 +51,12 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "When Paired"
+      ],
       "creates_tokens": [],
-      "needs_review": true
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST01-003",
@@ -74,7 +81,8 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": true
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST01-004",
@@ -97,9 +105,12 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Deploy"
+      ],
       "creates_tokens": [],
-      "needs_review": true
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST01-005",
@@ -121,7 +132,8 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": true
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST01-006",
@@ -143,9 +155,12 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "When Paired"
+      ],
       "creates_tokens": [],
-      "needs_review": true
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST01-007",
@@ -169,7 +184,8 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": true
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST01-008",
@@ -189,9 +205,12 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Blocker"
+      ],
       "creates_tokens": [],
-      "needs_review": true
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST01-009",
@@ -211,9 +230,12 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Blocker"
+      ],
       "creates_tokens": [],
-      "needs_review": true
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST01-010",
@@ -234,10 +256,25 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": {
+        "names": [
+          "Amuro Ray"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "Earth Federation",
+          "White Base Team",
+          "Newtype"
+        ]
+      },
+      "keywords": [
+        "Burst",
+        "When Paired"
+      ],
       "creates_tokens": [],
-      "needs_review": true
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST01-011",
@@ -256,10 +293,24 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": {
+        "names": [
+          "Suletta Mercury"
+        ],
+        "ap": 1,
+        "hp": 2,
+        "traits": [
+          "Academy"
+        ]
+      },
+      "keywords": [
+        "Burst",
+        "Attack",
+        "Once per Turn"
+      ],
       "creates_tokens": [],
-      "needs_review": true
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST01-012",
@@ -268,8 +319,8 @@
       "color": "Blue",
       "level": 2,
       "cost": 1,
-      "ap": null,
-      "hp": null,
+      "ap": 0,
+      "hp": 1,
       "traits": [
         "Earth Federation",
         "White Base Team"
@@ -280,37 +331,38 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Main"
+      ],
       "creates_tokens": [],
-      "needs_review": true
+      "needs_review": true,
+      "link_trait_conditions": []
     },
     {
       "id": "ST01-013",
-      "name": "Kai’s Resolve",
+      "name": "Kai's Resolve",
       "type": "Command",
       "color": "Blue",
       "level": 3,
-      "cost": 2,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "cost": 1,
+      "ap": 1,
+      "hp": 0,
+      "traits": [
+        "Earth Federation",
+        "White Base Team"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": {
-        "name": "Kai Shiden",
-        "ap": 1,
-        "hp": 0,
-        "traits": [
-          "Earth Federation",
-          "White Base Team"
-        ]
-      },
-      "keywords": [],
+      "pilot": null,
+      "keywords": [
+        "Main"
+      ],
       "creates_tokens": [],
-      "needs_review": true
+      "needs_review": true,
+      "link_trait_conditions": []
     },
     {
       "id": "ST01-014",
@@ -321,16 +373,23 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "-"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Main",
+        "Action"
+      ],
       "creates_tokens": [],
-      "needs_review": true
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST01-015",
@@ -339,7 +398,7 @@
       "color": "Blue",
       "level": 3,
       "cost": 2,
-      "ap": 0,
+      "ap": null,
       "hp": 5,
       "traits": [
         "Earth Federation",
@@ -352,13 +411,16 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
-      "creates_tokens": [
-        "T-001",
-        "T-002",
-        "T-003"
+      "keywords": [
+        "Burst",
+        "Deploy",
+        "Activate",
+        "Main",
+        "Once per Turn"
       ],
-      "needs_review": true
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST01-016",
@@ -367,7 +429,7 @@
       "color": "White",
       "level": 2,
       "cost": 1,
-      "ap": 0,
+      "ap": null,
       "hp": 5,
       "traits": [
         "Academy",
@@ -379,76 +441,15 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
-      "creates_tokens": [],
-      "needs_review": true
-    },
-    {
-      "id": "T-001",
-      "name": "Gundam",
-      "type": "Unit Token",
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": 3,
-      "hp": 3,
-      "traits": [
-        "White Base Team"
+      "keywords": [
+        "Burst",
+        "Deploy",
+        "Activate",
+        "Main"
       ],
-      "link_conditions": [],
-      "pair_conditions": {
-        "pilot_names": [],
-        "pilot_traits": []
-      },
-      "pilot": null,
-      "keywords": [],
       "creates_tokens": [],
-      "needs_review": true
-    },
-    {
-      "id": "T-002",
-      "name": "Guncannon",
-      "type": "Unit Token",
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": 2,
-      "hp": 2,
-      "traits": [
-        "White Base Team"
-      ],
-      "link_conditions": [],
-      "pair_conditions": {
-        "pilot_names": [],
-        "pilot_traits": []
-      },
-      "pilot": null,
-      "keywords": [],
-      "creates_tokens": [],
-      "needs_review": true
-    },
-    {
-      "id": "T-003",
-      "name": "Guntank",
-      "type": "Unit Token",
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": 1,
-      "hp": 1,
-      "traits": [
-        "White Base Team"
-      ],
-      "link_conditions": [],
-      "pair_conditions": {
-        "pilot_names": [],
-        "pilot_traits": []
-      },
-      "pilot": null,
-      "keywords": [],
-      "creates_tokens": [],
-      "needs_review": true
+      "needs_review": false,
+      "link_trait_conditions": []
     }
-  ],
-  "extraction_note": "Populated using previous ST01 transcription; all values require verification against images. Pair conditions not yet extracted. No image filenames stored."
+  ]
 }

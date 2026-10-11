@@ -12,9 +12,7 @@
       "hp": 4,
       "traits": [
         "CB",
-        "GN Drive",
-        "Space",
-        "Earth"
+        "GN Drive"
       ],
       "link_conditions": [
         "Setsuna F. Seiei"
@@ -28,7 +26,8 @@
         "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST07-002",
@@ -41,9 +40,7 @@
       "hp": 3,
       "traits": [
         "CB",
-        "GN Drive",
-        "Space",
-        "Earth"
+        "GN Drive"
       ],
       "link_conditions": [
         "Setsuna F. Seiei"
@@ -55,7 +52,8 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST07-003",
@@ -68,9 +66,7 @@
       "hp": 4,
       "traits": [
         "CB",
-        "GN Drive",
-        "Space",
-        "Earth"
+        "GN Drive"
       ],
       "link_conditions": [
         "Tieria Erde"
@@ -82,7 +78,8 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST07-004",
@@ -95,9 +92,7 @@
       "hp": 3,
       "traits": [
         "CB",
-        "GN Drive",
-        "Space",
-        "Earth"
+        "GN Drive"
       ],
       "link_conditions": [
         "Tieria Erde"
@@ -111,7 +106,8 @@
         "Blocker"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST07-005",
@@ -124,9 +120,7 @@
       "hp": 4,
       "traits": [
         "CB",
-        "GN Drive",
-        "Space",
-        "Earth"
+        "GN Drive"
       ],
       "link_conditions": [
         "Lockon Stratos"
@@ -140,7 +134,8 @@
         "During Link"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST07-006",
@@ -153,9 +148,7 @@
       "hp": 3,
       "traits": [
         "CB",
-        "GN Drive",
-        "Space",
-        "Earth"
+        "GN Drive"
       ],
       "link_conditions": [
         "Lockon Stratos"
@@ -167,7 +160,8 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST07-007",
@@ -180,9 +174,7 @@
       "hp": 3,
       "traits": [
         "CB",
-        "GN Drive",
-        "Space",
-        "Earth"
+        "GN Drive"
       ],
       "link_conditions": [
         "Allelujah Haptism",
@@ -195,7 +187,8 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST07-008",
@@ -208,9 +201,7 @@
       "hp": 1,
       "traits": [
         "CB",
-        "GN Drive",
-        "Space",
-        "Earth"
+        "GN Drive"
       ],
       "link_conditions": [
         "Allelujah Haptism",
@@ -223,7 +214,8 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST07-009",
@@ -232,9 +224,11 @@
       "color": "Purple",
       "level": 4,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "CB"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -255,7 +249,8 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST07-010",
@@ -264,9 +259,12 @@
       "color": "Purple",
       "level": 4,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 1,
+      "hp": 1,
+      "traits": [
+        "CB",
+        "Innovade"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -288,7 +286,8 @@
         "Destroyed"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST07-011",
@@ -297,9 +296,11 @@
       "color": "Green",
       "level": 4,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 1,
+      "hp": 2,
+      "traits": [
+        "CB"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -320,7 +321,8 @@
         "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST07-012",
@@ -329,9 +331,12 @@
       "color": "Green",
       "level": 3,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 1,
+      "hp": 1,
+      "traits": [
+        "CB",
+        "Super Soldier"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -352,7 +357,8 @@
         "Burst"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST07-013",
@@ -363,7 +369,9 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "-"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -375,7 +383,8 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST07-014",
@@ -386,7 +395,9 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "-"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -397,7 +408,8 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST07-015",
@@ -406,12 +418,11 @@
       "color": "Purple",
       "level": 2,
       "cost": 1,
-      "ap": 0,
+      "ap": null,
       "hp": 5,
       "traits": [
         "CB",
-        "Warship",
-        "Space"
+        "Warship"
       ],
       "link_conditions": [],
       "pair_conditions": {
@@ -424,7 +435,8 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     }
   ]
 }

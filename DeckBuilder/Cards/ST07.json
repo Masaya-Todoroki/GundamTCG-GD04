@@ -1,0 +1,442 @@
+{
+  "set": "ST07",
+  "cards": [
+    {
+      "id": "ST07-001",
+      "name": "Gundam Exia",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 5,
+      "cost": 4,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "CB",
+        "GN Drive"
+      ],
+      "link_conditions": [
+        "Setsuna F. Seiei"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "When Paired"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST07-002",
+      "name": "Gundam Exia",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 4,
+      "cost": 2,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "CB",
+        "GN Drive"
+      ],
+      "link_conditions": [
+        "Setsuna F. Seiei"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST07-003",
+      "name": "Gundam Virtue",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 5,
+      "cost": 3,
+      "ap": 5,
+      "hp": 4,
+      "traits": [
+        "CB",
+        "GN Drive"
+      ],
+      "link_conditions": [
+        "Tieria Erde"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST07-004",
+      "name": "Gundam Virtue",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 3,
+      "cost": 2,
+      "ap": 3,
+      "hp": 3,
+      "traits": [
+        "CB",
+        "GN Drive"
+      ],
+      "link_conditions": [
+        "Tieria Erde"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Blocker"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST07-005",
+      "name": "Gundam Dynames",
+      "type": "Unit",
+      "color": "Green",
+      "level": 4,
+      "cost": 3,
+      "ap": 2,
+      "hp": 4,
+      "traits": [
+        "CB",
+        "GN Drive"
+      ],
+      "link_conditions": [
+        "Lockon Stratos"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "During Link"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST07-006",
+      "name": "Gundam Dynames",
+      "type": "Unit",
+      "color": "Green",
+      "level": 3,
+      "cost": 2,
+      "ap": 3,
+      "hp": 3,
+      "traits": [
+        "CB",
+        "GN Drive"
+      ],
+      "link_conditions": [
+        "Lockon Stratos"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST07-007",
+      "name": "Gundam Kyrios",
+      "type": "Unit",
+      "color": "Green",
+      "level": 3,
+      "cost": 2,
+      "ap": 2,
+      "hp": 3,
+      "traits": [
+        "CB",
+        "GN Drive"
+      ],
+      "link_conditions": [
+        "Allelujah Haptism",
+        "Hallelujah Haptism"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST07-008",
+      "name": "Gundam Kyrios (Flight Mode)",
+      "type": "Unit",
+      "color": "Green",
+      "level": 2,
+      "cost": 2,
+      "ap": 3,
+      "hp": 1,
+      "traits": [
+        "CB",
+        "GN Drive"
+      ],
+      "link_conditions": [
+        "Allelujah Haptism",
+        "Hallelujah Haptism"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST07-009",
+      "name": "Setsuna F. Seiei",
+      "type": "Pilot",
+      "color": "Purple",
+      "level": 4,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "CB"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": {
+        "names": [
+          "Setsuna F. Seiei"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "CB"
+        ]
+      },
+      "keywords": [
+        "Burst",
+        "Attack"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST07-010",
+      "name": "Tieria Erde",
+      "type": "Pilot",
+      "color": "Purple",
+      "level": 4,
+      "cost": 1,
+      "ap": 1,
+      "hp": 1,
+      "traits": [
+        "CB",
+        "Innovade"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": {
+        "names": [
+          "Tieria Erde"
+        ],
+        "ap": 1,
+        "hp": 1,
+        "traits": [
+          "CB",
+          "Innovade"
+        ]
+      },
+      "keywords": [
+        "Burst",
+        "Destroyed"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST07-011",
+      "name": "Lockon Stratos (Neil)",
+      "type": "Pilot",
+      "color": "Green",
+      "level": 4,
+      "cost": 1,
+      "ap": 1,
+      "hp": 2,
+      "traits": [
+        "CB"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": {
+        "names": [
+          "Lockon Stratos (Neil)"
+        ],
+        "ap": 1,
+        "hp": 2,
+        "traits": [
+          "CB"
+        ]
+      },
+      "keywords": [
+        "Burst",
+        "When Paired"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST07-012",
+      "name": "Allelujah Haptism",
+      "type": "Pilot",
+      "color": "Green",
+      "level": 3,
+      "cost": 1,
+      "ap": 1,
+      "hp": 1,
+      "traits": [
+        "CB",
+        "Super Soldier"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": {
+        "names": [
+          "Allelujah Haptism"
+        ],
+        "ap": 1,
+        "hp": 1,
+        "traits": [
+          "CB",
+          "Super Soldier"
+        ]
+      },
+      "keywords": [
+        "Burst"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST07-013",
+      "name": "Armed Intervention",
+      "type": "Command",
+      "color": "Purple",
+      "level": 4,
+      "cost": 1,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "-"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Action"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST07-014",
+      "name": "Tactical Visionary",
+      "type": "Command",
+      "color": "Green",
+      "level": 1,
+      "cost": 1,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "-"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Main"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST07-015",
+      "name": "Ptolemaios",
+      "type": "Base",
+      "color": "Purple",
+      "level": 2,
+      "cost": 1,
+      "ap": null,
+      "hp": 5,
+      "traits": [
+        "CB",
+        "Warship"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    }
+  ]
+}

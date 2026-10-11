@@ -192,7 +192,7 @@
         "During Pair",
         "Attack"
       ],
-        "creates_tokens": [ "T-021" ],
+      "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
     },
@@ -301,7 +301,7 @@
       "keywords": [
         "Destroyed"
       ],
-        "creates_tokens": [ "T-021" ],
+      "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
     },
@@ -461,7 +461,7 @@
         "When Paired",
         "Destroyed"
       ],
-        "creates_tokens": [ "T-022", "T-023" ],
+      "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
     },
@@ -2176,7 +2176,7 @@
       "keywords": [
         "Destroyed"
       ],
-        "creates_tokens": [ "T-024" ],
+      "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
     },
@@ -2198,12 +2198,22 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Üso Ewin"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "League Militaire",
+          "Newtype"
+        ]
+      },
       "keywords": [
         "Burst",
         "When Paired"
       ],
-        "creates_tokens": [ "T-021" ],
+      "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
     },
@@ -2225,7 +2235,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Rosamia Badam"
+        ],
+        "ap": 2,
+        "hp": 0,
+        "traits": [
+          "Titans",
+          "Cyber-Newtype"
+        ]
+      },
       "keywords": [
         "Burst",
         "When Linked"
@@ -2251,7 +2271,16 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Marbet Fingerhat"
+        ],
+        "ap": 1,
+        "hp": 1,
+        "traits": [
+          "League Militaire"
+        ]
+      },
       "keywords": [
         "Burst"
       ],
@@ -2277,7 +2306,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Sleggar Law"
+        ],
+        "ap": 1,
+        "hp": 1,
+        "traits": [
+          "Earth Federation",
+          "White Base Team"
+        ]
+      },
       "keywords": [
         "Burst",
         "Attack"
@@ -2303,7 +2342,16 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Suletta Mercury"
+        ],
+        "ap": 2,
+        "hp": 2,
+        "traits": [
+          "Academy"
+        ]
+      },
       "keywords": [
         "Burst",
         "During Link",
@@ -2330,7 +2378,16 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Garma Zabi"
+        ],
+        "ap": 1,
+        "hp": 0,
+        "traits": [
+          "Zeon"
+        ]
+      },
       "keywords": [
         "Burst",
         "During Link",
@@ -2357,7 +2414,16 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Elan Ceres (Enhanced Person Number 5)"
+        ],
+        "ap": 1,
+        "hp": 2,
+        "traits": [
+          "Academy"
+        ]
+      },
       "keywords": [
         "Burst",
         "During Link",
@@ -2384,7 +2450,16 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Tokwan"
+        ],
+        "ap": 2,
+        "hp": 0,
+        "traits": [
+          "Zeon"
+        ]
+      },
       "keywords": [
         "Burst"
       ],
@@ -2410,7 +2485,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Nena Trinity"
+        ],
+        "ap": 0,
+        "hp": 3,
+        "traits": [
+          "CB",
+          "Trinity"
+        ]
+      },
       "keywords": [
         "Support 2",
         "Burst",
@@ -2439,7 +2524,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Hallelujah Haptism"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "CB",
+          "Super Soldier"
+        ]
+      },
       "keywords": [
         "Burst",
         "During Link",
@@ -2467,7 +2562,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Deux Murasame"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "Earth Federation",
+          "Cyber-Newtype"
+        ]
+      },
       "keywords": [
         "Burst",
         "Destroyed"
@@ -2494,7 +2599,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Michael Trinity"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "CB",
+          "Trinity"
+        ]
+      },
       "keywords": [
         "Burst",
         "When Linked"
@@ -2521,7 +2636,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Rey Za Burrel"
+        ],
+        "ap": 1,
+        "hp": 2,
+        "traits": [
+          "ZAFT",
+          "Minerva Squad"
+        ]
+      },
       "keywords": [
         "Burst",
         "When Linked"
@@ -2548,7 +2673,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Pala Sys"
+        ],
+        "ap": 1,
+        "hp": 1,
+        "traits": [
+          "Satyricon",
+          "Vulture"
+        ]
+      },
       "keywords": [
         "Suppression",
         "Burst",
@@ -2577,7 +2712,18 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Lunamaria Hawke"
+        ],
+        "ap": 1,
+        "hp": 1,
+        "traits": [
+          "ZAFT",
+          "Minerva Squad",
+          "Coordinator"
+        ]
+      },
       "keywords": [
         "Burst",
         "When Linked"
@@ -2603,7 +2749,16 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Ennil El"
+        ],
+        "ap": 1,
+        "hp": 2,
+        "traits": [
+          "Vulture"
+        ]
+      },
       "keywords": [
         "Burst",
         "During Link"
@@ -2630,7 +2785,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Loran Cehack"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "Militia",
+          "Moonrace"
+        ]
+      },
       "keywords": [
         "Burst",
         "When Linked"
@@ -2657,7 +2822,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Riddhe Marcenas"
+        ],
+        "ap": 1,
+        "hp": 2,
+        "traits": [
+          "Earth Federation",
+          "Newtype"
+        ]
+      },
       "keywords": [
         "Burst",
         "During Link"
@@ -2684,7 +2859,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Ali al-Saachez"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "Superpower Bloc",
+          "UN"
+        ]
+      },
       "keywords": [
         "Burst",
         "During Link",
@@ -2711,7 +2896,16 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Sochie Heim"
+        ],
+        "ap": 0,
+        "hp": 2,
+        "traits": [
+          "Militia"
+        ]
+      },
       "keywords": [
         "Burst",
         "Once per Turn"
@@ -2823,7 +3017,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
+      "needs_review": true,
       "link_trait_conditions": []
     },
     {
@@ -2874,7 +3068,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
+      "needs_review": true,
       "link_trait_conditions": []
     },
     {
@@ -2927,7 +3121,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
+      "needs_review": true,
       "link_trait_conditions": []
     },
     {
@@ -3006,7 +3200,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
+      "needs_review": true,
       "link_trait_conditions": []
     },
     {
@@ -3032,7 +3226,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
+      "needs_review": true,
       "link_trait_conditions": []
     },
     {
@@ -3138,7 +3332,7 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false,
+      "needs_review": true,
       "link_trait_conditions": []
     },
     {
@@ -3190,7 +3384,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
+      "needs_review": true,
       "link_trait_conditions": []
     },
     {
@@ -3216,7 +3410,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
+      "needs_review": true,
       "link_trait_conditions": []
     },
     {
@@ -3242,7 +3436,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
+      "needs_review": true,
       "link_trait_conditions": []
     },
     {
@@ -3268,7 +3462,7 @@
         "Burst",
         "Deploy"
       ],
-        "creates_tokens": [ "T-021" ],
+      "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
     },
@@ -3522,98 +3716,6 @@
         "Main",
         "Once per Turn"
       ],
-      "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
-    },
-    {
-      "id": "T-021",
-      "name": "Parts",
-      "type": "Token",
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": 1,
-      "hp": 1,
-      "traits": [
-        "League Militaire"
-      ],
-      "link_conditions": [],
-      "pair_conditions": {
-        "pilot_names": [],
-        "pilot_traits": []
-      },
-      "pilot": null,
-      "keywords": [],
-      "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
-    },
-    {
-      "id": "T-022",
-      "name": "Wire-Guided Arm",
-      "type": "Token",
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": 2,
-      "hp": 1,
-      "traits": [
-        "Zeon"
-      ],
-      "link_conditions": [],
-      "pair_conditions": {
-        "pilot_names": [],
-        "pilot_traits": []
-      },
-      "pilot": null,
-      "keywords": [],
-      "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
-    },
-    {
-      "id": "T-023",
-      "name": "Zeong (Head)",
-      "type": "Token",
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": 3,
-      "hp": 1,
-      "traits": [
-        "Zeon"
-      ],
-      "link_conditions": [],
-      "pair_conditions": {
-        "pilot_names": [],
-        "pilot_traits": []
-      },
-      "pilot": null,
-      "keywords": [],
-      "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
-    },
-    {
-      "id": "T-024",
-      "name": "Alvaaron",
-      "type": "Token",
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": 4,
-      "hp": 1,
-      "traits": [
-        "UN"
-      ],
-      "link_conditions": [],
-      "pair_conditions": {
-        "pilot_names": [],
-        "pilot_traits": []
-      },
-      "pilot": null,
-      "keywords": [],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []

@@ -1,0 +1,3622 @@
+{
+  "set": "GD04",
+  "cards": [
+    {
+      "id": "GD04-001",
+      "name": "Gundam",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 6,
+      "cost": 4,
+      "ap": 6,
+      "hp": 3,
+      "traits": [
+        "Earth Federation",
+        "White Base Team"
+      ],
+      "link_conditions": [
+        "Amuro Ray"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "During Link",
+        "Attack"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-002",
+      "name": "Penelope (Flight Form)",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 6,
+      "cost": 5,
+      "ap": 3,
+      "hp": 5,
+      "traits": [
+        "Earth Federation"
+      ],
+      "link_conditions": [
+        "Lane Aim"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-003",
+      "name": "Victory Gundam",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 4,
+      "cost": 3,
+      "ap": 3,
+      "hp": 4,
+      "traits": [
+        "League Militaire",
+        "Victory Type"
+      ],
+      "link_conditions": [
+        "League Militaire"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Attack"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-004",
+      "name": "Psycho Gundam Mk-Ⅱ",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 8,
+      "cost": 7,
+      "ap": 4,
+      "hp": 7,
+      "traits": [
+        "Titans"
+      ],
+      "link_conditions": [
+        "Rosamia Badam"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Repair 2",
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-005",
+      "name": "GM III",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 2,
+      "cost": 2,
+      "ap": 3,
+      "hp": 2,
+      "traits": [
+        "Earth Federation"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-006",
+      "name": "V-Dash Gundam",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 6,
+      "cost": 4,
+      "ap": 4,
+      "hp": 5,
+      "traits": [
+        "League Militaire",
+        "Victory Type"
+      ],
+      "link_conditions": [
+        "Üso Ewin"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Breach 3",
+        "Activate",
+        "Main",
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-007",
+      "name": "Victory Gundam Hexa",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 5,
+      "cost": 4,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "League Militaire",
+        "Victory Type"
+      ],
+      "link_conditions": [
+        "League Militaire"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "During Pair",
+        "Attack"
+      ],
+        "creates_tokens": [ "T-021" ],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-008",
+      "name": "Gundam",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 5,
+      "cost": 3,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "Earth Federation",
+        "White Base Team"
+      ],
+      "link_conditions": [
+        "Amuro Ray"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "High-Maneuver",
+        "During Link"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-009",
+      "name": "Guncannon (108) & Guncannon (109)",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 5,
+      "cost": 4,
+      "ap": 3,
+      "hp": 4,
+      "traits": [
+        "Earth Federation",
+        "White Base Team"
+      ],
+      "link_conditions": [
+        "Kai Shiden",
+        "Hayato Kobayashi"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "When Linked"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-010",
+      "name": "Gaplant",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 4,
+      "cost": 2,
+      "ap": 3,
+      "hp": 4,
+      "traits": [
+        "Titans"
+      ],
+      "link_conditions": [
+        "Titans"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-011",
+      "name": "Victory Gundam",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 3,
+      "cost": 2,
+      "ap": 3,
+      "hp": 2,
+      "traits": [
+        "League Militaire",
+        "Victory Type"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Destroyed"
+      ],
+        "creates_tokens": [ "T-021" ],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-012",
+      "name": "Core Booster (005) & Core Booster (006)",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 3,
+      "cost": 2,
+      "ap": 3,
+      "hp": 3,
+      "traits": [
+        "Earth Federation",
+        "White Base Team"
+      ],
+      "link_conditions": [
+        "Sleggar Law",
+        "Sayla Mass"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-013",
+      "name": "Core Fighter",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 4,
+      "cost": 2,
+      "ap": 2,
+      "hp": 3,
+      "traits": [
+        "League Militaire",
+        "Victory Type"
+      ],
+      "link_conditions": [
+        "League Militaire"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Blocker"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-014",
+      "name": "Shokew",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 2,
+      "cost": 2,
+      "ap": 2,
+      "hp": 3,
+      "traits": [
+        "League Militaire",
+        "Zanscare"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-015",
+      "name": "Gun EZ",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 3,
+      "cost": 2,
+      "ap": 2,
+      "hp": 3,
+      "traits": [
+        "League Militaire",
+        "Shrike Team"
+      ],
+      "link_conditions": [
+        "Shrike Team"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-016",
+      "name": "Zoloat (League Militaire)",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 2,
+      "cost": 2,
+      "ap": 3,
+      "hp": 2,
+      "traits": [
+        "League Militaire"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Blocker"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-017",
+      "name": "Zeong",
+      "type": "Unit",
+      "color": "Green",
+      "level": 6,
+      "cost": 5,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "Zeon"
+      ],
+      "link_conditions": [
+        "Char Aznable"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "When Paired",
+        "Destroyed"
+      ],
+        "creates_tokens": [ "T-022", "T-023" ],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-018",
+      "name": "Gundam Pharact",
+      "type": "Unit",
+      "color": "Green",
+      "level": 6,
+      "cost": 4,
+      "ap": 5,
+      "hp": 4,
+      "traits": [
+        "Academy"
+      ],
+      "link_conditions": [
+        "Elan Ceres"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Breach 5",
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-019",
+      "name": "GN Armor Type-D (Trans-Am)",
+      "type": "Unit",
+      "color": "Green",
+      "level": 6,
+      "cost": 5,
+      "ap": 4,
+      "hp": 5,
+      "traits": [
+        "CB",
+        "GN Drive"
+      ],
+      "link_conditions": [
+        "Lockon Stratos"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Breach 3",
+        "Destroyed"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-020",
+      "name": "Gundam Lfrith Ur",
+      "type": "Unit",
+      "color": "Green",
+      "level": 4,
+      "cost": 3,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "Dawn of Fold",
+        "Academy"
+      ],
+      "link_conditions": [
+        "Sophie Pulone"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-021",
+      "name": "Gundam Lfrith Thorn",
+      "type": "Unit",
+      "color": "Green",
+      "level": 5,
+      "cost": 3,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "Dawn of Fold",
+        "Academy"
+      ],
+      "link_conditions": [
+        "Norea Du Noc"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Breach 3"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-022",
+      "name": "Kikeroga (MS Mode) (GQ)",
+      "type": "Unit",
+      "color": "Green",
+      "level": 7,
+      "cost": 4,
+      "ap": 3,
+      "hp": 6,
+      "traits": [
+        "Zeon"
+      ],
+      "link_conditions": [
+        "Challia Bull"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Breach 1",
+        "During Link"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-023",
+      "name": "Gundam Kyrios (Tail Booster)",
+      "type": "Unit",
+      "color": "Green",
+      "level": 5,
+      "cost": 4,
+      "ap": 5,
+      "hp": 3,
+      "traits": [
+        "CB",
+        "GN Drive"
+      ],
+      "link_conditions": [
+        "Allelujah Haptism",
+        "Hallelujah Haptism"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-024",
+      "name": "Gundam Aerial Rebuild",
+      "type": "Unit",
+      "color": "Green",
+      "level": 7,
+      "cost": 5,
+      "ap": 5,
+      "hp": 5,
+      "traits": [
+        "Academy"
+      ],
+      "link_conditions": [
+        "Suletta Mercury"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-025",
+      "name": "Gundvölva",
+      "type": "Unit",
+      "color": "Green",
+      "level": 3,
+      "cost": 2,
+      "ap": 3,
+      "hp": 2,
+      "traits": [
+        "Dawn of Fold",
+        "Academy"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Destroyed"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-026",
+      "name": "Garma's Dopp",
+      "type": "Unit",
+      "color": "Green",
+      "level": 3,
+      "cost": 1,
+      "ap": 1,
+      "hp": 1,
+      "traits": [
+        "Zeon"
+      ],
+      "link_conditions": [
+        "Garma Zabi"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-027",
+      "name": "Bigro",
+      "type": "Unit",
+      "color": "Green",
+      "level": 5,
+      "cost": 3,
+      "ap": 5,
+      "hp": 4,
+      "traits": [
+        "Zeon"
+      ],
+      "link_conditions": [
+        "Tokwan"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-028",
+      "name": "Zakrello",
+      "type": "Unit",
+      "color": "Green",
+      "level": 3,
+      "cost": 1,
+      "ap": 4,
+      "hp": 1,
+      "traits": [
+        "Zeon"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Blocker",
+        "Attack"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-029",
+      "name": "Gundam Dynames (GN Full Shield)",
+      "type": "Unit",
+      "color": "Green",
+      "level": 3,
+      "cost": 2,
+      "ap": 2,
+      "hp": 3,
+      "traits": [
+        "CB",
+        "GN Drive"
+      ],
+      "link_conditions": [
+        "Lockon Stratos"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-030",
+      "name": "Chuchu's Demi Trainer",
+      "type": "Unit",
+      "color": "Green",
+      "level": 3,
+      "cost": 2,
+      "ap": 3,
+      "hp": 2,
+      "traits": [
+        "Academy"
+      ],
+      "link_conditions": [
+        "Academy"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Attack"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-031",
+      "name": "Heindree",
+      "type": "Unit",
+      "color": "Green",
+      "level": 2,
+      "cost": 2,
+      "ap": 3,
+      "hp": 2,
+      "traits": [
+        "Academy"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-032",
+      "name": "Xavier's Gyan Hakuji-Packs (GQ)",
+      "type": "Unit",
+      "color": "Green",
+      "level": 5,
+      "cost": 3,
+      "ap": 4,
+      "hp": 5,
+      "traits": [
+        "Zeon"
+      ],
+      "link_conditions": [
+        "Xavier Olivette"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-033",
+      "name": "Neo Zeong",
+      "type": "Unit",
+      "color": "Red",
+      "level": 9,
+      "cost": 8,
+      "ap": 6,
+      "hp": 7,
+      "traits": [
+        "Neo Zeon"
+      ],
+      "link_conditions": [
+        "Full Frontal"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "During Link"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-034",
+      "name": "Gundam Kyrios",
+      "type": "Unit",
+      "color": "Red",
+      "level": 4,
+      "cost": 3,
+      "ap": 1,
+      "hp": 4,
+      "traits": [
+        "CB",
+        "GN Drive"
+      ],
+      "link_conditions": [
+        "Allelujah Haptism",
+        "Hallelujah Haptism"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "First Strike",
+        "During Link"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-035",
+      "name": "Ξ Gundam",
+      "type": "Unit",
+      "color": "Red",
+      "level": 5,
+      "cost": 4,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "Mafty"
+      ],
+      "link_conditions": [
+        "Hathaway Noa"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-036",
+      "name": "Gundam Throne Eins",
+      "type": "Unit",
+      "color": "Red",
+      "level": 6,
+      "cost": 4,
+      "ap": 5,
+      "hp": 2,
+      "traits": [
+        "CB",
+        "Trinity"
+      ],
+      "link_conditions": [
+        "Trinity"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-037",
+      "name": "Gundam Kyrios (Trans-Am)",
+      "type": "Unit",
+      "color": "Red",
+      "level": 6,
+      "cost": 5,
+      "ap": 5,
+      "hp": 4,
+      "traits": [
+        "CB",
+        "GN Drive"
+      ],
+      "link_conditions": [
+        "Allelujah Haptism",
+        "Hallelujah Haptism"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "First Strike",
+        "Breach 3"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-038",
+      "name": "Gundam Exia",
+      "type": "Unit",
+      "color": "Red",
+      "level": 3,
+      "cost": 2,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "CB",
+        "GN Drive"
+      ],
+      "link_conditions": [
+        "Setsuna F. Seiei"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-039",
+      "name": "Rozen Zulu",
+      "type": "Unit",
+      "color": "Red",
+      "level": 4,
+      "cost": 6,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "Neo Zeon"
+      ],
+      "link_conditions": [
+        "Angelo Sauper"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Repair",
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-040",
+      "name": "Schuzrum-Galluss",
+      "type": "Unit",
+      "color": "Red",
+      "level": 4,
+      "cost": 2,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "Neo Zeon"
+      ],
+      "link_conditions": [
+        "Neo Zeon"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-041",
+      "name": "Gundam Throne Drei",
+      "type": "Unit",
+      "color": "Red",
+      "level": 5,
+      "cost": 2,
+      "ap": 3,
+      "hp": 3,
+      "traits": [
+        "CB",
+        "Trinity"
+      ],
+      "link_conditions": [
+        "Trinity"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-042",
+      "name": "Psycho Gundam (GQ)",
+      "type": "Unit",
+      "color": "Red",
+      "level": 7,
+      "cost": 5,
+      "ap": 4,
+      "hp": 5,
+      "traits": [
+        "Earth Federation"
+      ],
+      "link_conditions": [
+        "Deux Murasame"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "During Link",
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-043",
+      "name": "Zssa (Sleeves)",
+      "type": "Unit",
+      "color": "Red",
+      "level": 3,
+      "cost": 2,
+      "ap": 2,
+      "hp": 3,
+      "traits": [
+        "Neo Zeon"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-044",
+      "name": "Gadeel",
+      "type": "Unit",
+      "color": "Red",
+      "level": 3,
+      "cost": 2,
+      "ap": 3,
+      "hp": 3,
+      "traits": [
+        "New UNE"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Breach 3",
+        "Attack"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-045",
+      "name": "Gundam Throne Zwei",
+      "type": "Unit",
+      "color": "Red",
+      "level": 4,
+      "cost": 3,
+      "ap": 3,
+      "hp": 4,
+      "traits": [
+        "CB",
+        "Trinity"
+      ],
+      "link_conditions": [
+        "Ali al-Saachez",
+        "Trinity"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "When Linked"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-046",
+      "name": "Gundam Dynames",
+      "type": "Unit",
+      "color": "Red",
+      "level": 5,
+      "cost": 4,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "CB",
+        "GN Drive"
+      ],
+      "link_conditions": [
+        "Lockon Stratos"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-047",
+      "name": "Gundam Virtue",
+      "type": "Unit",
+      "color": "Red",
+      "level": 3,
+      "cost": 1,
+      "ap": 3,
+      "hp": 1,
+      "traits": [
+        "CB",
+        "GN Drive"
+      ],
+      "link_conditions": [
+        "Tieria Erde"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-048",
+      "name": "Hambrabi (GQ)",
+      "type": "Unit",
+      "color": "Red",
+      "level": 5,
+      "cost": 3,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "Earth Federation"
+      ],
+      "link_conditions": [
+        "Earth Federation"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-049",
+      "name": "Gundam DX",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 8,
+      "cost": 7,
+      "ap": 6,
+      "hp": 6,
+      "traits": [
+        "Vulture"
+      ],
+      "link_conditions": [
+        "Garrod Ran"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Suppression",
+        "During Pair",
+        "Attack"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-050",
+      "name": "Destiny Gundam",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 7,
+      "cost": 5,
+      "ap": 5,
+      "hp": 5,
+      "traits": [
+        "ZAFT",
+        "Minerva Squad"
+      ],
+      "link_conditions": [
+        "Shinn Asuka"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "High-Maneuver",
+        "During Pair",
+        "Attack"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-051",
+      "name": "Gundam Airmaster Burst",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 5,
+      "cost": 4,
+      "ap": 5,
+      "hp": 3,
+      "traits": [
+        "Vulture"
+      ],
+      "link_conditions": [
+        "Witz Sou"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "During Pair"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-052",
+      "name": "Gundam Leopard Destroy",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 6,
+      "cost": 4,
+      "ap": 4,
+      "hp": 5,
+      "traits": [
+        "Vulture"
+      ],
+      "link_conditions": [
+        "Vulture"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "During Pair",
+        "Attack"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-053",
+      "name": "Rey's Blaze Zaku Phantom",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 4,
+      "cost": 3,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "ZAFT",
+        "Minerva Squad"
+      ],
+      "link_conditions": [
+        "Minerva Squad"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "During Link",
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-054",
+      "name": "Gundam Virtue (Trans-Am)",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 7,
+      "cost": 5,
+      "ap": 2,
+      "hp": 6,
+      "traits": [
+        "CB",
+        "GN Drive"
+      ],
+      "link_conditions": [
+        "Tieria Erde"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-055",
+      "name": "Heine's Gouf Ignited",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 5,
+      "cost": 3,
+      "ap": 5,
+      "hp": 4,
+      "traits": [
+        "ZAFT",
+        "Minerva Squad"
+      ],
+      "link_conditions": [
+        "Heine Westenfluss"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-056",
+      "name": "Sword Impulse Gundam",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 4,
+      "cost": 2,
+      "ap": 3,
+      "hp": 3,
+      "traits": [
+        "ZAFT",
+        "Minerva Squad"
+      ],
+      "link_conditions": [
+        "Shinn Asuka",
+        "Lunamaria Hawke"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-057",
+      "name": "Gundam Nadleeh",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 4,
+      "cost": 3,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "CB",
+        "GN Drive"
+      ],
+      "link_conditions": [
+        "Tieria Erde"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-058",
+      "name": "Jamil's Gundam X",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 3,
+      "cost": 2,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "Old UNE"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "During Pair",
+        "Destroyed"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-059",
+      "name": "Daughtress High Mobility Command Wise Wallaby",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 2,
+      "cost": 2,
+      "ap": 2,
+      "hp": 2,
+      "traits": [
+        "Vulture"
+      ],
+      "link_conditions": [
+        "Vulture"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-060",
+      "name": "Esperansa",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 3,
+      "cost": 2,
+      "ap": 1,
+      "hp": 4,
+      "traits": [
+        "Vulture"
+      ],
+      "link_conditions": [
+        "Ennil El"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-061",
+      "name": "G-Falcon",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 2,
+      "cost": 2,
+      "ap": 3,
+      "hp": 1,
+      "traits": [
+        "Vulture"
+      ],
+      "link_conditions": [
+        "Pala Sys"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Blocker"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-062",
+      "name": "Lunamaria's Gunner Zaku Warrior",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 3,
+      "cost": 2,
+      "ap": 2,
+      "hp": 4,
+      "traits": [
+        "ZAFT",
+        "Minerva Squad"
+      ],
+      "link_conditions": [
+        "Minerva Squad"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-063",
+      "name": "GN Armor Type-E",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 4,
+      "cost": 2,
+      "ap": 3,
+      "hp": 3,
+      "traits": [
+        "CB",
+        "GN Drive"
+      ],
+      "link_conditions": [
+        "Setsuna F. Seiei"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-064",
+      "name": "Gundam Exia",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 2,
+      "cost": 2,
+      "ap": 2,
+      "hp": 3,
+      "traits": [
+        "CB",
+        "GN Drive"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-065",
+      "name": "Unicorn Gundam 02 Banshee Norn (Destroy Mode)",
+      "type": "Unit",
+      "color": "White",
+      "level": 7,
+      "cost": 5,
+      "ap": 5,
+      "hp": 5,
+      "traits": [
+        "Earth Federation"
+      ],
+      "link_conditions": [
+        "Riddhe Marcenas"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "During Link",
+        "Activate",
+        "Main",
+        "Attack"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-066",
+      "name": "Unicorn Gundam (Awakened)",
+      "type": "Unit",
+      "color": "White",
+      "level": 7,
+      "cost": 5,
+      "ap": 4,
+      "hp": 6,
+      "traits": [
+        "Civilian"
+      ],
+      "link_conditions": [
+        "Banagher Links"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Suppression",
+        "Main",
+        "Action"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-067",
+      "name": "∀ Gundam",
+      "type": "Unit",
+      "color": "White",
+      "level": 5,
+      "cost": 3,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "Militia"
+      ],
+      "link_conditions": [
+        "Loran Cehack"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Repair",
+        "Breach",
+        "First Strike",
+        "Support",
+        "High-Maneuver",
+        "Suppression",
+        "Blocker",
+        "Activate",
+        "Main",
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-068",
+      "name": "Silver Bullet",
+      "type": "Unit",
+      "color": "White",
+      "level": 5,
+      "cost": 3,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "Civilian"
+      ],
+      "link_conditions": [
+        "Gael Chan"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Blocker"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-069",
+      "name": "∀ Gundam",
+      "type": "Unit",
+      "color": "White",
+      "level": 5,
+      "cost": 3,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "Militia"
+      ],
+      "link_conditions": [
+        "Loran Cehack"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Blocker",
+        "During Link"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-070",
+      "name": "Al-Saachez's AEU Enact Custom Moralia Development Experiment Type",
+      "type": "Unit",
+      "color": "White",
+      "level": 2,
+      "cost": 2,
+      "ap": 3,
+      "hp": 1,
+      "traits": [
+        "Superpower Bloc"
+      ],
+      "link_conditions": [
+        "Ali al-Saachez"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-071",
+      "name": "Graham's Union Flag Custom Ⅱ (GN Flag)",
+      "type": "Unit",
+      "color": "White",
+      "level": 5,
+      "cost": 3,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "UN"
+      ],
+      "link_conditions": [
+        "Graham Aker"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Activate",
+        "Main"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-072",
+      "name": "Unicorn Gundam 02 Banshee Norn (Unicorn Mode)",
+      "type": "Unit",
+      "color": "White",
+      "level": 5,
+      "cost": 3,
+      "ap": 5,
+      "hp": 3,
+      "traits": [
+        "Earth Federation"
+      ],
+      "link_conditions": [
+        "Riddhe Marcenas"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "When Linked"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-073",
+      "name": "∀ Gundam",
+      "type": "Unit",
+      "color": "White",
+      "level": 4,
+      "cost": 2,
+      "ap": 3,
+      "hp": 3,
+      "traits": [
+        "Militia"
+      ],
+      "link_conditions": [
+        "Militia",
+        "Moonrace"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Activate",
+        "Main",
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-074",
+      "name": "Kapool",
+      "type": "Unit",
+      "color": "White",
+      "level": 3,
+      "cost": 2,
+      "ap": 3,
+      "hp": 3,
+      "traits": [
+        "Militia"
+      ],
+      "link_conditions": [
+        "Militia"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Attack"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-075",
+      "name": "GN-X",
+      "type": "Unit",
+      "color": "White",
+      "level": 4,
+      "cost": 6,
+      "ap": 5,
+      "hp": 3,
+      "traits": [
+        "UN"
+      ],
+      "link_conditions": [
+        "UN"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-076",
+      "name": "Hipheavy",
+      "type": "Unit",
+      "color": "White",
+      "level": 1,
+      "cost": 1,
+      "ap": 1,
+      "hp": 2,
+      "traits": [
+        "Militia"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-077",
+      "name": "Flat (Militia)",
+      "type": "Unit",
+      "color": "White",
+      "level": 3,
+      "cost": 2,
+      "ap": 2,
+      "hp": 4,
+      "traits": [
+        "Militia"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Blocker"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-078",
+      "name": "Borjarnon",
+      "type": "Unit",
+      "color": "White",
+      "level": 2,
+      "cost": 1,
+      "ap": 2,
+      "hp": 2,
+      "traits": [
+        "Militia"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-079",
+      "name": "Agrissa",
+      "type": "Unit",
+      "color": "White",
+      "level": 5,
+      "cost": 3,
+      "ap": 5,
+      "hp": 4,
+      "traits": [
+        "Superpower Bloc"
+      ],
+      "link_conditions": [
+        "Ali al-Saachez"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-080",
+      "name": "Alvatore",
+      "type": "Unit",
+      "color": "White",
+      "level": 4,
+      "cost": 4,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "UN"
+      ],
+      "link_conditions": [
+        "Alejandro Corner"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Destroyed"
+      ],
+        "creates_tokens": [ "T-024" ],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-081",
+      "name": "Üso Ewin",
+      "type": "Pilot",
+      "color": "Blue",
+      "level": 4,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "League Militaire",
+        "Newtype"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "When Paired"
+      ],
+        "creates_tokens": [ "T-021" ],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-082",
+      "name": "Rosamia Badam",
+      "type": "Pilot",
+      "color": "Blue",
+      "level": 3,
+      "cost": 1,
+      "ap": 2,
+      "hp": 0,
+      "traits": [
+        "Titans",
+        "Cyber-Newtype"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "When Linked"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-083",
+      "name": "Marbet Fingerhat",
+      "type": "Pilot",
+      "color": "Blue",
+      "level": 3,
+      "cost": 1,
+      "ap": 1,
+      "hp": 1,
+      "traits": [
+        "League Militaire"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-084",
+      "name": "Sleggar Law",
+      "type": "Pilot",
+      "color": "Blue",
+      "level": 3,
+      "cost": 1,
+      "ap": 1,
+      "hp": 1,
+      "traits": [
+        "Earth Federation",
+        "White Base Team"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Attack"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-085",
+      "name": "Suletta Mercury",
+      "type": "Pilot",
+      "color": "Green",
+      "level": 5,
+      "cost": 1,
+      "ap": 2,
+      "hp": 2,
+      "traits": [
+        "Academy"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "During Link",
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-086",
+      "name": "Garma Zabi",
+      "type": "Pilot",
+      "color": "Green",
+      "level": 3,
+      "cost": 1,
+      "ap": 1,
+      "hp": 0,
+      "traits": [
+        "Zeon"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "During Link",
+        "Destroyed"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-087",
+      "name": "Elan Ceres (Enhanced Person Number 5)",
+      "type": "Pilot",
+      "color": "Green",
+      "level": 4,
+      "cost": 1,
+      "ap": 1,
+      "hp": 2,
+      "traits": [
+        "Academy"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "During Link",
+        "Attack"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-088",
+      "name": "Tokwan",
+      "type": "Pilot",
+      "color": "Green",
+      "level": 4,
+      "cost": 1,
+      "ap": 2,
+      "hp": 0,
+      "traits": [
+        "Zeon"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-089",
+      "name": "Nena Trinity",
+      "type": "Pilot",
+      "color": "Red",
+      "level": 4,
+      "cost": 1,
+      "ap": 0,
+      "hp": 3,
+      "traits": [
+        "CB",
+        "Trinity"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Support 2",
+        "Burst",
+        "Activate",
+        "Main"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-090",
+      "name": "Hallelujah Haptism",
+      "type": "Pilot",
+      "color": "Red",
+      "level": 4,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "CB",
+        "Super Soldier"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "During Link",
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-091",
+      "name": "Deux Murasame",
+      "type": "Pilot",
+      "color": "Red",
+      "level": 4,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "Earth Federation",
+        "Cyber-Newtype"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Destroyed"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-092",
+      "name": "Michael Trinity",
+      "type": "Pilot",
+      "color": "Red",
+      "level": 4,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "CB",
+        "Trinity"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "When Linked"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-093",
+      "name": "Rey Za Burrel",
+      "type": "Pilot",
+      "color": "Purple",
+      "level": 4,
+      "cost": 1,
+      "ap": 1,
+      "hp": 2,
+      "traits": [
+        "ZAFT",
+        "Minerva Squad"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "When Linked"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-094",
+      "name": "Pala Sys",
+      "type": "Pilot",
+      "color": "Purple",
+      "level": 3,
+      "cost": 1,
+      "ap": 1,
+      "hp": 1,
+      "traits": [
+        "Satyricon",
+        "Vulture"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Suppression",
+        "Burst",
+        "When Linked"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-095",
+      "name": "Lunamaria Hawke",
+      "type": "Pilot",
+      "color": "Purple",
+      "level": 3,
+      "cost": 1,
+      "ap": 1,
+      "hp": 1,
+      "traits": [
+        "ZAFT",
+        "Minerva Squad",
+        "Coordinator"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "When Linked"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-096",
+      "name": "Ennil El",
+      "type": "Pilot",
+      "color": "Purple",
+      "level": 4,
+      "cost": 1,
+      "ap": 1,
+      "hp": 2,
+      "traits": [
+        "Vulture"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "During Link"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-097",
+      "name": "Loran Cehack",
+      "type": "Pilot",
+      "color": "White",
+      "level": 4,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "Militia",
+        "Moonrace"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "When Linked"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-098",
+      "name": "Riddhe Marcenas",
+      "type": "Pilot",
+      "color": "White",
+      "level": 4,
+      "cost": 1,
+      "ap": 1,
+      "hp": 2,
+      "traits": [
+        "Earth Federation",
+        "Newtype"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "During Link"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-099",
+      "name": "Ali al-Saachez",
+      "type": "Pilot",
+      "color": "White",
+      "level": 4,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "Superpower Bloc",
+        "UN"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "During Link",
+        "Attack"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-100",
+      "name": "Sochie Heim",
+      "type": "Pilot",
+      "color": "White",
+      "level": 3,
+      "cost": 1,
+      "ap": 0,
+      "hp": 2,
+      "traits": [
+        "Militia"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-101",
+      "name": "Kindhearted",
+      "type": "Command",
+      "color": "Blue",
+      "level": 3,
+      "cost": 1,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "-"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Main",
+        "Action"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-102",
+      "name": "Moment of Rest",
+      "type": "Command",
+      "color": "Blue",
+      "level": 4,
+      "cost": 1,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "-"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Main"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-103",
+      "name": "Spiritual Support",
+      "type": "Command",
+      "color": "Blue",
+      "level": 4,
+      "cost": 1,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "-"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Repair 2",
+        "Main"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-104",
+      "name": "Shrike Team's Bulwark",
+      "type": "Command",
+      "color": "Blue",
+      "level": 3,
+      "cost": 1,
+      "ap": 1,
+      "hp": 1,
+      "traits": [
+        "League Militaire",
+        "Shrike Team"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Main",
+        "Action"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-105",
+      "name": "Encounter",
+      "type": "Command",
+      "color": "Green",
+      "level": 5,
+      "cost": 1,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "-"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Main"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-106",
+      "name": "Indiscriminate Violence",
+      "type": "Command",
+      "color": "Green",
+      "level": 5,
+      "cost": 1,
+      "ap": 2,
+      "hp": 0,
+      "traits": [
+        "Academy",
+        "Dawn of Fold"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Main"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-107",
+      "name": "Destined Battle",
+      "type": "Command",
+      "color": "Green",
+      "level": 2,
+      "cost": 1,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "-"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Action"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-108",
+      "name": "Witches from Earth",
+      "type": "Command",
+      "color": "Green",
+      "level": 4,
+      "cost": 1,
+      "ap": 1,
+      "hp": 1,
+      "traits": [
+        "Academy",
+        "Dawn of Fold"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Main",
+        "Action"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-109",
+      "name": "Overwhelming Pressure",
+      "type": "Command",
+      "color": "Red",
+      "level": 5,
+      "cost": 3,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "-"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Main",
+        "Action"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-110",
+      "name": "Financier",
+      "type": "Command",
+      "color": "Red",
+      "level": 6,
+      "cost": 3,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "-"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Main",
+        "Action"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-111",
+      "name": "Trinity",
+      "type": "Command",
+      "color": "Red",
+      "level": 4,
+      "cost": 1,
+      "ap": 1,
+      "hp": 1,
+      "traits": [
+        "CB",
+        "Trinity"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Main",
+        "Action"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-112",
+      "name": "Inspector",
+      "type": "Command",
+      "color": "Red",
+      "level": 4,
+      "cost": 1,
+      "ap": 1,
+      "hp": 1,
+      "traits": [
+        "Earth Federation",
+        "Cyber-Newtype"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Main"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-113",
+      "name": "Damage Control",
+      "type": "Command",
+      "color": "Purple",
+      "level": 3,
+      "cost": 1,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "-"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Action"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-114",
+      "name": "Reformationist",
+      "type": "Command",
+      "color": "Purple",
+      "level": 2,
+      "cost": 1,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "-"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Main",
+        "Action"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-115",
+      "name": "Backup",
+      "type": "Command",
+      "color": "Purple",
+      "level": 3,
+      "cost": 1,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "-"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Main"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-116",
+      "name": "Reliable Big Brother",
+      "type": "Command",
+      "color": "Purple",
+      "level": 4,
+      "cost": 1,
+      "ap": 0,
+      "hp": 2,
+      "traits": [
+        "ZAFT",
+        "Minerva Squad",
+        "Coordinator"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Main"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-117",
+      "name": "Graceful Demeanor",
+      "type": "Command",
+      "color": "White",
+      "level": 4,
+      "cost": 2,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "-"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Action"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-118",
+      "name": "World Distortion",
+      "type": "Command",
+      "color": "White",
+      "level": 3,
+      "cost": 1,
+      "ap": 1,
+      "hp": 0,
+      "traits": [
+        "UN"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Main",
+        "Action"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-119",
+      "name": "Fighting Alone",
+      "type": "Command",
+      "color": "White",
+      "level": 4,
+      "cost": 1,
+      "ap": 1,
+      "hp": 1,
+      "traits": [
+        "Civilian"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Main",
+        "Action"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-120",
+      "name": "Machine Doll Squad",
+      "type": "Command",
+      "color": "White",
+      "level": 2,
+      "cost": 1,
+      "ap": 1,
+      "hp": 0,
+      "traits": [
+        "Militia"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Main",
+        "Action"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-121",
+      "name": "Reineforce Jr.",
+      "type": "Base",
+      "color": "Blue",
+      "level": 3,
+      "cost": 1,
+      "ap": null,
+      "hp": 5,
+      "traits": [
+        "League Militaire",
+        "Warship"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Deploy"
+      ],
+        "creates_tokens": [ "T-021" ],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-122",
+      "name": "Jaburo",
+      "type": "Base",
+      "color": "Blue",
+      "level": 4,
+      "cost": 1,
+      "ap": null,
+      "hp": 5,
+      "traits": [
+        "Earth Federation",
+        "Stronghold"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Deploy",
+        "Activate",
+        "Main",
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-123",
+      "name": "A Baoa Qu",
+      "type": "Base",
+      "color": "Green",
+      "level": 5,
+      "cost": 1,
+      "ap": null,
+      "hp": 5,
+      "traits": [
+        "Zeon",
+        "Stronghold"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-124",
+      "name": "9th Tactical Testing Sector",
+      "type": "Base",
+      "color": "Green",
+      "level": 3,
+      "cost": 1,
+      "ap": null,
+      "hp": 5,
+      "traits": [
+        "Academy",
+        "Stronghold"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-125",
+      "name": "Trinity Warship",
+      "type": "Base",
+      "color": "Red",
+      "level": 4,
+      "cost": 1,
+      "ap": null,
+      "hp": 5,
+      "traits": [
+        "CB",
+        "Warship"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Deploy",
+        "Activate",
+        "Main",
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-126",
+      "name": "Izuma Colony",
+      "type": "Base",
+      "color": "Red",
+      "level": 1,
+      "cost": 1,
+      "ap": null,
+      "hp": 4,
+      "traits": [
+        "Clan",
+        "Stronghold"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-127",
+      "name": "Freeden Ⅱ",
+      "type": "Base",
+      "color": "Purple",
+      "level": 4,
+      "cost": 1,
+      "ap": null,
+      "hp": 5,
+      "traits": [
+        "Vulture",
+        "Warship"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-128",
+      "name": "Armory One",
+      "type": "Base",
+      "color": "Purple",
+      "level": 4,
+      "cost": 1,
+      "ap": null,
+      "hp": 6,
+      "traits": [
+        "ZAFT",
+        "Stronghold"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Deploy",
+        "Destroyed"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-129",
+      "name": "Willgem",
+      "type": "Base",
+      "color": "White",
+      "level": 3,
+      "cost": 1,
+      "ap": null,
+      "hp": 7,
+      "traits": [
+        "Militia",
+        "Warship"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Deploy",
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "GD04-130",
+      "name": "Industrial 7",
+      "type": "Base",
+      "color": "White",
+      "level": 4,
+      "cost": 1,
+      "ap": null,
+      "hp": 5,
+      "traits": [
+        "Civilian",
+        "Stronghold"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Deploy",
+        "Activate",
+        "Main",
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "T-021",
+      "name": "Parts",
+      "type": "Token",
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": 1,
+      "hp": 1,
+      "traits": [
+        "League Militaire"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "T-022",
+      "name": "Wire-Guided Arm",
+      "type": "Token",
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "Zeon"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "T-023",
+      "name": "Zeong (Head)",
+      "type": "Token",
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": 3,
+      "hp": 1,
+      "traits": [
+        "Zeon"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "T-024",
+      "name": "Alvaaron",
+      "type": "Token",
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": 4,
+      "hp": 1,
+      "traits": [
+        "UN"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    }
+  ]
+}

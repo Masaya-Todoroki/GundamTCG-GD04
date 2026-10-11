@@ -11,9 +11,7 @@
       "ap": 5,
       "hp": 5,
       "traits": [
-        "Mafty",
-        "Space",
-        "Earth"
+        "Mafty"
       ],
       "link_conditions": [
         "Hathaway Noa"
@@ -27,7 +25,8 @@
         "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST08-002",
@@ -39,9 +38,7 @@
       "ap": 4,
       "hp": 4,
       "traits": [
-        "Mafty",
-        "Space",
-        "Earth"
+        "Mafty"
       ],
       "link_conditions": [
         "Hathaway Noa"
@@ -55,11 +52,12 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST08-003",
-      "name": "Messer Type-F Naked (Commander Type)",
+      "name": "Messer (Type-F Naked) (Commander Type)",
       "type": "Unit",
       "color": "Red",
       "level": 4,
@@ -67,11 +65,11 @@
       "ap": 4,
       "hp": 3,
       "traits": [
-        "Mafty",
-        "Space",
-        "Earth"
+        "Mafty"
       ],
-      "link_conditions": [],
+      "link_conditions": [
+        "Mafty"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -79,7 +77,8 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST08-004",
@@ -91,11 +90,11 @@
       "ap": 2,
       "hp": 1,
       "traits": [
-        "Mafty",
-        "Space",
-        "Earth"
+        "Mafty"
       ],
-      "link_conditions": [],
+      "link_conditions": [
+        "Mafty"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -105,7 +104,8 @@
         "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST08-005",
@@ -117,9 +117,7 @@
       "ap": 4,
       "hp": 3,
       "traits": [
-        "Mafty",
-        "Space",
-        "Earth"
+        "Mafty"
       ],
       "link_conditions": [],
       "pair_conditions": {
@@ -129,7 +127,8 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST08-006",
@@ -141,9 +140,7 @@
       "ap": 5,
       "hp": 5,
       "traits": [
-        "Earth Federation",
-        "Space",
-        "Earth"
+        "Earth Federation"
       ],
       "link_conditions": [
         "Lane Aim"
@@ -156,10 +153,11 @@
       "keywords": [
         "During Pair",
         "Attack",
-        "Once Per Turn"
+        "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST08-007",
@@ -171,9 +169,7 @@
       "ap": 5,
       "hp": 4,
       "traits": [
-        "Earth Federation",
-        "Space",
-        "Earth"
+        "Earth Federation"
       ],
       "link_conditions": [
         "Lane Aim"
@@ -185,7 +181,8 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST08-008",
@@ -197,9 +194,7 @@
       "ap": 3,
       "hp": 4,
       "traits": [
-        "Earth Federation",
-        "Space",
-        "Earth"
+        "Earth Federation"
       ],
       "link_conditions": [],
       "pair_conditions": {
@@ -211,7 +206,8 @@
         "Blocker"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST08-009",
@@ -220,11 +216,10 @@
       "color": "Blue",
       "level": 1,
       "cost": 1,
-      "ap": 0,
+      "ap": null,
       "hp": 1,
       "traits": [
-        "Earth Federation",
-        "Earth"
+        "Earth Federation"
       ],
       "link_conditions": [],
       "pair_conditions": {
@@ -236,7 +231,8 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST08-010",
@@ -245,9 +241,12 @@
       "color": "Red",
       "level": 4,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "Mafty",
+        "Newtype"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -269,7 +268,8 @@
         "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST08-011",
@@ -278,9 +278,11 @@
       "color": "Blue",
       "level": 4,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "Earth Federation"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -297,10 +299,12 @@
         ]
       },
       "keywords": [
+        "High-Maneuver",
         "Burst"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST08-012",
@@ -309,9 +313,11 @@
       "color": "Red",
       "level": 3,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 1,
+      "hp": 0,
+      "traits": [
+        "Mafty"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -319,10 +325,12 @@
       },
       "pilot": null,
       "keywords": [
+        "Breach 1",
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": true,
+      "link_trait_conditions": []
     },
     {
       "id": "ST08-013",
@@ -333,7 +341,9 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "-"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -345,7 +355,8 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST08-014",
@@ -354,12 +365,11 @@
       "color": "Red",
       "level": 2,
       "cost": 1,
-      "ap": 0,
+      "ap": null,
       "hp": 5,
       "traits": [
         "Mafty",
-        "Warship",
-        "Earth"
+        "Warship"
       ],
       "link_conditions": [],
       "pair_conditions": {
@@ -372,7 +382,8 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST08-015",
@@ -381,12 +392,11 @@
       "color": "Blue",
       "level": 3,
       "cost": 1,
-      "ap": 0,
+      "ap": null,
       "hp": 5,
       "traits": [
         "Earth Federation",
-        "Stronghold",
-        "Earth"
+        "Stronghold"
       ],
       "link_conditions": [],
       "pair_conditions": {
@@ -397,11 +407,13 @@
       "keywords": [
         "Burst",
         "Deploy",
-        "Activate Main",
-        "Once Per Turn"
+        "Activate",
+        "Main",
+        "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     }
   ]
 }

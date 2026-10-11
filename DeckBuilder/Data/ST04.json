@@ -22,11 +22,12 @@
       },
       "pilot": null,
       "keywords": [
-        "Blocker"
+        "Blocker",
+        "When Paired"
       ],
       "creates_tokens": [],
       "needs_review": false,
-      "pair_min_pilot_level": 4
+      "link_trait_conditions": []
     },
     {
       "id": "ST04-002",
@@ -48,9 +49,12 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Deploy"
+      ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST04-003",
@@ -74,7 +78,8 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST04-004",
@@ -98,7 +103,8 @@
         "Blocker"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST04-005",
@@ -120,7 +126,8 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST04-006",
@@ -142,9 +149,12 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Attack"
+      ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST04-007",
@@ -167,10 +177,11 @@
       },
       "pilot": null,
       "keywords": [
-        "Breach"
+        "Breach 3"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST04-008",
@@ -192,7 +203,8 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST04-009",
@@ -214,9 +226,13 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "During Pair",
+        "Destroyed"
+      ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST04-010",
@@ -225,9 +241,12 @@
       "color": "White",
       "level": 4,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "Earth Alliance",
+        "Coordinator"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -244,9 +263,13 @@
           "Coordinator"
         ]
       },
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Attack"
+      ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST04-011",
@@ -255,9 +278,12 @@
       "color": "Red",
       "level": 4,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 1,
+      "hp": 2,
+      "traits": [
+        "ZAFT",
+        "Coordinator"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -274,9 +300,13 @@
           "Coordinator"
         ]
       },
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "When Linked"
+      ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST04-012",
@@ -287,20 +317,23 @@
       "cost": 2,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "-"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
-      "creates_tokens": [
-        "T-008",
-        "T-009",
-        "T-010"
+      "keywords": [
+        "Blocker",
+        "Burst",
+        "Main"
       ],
-      "needs_review": false
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST04-013",
@@ -309,27 +342,24 @@
       "color": "White",
       "level": 2,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 1,
+      "hp": 0,
+      "traits": [
+        "Earth Alliance"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": {
-        "names": [
-          "Mu La Flaga"
-        ],
-        "ap": 1,
-        "hp": 0,
-        "traits": [
-          "Earth Alliance"
-        ]
-      },
-      "keywords": [],
+      "pilot": null,
+      "keywords": [
+        "Main",
+        "Action"
+      ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": true,
+      "link_trait_conditions": []
     },
     {
       "id": "ST04-014",
@@ -338,28 +368,26 @@
       "color": "Red",
       "level": 3,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 0,
+      "hp": 1,
+      "traits": [
+        "ZAFT",
+        "Coordinator"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": {
-        "names": [
-          "Miguel Ayman"
-        ],
-        "ap": 0,
-        "hp": 1,
-        "traits": [
-          "ZAFT",
-          "Coordinator"
-        ]
-      },
-      "keywords": [],
+      "pilot": null,
+      "keywords": [
+        "First Strike",
+        "Main",
+        "Action"
+      ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": true,
+      "link_trait_conditions": []
     },
     {
       "id": "ST04-015",
@@ -368,7 +396,7 @@
       "color": "White",
       "level": 3,
       "cost": 1,
-      "ap": 0,
+      "ap": null,
       "hp": 5,
       "traits": [
         "Earth Alliance",
@@ -380,9 +408,17 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Blocker",
+        "Burst",
+        "Deploy",
+        "Activate",
+        "Main",
+        "Once per Turn"
+      ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST04-016",
@@ -391,7 +427,7 @@
       "color": "Red",
       "level": 3,
       "cost": 1,
-      "ap": 0,
+      "ap": null,
       "hp": 5,
       "traits": [
         "ZAFT",
@@ -403,81 +439,15 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
-      "creates_tokens": [],
-      "needs_review": false
-    },
-    {
-      "id": "T-008",
-      "name": "Aile Strike Gundam",
-      "type": "Token",
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": 3,
-      "hp": 3,
-      "traits": [
-        "Earth Alliance"
-      ],
-      "link_conditions": [],
-      "pair_conditions": {
-        "pilot_names": [],
-        "pilot_traits": []
-      },
-      "pilot": null,
       "keywords": [
-        "Blocker"
+        "Burst",
+        "Deploy",
+        "Activate",
+        "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false
-    },
-    {
-      "id": "T-009",
-      "name": "Launcher Strike Gundam",
-      "type": "Token",
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": 2,
-      "hp": 4,
-      "traits": [
-        "Earth Alliance"
-      ],
-      "link_conditions": [],
-      "pair_conditions": {
-        "pilot_names": [],
-        "pilot_traits": []
-      },
-      "pilot": null,
-      "keywords": [
-        "Blocker"
-      ],
-      "creates_tokens": [],
-      "needs_review": false
-    },
-    {
-      "id": "T-010",
-      "name": "Sword Strike Gundam",
-      "type": "Token",
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": 4,
-      "hp": 2,
-      "traits": [
-        "Earth Alliance"
-      ],
-      "link_conditions": [],
-      "pair_conditions": {
-        "pilot_names": [],
-        "pilot_traits": []
-      },
-      "pilot": null,
-      "keywords": [
-        "Blocker"
-      ],
-      "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     }
   ]
 }

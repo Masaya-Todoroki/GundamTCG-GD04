@@ -22,10 +22,12 @@
       },
       "pilot": null,
       "keywords": [
-        "High-Maneuver"
+        "High-Maneuver",
+        "During Pair"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST03-002",
@@ -48,33 +50,38 @@
       },
       "pilot": null,
       "keywords": [
-        "Support"
+        "Support 2",
+        "Activate",
+        "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
-        "id": "ST03-003",
-        "name": "Geara Zulu",
-        "type": "Unit",
-        "color": "Red",
-        "level": 3,
-        "cost": 2,
-        "ap": 3,
-        "hp": 2,
-        "traits": [
-            "Neo Zeon"
-        ],
-        "link_conditions": [],
-        "link_trait_conditions": [ "Neo Zeon" ],
-        "pair_conditions": {
-            "pilot_names": [],
-            "pilot_traits": []
-        },
-        "pilot": null,
-        "keywords": [],
-        "creates_tokens": [],
-        "needs_review": false
+      "id": "ST03-003",
+      "name": "Geara Zulu",
+      "type": "Unit",
+      "color": "Red",
+      "level": 3,
+      "cost": 2,
+      "ap": 3,
+      "hp": 2,
+      "traits": [
+        "Neo Zeon"
+      ],
+      "link_conditions": [
+        "Neo Zeon"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST03-004",
@@ -95,10 +102,13 @@
       },
       "pilot": null,
       "keywords": [
-        "Support"
+        "Support 2",
+        "Activate",
+        "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST03-005",
@@ -120,11 +130,12 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST03-006",
-      "name": "Char's Zaku II",
+      "name": "Char's Zaku Ⅱ",
       "type": "Unit",
       "color": "Green",
       "level": 3,
@@ -143,14 +154,15 @@
       },
       "pilot": null,
       "keywords": [
-        "Resupply"
+        "Destroyed"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST03-007",
-      "name": "Zaku I",
+      "name": "Zaku Ⅰ",
       "type": "Unit",
       "color": "Green",
       "level": 1,
@@ -168,11 +180,12 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST03-008",
-      "name": "Zaku II",
+      "name": "Zaku Ⅱ",
       "type": "Unit",
       "color": "Green",
       "level": 2,
@@ -188,9 +201,12 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Attack"
+      ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST03-009",
@@ -212,11 +228,12 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
-      "creates_tokens": [
-        "T-007"
+      "keywords": [
+        "Deploy"
       ],
-      "needs_review": false
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST03-010",
@@ -225,16 +242,16 @@
       "color": "Red",
       "level": 6,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 2,
+      "hp": 2,
+      "traits": [
+        "Neo Zeon",
+        "Cyber-Newtype"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
-        "pilot_traits": [
-          "Neo Zeon",
-          "Zeon"
-        ]
+        "pilot_traits": []
       },
       "pilot": {
         "names": [
@@ -247,9 +264,13 @@
           "Cyber-Newtype"
         ]
       },
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "When Paired"
+      ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST03-011",
@@ -258,9 +279,12 @@
       "color": "Green",
       "level": 3,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 1,
+      "hp": 1,
+      "traits": [
+        "Zeon",
+        "Newtype"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -277,9 +301,14 @@
           "Newtype"
         ]
       },
-      "keywords": [],
+      "keywords": [
+        "High-Maneuver",
+        "Burst",
+        "Attack"
+      ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST03-012",
@@ -288,27 +317,24 @@
       "color": "Red",
       "level": 2,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 1,
+      "hp": 0,
+      "traits": [
+        "Neo Zeon"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": {
-        "names": [
-          "Angelo Sauper"
-        ],
-        "ap": 1,
-        "hp": 0,
-        "traits": [
-          "Neo Zeon"
-        ]
-      },
-      "keywords": [],
+      "pilot": null,
+      "keywords": [
+        "Main",
+        "Action"
+      ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": true,
+      "link_trait_conditions": []
     },
     {
       "id": "ST03-013",
@@ -319,16 +345,23 @@
       "cost": 2,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "-"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Main",
+        "Action"
+      ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST03-014",
@@ -337,105 +370,6 @@
       "color": "Green",
       "level": 4,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
-      "pair_conditions": {
-        "pilot_names": [],
-        "pilot_traits": []
-      },
-      "pilot": {
-        "names": [
-          "Ramba Ral"
-        ],
-        "ap": 1,
-        "hp": 1,
-        "traits": [
-          "Zeon"
-        ]
-      },
-      "keywords": [],
-      "creates_tokens": [],
-      "needs_review": false
-    },
-    {
-      "id": "ST03-015",
-      "name": "Rewloola",
-      "type": "Base",
-      "color": "Red",
-      "level": 3,
-      "cost": 2,
-      "ap": 0,
-      "hp": 5,
-      "traits": [
-        "Neo Zeon",
-        "Warship"
-      ],
-      "link_conditions": [],
-      "pair_conditions": {
-        "pilot_names": [],
-        "pilot_traits": []
-      },
-      "pilot": null,
-      "keywords": [],
-      "creates_tokens": [],
-      "needs_review": false
-    },
-    {
-      "id": "ST03-016",
-      "name": "Falmel",
-      "type": "Base",
-      "color": "Green",
-      "level": 3,
-      "cost": 2,
-      "ap": 0,
-      "hp": 5,
-      "traits": [
-        "Zeon",
-        "Warship"
-      ],
-      "link_conditions": [],
-      "pair_conditions": {
-        "pilot_names": [],
-        "pilot_traits": []
-      },
-      "pilot": null,
-      "keywords": [],
-      "creates_tokens": [
-        "T-006"
-      ],
-      "needs_review": false
-    },
-    {
-      "id": "T-006",
-      "name": "Char's Zaku II",
-      "type": "Token",
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": 3,
-      "hp": 1,
-      "traits": [
-        "Zeon"
-      ],
-      "link_conditions": [],
-      "pair_conditions": {
-        "pilot_names": [],
-        "pilot_traits": []
-      },
-      "pilot": null,
-      "keywords": [],
-      "creates_tokens": [],
-      "needs_review": false
-    },
-    {
-      "id": "T-007",
-      "name": "Zaku II",
-      "type": "Token",
-      "color": null,
-      "level": null,
-      "cost": null,
       "ap": 1,
       "hp": 1,
       "traits": [
@@ -447,9 +381,66 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Action"
+      ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": true,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST03-015",
+      "name": "Rewloola",
+      "type": "Base",
+      "color": "Red",
+      "level": 3,
+      "cost": 2,
+      "ap": null,
+      "hp": 5,
+      "traits": [
+        "Neo Zeon",
+        "Warship"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST03-016",
+      "name": "Falmel",
+      "type": "Base",
+      "color": "Green",
+      "level": 3,
+      "cost": 2,
+      "ap": null,
+      "hp": 5,
+      "traits": [
+        "Zeon",
+        "Warship"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
     }
   ]
 }

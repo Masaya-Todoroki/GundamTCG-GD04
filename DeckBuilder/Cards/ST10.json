@@ -1,0 +1,443 @@
+{
+  "set": "ST10",
+  "cards": [
+    {
+      "id": "ST10-001",
+      "name": "Zeta Gundam (EX)",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 7,
+      "cost": 6,
+      "ap": 5,
+      "hp": 5,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Kamille Bidan"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST10-002",
+      "name": "Zeta Gundam",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 5,
+      "cost": 4,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Kamille Bidan",
+        "Support"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST10-003",
+      "name": "Gundam Mk-II (AEUG)",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 2,
+      "cost": 2,
+      "ap": 2,
+      "hp": 2,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Kamille Bidan"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST10-004",
+      "name": "Super Gundam",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 4,
+      "cost": 3,
+      "ap": 3,
+      "hp": 4,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Repair 2"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST10-005",
+      "name": "Nemo",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 2,
+      "cost": 1,
+      "ap": 2,
+      "hp": 2,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST10-006",
+      "name": "Phoenix Gundam (Power Unleashed) (EX)",
+      "type": "Unit",
+      "color": "White",
+      "level": 5,
+      "cost": 3,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Mark Guilder"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "During Pair"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST10-007",
+      "name": "Gundam Barbatos 4th Form",
+      "type": "Unit",
+      "color": "White",
+      "level": 6,
+      "cost": 5,
+      "ap": 4,
+      "hp": 5,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "G Generation"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "When Linked"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST10-008",
+      "name": "Gundam Barbatos 1st Form",
+      "type": "Unit",
+      "color": "White",
+      "level": 4,
+      "cost": 3,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "G Generation"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST10-009",
+      "name": "Graze Duel Type",
+      "type": "Unit",
+      "color": "White",
+      "level": 3,
+      "cost": 2,
+      "ap": 2,
+      "hp": 3,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "G Generation"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Blocker"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST10-010",
+      "name": "Mobile Worker (Tekkadan)",
+      "type": "Unit",
+      "color": "White",
+      "level": 2,
+      "cost": 2,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Blocker"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST10-011",
+      "name": "Kamille Bidan",
+      "type": "Pilot",
+      "color": "Blue",
+      "level": 4,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "G Generation",
+        "Attack"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": {
+        "names": [
+          "Kamille Bidan"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "G Generation",
+          "Attack"
+        ]
+      },
+      "keywords": [
+        "Burst",
+        "When Linked"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST10-012",
+      "name": "Mark Guilder",
+      "type": "Pilot",
+      "color": "White",
+      "level": 4,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "G Generation",
+        "Support"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": {
+        "names": [
+          "Mark Guilder"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "G Generation",
+          "Support"
+        ]
+      },
+      "keywords": [
+        "Burst",
+        "When Paired"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST10-013",
+      "name": "Tactical Training",
+      "type": "Command",
+      "color": "Blue",
+      "level": 3,
+      "cost": 1,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "-"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Main",
+        "Action"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST10-014",
+      "name": "Unlocking the Development Diagram",
+      "type": "Command",
+      "color": "Blue",
+      "level": 4,
+      "cost": 4,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "-"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Main"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST10-015",
+      "name": "Diffuse Beam Cannon",
+      "type": "Command",
+      "color": "White",
+      "level": 3,
+      "cost": 1,
+      "ap": 1,
+      "hp": 0,
+      "traits": [
+        "G Generation",
+        "Durability"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Action"
+      ],
+      "creates_tokens": [],
+      "needs_review": true,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST10-016",
+      "name": "Luna Mana & Carry Base",
+      "type": "Base",
+      "color": "Blue",
+      "level": 4,
+      "cost": 1,
+      "ap": null,
+      "hp": 5,
+      "traits": [
+        "G Generation",
+        "Warship"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    }
+  ]
+}

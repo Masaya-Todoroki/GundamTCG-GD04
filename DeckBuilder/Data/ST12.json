@@ -294,7 +294,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Milliardo Peacecraft",
+          "Zechs Merquise"
+        ],
+        "ap": 3,
+        "hp": 1,
+        "traits": [
+          "White Fang"
+        ]
+      },
       "keywords": [
         "Burst",
         "Activate",
@@ -323,7 +333,18 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Ple-Twelve",
+          "Marida Cruz"
+        ],
+        "ap": 1,
+        "hp": 2,
+        "traits": [
+          "Earth Federation",
+          "Cyber-Newtype"
+        ]
+      },
       "keywords": [
         "Burst",
         "When Linked"
@@ -375,7 +396,16 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "M'Quve"
+        ],
+        "ap": 1,
+        "hp": 0,
+        "traits": [
+          "Zeon"
+        ]
+      },
       "keywords": [
         "Action"
       ],

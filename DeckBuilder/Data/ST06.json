@@ -11,12 +11,11 @@
       "ap": 4,
       "hp": 4,
       "traits": [
-        "Clan",
-        "Space",
-        "Earth"
+        "Clan"
       ],
       "link_conditions": [
-        "Amate Yuzuriha (Machu)"
+        "Amate Yuzuriha (Machu)",
+        "Machu"
       ],
       "pair_conditions": {
         "pilot_names": [],
@@ -24,10 +23,12 @@
       },
       "pilot": null,
       "keywords": [
-        "First Strike"
+        "First Strike",
+        "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST06-002",
@@ -39,12 +40,11 @@
       "ap": 4,
       "hp": 2,
       "traits": [
-        "Clan",
-        "Space",
-        "Earth"
+        "Clan"
       ],
       "link_conditions": [
-        "Amate Yuzuriha (Machu)"
+        "Amate Yuzuriha (Machu)",
+        "Machu"
       ],
       "pair_conditions": {
         "pilot_names": [],
@@ -55,11 +55,12 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST06-003",
-      "name": "Gaia’s Rick Dom (GG)",
+      "name": "Gaia's Rick Dom (GQ)",
       "type": "Unit",
       "color": "Red",
       "level": 2,
@@ -67,11 +68,10 @@
       "ap": 2,
       "hp": 2,
       "traits": [
-        "Clan",
-        "Space"
+        "Clan"
       ],
       "link_conditions": [
-        "Gaia (GG)"
+        "Gaia"
       ],
       "pair_conditions": {
         "pilot_names": [],
@@ -79,15 +79,17 @@
       },
       "pilot": null,
       "keywords": [
-        "Activate Main",
-        "Support"
+        "Support 1",
+        "Activate",
+        "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST06-004",
-      "name": "Gelgoog (GG)",
+      "name": "Gelgoog (GQ)",
       "type": "Unit",
       "color": "Red",
       "level": 2,
@@ -95,9 +97,7 @@
       "ap": 2,
       "hp": 2,
       "traits": [
-        "Zeon",
-        "Space",
-        "Earth"
+        "Zeon"
       ],
       "link_conditions": [],
       "pair_conditions": {
@@ -107,7 +107,8 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST06-005",
@@ -119,9 +120,7 @@
       "ap": 4,
       "hp": 3,
       "traits": [
-        "Clan",
-        "Space",
-        "Earth"
+        "Clan"
       ],
       "link_conditions": [
         "Shuji Itō"
@@ -132,10 +131,12 @@
       },
       "pilot": null,
       "keywords": [
-        "Breach"
+        "Breach 1",
+        "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST06-006",
@@ -147,9 +148,7 @@
       "ap": 3,
       "hp": 4,
       "traits": [
-        "Clan",
-        "Space",
-        "Earth"
+        "Clan"
       ],
       "link_conditions": [
         "Shuji Itō"
@@ -161,11 +160,12 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST06-007",
-      "name": "Ortega’s Rick Dom (GG)",
+      "name": "Ortega's Rick Dom (GQ)",
       "type": "Unit",
       "color": "Green",
       "level": 3,
@@ -173,11 +173,10 @@
       "ap": 3,
       "hp": 2,
       "traits": [
-        "Clan",
-        "Space"
+        "Clan"
       ],
       "link_conditions": [
-        "Ortega (GG)"
+        "Ortega"
       ],
       "pair_conditions": {
         "pilot_names": [],
@@ -188,11 +187,12 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST06-008",
-      "name": "Suga’s Gelgoog (GG)",
+      "name": "Sugai's Gelgoog (GQ)",
       "type": "Unit",
       "color": "Green",
       "level": 3,
@@ -200,11 +200,11 @@
       "ap": 3,
       "hp": 3,
       "traits": [
-        "Clan",
-        "Space",
-        "Earth"
+        "Clan"
       ],
-      "link_conditions": [],
+      "link_conditions": [
+        "Clan"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -212,7 +212,8 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST06-009",
@@ -221,9 +222,12 @@
       "color": "Red",
       "level": 4,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "Clan",
+        "Newtype"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -241,10 +245,12 @@
         ]
       },
       "keywords": [
-        "Burst"
+        "Burst",
+        "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST06-010",
@@ -253,9 +259,12 @@
       "color": "Green",
       "level": 4,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 1,
+      "hp": 2,
+      "traits": [
+        "Clan",
+        "Newtype"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -273,10 +282,13 @@
         ]
       },
       "keywords": [
-        "Burst"
+        "Burst",
+        "During Link",
+        "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST06-011",
@@ -285,9 +297,11 @@
       "color": "Red",
       "level": 3,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 1,
+      "hp": 0,
+      "traits": [
+        "Clan"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -308,7 +322,8 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST06-012",
@@ -319,7 +334,9 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "-"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -330,7 +347,8 @@
         "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST06-013",
@@ -339,9 +357,11 @@
       "color": "Green",
       "level": 3,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 1,
+      "hp": 0,
+      "traits": [
+        "Clan"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -361,7 +381,8 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST06-014",
@@ -370,12 +391,11 @@
       "color": "Red",
       "level": 3,
       "cost": 1,
-      "ap": 0,
+      "ap": null,
       "hp": 5,
       "traits": [
         "Clan",
-        "Stronghold",
-        "Space"
+        "Stronghold"
       ],
       "link_conditions": [],
       "pair_conditions": {
@@ -386,10 +406,12 @@
       "keywords": [
         "Burst",
         "Deploy",
-        "Activate Main"
+        "Activate",
+        "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST06-015",
@@ -398,12 +420,11 @@
       "color": "Green",
       "level": 4,
       "cost": 2,
-      "ap": 0,
+      "ap": null,
       "hp": 5,
       "traits": [
         "Clan",
-        "Stronghold",
-        "Space"
+        "Stronghold"
       ],
       "link_conditions": [],
       "pair_conditions": {
@@ -412,13 +433,14 @@
       },
       "pilot": null,
       "keywords": [
+        "Breach 3",
         "Burst",
         "Deploy",
-        "Once Per Turn",
-        "Breach"
+        "Once per Turn"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     }
   ]
 }

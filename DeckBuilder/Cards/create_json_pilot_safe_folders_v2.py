@@ -1,21 +1,61 @@
-"""Generate a set JSON from the public GCG API and the matching image folder.
-Run: python create_json.py and enter the set code when prompted   (requires an internet connection; standard library only)
+"""Generate a set JSON from the public GCG API and a matching card-image folder.
+Run: python create_json_pilot_safe_folders_v2.py and enter the set code when prompted   (requires an internet connection; standard library only)
 Data attribution: gcg-api (ODbL 1.0), https://github.com/yzRobo/gcg-api
 """
-import json, re, urllib.request, zipfile, pathlib
+import json, re, urllib.request, pathlib
 
 # Enter the set when the script starts (e.g. GD04, GD05, GD06, ST11).
 SET_CODE = input('Enter set code (e.g. GD04, GD05, GD06): ').strip().upper()
-if not re.fullmatch(r'(?:GD|ST|EB)\d{2}', SET_CODE):
+if not re.fullmatch(r'(?:GD|ST)\d{2}', SET_CODE):
     raise SystemExit('Invalid set code. Please enter something like GD04 or ST11.')
 
 BASE = 'https://api.gcgapi.com/v1'
 HERE = pathlib.Path(__file__).resolve().parent
-# Image set folders sit beside this script (e.g. Cards/ST13).
 IMAGE_DIR = HERE / SET_CODE
-ZIP = HERE / f'{SET_CODE}.zip'  # Optional fallback for older sets
-# Save JSON beside the script, matching the existing folder layout.
 OUT = HERE / f'{SET_CODE}.json'
+OVERRIDES = HERE / 'pilot_overrides_v2.json'
+if not OVERRIDES.exists(): OVERRIDES = HERE / 'pilot_overrides.json'
+
+def read_cards(path):
+    if not path.exists(): return {}
+    obj=json.loads(path.read_text(encoding='utf-8'))
+    return {c['id']:c for c in (obj.get('cards',[]) if isinstance(obj,dict) else obj)}
+
+def pilot_metadata(c):
+    return c.get('pilot') if isinstance(c.get('pilot'), dict) else None
+
+def unique_names(values):
+    return list(dict.fromkeys(str(x).strip() for x in values if str(x).strip()))
+
+def detected_aliases(raw):
+    # Only extract aliases explicitly described as alternate card names.
+    effect = str(raw.get('effect') or '')
+    return re.findall(r"(?:card(?:'s|’s)? name is also treated as|name is also treated as)\s*\[([^\]]+)\]", effect, flags=re.I)
+
+def build_pilot(converted, raw, old, override_marker):
+    kind = converted['type']
+    old_pilot = pilot_metadata(old)
+    if override_marker is not ...:
+        return override_marker, False
+    if kind == 'Pilot':
+        aliases = detected_aliases(raw)
+        names = unique_names([converted['name'], *(old_pilot or {}).get('names', []), *aliases])
+        ap, hp = converted['ap'], converted['hp']
+        traits = converted['traits']
+        if ap is None or hp is None:
+            return old_pilot, True
+        return {'names': names, 'ap': ap, 'hp': hp, 'traits': traits}, False
+    if kind == 'Command':
+        # API sometimes supplies Command/Pilot numeric bonuses as top-level AP/HP.
+        # These identify likely dual-purpose cards but do not give us the pilot name.
+        if old_pilot:
+            return old_pilot, False
+        if converted['ap'] is not None and converted['hp'] is not None:
+            # Never invent a pilot name: flag for manual review/override.
+            return None, True
+        return None, False
+    return old_pilot, False
+
 
 def get(url):
     req=urllib.request.Request(url,headers={'User-Agent':f'{SET_CODE}-DeckBuilder-Importer/1.0','Accept':'application/json'})
@@ -68,20 +108,11 @@ def convert(c):
         'needs_review':False,'link_trait_conditions':list(dict.fromkeys(link_traits))}
 
 def main():
-    extensions = {'.webp', '.png', '.jpg', '.jpeg'}
-    if IMAGE_DIR.is_dir():
-        ids = sorted({p.stem.upper() for p in IMAGE_DIR.iterdir()
-                      if p.is_file() and p.suffix.lower() in extensions})
-        print('Found', len(ids), 'image IDs in', IMAGE_DIR)
-    elif ZIP.is_file():
-        with zipfile.ZipFile(ZIP) as z:
-            ids = sorted({pathlib.PurePosixPath(n).stem.upper() for n in z.namelist()
-                          if pathlib.PurePosixPath(n).suffix.lower() in extensions})
-        print('Found', len(ids), 'image IDs in ZIP (fallback)')
-    else:
-        raise SystemExit(f'No image folder at {IMAGE_DIR} (or fallback {ZIP}).')
-    if not ids:
-        raise SystemExit('No image files found. Check the set folder and filenames.')
+    if not IMAGE_DIR.is_dir():
+        raise SystemExit(f'Place a folder named {SET_CODE} beside this script, containing the card .webp images.')
+    ids=sorted({p.stem for p in IMAGE_DIR.rglob('*') if p.is_file() and p.suffix.lower()=='.webp'})
+    if not ids: raise SystemExit(f'No .webp images found in {IMAGE_DIR}')
+    print('Found',len(ids),'image IDs in folder',IMAGE_DIR)
     data=normalize(get(BASE+f'/sets/{SET_CODE}/cards'))
     if not isinstance(data,list): raise RuntimeError(f'Unexpected API response format for {SET_CODE} set')
     found={}
@@ -95,12 +126,31 @@ def main():
                 if isinstance(card,dict):found[cid]=card
             except Exception as e: print('WARNING: no API record for',cid,':',e)
     missing=[cid for cid in ids if cid not in found]
-    cards=[convert(found[cid]) for cid in ids if cid in found]
+    existing=read_cards(OUT)
+    overrides=json.loads(OVERRIDES.read_text(encoding='utf-8')) if OVERRIDES.exists() else {}
+    cards=[]
+    for cid in ids:
+        if cid not in found: continue
+        c=convert(found[cid])
+        old=existing.get(cid,{})
+        # Preserve manually reviewed relationships, including token fixes.
+        for field in ('creates_tokens','pair_conditions','link_conditions','link_trait_conditions'):
+            if field in old: c[field]=old[field]
+        override_marker=overrides[cid] if cid in overrides else ...
+        if override_marker is not ... and override_marker is not None:
+            if not isinstance(override_marker,dict) or not all(k in override_marker for k in ('names','ap','hp','traits')):
+                raise ValueError(f'Incomplete pilot override for {cid}')
+        c['pilot'], review=build_pilot(c, found[cid], old, override_marker)
+        c['needs_review']=review
+        if 'needs_review' in old and not review:
+            # Do not preserve stale Command review flags once classified.
+            if c['type'] not in ('Command','Pilot'): c['needs_review']=old['needs_review']
+        cards.append(c)
     result={'set':SET_CODE,'cards':cards}
-    OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print('Wrote',OUT,'with',len(cards),'cards')
     if missing: print('MISSING:',', '.join(missing))
-    print('NOTE: Pair compatibility and token creation references may require manual review.')
+    print('NOTE: Command/Pilot cards with AP/HP but unknown pilot names are marked needs_review=true.')
+    print('      Add verified names/stats to pilot_overrides_v2.json (or pilot_overrides.json), then rerun.')
     print('Attribution: gcg-api, ODbL 1.0 (https://github.com/yzRobo/gcg-api)')
 if __name__=='__main__':main()

@@ -291,7 +291,18 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Paptimus Scirocco"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "Titans",
+          "Jupitris",
+          "Newtype"
+        ]
+      },
       "keywords": [
         "Burst",
         "Attack"
@@ -318,7 +329,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Banagher Links"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "Civilian",
+          "Newtype"
+        ]
+      },
       "keywords": [
         "Burst",
         "When Paired"
@@ -378,7 +399,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
+      "needs_review": true,
       "link_trait_conditions": []
     },
     {

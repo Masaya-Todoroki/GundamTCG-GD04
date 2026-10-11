@@ -12,9 +12,7 @@
       "hp": 3,
       "traits": [
         "ZAFT",
-        "Minerva Squad",
-        "Space",
-        "Earth"
+        "Minerva Squad"
       ],
       "link_conditions": [
         "Shinn Asuka"
@@ -25,10 +23,12 @@
       },
       "pilot": null,
       "keywords": [
-        "Activate Main"
+        "Activate",
+        "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST09-002",
@@ -41,9 +41,7 @@
       "hp": 4,
       "traits": [
         "ZAFT",
-        "Minerva Squad",
-        "Space",
-        "Earth"
+        "Minerva Squad"
       ],
       "link_conditions": [
         "Shinn Asuka"
@@ -57,7 +55,8 @@
         "Destroyed"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST09-003",
@@ -70,9 +69,7 @@
       "hp": 4,
       "traits": [
         "ZAFT",
-        "Minerva Squad",
-        "Space",
-        "Earth"
+        "Minerva Squad"
       ],
       "link_conditions": [
         "Athrun Zala"
@@ -87,7 +84,8 @@
         "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST09-004",
@@ -99,9 +97,7 @@
       "ap": 4,
       "hp": 5,
       "traits": [
-        "Orb",
-        "Space",
-        "Earth"
+        "Orb"
       ],
       "link_conditions": [
         "Kira Yamato"
@@ -116,7 +112,8 @@
         "Suppression"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST09-005",
@@ -129,9 +126,7 @@
       "hp": 2,
       "traits": [
         "ZAFT",
-        "Minerva Squad",
-        "Space",
-        "Earth"
+        "Minerva Squad"
       ],
       "link_conditions": [],
       "pair_conditions": {
@@ -141,7 +136,8 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST09-006",
@@ -154,24 +150,23 @@
       "hp": 2,
       "traits": [
         "ZAFT",
-        "Minerva Squad",
-        "Space",
-        "Earth"
+        "Minerva Squad"
       ],
-      "link_conditions": [],
+      "link_conditions": [
+        "Coordinator",
+        "Minerva Squad"
+      ],
       "pair_conditions": {
         "pilot_names": [],
-        "pilot_traits": [
-          "Coordinator",
-          "Minerva Squad"
-        ]
+        "pilot_traits": []
       },
       "pilot": null,
       "keywords": [
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST09-007",
@@ -184,9 +179,7 @@
       "hp": 3,
       "traits": [
         "ZAFT",
-        "Minerva Squad",
-        "Space",
-        "Earth"
+        "Minerva Squad"
       ],
       "link_conditions": [
         "Shinn Asuka"
@@ -200,7 +193,8 @@
         "Blocker"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST09-008",
@@ -209,9 +203,13 @@
       "color": "Purple",
       "level": 4,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 3,
+      "hp": 0,
+      "traits": [
+        "ZAFT",
+        "Minerva Squad",
+        "Coordinator"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -230,10 +228,12 @@
         ]
       },
       "keywords": [
-        "Burst"
+        "Burst",
+        "Attack"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST09-009",
@@ -244,7 +244,9 @@
       "cost": 3,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "-"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -253,11 +255,11 @@
       "pilot": null,
       "keywords": [
         "Main",
-        "Action",
-        "Destroy"
+        "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST09-010",
@@ -266,14 +268,12 @@
       "color": "Purple",
       "level": 2,
       "cost": 1,
-      "ap": 0,
+      "ap": null,
       "hp": 5,
       "traits": [
         "ZAFT",
         "Minerva Squad",
-        "Warship",
-        "Space",
-        "Earth"
+        "Warship"
       ],
       "link_conditions": [],
       "pair_conditions": {
@@ -286,7 +286,8 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     }
   ]
 }

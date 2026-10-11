@@ -106,7 +106,7 @@
       "keywords": [
         "Deploy"
       ],
-        "creates_tokens": [ "T-028" ],
+      "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
     },
@@ -287,7 +287,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Char Aznable"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "Zeon",
+          "Newtype"
+        ]
+      },
       "keywords": [
         "Burst",
         "When Paired"
@@ -314,7 +324,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Loni Garvey"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "Zeon",
+          "Newtype"
+        ]
+      },
       "keywords": [
         "Burst",
         "When Paired"
@@ -373,7 +393,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
+      "needs_review": true,
       "link_trait_conditions": []
     },
     {
@@ -425,30 +445,6 @@
         "Burst",
         "Deploy"
       ],
-      "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
-    },
-    {
-      "id": "T-028",
-      "name": "GOOhN",
-      "type": "Token",
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": 1,
-      "hp": 1,
-      "traits": [
-        "ZAFT",
-        "Marine"
-      ],
-      "link_conditions": [],
-      "pair_conditions": {
-        "pilot_names": [],
-        "pilot_traits": []
-      },
-      "pilot": null,
-      "keywords": [],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []

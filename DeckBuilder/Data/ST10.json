@@ -11,66 +11,6 @@
       "ap": 5,
       "hp": 5,
       "traits": [
-        "Space",
-        "Earth",
-        "G Generation"
-      ],
-      "link_conditions": [
-        "Kamille Bidan"
-      ],
-      "pair_conditions": {
-        "pilot_names": [],
-        "pilot_traits": []
-      },
-      "pilot": null,
-      "keywords": [
-        "When This Unit Destroys"
-      ],
-      "creates_tokens": [],
-      "needs_review": false
-    },
-    {
-      "id": "ST10-002",
-      "name": "Zeta Gundam",
-      "type": "Unit",
-      "color": "Blue",
-      "level": 5,
-      "cost": 4,
-      "ap": 4,
-      "hp": 4,
-      "traits": [
-        "Space",
-        "Earth",
-        "G Generation"
-      ],
-      "link_conditions": [
-        "(Support) Trait",
-        "Kamille Bidan"
-      ],
-      "pair_conditions": {
-        "pilot_names": [],
-        "pilot_traits": []
-      },
-      "pilot": null,
-      "keywords": [
-        "Deploy",
-        "Development 2"
-      ],
-      "creates_tokens": [],
-      "needs_review": false
-    },
-    {
-      "id": "ST10-003",
-      "name": "Gundam Mk-II (AEUG)",
-      "type": "Unit",
-      "color": "Blue",
-      "level": 2,
-      "cost": 2,
-      "ap": 2,
-      "hp": 2,
-      "traits": [
-        "Space",
-        "Earth",
         "G Generation"
       ],
       "link_conditions": [
@@ -83,7 +23,61 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST10-002",
+      "name": "Zeta Gundam",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 5,
+      "cost": 4,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Kamille Bidan",
+        "Support"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "ST10-003",
+      "name": "Gundam Mk-II (AEUG)",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 2,
+      "cost": 2,
+      "ap": 2,
+      "hp": 2,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Kamille Bidan"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST10-004",
@@ -95,8 +89,6 @@
       "ap": 3,
       "hp": 4,
       "traits": [
-        "Space",
-        "Earth",
         "G Generation"
       ],
       "link_conditions": [],
@@ -109,7 +101,8 @@
         "Repair 2"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST10-005",
@@ -121,8 +114,6 @@
       "ap": 2,
       "hp": 2,
       "traits": [
-        "Space",
-        "Earth",
         "G Generation"
       ],
       "link_conditions": [],
@@ -133,7 +124,8 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST10-006",
@@ -145,8 +137,6 @@
       "ap": 4,
       "hp": 4,
       "traits": [
-        "Space",
-        "Earth",
         "G Generation"
       ],
       "link_conditions": [
@@ -161,7 +151,8 @@
         "During Pair"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST10-007",
@@ -173,12 +164,10 @@
       "ap": 4,
       "hp": 5,
       "traits": [
-        "Space",
-        "Earth",
         "G Generation"
       ],
       "link_conditions": [
-        "(G Generation) Trait"
+        "G Generation"
       ],
       "pair_conditions": {
         "pilot_names": [],
@@ -186,11 +175,11 @@
       },
       "pilot": null,
       "keywords": [
-        "When Linked",
-        "Development 2"
+        "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST10-008",
@@ -202,12 +191,10 @@
       "ap": 4,
       "hp": 3,
       "traits": [
-        "Space",
-        "Earth",
         "G Generation"
       ],
       "link_conditions": [
-        "(G Generation) Trait"
+        "G Generation"
       ],
       "pair_conditions": {
         "pilot_names": [],
@@ -215,11 +202,11 @@
       },
       "pilot": null,
       "keywords": [
-        "Deploy",
-        "Development 2"
+        "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST10-009",
@@ -231,11 +218,11 @@
       "ap": 2,
       "hp": 3,
       "traits": [
-        "Space",
-        "Earth",
         "G Generation"
       ],
-      "link_conditions": [],
+      "link_conditions": [
+        "G Generation"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -245,7 +232,8 @@
         "Blocker"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST10-010",
@@ -257,7 +245,6 @@
       "ap": 2,
       "hp": 1,
       "traits": [
-        "Earth",
         "G Generation"
       ],
       "link_conditions": [],
@@ -270,7 +257,8 @@
         "Blocker"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST10-011",
@@ -279,9 +267,12 @@
       "color": "Blue",
       "level": 4,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "G Generation",
+        "Attack"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -303,7 +294,8 @@
         "When Linked"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST10-012",
@@ -312,9 +304,12 @@
       "color": "White",
       "level": 4,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "G Generation",
+        "Support"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -336,7 +331,8 @@
         "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST10-013",
@@ -347,7 +343,9 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "-"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -360,7 +358,8 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST10-014",
@@ -371,7 +370,9 @@
       "cost": 4,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "-"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -379,11 +380,11 @@
       },
       "pilot": null,
       "keywords": [
-        "Main",
-        "Draw 2"
+        "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST10-015",
@@ -392,9 +393,12 @@
       "color": "White",
       "level": 3,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 1,
+      "hp": 0,
+      "traits": [
+        "G Generation",
+        "Durability"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -405,7 +409,8 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": true,
+      "link_trait_conditions": []
     },
     {
       "id": "ST10-016",
@@ -414,11 +419,9 @@
       "color": "Blue",
       "level": 4,
       "cost": 1,
-      "ap": 0,
+      "ap": null,
       "hp": 5,
       "traits": [
-        "Space",
-        "Earth",
         "G Generation",
         "Warship"
       ],
@@ -433,7 +436,8 @@
         "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     }
   ]
 }

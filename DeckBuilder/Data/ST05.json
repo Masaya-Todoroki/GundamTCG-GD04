@@ -23,10 +23,12 @@
       },
       "pilot": null,
       "keywords": [
-        "Suppression"
+        "Suppression",
+        "Deploy"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST05-002",
@@ -51,7 +53,8 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST05-003",
@@ -60,7 +63,7 @@
       "color": "Purple",
       "level": 1,
       "cost": 1,
-      "ap": 0,
+      "ap": null,
       "hp": 2,
       "traits": [
         "Tekkadan"
@@ -71,9 +74,13 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Activate",
+        "Main"
+      ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST05-004",
@@ -95,7 +102,8 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST05-005",
@@ -122,7 +130,8 @@
         "Destroyed"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST05-006",
@@ -144,13 +153,14 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST05-007",
-      "name": "McGillis Schwalbe Graze",
+      "name": "McGillis' Schwalbe Graze",
       "type": "Unit",
-      "color": "Purple",
+      "color": "White",
       "level": 4,
       "cost": 3,
       "ap": 4,
@@ -167,16 +177,18 @@
       },
       "pilot": null,
       "keywords": [
-        "Blocker"
+        "Blocker",
+        "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST05-008",
       "name": "Graze Commander Type",
       "type": "Unit",
-      "color": "Purple",
+      "color": "White",
       "level": 3,
       "cost": 2,
       "ap": 3,
@@ -184,7 +196,9 @@
       "traits": [
         "Gjallarhorn"
       ],
-      "link_conditions": [],
+      "link_conditions": [
+        "Gjallarhorn"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -194,13 +208,14 @@
         "Blocker"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST05-009",
       "name": "Graze",
       "type": "Unit",
-      "color": "Purple",
+      "color": "White",
       "level": 2,
       "cost": 1,
       "ap": 2,
@@ -216,7 +231,8 @@
       "pilot": null,
       "keywords": [],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST05-010",
@@ -225,9 +241,12 @@
       "color": "Purple",
       "level": 4,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "Tekkadan",
+        "Alaya-Vijnana"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -245,10 +264,12 @@
         ]
       },
       "keywords": [
-        "Burst"
+        "Burst",
+        "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST05-011",
@@ -257,9 +278,12 @@
       "color": "Purple",
       "level": 3,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 1,
+      "hp": 1,
+      "traits": [
+        "Tekkadan",
+        "Alaya-Vijnana"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -277,21 +301,25 @@
         ]
       },
       "keywords": [
-        "Burst"
+        "Burst",
+        "During Link"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST05-012",
       "name": "McGillis Fareed",
       "type": "Pilot",
-      "color": "Purple",
+      "color": "White",
       "level": 4,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "Gjallarhorn"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -308,10 +336,12 @@
         ]
       },
       "keywords": [
-        "Burst"
+        "Burst",
+        "When Paired"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST05-013",
@@ -322,16 +352,22 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "-"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Main",
+        "Action"
+      ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST05-014",
@@ -342,7 +378,9 @@
       "cost": 2,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "-"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -350,10 +388,12 @@
       },
       "pilot": null,
       "keywords": [
-        "Burst"
+        "Burst",
+        "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "ST05-015",
@@ -362,7 +402,7 @@
       "color": "Purple",
       "level": 3,
       "cost": 1,
-      "ap": 0,
+      "ap": null,
       "hp": 5,
       "traits": [
         "Tekkadan",
@@ -375,10 +415,14 @@
       },
       "pilot": null,
       "keywords": [
-        "Burst"
+        "Burst",
+        "Deploy",
+        "Activate",
+        "Main"
       ],
       "creates_tokens": [],
-      "needs_review": false
+      "needs_review": false,
+      "link_trait_conditions": []
     }
   ]
 }

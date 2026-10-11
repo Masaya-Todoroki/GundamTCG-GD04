@@ -1,0 +1,2522 @@
+{
+  "set": "EB01",
+  "cards": [
+    {
+      "id": "EB01-001",
+      "name": "Gundam Astray Red Frame Custom (EX)",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 6,
+      "cost": 5,
+      "ap": 5,
+      "hp": 4,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Lowe Guele"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Activate",
+        "Main",
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-002",
+      "name": "Hi-Nu Gundam (EX)",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 8,
+      "cost": 7,
+      "ap": 6,
+      "hp": 5,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "G Generation"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy",
+        "During Link",
+        "Attack",
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-003",
+      "name": "Narrative Gundam A-Packs (EX)",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 5,
+      "cost": 4,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Jona Basta"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Repair 2"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-004",
+      "name": "Gundam Barbatos Lupus Rex (EX)",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 6,
+      "cost": 5,
+      "ap": 3,
+      "hp": 5,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Attack"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Repair 2",
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-005",
+      "name": "Zeta Gundam Ⅲ P2 Type",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 7,
+      "cost": 6,
+      "ap": 6,
+      "hp": 4,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Support"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-006",
+      "name": "Gundam Astray Gold Frame Amatsu",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 4,
+      "cost": 3,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Attack"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Repair 1",
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-007",
+      "name": "Gundam TR-1 \"Hazel-Rah\"",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 5,
+      "cost": 3,
+      "ap": 5,
+      "hp": 4,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Attack"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-008",
+      "name": "Gundam Delta Kai",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 5,
+      "cost": 4,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "G Generation"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-009",
+      "name": "Gundam Full Armor (Thunderbolt) (EX)",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 5,
+      "cost": 4,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Io Fleming"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-010",
+      "name": "Gundam Barbatos 6th Form",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 5,
+      "cost": 4,
+      "ap": 5,
+      "hp": 2,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-011",
+      "name": "Beginning Gundam",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 1,
+      "cost": 1,
+      "ap": 1,
+      "hp": 1,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Blocker"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-012",
+      "name": "Dom Bein Nichts",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 2,
+      "cost": 2,
+      "ap": 2,
+      "hp": 2,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Support"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-013",
+      "name": "Red Gundam(0085)",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 2,
+      "cost": 2,
+      "ap": null,
+      "hp": 4,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Attack"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-014",
+      "name": "Gouf Vijayanta",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 3,
+      "cost": 2,
+      "ap": 3,
+      "hp": 3,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-015",
+      "name": "Prototype Asshimar TR-3 \"Kehaar\"",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 3,
+      "cost": 2,
+      "ap": 1,
+      "hp": 4,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Destroyed"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-016",
+      "name": "Tornado Gundam",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 3,
+      "cost": 2,
+      "ap": 3,
+      "hp": 3,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "G Generation"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-017",
+      "name": "Haro",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 3,
+      "cost": 3,
+      "ap": 3,
+      "hp": 3,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Destroyed"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-018",
+      "name": "Gundam Astray Blue Frame Second L",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 4,
+      "cost": 2,
+      "ap": 3,
+      "hp": 3,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Attack"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-019",
+      "name": "Gundam Pixy",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 4,
+      "cost": 3,
+      "ap": 2,
+      "hp": 4,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "G Generation"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "High-Maneuver",
+        "Attack"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-020",
+      "name": "Gundam Mk-Ⅲ",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 4,
+      "cost": 3,
+      "ap": 3,
+      "hp": 2,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Durability"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "During Link",
+        "Activate",
+        "Action",
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-021",
+      "name": "Build Strike Gundam (Full Package) (EX)",
+      "type": "Unit",
+      "color": "Green",
+      "level": 5,
+      "cost": 4,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Reiji"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Breach 4",
+        "When Paired"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-022",
+      "name": "Gundam Exia (EX)",
+      "type": "Unit",
+      "color": "Green",
+      "level": 8,
+      "cost": 7,
+      "ap": 6,
+      "hp": 5,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Attack"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Breach 5",
+        "During Pair"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-023",
+      "name": "Le Cygne (EX)",
+      "type": "Unit",
+      "color": "Green",
+      "level": 4,
+      "cost": 3,
+      "ap": 3,
+      "hp": 3,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Asuna Elmarit"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Attack"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-024",
+      "name": "GQuuuuuuX (Omega Psycommu)",
+      "type": "Unit",
+      "color": "Green",
+      "level": 5,
+      "cost": 4,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Attack"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Breach 3",
+        "Blocker",
+        "Attack"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-025",
+      "name": "Tallgeese Ⅱ",
+      "type": "Unit",
+      "color": "Green",
+      "level": 6,
+      "cost": 5,
+      "ap": 5,
+      "hp": 4,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "G Generation"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy",
+        "During Pair"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-026",
+      "name": "Gundam Astaroth Origin",
+      "type": "Unit",
+      "color": "Green",
+      "level": 4,
+      "cost": 2,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Durability"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-027",
+      "name": "Tallgeese",
+      "type": "Unit",
+      "color": "Green",
+      "level": 4,
+      "cost": 3,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "G Generation"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Breach 1",
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-028",
+      "name": "Gundam Plutone",
+      "type": "Unit",
+      "color": "Green",
+      "level": 4,
+      "cost": 3,
+      "ap": 3,
+      "hp": 3,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Chall Acustica"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Breach 2",
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-029",
+      "name": "Gundam Astaroth Rinascimento (EX)",
+      "type": "Unit",
+      "color": "Green",
+      "level": 4,
+      "cost": 4,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Support"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Blocker",
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-030",
+      "name": "Big-Rang",
+      "type": "Unit",
+      "color": "Green",
+      "level": 5,
+      "cost": 4,
+      "ap": 5,
+      "hp": 3,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-031",
+      "name": "Oggo",
+      "type": "Unit",
+      "color": "Green",
+      "level": 3,
+      "cost": 1,
+      "ap": 1,
+      "hp": 2,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-032",
+      "name": "Gundam Ez8 High Mobility Custom",
+      "type": "Unit",
+      "color": "Green",
+      "level": 3,
+      "cost": 2,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-033",
+      "name": "Taurus (Sanc Kingdom)",
+      "type": "Unit",
+      "color": "Green",
+      "level": 3,
+      "cost": 2,
+      "ap": 2,
+      "hp": 3,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Activate",
+        "Action",
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-034",
+      "name": "Gundam Lfrith Ur",
+      "type": "Unit",
+      "color": "Green",
+      "level": 3,
+      "cost": 2,
+      "ap": 2,
+      "hp": 2,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "G Generation"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "When Linked"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-035",
+      "name": "Gundam Lfrith Thorn",
+      "type": "Unit",
+      "color": "Green",
+      "level": 3,
+      "cost": 2,
+      "ap": 3,
+      "hp": 3,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Support"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Breach 1"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-036",
+      "name": "Darilbalde",
+      "type": "Unit",
+      "color": "Green",
+      "level": 3,
+      "cost": 3,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-037",
+      "name": "Zudah Unit 1",
+      "type": "Unit",
+      "color": "Green",
+      "level": 4,
+      "cost": 3,
+      "ap": 4,
+      "hp": 1,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Jean Luc Duvall"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Blocker"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-038",
+      "name": "G-Self",
+      "type": "Unit",
+      "color": "Green",
+      "level": 4,
+      "cost": 3,
+      "ap": 3,
+      "hp": 2,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-039",
+      "name": "Rising Freedom Gundam",
+      "type": "Unit",
+      "color": "Green",
+      "level": 6,
+      "cost": 5,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Support"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-040",
+      "name": "Gundam Epyon",
+      "type": "Unit",
+      "color": "Green",
+      "level": 8,
+      "cost": 7,
+      "ap": 6,
+      "hp": 6,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Attack"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Breach 3",
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-041",
+      "name": "Strike Freedom Gundam (EX)",
+      "type": "Unit",
+      "color": "White",
+      "level": 7,
+      "cost": 6,
+      "ap": 5,
+      "hp": 5,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Attack"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "High-Maneuver",
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-042",
+      "name": "Psycho Haro (EX)",
+      "type": "Unit",
+      "color": "White",
+      "level": 8,
+      "cost": 7,
+      "ap": 6,
+      "hp": 6,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "G Generation"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Blocker",
+        "Attack"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-043",
+      "name": "Blue Destiny Unit-1 (EX)",
+      "type": "Unit",
+      "color": "White",
+      "level": 5,
+      "cost": 3,
+      "ap": 5,
+      "hp": 3,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Yuu Kajima"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Blocker",
+        "Attack"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-044",
+      "name": "Justice Gundam (EX)",
+      "type": "Unit",
+      "color": "White",
+      "level": 6,
+      "cost": 5,
+      "ap": 5,
+      "hp": 4,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Durability"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Blocker",
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-045",
+      "name": "Psycho Zaku (EX)",
+      "type": "Unit",
+      "color": "White",
+      "level": 7,
+      "cost": 5,
+      "ap": 4,
+      "hp": 6,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Daryl Lorenz"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Suppression",
+        "Repair",
+        "When Paired"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-046",
+      "name": "Striker Custom (EX)",
+      "type": "Unit",
+      "color": "White",
+      "level": 3,
+      "cost": 2,
+      "ap": 3,
+      "hp": 3,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Ittou Tsurugi"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "During Pair",
+        "Attack"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-047",
+      "name": "Casval's Gundam",
+      "type": "Unit",
+      "color": "White",
+      "level": 4,
+      "cost": 3,
+      "ap": 3,
+      "hp": 4,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "G Generation"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "High-Maneuver",
+        "When Paired"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-048",
+      "name": "S Gundam",
+      "type": "Unit",
+      "color": "White",
+      "level": 4,
+      "cost": 3,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Attack"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Blocker"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-049",
+      "name": "Pale Rider (Ground Heavy Equipment Type)",
+      "type": "Unit",
+      "color": "White",
+      "level": 6,
+      "cost": 4,
+      "ap": 5,
+      "hp": 4,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Blocker",
+        "Suppression"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-050",
+      "name": "Saikoro Gundam",
+      "type": "Unit",
+      "color": "White",
+      "level": 6,
+      "cost": 6,
+      "ap": 5,
+      "hp": 6,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Attack"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-051",
+      "name": "Ze'Gok",
+      "type": "Unit",
+      "color": "White",
+      "level": 1,
+      "cost": 1,
+      "ap": 1,
+      "hp": 2,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-052",
+      "name": "Hildolfr",
+      "type": "Unit",
+      "color": "White",
+      "level": 2,
+      "cost": 2,
+      "ap": null,
+      "hp": 2,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "G Generation"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-053",
+      "name": "Gundam GP00",
+      "type": "Unit",
+      "color": "White",
+      "level": 2,
+      "cost": 2,
+      "ap": 3,
+      "hp": 2,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-054",
+      "name": "Gaplant TR-5 \"Hrairoo\" Unit 1",
+      "type": "Unit",
+      "color": "White",
+      "level": 3,
+      "cost": 2,
+      "ap": 3,
+      "hp": 3,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Blocker"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-055",
+      "name": "Dom Gross Beil",
+      "type": "Unit",
+      "color": "White",
+      "level": 3,
+      "cost": 2,
+      "ap": 2,
+      "hp": 3,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-056",
+      "name": "Gundam Geminass 01",
+      "type": "Unit",
+      "color": "White",
+      "level": 3,
+      "cost": 2,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-057",
+      "name": "Gundam Geminass 02",
+      "type": "Unit",
+      "color": "White",
+      "level": 4,
+      "cost": 2,
+      "ap": 3,
+      "hp": 3,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-058",
+      "name": "Extreme Gundam",
+      "type": "Unit",
+      "color": "White",
+      "level": 4,
+      "cost": 2,
+      "ap": 3,
+      "hp": 4,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Blocker"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-059",
+      "name": "Psycho Zaku",
+      "type": "Unit",
+      "color": "White",
+      "level": 5,
+      "cost": 3,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Daryl Lorenz"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "During Link",
+        "Attack",
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-060",
+      "name": "Gundam Aquarius",
+      "type": "Unit",
+      "color": "White",
+      "level": 5,
+      "cost": 4,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "G Generation"
+      ],
+      "link_conditions": [
+        "Support"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "When Paired"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-061",
+      "name": "Ellis Claude",
+      "type": "Pilot",
+      "color": "Blue",
+      "level": 3,
+      "cost": 1,
+      "ap": 1,
+      "hp": 1,
+      "traits": [
+        "G Generation",
+        "Support"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": {
+        "names": [
+          "Ellis Claude"
+        ],
+        "ap": 1,
+        "hp": 1,
+        "traits": [
+          "G Generation",
+          "Support"
+        ]
+      },
+      "keywords": [
+        "Burst",
+        "When Paired"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-062",
+      "name": "Jona Basta",
+      "type": "Pilot",
+      "color": "Blue",
+      "level": 4,
+      "cost": 1,
+      "ap": 1,
+      "hp": 2,
+      "traits": [
+        "G Generation",
+        "Durability"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": {
+        "names": [
+          "Jona Basta"
+        ],
+        "ap": 1,
+        "hp": 2,
+        "traits": [
+          "G Generation",
+          "Durability"
+        ]
+      },
+      "keywords": [
+        "Burst",
+        "Attack",
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-063",
+      "name": "Io Fleming",
+      "type": "Pilot",
+      "color": "Blue",
+      "level": 4,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "G Generation",
+        "Durability"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": {
+        "names": [
+          "Io Fleming"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "G Generation",
+          "Durability"
+        ]
+      },
+      "keywords": [
+        "Repair 2",
+        "Burst"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-064",
+      "name": "Rondo Gina Sahaku",
+      "type": "Pilot",
+      "color": "Blue",
+      "level": 4,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "G Generation",
+        "Attack"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": {
+        "names": [
+          "Rondo Gina Sahaku"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "G Generation",
+          "Attack"
+        ]
+      },
+      "keywords": [
+        "Repair",
+        "Breach 1",
+        "Burst"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-065",
+      "name": "Meir Siva",
+      "type": "Pilot",
+      "color": "Green",
+      "level": 4,
+      "cost": 1,
+      "ap": 1,
+      "hp": 2,
+      "traits": [
+        "G Generation",
+        "Attack"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": {
+        "names": [
+          "Meir Siva"
+        ],
+        "ap": 1,
+        "hp": 2,
+        "traits": [
+          "G Generation",
+          "Attack"
+        ]
+      },
+      "keywords": [
+        "Breach 1",
+        "Burst",
+        "When Linked"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-066",
+      "name": "Reiji",
+      "type": "Pilot",
+      "color": "Green",
+      "level": 4,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "G Generation",
+        "Support"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": {
+        "names": [
+          "Reiji"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "G Generation",
+          "Support"
+        ]
+      },
+      "keywords": [
+        "Blocker",
+        "Burst",
+        "When Paired"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-067",
+      "name": "Asuna Elmarit",
+      "type": "Pilot",
+      "color": "Green",
+      "level": 4,
+      "cost": 1,
+      "ap": 1,
+      "hp": 2,
+      "traits": [
+        "G Generation",
+        "Support"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": {
+        "names": [
+          "Asuna Elmarit"
+        ],
+        "ap": 1,
+        "hp": 2,
+        "traits": [
+          "G Generation",
+          "Support"
+        ]
+      },
+      "keywords": [
+        "Burst",
+        "When Paired"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-068",
+      "name": "Chall Acustica",
+      "type": "Pilot",
+      "color": "Green",
+      "level": 4,
+      "cost": 1,
+      "ap": 1,
+      "hp": 2,
+      "traits": [
+        "G Generation",
+        "Attack"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": {
+        "names": [
+          "Chall Acustica"
+        ],
+        "ap": 1,
+        "hp": 2,
+        "traits": [
+          "G Generation",
+          "Attack"
+        ]
+      },
+      "keywords": [
+        "Burst",
+        "During Link",
+        "Destroyed"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-069",
+      "name": "Beside Pain",
+      "type": "Pilot",
+      "color": "White",
+      "level": 3,
+      "cost": 1,
+      "ap": 1,
+      "hp": 1,
+      "traits": [
+        "G Generation",
+        "Durability"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": {
+        "names": [
+          "Beside Pain"
+        ],
+        "ap": 1,
+        "hp": 1,
+        "traits": [
+          "G Generation",
+          "Durability"
+        ]
+      },
+      "keywords": [
+        "Blocker",
+        "Burst",
+        "Attack"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-070",
+      "name": "Daryl Lorenz",
+      "type": "Pilot",
+      "color": "White",
+      "level": 4,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "G Generation",
+        "Support"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": {
+        "names": [
+          "Daryl Lorenz"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "G Generation",
+          "Support"
+        ]
+      },
+      "keywords": [
+        "Burst",
+        "During Link",
+        "Activate",
+        "Action",
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-071",
+      "name": "Ittou Tsurugi",
+      "type": "Pilot",
+      "color": "White",
+      "level": 4,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "G Generation",
+        "Attack"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": {
+        "names": [
+          "Ittou Tsurugi"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "G Generation",
+          "Attack"
+        ]
+      },
+      "keywords": [
+        "Burst",
+        "During Link"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-072",
+      "name": "Yuu Kajima",
+      "type": "Pilot",
+      "color": "White",
+      "level": 4,
+      "cost": 1,
+      "ap": 1,
+      "hp": 2,
+      "traits": [
+        "G Generation",
+        "Attack"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": {
+        "names": [
+          "Yuu Kajima"
+        ],
+        "ap": 1,
+        "hp": 2,
+        "traits": [
+          "G Generation",
+          "Attack"
+        ]
+      },
+      "keywords": [
+        "Blocker",
+        "Burst",
+        "When Paired"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-073",
+      "name": "Character Requests",
+      "type": "Command",
+      "color": "Blue",
+      "level": 6,
+      "cost": 2,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "-"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Main"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-074",
+      "name": "Eternal Road",
+      "type": "Command",
+      "color": "Blue",
+      "level": 3,
+      "cost": 1,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "-"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Main",
+        "Action"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-075",
+      "name": "Fierce Enemy Assault",
+      "type": "Command",
+      "color": "Blue",
+      "level": 3,
+      "cost": 1,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "-"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Main",
+        "Action"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-076",
+      "name": "Gerbera Straight",
+      "type": "Command",
+      "color": "Blue",
+      "level": 4,
+      "cost": 1,
+      "ap": 1,
+      "hp": 1,
+      "traits": [
+        "G Generation",
+        "Durability"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Main",
+        "Action"
+      ],
+      "creates_tokens": [],
+      "needs_review": true,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-077",
+      "name": "Master League Begins",
+      "type": "Command",
+      "color": "Green",
+      "level": 3,
+      "cost": 1,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "-"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Action"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-078",
+      "name": "Premium Unit Assembly",
+      "type": "Command",
+      "color": "Green",
+      "level": 1,
+      "cost": 1,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "-"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Main"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-079",
+      "name": "Modification",
+      "type": "Command",
+      "color": "Green",
+      "level": 3,
+      "cost": 1,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "-"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Main"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-080",
+      "name": "Sturm Faust",
+      "type": "Command",
+      "color": "Green",
+      "level": 4,
+      "cost": 1,
+      "ap": 1,
+      "hp": 1,
+      "traits": [
+        "G Generation",
+        "Support"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Main",
+        "Action"
+      ],
+      "creates_tokens": [],
+      "needs_review": true,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-081",
+      "name": "MAP Weapon",
+      "type": "Command",
+      "color": "White",
+      "level": 4,
+      "cost": 2,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "-"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Main",
+        "Action"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-082",
+      "name": "Warship Cruise",
+      "type": "Command",
+      "color": "White",
+      "level": 3,
+      "cost": 1,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "-"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Action"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-083",
+      "name": "SP Conversion Chips",
+      "type": "Command",
+      "color": "White",
+      "level": 3,
+      "cost": 1,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "-"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Action"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-084",
+      "name": "30cm Cannon (APFSDS Round)",
+      "type": "Command",
+      "color": "White",
+      "level": 4,
+      "cost": 1,
+      "ap": 1,
+      "hp": 1,
+      "traits": [
+        "G Generation",
+        "Attack"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Blocker",
+        "Main",
+        "Action"
+      ],
+      "creates_tokens": [],
+      "needs_review": true,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-085",
+      "name": "Kudelia Aina Bernstein & Isaribi",
+      "type": "Base",
+      "color": "Blue",
+      "level": 5,
+      "cost": 1,
+      "ap": null,
+      "hp": 5,
+      "traits": [
+        "G Generation",
+        "Warship"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-086",
+      "name": "Kycilia Zabi & Gwazine",
+      "type": "Base",
+      "color": "Blue",
+      "level": 4,
+      "cost": 2,
+      "ap": null,
+      "hp": 5,
+      "traits": [
+        "G Generation",
+        "Warship"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Repair 2",
+        "Burst",
+        "Deploy",
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-087",
+      "name": "Marina Ismail & Ptolemaios 2",
+      "type": "Base",
+      "color": "Green",
+      "level": 3,
+      "cost": 2,
+      "ap": null,
+      "hp": 5,
+      "traits": [
+        "G Generation",
+        "Warship"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Deploy",
+        "Once per Turn"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-088",
+      "name": "Miorine Rembran & Academy Ship",
+      "type": "Base",
+      "color": "Green",
+      "level": 3,
+      "cost": 1,
+      "ap": null,
+      "hp": 5,
+      "traits": [
+        "G Generation",
+        "Warship"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-089",
+      "name": "Lacus Clyne & Eternal",
+      "type": "Base",
+      "color": "White",
+      "level": 3,
+      "cost": 2,
+      "ap": null,
+      "hp": 5,
+      "traits": [
+        "G Generation",
+        "Warship"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    },
+    {
+      "id": "EB01-090",
+      "name": "Tiffa Adill & Freeden",
+      "type": "Base",
+      "color": "White",
+      "level": 2,
+      "cost": 2,
+      "ap": null,
+      "hp": 4,
+      "traits": [
+        "G Generation",
+        "Warship"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [
+        "Burst",
+        "Deploy"
+      ],
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
+    }
+  ]
+}

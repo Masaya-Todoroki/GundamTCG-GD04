@@ -11,8 +11,6 @@
       "ap": 4,
       "hp": 4,
       "traits": [
-        "Space",
-        "Earth",
         "Earth Federation"
       ],
       "link_conditions": [
@@ -42,8 +40,6 @@
       "ap": 5,
       "hp": 5,
       "traits": [
-        "Space",
-        "Earth",
         "Titans",
         "Jupitris"
       ],
@@ -57,6 +53,7 @@
       "pilot": null,
       "keywords": [
         "Repair 3",
+        "Repair",
         "During Pair"
       ],
       "creates_tokens": [],
@@ -73,11 +70,12 @@
       "ap": 5,
       "hp": 4,
       "traits": [
-        "Space",
-        "Earth",
+        "Titans",
         "Jupitris"
       ],
-      "link_conditions": [],
+      "link_conditions": [
+        "Jupitris"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -89,9 +87,7 @@
       ],
       "creates_tokens": [],
       "needs_review": false,
-      "link_trait_conditions": [
-        "Jupitris"
-      ]
+      "link_trait_conditions": []
     },
     {
       "id": "GD03-004",
@@ -103,8 +99,6 @@
       "ap": 5,
       "hp": 3,
       "traits": [
-        "Space",
-        "Earth",
         "Titans"
       ],
       "link_conditions": [
@@ -132,8 +126,6 @@
       "ap": 4,
       "hp": 4,
       "traits": [
-        "Space",
-        "Earth",
         "Neo Zeon"
       ],
       "link_conditions": [
@@ -162,8 +154,6 @@
       "ap": 4,
       "hp": 4,
       "traits": [
-        "Space",
-        "Earth",
         "Earth Federation"
       ],
       "link_conditions": [
@@ -191,8 +181,6 @@
       "ap": 2,
       "hp": 3,
       "traits": [
-        "Space",
-        "Earth",
         "Earth Federation"
       ],
       "link_conditions": [
@@ -220,26 +208,24 @@
       "ap": 3,
       "hp": 3,
       "traits": [
-        "Space",
-        "Earth",
         "Titans",
         "Jupitris"
       ],
-      "link_conditions": [],
+      "link_conditions": [
+        "Jupitris"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
       "keywords": [
-        "During Pair",
-        "Repair 2"
+        "Repair 2",
+        "During Pair"
       ],
       "creates_tokens": [],
       "needs_review": false,
-      "link_trait_conditions": [
-        "Jupitris"
-      ]
+      "link_trait_conditions": []
     },
     {
       "id": "GD03-009",
@@ -251,8 +237,6 @@
       "ap": 5,
       "hp": 3,
       "traits": [
-        "Space",
-        "Earth",
         "Titans",
         "Jupitris"
       ],
@@ -281,8 +265,6 @@
       "ap": 6,
       "hp": 6,
       "traits": [
-        "Space",
-        "Earth",
         "Civilian"
       ],
       "link_conditions": [
@@ -310,8 +292,6 @@
       "ap": 2,
       "hp": 3,
       "traits": [
-        "Space",
-        "Earth",
         "Earth Federation"
       ],
       "link_conditions": [],
@@ -335,12 +315,12 @@
       "ap": 3,
       "hp": 2,
       "traits": [
-        "Space",
-        "Earth",
         "Titans",
         "Jupitris"
       ],
-      "link_conditions": [],
+      "link_conditions": [
+        "Jupitris"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -351,9 +331,7 @@
       ],
       "creates_tokens": [],
       "needs_review": false,
-      "link_trait_conditions": [
-        "Jupitris"
-      ]
+      "link_trait_conditions": []
     },
     {
       "id": "GD03-013",
@@ -365,8 +343,6 @@
       "ap": 2,
       "hp": 2,
       "traits": [
-        "Space",
-        "Earth",
         "Titans",
         "Jupitris"
       ],
@@ -381,9 +357,7 @@
       ],
       "creates_tokens": [],
       "needs_review": false,
-      "link_trait_conditions": [
-        "Jupitris"
-      ]
+      "link_trait_conditions": []
     },
     {
       "id": "GD03-014",
@@ -395,8 +369,6 @@
       "ap": 3,
       "hp": 2,
       "traits": [
-        "Space",
-        "Earth",
         "Titans"
       ],
       "link_conditions": [],
@@ -408,9 +380,7 @@
       "keywords": [],
       "creates_tokens": [],
       "needs_review": false,
-      "link_trait_conditions": [
-        "Titans"
-      ]
+      "link_trait_conditions": []
     },
     {
       "id": "GD03-015",
@@ -422,8 +392,6 @@
       "ap": 4,
       "hp": 5,
       "traits": [
-        "Space",
-        "Earth",
         "Titans"
       ],
       "link_conditions": [
@@ -435,9 +403,10 @@
       },
       "pilot": null,
       "keywords": [
-        "Activate: Main",
-        "Once Per Turn",
-        "Breach 4"
+        "Breach 4",
+        "Activate",
+        "Main",
+        "Once per Turn"
       ],
       "creates_tokens": [],
       "needs_review": false,
@@ -453,8 +422,6 @@
       "ap": 5,
       "hp": 4,
       "traits": [
-        "Space",
-        "Earth",
         "Civilian"
       ],
       "link_conditions": [
@@ -480,8 +447,6 @@
       "ap": 4,
       "hp": 3,
       "traits": [
-        "Space",
-        "Earth",
         "Zeon",
         "Cyclops Team"
       ],
@@ -511,8 +476,6 @@
       "ap": 5,
       "hp": 6,
       "traits": [
-        "Space",
-        "Earth",
         "G Team"
       ],
       "link_conditions": [
@@ -525,6 +488,7 @@
       "pilot": null,
       "keywords": [
         "Breach 5",
+        "Blocker",
         "Attack"
       ],
       "creates_tokens": [],
@@ -541,8 +505,6 @@
       "ap": 4,
       "hp": 4,
       "traits": [
-        "Space",
-        "Earth",
         "Earth Federation",
         "AGE System"
       ],
@@ -564,7 +526,7 @@
     },
     {
       "id": "GD03-020",
-      "name": "Zaku II FZ",
+      "name": "Zaku Ⅱ FZ",
       "type": "Unit",
       "color": "Green",
       "level": 2,
@@ -572,8 +534,6 @@
       "ap": 1,
       "hp": 2,
       "traits": [
-        "Space",
-        "Earth",
         "Zeon",
         "Cyclops Team"
       ],
@@ -588,10 +548,8 @@
       "keywords": [
         "When Paired"
       ],
-      "creates_tokens": [
-        "T-014"
-      ],
-      "needs_review": true,
+      "creates_tokens": [],
+      "needs_review": false,
       "link_trait_conditions": []
     },
     {
@@ -604,8 +562,6 @@
       "ap": 6,
       "hp": 5,
       "traits": [
-        "Space",
-        "Earth",
         "G Team"
       ],
       "link_conditions": [
@@ -633,8 +589,6 @@
       "ap": 5,
       "hp": 3,
       "traits": [
-        "Space",
-        "Earth",
         "CB",
         "GN Drive"
       ],
@@ -664,11 +618,11 @@
       "ap": 4,
       "hp": 3,
       "traits": [
-        "Space",
-        "Earth",
         "Earth Federation"
       ],
-      "link_conditions": [],
+      "link_conditions": [
+        "Earth Federation"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -679,9 +633,7 @@
       ],
       "creates_tokens": [],
       "needs_review": false,
-      "link_trait_conditions": [
-        "Earth Federation"
-      ]
+      "link_trait_conditions": []
     },
     {
       "id": "GD03-024",
@@ -693,28 +645,23 @@
       "ap": 3,
       "hp": 2,
       "traits": [
-        "Space",
-        "Earth",
         "Zeon",
         "Cyclops Team"
       ],
-      "link_conditions": [],
+      "link_conditions": [
+        "Cyclops Team"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
       "keywords": [
-        "When Linked",
-        "Deploy"
+        "When Linked"
       ],
-      "creates_tokens": [
-        "T-013"
-      ],
-      "needs_review": true,
-      "link_trait_conditions": [
-        "Cyclops Team"
-      ]
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "GD03-025",
@@ -726,8 +673,6 @@
       "ap": 5,
       "hp": 4,
       "traits": [
-        "Space",
-        "Earth",
         "G Team"
       ],
       "link_conditions": [
@@ -753,8 +698,6 @@
       "ap": 4,
       "hp": 4,
       "traits": [
-        "Space",
-        "Earth",
         "CB",
         "GN Drive"
       ],
@@ -775,7 +718,7 @@
     },
     {
       "id": "GD03-027",
-      "name": "Z'Gok E",
+      "name": "Z’Gok E",
       "type": "Unit",
       "color": "Green",
       "level": 3,
@@ -783,11 +726,12 @@
       "ap": 3,
       "hp": 3,
       "traits": [
-        "Earth",
         "Zeon",
         "Cyclops Team"
       ],
-      "link_conditions": [],
+      "link_conditions": [
+        "Cyclops Team"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -796,9 +740,7 @@
       "keywords": [],
       "creates_tokens": [],
       "needs_review": false,
-      "link_trait_conditions": [
-        "Cyclops Team"
-      ]
+      "link_trait_conditions": []
     },
     {
       "id": "GD03-028",
@@ -810,10 +752,11 @@
       "ap": 2,
       "hp": 3,
       "traits": [
-        "Earth",
         "Maganac Corps"
       ],
-      "link_conditions": [],
+      "link_conditions": [
+        "Maganac Corps"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -824,9 +767,7 @@
       ],
       "creates_tokens": [],
       "needs_review": false,
-      "link_trait_conditions": [
-        "Maganac Corps"
-      ]
+      "link_trait_conditions": []
     },
     {
       "id": "GD03-029",
@@ -838,8 +779,6 @@
       "ap": 4,
       "hp": 5,
       "traits": [
-        "Space",
-        "Earth",
         "G Team"
       ],
       "link_conditions": [
@@ -850,7 +789,9 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Blocker"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -865,8 +806,6 @@
       "ap": 3,
       "hp": 4,
       "traits": [
-        "Space",
-        "Earth",
         "CB",
         "GN Drive"
       ],
@@ -894,8 +833,6 @@
       "ap": 4,
       "hp": 3,
       "traits": [
-        "Space",
-        "Earth",
         "Earth Federation",
         "AGE System"
       ],
@@ -914,7 +851,7 @@
     },
     {
       "id": "GD03-032",
-      "name": "Zaku (Four Snake Eyes) [YETI] (GG)",
+      "name": "Zaku (Four Snake Eyes') [YETI] (GQ)",
       "type": "Unit",
       "color": "Green",
       "level": 2,
@@ -922,8 +859,6 @@
       "ap": 2,
       "hp": 2,
       "traits": [
-        "Space",
-        "Earth",
         "Clan"
       ],
       "link_conditions": [],
@@ -947,8 +882,6 @@
       "ap": 5,
       "hp": 5,
       "traits": [
-        "Space",
-        "Earth",
         "ZAFT"
       ],
       "link_conditions": [
@@ -977,13 +910,12 @@
       "ap": 6,
       "hp": 5,
       "traits": [
-        "Space",
-        "Earth",
         "Clan"
       ],
       "link_conditions": [
         "Amate Yuzuriha (Machu)",
-        "Nyaan"
+        "Nyaan",
+        "Machu"
       ],
       "pair_conditions": {
         "pilot_names": [],
@@ -992,7 +924,7 @@
       "pilot": null,
       "keywords": [
         "Suppression",
-        "Destroy"
+        "Deploy"
       ],
       "creates_tokens": [],
       "needs_review": false,
@@ -1000,7 +932,7 @@
     },
     {
       "id": "GD03-035",
-      "name": "GFred",
+      "name": "GFreD",
       "type": "Unit",
       "color": "Red",
       "level": 6,
@@ -1008,8 +940,6 @@
       "ap": 4,
       "hp": 5,
       "traits": [
-        "Space",
-        "Earth",
         "Zeon"
       ],
       "link_conditions": [
@@ -1021,8 +951,9 @@
       },
       "pilot": null,
       "keywords": [
-        "Activate: Main",
-        "Once Per Turn",
+        "Activate",
+        "Main",
+        "Once per Turn",
         "When Linked"
       ],
       "creates_tokens": [],
@@ -1039,8 +970,6 @@
       "ap": 4,
       "hp": 4,
       "traits": [
-        "Space",
-        "Earth",
         "Mafty"
       ],
       "link_conditions": [
@@ -1068,26 +997,24 @@
       "ap": 4,
       "hp": 4,
       "traits": [
-        "Space",
-        "Earth",
         "SRA"
       ],
-      "link_conditions": [],
+      "link_conditions": [
+        "Newtype"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
       "keywords": [
+        "First Strike",
         "During Link",
-        "Destroyed",
-        "First Strike"
+        "Destroyed"
       ],
       "creates_tokens": [],
       "needs_review": false,
-      "link_trait_conditions": [
-        "Newtype"
-      ]
+      "link_trait_conditions": []
     },
     {
       "id": "GD03-038",
@@ -1099,8 +1026,6 @@
       "ap": 4,
       "hp": 3,
       "traits": [
-        "Space",
-        "Earth",
         "ZAFT"
       ],
       "link_conditions": [
@@ -1112,8 +1037,9 @@
       },
       "pilot": null,
       "keywords": [
-        "Activate: Main",
-        "Support 1"
+        "Support 1",
+        "Activate",
+        "Main"
       ],
       "creates_tokens": [],
       "needs_review": false,
@@ -1129,11 +1055,11 @@
       "ap": 2,
       "hp": 4,
       "traits": [
-        "Space",
-        "Earth",
         "Clan"
       ],
-      "link_conditions": [],
+      "link_conditions": [
+        "Clan"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -1144,9 +1070,7 @@
       ],
       "creates_tokens": [],
       "needs_review": false,
-      "link_trait_conditions": [
-        "Clan"
-      ]
+      "link_trait_conditions": []
     },
     {
       "id": "GD03-040",
@@ -1158,8 +1082,6 @@
       "ap": 3,
       "hp": 5,
       "traits": [
-        "Space",
-        "Earth",
         "New UNE"
       ],
       "link_conditions": [
@@ -1172,8 +1094,8 @@
       },
       "pilot": null,
       "keywords": [
-        "During Link",
-        "High-Maneuver"
+        "High-Maneuver",
+        "During Link"
       ],
       "creates_tokens": [],
       "needs_review": false,
@@ -1189,8 +1111,6 @@
       "ap": 5,
       "hp": 6,
       "traits": [
-        "Space",
-        "Earth",
         "SRA"
       ],
       "link_conditions": [
@@ -1218,8 +1138,6 @@
       "ap": 3,
       "hp": 4,
       "traits": [
-        "Space",
-        "Earth",
         "ZAFT"
       ],
       "link_conditions": [
@@ -1245,22 +1163,22 @@
       "ap": 3,
       "hp": 2,
       "traits": [
-        "Space",
-        "Earth",
         "Mafty"
       ],
-      "link_conditions": [],
+      "link_conditions": [
+        "Mafty"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "When Paired"
+      ],
       "creates_tokens": [],
       "needs_review": false,
-      "link_trait_conditions": [
-        "Mafty"
-      ]
+      "link_trait_conditions": []
     },
     {
       "id": "GD03-044",
@@ -1272,8 +1190,6 @@
       "ap": 2,
       "hp": 3,
       "traits": [
-        "Space",
-        "Earth",
         "New UNE"
       ],
       "link_conditions": [],
@@ -1285,13 +1201,9 @@
       "keywords": [
         "Deploy"
       ],
-      "creates_tokens": [
-        "T-012"
-      ],
-      "needs_review": true,
-      "link_trait_conditions": [
-        "New UNE"
-      ]
+      "creates_tokens": [],
+      "needs_review": false,
+      "link_trait_conditions": []
     },
     {
       "id": "GD03-045",
@@ -1303,8 +1215,6 @@
       "ap": 2,
       "hp": 4,
       "traits": [
-        "Space",
-        "Earth",
         "New UNE"
       ],
       "link_conditions": [],
@@ -1328,8 +1238,6 @@
       "ap": 2,
       "hp": 3,
       "traits": [
-        "Space",
-        "Earth",
         "ZAFT"
       ],
       "link_conditions": [],
@@ -1353,8 +1261,6 @@
       "ap": 3,
       "hp": 4,
       "traits": [
-        "Space",
-        "Earth",
         "ZAFT"
       ],
       "link_conditions": [
@@ -1372,7 +1278,7 @@
     },
     {
       "id": "GD03-048",
-      "name": "GFred",
+      "name": "GFreD",
       "type": "Unit",
       "color": "Red",
       "level": 4,
@@ -1380,8 +1286,6 @@
       "ap": 4,
       "hp": 2,
       "traits": [
-        "Space",
-        "Earth",
         "Zeon"
       ],
       "link_conditions": [
@@ -1395,10 +1299,8 @@
       "keywords": [
         "Burst"
       ],
-      "creates_tokens": [
-        "T-020"
-      ],
-      "needs_review": true,
+      "creates_tokens": [],
+      "needs_review": false,
       "link_trait_conditions": []
     },
     {
@@ -1411,8 +1313,6 @@
       "ap": 6,
       "hp": 4,
       "traits": [
-        "Space",
-        "Earth",
         "CB",
         "GN Drive"
       ],
@@ -1441,8 +1341,6 @@
       "ap": 5,
       "hp": 5,
       "traits": [
-        "Space",
-        "Earth",
         "Tekkadan",
         "Gundam Frame"
       ],
@@ -1455,7 +1353,8 @@
       },
       "pilot": null,
       "keywords": [
-        "Activate: Main"
+        "Activate",
+        "Main"
       ],
       "creates_tokens": [],
       "needs_review": false,
@@ -1471,8 +1370,6 @@
       "ap": 4,
       "hp": 4,
       "traits": [
-        "Space",
-        "Earth",
         "Vulture"
       ],
       "link_conditions": [
@@ -1501,8 +1398,6 @@
       "ap": 3,
       "hp": 3,
       "traits": [
-        "Space",
-        "Earth",
         "CB",
         "GN Drive"
       ],
@@ -1515,8 +1410,9 @@
       },
       "pilot": null,
       "keywords": [
-        "Activate: Main",
-        "Support 2"
+        "Support 2",
+        "Activate",
+        "Main"
       ],
       "creates_tokens": [],
       "needs_review": false,
@@ -1532,8 +1428,6 @@
       "ap": 5,
       "hp": 4,
       "traits": [
-        "Space",
-        "Earth",
         "Tekkadan",
         "Gundam Frame"
       ],
@@ -1548,7 +1442,7 @@
       "keywords": [
         "Blocker",
         "During Pair",
-        "Once Per Turn"
+        "Once per Turn"
       ],
       "creates_tokens": [],
       "needs_review": false,
@@ -1564,8 +1458,6 @@
       "ap": 4,
       "hp": 5,
       "traits": [
-        "Space",
-        "Earth",
         "Vagan"
       ],
       "link_conditions": [
@@ -1578,8 +1470,7 @@
       "pilot": null,
       "keywords": [
         "High-Maneuver",
-        "When Paired",
-        "X-Rounder"
+        "When Paired"
       ],
       "creates_tokens": [],
       "needs_review": false,
@@ -1595,8 +1486,6 @@
       "ap": 4,
       "hp": 3,
       "traits": [
-        "Space",
-        "Earth",
         "Civilian",
         "Gundam Frame"
       ],
@@ -1625,8 +1514,6 @@
       "ap": 2,
       "hp": 4,
       "traits": [
-        "Space",
-        "Earth",
         "Tekkadan",
         "Gundam Frame"
       ],
@@ -1655,12 +1542,12 @@
       "ap": 5,
       "hp": 4,
       "traits": [
-        "Space",
-        "Earth",
         "CB",
         "GN Drive"
       ],
-      "link_conditions": [],
+      "link_conditions": [
+        "CB"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -1671,9 +1558,7 @@
       ],
       "creates_tokens": [],
       "needs_review": false,
-      "link_trait_conditions": [
-        "CB"
-      ]
+      "link_trait_conditions": []
     },
     {
       "id": "GD03-058",
@@ -1685,8 +1570,6 @@
       "ap": 2,
       "hp": 2,
       "traits": [
-        "Space",
-        "Earth",
         "UE",
         "Vagan"
       ],
@@ -1713,11 +1596,11 @@
       "ap": 4,
       "hp": 3,
       "traits": [
-        "Space",
-        "Earth",
         "Vagan"
       ],
-      "link_conditions": [],
+      "link_conditions": [
+        "X-Rounder"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -1728,9 +1611,7 @@
       ],
       "creates_tokens": [],
       "needs_review": false,
-      "link_trait_conditions": [
-        "X-Rounder"
-      ]
+      "link_trait_conditions": []
     },
     {
       "id": "GD03-060",
@@ -1739,10 +1620,9 @@
       "color": "Purple",
       "level": 2,
       "cost": 2,
-      "ap": 0,
+      "ap": null,
       "hp": 2,
       "traits": [
-        "Earth",
         "Tekkadan"
       ],
       "link_conditions": [],
@@ -1752,12 +1632,10 @@
       },
       "pilot": null,
       "keywords": [
-        "Once Per Turn"
+        "Once per Turn"
       ],
-      "creates_tokens": [
-        "T-015"
-      ],
-      "needs_review": true,
+      "creates_tokens": [],
+      "needs_review": false,
       "link_trait_conditions": []
     },
     {
@@ -1770,8 +1648,6 @@
       "ap": 5,
       "hp": 4,
       "traits": [
-        "Space",
-        "Earth",
         "Tekkadan",
         "Gundam Frame"
       ],
@@ -1800,8 +1676,6 @@
       "ap": 3,
       "hp": 3,
       "traits": [
-        "Space",
-        "Earth",
         "Old UNE",
         "Vulture"
       ],
@@ -1816,9 +1690,7 @@
       ],
       "creates_tokens": [],
       "needs_review": false,
-      "link_trait_conditions": [
-        "Old UNE"
-      ]
+      "link_trait_conditions": []
     },
     {
       "id": "GD03-063",
@@ -1830,8 +1702,6 @@
       "ap": 2,
       "hp": 2,
       "traits": [
-        "Space",
-        "Earth",
         "CB",
         "GN Drive"
       ],
@@ -1856,8 +1726,6 @@
       "ap": 2,
       "hp": 5,
       "traits": [
-        "Space",
-        "Earth",
         "UE",
         "Vagan"
       ],
@@ -1872,9 +1740,7 @@
       ],
       "creates_tokens": [],
       "needs_review": false,
-      "link_trait_conditions": [
-        "X-Rounder"
-      ]
+      "link_trait_conditions": []
     },
     {
       "id": "GD03-065",
@@ -1886,11 +1752,11 @@
       "ap": 3,
       "hp": 3,
       "traits": [
-        "Space",
-        "Earth",
         "Vagan"
       ],
-      "link_conditions": [],
+      "link_conditions": [
+        "X-Rounder"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -1899,9 +1765,7 @@
       "keywords": [],
       "creates_tokens": [],
       "needs_review": false,
-      "link_trait_conditions": [
-        "X-Rounder"
-      ]
+      "link_trait_conditions": []
     },
     {
       "id": "GD03-066",
@@ -1913,7 +1777,6 @@
       "ap": 5,
       "hp": 4,
       "traits": [
-        "Earth",
         "Tekkadan",
         "Gundam Frame"
       ],
@@ -1940,11 +1803,13 @@
       "ap": 3,
       "hp": 4,
       "traits": [
-        "Earth",
         "Teiwaz",
         "Tekkadan"
       ],
-      "link_conditions": [],
+      "link_conditions": [
+        "Teiwaz",
+        "Tekkadan"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -1955,10 +1820,7 @@
       ],
       "creates_tokens": [],
       "needs_review": false,
-      "link_trait_conditions": [
-        "Teiwaz",
-        "Tekkadan"
-      ]
+      "link_trait_conditions": []
     },
     {
       "id": "GD03-068",
@@ -1970,8 +1832,6 @@
       "ap": 3,
       "hp": 3,
       "traits": [
-        "Space",
-        "Earth",
         "Civilian",
         "Gundam Frame"
       ],
@@ -2000,8 +1860,6 @@
       "ap": 4,
       "hp": 2,
       "traits": [
-        "Space",
-        "Earth",
         "Superpower Bloc"
       ],
       "link_conditions": [
@@ -2030,8 +1888,6 @@
       "ap": 4,
       "hp": 5,
       "traits": [
-        "Space",
-        "Earth",
         "Triple Ship Alliance"
       ],
       "link_conditions": [
@@ -2057,8 +1913,6 @@
       "ap": 5,
       "hp": 5,
       "traits": [
-        "Space",
-        "Earth",
         "AEUG"
       ],
       "link_conditions": [
@@ -2086,8 +1940,6 @@
       "ap": 3,
       "hp": 4,
       "traits": [
-        "Space",
-        "Earth",
         "Triple Ship Alliance"
       ],
       "link_conditions": [
@@ -2116,8 +1968,6 @@
       "ap": 6,
       "hp": 4,
       "traits": [
-        "Space",
-        "Earth",
         "Gjallarhorn"
       ],
       "link_conditions": [
@@ -2131,8 +1981,9 @@
       "keywords": [
         "Blocker",
         "During Link",
-        "Activate: Action",
-        "Once Per Turn"
+        "Activate",
+        "Action",
+        "Once per Turn"
       ],
       "creates_tokens": [],
       "needs_review": false,
@@ -2148,11 +1999,11 @@
       "ap": 3,
       "hp": 1,
       "traits": [
-        "Space",
-        "Earth",
         "Superpower Bloc"
       ],
-      "link_conditions": [],
+      "link_conditions": [
+        "Super Soldier"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -2163,9 +2014,7 @@
       ],
       "creates_tokens": [],
       "needs_review": false,
-      "link_trait_conditions": [
-        "Superpower Bloc"
-      ]
+      "link_trait_conditions": []
     },
     {
       "id": "GD03-075",
@@ -2177,11 +2026,11 @@
       "ap": 4,
       "hp": 4,
       "traits": [
-        "Space",
-        "Earth",
         "AEUG"
       ],
-      "link_conditions": [],
+      "link_conditions": [
+        "AEUG"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -2193,9 +2042,7 @@
       ],
       "creates_tokens": [],
       "needs_review": false,
-      "link_trait_conditions": [
-        "AEUG"
-      ]
+      "link_trait_conditions": []
     },
     {
       "id": "GD03-076",
@@ -2207,7 +2054,6 @@
       "ap": 6,
       "hp": 6,
       "traits": [
-        "Space",
         "Triple Ship Alliance"
       ],
       "link_conditions": [
@@ -2219,7 +2065,7 @@
       },
       "pilot": null,
       "keywords": [
-        "Once Per Turn"
+        "Once per Turn"
       ],
       "creates_tokens": [],
       "needs_review": false,
@@ -2235,7 +2081,6 @@
       "ap": 6,
       "hp": 6,
       "traits": [
-        "Space",
         "Triple Ship Alliance"
       ],
       "link_conditions": [
@@ -2263,11 +2108,11 @@
       "ap": 3,
       "hp": 1,
       "traits": [
-        "Space",
-        "Earth",
         "Superpower Bloc"
       ],
-      "link_conditions": [],
+      "link_conditions": [
+        "Sergei Smirnov"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -2279,9 +2124,7 @@
       ],
       "creates_tokens": [],
       "needs_review": false,
-      "link_trait_conditions": [
-        "Sergei Smirnov"
-      ]
+      "link_trait_conditions": []
     },
     {
       "id": "GD03-079",
@@ -2293,11 +2136,11 @@
       "ap": 3,
       "hp": 2,
       "traits": [
-        "Space",
-        "Earth",
         "AEUG"
       ],
-      "link_conditions": [],
+      "link_conditions": [
+        "AEUG"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -2306,9 +2149,7 @@
       "keywords": [],
       "creates_tokens": [],
       "needs_review": false,
-      "link_trait_conditions": [
-        "AEUG"
-      ]
+      "link_trait_conditions": []
     },
     {
       "id": "GD03-080",
@@ -2320,8 +2161,6 @@
       "ap": 5,
       "hp": 4,
       "traits": [
-        "Space",
-        "Earth",
         "Gjallarhorn",
         "Gundam Frame"
       ],
@@ -2350,11 +2189,11 @@
       "ap": 2,
       "hp": 1,
       "traits": [
-        "Space",
-        "Earth",
         "Superpower Bloc"
       ],
-      "link_conditions": [],
+      "link_conditions": [
+        "Superpower Bloc"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -2363,9 +2202,7 @@
       "keywords": [],
       "creates_tokens": [],
       "needs_review": false,
-      "link_trait_conditions": [
-        "Superpower Bloc"
-      ]
+      "link_trait_conditions": []
     },
     {
       "id": "GD03-082",
@@ -2377,8 +2214,6 @@
       "ap": 4,
       "hp": 1,
       "traits": [
-        "Space",
-        "Earth",
         "Superpower Bloc"
       ],
       "link_conditions": [],
@@ -2390,9 +2225,7 @@
       "keywords": [],
       "creates_tokens": [],
       "needs_review": false,
-      "link_trait_conditions": [
-        "Superpower Bloc"
-      ]
+      "link_trait_conditions": []
     },
     {
       "id": "GD03-083",
@@ -2404,8 +2237,6 @@
       "ap": 1,
       "hp": 1,
       "traits": [
-        "Space",
-        "Earth",
         "Superpower Bloc"
       ],
       "link_conditions": [],
@@ -2440,8 +2271,23 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": {
+        "names": [
+          "Paptimus Scirocco"
+        ],
+        "ap": 2,
+        "hp": 2,
+        "traits": [
+          "Titans",
+          "Jupitris",
+          "Newtype"
+        ]
+      },
+      "keywords": [
+        "Repair 2",
+        "Burst",
+        "When Linked"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -2463,8 +2309,19 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": {
+        "names": [
+          "Christina Mackenzie"
+        ],
+        "ap": 1,
+        "hp": 1,
+        "traits": [
+          "Earth Federation"
+        ]
+      },
+      "keywords": [
+        "Burst"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -2486,8 +2343,20 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": {
+        "names": [
+          "Yazan Gable"
+        ],
+        "ap": 1,
+        "hp": 2,
+        "traits": [
+          "Titans"
+        ]
+      },
+      "keywords": [
+        "Burst",
+        "Attack"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -2511,8 +2380,22 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": {
+        "names": [
+          "Sarah Zabiarov"
+        ],
+        "ap": 1,
+        "hp": 1,
+        "traits": [
+          "Titans",
+          "Jupitris",
+          "Newtype"
+        ]
+      },
+      "keywords": [
+        "Burst",
+        "When Linked"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -2535,8 +2418,22 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": {
+        "names": [
+          "Asemu Asuno"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "Earth Federation",
+          "Asuno Family"
+        ]
+      },
+      "keywords": [
+        "Breach 1",
+        "Burst",
+        "During Link"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -2559,8 +2456,20 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": {
+        "names": [
+          "Bernard Wiseman"
+        ],
+        "ap": 0,
+        "hp": 1,
+        "traits": [
+          "Zeon",
+          "Cyclops Team"
+        ]
+      },
+      "keywords": [
+        "Burst"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -2583,8 +2492,22 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": {
+        "names": [
+          "Mikhail Kaminsky"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "Zeon",
+          "Cyclops Team"
+        ]
+      },
+      "keywords": [
+        "Breach 1",
+        "Burst",
+        "Attack"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -2606,8 +2529,20 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": {
+        "names": [
+          "Rau Le Creuset"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "ZAFT"
+        ]
+      },
+      "keywords": [
+        "Burst",
+        "When Linked"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -2630,8 +2565,21 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": {
+        "names": [
+          "Nyaan"
+        ],
+        "ap": 1,
+        "hp": 2,
+        "traits": [
+          "Zeon",
+          "Newtype"
+        ]
+      },
+      "keywords": [
+        "Burst",
+        "When Linked"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -2654,8 +2602,20 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": {
+        "names": [
+          "Carris Nautilus"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "SRA",
+          "Newtype"
+        ]
+      },
+      "keywords": [
+        "Burst"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -2678,8 +2638,21 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": {
+        "names": [
+          "Zeheart Galette"
+        ],
+        "ap": 2,
+        "hp": 2,
+        "traits": [
+          "Vagan",
+          "X-Rounder"
+        ]
+      },
+      "keywords": [
+        "Burst",
+        "When Paired"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -2701,8 +2674,20 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": {
+        "names": [
+          "Azee Gurumin"
+        ],
+        "ap": 1,
+        "hp": 2,
+        "traits": [
+          "Teiwaz"
+        ]
+      },
+      "keywords": [
+        "Burst",
+        "Once per Turn"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -2725,8 +2710,22 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": {
+        "names": [
+          "Jamil Neate"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "Vulture",
+          "Newtype"
+        ]
+      },
+      "keywords": [
+        "Burst",
+        "During Link",
+        "Attack"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -2748,8 +2747,21 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": {
+        "names": [
+          "Wistario Afam"
+        ],
+        "ap": 1,
+        "hp": 2,
+        "traits": [
+          "Civilian"
+        ]
+      },
+      "keywords": [
+        "Burst",
+        "During Link",
+        "Once per Turn"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -2772,8 +2784,21 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": {
+        "names": [
+          "Graham Aker"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "Superpower Bloc",
+          "UN"
+        ]
+      },
+      "keywords": [
+        "Burst",
+        "During Link"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -2795,8 +2820,21 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": {
+        "names": [
+          "Emma Sheen"
+        ],
+        "ap": 1,
+        "hp": 1,
+        "traits": [
+          "AEUG"
+        ]
+      },
+      "keywords": [
+        "Burst",
+        "During Link",
+        "Destroyed"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -2820,8 +2858,22 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": {
+        "names": [
+          "Soma Peries"
+        ],
+        "ap": 1,
+        "hp": 1,
+        "traits": [
+          "Superpower Bloc",
+          "UN",
+          "Super Soldier"
+        ]
+      },
+      "keywords": [
+        "Burst",
+        "Destroyed"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -2830,19 +2882,23 @@
       "id": "GD03-101",
       "name": "A Healthy Curiosity",
       "type": "Command",
-      "color": "Green",
+      "color": "Blue",
       "level": 3,
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "-"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Main"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -2856,14 +2912,19 @@
       "cost": 2,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "-"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Action"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -2877,14 +2938,19 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "-"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Main"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -2896,9 +2962,12 @@
       "color": "Blue",
       "level": 3,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 1,
+      "hp": 0,
+      "traits": [
+        "Titans",
+        "Jupitris"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -2915,7 +2984,10 @@
           "Jupitris"
         ]
       },
-      "keywords": [],
+      "keywords": [
+        "Main",
+        "Action"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -2929,14 +3001,19 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "-"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Main"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -2950,19 +3027,20 @@
       "cost": 4,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "-"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
-      "creates_tokens": [
-        "T-019",
-        "T-018"
+      "keywords": [
+        "Main"
       ],
-      "needs_review": true,
+      "creates_tokens": [],
+      "needs_review": false,
       "link_trait_conditions": []
     },
     {
@@ -2972,9 +3050,12 @@
       "color": "Green",
       "level": 4,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 1,
+      "hp": 1,
+      "traits": [
+        "Zeon",
+        "Cyclops Team"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -2991,7 +3072,9 @@
           "Cyclops Team"
         ]
       },
-      "keywords": [],
+      "keywords": [
+        "Main"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -3003,9 +3086,12 @@
       "color": "Green",
       "level": 3,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 1,
+      "hp": 0,
+      "traits": [
+        "Zeon",
+        "Cyclops Team"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -3022,11 +3108,11 @@
           "Cyclops Team"
         ]
       },
-      "keywords": [],
-      "creates_tokens": [
-        "T-013"
+      "keywords": [
+        "Main"
       ],
-      "needs_review": true,
+      "creates_tokens": [],
+      "needs_review": false,
       "link_trait_conditions": []
     },
     {
@@ -3038,14 +3124,20 @@
       "cost": 3,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "-"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Main",
+        "Action"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -3059,14 +3151,19 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "-"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Main",
+        "Action"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -3078,9 +3175,11 @@
       "color": "Red",
       "level": 3,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 0,
+      "hp": 1,
+      "traits": [
+        "Mafty"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -3096,7 +3195,10 @@
           "Mafty"
         ]
       },
-      "keywords": [],
+      "keywords": [
+        "Main",
+        "Action"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -3110,14 +3212,20 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "-"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Main",
+        "Action"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -3126,19 +3234,24 @@
       "id": "GD03-113",
       "name": "Human Karma",
       "type": "Command",
-      "color": "Purple",
+      "color": "Red",
       "level": 3,
       "cost": 2,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "-"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Main",
+        "Action"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -3152,14 +3265,19 @@
       "cost": 2,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "-"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Action"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -3171,9 +3289,13 @@
       "color": "Purple",
       "level": 3,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 1,
+      "hp": 0,
+      "traits": [
+        "Civilian",
+        "Vagan",
+        "X-Rounder"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -3191,7 +3313,9 @@
           "X-Rounder"
         ]
       },
-      "keywords": [],
+      "keywords": [
+        "Action"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -3205,14 +3329,19 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "-"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Main",
+        "Action"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -3226,19 +3355,20 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "-"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
-      "creates_tokens": [
-        "T-016",
-        "T-017"
+      "keywords": [
+        "Main"
       ],
-      "needs_review": true,
+      "creates_tokens": [],
+      "needs_review": false,
       "link_trait_conditions": []
     },
     {
@@ -3250,14 +3380,20 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "-"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Blocker",
+        "Burst",
+        "Action"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -3271,14 +3407,18 @@
       "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "-"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Main"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -3290,9 +3430,12 @@
       "color": "White",
       "level": 2,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 1,
+      "hp": 0,
+      "traits": [
+        "Superpower Bloc",
+        "UN"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -3309,7 +3452,9 @@
           "UN"
         ]
       },
-      "keywords": [],
+      "keywords": [
+        "Main"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -3321,9 +3466,12 @@
       "color": "White",
       "level": 1,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 1,
+      "hp": 0,
+      "traits": [
+        "AEUG",
+        "Newtype"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -3340,7 +3488,9 @@
           "Newtype"
         ]
       },
-      "keywords": [],
+      "keywords": [
+        "Action"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -3352,9 +3502,12 @@
       "color": "White",
       "level": 2,
       "cost": 1,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "ap": 0,
+      "hp": 1,
+      "traits": [
+        "Superpower Bloc",
+        "UN"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
@@ -3371,7 +3524,9 @@
           "UN"
         ]
       },
-      "keywords": [],
+      "keywords": [
+        "Action"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -3383,10 +3538,9 @@
       "color": "Blue",
       "level": 3,
       "cost": 1,
-      "ap": 0,
+      "ap": null,
       "hp": 5,
       "traits": [
-        "Space",
         "Titans",
         "Jupitris",
         "Warship"
@@ -3397,7 +3551,10 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Deploy"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -3409,10 +3566,9 @@
       "color": "Blue",
       "level": 3,
       "cost": 1,
-      "ap": 0,
+      "ap": null,
       "hp": 5,
       "traits": [
-        "Space",
         "Earth Federation",
         "Stronghold"
       ],
@@ -3422,7 +3578,11 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Deploy",
+        "Once per Turn"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -3434,10 +3594,9 @@
       "color": "Green",
       "level": 6,
       "cost": 1,
-      "ap": 0,
+      "ap": null,
       "hp": 6,
       "traits": [
-        "Space",
         "G Team",
         "Warship"
       ],
@@ -3447,7 +3606,11 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Deploy",
+        "Once per Turn"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -3459,10 +3622,9 @@
       "color": "Green",
       "level": 4,
       "cost": 1,
-      "ap": 0,
+      "ap": null,
       "hp": 5,
       "traits": [
-        "Earth",
         "Zeon",
         "Cyclops Team"
       ],
@@ -3472,7 +3634,10 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Deploy"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -3484,10 +3649,9 @@
       "color": "Red",
       "level": 6,
       "cost": 1,
-      "ap": 0,
+      "ap": null,
       "hp": 6,
       "traits": [
-        "Space",
         "ZAFT",
         "Stronghold"
       ],
@@ -3497,7 +3661,10 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Deploy"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -3509,10 +3676,9 @@
       "color": "Red",
       "level": 4,
       "cost": 1,
-      "ap": 0,
+      "ap": null,
       "hp": 5,
       "traits": [
-        "Earth",
         "New UNE",
         "Warship"
       ],
@@ -3522,7 +3688,11 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Deploy",
+        "Once per Turn"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -3534,10 +3704,9 @@
       "color": "Purple",
       "level": 4,
       "cost": 1,
-      "ap": 0,
+      "ap": null,
       "hp": 5,
       "traits": [
-        "Space",
         "Tekkadan",
         "Warship"
       ],
@@ -3547,7 +3716,10 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Deploy"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -3559,10 +3731,9 @@
       "color": "Purple",
       "level": 5,
       "cost": 2,
-      "ap": 0,
+      "ap": null,
       "hp": 5,
       "traits": [
-        "Space",
         "Vagan",
         "Stronghold"
       ],
@@ -3572,7 +3743,10 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Deploy"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -3584,10 +3758,9 @@
       "color": "White",
       "level": 5,
       "cost": 2,
-      "ap": 0,
+      "ap": null,
       "hp": 5,
       "traits": [
-        "Space",
         "Triple Ship Alliance",
         "Warship"
       ],
@@ -3597,7 +3770,10 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Deploy"
+      ],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
@@ -3609,10 +3785,9 @@
       "color": "White",
       "level": 2,
       "cost": 1,
-      "ap": 0,
+      "ap": null,
       "hp": 5,
       "traits": [
-        "Space",
         "AEUG",
         "Warship"
       ],
@@ -3622,193 +3797,11 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
-      "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
-    },
-    {
-      "id": "T-013",
-      "name": "Hy-Gogg",
-      "type": "Token",
-      "color": "Colorless",
-      "level": null,
-      "cost": null,
-      "ap": 2,
-      "hp": 1,
-      "traits": [
-        "Zeon"
-      ],
-      "link_conditions": [],
-      "pair_conditions": {
-        "pilot_names": [],
-        "pilot_traits": []
-      },
-      "pilot": null,
-      "keywords": [],
-      "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
-    },
-    {
-      "id": "T-014",
-      "name": "Ad Balloon",
-      "type": "Token",
-      "color": "Colorless",
-      "level": null,
-      "cost": null,
-      "ap": 0,
-      "hp": 1,
-      "traits": [
-        "Civilian"
-      ],
-      "link_conditions": [],
-      "pair_conditions": {
-        "pilot_names": [],
-        "pilot_traits": []
-      },
-      "pilot": null,
       "keywords": [
-        "Cannot be set as active or paired with a Pilot"
+        "Burst",
+        "Deploy",
+        "Destroyed"
       ],
-      "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
-    },
-    {
-      "id": "T-015",
-      "name": "CGS Mobile Worker",
-      "type": "Token",
-      "color": "Colorless",
-      "level": null,
-      "cost": null,
-      "ap": 1,
-      "hp": 1,
-      "traits": [
-        "Tekkadan"
-      ],
-      "link_conditions": [],
-      "pair_conditions": {
-        "pilot_names": [],
-        "pilot_traits": []
-      },
-      "pilot": null,
-      "keywords": [],
-      "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
-    },
-    {
-      "id": "T-016",
-      "name": "Graze Custom",
-      "type": "Token",
-      "color": "Colorless",
-      "level": null,
-      "cost": null,
-      "ap": 2,
-      "hp": 2,
-      "traits": [
-        "Tekkadan"
-      ],
-      "link_conditions": [],
-      "pair_conditions": {
-        "pilot_names": [],
-        "pilot_traits": []
-      },
-      "pilot": null,
-      "keywords": [],
-      "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
-    },
-    {
-      "id": "T-017",
-      "name": "Gundam Barbatos 4th Form",
-      "type": "Token",
-      "color": "Colorless",
-      "level": null,
-      "cost": null,
-      "ap": 4,
-      "hp": 4,
-      "traits": [
-        "Tekkadan"
-      ],
-      "link_conditions": [],
-      "pair_conditions": {
-        "pilot_names": [],
-        "pilot_traits": []
-      },
-      "pilot": null,
-      "keywords": [],
-      "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
-    },
-    {
-      "id": "T-018",
-      "name": "Red Gundam",
-      "type": "Token",
-      "color": "Colorless",
-      "level": null,
-      "cost": null,
-      "ap": 2,
-      "hp": 3,
-      "traits": [
-        "Clan"
-      ],
-      "link_conditions": [],
-      "pair_conditions": {
-        "pilot_names": [],
-        "pilot_traits": []
-      },
-      "pilot": null,
-      "keywords": [],
-      "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
-    },
-    {
-      "id": "T-019",
-      "name": "GQuuuuuuX (Omega Psycommu)",
-      "type": "Token",
-      "color": "Colorless",
-      "level": null,
-      "cost": null,
-      "ap": 3,
-      "hp": 2,
-      "traits": [
-        "Clan"
-      ],
-      "link_conditions": [],
-      "pair_conditions": {
-        "pilot_names": [],
-        "pilot_traits": []
-      },
-      "pilot": null,
-      "keywords": [],
-      "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
-    },
-    {
-      "id": "T-020",
-      "name": "GFreD",
-      "type": "Token",
-      "color": "Colorless",
-      "level": null,
-      "cost": null,
-      "ap": 4,
-      "hp": 3,
-      "traits": [
-        "Zeon"
-      ],
-      "link_conditions": [],
-      "pair_conditions": {
-        "pilot_names": [],
-        "pilot_traits": []
-      },
-      "pilot": null,
-      "keywords": [],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []

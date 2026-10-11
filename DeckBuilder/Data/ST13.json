@@ -26,7 +26,7 @@
         "Activate",
         "Main"
       ],
-        "creates_tokens": [ "T-029" ],
+      "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
     },
@@ -53,7 +53,7 @@
       "keywords": [
         "Deploy"
       ],
-        "creates_tokens": [ "T-029" ],
+      "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
     },
@@ -293,7 +293,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Haman Karn"
+        ],
+        "ap": 2,
+        "hp": 2,
+        "traits": [
+          "Neo Zeon",
+          "Newtype"
+        ]
+      },
       "keywords": [
         "Burst",
         "When Paired"
@@ -319,7 +329,16 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Suletta Mercury"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "Academy"
+        ]
+      },
       "keywords": [
         "Burst",
         "Once per Turn"
@@ -350,8 +369,8 @@
       "keywords": [
         "Main"
       ],
-        "creates_tokens": [ "T-029" ],
-      "needs_review": false,
+      "creates_tokens": [],
+      "needs_review": true,
       "link_trait_conditions": []
     },
     {
@@ -429,29 +448,6 @@
         "Burst",
         "Deploy"
       ],
-        "creates_tokens": [ "T-029" ],
-      "needs_review": false,
-      "link_trait_conditions": []
-    },
-    {
-      "id": "T-029",
-      "name": "Bit / Funnel",
-      "type": "Token",
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": 2,
-      "hp": 2,
-      "traits": [
-        "Long-Range Weapon"
-      ],
-      "link_conditions": [],
-      "pair_conditions": {
-        "pilot_names": [],
-        "pilot_traits": []
-      },
-      "pilot": null,
-      "keywords": [],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []

@@ -582,7 +582,7 @@
         "Breach 5",
         "During Pair"
       ],
-        "creates_tokens": [ "T-025" ],
+      "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
     },
@@ -1602,7 +1602,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Ellis Claude"
+        ],
+        "ap": 1,
+        "hp": 1,
+        "traits": [
+          "G Generation",
+          "Support"
+        ]
+      },
       "keywords": [
         "Burst",
         "When Paired"
@@ -1629,7 +1639,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Jona Basta"
+        ],
+        "ap": 1,
+        "hp": 2,
+        "traits": [
+          "G Generation",
+          "Durability"
+        ]
+      },
       "keywords": [
         "Burst",
         "Attack",
@@ -1657,7 +1677,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Io Fleming"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "G Generation",
+          "Durability"
+        ]
+      },
       "keywords": [
         "Repair 2",
         "Burst"
@@ -1684,7 +1714,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Rondo Gina Sahaku"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "G Generation",
+          "Attack"
+        ]
+      },
       "keywords": [
         "Repair",
         "Breach 1",
@@ -1712,7 +1752,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Meir Siva"
+        ],
+        "ap": 1,
+        "hp": 2,
+        "traits": [
+          "G Generation",
+          "Attack"
+        ]
+      },
       "keywords": [
         "Breach 1",
         "Burst",
@@ -1740,7 +1790,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Reiji"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "G Generation",
+          "Support"
+        ]
+      },
       "keywords": [
         "Blocker",
         "Burst",
@@ -1768,7 +1828,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Asuna Elmarit"
+        ],
+        "ap": 1,
+        "hp": 2,
+        "traits": [
+          "G Generation",
+          "Support"
+        ]
+      },
       "keywords": [
         "Burst",
         "When Paired"
@@ -1795,7 +1865,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Chall Acustica"
+        ],
+        "ap": 1,
+        "hp": 2,
+        "traits": [
+          "G Generation",
+          "Attack"
+        ]
+      },
       "keywords": [
         "Burst",
         "During Link",
@@ -1823,7 +1903,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Beside Pain"
+        ],
+        "ap": 1,
+        "hp": 1,
+        "traits": [
+          "G Generation",
+          "Durability"
+        ]
+      },
       "keywords": [
         "Blocker",
         "Burst",
@@ -1851,7 +1941,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Daryl Lorenz"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "G Generation",
+          "Support"
+        ]
+      },
       "keywords": [
         "Burst",
         "During Link",
@@ -1881,7 +1981,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Ittou Tsurugi"
+        ],
+        "ap": 2,
+        "hp": 1,
+        "traits": [
+          "G Generation",
+          "Attack"
+        ]
+      },
       "keywords": [
         "Burst",
         "During Link"
@@ -1908,7 +2018,17 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": {
+        "names": [
+          "Yuu Kajima"
+        ],
+        "ap": 1,
+        "hp": 2,
+        "traits": [
+          "G Generation",
+          "Attack"
+        ]
+      },
       "keywords": [
         "Blocker",
         "Burst",
@@ -2021,7 +2141,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
+      "needs_review": true,
       "link_trait_conditions": []
     },
     {
@@ -2124,7 +2244,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
+      "needs_review": true,
       "link_trait_conditions": []
     },
     {
@@ -2230,7 +2350,7 @@
         "Action"
       ],
       "creates_tokens": [],
-      "needs_review": false,
+      "needs_review": true,
       "link_trait_conditions": []
     },
     {
@@ -2394,29 +2514,6 @@
         "Burst",
         "Deploy"
       ],
-      "creates_tokens": [],
-      "needs_review": false,
-      "link_trait_conditions": []
-    },
-    {
-      "id": "T-025",
-      "name": "Gundam Exia",
-      "type": "Token",
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": 2,
-      "hp": 2,
-      "traits": [
-        "G Generation"
-      ],
-      "link_conditions": [],
-      "pair_conditions": {
-        "pilot_names": [],
-        "pilot_traits": []
-      },
-      "pilot": null,
-      "keywords": [],
       "creates_tokens": [],
       "needs_review": false,
       "link_trait_conditions": []
