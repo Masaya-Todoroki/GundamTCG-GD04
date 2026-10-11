@@ -1347,16 +1347,6 @@ input[type=search] {
     border-radius: 99px;
     background: #91a5c5;
   }
-  .mobile-deck-toggle {
-    margin-left: auto;
-    border: 1px solid #4a5c79;
-    background: #253650;
-    color: #fff;
-    border-radius: 8px;
-    padding: 5px 12px;
-    cursor: pointer;
-    font-size: 12px;
-  }
 }
 
 
@@ -1418,7 +1408,7 @@ input[type=search] {
      </span>
     </h1>
     <small>
-     Masa's GCG Deck Builder v0.9.5
+     Masa's GCG Deck Builder v0.9.6
     </small>
    </div>
    <div class="header-actions">
@@ -1527,7 +1517,6 @@ input[type=search] {
     <div class="mobile-deck-handle" id="mobileDeckHandle" aria-label="Drag to resize deck preview">
      <span class="mobile-deck-grip" aria-hidden="true"></span>
      <span>My Deck <span id="mobileDeckCount"></span></span>
-     <button class="mobile-deck-toggle" id="mobileDeckToggle" type="button" aria-expanded="true" aria-controls="deckList">Hide</button>
     </div>
     <div class="row between">
      <h2>
@@ -2341,13 +2330,12 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && deckImageM
 
 
 // =============================================================
-// MOBILE CARD BROWSER — DRAGGABLE / COLLAPSIBLE DECK PREVIEW
+// MOBILE CARD BROWSER — DRAGGABLE DECK PREVIEW
 // Desktop sidebar and Deck Viewer are unchanged.
 // =============================================================
 (() => {
     const sidebar = document.getElementById('browserDeckSidebar');
     const handle = document.getElementById('mobileDeckHandle');
-    const toggle = document.getElementById('mobileDeckToggle');
     const count = document.getElementById('mobileDeckCount');
     const narrow = window.matchMedia('(max-width: 850px)');
     const minHeight = 54;
@@ -2362,8 +2350,6 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && deckImageM
     }
     function setCollapsed(collapsed) {
         sidebar.classList.toggle('mobile-deck-collapsed', collapsed);
-        toggle.textContent = collapsed ? 'Show' : 'Hide';
-        toggle.setAttribute('aria-expanded', String(!collapsed));
         if (!collapsed) {
             sidebar.style.setProperty('--mobile-deck-height', expandedHeight + 'px');
         }
@@ -2390,12 +2376,8 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && deckImageM
             sidebar.classList.remove('mobile-deck-collapsed');
             expandedHeight = next;
             sidebar.style.setProperty('--mobile-deck-height', next + 'px');
-            toggle.textContent = 'Hide';
-            toggle.setAttribute('aria-expanded', 'true');
         } else {
             sidebar.classList.add('mobile-deck-collapsed');
-            toggle.textContent = 'Show';
-            toggle.setAttribute('aria-expanded', 'false');
         }
     });
     function endDrag() {
@@ -2406,7 +2388,6 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && deckImageM
     }
     handle.addEventListener('pointerup', endDrag);
     handle.addEventListener('pointercancel', endDrag);
-    toggle.addEventListener('click', () => setCollapsed(!isCollapsed()));
     // Keep the current card total visible when the drawer is collapsed.
     const total = document.getElementById('total');
     if (total && count) {
