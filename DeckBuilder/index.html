@@ -1418,7 +1418,7 @@ body:has(#modal.open) { overflow: hidden; }
      </span>
     </h1>
     <small>
-     Masa's GCG Deck Builder v0.9.12
+     Masa's GCG Deck Builder v0.9.14
     </small>
    </div>
    <div class="header-actions">
@@ -1679,10 +1679,10 @@ body:has(#modal.open) { overflow: hidden; }
 let cards = [], byId = new Map(), deck = {}, page = 0, selected = null, visibleCount = 48;
 let inspectorMatches = null; // Frozen ordering for the currently inspected card.
 const PAGE = 48, $ = id => document.getElementById(id), esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const img = c => { let folder = c.id.split('-')[0]; if (/^T-\d+$/i.test(c.id)) {
-    let n = Number(c.id.split('-')[1]);
-    folder = n <= 3 ? 'ST01' : n <= 5 ? 'ST02' : n <= 7 ? 'ST03' : n <= 10 ? 'ST04' : 'GD01';
-} return `Cards/${esc(folder)}/${esc(c.id)}.webp`; };
+const img = c => {
+    const folder = /^T-\d+$/i.test(c.id) ? 'Tokens' : c.id.split('-')[0];
+    return `Cards/${esc(folder)}/${esc(c.id)}.webp`;
+};
 const arr = x => Array.isArray(x) ? x : [];
 const pilotNames = c => arr(c.pilot?.names).length ? arr(c.pilot.names) : c.pilot?.name ? [c.pilot.name] : c.type === 'Pilot' ? [c.name] : [];
 const pilotTraits = c => arr(c.pilot?.traits).length ? arr(c.pilot.traits) : c.type === 'Pilot' ? arr(c.traits) : [];
@@ -1728,7 +1728,7 @@ function updateColorFilters() {
         b.title = selected ? 'Click to deselect' : selectedColors.size >= 2 ? 'Deselect a colour first' : 'Click to filter by ' + b.dataset.color;
     }
 }
-function filtered() { let q = $('search').value.trim().toLowerCase(), s = $('set').value, cols = selectedColors, t = $('type').value; let a = cards.filter(c => !isToken(c) && (!s || c.id.startsWith(s + '-')) && (!cols.size || cols.has(c.color)) && (!t || c.type === t) && (!q || [c.id, c.name, ...arr(c.traits), ...pilotNames(c), ...pilotTraits(c), ...arr(c.keywords)].join(' ').toLowerCase().includes(q))); let sort = $('sort').value; if (sort === 'name')
+function filtered() { let q = $('search').value.trim().toLowerCase(), s = $('set').value, cols = selectedColors, t = $('type').value; let a = cards.filter(c => !isToken(c) && (!s || c.id.startsWith(s + '-')) && (!cols.size || cols.has(c.color)) && (!t || c.type === t) && (!q || (q === 'token' && arr(c.creates_tokens).length > 0) || [c.id, c.name, ...arr(c.traits), ...pilotNames(c), ...pilotTraits(c), ...arr(c.keywords)].join(' ').toLowerCase().includes(q))); let sort = $('sort').value; if (sort === 'name')
     a.sort((a, b) => (a.name || '').localeCompare(b.name || '')); if (sort === 'level')
     a.sort((a, b) => (Number(b.level) || 0) - (Number(a.level) || 0)); return a; }
 function render() { let a = filtered(); visibleCount = Math.min(Math.max(PAGE, visibleCount), Math.max(PAGE, a.length)); $('results').textContent = `${a.length} matching cards`; $('cards').innerHTML = a.slice(0, visibleCount).map(c => `<article class="card" data-id="${esc(c.id)}"><img class="gallery-card-art" loading="lazy" src="${img(c)}" alt="${esc(c.name || c.id)}" title="Inspect card" tabindex="0" role="button" aria-label="Inspect ${esc(c.name || c.id)}"><div class="gallery-quick"><button data-quick="clear" data-id="${esc(c.id)}" title="Remove all copies" aria-label="Remove all copies" ${(deck[c.id] || 0) === 0 ? 'disabled' : ''}>🗑</button><button data-quick="minus" data-id="${esc(c.id)}" title="Remove one" ${(deck[c.id] || 0) === 0 ? 'disabled' : ''}>−</button><span class="gallery-count">${deck[c.id] || 0}/4</span><button class="gallery-add" data-quick="plus" data-id="${esc(c.id)}" title="Add one" ${(deck[c.id] || 0) >= 4 ? 'disabled' : ''}>+</button></div><div class="info"><div class="name">${esc(c.name || c.id)}</div><div class="sub">${esc(c.id)} · ${esc(c.type || 'Unknown')}</div></div></article>`).join('') || '<p class="empty">No cards match these filters.</p>'; updateLoadStatus(a.length); }
