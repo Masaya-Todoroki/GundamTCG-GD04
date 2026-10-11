@@ -802,7 +802,7 @@ input[type=search] {
 /* Quick deck controls on each card in the browser gallery */
 .gallery-quick {
   display:grid;
-  grid-template-columns:24px 24px minmax(0,1fr) 24px;
+  grid-template-columns:24px 24px minmax(0,1fr) 24px 24px;
   align-items:center;
   gap:3px;
   padding:6px 4px 2px;
@@ -1602,7 +1602,7 @@ body:has(#modal.open) { overflow: hidden; }
 }
 #detail .inspector-mini-card .gallery-quick.match-actions {
   display:grid;
-  grid-template-columns:24px 24px minmax(0,1fr) 24px;
+  grid-template-columns:24px 24px minmax(0,1fr) 24px 24px;
   grid-template-rows:auto;
   gap:3px;
   width:100%;
@@ -1664,13 +1664,59 @@ body:has(#modal.open) { overflow: hidden; }
   #detail .inspector-mini-card.match-tile,
   #detail .inspector-mini-card.token-preview { width:120px; }
 }
-/* v0.9.26 — group inspector links by the selected browser colours. */
+/* v1.0.0 — group inspector links by the selected browser colours. */
 #detail .inspection-colour-group { margin:0 0 15px; }
 #detail .inspection-colour-group h3 { margin:0 0 9px; font-size:13px; color:#cbd9ef; }
 #detail .inspection-other-colours { border-top:1px solid #34435a; padding-top:10px; margin-top:12px; }
 #detail .inspection-other-colours summary { cursor:pointer; color:#aebfda; font-size:13px; font-weight:700; padding:4px 0 10px; }
 #detail .inspection-other-colours summary:hover { color:#e9eef7; }
 #detail .inspection-other-colours summary:focus-visible { outline:2px solid #8db8ff; outline-offset:3px; }
+
+/* v1.0.0: balanced five-slot card controls, with count centered. */
+.gallery-quick,
+#detail .inspector-mini-card .gallery-quick.match-actions {
+  grid-template-columns:24px 24px minmax(0,1fr) 24px 24px;
+}
+.gallery-quick button[title="Add up to 4 copies"] { font-size:11px; font-weight:750; }
+.sidebar .deckitem .actions { flex-wrap:wrap; gap:5px; margin-top:6px; }
+.sidebar .deckitem .actions span { min-width:30px; text-align:center; font-size:12px; }
+.sidebar .deckitem .actions button:disabled { opacity:.35; cursor:default; }
+.sidebar .deckitem .actions button[title="Add up to 4 copies"] { background:#2766d1; border-color:#3979df; }
+/* v1.0.0: fit all five controls inside every card without clipping. */
+#cards .gallery-quick,
+#detail .inspector-mini-card .gallery-quick.match-actions {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(30px,1.2fr) minmax(0,1fr) minmax(0,1fr);
+  gap:3px;
+  padding:7px 5px 4px;
+  width:100%;
+  box-sizing:border-box;
+  min-width:0;
+}
+#cards .gallery-quick button,
+#detail .inspector-mini-card .gallery-quick.match-actions button {
+  width:100%;
+  min-width:0;
+  height:29px;
+  padding:0;
+  font-size:12px;
+  border-radius:5px;
+}
+#cards .gallery-quick .gallery-count,
+#detail .inspector-mini-card .gallery-quick .match-count {
+  min-width:0;
+  width:100%;
+  text-align:center;
+  font-size:11px;
+  white-space:nowrap;
+  overflow:visible;
+}
+#detail .inspector-mini-card .gallery-quick.match-actions {
+  gap:2px;
+  padding:5px 3px 3px;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(26px,1.2fr) minmax(0,1fr) minmax(0,1fr);
+}
+#detail .inspector-mini-card .gallery-quick.match-actions button { height:25px; }
 </style>
  </head>
  <body>
@@ -1683,7 +1729,7 @@ body:has(#modal.open) { overflow: hidden; }
      </span>
     </h1>
     <small>
-     Masa's GCG Deck Builder v0.9.26
+     Masa's GCG Deck Builder v1.0.0
     </small>
    </div>
    <div class="header-actions">
@@ -2000,13 +2046,13 @@ function updateColorFilters() {
 function filtered() { let q = $('search').value.trim().toLowerCase(), s = $('set').value, cols = selectedColors, t = $('type').value; let a = cards.filter(c => !isToken(c) && (!s || c.id.startsWith(s + '-')) && (!cols.size || cols.has(c.color)) && (!t || c.type === t) && (!q || (q === 'token' && (tokensByCard.get(c.id)?.length || 0) > 0) || [c.id, c.name, ...arr(c.traits), ...pilotNames(c), ...pilotTraits(c), ...arr(c.keywords)].join(' ').toLowerCase().includes(q))); let sort = $('sort').value; if (sort === 'name')
     a.sort((a, b) => (a.name || '').localeCompare(b.name || '')); if (sort === 'level')
     a.sort((a, b) => (Number(b.level) || 0) - (Number(a.level) || 0)); return a; }
-function render() { let a = filtered(); visibleCount = Math.min(Math.max(PAGE, visibleCount), Math.max(PAGE, a.length)); $('results').textContent = `${a.length} matching cards`; $('cards').innerHTML = a.slice(0, visibleCount).map(c => `<article class="card" data-id="${esc(c.id)}"><img class="gallery-card-art" loading="lazy" src="${img(c)}" alt="${esc(c.name || c.id)}" title="Inspect card" tabindex="0" role="button" aria-label="Inspect ${esc(c.name || c.id)}"><div class="gallery-quick"><button data-quick="clear" data-id="${esc(c.id)}" title="Remove all copies" aria-label="Remove all copies" ${(deck[c.id] || 0) === 0 ? 'disabled' : ''}>🗑</button><button data-quick="minus" data-id="${esc(c.id)}" title="Remove one" ${(deck[c.id] || 0) === 0 ? 'disabled' : ''}>−</button><span class="gallery-count">${deck[c.id] || 0}/4</span><button class="gallery-add" data-quick="plus" data-id="${esc(c.id)}" title="Add one" ${(deck[c.id] || 0) >= 4 ? 'disabled' : ''}>+</button></div><div class="info"><div class="name">${esc(c.name || c.id)}</div><div class="sub">${esc(c.id)} · ${esc(c.type || 'Unknown')}</div></div></article>`).join('') || '<p class="empty">No cards match these filters.</p>'; updateLoadStatus(a.length); }
+function render() { let a = filtered(); visibleCount = Math.min(Math.max(PAGE, visibleCount), Math.max(PAGE, a.length)); $('results').textContent = `${a.length} matching cards`; $('cards').innerHTML = a.slice(0, visibleCount).map(c => `<article class="card" data-id="${esc(c.id)}"><img class="gallery-card-art" loading="lazy" src="${img(c)}" alt="${esc(c.name || c.id)}" title="Inspect card" tabindex="0" role="button" aria-label="Inspect ${esc(c.name || c.id)}"><div class="gallery-quick"><button data-quick="clear" data-id="${esc(c.id)}" title="Remove all copies" aria-label="Remove all copies" ${(deck[c.id] || 0) === 0 ? 'disabled' : ''}>🗑</button><button data-quick="minus" data-id="${esc(c.id)}" title="Remove one" ${(deck[c.id] || 0) === 0 ? 'disabled' : ''}>−</button><span class="gallery-count">${deck[c.id] || 0}/4</span><button class="gallery-add" data-quick="plus" data-id="${esc(c.id)}" title="Add one" ${(deck[c.id] || 0) >= 4 ? 'disabled' : ''}>+</button><button class="gallery-add" data-quick="all" data-id="${esc(c.id)}" title="Add up to 4 copies" aria-label="Add up to 4 copies" ${(deck[c.id] || 0) >= 4 ? 'disabled' : ''}>4</button></div><div class="info"><div class="name">${esc(c.name || c.id)}</div><div class="sub">${esc(c.id)} · ${esc(c.type || 'Unknown')}</div></div></article>`).join('') || '<p class="empty">No cards match these filters.</p>'; updateLoadStatus(a.length); }
 function updateLoadStatus(total) { const shown = Math.min(visibleCount, total); $('loadStatus').textContent = total > shown ? `Showing ${shown} of ${total} cards · Scroll down to load more` : `Showing all ${total} cards`; }
 function loadMoreCards() { if (document.getElementById('deckViewer')?.hidden === false)
     return; const total = filtered().length; if (visibleCount >= total)
     return; visibleCount = Math.min(visibleCount + PAGE, total); render(); }
 function renderDeck() { autosaveDraft(); let entries = Object.entries(deck).filter(([id, n]) => n > 0 && byId.has(id) && !isToken(byId.get(id))); let total = entries.reduce((n, [id, q]) => n + q, 0); $('total').textContent = `${total} cards`; $('unique').textContent = `${entries.length} unique`; $('unitCount').textContent = `${entries.reduce((n, [id, q]) => n + (byId.get(id).type === 'Unit' ? q : 0), 0)} Units`; $('tabCount').textContent = `(${total})`; $('viewerTotal').textContent = `${total} / 50 cards`; $('viewerName').textContent = $('deckName').value || 'My Gundam Deck'; renderDeckGrid(entries); document.querySelectorAll('#cards .gallery-quick').forEach(controls => { const id = controls.closest('article.card')?.dataset.id; if (!id)
-    return; const n = deck[id] || 0; controls.querySelector('.gallery-count').textContent = n + '/4'; controls.querySelector('[data-quick=clear]').disabled = n === 0; controls.querySelector('[data-quick=minus]').disabled = n === 0; controls.querySelector('[data-quick=plus]').disabled = n >= 4; }); $('deckList').innerHTML = entries.length ? entries.map(([id, n]) => { let c = byId.get(id); return `<div class="deckitem"><img loading="lazy" src="${img(c)}"><div class="label">${esc(c.name || id)}<br><small>${esc(id)}</small><div class="actions"><button data-action="minus" data-id="${esc(id)}">−</button><span>${n}</span><button data-action="plus" data-id="${esc(id)}">+</button><button data-action="view" data-id="${esc(id)}">View</button></div></div></div>`; }).join('') : '<p class="empty">Choose a card from the gallery to start building.</p>'; }
+    return; const n = deck[id] || 0; controls.querySelector('.gallery-count').textContent = n + '/4'; controls.querySelector('[data-quick=clear]').disabled = n === 0; controls.querySelector('[data-quick=minus]').disabled = n === 0; controls.querySelector('[data-quick=plus]').disabled = n >= 4; controls.querySelector('[data-quick=all]').disabled = n >= 4; }); $('deckList').innerHTML = entries.length ? entries.map(([id, n]) => { let c = byId.get(id); return `<div class="deckitem"><img loading="lazy" src="${img(c)}"><div class="label">${esc(c.name || id)}<br><small>${esc(id)}</small><div class="actions"><button data-action="clear" data-id="${esc(id)}" title="Remove all copies" aria-label="Remove all copies">🗑</button><button data-action="minus" data-id="${esc(id)}" title="Remove one">−</button><span>${n}/4</span><button data-action="plus" data-id="${esc(id)}" title="Add one" ${n >= 4 ? 'disabled' : ''}>+</button><button data-action="all" data-id="${esc(id)}" title="Add up to 4 copies" ${n >= 4 ? 'disabled' : ''}>4</button><button data-action="view" data-id="${esc(id)}">View</button></div></div></div>`; }).join('') : '<p class="empty">Choose a card from the gallery to start building.</p>'; }
 function renderDeckGrid(entries) {
     const types = ['Unit', 'Pilot', 'Command', 'Base'];
     const groups = types.map(type => [type, entries.filter(([id]) => byId.get(id)?.type === type)]);
@@ -2123,10 +2169,10 @@ function show(id) {
     const generated = arr(tokensByCard.get(c.id)).map(id => byId.get(id) || { id, name: id, type: 'Token' });
     const tokenCreators = isToken(c) ? arr(creatorsByToken.get(c.id)).map(creatorId => byId.get(creatorId)).filter(Boolean) : [];
     const count = deck[id] || 0;
-    const addButton = isToken(c) ? '' : `<button class="btn remove-all" id="removeSelected" title="Remove all copies" aria-label="Remove all copies" ${count === 0 ? 'disabled' : ''}>🗑</button><button class="btn" id="minusSelected" title="Remove one" ${count === 0 ? 'disabled' : ''}>−</button><span class="inspection-count">${count}/4</span><button class="btn primary" id="addSelected" title="Add one" ${count >= 4 ? 'disabled' : ''}>+</button>`;
+    const addButton = isToken(c) ? '' : `<button class="btn remove-all" id="removeSelected" title="Remove all copies" aria-label="Remove all copies" ${count === 0 ? 'disabled' : ''}>🗑</button><button class="btn" id="minusSelected" title="Remove one" ${count === 0 ? 'disabled' : ''}>−</button><span class="inspection-count">${count}/4</span><button class="btn primary" id="addSelected" title="Add one" ${count >= 4 ? 'disabled' : ''}>+</button><button class="btn primary" id="addAllSelected" title="Add up to 4 copies" ${count >= 4 ? 'disabled' : ''}>4</button>`;
     const tokenSection = generated.length ? `<section class="inspection-section"><h2>Tokens created <span class="match-section-count">(${generated.length})</span></h2><div class="token-gallery">${generated.map(t => `<article class="card inspector-mini-card token-preview"><button class="mini-art-button" data-open="${esc(t.id)}" title="Inspect ${esc(t.name || t.id)}"><img loading="lazy" src="${img(t)}" alt="${esc(t.name || t.id)}"></button><div class="info"><div class="name">${esc(t.name || t.id)}</div><div class="sub">${esc(t.id)}</div></div></article>`).join('')}</div></section>` : '';
     // Same portrait artwork, quantity row and name/ID hierarchy as the main browser.
-    const renderMatchTile = (x, label = null) => `<article class="card inspector-mini-card match-tile"><button class="mini-art-button" data-open="${esc(x.c.id)}" title="Inspect ${esc(x.c.name || x.c.id)}"><img loading="lazy" src="${img(x.c)}" alt="${esc(x.c.name || x.c.id)}"></button><div class="gallery-quick match-actions"><button data-match-clear="${esc(x.c.id)}" title="Remove all copies" ${!(deck[x.c.id] || 0) ? 'disabled' : ''}>🗑</button><button data-match-minus="${esc(x.c.id)}" title="Remove one" ${!(deck[x.c.id] || 0) ? 'disabled' : ''}>−</button><span class="gallery-count match-count">${deck[x.c.id] || 0}/4</span><button class="gallery-add" data-match-plus="${esc(x.c.id)}" title="Add one" ${(deck[x.c.id] || 0) >= 4 ? 'disabled' : ''}>+</button></div><div class="info"><div class="name" title="${esc(x.c.name || x.c.id)}">${esc(x.c.name || x.c.id)}</div><div class="sub">${esc(x.c.id)} · ${esc(x.c.type || 'Unknown')}</div></div></article>`;
+    const renderMatchTile = (x, label = null) => `<article class="card inspector-mini-card match-tile"><button class="mini-art-button" data-open="${esc(x.c.id)}" title="Inspect ${esc(x.c.name || x.c.id)}"><img loading="lazy" src="${img(x.c)}" alt="${esc(x.c.name || x.c.id)}"></button><div class="gallery-quick match-actions"><button data-match-clear="${esc(x.c.id)}" title="Remove all copies" ${!(deck[x.c.id] || 0) ? 'disabled' : ''}>🗑</button><button data-match-minus="${esc(x.c.id)}" title="Remove one" ${!(deck[x.c.id] || 0) ? 'disabled' : ''}>−</button><span class="gallery-count match-count">${deck[x.c.id] || 0}/4</span><button class="gallery-add" data-match-plus="${esc(x.c.id)}" title="Add one" ${(deck[x.c.id] || 0) >= 4 ? 'disabled' : ''}>+</button><button class="gallery-add" data-match-all="${esc(x.c.id)}" title="Add up to 4 copies" ${(deck[x.c.id] || 0) >= 4 ? 'disabled' : ''}>4</button></div><div class="info"><div class="name" title="${esc(x.c.name || x.c.id)}">${esc(x.c.name || x.c.id)}</div><div class="sub">${esc(x.c.id)} · ${esc(x.c.type || 'Unknown')}</div></div></article>`;
     const renderMatchSection = (heading, items) => items.length
         ? (() => {
             // With no browser colours selected, retain the original single grid.
@@ -2158,7 +2204,7 @@ function show(id) {
     $('detail').querySelectorAll('details[data-colour-section]').forEach(d => d.addEventListener('toggle', () => { if (d.open) openColourGroups.add(d.dataset.colourSection); else openColourGroups.delete(d.dataset.colourSection); }));
     if (sameInspector && dialog) dialog.scrollTop = previousScroll;
     if (!isToken(c)) {
-        $('addSelected').onclick = () => { change(id, 1); show(id); };
+        $('addSelected').onclick = () => { change(id, 1); show(id); }; $('addAllSelected').onclick = () => { change(id, 4); show(id); };
         $('minusSelected').onclick = () => { change(id, -1); show(id); };
         $('removeSelected').onclick = () => { change(id, -(deck[id] || 0)); show(id); };
     }
@@ -2167,7 +2213,7 @@ $('cards').onclick = e => { const quick = e.target.closest('button[data-quick]')
     e.stopPropagation();
     const id = quick.dataset.id;
     const action = quick.dataset.quick;
-    change(id, action === 'clear' ? -(deck[id] || 0) : action === 'minus' ? -1 : 1);
+    change(id, action === 'clear' ? -(deck[id] || 0) : action === 'minus' ? -1 : action === 'all' ? 4 : 1);
     render();
     return;
 } const art = e.target.closest('img.gallery-card-art'); if (art) {
@@ -2185,13 +2231,13 @@ $('deckList').onclick = e => { let b = e.target.closest('button[data-action]'); 
     return; let id = b.dataset.id; if (b.dataset.action === 'view')
     show(id);
 else
-    change(id, b.dataset.action === 'plus' ? 1 : -1); };
-$('detail').onclick = e => { let b = e.target.closest('[data-open],[data-match-clear],[data-match-minus],[data-match-plus]'); if (!b)
+    change(id, b.dataset.action === 'clear' ? -(deck[id] || 0) : b.dataset.action === 'all' ? 4 : b.dataset.action === 'plus' ? 1 : -1); };
+$('detail').onclick = e => { let b = e.target.closest('[data-open],[data-match-clear],[data-match-minus],[data-match-plus],[data-match-all]'); if (!b)
     return; if (b.dataset.open) {
     show(b.dataset.open);
     return;
-} const id = b.dataset.matchClear || b.dataset.matchMinus || b.dataset.matchPlus; if (!id)
-    return; const delta = b.dataset.matchClear !== undefined ? -(deck[id] || 0) : b.dataset.matchMinus !== undefined ? -1 : 1; change(id, delta); show(selected); };
+} const id = b.dataset.matchClear || b.dataset.matchMinus || b.dataset.matchPlus || b.dataset.matchAll; if (!id)
+    return; const delta = b.dataset.matchClear !== undefined ? -(deck[id] || 0) : b.dataset.matchMinus !== undefined ? -1 : b.dataset.matchAll !== undefined ? 4 : 1; change(id, delta); show(selected); };
 $('close').onclick = () => { $('modal').classList.remove('open'); };
 $('modal').onclick = e => { if (e.target === $('modal'))
     $('modal').classList.remove('open'); };
@@ -2657,7 +2703,7 @@ async function generateDeckImage(onProgress = () => {}) {
     });
     ctx.fillStyle = '#9fb0ca';
     ctx.font = '15px Arial';
-    ctx.fillText('masayatodoroki.com/DeckBuilder', side, height - 28);
+    ctx.fillText('masayatodoroki/deckbuilder', side, height - 28);
     onProgress(entries.length, entries.length, true);
     return { blob: await new Promise((resolve, reject) => canvas.toBlob(b => b ? resolve(b) : reject(new Error('PNG generation failed')), 'image/png')), missing };
 }
