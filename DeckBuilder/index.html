@@ -2703,7 +2703,7 @@ async function generateDeckImage(onProgress = () => {}) {
     });
     ctx.fillStyle = '#9fb0ca';
     ctx.font = '15px Arial';
-    ctx.fillText('masayatodoroki/deckbuilder', side, height - 28);
+    ctx.fillText('masayatodoroki.com/DeckBuilder', side, height - 28);
     onProgress(entries.length, entries.length, true);
     return { blob: await new Promise((resolve, reject) => canvas.toBlob(b => b ? resolve(b) : reject(new Error('PNG generation failed')), 'image/png')), missing };
 }
