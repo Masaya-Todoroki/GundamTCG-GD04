@@ -26,7 +26,7 @@
         "Activate",
         "Main"
       ],
-      "creates_tokens": [],
+        "creates_tokens": [ "T-029" ],
       "needs_review": false,
       "link_trait_conditions": []
     },
@@ -53,7 +53,7 @@
       "keywords": [
         "Deploy"
       ],
-      "creates_tokens": [],
+        "creates_tokens": [ "T-29" ],
       "needs_review": false,
       "link_trait_conditions": []
     },
@@ -350,7 +350,7 @@
       "keywords": [
         "Main"
       ],
-      "creates_tokens": [],
+        "creates_tokens": [ "T-29" ],
       "needs_review": false,
       "link_trait_conditions": []
     },
@@ -429,7 +429,7 @@
         "Burst",
         "Deploy"
       ],
-      "creates_tokens": [],
+        "creates_tokens": [ "T-029" ],
       "needs_review": false,
       "link_trait_conditions": []
     },

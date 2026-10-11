@@ -661,7 +661,7 @@
       },
       "pilot": null,
       "keywords": [],
-      "creates_tokens": [],
+      "creates_tokens": ["T-006"],
       "needs_review": true,
       "token_creation_note": "Creates a rested Char’s Zaku II (Zeon) AP3/HP1 Unit token when destroyed during pair; token ID needs verification"
     },
@@ -1658,7 +1658,7 @@
       },
       "pilot": null,
       "keywords": [],
-      "creates_tokens": [],
+        "creates_tokens": ["T-011"],
       "needs_review": true
     },
     {
@@ -2727,7 +2727,7 @@
         ]
       },
       "keywords": [],
-      "creates_tokens": [],
+        "creates_tokens": [ "T-007" ],
       "needs_review": true
     },
     {

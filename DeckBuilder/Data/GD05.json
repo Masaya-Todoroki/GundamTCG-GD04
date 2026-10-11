@@ -164,7 +164,7 @@
         "Repair 1",
         "Once per Turn"
       ],
-      "creates_tokens": [],
+        "creates_tokens": [ "T-027" ],
       "needs_review": false,
       "link_trait_conditions": []
     },
@@ -3414,7 +3414,7 @@
         "Main",
         "Once per Turn"
       ],
-      "creates_tokens": [],
+        "creates_tokens": [ "T-026" ],
       "needs_review": false,
       "link_trait_conditions": []
     },

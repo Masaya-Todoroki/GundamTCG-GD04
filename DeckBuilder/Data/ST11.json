@@ -106,7 +106,7 @@
       "keywords": [
         "Deploy"
       ],
-      "creates_tokens": [],
+        "creates_tokens": [ "T-028" ],
       "needs_review": false,
       "link_trait_conditions": []
     },
