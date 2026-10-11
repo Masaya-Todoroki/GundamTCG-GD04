@@ -1664,6 +1664,13 @@ body:has(#modal.open) { overflow: hidden; }
   #detail .inspector-mini-card.match-tile,
   #detail .inspector-mini-card.token-preview { width:120px; }
 }
+/* v0.9.26 — group inspector links by the selected browser colours. */
+#detail .inspection-colour-group { margin:0 0 15px; }
+#detail .inspection-colour-group h3 { margin:0 0 9px; font-size:13px; color:#cbd9ef; }
+#detail .inspection-other-colours { border-top:1px solid #34435a; padding-top:10px; margin-top:12px; }
+#detail .inspection-other-colours summary { cursor:pointer; color:#aebfda; font-size:13px; font-weight:700; padding:4px 0 10px; }
+#detail .inspection-other-colours summary:hover { color:#e9eef7; }
+#detail .inspection-other-colours summary:focus-visible { outline:2px solid #8db8ff; outline-offset:3px; }
 </style>
  </head>
  <body>
@@ -1676,7 +1683,7 @@ body:has(#modal.open) { overflow: hidden; }
      </span>
     </h1>
     <small>
-     Masa's GCG Deck Builder v0.9.25
+     Masa's GCG Deck Builder v0.9.26
     </small>
    </div>
    <div class="header-actions">
@@ -1956,6 +1963,7 @@ function opt(id, values) { for (const v of [...new Set(values.filter(Boolean))].
 } }
 function isToken(c) { return /token/i.test(c.type || '') || /^T-\d+$/i.test(c.id || ''); }
 const selectedColors = new Set();
+const openColourGroups = new Set();
 function setupColorFilters() {
     const order = ['Blue', 'Green', 'Red', 'Purple', 'White'];
     const palette = { Blue: ['#2267c5', '#192e4c', '#35619a'], Green: ['#25864c', '#193b2d', '#34724e'], Red: ['#c6404b', '#45232e', '#92505a'], Purple: ['#8046bb', '#322442', '#68478a'], White: ['#b7c1d0', '#424a56', '#8e9baa'] };
@@ -1975,7 +1983,7 @@ function setupColorFilters() {
         b.onclick = () => { if (selectedColors.has(color))
             selectedColors.delete(color);
         else if (selectedColors.size < 2)
-            selectedColors.add(color); updateColorFilters(); page = 0; visibleCount = PAGE; render(); };
+            selectedColors.add(color); updateColorFilters(); page = 0; visibleCount = PAGE; render(); if (selected && $('modal').classList.contains('open')) show(selected); };
         $('colorFilters').append(b);
     }
     updateColorFilters();
@@ -2108,6 +2116,7 @@ function show(id) {
     const sameInspector = selected === id && $('modal').classList.contains('open');
     const dialog = $('modal').querySelector('.dialog');
     const previousScroll = sameInspector && dialog ? dialog.scrollTop : 0;
+    if (sameInspector) dialog.querySelectorAll('details[data-colour-section]').forEach(d => { if (d.open) openColourGroups.add(d.dataset.colourSection); else openColourGroups.delete(d.dataset.colourSection); });
     if (!sameInspector || !inspectorMatches) inspectorMatches = matches(c);
     selected = id;
     const m = inspectorMatches;
@@ -2119,7 +2128,17 @@ function show(id) {
     // Same portrait artwork, quantity row and name/ID hierarchy as the main browser.
     const renderMatchTile = (x, label = null) => `<article class="card inspector-mini-card match-tile"><button class="mini-art-button" data-open="${esc(x.c.id)}" title="Inspect ${esc(x.c.name || x.c.id)}"><img loading="lazy" src="${img(x.c)}" alt="${esc(x.c.name || x.c.id)}"></button><div class="gallery-quick match-actions"><button data-match-clear="${esc(x.c.id)}" title="Remove all copies" ${!(deck[x.c.id] || 0) ? 'disabled' : ''}>🗑</button><button data-match-minus="${esc(x.c.id)}" title="Remove one" ${!(deck[x.c.id] || 0) ? 'disabled' : ''}>−</button><span class="gallery-count match-count">${deck[x.c.id] || 0}/4</span><button class="gallery-add" data-match-plus="${esc(x.c.id)}" title="Add one" ${(deck[x.c.id] || 0) >= 4 ? 'disabled' : ''}>+</button></div><div class="info"><div class="name" title="${esc(x.c.name || x.c.id)}">${esc(x.c.name || x.c.id)}</div><div class="sub">${esc(x.c.id)} · ${esc(x.c.type || 'Unknown')}</div></div></article>`;
     const renderMatchSection = (heading, items) => items.length
-        ? `<section class="inspection-section"><h2>${heading} <span class="match-section-count">(${items.length})</span></h2><div class="match-grid">${items.map(renderMatchTile).join('')}</div></section>`
+        ? (() => {
+            // With no browser colours selected, retain the original single grid.
+            if (!selectedColors.size) return `<section class="inspection-section"><h2>${heading} <span class="match-section-count">(${items.length})</span></h2><div class="match-grid">${items.map(x => renderMatchTile(x)).join('')}</div></section>`;
+            const matching = items.filter(x => selectedColors.has(x.c.color));
+            const other = items.filter(x => !selectedColors.has(x.c.color));
+            const grid = group => `<div class="match-grid">${group.map(x => renderMatchTile(x)).join('')}</div>`;
+            return `<section class="inspection-section"><h2>${heading} <span class="match-section-count">(${items.length})</span></h2>`
+                + `<div class="inspection-colour-group"><h3>Matching Colours (${matching.length})</h3>${matching.length ? grid(matching) : '<p class="empty">No links in the selected colours.</p>'}</div>`
+                + (other.length ? `<details class="inspection-other-colours" data-colour-section="${esc(heading)}" ${openColourGroups.has(heading) ? 'open' : ''}><summary>Other Colours (${other.length})</summary>${grid(other)}</details>` : '')
+                + `</section>`;
+        })()
         : '';
     const subject = c.type === 'Unit' ? 'Pilots' : 'Units';
     const linkMatches = m.filter(x => x.link);
@@ -2136,6 +2155,7 @@ function show(id) {
         : '';
     $('detail').innerHTML = `<div class="inspection-layout"><div class="inspection-hero"><img class="inspection-card" src="${img(c)}" alt="${esc(c.name || id)}"><div class="inspection-controls">${addButton}</div></div><div class="inspection-related">${compatibility}${tokenSection}${creatorSection}</div></div>`;
     $('modal').classList.add('open');
+    $('detail').querySelectorAll('details[data-colour-section]').forEach(d => d.addEventListener('toggle', () => { if (d.open) openColourGroups.add(d.dataset.colourSection); else openColourGroups.delete(d.dataset.colourSection); }));
     if (sameInspector && dialog) dialog.scrollTop = previousScroll;
     if (!isToken(c)) {
         $('addSelected').onclick = () => { change(id, 1); show(id); };
