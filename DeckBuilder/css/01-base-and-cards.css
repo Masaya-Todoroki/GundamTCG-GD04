@@ -53,8 +53,8 @@ header {
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:15px;
-  padding:15px 22px;
+  gap:var(--header-item-gap);
+  padding:var(--header-padding-y) var(--header-padding-x);
   border-bottom:1px solid #2a3344;
   background:#131a27;
   flex-wrap:wrap

@@ -1,0 +1,39 @@
+/* ================================================================
+   DECK BUILDER — EASY LAYOUT SETTINGS
+   Change the values here. The styles in 01–05 use these settings.
+   Units: px = pixels, vh = percentage of viewport height.
+   Tip: Keep the variable names unchanged; edit only the values.
+   ================================================================ */
+:root {
+  /* ===== HEADER ===== */
+  --header-padding-y: 15px;
+  --header-padding-x: 22px;
+  --header-item-gap: 15px;
+
+  /* ===== CARD BROWSER ===== */
+  /* Starting sizes; the in-page size sliders can override these. */
+  --browser-card-size: 185px;
+
+  /* ===== DECK VIEWER / DRAWER ===== */
+  /* Starting card size; the in-page slider can override it. */
+  --drawer-card-size: 160px;
+  --mobile-drawer-default-height: 44vh;
+
+  /* ===== CARD INSPECTOR — MAIN CARD GROUP ===== */
+  --inspector-main-card-width: 500px;
+  --inspector-main-card-offset-y: 20px;
+  --inspector-main-card-max-height: 650px;
+
+  /* ===== CARD INSPECTOR — LINKED CARD GROUP ===== */
+  --inspector-linked-card-width: 132px;
+  --inspector-linked-card-gap: 10px;
+
+  /* ===== CARD INSPECTOR — WHOLE DIALOG ===== */
+  --inspector-dialog-width: 1120px;
+  --inspector-group-gap: 22px;
+
+  /* ===== TOURNAMENT DECK FINDER ===== */
+  --tournament-dialog-width: 790px;
+  --tournament-result-gap: 9px;
+  --tournament-thumbnail-width: 45px;
+}

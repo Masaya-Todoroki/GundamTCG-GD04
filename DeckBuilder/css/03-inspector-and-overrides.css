@@ -19,7 +19,7 @@
     right: 0;
     bottom: 0;
     width: 100%;
-    height: var(--mobile-deck-height, 44vh);
+    height: var(--mobile-deck-height, var(--mobile-drawer-default-height));
     max-height: calc(100dvh - 60px);
     min-height: 54px;
     padding: 52px 16px 18px;
@@ -144,18 +144,23 @@ body:has(#modal.open) { overflow: hidden; }
 
 /* #region Inspector — Desktop Layout & Mobile Rules */
 /* v0.9.15: use horizontal inspector space on desktop, compact mobile layout. */
-#modal > .dialog { width:min(1120px,100%); }
-#detail .inspection-layout { display:grid; grid-template-columns:minmax(500px,340px) minmax(0,1fr); align-items:start; gap:22px; clear:both; }
-#detail .inspection-hero { position:sticky; top:0; min-width:0; }
-#detail .inspection-card { width:auto; max-width:100%; max-height:min(68dvh,650px); }
+/* Inspector sizes and positions are now edited in 00-layout-settings.css. */
+#modal > .dialog { width:min(var(--inspector-dialog-width),100%); }
+#detail .inspection-layout {
+  display:grid;
+  grid-template-columns:minmax(0,var(--inspector-main-card-width)) minmax(0,1fr);
+  align-items:start;
+  gap:var(--inspector-group-gap);
+  clear:both;
+}
+#detail .inspection-hero { position:static; margin-top:var(--inspector-main-card-offset-y); min-width:0; }
+#detail .inspection-card { width:auto; max-width:100%; max-height:min(68dvh,var(--inspector-main-card-max-height)); }
 #detail .inspection-related { min-width:0; }
 #detail .inspection-related .inspection-section:first-child { margin-top:0; }
-#detail .match-grid {  }
-#detail .token-gallery {  }
 @media (max-width:850px) {
   #modal > .dialog { width:100%; }
   #detail .inspection-layout { grid-template-columns:1fr; gap:12px; }
-  #detail .inspection-hero { position:static; }
+  #detail .inspection-hero { position:static; margin-top:0; }
   #detail .inspection-card { max-height:min(39dvh,320px); }
   #detail .inspection-related .inspection-section { margin-top:14px; }
   #detail .match-grid { grid-template-columns:1fr; }
@@ -288,15 +293,15 @@ body:has(#modal.open) { overflow: hidden; }
 /* v0.9.25 — inspector related cards reuse the portrait browser card design. */
 #detail .match-grid, #detail .token-gallery {
   display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(0,132px));
-  gap:10px;
+  grid-template-columns:repeat(auto-fill,minmax(0,var(--inspector-linked-card-width)));
+  gap:var(--inspector-linked-card-gap);
   justify-content:start;
   align-items:start;
 }
 #detail .inspector-mini-card.match-tile,
 #detail .inspector-mini-card.token-preview {
   display:block;
-  width:200px;
+  width:var(--inspector-linked-card-width);
   max-width:100%;
   min-width:0;
   padding:0;

@@ -247,7 +247,6 @@
     align-items:start;
   }
   #modal.open #detail .inspection-hero {
-    position:static;
     min-height:0;
   }
   #modal.open #detail .inspection-related {
@@ -411,12 +410,12 @@
 /* #endregion Styled Rename Deck Dialog — Modal Stacking Fix */
 
 /* Tournament deck finder */
-.find-deck-dialog{width:min(790px,100%);max-height:min(90dvh,900px)}
+.find-deck-dialog{width:min(var(--tournament-dialog-width),100%);max-height:min(90dvh,900px)}
 .find-deck-filters{display:grid;grid-template-columns:minmax(0,1fr) 170px;gap:7px 12px;margin:12px 0}
 .find-deck-filters label{font-size:12px;color:#aebcd1}
 .find-deck-filters input,.find-deck-filters select{box-sizing:border-box;min-width:0;width:100%;padding:11px;background:#101a2a;color:#e9eef7;border:1px solid #3a4860;border-radius:9px}
 .find-deck-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:12px 0;color:#aebcd1}
-.find-deck-results{display:grid;gap:9px;max-height:54dvh;overflow-y:auto}
+.find-deck-results{display:grid;gap:var(--tournament-result-gap);max-height:54dvh;overflow-y:auto}
 .find-deck-result{border:1px solid #3a4860;border-radius:10px;padding:12px;display:flex;justify-content:space-between;align-items:center;gap:12px;background:#101a2a}
 .find-deck-result strong{display:block;color:#e9eef7;margin-bottom:4px}
 .find-deck-result small{display:block;color:#aebcd1;line-height:1.5}
@@ -431,7 +430,7 @@
 .find-deck-bars{display:flex;gap:3px;align-self:stretch}
 .find-deck-bars span{width:6px;border-radius:2px}
 .find-deck-cards{display:flex;align-items:center;gap:2px}
-.find-deck-cards img{width:45px;height:63px;object-fit:cover;border-radius:3px;background:#18253b}
+.find-deck-cards img{width:var(--tournament-thumbnail-width);height:63px;object-fit:cover;border-radius:3px;background:#18253b}
 .find-deck-details{flex:1;min-width:0}
 #findDeckConfirmModal{z-index:10000}
 @media(max-width:560px){.find-deck-result{flex-direction:row;flex-wrap:wrap}.find-deck-details{flex-basis:calc(100% - 120px)}.find-deck-result .btn{width:100%}}
