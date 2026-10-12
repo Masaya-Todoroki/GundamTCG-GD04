@@ -488,3 +488,16 @@
 #findDeckModal .find-deck-event-filter[hidden]{display:none}
 .find-deck-event-filter{display:flex;flex-direction:column;gap:8px;max-width:370px;color:#aebcd1}
 .find-deck-event-filter select{width:100%;min-height:48px;background:#101a2a;color:#e9eef7;border:1px solid #3a4860;border-radius:10px;padding:10px 14px;font:inherit}
+
+/* Card Inspector navigation history */
+#modal > .dialog { position:relative; }
+#modal .inspector-navigation { display:flex; align-items:center; gap:8px; margin-bottom:12px; }
+#modal .inspector-navigation .btn:disabled { opacity:.38; cursor:not-allowed; }
+@media (min-width:851px) {
+  #modal.open > .dialog > .inspector-navigation {
+    position:absolute; top:12px; left:18px; z-index:2; margin:0;
+  }
+}
+@media (max-width:850px) {
+  #modal .inspector-navigation { clear:both; padding-top:6px; }
+}

@@ -2,10 +2,50 @@
 // ============================================================================
 // CARD INSPECTOR
 // ============================================================================
-function show(id) {
+const inspectorHistory = [];
+let inspectorHistoryIndex = -1;
+const INSPECTOR_HISTORY_LIMIT = 100;
+
+function updateInspectorNavigation() {
+    const back = $('inspectorBack');
+    const forward = $('inspectorForward');
+    back.disabled = inspectorHistoryIndex <= 0;
+    forward.disabled = inspectorHistoryIndex < 0 || inspectorHistoryIndex >= inspectorHistory.length - 1;
+    back.title = back.disabled ? 'No previous card' : `Back to ${byId.get(inspectorHistory[inspectorHistoryIndex - 1])?.name || inspectorHistory[inspectorHistoryIndex - 1]}`;
+    forward.title = forward.disabled ? 'No next card' : `Forward to ${byId.get(inspectorHistory[inspectorHistoryIndex + 1])?.name || inspectorHistory[inspectorHistoryIndex + 1]}`;
+}
+function closeInspector() {
+    $('modal').classList.remove('open');
+    inspectorHistory.length = 0;
+    inspectorHistoryIndex = -1;
+    updateInspectorNavigation();
+}
+function navigateInspector(delta) {
+    const next = inspectorHistoryIndex + delta;
+    if (next < 0 || next >= inspectorHistory.length) return;
+    inspectorHistoryIndex = next;
+    show(inspectorHistory[next], 'history');
+}
+$('inspectorBack').onclick = () => navigateInspector(-1);
+$('inspectorForward').onclick = () => navigateInspector(1);
+
+function show(id, navigation = 'push') {
     const c = byId.get(id);
     if (!c)
         return;
+    if (navigation !== 'history') {
+        if (!$('modal').classList.contains('open')) {
+            inspectorHistory.length = 0;
+            inspectorHistoryIndex = -1;
+        }
+        if (inspectorHistory[inspectorHistoryIndex] !== id) {
+            inspectorHistory.splice(inspectorHistoryIndex + 1);
+            inspectorHistory.push(id);
+            if (inspectorHistory.length > INSPECTOR_HISTORY_LIMIT) inspectorHistory.shift();
+            inspectorHistoryIndex = inspectorHistory.length - 1;
+        }
+    }
+    updateInspectorNavigation();
     const sameInspector = selected === id && $('modal').classList.contains('open');
     const dialog = $('modal').querySelector('.dialog');
     const previousScroll = sameInspector && dialog ? dialog.scrollTop : 0;
@@ -115,11 +155,11 @@ $('detail').onclick = e => { let b = e.target.closest('[data-open],[data-match-c
     return;
 } const id = b.dataset.matchClear || b.dataset.matchMinus || b.dataset.matchPlus || b.dataset.matchAll; if (!id)
     return; const delta = b.dataset.matchClear !== undefined ? -(deck[id] || 0) : b.dataset.matchMinus !== undefined ? -1 : b.dataset.matchAll !== undefined ? 4 : 1; change(id, delta); refreshInspectorQuantities(); };
-$('close').onclick = () => { $('modal').classList.remove('open'); };
+$('close').onclick = closeInspector;
 $('modal').onclick = e => { if (e.target === $('modal'))
-    $('modal').classList.remove('open'); };
-document.addEventListener('keydown', e => { if (e.key === 'Escape')
-    $('modal').classList.remove('open'); });
+    closeInspector(); };
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && $('modal').classList.contains('open'))
+    closeInspector(); });
 for (const id of ['search', 'set', 'type', 'sort'])
     $(id).addEventListener('input', () => { page = 0; visibleCount = PAGE; render(); });
 const cardLoadObserver = new IntersectionObserver(entries => { if (entries.some(e => e.isIntersecting))

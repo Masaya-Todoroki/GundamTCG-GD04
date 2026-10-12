@@ -145,7 +145,7 @@ body:has(#modal.open) { overflow: hidden; }
 /* #region Inspector — Desktop Layout & Mobile Rules */
 /* v0.9.15: use horizontal inspector space on desktop, compact mobile layout. */
 #modal > .dialog { width:min(1120px,100%); }
-#detail .inspection-layout { display:grid; grid-template-columns:minmax(240px,340px) minmax(0,1fr); align-items:start; gap:22px; clear:both; }
+#detail .inspection-layout { display:grid; grid-template-columns:minmax(500px,340px) minmax(0,1fr); align-items:start; gap:22px; clear:both; }
 #detail .inspection-hero { position:sticky; top:0; min-width:0; }
 #detail .inspection-card { width:auto; max-width:100%; max-height:min(68dvh,650px); }
 #detail .inspection-related { min-width:0; }
@@ -296,7 +296,7 @@ body:has(#modal.open) { overflow: hidden; }
 #detail .inspector-mini-card.match-tile,
 #detail .inspector-mini-card.token-preview {
   display:block;
-  width:132px;
+  width:200px;
   max-width:100%;
   min-width:0;
   padding:0;
