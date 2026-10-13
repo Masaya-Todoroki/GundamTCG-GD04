@@ -160,7 +160,7 @@ $('modal').onclick = e => { if (e.target === $('modal'))
     closeInspector(); };
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && $('modal').classList.contains('open'))
     closeInspector(); });
-for (const id of ['search', 'set', 'type', 'sort'])
+for (const id of ['search', 'type', 'sort'])
     $(id).addEventListener('input', () => { page = 0; visibleCount = PAGE; render(); });
 const cardLoadObserver = new IntersectionObserver(entries => { if (entries.some(e => e.isIntersecting))
     loadMoreCards(); }, { rootMargin: '650px 0px' });
@@ -427,3 +427,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') {
 
 // #endregion
 
+
+$('sortDirection').addEventListener('click', () => { sortAscending = !sortAscending; updateSortDirection(); page = 0; visibleCount = PAGE; render(); });
+$('sort').addEventListener('change', updateSortDirection);
+updateSortDirection();

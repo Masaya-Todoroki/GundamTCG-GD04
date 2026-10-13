@@ -45,7 +45,7 @@ async function start() {
                 if (!tokensByCard.get(cardId).includes(tokenId)) tokensByCard.get(cardId).push(tokenId);
             }
         }
-        opt('set', cards.filter(c => !isToken(c)).map(c => c.id.split('-')[0]));
+        setupSetFilters();
         setupColorFilters();
         opt('type', cards.filter(c => !isToken(c)).map(c => c.type));
         $('countHeader').textContent = `${cards.filter(c => !isToken(c)).length} deck cards loaded`;
@@ -107,27 +107,27 @@ function setDeckImageProgress(completed, total, label = 'Loading card artwork…
 const rounded = (ctx, x, y, w, h, r) => { ctx.beginPath(); ctx.roundRect(x, y, w, h, r); };
 const loadCardImage = src => new Promise((resolve, reject) => { const im = new Image(); im.onload = () => resolve(im); im.onerror = () => reject(new Error('Could not load ' + src)); im.src = src; });
 function drawDeckHistogram(ctx, entries, x, y, label, key) {
-    const values = Array.from({ length: 7 }, () => 0);
+    const values = Array.from({ length: 8 }, () => 0);
     for (const [id, n] of entries) {
         const c = byId.get(id);
-        if (c?.type !== 'Unit')
-            continue;
-        const v = Number(c[key]);
-        if (Number.isFinite(v) && v >= 1 && v <= 7)
-            values[Math.floor(v) - 1] += n;
+        const raw = c?.[key];
+        if (raw === null || raw === undefined || raw === '') continue;
+        const v = Number(raw);
+        if (Number.isInteger(v) && v >= 0 && v <= 7)
+            values[v] += n;
     }
     ctx.fillStyle = '#cbd5e1';
     ctx.font = 'bold 17px Arial';
     ctx.fillText(label, x, y);
     const max = Math.max(1, ...values), base = y + 92;
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 8; i++) {
         const bh = 65 * values[i] / max;
         ctx.fillStyle = '#4f91e9';
         ctx.fillRect(x + i * 34, base - bh, 24, bh);
         ctx.fillStyle = '#e2e8f0';
         ctx.font = '13px Arial';
         ctx.textAlign = 'center';
-        ctx.fillText(String(i + 1), x + i * 34 + 12, base + 18);
+        ctx.fillText(String(i), x + i * 34 + 12, base + 18);
         if (values[i])
             ctx.fillText(String(values[i]), x + i * 34 + 12, base - bh - 7);
     }
@@ -147,7 +147,7 @@ async function generateDeckImage(onProgress = () => {}, sourceDeck = deck, sourc
         });
     if (!entries.length)
         throw new Error('Add some cards to your deck first.');
-    const columns = 5, cardW = 178, cardH = 249, gap = 14, side = 28, top = 270, bottom = 72;
+    const columns = 5, cardW = 178, cardH = 249, gap = 14, side = 28, top = 355, bottom = 72;
     const rows = Math.ceil(entries.length / columns);
     const width = side * 2 + columns * cardW + (columns - 1) * gap;
     const height = top + rows * (cardH + gap) + bottom;
@@ -158,7 +158,7 @@ async function generateDeckImage(onProgress = () => {}, sourceDeck = deck, sourc
     ctx.fillStyle = '#0d111b';
     ctx.fillRect(0, 0, width, height);
     ctx.fillStyle = '#182235';
-    ctx.fillRect(0, 0, width, 250);
+    ctx.fillRect(0, 0, width, 335);
     const name = (sourceName ?? $('deckName').value ?? 'My Gundam Deck').trim();
     ctx.fillStyle = '#fff';
     ctx.font = 'bold 38px Arial';
@@ -167,8 +167,36 @@ async function generateDeckImage(onProgress = () => {}, sourceDeck = deck, sourc
     ctx.font = '20px Arial';
     ctx.fillStyle = '#a9bad3';
     ctx.fillText(`${count} cards  •  ${entries.length} unique`, side, 92);
-    drawDeckHistogram(ctx, entries, side, 127, 'Unit Levels', 'level');
-    drawDeckHistogram(ctx, entries, side + 310, 127, 'Unit Costs', 'cost');
+    // Card-type totals (copies, not unique card names).
+    const typeCounts = { Unit: 0, Pilot: 0, Command: 0, Base: 0 };
+    for (const [id, quantity] of entries) {
+        const type = byId.get(id)?.type;
+        if (Object.hasOwn(typeCounts, type)) typeCounts[type] += quantity;
+    }
+    Object.entries(typeCounts).forEach(([type, quantity], index) => {
+        const x = side + index * 116;
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 25px Arial';
+        ctx.fillText(String(quantity), x, 135);
+        ctx.fillStyle = '#a9bad3';
+        ctx.font = 'bold 12px Arial';
+        ctx.fillText(type.toUpperCase() + 'S', x, 153);
+    });
+    // Include all card types in the cost and level averages, weighted by copies.
+    const deckAverage = key => {
+        let sum = 0, quantity = 0;
+        for (const [id, copies] of entries) {
+            const card = byId.get(id);
+            const value = Number(card?.[key]);
+            if (card && card[key] !== '' && card[key] != null && Number.isFinite(value)) {
+                sum += value * copies;
+                quantity += copies;
+            }
+        }
+        return quantity ? (sum / quantity).toFixed(1) : '—';
+    };
+    drawDeckHistogram(ctx, entries, side, 190, `Levels (avg ${deckAverage('level')})`, 'level');
+    drawDeckHistogram(ctx, entries, side + 310, 190, `Costs (avg ${deckAverage('cost')})`, 'cost');
     // Colour distribution is weighted by card copies, not unique card IDs.
     // Multicolour cards split their contribution equally between their colours.
     const colourPalette = { Blue: '#2979dc', Green: '#2fa66b', Red: '#d44858', Purple: '#9257ce', White: '#e6eaf0' };
@@ -185,7 +213,7 @@ async function generateDeckImage(onProgress = () => {}, sourceDeck = deck, sourc
     const portions = [...colourCounts.entries()].sort((a, b) => b[1] - a[1]);
     const colourTotal = portions.reduce((sum, [, n]) => sum + n, 0);
     if (colourTotal > 0) {
-        const cx = width - 112, cy = 117, r = 67;
+        const cx = width - 112, cy = 142, r = 67;
         let angle = -Math.PI / 2;
         for (const [name, n] of portions) {
             const endAngle = angle + (n / colourTotal) * Math.PI * 2;

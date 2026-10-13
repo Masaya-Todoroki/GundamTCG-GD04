@@ -64,20 +64,20 @@
    <main id="browserMain">
     <div class="toolbar">
      <input id="search" placeholder="Search card name, ID, trait, Pilot…" type="search"/>
-     <select id="set">
-      <option value="">
-       All sets
-      </option>
-     </select>
+     <details class="set-filter" id="setFilter">
+      <summary id="setFilterLabel">All sets</summary>
+      <div class="set-filter-options" id="setFilterOptions"></div>
+     </details>
      <select id="type">
       <option value="">
        All types
       </option>
      </select>
     </div>
-    <div class="row between" style="margin-bottom:14px">
+    <div class="browser-sort-row">
      <small id="results">
      </small>
+     <div class="browser-sort-controls">
      <select id="sort">
       <option value="id">
        Card number
@@ -86,9 +86,11 @@
        Name A–Z
       </option>
       <option value="level">
-       Level (high first)
+       Level
       </option>
      </select>
+     <button id="sortDirection" type="button" class="sort-direction" aria-label="Sort ascending" title="Sort ascending">↑ Low to high</button>
+     </div>
     </div>
     <div class="card-scale-control browser-card-scale">
      <label for="browserCardSize">Cards per row</label>
