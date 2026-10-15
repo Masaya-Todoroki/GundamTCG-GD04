@@ -3,9 +3,9 @@
 
 Place this script beside ST12/, GD05/, etc. with card images named by card ID (e.g. ST12-001.webp).
 Run:
-    python create_json_from_images_v6.py --sets ST12
-    python create_json_from_images_v6.py --sets ST12 --dry-run
-    python create_json_from_images_v6.py
+    python create_json_from_images_v7.py --sets ST12
+    python create_json_from_images_v7.py --sets ST12 --dry-run
+    python create_json_from_images_v7.py  # enter GD06, ST12, or all
 
 Standard library only. Requires internet for GCG API and official card lookup.
 Data: gcg-api (ODbL 1.0), https://github.com/yzRobo/gcg-api
@@ -24,7 +24,7 @@ from html.parser import HTMLParser
 ROOT = pathlib.Path(__file__).resolve().parent
 API = "https://api.gcgapi.com/v1"
 OFFICIAL = "https://www.gundam-gcg.com/en/cards/detail.php?detailSearch="
-DEFAULT_SETS = ([f"GD{i:02d}" for i in range(1, 6)]
+DEFAULT_SETS = ([f"GD{i:02d}" for i in range(1, 7)]
                 + [f"ST{i:02d}" for i in range(1, 15)] + ["EB01"])
 IMAGE_EXTENSIONS = {".webp", ".png", ".jpg", ".jpeg"}
 
@@ -228,18 +228,37 @@ def generate(code, args):
                     records[cid] = card
             except Exception as exc:
                 print(f"    WARN {cid}: API record unavailable ({exc})")
+    previous = {}
+    if target.exists():
+        try:
+            old_data = unwrap(json.loads(target.read_text(encoding="utf-8")))
+            if isinstance(old_data, list):
+                previous = {c["id"]: c for c in old_data if isinstance(c, dict) and c.get("id")}
+        except Exception as exc:
+            print(f"  WARN: couldn't read previous JSON ({exc})")
     result = []
     for cid in ids:
         if cid not in records:
-            continue
-        card = convert(records[cid])
-        resolve_pilot(card, records[cid], not args.no_official, args.delay)
+            if cid in previous:
+                card = dict(previous[cid])
+                print(f"    KEEP {cid}: existing data (API unavailable)")
+            else:
+                card = {
+                    "id": cid, "name": cid, "type": None, "color": None,
+                    "level": None, "cost": None, "ap": None, "hp": None,
+                    "traits": [], "link_conditions": [],
+                    "pair_conditions": {"pilot_names": [], "pilot_traits": []},
+                    "pilot": None, "keywords": [], "creates_tokens": [],
+                    "needs_review": True,
+                }
+                print(f"    PLACEHOLDER {cid}: API data unavailable")
+        else:
+            card = convert(records[cid])
+            resolve_pilot(card, records[cid], not args.no_official, args.delay)
         result.append(card)
     missing = [cid for cid in ids if cid not in records]
     if missing:
-        print("  ERROR: image IDs with no API record:", ", ".join(missing))
-        print("  Refusing to overwrite output with incomplete data")
-        return False
+        print("  NOTE: image IDs without API records:", ", ".join(missing))
     review = [card["id"] for card in result if card.get("needs_review")]
     print(f"  Output: {len(result)} cards; {len(review)} flagged for review")
     if args.dry_run:
@@ -259,16 +278,38 @@ def generate(code, args):
 def main():
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--sets", nargs="+", default=DEFAULT_SETS,
-                        help="Set codes to process (default: GD01-GD05, ST01-ST14, EB01)")
+    parser.add_argument("--sets", nargs="+", default=None,
+                        help="Set codes to process, or all for all set folders")
     parser.add_argument("--dry-run", action="store_true", help="Report without writing JSON")
     parser.add_argument("--no-official", action="store_true",
                         help="Skip official Command/Pilot lookup (these cards will be flagged for review)")
     parser.add_argument("--delay", type=float, default=0.2,
                         help="Seconds between official card requests (default 0.2)")
     args = parser.parse_args()
+    if args.sets is None:
+        try:
+            selection = input("Enter set name (e.g. GD06, ST12) or 'all': ").strip()
+        except EOFError:
+            parser.error("No input available. Use --sets GD06 or --sets all.")
+        if not selection:
+            parser.error("Please enter a set name or 'all'.")
+        selected = re.split(r"[\s,]+", selection.upper())
+    else:
+        selected = [x.upper() for x in args.sets]
+
+    if "ALL" in selected:
+        selected = sorted(p.name.upper() for p in ROOT.iterdir()
+                          if p.is_dir() and re.fullmatch(r"(?:GD|ST|EB)\d{2}", p.name, re.I))
+        if not selected:
+            parser.error("No set folders found beside the script.")
+        print("Found set folders:", ", ".join(selected))
+    else:
+        invalid = [x for x in selected if not re.fullmatch(r"(?:GD|ST|EB)\d{2}", x)]
+        if invalid:
+            parser.error("Invalid set code(s): " + ", ".join(invalid))
+
     success, failed = [], []
-    for code in dict.fromkeys(x.upper() for x in args.sets):
+    for code in dict.fromkeys(selected):
         print(f"\n=== {code} ===")
         try:
             if generate(code, args):

@@ -1,0 +1,2648 @@
+{
+  "set": "GD06",
+  "cards": [
+    {
+      "id": "GD06-001",
+      "name": "Gundam GP01Fb",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 5,
+      "cost": 4,
+      "ap": 3,
+      "hp": 5,
+      "traits": [
+        "Earth Federation",
+        "Albion Squad"
+      ],
+      "link_conditions": [
+        "Kou Uraki"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-002",
+      "name": "Infinite Justice Gundam",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 7,
+      "cost": 6,
+      "ap": 5,
+      "hp": 5,
+      "traits": [
+        "Orb"
+      ],
+      "link_conditions": [
+        "Athrun Zala"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-003",
+      "name": "GQuuuuuuX (Omega Psycommu Released)",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 6,
+      "cost": 4,
+      "ap": 2,
+      "hp": 5,
+      "traits": [
+        "Alphacide"
+      ],
+      "link_conditions": [
+        "Amate Yuzuriha (Machu)"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": false
+    },
+    {
+      "id": "GD06-004",
+      "name": "GD06-004",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-005",
+      "name": "GD06-005",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-006",
+      "name": "GQuuuuuuX (Omega Psycommu)",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 5,
+      "cost": 3,
+      "ap": 4,
+      "hp": 2,
+      "traits": [
+        "Alphacide"
+      ],
+      "link_conditions": [
+        "Amate Yuzuriha (Machu)",
+        "Nyaan"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-007",
+      "name": "GD06-007",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-008",
+      "name": "GD06-008",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-009",
+      "name": "GD06-009",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-010",
+      "name": "GD06-010",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-011",
+      "name": "GD06-011",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-012",
+      "name": "GD06-012",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-013",
+      "name": "GD06-013",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-014",
+      "name": "GD06-014",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-015",
+      "name": "GD06-015",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-016",
+      "name": "GD06-016",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-017",
+      "name": "GQuuuuuuX",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 3,
+      "cost": 2,
+      "ap": 2,
+      "hp": 4,
+      "traits": [
+        "Alphacide"
+      ],
+      "link_conditions": [
+        "Amate Yuzuriha (Machu)"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-018",
+      "name": "GD06-018",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-019",
+      "name": "GD06-019",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-020",
+      "name": "GD06-020",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-021",
+      "name": "GD06-021",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-022",
+      "name": "GD06-022",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-023",
+      "name": "GD06-023",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-024",
+      "name": "GD06-024",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-025",
+      "name": "GD06-025",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-026",
+      "name": "GD06-026",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-027",
+      "name": "GD06-027",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-028",
+      "name": "GD06-028",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-029",
+      "name": "GD06-029",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-030",
+      "name": "GD06-030",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-031",
+      "name": "GD06-031",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-032",
+      "name": "GD06-032",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-033",
+      "name": "GD06-033",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-034",
+      "name": "GD06-034",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-035",
+      "name": "GD06-035",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-036",
+      "name": "GD06-036",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-037",
+      "name": "GD06-037",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-038",
+      "name": "GD06-038",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-039",
+      "name": "GD06-039",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-040",
+      "name": "GD06-040",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-041",
+      "name": "GD06-041",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-042",
+      "name": "GD06-042",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-043",
+      "name": "GD06-043",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-044",
+      "name": "GD06-044",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-045",
+      "name": "GD06-045",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-046",
+      "name": "GD06-046",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-047",
+      "name": "GD06-047",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-048",
+      "name": "GD06-048",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-049",
+      "name": "GD06-049",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-050",
+      "name": "GD06-050",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-051",
+      "name": "GFreD",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 6,
+      "cost": 5,
+      "ap": 5,
+      "hp": 4,
+      "traits": [
+        "Zeon",
+        "Alphacide"
+      ],
+      "link_conditions": [
+        "Nyaan"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-052",
+      "name": "GD06-052",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-053",
+      "name": "GD06-053",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-054",
+      "name": "GFreD",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 7,
+      "cost": 6,
+      "ap": 6,
+      "hp": 5,
+      "traits": [
+        "Zeon",
+        "Alphacide"
+      ],
+      "link_conditions": [
+        "Nyaan"
+      ],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-055",
+      "name": "GD06-055",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-056",
+      "name": "GD06-056",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-057",
+      "name": "GD06-057",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-058",
+      "name": "GD06-058",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-059",
+      "name": "GD06-059",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-060",
+      "name": "GD06-060",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-061",
+      "name": "GD06-061",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-062",
+      "name": "GD06-062",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-063",
+      "name": "GD06-063",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-064",
+      "name": "GD06-064",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-065",
+      "name": "GD06-065",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-066",
+      "name": "GD06-066",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-067",
+      "name": "GD06-067",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-068",
+      "name": "GD06-068",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-069",
+      "name": "GD06-069",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-070",
+      "name": "GD06-070",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-071",
+      "name": "GD06-071",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-072",
+      "name": "GD06-072",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-073",
+      "name": "GD06-073",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-074",
+      "name": "GD06-074",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-075",
+      "name": "GD06-075",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-076",
+      "name": "GD06-076",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-077",
+      "name": "GD06-077",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-078",
+      "name": "GD06-078",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-079",
+      "name": "GD06-079",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-080",
+      "name": "GD06-080",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-081",
+      "name": "Amate Yuzuriha (Machu)",
+      "type": "Pilot",
+      "color": "Blue",
+      "level": 4,
+      "cost": 1,
+      "ap": 1,
+      "hp": 2,
+      "traits": [
+        "Alphacide",
+        "Newtype"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": "Amate Yuzuriha (Machu)",
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-082",
+      "name": "GD06-082",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-083",
+      "name": "GD06-083",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-084",
+      "name": "GD06-084",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-085",
+      "name": "GD06-085",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-086",
+      "name": "GD06-086",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-087",
+      "name": "GD06-087",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-088",
+      "name": "GD06-088",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-089",
+      "name": "GD06-089",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-090",
+      "name": "GD06-090",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-091",
+      "name": "GD06-091",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-092",
+      "name": "GD06-092",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-093",
+      "name": "GD06-093",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-094",
+      "name": "Nyaan",
+      "type": "Pilot",
+      "color": "Purple",
+      "level": 4,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "Zeon",
+        "Alphacide",
+        "Newtype"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": "Nyaan",
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-095",
+      "name": "GD06-095",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-096",
+      "name": "GD06-096",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-097",
+      "name": "GD06-097",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-098",
+      "name": "GD06-098",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-099",
+      "name": "GD06-099",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-100",
+      "name": "GD06-100",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-101",
+      "name": "The Gundam Says",
+      "type": "Command",
+      "color": "Blue",
+      "level": 6,
+      "cost": 2,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "Alphacide"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-102",
+      "name": "GD06-102",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-103",
+      "name": "GD06-103",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-104",
+      "name": "GD06-104",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-105",
+      "name": "GD06-105",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-106",
+      "name": "GD06-106",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-107",
+      "name": "GD06-107",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-108",
+      "name": "GD06-108",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-109",
+      "name": "GD06-109",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-110",
+      "name": "GD06-110",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-111",
+      "name": "GD06-111",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-112",
+      "name": "GD06-112",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-113",
+      "name": "GD06-113",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-114",
+      "name": "Alphaciders",
+      "type": "Command",
+      "color": "Purple",
+      "level": 4,
+      "cost": 1,
+      "ap": null,
+      "hp": null,
+      "traits": [
+        "Alphacide"
+      ],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-115",
+      "name": "GD06-115",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-116",
+      "name": "GD06-116",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-117",
+      "name": "GD06-117",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-118",
+      "name": "GD06-118",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-119",
+      "name": "GD06-119",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-120",
+      "name": "GD06-120",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-121",
+      "name": "GD06-121",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-122",
+      "name": "GD06-122",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-123",
+      "name": "GD06-123",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-124",
+      "name": "GD06-124",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-125",
+      "name": "GD06-125",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-126",
+      "name": "GD06-126",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-127",
+      "name": "GD06-127",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-128",
+      "name": "GD06-128",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-129",
+      "name": "GD06-129",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    },
+    {
+      "id": "GD06-130",
+      "name": "GD06-130",
+      "type": null,
+      "color": null,
+      "level": null,
+      "cost": null,
+      "ap": null,
+      "hp": null,
+      "traits": [],
+      "link_conditions": [],
+      "pair_conditions": {
+        "pilot_names": [],
+        "pilot_traits": []
+      },
+      "pilot": null,
+      "keywords": [],
+      "creates_tokens": [],
+      "needs_review": true
+    }
+  ]
+}

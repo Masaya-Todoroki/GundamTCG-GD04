@@ -22,6 +22,7 @@ const CARD_SETS = [
     'GD03',
     'GD04',
     'GD05',
+    'GD06',
     'EB01',
 ];
   
