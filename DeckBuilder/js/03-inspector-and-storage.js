@@ -101,7 +101,8 @@ $('cards').onclick = e => { const quick = e.target.closest('button[data-quick]')
     const id = quick.dataset.id;
     const action = quick.dataset.quick;
     change(id, action === 'clear' ? -(deck[id] || 0) : action === 'minus' ? -1 : action === 'all' ? 4 : 1);
-    render();
+    // change() already updates card quantities. Rebuilding the whole gallery
+    // removes the clicked button and can jump the browser back to the top.
     return;
 } const art = e.target.closest('img.gallery-card-art'); if (art) {
     const el = art.closest('article.card[data-id]');
