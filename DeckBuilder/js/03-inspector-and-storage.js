@@ -117,7 +117,7 @@ $('cards').addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key ==
 } });
 $('deckList').onclick = e => {
     const art = e.target.closest('img[data-inspect-id]');
-    if (art) { document.getElementById('browserDeckSidebar').dispatchEvent(new Event('deck:collapse')); show(art.dataset.inspectId); return; }
+    if (art) { show(art.dataset.inspectId); return; }
     const b = e.target.closest('button[data-action]');
     if (!b) return;
     const id = b.dataset.id;
@@ -125,7 +125,7 @@ $('deckList').onclick = e => {
 };
 $('deckList').addEventListener('keydown', e => {
     if ((e.key === 'Enter' || e.key === ' ') && e.target.matches('img[data-inspect-id]')) {
-        e.preventDefault(); document.getElementById('browserDeckSidebar').dispatchEvent(new Event('deck:collapse')); show(e.target.dataset.inspectId);
+        e.preventDefault(); show(e.target.dataset.inspectId);
     }
 });
 // Update quantities in-place so clicking related-card controls never recreates the tiles.

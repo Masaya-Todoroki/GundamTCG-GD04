@@ -473,7 +473,6 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && deckImageM
         event.preventDefault();
         setHeight(currentHeight() > minHeight + 1 ? minHeight : maxHeight());
     });
-    sidebar.addEventListener('deck:collapse', () => setHeight(minHeight));
     document.getElementById('deckDrawerMinimise').addEventListener('click', () => setHeight(minHeight));
     document.getElementById('deckDrawerMaximise').addEventListener('click', () => setHeight(maxHeight()));
     const total = document.getElementById('total');

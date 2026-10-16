@@ -334,9 +334,7 @@
       "traits": [
         "Earth Federation"
       ],
-      "link_conditions": [
-        "Earth Federation"
-      ],
+      "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -358,9 +356,7 @@
       "traits": [
         "Earth Federation"
       ],
-      "link_conditions": [
-        "Earth Federation"
-      ],
+      "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -592,9 +588,7 @@
       "traits": [
         "Neo Zeon"
       ],
-      "link_conditions": [
-        "Neo Zeon"
-      ],
+      "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -722,9 +716,7 @@
       "traits": [
         "Neo Zeon"
       ],
-      "link_conditions": [
-        "Neo Zeon"
-      ],
+      "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -772,9 +764,7 @@
       "traits": [
         "Ghingham Fleet"
       ],
-      "link_conditions": [
-        "Ghingham Fleet"
-      ],
+      "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -796,9 +786,7 @@
       "traits": [
         "Ghingham Fleet"
       ],
-      "link_conditions": [
-        "Ghingham Fleet"
-      ],
+      "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -820,9 +808,7 @@
       "traits": [
         "Ghingham Fleet"
       ],
-      "link_conditions": [
-        "Ghingham Fleet"
-      ],
+      "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -1011,9 +997,7 @@
         "AEUG",
         "Gundam Team"
       ],
-      "link_conditions": [
-        "Gundam Team"
-      ],
+      "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -1168,9 +1152,7 @@
         "AEUG",
         "Gundam Team"
       ],
-      "link_conditions": [
-        "Gundam Team"
-      ],
+      "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -1222,9 +1204,7 @@
         "Earth Alliance",
         "Phantom Pain"
       ],
-      "link_conditions": [
-        "Phantom Pain"
-      ],
+      "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -1246,9 +1226,7 @@
       "traits": [
         "Gjallarhorn"
       ],
-      "link_conditions": [
-        "Gjallarhorn"
-      ],
+      "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -1469,9 +1447,7 @@
         "Zeon",
         "Delaz Fleet"
       ],
-      "link_conditions": [
-        "Delaz Fleet"
-      ],
+      "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -1573,9 +1549,7 @@
         "Zeon",
         "Delaz Fleet"
       ],
-      "link_conditions": [
-        "Delaz Fleet"
-      ],
+      "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -1598,9 +1572,7 @@
         "Zeon",
         "Delaz Fleet"
       ],
-      "link_conditions": [
-        "Delaz Fleet"
-      ],
+      "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -1625,9 +1597,7 @@
       "traits": [
         "Zeon"
       ],
-      "link_conditions": [
-        "Zeon"
-      ],
+      "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -1650,9 +1620,7 @@
         "Zeon",
         "Alphacide"
       ],
-      "link_conditions": [
-        "Zeon"
-      ],
+      "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -1972,9 +1940,7 @@
       "traits": [
         "Mariemaia Army"
       ],
-      "link_conditions": [
-        "Mariemaia Army"
-      ],
+      "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -2022,9 +1988,7 @@
       "traits": [
         "Dianna Counter"
       ],
-      "link_conditions": [
-        "Dianna Counter"
-      ],
+      "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -2048,9 +2012,7 @@
       "traits": [
         "Dianna Counter"
       ],
-      "link_conditions": [
-        "Dianna Counter"
-      ],
+      "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -2074,9 +2036,7 @@
       "traits": [
         "Dianna Counter"
       ],
-      "link_conditions": [
-        "Dianna Counter"
-      ],
+      "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -2707,7 +2667,7 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": "South Burning",
       "keywords": [
         "Main"
       ],
@@ -2732,7 +2692,7 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": "Chuck Keith",
       "keywords": [
         "Main",
         "Attack"
@@ -2804,7 +2764,7 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": "Sweatson Stero",
       "keywords": [
         "Main",
         "Blocker"
@@ -2829,7 +2789,7 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": "Chara Soon",
       "keywords": [
         "Main"
       ],
@@ -2901,7 +2861,7 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": "Julieta Juris",
       "keywords": [
         "Action"
       ],
@@ -2927,7 +2887,7 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": "Elle Vianno",
       "keywords": [
         "Action"
       ],
@@ -3050,7 +3010,7 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": "Karius",
       "keywords": [
         "Action"
       ],
@@ -3100,7 +3060,7 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": "Schwarz Bruder",
       "keywords": [
         "Action"
       ],
@@ -3149,7 +3109,7 @@
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
+      "pilot": "Poe Aijee",
       "keywords": [
         "Action",
         "High-Maneuver"
