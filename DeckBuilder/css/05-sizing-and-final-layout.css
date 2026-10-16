@@ -500,3 +500,31 @@
 @media (max-width:850px) {
   #modal .inspector-navigation { clear:both; padding-top:6px; }
 }
+
+/* v1.1.0 — Keep the deck drawer interactive while inspecting cards.
+   The inspector occupies the space above the drawer; the drawer retains its
+   user-selected height and can still be dragged or clicked. */
+#modal.open { bottom: 0 !important; max-height: 100dvh; z-index: 1001 !important; }
+#modal.open.from-card-browser { bottom: 54px !important; }
+body:has(#modal.open) .shell:not(.deck-mode) #browserDeckSidebar {
+  z-index: 1400 !important;
+  pointer-events: auto !important;
+}
+body:has(#modal.open) .shell:not(.deck-mode) #mobileDeckHandle {
+  pointer-events: auto !important;
+}
+
+/* v1.1.0 — Source-aware inspector stacking.
+   Deck cards remain clickable through the non-interactive backdrop;
+   the actual inspector dialog stays interactive and above the drawer. */
+#modal.open.from-deck-viewer {
+  z-index: 1600 !important;
+  pointer-events: none;
+}
+#modal.open.from-deck-viewer > .dialog {
+  pointer-events: auto;
+}
+/* Browser-origin inspection keeps the deck drawer above the inspector. */
+#modal.open.from-card-browser {
+  z-index: 1001 !important;
+}

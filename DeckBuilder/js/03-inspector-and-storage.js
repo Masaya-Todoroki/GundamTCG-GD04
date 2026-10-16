@@ -15,7 +15,7 @@ function updateInspectorNavigation() {
     forward.title = forward.disabled ? 'No next card' : `Forward to ${byId.get(inspectorHistory[inspectorHistoryIndex + 1])?.name || inspectorHistory[inspectorHistoryIndex + 1]}`;
 }
 function closeInspector() {
-    $('modal').classList.remove('open');
+    $('modal').classList.remove('open', 'from-deck-viewer', 'from-card-browser');
     inspectorHistory.length = 0;
     inspectorHistoryIndex = -1;
     updateInspectorNavigation();
@@ -29,7 +29,11 @@ function navigateInspector(delta) {
 $('inspectorBack').onclick = () => navigateInspector(-1);
 $('inspectorForward').onclick = () => navigateInspector(1);
 
-function show(id, navigation = 'push') {
+function show(id, navigation = 'push', openedFrom = 'browser') {
+    if (navigation !== 'history') {
+        $('modal').classList.toggle('from-deck-viewer', openedFrom === 'deckViewer');
+        $('modal').classList.toggle('from-card-browser', openedFrom !== 'deckViewer');
+    }
     const c = byId.get(id);
     if (!c)
         return;
@@ -117,7 +121,7 @@ $('cards').addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key ==
 } });
 $('deckList').onclick = e => {
     const art = e.target.closest('img[data-inspect-id]');
-    if (art) { show(art.dataset.inspectId); return; }
+    if (art) { show(art.dataset.inspectId, 'push', 'deckViewer'); return; }
     const b = e.target.closest('button[data-action]');
     if (!b) return;
     const id = b.dataset.id;
@@ -125,7 +129,7 @@ $('deckList').onclick = e => {
 };
 $('deckList').addEventListener('keydown', e => {
     if ((e.key === 'Enter' || e.key === ' ') && e.target.matches('img[data-inspect-id]')) {
-        e.preventDefault(); show(e.target.dataset.inspectId);
+        e.preventDefault(); show(e.target.dataset.inspectId, 'push', 'deckViewer');
     }
 });
 // Update quantities in-place so clicking related-card controls never recreates the tiles.
