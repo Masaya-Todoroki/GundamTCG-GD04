@@ -76,35 +76,47 @@
     },
     {
       "id": "GD06-004",
-      "name": "GD06-004",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Gundam GP01",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 4,
+      "cost": 2,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "Earth Federation",
+        "Albion Squad"
+      ],
+      "link_conditions": [
+        "Kou Uraki"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Destroyed"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-005",
-      "name": "GD06-005",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Akatsuki (Shiranui)",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 6,
+      "cost": 5,
+      "ap": 5,
+      "hp": 4,
+      "traits": [
+        "Orb"
+      ],
+      "link_conditions": [
+        "Orb",
+        "Mu La Flaga"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []

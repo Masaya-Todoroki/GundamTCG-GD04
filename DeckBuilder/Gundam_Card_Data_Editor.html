@@ -1,31 +1,144 @@
 <!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Gundam Card Data Editor</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#101722;color:#e9f0fb;font:14px Segoe UI,Arial,sans-serif}button,input,select,textarea{font:inherit}button{background:#314768;color:white;border:1px solid #506787;border-radius:6px;padding:9px 12px;cursor:pointer}button:hover{background:#41618c}button:disabled{opacity:.4}input,select,textarea{background:#101a29;color:#eef4ff;border:1px solid #425471;border-radius:5px;padding:8px;width:100%}textarea{min-height:54px;resize:vertical}header{display:flex;gap:9px;align-items:center;padding:13px 18px;background:#1c2940;flex-wrap:wrap}h1{font-size:18px;margin:0 16px 0 0}#status{margin-left:auto;color:#b4c4da;font-size:12px}#notice{padding:10px 18px;background:#344564;display:none}main{display:grid;grid-template-columns:235px minmax(300px,1fr) minmax(380px,1.05fr);height:calc(100vh - 67px)}aside,.preview,.editor{overflow:auto;padding:16px;min-width:0;border-right:1px solid #35435a}aside{background:#162033}.preview{background:#111b2a;text-align:center}.editor{background:#1b2739}h2{font-size:18px;margin:0 0 16px}.hint{font-size:12px;line-height:1.5;color:#a6b6ce}.caption{font-size:12px;font-weight:bold;color:#bdcce2;margin:14px 0 6px}.tools{display:flex;gap:6px;margin-top:10px}.tools>*{min-width:0}#cards{margin-top:12px;display:flex;flex-direction:column;gap:3px}.card{width:100%;display:flex;gap:7px;text-align:left;background:transparent;border-color:transparent;align-items:center}.card.selected{background:#345077;border-color:#7394c0}.card small{margin-left:auto;color:#9fb1cc;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:110px}.dot{background:#b48b4b;width:8px;height:8px;border-radius:50%;flex:none}.dot.done{background:#37c99b}#pic{max-width:100%;max-height:calc(100vh - 190px);object-fit:contain;border-radius:9px}#imagebox{min-height:250px;display:flex;justify-content:center;align-items:center}.nav{display:flex;gap:8px;margin:10px auto;max-width:480px}.nav button{flex:1}.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:5px;min-width:0}.wide{grid-column:1/-1}label{font-size:12px;font-weight:600;color:#b8c8e1}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.actions button{flex:1}.primary{background:#2369bd}.success{background:#206c58}@media(max-width:950px){main{grid-template-columns:185px 1fr;height:auto}.editor{grid-column:2}.preview{overflow:visible}#pic{max-height:540px}}@media(max-width:600px){main{display:block}aside{max-height:260px}#pic{max-height:500px}}
+*{box-sizing:border-box}body{margin:0;background:#101722;color:#e9f0fb;font:14px Segoe UI,Arial,sans-serif}button,input,select,textarea{font:inherit}button{background:#314768;color:white;border:1px solid #506787;border-radius:6px;padding:9px 12px;cursor:pointer}button:hover{background:#41618c}button:disabled{opacity:.4}input,select,textarea{background:#101a29;color:#eef4ff;border:1px solid #425471;border-radius:5px;padding:8px;width:100%}textarea{min-height:38px;resize:vertical}header{display:flex;gap:9px;align-items:center;padding:13px 18px;background:#1c2940;flex-wrap:wrap}h1{font-size:18px;margin:0 16px 0 0}#status{margin-left:auto;color:#b4c4da;font-size:12px}#notice{padding:10px 18px;background:#344564;display:none}main{display:grid;grid-template-columns:235px minmax(300px,1fr) minmax(380px,1.05fr);height:calc(100dvh - 68px);min-height:0}aside,.preview,.editor{overflow:auto;padding:16px;min-width:0;border-right:1px solid #35435a}aside{background:#162033}.preview{background:#111b2a;text-align:center}.editor{background:#1b2739}h2{font-size:18px;margin:0 0 16px}.hint{font-size:12px;line-height:1.5;color:#a6b6ce}.caption{font-size:12px;font-weight:bold;color:#bdcce2;margin:14px 0 6px}.tools{display:flex;gap:6px;margin-top:10px}.tools>*{min-width:0}#cards{margin-top:12px;display:flex;flex-direction:column;gap:3px}.card{width:100%;display:flex;gap:7px;text-align:left;background:transparent;border-color:transparent;align-items:center}.card.selected{background:#345077;border-color:#7394c0}.card small{margin-left:auto;color:#9fb1cc;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:110px}.dot{background:#b48b4b;width:8px;height:8px;border-radius:50%;flex:none}.dot.done{background:#37c99b}#pic{max-width:100%;max-height:calc(100vh - 190px);object-fit:contain;border-radius:9px}#imagebox{min-height:250px;display:flex;justify-content:center;align-items:center}.nav{display:flex;gap:8px;margin:10px auto;max-width:480px}.nav button{flex:1}.fields{display:grid;grid-template-columns:1fr 1fr;gap:8px}.field{display:flex;flex-direction:column;gap:3px;min-width:0}.wide{grid-column:1/-1}label{font-size:12px;font-weight:600;color:#b8c8e1}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.actions button{flex:1}.primary{background:#2369bd}.success{background:#206c58}@media(max-width:950px){main{grid-template-columns:185px 1fr;height:auto}.editor{grid-column:2}.preview{overflow:visible}#pic{max-height:540px}}@media(max-width:600px){main{display:block}aside{max-height:260px}#pic{max-height:500px}}
+ .field textarea{height:42px;min-height:42px}.editor{padding:12px 16px}.editor h2{margin-bottom:10px}.field select{height:35px}.field input{height:35px}.field input[type=checkbox]{height:auto}.field .suggestions{position:absolute;left:0;right:0;top:100%;z-index:20;background:#263851;border:1px solid #6b86aa;border-radius:6px;max-height:190px;overflow:auto;box-shadow:0 8px 20px #0009}.field .suggestions button{display:block;width:100%;border:0;border-radius:0;text-align:left;background:transparent;padding:8px}.field .suggestions button:hover,.field .suggestions button:focus{background:#41638f}.field .suggestions[hidden]{display:none}.field{position:relative}.field textarea{overflow:auto} 
+/* Fixed-height workspace: only the card browser list scrolls. */
+html,body{height:100%;overflow:hidden}
+body{display:flex;flex-direction:column}
+header{flex:0 0 auto;padding:7px 12px;gap:7px}
+header button{padding:7px 10px}
+#notice{flex:0 0 auto;padding:7px 12px;font-size:12px}
+main{height:auto!important;min-height:0!important;flex:1;overflow:hidden;grid-template-columns:235px minmax(260px,1fr) minmax(420px,1.1fr)}
+aside,.preview,.editor{min-height:0;overflow:hidden;padding:10px 12px}
+aside{display:flex;flex-direction:column}
+aside .hint{flex:0 0 auto}
+aside .caption{margin:8px 0 4px}
+aside #set,aside .tools{flex:0 0 auto}
+#cards{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;margin-top:8px;padding-right:4px}
+.preview{display:flex;flex-direction:column;align-items:stretch;gap:6px}
+#imagebox{flex:1;min-height:0;max-height:none;overflow:hidden}
+#pic{width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain}
+.preview .nav{width:100%;flex:0 0 auto;margin:0 auto}
+.preview #imageinfo{flex:0 0 auto}
+.editor{display:flex;flex-direction:column;gap:0}
+.editor h2{flex:0 0 auto;font-size:16px;margin:0 0 7px}
+.fields{flex:1;min-height:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(9,minmax(0,1fr));gap:5px 10px;align-content:stretch}
+.field{gap:2px;min-height:0;position:relative}
+.field label{font-size:11px;line-height:1.15}
+.field input,.field select,.field textarea{flex:1;min-height:0;max-height:100%;padding:4px 7px;font-size:13px}
+.field textarea{resize:none}
+.field input[type=checkbox]{flex:none;align-self:start}
+.actions{flex:0 0 auto;margin-top:7px;gap:6px}
+.actions button{padding:6px 8px;font-size:12px}
+.editor>p.hint{flex:0 0 auto;margin:6px 0 0;font-size:10px;line-height:1.25}
+.suggestions{z-index:1000}
+@media(max-width:950px){main{display:grid;grid-template-columns:180px minmax(230px,1fr) minmax(340px,1.1fr);height:auto!important}.editor{grid-column:auto}.preview{overflow:hidden}#pic{max-height:100%}}
+@media(max-width:720px){main{grid-template-columns:135px minmax(180px,1fr) minmax(300px,1.1fr)}aside,.preview,.editor{padding:7px}.hint{font-size:10px}}
+
+/* Wider card browser, balanced preview and compact editor */
+main{grid-template-columns:330px minmax(300px,1fr) minmax(440px,0.94fr)}
+#cards{gap:4px}
+#cards .card{min-height:62px;padding:5px 8px;gap:9px;overflow:hidden}
+#cards .card-thumb{width:36px;height:51px;object-fit:contain;flex:0 0 36px;border-radius:3px;background:#0c1522}
+#cards .card-thumb.empty{display:grid;place-items:center;font-size:9px;color:#8194b2}
+#cards .card-info{display:flex;flex-direction:column;align-items:flex-start;gap:3px;min-width:0;flex:1}
+#cards .card-info .card-id{font-weight:600;font-size:12px;white-space:nowrap}
+#cards .card-info .card-name{font-size:11px;color:#a8bad6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;margin:0}
+#cards .dot{margin-left:auto}
+@media(max-width:1100px){main{grid-template-columns:260px minmax(240px,1fr) minmax(360px,0.95fr)}}
+@media(max-width:720px){main{grid-template-columns:205px minmax(180px,1fr) minmax(300px,1fr)}#cards .card-thumb{width:30px;height:43px;flex-basis:30px}}
+
+/* Compact visual gallery in the left panel */
+main{grid-template-columns:365px minmax(290px,1fr) minmax(410px,.96fr)}
+.grid-control{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:8px;font-size:12px;color:#b8c8e1}
+.grid-control select{width:110px;padding:5px 7px}
+#cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;align-content:start;overflow-y:auto;min-height:0}
+#cards.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+#cards .card{min-height:0;display:flex;flex-direction:column;align-items:center;gap:4px;padding:7px 5px;text-align:center;position:relative;border:1px solid #334862;background:#1a2940;border-radius:7px}
+#cards .card.selected{background:#304e77;border-color:#82a6d8}
+#cards .card-thumb{display:block;width:auto;height:108px;max-width:100%;object-fit:contain;flex:none;border-radius:4px}
+#cards.cols-3 .card-thumb{height:84px}
+#cards .card-thumb.empty{width:68px;display:flex;align-items:center;justify-content:center}
+#cards .card-info{width:100%;align-items:center;gap:2px}
+#cards .card-info .card-id{font-size:11px}
+#cards .card-info .card-name{font-size:10px;width:100%;text-align:center;max-width:100%;display:block}
+#cards .dot{position:absolute;top:6px;right:6px;margin:0;border:1px solid #162033}
+@media(max-width:1100px){main{grid-template-columns:300px minmax(240px,1fr) minmax(350px,.95fr)}}
+@media(max-width:720px){main{grid-template-columns:240px minmax(180px,1fr) minmax(300px,1fr)}#cards .card-thumb{height:83px}#cards.cols-3 .card-thumb{height:66px}}
+
+/* Keep grid cards at their natural height instead of compressing every row to fit. */
+#cards{grid-auto-rows:max-content;align-content:start;align-items:start;overflow-y:auto;overflow-x:hidden}
+#cards .card{height:auto;min-height:0;align-self:start;justify-content:flex-start;overflow:hidden}
+#cards .card-thumb{width:100%;height:auto;max-width:100%;aspect-ratio:5/7;object-fit:contain;flex:none}
+#cards.cols-3 .card-thumb{width:100%;height:auto;aspect-ratio:5/7}
+#cards .card-thumb.empty{width:100%;height:auto;aspect-ratio:5/7}
+@media(max-width:720px){#cards .card-thumb,#cards.cols-3 .card-thumb{height:auto}}
 </style></head><body>
-<header><h1>Gundam Card Data Editor</h1><button class="primary" id="folder">Open DeckBuilder folder</button><button id="create">Create missing set JSONs</button><button id="import">Import JSON</button><button id="images">Load image folder</button><button id="save" class="success">Save JSON</button><button id="export">Download JSON</button><span id="status">No project loaded</span></header>
-<div id="notice"></div><main><aside><div class="hint">Choose your <b>DeckBuilder</b> folder. Missing set JSONs will be offered as numbered templates. The editor looks inside <b>Data</b> for set JSONs and <b>Cards</b> for card images.</div><div class="caption">Set</div><select id="set"><option value="">No set loaded</option></select><div class="caption" id="progress">0 cards</div><div class="tools"><input id="search" placeholder="Search cards"><select id="filter"><option value="all">All</option><option value="todo">Review</option><option value="done">Complete</option></select></div><div id="cards"></div></aside>
-<section class="preview"><div id="imagebox"><span class="hint">Open a folder to display cards</span></div><div class="nav"><button id="prev">← Previous</button><button id="next">Next →</button></div><div class="hint" id="imageinfo">Image matched automatically using the card ID.</div></section>
-<section class="editor"><h2 id="heading">Select a card</h2><div id="fields" class="fields"></div><div class="actions"><button class="success" id="complete">Mark complete & next →</button><button id="review">Needs review</button><button id="add">+ Add card</button></div><p class="hint">Edits are held in memory until you click <b>Save JSON</b>. Download JSON makes a backup. Every existing JSON property is preserved, including fields not shown in this editor. List fields accept one entry per line.</p></section></main>
+<header><h1>Gundam Card Data Editor</h1><button type="button" class="primary" id="folder">Open DeckBuilder folder</button><button type="button" id="create">Create missing set JSONs</button><button type="button" id="import">Import JSON</button><button type="button" id="images">Load image folder</button><button type="button" id="save" class="success">Save JSON</button><button type="button" id="export">Download JSON</button><span id="status">No project loaded</span></header>
+<div id="notice"></div><main><aside><div class="hint">Choose your <b>DeckBuilder</b> folder. Missing set JSONs will be offered as numbered templates. The editor looks inside <b>Data</b> for set JSONs and <b>Cards</b> for card images.</div><div class="caption">Set</div><select id="set"><option value="">No set loaded</option></select><div class="caption" id="progress">0 cards</div><div class="tools"><input id="search" placeholder="Search cards"><select id="filter"><option value="all">All</option><option value="todo">Review</option><option value="done">Complete</option></select></div><div class="grid-control"><span>Card grid</span><select id="gridCols" aria-label="Card grid columns"><option value="2">2 per row</option><option value="3">3 per row</option></select></div><div id="cards"></div></aside>
+<section class="preview"><div id="imagebox"><span class="hint">Open a folder to display cards</span></div><div class="nav"><button type="button" id="prev">← Previous</button><button type="button" id="next">Next →</button></div><div class="hint" id="imageinfo">Image matched automatically using the card ID.</div></section>
+<section class="editor"><h2 id="heading">Select a card</h2><div id="fields" class="fields"></div><p class="hint">Edits are held in memory until you click <b>Save JSON</b>. Download JSON makes a backup. Every existing JSON property is preserved, including fields not shown in this editor. List fields accept one entry per line.</p></section></main>
 <input type="file" id="jsonfile" accept=".json" multiple hidden><input type="file" id="imagefiles" accept="image/*" webkitdirectory multiple hidden>
 <script>
 (()=>{
-const $=x=>document.getElementById(x), sets=new Map(), handles=new Map(), images=new Map();let active='',index=0,root=null;
-const specs=[['id','Card ID','text'],['name','Card name','text'],['type','Card type','text'],['color','Colour','text'],['level','Level','number'],['cost','Cost','number'],['ap','AP','number'],['hp','HP','number'],['traits','Traits','list'],['link_conditions','Link conditions','list'],['pair_conditions.pilot_names','Pair: pilot names','list'],['pair_conditions.pilot_traits','Pair: pilot traits','list'],['pilot','Pilot','text'],['keywords','Keywords','list'],['creates_tokens','Creates tokens','list'],['needs_review','Needs review','checkbox']];
+const $=x=>document.getElementById(x), sets=new Map(), handles=new Map(), images=new Map();let active='',index=0,root=null;const unsaved=new Set();
+const specs=[['id','Card ID','text'],['name','Card name','text'],['type','Card type','select'],['color','Colour','select'],['level','Level','number'],['cost','Cost','number'],['ap','AP','number'],['hp','HP','number'],['traits','Traits','list'],['link_conditions','Link conditions','list'],['pair_conditions.pilot_names','Pair: pilot names','list'],['pair_conditions.pilot_traits','Pair: pilot traits','list'],['pilot','Pilot','text'],['keywords','Keywords','list'],['creates_tokens','Creates tokens','list'],['needs_review','Needs review','checkbox']];
 const get=(o,k)=>k.split('.').reduce((v,p)=>v?.[p],o);
 function put(o,k,v){let a=k.split('.');for(let i=0;i<a.length-1;i++)o=o[a[i]]??={};o[a.at(-1)]=v}
 function notice(s){$('notice').style.display='block';$('notice').textContent=s}
 function current(){return sets.get(active)?.cards[index]}
-function register(data,name,handle){if(Array.isArray(data))data={set:name,cards:data};if(!Array.isArray(data?.cards))throw Error('Expected JSON with a cards array');let key=String(data.set||name).toUpperCase();data.set=key;sets.set(key,data);if(handle)handles.set(key,handle);active=key;index=0;refreshSet();render()}
+function register(data,name,handle){if(Array.isArray(data))data={set:name,cards:data};if(!Array.isArray(data?.cards))throw Error('Expected JSON with a cards array');let key=String(data.set||name).toUpperCase();data.set=key;sets.set(key,data);unsaved.delete(key);if(handle)handles.set(key,handle);active=key;index=0;refreshSet();render()}
 function refreshSet(){let sel=$('set');sel.innerHTML='';for(let key of sets.keys()){let o=document.createElement('option');o.value=key;o.textContent=key;sel.append(o)}sel.value=active}
-function changed(){renderList();progress();$('status').textContent=active+' • Changes not saved'}
+function changed(){rememberPosition();if(active)unsaved.add(active);renderList();progress();$('status').textContent=active+' • Changes not saved'}
 function progress(){let a=sets.get(active)?.cards||[];$('progress').textContent=a.length+' cards • '+a.filter(x=>x.needs_review===false).length+' complete'}
-function renderList(){let el=$('cards');el.innerHTML='';let q=$('search').value.toLowerCase(),f=$('filter').value;(sets.get(active)?.cards||[]).forEach((c,i)=>{if(q&&!((c.id||'')+' '+(c.name||'')).toLowerCase().includes(q))return;if(f==='todo'&&c.needs_review===false)return;if(f==='done'&&c.needs_review!==false)return;let b=document.createElement('button');b.className='card'+(i===index?' selected':'');let d=document.createElement('span');d.className='dot'+(c.needs_review===false?' done':'');let id=document.createElement('span');id.textContent=c.id||'?';let n=document.createElement('small');n.textContent=c.name&&c.name!==c.id?c.name:'';b.append(d,id,n);b.onclick=()=>{index=i;render()};el.append(b)})}
+function renderList(){
+let el=$('cards'), oldScroll=el.scrollTop;el.innerHTML='';
+let q=$('search').value.toLowerCase(),f=$('filter').value;
+(sets.get(active)?.cards||[]).forEach((c,i)=>{
+if(q&&!((c.id||'')+' '+(c.name||'')).toLowerCase().includes(q))return;
+if(f==='todo'&&c.needs_review===false)return;
+if(f==='done'&&c.needs_review!==false)return;
+let b=document.createElement('button');b.className='card'+(i===index?' selected':'');
+let url=images.get(String(c.id||'').toUpperCase());
+let thumb=url?document.createElement('img'):document.createElement('span');
+thumb.className='card-thumb'+(url?'':' empty');
+if(url){thumb.src=url;thumb.alt='';thumb.loading='lazy';thumb.decoding='async';}
+else thumb.textContent='No art';
+let info=document.createElement('span');info.className='card-info';
+let id=document.createElement('span');id.className='card-id';id.textContent=c.id||'?';
+let n=document.createElement('small');n.className='card-name';n.textContent=c.name&&c.name!==c.id?c.name:'Unnamed card';
+info.append(id,n);
+let d=document.createElement('span');d.className='dot'+(c.needs_review===false?' done':'');
+b.append(thumb,info,d);b.onclick=()=>{index=i;rememberPosition();render()};el.append(b);
+});el.scrollTop=oldScroll;
+}
 function showImage(){let el=$('imagebox');el.innerHTML='';let c=current();if(!c)return;let url=images.get(String(c.id).toUpperCase());if(!url){let s=document.createElement('span');s.className='hint';s.textContent='Image not found: '+c.id;el.append(s);return}let img=document.createElement('img');img.id='pic';img.src=url;img.alt=c.id;el.append(img)}
-function fields(){let el=$('fields');el.innerHTML='';let c=current();if(!c)return;for(let [key,label,type] of specs){let box=document.createElement('div');box.className='field'+(type==='list'||key==='name'?' wide':'');let l=document.createElement('label');l.textContent=label;box.append(l);let inp=type==='list'?document.createElement('textarea'):document.createElement('input');let v=get(c,key);if(type==='checkbox'){inp.type='checkbox';inp.checked=v!==false;inp.style.width='auto'}else if(type==='list')inp.value=Array.isArray(v)?v.join('\n'):v==null?'':String(v);else{inp.type=type;inp.value=v??''}inp.oninput=()=>{let value=type==='checkbox'?inp.checked:type==='list'?inp.value.split(/\r?\n/).map(s=>s.trim()).filter(Boolean):type==='number'?(inp.value===''?null:Number(inp.value)):(inp.value||null);put(c,key,value);changed();if(key==='id')showImage()};box.append(inp);el.append(box)}}
+const choices={type:['Unit','Pilot','Command','Base','Resource'],color:['Blue','Green','Red','Purple','White']};
+function vocabulary(key){const found=new Map();const add=v=>{if(typeof v!=='string'||!v.trim())return;const t=v.trim(),low=t.toLowerCase();if(!found.has(low))found.set(low,t)};
+for(const data of sets.values())for(const card of data.cards){let v=get(card,key);if(Array.isArray(v))v.forEach(add);else add(v);
+if(key==='link_conditions'){add(card.name);if(card.type==='Pilot')add(card.name)}
+if(key==='pair_conditions.pilot_names'&&card.type==='Pilot')add(card.name);
+if(key==='pilot'&&card.type==='Pilot')add(card.name);
+}return [...found.values()].sort((a,b)=>a.localeCompare(b));}
+function attachSuggestions(inp,key,commit){const values=vocabulary(key);if(!values.length)return;const menu=document.createElement('div');menu.className='suggestions';menu.hidden=true;inp.parentElement.append(menu);
+const refresh=()=>{const before=inp.value.slice(0,inp.selectionStart??inp.value.length);const term=before.split('\n').at(-1).trim().toLowerCase();menu.innerHTML='';if(!term){menu.hidden=true;return}const hits=values.filter(x=>x.toLowerCase().includes(term)&&x.toLowerCase()!==term).slice(0,9);for(const hit of hits){const b=document.createElement('button');b.type='button';b.textContent=hit;b.onmousedown=e=>e.preventDefault();b.onclick=()=>{const pos=inp.selectionStart??inp.value.length;const before=inp.value.slice(0,pos),after=inp.value.slice(pos),lines=before.split('\n');lines[lines.length-1]=hit;inp.value=lines.join('\n')+after;commit();menu.hidden=true;inp.focus()};menu.append(b)}menu.hidden=!hits.length};
+inp.addEventListener('input',refresh);inp.addEventListener('click',refresh);inp.addEventListener('keydown',e=>{if(e.key==='Escape')menu.hidden=true;if(e.key==='ArrowDown'&&!menu.hidden){e.preventDefault();menu.querySelector('button')?.focus()}});inp.addEventListener('blur',()=>setTimeout(()=>menu.hidden=true,130));}
+function fields(){let el=$('fields');el.innerHTML='';let c=current();if(!c)return;for(let [key,label,type] of specs){let box=document.createElement('div');box.className='field'+(key==='name'?' wide':'');let l=document.createElement('label');l.textContent=label;box.append(l);let inp=type==='list'?document.createElement('textarea'):type==='select'?document.createElement('select'):document.createElement('input');let v=get(c,key);
+if(type==='select'){let opts=['',...choices[key]];if(v&&!opts.includes(v))opts.push(v);for(const val of opts){const o=document.createElement('option');o.value=val;o.textContent=val||'— Select —';inp.append(o)}inp.value=v??''}
+else if(type==='checkbox'){inp.type='checkbox';inp.checked=v!==false;inp.style.width='auto'}else if(type==='list')inp.value=Array.isArray(v)?v.join('\n'):v==null?'':String(v);else{inp.type=type;inp.value=v??''}
+const commit=()=>{let value=type==='checkbox'?inp.checked:type==='list'?inp.value.split(/\r?\n/).map(s=>s.trim()).filter(Boolean):type==='number'?(inp.value===''?null:Number(inp.value)):(inp.value||null);put(c,key,value);changed();if(key==='id')showImage()};inp.addEventListener(type==='select'||type==='checkbox'?'change':'input',commit);box.append(inp);el.append(box);
+if(type==='list'||key==='pilot')attachSuggestions(inp,key,commit);
+}}
 function render(){renderList();progress();showImage();fields();let c=current();$('heading').textContent=c?`${c.id} — ${index+1} / ${sets.get(active).cards.length}`:'Select a card';$('prev').disabled=!c||index===0;$('next').disabled=!c||index===sets.get(active).cards.length-1}
-function step(n){if(!current())return;index=Math.max(0,Math.min(sets.get(active).cards.length-1,index+n));render()}
+function step(n){if(!current())return;index=Math.max(0,Math.min(sets.get(active).cards.length-1,index+n));rememberPosition();render()}
 function importImages(files){let n=0;for(let f of files){if(!/\.(png|webp|jpe?g)$/i.test(f.name))continue;let id=f.name.match(/(?:GD|ST|EB)\d{2}-\d{3,4}/i)?.[0]?.toUpperCase();if(!id)continue;let old=images.get(id);if(old)URL.revokeObjectURL(old);images.set(id,URL.createObjectURL(f));n++}showImage();$('status').textContent=n+' images loaded'}
 async function loadJsonFiles(files){for(let f of files){try{register(JSON.parse(await f.text()),f.name.replace(/\.json$/i,''))}catch(e){notice('Could not load '+f.name+': '+e.message)}}}
+const DB_NAME='gcg-card-editor-folder-v1';
+function folderDB(){return new Promise((resolve,reject)=>{const req=indexedDB.open(DB_NAME,1);req.onupgradeneeded=()=>req.result.createObjectStore('settings');req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error)})}
+async function rememberFolder(h){try{const db=await folderDB();await new Promise((resolve,reject)=>{const tx=db.transaction('settings','readwrite');tx.objectStore('settings').put(h,'root');tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)});db.close()}catch(e){console.warn('Could not remember folder',e)}}
+async function lastFolder(){try{const db=await folderDB();const h=await new Promise((resolve,reject)=>{const req=db.transaction('settings').objectStore('settings').get('root');req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error)});db.close();return h}catch(e){return null}}
+function rememberPosition(){try{sessionStorage.setItem('gcg-editor-position',JSON.stringify({set:active,index}))}catch(e){}}
+function restorePosition(){try{const p=JSON.parse(sessionStorage.getItem('gcg-editor-position')||'null');if(p&&sets.has(p.set)){active=p.set;index=Math.max(0,Math.min(sets.get(active).cards.length-1,p.index||0));refreshSet();render()}}catch(e){}}
 function newCard(id){return {id,name:id,type:null,color:null,level:null,cost:null,ap:null,hp:null,traits:[],link_conditions:[],pair_conditions:{pilot_names:[],pilot_traits:[]},pilot:null,keywords:[],creates_tokens:[],needs_review:true}}
 async function createMissing(){
 if(!root){notice('Open your DeckBuilder folder first.');return}
@@ -61,11 +174,49 @@ else if(declined.length)notice('Skipped '+declined.join(', ')+'. You can create 
 else notice('All detected set folders already have JSON files.');
 }catch(e){notice('Could not create JSON templates: '+e.message)}
 }
-async function openFolder(){if(!window.showDirectoryPicker){notice('Direct folder access is unavailable in this browser. Use Import JSON and Load image folder, then Download JSON.');return}try{root=await window.showDirectoryPicker({mode:'readwrite'});let data=await root.getDirectoryHandle('Data'),cards=await root.getDirectoryHandle('Cards');let count=0;for await(let [name,h] of data.entries()){if(h.kind!=='file'||!/^(GD|ST|EB)\d{2}\.json$/i.test(name))continue;try{let f=await h.getFile();register(JSON.parse(await f.text()),name.replace(/\.json$/i,''),h);count++}catch(e){notice(name+': '+e.message)}}let n=0;for await(let [set,dir] of cards.entries()){if(dir.kind!=='directory')continue;for await(let [name,h] of dir.entries()){if(h.kind!=='file'||!/\.(png|webp|jpe?g)$/i.test(name))continue;let f=await h.getFile();let id=name.match(/(?:GD|ST|EB)\d{2}-\d{3,4}/i)?.[0]?.toUpperCase();if(!id)continue;images.set(id,URL.createObjectURL(f));n++}}refreshSet();render();$('status').textContent=`${count} sets • ${n} images loaded`;await createMissing()}catch(e){if(e.name!=='AbortError')notice('Could not open project: '+e.message)}}
+async function loadProjectFolder(h){
+root=h;
+let data=await root.getDirectoryHandle('Data'),cards=await root.getDirectoryHandle('Cards');
+for(const u of images.values())if(u.startsWith('blob:'))URL.revokeObjectURL(u);
+images.clear();sets.clear();handles.clear();unsaved.clear();
+let count=0;
+for await(let [name,fh] of data.entries()){
+ if(fh.kind!=='file'||!/^(GD|ST|EB)\\d{2}\\.json$/i.test(name))continue;
+ try{const f=await fh.getFile();register(JSON.parse(await f.text()),name.replace(/\\.json$/i,''),fh);count++}
+ catch(e){notice(name+': '+e.message)}
+}
+let n=0;
+for await(let [set,dir] of cards.entries()){
+ if(dir.kind!=='directory')continue;
+ for await(let [name,fh] of dir.entries()){
+  if(fh.kind!=='file'||! /\\.(png|webp|jpe?g)$/i.test(name))continue;
+  const f=await fh.getFile(),id=name.match(/(?:GD|ST|EB)\\d{2}-\\d{3,4}/i)?.[0]?.toUpperCase();
+  if(id){images.set(id,URL.createObjectURL(f));n++}
+ }
+}
+restorePosition();refreshSet();render();$('status').textContent=`${count} sets • ${n} images loaded`;
+await rememberFolder(h);
+await createMissing();
+}
+async function openFolder(){
+if(!window.showDirectoryPicker){notice('Direct folder access is unavailable in this browser. Use Import JSON and Load image folder, then Download JSON.');return}
+try{
+ let h=await lastFolder();
+ if(h){let perm=await h.queryPermission({mode:'readwrite'});if(perm!=='granted')perm=await h.requestPermission({mode:'readwrite'});if(perm==='granted'){await loadProjectFolder(h);return}}
+ h=await window.showDirectoryPicker({mode:'readwrite'});await loadProjectFolder(h);
+}catch(e){if(e.name!=='AbortError')notice('Could not open project: '+e.message)}
+}
+async function autoRestore(){
+if(!window.showDirectoryPicker)return;
+const h=await lastFolder();if(!h)return;
+try{
+ if(await h.queryPermission({mode:'readwrite'})==='granted')await loadProjectFolder(h);
+ else notice('Previous DeckBuilder folder remembered. Click Open DeckBuilder folder to reconnect without browsing for it.');
+}catch(e){notice('Click Open DeckBuilder folder to reconnect to your saved project.')}
+}
 function exportJson(){let d=sets.get(active);if(!d)return;let u=URL.createObjectURL(new Blob([JSON.stringify(d,null,2)+'\n'],{type:'application/json'}));let a=document.createElement('a');a.href=u;a.download=active+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)}
-async function save(){let d=sets.get(active);if(!d)return;try{let h=handles.get(active);if(!h){if(!window.showSaveFilePicker){exportJson();return}h=await window.showSaveFilePicker({suggestedName:active+'.json',types:[{description:'JSON',accept:{'application/json':['.json']}}]});handles.set(active,h)}let w=await h.createWritable();await w.write(JSON.stringify(d,null,2)+'\n');await w.close();$('status').textContent='Saved '+active+'.json'}catch(e){if(e.name!=='AbortError')notice('Save failed: '+e.message)}}
-$('folder').onclick=openFolder;$('create').onclick=createMissing;$('import').onclick=()=>$('jsonfile').click();$('images').onclick=()=>$('imagefiles').click();$('jsonfile').onchange=e=>loadJsonFiles(e.target.files);$('imagefiles').onchange=e=>importImages(e.target.files);$('save').onclick=save;$('export').onclick=exportJson;$('set').onchange=e=>{active=e.target.value;index=0;render()};$('search').oninput=renderList;$('filter').onchange=renderList;$('prev').onclick=()=>step(-1);$('next').onclick=()=>step(1);
-$('complete').onclick=()=>{let c=current();if(!c)return;c.needs_review=false;changed();step(1)};$('review').onclick=()=>{let c=current();if(!c)return;c.needs_review=true;changed();render()};$('add').onclick=()=>{if(!active)return;let id=prompt('New card ID (e.g. GD06-114):');if(!id)return;let c={id:id.toUpperCase(),name:id.toUpperCase(),type:null,color:null,level:null,cost:null,ap:null,hp:null,traits:[],link_conditions:[],pair_conditions:{pilot_names:[],pilot_traits:[]},pilot:null,keywords:[],creates_tokens:[],needs_review:true};sets.get(active).cards.push(c);index=sets.get(active).cards.length-1;changed();render()};
-window.addEventListener('beforeunload',e=>{if(sets.size){e.preventDefault();e.returnValue=''}})
+async function save(){let d=sets.get(active);if(!d)return;rememberPosition();try{let h=handles.get(active);if(!h){if(!window.showSaveFilePicker){exportJson();return}h=await window.showSaveFilePicker({suggestedName:active+'.json',types:[{description:'JSON',accept:{'application/json':['.json']}}]});handles.set(active,h)}let w=await h.createWritable();await w.write(JSON.stringify(d,null,2)+'\n');await w.close();unsaved.delete(active);$('status').textContent='Saved '+active+'.json'}catch(e){if(e.name!=='AbortError')notice('Save failed: '+e.message)}}
+$('folder').onclick=openFolder;$('create').onclick=createMissing;$('import').onclick=()=>$('jsonfile').click();$('images').onclick=()=>$('imagefiles').click();$('jsonfile').onchange=e=>loadJsonFiles(e.target.files);$('imagefiles').onchange=e=>importImages(e.target.files);$('save').onclick=e=>{e.preventDefault();save()};$('export').onclick=exportJson;$('set').onchange=e=>{active=e.target.value;index=0;rememberPosition();render()};$('search').oninput=renderList;$('filter').onchange=renderList;$('gridCols').onchange=()=>{let el=$('cards');el.classList.toggle('cols-3',$('gridCols').value==='3')};$('prev').onclick=()=>step(-1);$('next').onclick=()=>step(1);
+window.addEventListener('beforeunload',e=>{rememberPosition();if(unsaved.size){e.preventDefault();e.returnValue=''}});autoRestore();
 })();
 </script></body></html>
