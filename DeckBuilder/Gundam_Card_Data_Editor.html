@@ -131,7 +131,7 @@ if(type==='list'||key==='pilot')attachSuggestions(inp,key,commit);
 }}
 function render(){renderList();progress();showImage();fields();let c=current();$('heading').textContent=c?`${c.id} — ${index+1} / ${sets.get(active).cards.length}`:'Select a card';$('prev').disabled=!c||index===0;$('next').disabled=!c||index===sets.get(active).cards.length-1}
 function step(n){if(!current())return;index=Math.max(0,Math.min(sets.get(active).cards.length-1,index+n));rememberPosition();render()}
-function importImages(files){let n=0;for(let f of files){if(!/\.(png|webp|jpe?g)$/i.test(f.name))continue;let id=f.name.match(/(?:GD|ST|EB)\d{2}-\d{3,4}/i)?.[0]?.toUpperCase();if(!id)continue;let old=images.get(id);if(old)URL.revokeObjectURL(old);images.set(id,URL.createObjectURL(f));n++}showImage();$('status').textContent=n+' images loaded'}
+function importImages(files){let n=0;for(let f of files){if(!/\.(png|webp|jpe?g)$/i.test(f.name))continue;let id=f.name.match(/(?:GD|ST|EB)\d{2}-\d{3,4}/i)?.[0]?.toUpperCase();if(!id)continue;let old=images.get(id);if(old)URL.revokeObjectURL(old);images.set(id,URL.createObjectURL(f));n++}renderList();showImage();$('status').textContent=n+' images loaded'}
 async function loadJsonFiles(files){for(let f of files){try{register(JSON.parse(await f.text()),f.name.replace(/\.json$/i,''))}catch(e){notice('Could not load '+f.name+': '+e.message)}}}
 const DB_NAME='gcg-card-editor-folder-v1';
 function folderDB(){return new Promise((resolve,reject)=>{const req=indexedDB.open(DB_NAME,1);req.onupgradeneeded=()=>req.result.createObjectStore('settings');req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error)})}
@@ -181,16 +181,16 @@ for(const u of images.values())if(u.startsWith('blob:'))URL.revokeObjectURL(u);
 images.clear();sets.clear();handles.clear();unsaved.clear();
 let count=0;
 for await(let [name,fh] of data.entries()){
- if(fh.kind!=='file'||!/^(GD|ST|EB)\\d{2}\\.json$/i.test(name))continue;
- try{const f=await fh.getFile();register(JSON.parse(await f.text()),name.replace(/\\.json$/i,''),fh);count++}
+ if(fh.kind!=='file'||!/^(GD|ST|EB)\d{2}\.json$/i.test(name))continue;
+ try{const f=await fh.getFile();register(JSON.parse(await f.text()),name.replace(/\.json$/i,''),fh);count++}
  catch(e){notice(name+': '+e.message)}
 }
 let n=0;
 for await(let [set,dir] of cards.entries()){
  if(dir.kind!=='directory')continue;
  for await(let [name,fh] of dir.entries()){
-  if(fh.kind!=='file'||! /\\.(png|webp|jpe?g)$/i.test(name))continue;
-  const f=await fh.getFile(),id=name.match(/(?:GD|ST|EB)\\d{2}-\\d{3,4}/i)?.[0]?.toUpperCase();
+  if(fh.kind!=='file'||! /\.(png|webp|jpe?g)$/i.test(name))continue;
+  const f=await fh.getFile(),id=name.match(/(?:GD|ST|EB)\d{2}-\d{3,4}/i)?.[0]?.toUpperCase();
   if(id){images.set(id,URL.createObjectURL(f));n++}
  }
 }

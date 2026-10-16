@@ -22,9 +22,13 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Once per Turn",
+        "During Pair",
+        "High-Maneuver"
+      ],
       "creates_tokens": [],
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "GD06-002",
@@ -46,9 +50,12 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Once per Turn",
+        "Deploy"
+      ],
       "creates_tokens": [],
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "GD06-003",
@@ -70,7 +77,9 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Attack"
+      ],
       "creates_tokens": [],
       "needs_review": false
     },
@@ -96,10 +105,11 @@
       },
       "pilot": null,
       "keywords": [
+        "During Link",
         "Destroyed"
       ],
       "creates_tokens": [],
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "GD06-005",
@@ -114,7 +124,7 @@
         "Orb"
       ],
       "link_conditions": [
-        "Orb",
+        "Orb Trait",
         "Mu La Flaga"
       ],
       "pair_conditions": {
@@ -122,9 +132,11 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Attack"
+      ],
       "creates_tokens": [],
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "GD06-006",
@@ -147,121 +159,160 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Deploy"
+      ],
       "creates_tokens": [],
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "GD06-007",
-      "name": "GD06-007",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Kikeroga (MS Mode) (GG)",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 7,
+      "cost": 5,
+      "ap": 4,
+      "hp": 6,
+      "traits": [
+        "Zeon"
+      ],
+      "link_conditions": [
+        "Challia Bull"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Repair 2",
+        "Deploy"
+      ],
       "creates_tokens": [],
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "GD06-008",
-      "name": "GD06-008",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "name": "Powered GM",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 3,
+      "cost": 2,
+      "ap": 2,
+      "hp": 4,
+      "traits": [
+        "Earth Federation"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Attack"
+      ],
       "creates_tokens": [],
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "GD06-009",
-      "name": "GD06-009",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "GM Custom",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 3,
+      "cost": 2,
+      "ap": 2,
+      "hp": 4,
+      "traits": [
+        "Earth Federation",
+        "Albion Squad"
+      ],
+      "link_conditions": [
+        "Albion Squad Trait"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Deploy"
+      ],
       "creates_tokens": [],
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "GD06-010",
-      "name": "GD06-010",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "GM Cannon II",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 3,
+      "cost": 2,
+      "ap": 2,
+      "hp": 3,
+      "traits": [
+        "Earth Federation",
+        "Albion Squad"
+      ],
+      "link_conditions": [
+        "Albion Squad Trait"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "When Linked"
+      ],
       "creates_tokens": [],
-      "needs_review": true
+      "needs_review": false
     },
     {
       "id": "GD06-011",
-      "name": "GD06-011",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Red Gundam",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 5,
+      "cost": 4,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "Newtype"
+      ],
+      "link_conditions": [
+        "Newtype"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "When Linked",
+        "Repair"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-012",
-      "name": "GD06-012",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Z'Gok",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 4,
+      "cost": 2,
+      "ap": 3,
+      "hp": 4,
+      "traits": [
+        "Zeon",
+        "Marine"
+      ],
+      "link_conditions": [
+        "Zeon"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -273,15 +324,19 @@
     },
     {
       "id": "GD06-013",
-      "name": "GD06-013",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Zaku II F2 (EFSF)",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 1,
+      "cost": 1,
+      "ap": 1,
+      "hp": 2,
+      "traits": [
+        "Earth Federation"
+      ],
+      "link_conditions": [
+        "Earth Federation"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -293,15 +348,19 @@
     },
     {
       "id": "GD06-014",
-      "name": "GD06-014",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "GM Type C",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 2,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "Earth Federation"
+      ],
+      "link_conditions": [
+        "Earth Federation"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -313,41 +372,54 @@
     },
     {
       "id": "GD06-015",
-      "name": "GD06-015",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Waldfeld's Gaia Gundam",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 5,
+      "cost": 3,
+      "ap": 3,
+      "hp": 5,
+      "traits": [
+        "Orb"
+      ],
+      "link_conditions": [
+        "Andrew Waldfeld"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "During Pair",
+        "Blocker"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-016",
-      "name": "GD06-016",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Dom Tropen",
+      "type": "Unit",
+      "color": "Blue",
+      "level": 3,
+      "cost": 2,
+      "ap": 3,
+      "hp": 3,
+      "traits": [
+        "Orb"
+      ],
+      "link_conditions": [
+        "Orb"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Blocker"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
@@ -371,61 +443,82 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Blocker"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-018",
-      "name": "GD06-018",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Elpeo Ple's Qubeley Mk-II",
+      "type": "Unit",
+      "color": "Green",
+      "level": 3,
+      "cost": 2,
+      "ap": 3,
+      "hp": 2,
+      "traits": [
+        "Neo Zeon"
+      ],
+      "link_conditions": [
+        "Elpeo Ple"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Breach",
+        "Suppression",
+        "Activate:Action",
+        "Once per Turn"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-019",
-      "name": "GD06-019",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Turn X",
+      "type": "Unit",
+      "color": "Green",
+      "level": 8,
+      "cost": 7,
+      "ap": 5,
+      "hp": 6,
+      "traits": [
+        "Gingham Fleet"
+      ],
+      "link_conditions": [
+        "Gym Ghingham"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Deploy"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-020",
-      "name": "GD06-020",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Hamma-Hamma",
+      "type": "Unit",
+      "color": "Green",
+      "level": 3,
+      "cost": 3,
+      "ap": 3,
+      "hp": 4,
+      "traits": [
+        "Neo Zeon"
+      ],
+      "link_conditions": [
+        "Mashymre Cello"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -437,95 +530,124 @@
     },
     {
       "id": "GD06-021",
-      "name": "GD06-021",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Turn X (Top)",
+      "type": "Unit",
+      "color": "Green",
+      "level": 4,
+      "cost": 3,
+      "ap": 2,
+      "hp": 2,
+      "traits": [
+        "Ghingham Fleet"
+      ],
+      "link_conditions": [
+        "Gym Ghingham"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Deploy"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-022",
-      "name": "GD06-022",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Merrybell's Bandit",
+      "type": "Unit",
+      "color": "Green",
+      "level": 6,
+      "cost": 4,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "Ghingham Fleet"
+      ],
+      "link_conditions": [
+        "Moonrace"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "When Linked"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-023",
-      "name": "GD06-023",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Galluss J",
+      "type": "Unit",
+      "color": "Green",
+      "level": 1,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "Neo Zeon"
+      ],
+      "link_conditions": [
+        "Neo Zeon"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Deploy"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-024",
-      "name": "GD06-024",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "R-Jarja",
+      "type": "Unit",
+      "color": "Green",
+      "level": 5,
+      "cost": 4,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "Neo Zeon"
+      ],
+      "link_conditions": [
+        "Chara Soon"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Destroyed"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-025",
-      "name": "GD06-025",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Re-GZ",
+      "type": "Unit",
+      "color": "Green",
+      "level": 4,
+      "cost": 2,
+      "ap": 3,
+      "hp": 4,
+      "traits": [
+        "Earth Federation",
+        "Londo Bell"
+      ],
+      "link_conditions": [
+        "Londo Bell"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -537,55 +659,72 @@
     },
     {
       "id": "GD06-026",
-      "name": "GD06-026",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Stero's Mahiroo",
+      "type": "Unit",
+      "color": "Green",
+      "level": 4,
+      "cost": 3,
+      "ap": 3,
+      "hp": 4,
+      "traits": [
+        "Ghingham Fleet"
+      ],
+      "link_conditions": [
+        "Moonrace"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Attack",
+        "Repair"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-027",
-      "name": "GD06-027",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Mashymre's Zssa",
+      "type": "Unit",
+      "color": "Green",
+      "level": 3,
+      "cost": 2,
+      "ap": 3,
+      "hp": 2,
+      "traits": [
+        "Neo Zeon"
+      ],
+      "link_conditions": [
+        "Mashymre Cello"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Deploy"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-028",
-      "name": "GD06-028",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Gaza D",
+      "type": "Unit",
+      "color": "Green",
+      "level": 2,
+      "cost": 1,
+      "ap": 2,
+      "hp": 2,
+      "traits": [
+        "Neo Zeon"
+      ],
+      "link_conditions": [
+        "Neo Zeon"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -597,35 +736,45 @@
     },
     {
       "id": "GD06-029",
-      "name": "GD06-029",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Elpeo Ple's Qubeley Mk-II",
+      "type": "Unit",
+      "color": "Green",
+      "level": 4,
+      "cost": 3,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "Neo Zeon"
+      ],
+      "link_conditions": [
+        "Elpeo Ple"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Breach"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-030",
-      "name": "GD06-030",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Mahiroo",
+      "type": "Unit",
+      "color": "Green",
+      "level": 3,
+      "cost": 2,
+      "ap": 2,
+      "hp": 4,
+      "traits": [
+        "Ghingham Fleet"
+      ],
+      "link_conditions": [
+        "Ghingham Fleet"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -637,15 +786,19 @@
     },
     {
       "id": "GD06-031",
-      "name": "GD06-031",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Zssan",
+      "type": "Unit",
+      "color": "Green",
+      "level": 2,
+      "cost": 2,
+      "ap": 3,
+      "hp": 2,
+      "traits": [
+        "Ghingham Fleet"
+      ],
+      "link_conditions": [
+        "Ghingham Fleet"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -657,175 +810,237 @@
     },
     {
       "id": "GD06-032",
-      "name": "GD06-032",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Bellona",
+      "type": "Unit",
+      "color": "Green",
+      "level": 1,
+      "cost": 1,
+      "ap": 0,
+      "hp": 1,
+      "traits": [
+        "Ghingham Fleet"
+      ],
+      "link_conditions": [
+        "Ghingham Fleet"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Destroyed"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-033",
-      "name": "GD06-033",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "ZZ Gundam",
+      "type": "Unit",
+      "color": "Red",
+      "level": 9,
+      "cost": 8,
+      "ap": 7,
+      "hp": 7,
+      "traits": [
+        "AEUG",
+        "Gundam Team"
+      ],
+      "link_conditions": [
+        "Judau Ashta"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Deploy"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-034",
-      "name": "GD06-034",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Gundam Bael",
+      "type": "Unit",
+      "color": "Red",
+      "level": 7,
+      "cost": 6,
+      "ap": 5,
+      "hp": 5,
+      "traits": [
+        "Gjallarhorn",
+        "Gundam Frame"
+      ],
+      "link_conditions": [
+        "McGillis Fareed"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "High-Maneuver",
+        "Deploy"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-035",
-      "name": "GD06-035",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Zeta Gundam",
+      "type": "Unit",
+      "color": "Red",
+      "level": 5,
+      "cost": 4,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "AEUG",
+        "Gundam Team"
+      ],
+      "link_conditions": [
+        "AEUG"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Once per Turn"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-036",
-      "name": "GD06-036",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Gundam Vidar",
+      "type": "Unit",
+      "color": "Red",
+      "level": 4,
+      "cost": 2,
+      "ap": 3,
+      "hp": 4,
+      "traits": [
+        "Gjallarhorn",
+        "Gundam Frame"
+      ],
+      "link_conditions": [
+        "Gaelio Bauduin"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "When Linked"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-037",
-      "name": "GD06-037",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Reginlaze Julia",
+      "type": "Unit",
+      "color": "Red",
+      "level": 6,
+      "cost": 4,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "Gjallarhorn"
+      ],
+      "link_conditions": [
+        "Julieta Juris"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "First Strike",
+        "During Pair"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-038",
-      "name": "GD06-038",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Gundam Kimaris Vidar",
+      "type": "Unit",
+      "color": "Red",
+      "level": 7,
+      "cost": 6,
+      "ap": 5,
+      "hp": 5,
+      "traits": [
+        "Gjallarhorn",
+        "Gundam Frame"
+      ],
+      "link_conditions": [
+        "Gaelio Bauduin"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Breach",
+        "When Paired"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-039",
-      "name": "GD06-039",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Neo Core Fighter",
+      "type": "Unit",
+      "color": "Red",
+      "level": 2,
+      "cost": 2,
+      "ap": 1,
+      "hp": 2,
+      "traits": [
+        "AEUG",
+        "Gundam Team"
+      ],
+      "link_conditions": [
+        "Gundam Team"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Activate:Main"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-040",
-      "name": "GD06-040",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Gundam Mk-II",
+      "type": "Unit",
+      "color": "Red",
+      "level": 4,
+      "cost": 2,
+      "ap": 3,
+      "hp": 4,
+      "traits": [
+        "AEUG",
+        "Gundam Team"
+      ],
+      "link_conditions": [
+        "AEUG"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -837,75 +1052,100 @@
     },
     {
       "id": "GD06-041",
-      "name": "GD06-041",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Neo Lornroke's Windam (Jet Striker)",
+      "type": "Unit",
+      "color": "Red",
+      "level": 4,
+      "cost": 3,
+      "ap": 3,
+      "hp": 4,
+      "traits": [
+        "Earth Alliance",
+        "Phantom Pain"
+      ],
+      "link_conditions": [
+        "Neo Lornroke"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Deploy"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-042",
-      "name": "GD06-042",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Destroy Gundam (MA Mode)",
+      "type": "Unit",
+      "color": "Red",
+      "level": 6,
+      "cost": 6,
+      "ap": 4,
+      "hp": 6,
+      "traits": [
+        "Earth Alliance",
+        "Phantom Pain"
+      ],
+      "link_conditions": [
+        "Biological CPU"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Deploy"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-043",
-      "name": "GD06-043",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Julieta's Reginlaze",
+      "type": "Unit",
+      "color": "Red",
+      "level": 4,
+      "cost": 3,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "Gjallarhorn"
+      ],
+      "link_conditions": [
+        "Gjallarhorn"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "During Link"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-044",
-      "name": "GD06-044",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Core Top",
+      "type": "Unit",
+      "color": "Red",
+      "level": 3,
+      "cost": 2,
+      "ap": 3,
+      "hp": 3,
+      "traits": [
+        "AEUG",
+        "Gundam Team"
+      ],
+      "link_conditions": [
+        "Gundam Team"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -917,55 +1157,74 @@
     },
     {
       "id": "GD06-045",
-      "name": "GD06-045",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Core Base",
+      "type": "Unit",
+      "color": "Red",
+      "level": 3,
+      "cost": 2,
+      "ap": 3,
+      "hp": 2,
+      "traits": [
+        "AEUG",
+        "Gundam Team"
+      ],
+      "link_conditions": [
+        "Gundam Team"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Destroyed"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-046",
-      "name": "GD06-046",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Hyaku-Shiki",
+      "type": "Unit",
+      "color": "Red",
+      "level": 4,
+      "cost": 3,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "AEUG",
+        "Gundam Team"
+      ],
+      "link_conditions": [
+        "Gundam Team"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Attack"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-047",
-      "name": "GD06-047",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Windam",
+      "type": "Unit",
+      "color": "Red",
+      "level": 2,
+      "cost": 1,
+      "ap": 2,
+      "hp": 2,
+      "traits": [
+        "Earth Alliance",
+        "Phantom Pain"
+      ],
+      "link_conditions": [
+        "Phantom Pain"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -977,61 +1236,82 @@
     },
     {
       "id": "GD06-048",
-      "name": "GD06-048",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Helmwige Reincar",
+      "type": "Unit",
+      "color": "Red",
+      "level": 3,
+      "cost": 2,
+      "ap": 2,
+      "hp": 3,
+      "traits": [
+        "Gjallarhorn"
+      ],
+      "link_conditions": [
+        "Gjallarhorn"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Deploy"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-049",
-      "name": "GD06-049",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Gundam GP02A",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 5,
+      "cost": 4,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "Zeon",
+        "Delaz Fleet"
+      ],
+      "link_conditions": [
+        "Anavel Gato"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "When Paired",
+        "Destroyed"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-050",
-      "name": "GD06-050",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Legend Gundam",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 6,
+      "cost": 5,
+      "ap": 4,
+      "hp": 5,
+      "traits": [
+        "ZAFT",
+        "Minerva Squad"
+      ],
+      "link_conditions": [
+        "Rey Za Burrel"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Deploy"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
@@ -1056,47 +1336,66 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Activate:Main",
+        "Once per Turn",
+        "Deploy"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-052",
-      "name": "GD06-052",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Val Walo",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 5,
+      "cost": 4,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "Zeon",
+        "Civilian"
+      ],
+      "link_conditions": [
+        "Kelley Layzner"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "High-Maneuver",
+        "Deploy"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-053",
-      "name": "GD06-053",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Xavier's Gyan Hakuji-Packs (GG)",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 5,
+      "cost": 3,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "Zeon"
+      ],
+      "link_conditions": [
+        "Xavier Olivette"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Blocker",
+        "Destroyed"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
@@ -1121,81 +1420,112 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Suppression",
+        "Deploy"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-055",
-      "name": "GD06-055",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Gundam GP02A",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 4,
+      "cost": 2,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "Zeon",
+        "Delaz Fleet"
+      ],
+      "link_conditions": [
+        "Anavel Gato"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "During Pair",
+        "Attack",
+        "Breach"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-056",
-      "name": "GD06-056",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Xamel",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 4,
+      "cost": 3,
+      "ap": 3,
+      "hp": 4,
+      "traits": [
+        "Zeon",
+        "Delaz Fleet"
+      ],
+      "link_conditions": [
+        "Delaz Fleet"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Attack"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-057",
-      "name": "GD06-057",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Karius' Rick Dom II",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 3,
+      "cost": 2,
+      "ap": 3,
+      "hp": 3,
+      "traits": [
+        "Zeon",
+        "Delaz Fleet"
+      ],
+      "link_conditions": [
+        "Karius"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Blocker"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-058",
-      "name": "GD06-058",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Blast Impulse Gundam",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 4,
+      "cost": 2,
+      "ap": 3,
+      "hp": 2,
+      "traits": [
+        "ZAFT",
+        "Minerva Squad"
+      ],
+      "link_conditions": [
+        "Lunamaria Hawke"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -1207,15 +1537,20 @@
     },
     {
       "id": "GD06-059",
-      "name": "GD06-059",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Dom Tropen",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 3,
+      "cost": 2,
+      "ap": 3,
+      "hp": 3,
+      "traits": [
+        "Zeon",
+        "Delaz Fleet"
+      ],
+      "link_conditions": [
+        "Delaz Fleet"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -1227,15 +1562,20 @@
     },
     {
       "id": "GD06-060",
-      "name": "GD06-060",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Zaku II F2",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 2,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "Zeon",
+        "Delaz Fleet"
+      ],
+      "link_conditions": [
+        "Delaz Fleet"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -1247,35 +1587,47 @@
     },
     {
       "id": "GD06-061",
-      "name": "GD06-061",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Dra-C",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 1,
+      "cost": 1,
+      "ap": 1,
+      "hp": 1,
+      "traits": [
+        "Zeon",
+        "Delaz Fleet"
+      ],
+      "link_conditions": [
+        "Delaz Fleet"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Activate:Main",
+        "Support"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-062",
-      "name": "GD06-062",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Gyan Hakuji-Packs (GG)",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 3,
+      "cost": 2,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "Zeon"
+      ],
+      "link_conditions": [
+        "Zeon"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -1287,15 +1639,20 @@
     },
     {
       "id": "GD06-063",
-      "name": "GD06-063",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "GFreD",
+      "type": "Unit",
+      "color": "Purple",
+      "level": 2,
+      "cost": 1,
+      "ap": 2,
+      "hp": 2,
+      "traits": [
+        "Zeon",
+        "Alphacide"
+      ],
+      "link_conditions": [
+        "Zeon"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -1307,215 +1664,293 @@
     },
     {
       "id": "GD06-064",
-      "name": "GD06-064",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Altron Gundam (EW)",
+      "type": "Unit",
+      "color": "White",
+      "level": 3,
+      "cost": 3,
+      "ap": 3,
+      "hp": 4,
+      "traits": [
+        "G Team",
+        "Mariemaia Army"
+      ],
+      "link_conditions": [
+        "Chang Wufei"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Blocker"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-065",
-      "name": "GD06-065",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "SUMO Gold Type",
+      "type": "Unit",
+      "color": "White",
+      "level": 6,
+      "cost": 4,
+      "ap": 4,
+      "hp": 5,
+      "traits": [
+        "Dianna Counter"
+      ],
+      "link_conditions": [
+        "Harry Ord"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Blocker",
+        "Activate:Main",
+        "Once per Turn"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-066",
-      "name": "GD06-066",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Shadow Gundam",
+      "type": "Unit",
+      "color": "White",
+      "level": 6,
+      "cost": 4,
+      "ap": 5,
+      "hp": 4,
+      "traits": [
+        "MF"
+      ],
+      "link_conditions": [
+        "Gundam Fighter"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Blocker",
+        "During Link",
+        "Attack",
+        "Activate:Action"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-067",
-      "name": "GD06-067",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Gundam Sandrock Custom (EW)",
+      "type": "Unit",
+      "color": "White",
+      "level": 5,
+      "cost": 4,
+      "ap": 3,
+      "hp": 5,
+      "traits": [
+        "G Team"
+      ],
+      "link_conditions": [
+        "Quatre Raberba Winner"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Blocker",
+        "When Paired"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-068",
-      "name": "GD06-068",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Gundam Heavyarms Custom (EW)",
+      "type": "Unit",
+      "color": "White",
+      "level": 4,
+      "cost": 3,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "G Team"
+      ],
+      "link_conditions": [
+        "Trowa Barton"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Deploy"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-069",
-      "name": "GD06-069",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "SUMO Silver Type",
+      "type": "Unit",
+      "color": "White",
+      "level": 4,
+      "cost": 3,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "Dianna Counter"
+      ],
+      "link_conditions": [
+        "Moonrace"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Blocker",
+        "Activate:Action",
+        "Once per Turn"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-070",
-      "name": "GD06-070",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Eagail",
+      "type": "Unit",
+      "color": "White",
+      "level": 6,
+      "cost": 5,
+      "ap": 5,
+      "hp": 3,
+      "traits": [
+        "Dianna Counter"
+      ],
+      "link_conditions": [
+        "Corin Nander"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Deploy",
+        "Blocker",
+        "Attack"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-071",
-      "name": "GD06-071",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Shining Gundam (Meikyo Shisui)",
+      "type": "Unit",
+      "color": "White",
+      "level": 6,
+      "cost": 5,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "MF",
+        "Shuffle Alliance"
+      ],
+      "link_conditions": [
+        "Domon Kasshu"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Once per Turn"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-072",
-      "name": "GD06-072",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Gundam Deathscythe Hell (EW)",
+      "type": "Unit",
+      "color": "White",
+      "level": 5,
+      "cost": 3,
+      "ap": 5,
+      "hp": 3,
+      "traits": [
+        "G Team"
+      ],
+      "link_conditions": [
+        "Duo Maxwell"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "During Pair",
+        "Destroyed"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-073",
-      "name": "GD06-073",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Wing Gundam Zero (EW)",
+      "type": "Unit",
+      "color": "White",
+      "level": 4,
+      "cost": 2,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "G Team"
+      ],
+      "link_conditions": [
+        "Heero Yuy"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "During Pair",
+        "Once per Turn"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-074",
-      "name": "GD06-074",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Flat",
+      "type": "Unit",
+      "color": "White",
+      "level": 4,
+      "cost": 2,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "Dianna Counter"
+      ],
+      "link_conditions": [
+        "Moonrace"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -1527,15 +1962,19 @@
     },
     {
       "id": "GD06-075",
-      "name": "GD06-075",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Serpent",
+      "type": "Unit",
+      "color": "White",
+      "level": 3,
+      "cost": 2,
+      "ap": 4,
+      "hp": 3,
+      "traits": [
+        "Mariemaia Army"
+      ],
+      "link_conditions": [
+        "Mariemaia Army"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -1547,75 +1986,97 @@
     },
     {
       "id": "GD06-076",
-      "name": "GD06-076",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "WaDom",
+      "type": "Unit",
+      "color": "White",
+      "level": 5,
+      "cost": 4,
+      "ap": 4,
+      "hp": 4,
+      "traits": [
+        "Dianna Counter"
+      ],
+      "link_conditions": [
+        "Moonrace"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Deploy"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-077",
-      "name": "GD06-077",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Cannon Ilfuto",
+      "type": "Unit",
+      "color": "White",
+      "level": 3,
+      "cost": 2,
+      "ap": 3,
+      "hp": 3,
+      "traits": [
+        "Dianna Counter"
+      ],
+      "link_conditions": [
+        "Dianna Counter"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Blocker"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-078",
-      "name": "GD06-078",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "WaD",
+      "type": "Unit",
+      "color": "White",
+      "level": 1,
+      "cost": 1,
+      "ap": 1,
+      "hp": 1,
+      "traits": [
+        "Dianna Counter"
+      ],
+      "link_conditions": [
+        "Dianna Counter"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Activate:Main"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-079",
-      "name": "GD06-079",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
-      "link_conditions": [],
+      "name": "Muttowooo",
+      "type": "Unit",
+      "color": "White",
+      "level": 2,
+      "cost": 2,
+      "ap": 3,
+      "hp": 2,
+      "traits": [
+        "Dianna Counter"
+      ],
+      "link_conditions": [
+        "Dianna Counter"
+      ],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
@@ -1627,21 +2088,28 @@
     },
     {
       "id": "GD06-080",
-      "name": "GD06-080",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "name": "Kou Uraki",
+      "type": "Pilot",
+      "color": "Blue",
+      "level": 4,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "Earth Federation",
+        "Albion Squad"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": "Kou Uraki",
+      "keywords": [
+        "Burst",
+        "Activate:Action",
+        "Once per Turn"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
@@ -1664,247 +2132,327 @@
         "pilot_traits": []
       },
       "pilot": "Amate Yuzuriha (Machu)",
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Repair"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-082",
-      "name": "GD06-082",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "name": "Athrun Zala",
+      "type": "Pilot",
+      "color": "Blue",
+      "level": 5,
+      "cost": 1,
+      "ap": 2,
+      "hp": 2,
+      "traits": [
+        "Orb",
+        "Coordinator"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": "Athrun Zala",
+      "keywords": [
+        "Burst",
+        "When Paired"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-083",
-      "name": "GD06-083",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "name": "Challia Bull (GG)",
+      "type": "Pilot",
+      "color": "Blue",
+      "level": 5,
+      "cost": 1,
+      "ap": 2,
+      "hp": 2,
+      "traits": [
+        "Zeon",
+        "Newtype"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": "Challia Bull (GG)",
+      "keywords": [
+        "Burst",
+        "During Link",
+        "High-Maneuver",
+        "Repair"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-084",
-      "name": "GD06-084",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "name": "Elpeo Ple",
+      "type": "Pilot",
+      "color": "Green",
+      "level": 3,
+      "cost": 1,
+      "ap": 2,
+      "hp": 0,
+      "traits": [
+        "Neo Zeon",
+        "Newtype"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": "Elpeo Ple",
+      "keywords": [
+        "Burst",
+        "When Paired",
+        "Breach"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-085",
-      "name": "GD06-085",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "name": "Gym Ghingham",
+      "type": "Pilot",
+      "color": "Green",
+      "level": 5,
+      "cost": 1,
+      "ap": 2,
+      "hp": 2,
+      "traits": [
+        "Ghingham Fleet",
+        "Moonrace"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": "Gym Ghingham",
+      "keywords": [
+        "Burst",
+        "During Link"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-086",
-      "name": "GD06-086",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "name": "Mashymre Cello",
+      "type": "Pilot",
+      "color": "Green",
+      "level": 3,
+      "cost": 1,
+      "ap": 0,
+      "hp": 2,
+      "traits": [
+        "Neo Zeon"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": "Mashymre Cello",
+      "keywords": [
+        "Burst"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-087",
-      "name": "GD06-087",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "name": "Merrybell Gadget",
+      "type": "Pilot",
+      "color": "Green",
+      "level": 4,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "Ghingham Fleet",
+        "Moonrace"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": "Merrybell Gadget",
+      "keywords": [
+        "Burst",
+        "Attack"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-088",
-      "name": "GD06-088",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "name": "Judau Ashta",
+      "type": "Pilot",
+      "color": "Red",
+      "level": 5,
+      "cost": 1,
+      "ap": 2,
+      "hp": 2,
+      "traits": [
+        "AEUG",
+        "Gundam Team",
+        "Newtype"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": "Judau Ashta",
+      "keywords": [
+        "Burst",
+        "During Link",
+        "Destroyed"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-089",
-      "name": "GD06-089",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "name": "McGillis Fareed",
+      "type": "Pilot",
+      "color": "Red",
+      "level": 4,
+      "cost": 1,
+      "ap": 1,
+      "hp": 2,
+      "traits": [
+        "Gjallarhorn",
+        "Alaya-Vijnana"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": "McGillis Fareed",
+      "keywords": [
+        "Burst",
+        "During Link"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-090",
-      "name": "GD06-090",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "name": "Vidar",
+      "type": "Pilot",
+      "color": "Red",
+      "level": 4,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "Gjallarhorn",
+        "Alaya-Vijnana"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": "Vidar",
+      "keywords": [
+        "Burst",
+        "Attack"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-091",
-      "name": "GD06-091",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "name": "Roux Louka",
+      "type": "Pilot",
+      "color": "Red",
+      "level": 4,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "AEUG",
+        "Gundam Team",
+        "Newtype"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": "Roux Louka",
+      "keywords": [
+        "Burst",
+        "Breach"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-092",
-      "name": "GD06-092",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "name": "Neo Lornroke",
+      "type": "Pilot",
+      "color": "Red",
+      "level": 4,
+      "cost": 1,
+      "ap": 1,
+      "hp": 2,
+      "traits": [
+        "Earth Alliance",
+        "Phantom Pain",
+        "Orb"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": "Neo Lornroke",
+      "keywords": [
+        "Burst",
+        "When Paired"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-093",
-      "name": "GD06-093",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "name": "Anavel Gato",
+      "type": "Pilot",
+      "color": "Purple",
+      "level": 4,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "Zeon",
+        "Delaz Fleet"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": "Anavel Gato",
+      "keywords": [
+        "Burst",
+        "Attack"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
@@ -1928,127 +2476,168 @@
         "pilot_traits": []
       },
       "pilot": "Nyaan",
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "When Paired"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-095",
-      "name": "GD06-095",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "name": "Kelley Layzner",
+      "type": "Pilot",
+      "color": "Purple",
+      "level": 3,
+      "cost": 1,
+      "ap": 1,
+      "hp": 1,
+      "traits": [
+        "Zeon",
+        "Civilian"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": "Kelley Layzner",
+      "keywords": [
+        "Burst",
+        "Attack"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-096",
-      "name": "GD06-096",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "name": "Xavier Olivette",
+      "type": "Pilot",
+      "color": "Purple",
+      "level": 4,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "Zeon",
+        "Newtype"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": "Xavier Olivette",
+      "keywords": [
+        "Burst",
+        "During Link",
+        "Attack"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-097",
-      "name": "GD06-097",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "name": "Harry Ord",
+      "type": "Pilot",
+      "color": "White",
+      "level": 5,
+      "cost": 1,
+      "ap": 2,
+      "hp": 2,
+      "traits": [
+        "Dianna Counter",
+        "Moonrace"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": "Harry Ord",
+      "keywords": [
+        "Burst",
+        "Once per Turn",
+        "Blocker"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-098",
-      "name": "GD06-098",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "name": "Duo Maxwell",
+      "type": "Pilot",
+      "color": "White",
+      "level": 4,
+      "cost": 1,
+      "ap": 1,
+      "hp": 2,
+      "traits": [
+        "G Team",
+        "Operation Meteor"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": "Duo Maxwell",
+      "keywords": [
+        "Burst",
+        "During Link"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-099",
-      "name": "GD06-099",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "name": "Chang Wufei",
+      "type": "Pilot",
+      "color": "White",
+      "level": 4,
+      "cost": 1,
+      "ap": 2,
+      "hp": 1,
+      "traits": [
+        "G Team",
+        "Operation Meteor",
+        "Mariemaia Army"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": "Chang Wufei",
+      "keywords": [
+        "Burst",
+        "Attack"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-100",
-      "name": "GD06-100",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "name": "Corin Nander",
+      "type": "Pilot",
+      "color": "White",
+      "level": 4,
+      "cost": 1,
+      "ap": 3,
+      "hp": 0,
+      "traits": [
+        "Dianna Counter",
+        "Moonrace"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
-      "pilot": null,
-      "keywords": [],
+      "pilot": "Corin Nander",
+      "keywords": [
+        "Burst"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
@@ -2070,17 +2659,21 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Activate:Main",
+        "Activate:Action"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-102",
-      "name": "GD06-102",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
+      "name": "A Miracle",
+      "type": "Command",
+      "color": "Blue",
+      "level": 3,
+      "cost": 3,
       "ap": null,
       "hp": null,
       "traits": [],
@@ -2090,57 +2683,70 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-103",
-      "name": "GD06-103",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
+      "name": "Restore the Front Line",
+      "type": "Command",
+      "color": "Blue",
+      "level": 3,
+      "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "Earth Federation",
+        "Albion Squad"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Main"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-104",
-      "name": "GD06-104",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
+      "name": "Steady Support",
+      "type": "Command",
+      "color": "Blue",
+      "level": 2,
+      "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "Earth Federation",
+        "Albion Squad"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Main",
+        "Attack"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-105",
-      "name": "GD06-105",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
+      "name": "Grace Under Pressure",
+      "type": "Command",
+      "color": "Green",
+      "level": 5,
+      "cost": 3,
       "ap": null,
       "hp": null,
       "traits": [],
@@ -2150,17 +2756,21 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Main",
+        "Deploy",
+        "Breach"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-106",
-      "name": "GD06-106",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
+      "name": "Presence Detected",
+      "type": "Command",
+      "color": "Green",
+      "level": 4,
+      "cost": 1,
       "ap": null,
       "hp": null,
       "traits": [],
@@ -2170,77 +2780,94 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Action"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-107",
-      "name": "GD06-107",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
+      "name": "Wheel Spoke Formation",
+      "type": "Command",
+      "color": "Green",
+      "level": 3,
+      "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "Ghingham Fleet",
+        "Moonrace"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Main",
+        "Blocker"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-108",
-      "name": "GD06-108",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
+      "name": "On Edge",
+      "type": "Command",
+      "color": "Green",
+      "level": 4,
+      "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "Neo Zeon"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Main"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-109",
-      "name": "GD06-109",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
+      "name": "God of War Ghingham",
+      "type": "Command",
+      "color": "Green",
+      "level": 4,
+      "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "Ghingham Fleet"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Main",
+        "Deploy"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-110",
-      "name": "GD06-110",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
+      "name": "Familial Love",
+      "type": "Command",
+      "color": "Red",
+      "level": 2,
+      "cost": 1,
       "ap": null,
       "hp": null,
       "traits": [],
@@ -2250,57 +2877,70 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Action"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-111",
-      "name": "GD06-111",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
+      "name": "Steely Loyalty",
+      "type": "Command",
+      "color": "Red",
+      "level": 5,
+      "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "Gjallarhorn"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Action"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-112",
-      "name": "GD06-112",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
+      "name": "Rivalry with Roux",
+      "type": "Command",
+      "color": "Red",
+      "level": 3,
+      "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "AEUG",
+        "Gundam Team",
+        "Newtype"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Action"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-113",
-      "name": "GD06-113",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
+      "name": "Unsanctioned Ordnance",
+      "type": "Command",
+      "color": "Red",
+      "level": 5,
+      "cost": 4,
       "ap": null,
       "hp": null,
       "traits": [],
@@ -2310,7 +2950,11 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Main",
+        "Action"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
@@ -2332,17 +2976,20 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Action",
+        "Activate"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-115",
-      "name": "GD06-115",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
+      "name": "Teaching New Techniques",
+      "type": "Command",
+      "color": "Purple",
+      "level": 4,
+      "cost": 3,
       "ap": null,
       "hp": null,
       "traits": [],
@@ -2352,57 +2999,71 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Main",
+        "First Strike"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-116",
-      "name": "GD06-116",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
+      "name": "Afterglow of Zeon",
+      "type": "Command",
+      "color": "Purple",
+      "level": 5,
+      "cost": 5,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "Zeon",
+        "Delaz Fleet"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Main"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-117",
-      "name": "GD06-117",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
+      "name": "Veterans Joining Forces",
+      "type": "Command",
+      "color": "Purple",
+      "level": 3,
+      "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "Zeon",
+        "Delaz Fleet"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Action"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-118",
-      "name": "GD06-118",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
+      "name": "Infinite Variations",
+      "type": "Command",
+      "color": "White",
+      "level": 5,
+      "cost": 2,
       "ap": null,
       "hp": null,
       "traits": [],
@@ -2412,37 +3073,47 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Main",
+        "Action",
+        "Blocker"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-119",
-      "name": "GD06-119",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
+      "name": "Sturm und Drang",
+      "type": "Command",
+      "color": "White",
+      "level": 5,
+      "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "Gundam Fighter",
+        "Special Move",
+        "DG Cells"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Action"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-120",
-      "name": "GD06-120",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
+      "name": "Hoping for Peace",
+      "type": "Command",
+      "color": "White",
+      "level": 4,
+      "cost": 1,
       "ap": null,
       "hp": null,
       "traits": [],
@@ -2452,207 +3123,276 @@
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Main",
+        "Action"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-121",
-      "name": "GD06-121",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
+      "name": "Crybaby Poe",
+      "type": "Command",
+      "color": "White",
+      "level": 3,
+      "cost": 1,
       "ap": null,
       "hp": null,
-      "traits": [],
+      "traits": [
+        "Dianna Counter",
+        "Moonrace"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Action",
+        "High-Maneuver"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-122",
-      "name": "GD06-122",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "name": "Albion",
+      "type": "Base",
+      "color": "Blue",
+      "level": 2,
+      "cost": 1,
+      "ap": 0,
+      "hp": 4,
+      "traits": [
+        "Earth Federation",
+        "Albion Squad",
+        "Warship"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Deploy"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-123",
-      "name": "GD06-123",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "name": "Endra",
+      "type": "Base",
+      "color": "Green",
+      "level": 4,
+      "cost": 2,
+      "ap": 0,
+      "hp": 5,
+      "traits": [
+        "Neo Zeon",
+        "Warship"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Deploy",
+        "Activate:Main"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-124",
-      "name": "GD06-124",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "name": "Aspite",
+      "type": "Base",
+      "color": "Green",
+      "level": 3,
+      "cost": 1,
+      "ap": 0,
+      "hp": 5,
+      "traits": [
+        "Ghingham Fleet",
+        "Warship"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Deploy",
+        "Activate:Main"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-125",
-      "name": "GD06-125",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "name": "Argama",
+      "type": "Base",
+      "color": "Red",
+      "level": 5,
+      "cost": 1,
+      "ap": 0,
+      "hp": 6,
+      "traits": [
+        "AEUG",
+        "Warship"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Deploy",
+        "Once per Turn"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-126",
-      "name": "GD06-126",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "name": "Skipjack-class Warship",
+      "type": "Base",
+      "color": "Red",
+      "level": 3,
+      "cost": 1,
+      "ap": 0,
+      "hp": 5,
+      "traits": [
+        "Gjallarhorn",
+        "Warship"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Deploy"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-127",
-      "name": "GD06-127",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "name": "Yorag'ntho",
+      "type": "Base",
+      "color": "Purple",
+      "level": 4,
+      "cost": 2,
+      "ap": 0,
+      "hp": 5,
+      "traits": [
+        "Zeon",
+        "Stronghold"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Deploy"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-128",
-      "name": "GD06-128",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "name": "Gwaden",
+      "type": "Base",
+      "color": "Purple",
+      "level": 3,
+      "cost": 1,
+      "ap": 0,
+      "hp": 5,
+      "traits": [
+        "Zeon",
+        "Delaz Fleet",
+        "Warship"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Deploy",
+        "Activate:Main"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-129",
-      "name": "GD06-129",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "name": "5th Luna",
+      "type": "Base",
+      "color": "Purple",
+      "level": 4,
+      "cost": 3,
+      "ap": 0,
+      "hp": 2,
+      "traits": [
+        "Stronghold"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Deploy"
+      ],
       "creates_tokens": [],
       "needs_review": true
     },
     {
       "id": "GD06-130",
-      "name": "GD06-130",
-      "type": null,
-      "color": null,
-      "level": null,
-      "cost": null,
-      "ap": null,
-      "hp": null,
-      "traits": [],
+      "name": "Soleil",
+      "type": "Base",
+      "color": "White",
+      "level": 5,
+      "cost": 1,
+      "ap": 0,
+      "hp": 6,
+      "traits": [
+        "Dianna Counter",
+        "Warship"
+      ],
       "link_conditions": [],
       "pair_conditions": {
         "pilot_names": [],
         "pilot_traits": []
       },
       "pilot": null,
-      "keywords": [],
+      "keywords": [
+        "Burst",
+        "Deploy"
+      ],
       "creates_tokens": [],
       "needs_review": true
     }
